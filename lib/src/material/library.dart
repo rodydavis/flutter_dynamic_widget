@@ -3,13 +3,18 @@ import 'package:flutter_dynamic_widget/flutter_dynamic_widget.dart';
 import '../base.dart';
 import 'basics/appbar.dart';
 import 'basics/container.dart';
+import 'basics/flat_button.dart';
+import 'basics/flat_button_icon.dart';
 import 'basics/floating_action_button.dart';
 import 'basics/flutter_logo.dart';
 import 'basics/icon.dart';
 import 'basics/icon_button.dart';
 import 'basics/icon_data.dart';
+import 'basics/image_network.dart';
 import 'basics/material_app.dart';
 import 'basics/placeholder.dart';
+import 'basics/raised_button.dart';
+import 'basics/raised_button_icon.dart';
 import 'basics/scaffold.dart';
 import 'basics/text.dart';
 import 'basics/text_style.dart';
@@ -67,6 +72,11 @@ class MaterialBase extends WidgetLibrary {
         "MaterialApp": MaterialAppBase(data, widgetContext),
         "TextTheme": TextThemeBase(data, widgetContext),
         "Placeholder": PlaceholderBase(data, widgetContext),
+        "RaisedButton": RaisedButtonBase(data, widgetContext),
+        "RaisedButton.icon": RaisedButtonIconBase(data, widgetContext),
+        "FlatButton": FlatButtonBase(data, widgetContext),
+        "FlatButton.icon": FlatButtonIconBase(data, widgetContext),
+        "Image.network": ImageNetworkBase(data, widgetContext),
       };
 
   @override

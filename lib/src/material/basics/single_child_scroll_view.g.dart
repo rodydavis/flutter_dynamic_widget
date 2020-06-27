@@ -99,12 +99,12 @@ abstract class _$SingleChildScrollViewBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'wmP-_XWDGpY';
+    _data['id'] = 'O9BxMbJJZI5';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'm439Z-v7Iet';
+      _data['params']['style']['id'] = 'r9Fes7XkWWJ';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'dAwsz2fpoyM';
+      _data['params']['0']['id'] = '6bABtgTYDLD';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -174,7 +174,7 @@ abstract class _$SingleChildScrollViewBase extends WidgetBase {
                 (widgetContext.isDragging && childVal?.build(context) != null)
             ? (childVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': '5U4l-1NKwQu',
+                  'id': 'kYixQ6oDaBG',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)

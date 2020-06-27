@@ -1,3 +1,41 @@
+# 1.0.1
+
+New Widgets:
+
+- RaisedButton
+- RaisedButton.icon
+- FlatButton
+- FlatButton.icon
+- Image.network
+
 # 1.0.0
 
-- Adding Core Widgets
+New Widgets:
+
+- Container
+- Center
+- Icon
+- Expanded
+- Flexible
+- AppBar
+- Scaffold
+- Stack
+- Positioned
+- Column
+- Flex
+- Row
+- FloatingActionButton
+- Wrap
+- Text
+- SizedBox
+- FractionallySizedBox
+- IconData
+- TextStyle
+- IconButton
+- SingleChildScrollView
+- FlutterLogo
+- Theme
+- ThemeData
+- MaterialApp
+- TextTheme
+- Placeholder
