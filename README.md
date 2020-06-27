@@ -33,6 +33,11 @@ This package powers https://widget.studio
 - MaterialApp
 - TextTheme
 - Placeholder
+- RaisedButton
+- RaisedButton.icon
+- FlatButton
+- FlatButton.icon
+- Image.network
 
 ## Example
 
