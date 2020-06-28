@@ -7,6 +7,23 @@ New Widgets:
 - FlatButton
 - FlatButton.icon
 - Image.network
+- Align
+- AspectRatio
+- Baseline
+- ConstrainedBox
+- FittedBox
+- IntrinsicWidth
+- IntrinsicHeight
+- LimitedBox
+- Offstage
+- OverflowBox
+- SizedBox
+- Padding
+- SizedOverflowBox
+- Transform
+- PreferredSize
+- BoxConstraints
+- Form
 
 # 1.0.0
 

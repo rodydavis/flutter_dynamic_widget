@@ -33,6 +33,16 @@ import 'layout/baseline.dart';
 import 'layout/center.dart';
 import 'layout/constrainted_box.dart';
 import 'layout/container.dart';
+import 'layout/fitted_box.dart';
+import 'layout/intrinsic_height.dart';
+import 'layout/intrinsic_width.dart';
+import 'layout/limited_box.dart';
+import 'layout/offstage.dart';
+import 'layout/overflow_box.dart';
+import 'layout/padding.dart';
+import 'layout/preferred_size.dart';
+import 'layout/sized_overflow_box.dart';
+import 'layout/transform.dart';
 import 'properties/box_constraints.dart';
 import 'properties/icon_data.dart';
 import 'properties/text_style.dart';
@@ -92,6 +102,17 @@ class MaterialBase extends WidgetLibrary {
         'AspectRatio': AspectRatioBase(data, widgetContext),
         'Baseline': BaselineBase(data, widgetContext),
         'ConstrainedBox': ConstrainedBoxBase(data, widgetContext),
+        'FittedBox': FittedBoxBase(data, widgetContext),
+        'IntrinsicWidth': IntrinsicWidthBase(data, widgetContext),
+        'IntrinsicHeight': IntrinsicHeightBase(data, widgetContext),
+        'LimitedBox': LimitedBoxBase(data, widgetContext),
+        'Offstage': OffstageBase(data, widgetContext),
+        'OverflowBox': OverflowBoxBase(data, widgetContext),
+        'SizedBox': SizedBoxBase(data, widgetContext),
+        'Padding': PaddingBase(data, widgetContext),
+        'SizedOverflowBox': SizedOverflowBoxBase(data, widgetContext),
+        'Transform': TransformBase(data, widgetContext),
+        'PreferredSize': PreferredSizeBase(data, widgetContext),
       };
 
   Map<String, WidgetConfig> get properties => {

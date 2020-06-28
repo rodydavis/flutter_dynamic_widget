@@ -351,3 +351,17 @@ const enumFilterQuality = EnumKey(
     'FilterQuality.none',
   ],
 );
+
+const enumBoxFit = EnumKey(
+  propertyType: 'BoxFit',
+  defaultValue: 'BoxFit.contain',
+  values: [
+    'BoxFit.contain',
+    'BoxFit.cover',
+    'BoxFit.fill',
+    'BoxFit.fitHeight',
+    'BoxFit.fitWidth',
+    'BoxFit.none',
+    'BoxFit.scaleDown',
+  ],
+);

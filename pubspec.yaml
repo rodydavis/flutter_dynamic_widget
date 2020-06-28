@@ -1,6 +1,6 @@
 name: flutter_dynamic_widget
 description: A Dynamic Widget Runtime from Json to Flutter Widgets based on the json_widget spec.
-version: 1.0.1+1
+version: 1.0.2
 homepage: https://github.com/rodydavis/flutter_dynamic_widget
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -12,7 +12,7 @@ dependencies:
   build_runner: ^1.10.0
   shortid: ^0.1.1
   url_launcher: ^5.4.7
-  widget_gen: ^1.0.0+14
+  widget_gen: ^1.0.1
   meta: ^1.1.8
 
 dev_dependencies:

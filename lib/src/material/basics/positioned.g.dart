@@ -66,12 +66,12 @@ abstract class _$PositionedBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = '74l4f-kdDp';
+    _data['id'] = 'TrJwu6NSCYa';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'osjLR9kNvs';
+      _data['params']['style']['id'] = 'fZHQmn1do9l';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'MnbKOuTkcv';
+      _data['params']['0']['id'] = '369pD1Y_Qlu';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -157,7 +157,7 @@ abstract class _$PositionedBase extends WidgetBase {
               (widgetContext.isDragging && childVal?.build(context) != null)
           ? (childVal?.build(context) ??
               (widgetRender(json.decode(json.encode({
-                'id': 'IBieGYFjzt',
+                'id': '873b6Ru8zQz',
                 'name': 'Placeholder',
                 'params': {},
               }))) as WidgetBase)

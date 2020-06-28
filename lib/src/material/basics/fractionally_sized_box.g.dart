@@ -34,12 +34,12 @@ abstract class _$FractionallySizedBoxBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'gfBdFgtvlsu';
+    _data['id'] = 'pSu4K8lorlf';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'yMMjifmalgp';
+      _data['params']['style']['id'] = 'haczn7eM3wu';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'cXNsMgB6duI';
+      _data['params']['0']['id'] = 'DCBzZphpEV1';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);

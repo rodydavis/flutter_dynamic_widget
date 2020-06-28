@@ -87,12 +87,12 @@ abstract class _$ScaffoldBase extends WidgetBase {
 
   void bottomSheetValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'OtdXQC-Ur';
+    _data['id'] = 'p-vw8BJMH';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'D-ckaC5Ijw';
+      _data['params']['style']['id'] = 'bET2Eqd1KJ';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = '7HI_pFaWmC';
+      _data['params']['0']['id'] = 'BAg4_PIh8T';
     }
     params[bottomSheetKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -107,12 +107,12 @@ abstract class _$ScaffoldBase extends WidgetBase {
 
   void drawerValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = '9xNUWJq1No';
+    _data['id'] = 'kZ9WeDbrYD';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'rmK27GHWPU';
+      _data['params']['style']['id'] = 'GWUTuFiRji';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = '1NmnZtx2aP';
+      _data['params']['0']['id'] = '6xvCcTAHpJ';
     }
     params[drawerKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -165,12 +165,12 @@ abstract class _$ScaffoldBase extends WidgetBase {
 
   void endDrawerValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'VgFizcuFQB';
+    _data['id'] = 'NXZGo6RXh5';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'yh6R28Dp3I';
+      _data['params']['style']['id'] = 'E2LVAYUnuW';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'XbvgKoDTJo';
+      _data['params']['0']['id'] = 'xfyx1PuMp8';
     }
     params[endDrawerKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -236,12 +236,12 @@ abstract class _$ScaffoldBase extends WidgetBase {
 
   void appBarValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'ke8Zu4cj7g';
+    _data['id'] = 'j8Ma71PafE';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'PPHoPKql3e';
+      _data['params']['style']['id'] = '6oNAO8rD32';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'BiJrdS5A2v';
+      _data['params']['0']['id'] = 'nyCveFIMUq';
     }
     params[appBarKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -257,12 +257,12 @@ abstract class _$ScaffoldBase extends WidgetBase {
 
   void bodyValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'zugsZcmpjT';
+    _data['id'] = 'PikPKOFRva';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'MlnX-5wj3T';
+      _data['params']['style']['id'] = 'r3oEC3GFs8';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = '2p__fFZGfg';
+      _data['params']['0']['id'] = '6KTOg79C7M';
     }
     params[bodyKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -278,12 +278,12 @@ abstract class _$ScaffoldBase extends WidgetBase {
 
   void bottomNavigationBarValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'Y9VvyuUeS6';
+    _data['id'] = 'jaCaH5y_yG';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'MuPvprn8Sei';
+      _data['params']['style']['id'] = 'soJzNKwTVna';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'No4DmbPL3dt';
+      _data['params']['0']['id'] = 'xDn1RB8pvGk';
     }
     params[bottomNavigationBarKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -299,12 +299,12 @@ abstract class _$ScaffoldBase extends WidgetBase {
 
   void floatingActionButtonValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'UxxxbI37MwX';
+    _data['id'] = 'ehUBcPBejax';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'VkKP7g5rEbe';
+      _data['params']['style']['id'] = 'sBXprF1_gRf';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'K_DZZO3J4DQ';
+      _data['params']['0']['id'] = 'AhB24vrAVpQ';
     }
     params[floatingActionButtonKey] = _data;
     widgetContext.onUpdate(id, widgetData);

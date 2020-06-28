@@ -38,6 +38,27 @@ This package powers https://widget.studio
 - FlatButton
 - FlatButton.icon
 - Image.network
+- RaisedButton.icon
+- FlatButton
+- FlatButton.icon
+- Image.network
+- Align
+- AspectRatio
+- Baseline
+- ConstrainedBox
+- FittedBox
+- IntrinsicWidth
+- IntrinsicHeight
+- LimitedBox
+- Offstage
+- OverflowBox
+- SizedBox
+- Padding
+- SizedOverflowBox
+- Transform
+- PreferredSize
+- BoxConstraints
+- Form
 
 ## Example
 
