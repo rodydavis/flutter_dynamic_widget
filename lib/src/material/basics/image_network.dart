@@ -37,7 +37,7 @@ class ImageNetworkBase extends _$ImageNetworkBase {
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
 
-  @PropertyKey(key: '0')
+  @PropertyKey(key: '0', defaultValue: 'https://placeholder.com/')
   String src;
 
   @PropertyKey(defaultValue: '1.0')

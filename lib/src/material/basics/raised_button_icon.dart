@@ -27,7 +27,6 @@ class RaisedButtonIconBase extends _$RaisedButtonIconBase {
   Color hoverColor;
   Key key;
   MaterialTapTargetSize materialTapTargetSize;
-  MouseCursor mouseCursor;
   Function onLongPress;
   Function onPressed;
   EdgeInsets padding;
@@ -48,6 +47,22 @@ class RaisedButtonIconBase extends _$RaisedButtonIconBase {
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
+
+  @EnumKey(
+    defaultValue: 'SystemMouseCursors.click',
+    values: [
+      'SystemMouseCursors.click',
+      'SystemMouseCursors.basic',
+      'SystemMouseCursors.forbidden',
+      'SystemMouseCursors.grab',
+      'SystemMouseCursors.grabbing',
+      'SystemMouseCursors.horizontalDoubleArrow',
+      'SystemMouseCursors.text',
+      'SystemMouseCursors.verticalDoubleArrow',
+      'SystemMouseCursors.none',
+    ],
+  )
+  SystemMouseCursors mouseCursor;
 
   @PropertyKey(defaultValue: 'false')
   bool autofocus;

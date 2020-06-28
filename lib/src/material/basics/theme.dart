@@ -5,7 +5,7 @@ import 'package:widget_gen/widget_gen_annotations.dart';
 
 import '../../../flutter_dynamic_widget.dart';
 import '../library.dart';
-import 'theme_data.dart';
+import '../properties/theme_data.dart';
 
 part 'theme.g.dart';
 

@@ -158,7 +158,7 @@ abstract class _$ImageNetworkBase extends WidgetBase {
     if (params[srcKey] != null) {
       return params[srcKey] as String;
     }
-    return null;
+    return 'https://placeholder.com/';
   }
 
   set srcVal(String val) {

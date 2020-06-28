@@ -32,12 +32,12 @@ abstract class _$SizedBoxBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'Yjz3BhiCMU';
+    _data['id'] = 'xI6NM74D_d3';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'Xd-VvCQHpl';
+      _data['params']['style']['id'] = 'U2BPh7UiW7a';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'nwCdmHxTNl';
+      _data['params']['0']['id'] = 'BF1cdJqdPYb';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);

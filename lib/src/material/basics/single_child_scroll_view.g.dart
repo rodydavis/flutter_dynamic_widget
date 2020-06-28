@@ -9,9 +9,10 @@ part of 'single_child_scroll_view.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, avoid_init_to_null
 
 abstract class _$SingleChildScrollViewBase extends WidgetBase {
-  String clipBehaviorKey = 'clipBehavior';
   String keyKey = 'key';
+  String paddingKey = 'padding';
   String primaryKey = 'primary';
+  String clipBehaviorKey = 'clipBehavior';
   String childKey = 'child';
   String scrollDirectionKey = 'scrollDirection';
   String reverseKey = 'reverse';
@@ -19,37 +20,15 @@ abstract class _$SingleChildScrollViewBase extends WidgetBase {
 
   @override
   Map<String, String> get properties => {
-        'clipBehavior': 'Clip',
         'key': 'Key',
+        'padding': 'EdgeInsets',
         'primary': 'bool',
+        'clipBehavior': 'Clip',
         'child': 'Widget',
         'scrollDirection': 'Axis',
         'reverse': 'bool',
         'dragStartBehavior': 'DragStartBehavior',
       };
-
-  List<Clip> get clipBehaviorValues => [
-        Clip.none,
-        Clip.hardEdge,
-        Clip.antiAlias,
-        Clip.antiAliasWithSaveLayer,
-      ];
-
-  Clip get clipBehaviorVal {
-    if (params[clipBehaviorKey] != null) {
-      final _value = params[clipBehaviorKey].toString().replaceAll('#', '');
-      return clipBehaviorValues.firstWhere(
-        (element) => element.toString() == _value,
-        orElse: () => Clip.hardEdge,
-      );
-    }
-    return Clip.hardEdge;
-  }
-
-  set clipBehaviorVal(Clip val) {
-    params[clipBehaviorKey] = "$val";
-    widgetContext.onUpdate(id, widgetData);
-  }
 
   Key get keyVal {
     if (params[keyKey] != null) {
@@ -77,6 +56,37 @@ abstract class _$SingleChildScrollViewBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
+  EdgeInsets get paddingVal {
+    EdgeInsets _spacing = EdgeInsets.all(0.0);
+    if (params[paddingKey] != null) {
+      double top = 0;
+      double bottom = 0;
+      double left = 0;
+      double right = 0;
+      Map<String, dynamic> _spacingParams = params[paddingKey]['params'];
+      top = _spacingParams['top'] ?? 0;
+      bottom = _spacingParams['bottom'] ?? 0;
+      left = _spacingParams['left'] ?? 0;
+      right = _spacingParams['right'] ?? 0;
+      _spacing = EdgeInsets.fromLTRB(left, top, right, bottom);
+    }
+    return _spacing;
+  }
+
+  set paddingVal(EdgeInsets val) {
+    params[paddingKey] = {
+      "name": "EdgeInsets.only",
+      "id": "paddingKeyEdgeInsets",
+      "params": {
+        "top": val.top,
+        "bottom": val.bottom,
+        "left": val.left,
+        "right": val.right,
+      }
+    };
+    widgetContext.onUpdate(id, widgetData);
+  }
+
   bool get primaryVal {
     if (params[primaryKey] != null) {
       return params[primaryKey] as bool;
@@ -86,6 +96,29 @@ abstract class _$SingleChildScrollViewBase extends WidgetBase {
 
   set primaryVal(bool val) {
     params[primaryKey] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  List<Clip> get clipBehaviorValues => [
+        Clip.none,
+        Clip.hardEdge,
+        Clip.antiAlias,
+        Clip.antiAliasWithSaveLayer,
+      ];
+
+  Clip get clipBehaviorVal {
+    if (params[clipBehaviorKey] != null) {
+      final _value = params[clipBehaviorKey].toString().replaceAll('#', '');
+      return clipBehaviorValues.firstWhere(
+        (element) => element.toString() == _value,
+        orElse: () => Clip.hardEdge,
+      );
+    }
+    return Clip.hardEdge;
+  }
+
+  set clipBehaviorVal(Clip val) {
+    params[clipBehaviorKey] = "$val";
     widgetContext.onUpdate(id, widgetData);
   }
 
@@ -99,12 +132,12 @@ abstract class _$SingleChildScrollViewBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'O9BxMbJJZI5';
+    _data['id'] = 'wyTRdhpxwe';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'r9Fes7XkWWJ';
+      _data['params']['style']['id'] = 'USQat96WqL';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = '6bABtgTYDLD';
+      _data['params']['0']['id'] = 'igEvuPQUVi';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -174,7 +207,7 @@ abstract class _$SingleChildScrollViewBase extends WidgetBase {
                 (widgetContext.isDragging && childVal?.build(context) != null)
             ? (childVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': 'kYixQ6oDaBG',
+                  'id': 'UD_ZnEOvEt',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)
@@ -213,6 +246,7 @@ abstract class _$SingleChildScrollViewBase extends WidgetBase {
         clipBehavior: clipBehaviorVal,
         dragStartBehavior: dragStartBehaviorVal,
         key: keyVal,
+        padding: paddingVal,
         primary: primaryVal,
         reverse: reverseVal,
         scrollDirection: scrollDirectionVal,

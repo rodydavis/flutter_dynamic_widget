@@ -12,16 +12,16 @@ class FloatingActionButtonBase extends _$FloatingActionButtonBase {
   FloatingActionButtonBase(this.widgetData, this.widgetContext);
 
   Color backgroundColor;
-  @WidgetKey.widget()
-  Widget child;
   double disabledElevation;
   Color focusColor;
   double focusElevation;
+  FocusNode focusNode;
   Color foregroundColor;
   Color hoverColor;
   double hoverElevation;
   Key key;
   Function onPressed;
+  ShapeBorder shape;
   Color splashColor;
   String tooltip;
 
@@ -37,6 +37,9 @@ class FloatingActionButtonBase extends _$FloatingActionButtonBase {
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
+
+  @WidgetKey.widget()
+  Widget child;
 
   @PropertyKey(defaultValue: 'UniqueKey()')
   Object heroTag;
@@ -56,9 +59,19 @@ class FloatingActionButtonBase extends _$FloatingActionButtonBase {
   @EnumKey(defaultValue: 'Clip.none', values: Clip.values)
   Clip clipBehavior;
 
-  ShapeBorder shape;
-
-  MouseCursor mouseCursor;
-
-  FocusNode focusNode;
+  @EnumKey(
+    defaultValue: 'SystemMouseCursors.click',
+    values: [
+      'SystemMouseCursors.click',
+      'SystemMouseCursors.basic',
+      'SystemMouseCursors.forbidden',
+      'SystemMouseCursors.grab',
+      'SystemMouseCursors.grabbing',
+      'SystemMouseCursors.horizontalDoubleArrow',
+      'SystemMouseCursors.text',
+      'SystemMouseCursors.verticalDoubleArrow',
+      'SystemMouseCursors.none',
+    ],
+  )
+  SystemMouseCursors mouseCursor;
 }

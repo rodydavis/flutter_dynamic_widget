@@ -3,6 +3,7 @@ import 'package:widget_gen/widget_gen_annotations.dart';
 
 import '../../../flutter_dynamic_widget.dart';
 import '../library.dart';
+import '../properties/text_theme.dart';
 
 part 'appbar.g.dart';
 
@@ -23,7 +24,8 @@ class AppBarBase extends _$AppBarBase {
   Widget leading;
   Color shadowColor;
   ShapeBorder shape;
-  TextTheme textTheme;
+  @SupportedKey()
+  TextThemeBase textTheme;
   @WidgetKey.widget(acceptWidth: 100)
   Widget title;
 

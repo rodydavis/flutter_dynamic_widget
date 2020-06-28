@@ -1,38 +1,43 @@
-import 'package:flutter_dynamic_widget/flutter_dynamic_widget.dart';
-
+import '../../flutter_dynamic_widget.dart';
 import '../base.dart';
 import 'basics/appbar.dart';
-import 'basics/container.dart';
+import 'basics/column.dart';
+import 'basics/expanded.dart';
 import 'basics/flat_button.dart';
 import 'basics/flat_button_icon.dart';
+import 'basics/flex.dart';
+import 'basics/flexible.dart';
 import 'basics/floating_action_button.dart';
 import 'basics/flutter_logo.dart';
+import 'basics/form.dart';
+import 'basics/fractionally_sized_box.dart';
 import 'basics/icon.dart';
 import 'basics/icon_button.dart';
-import 'basics/icon_data.dart';
 import 'basics/image_network.dart';
 import 'basics/material_app.dart';
 import 'basics/placeholder.dart';
+import 'basics/positioned.dart';
 import 'basics/raised_button.dart';
 import 'basics/raised_button_icon.dart';
-import 'basics/scaffold.dart';
-import 'basics/text.dart';
-import 'basics/text_style.dart';
-import 'basics/text_theme.dart';
-import 'basics/theme.dart';
-import 'basics/theme_data.dart';
-import 'basics/center.dart';
-import 'basics/column.dart';
-import 'basics/expanded.dart';
-import 'basics/flex.dart';
-import 'basics/flexible.dart';
-import 'basics/fractionally_sized_box.dart';
-import 'basics/positioned.dart';
 import 'basics/row.dart';
+import 'basics/scaffold.dart';
 import 'basics/single_child_scroll_view.dart';
 import 'basics/sized_box.dart';
 import 'basics/stack.dart';
+import 'basics/text.dart';
+import 'basics/theme.dart';
 import 'basics/wrap.dart';
+import 'layout/align.dart';
+import 'layout/aspect_ratio.dart';
+import 'layout/baseline.dart';
+import 'layout/center.dart';
+import 'layout/constrainted_box.dart';
+import 'layout/container.dart';
+import 'properties/box_constraints.dart';
+import 'properties/icon_data.dart';
+import 'properties/text_style.dart';
+import 'properties/text_theme.dart';
+import 'properties/theme_data.dart';
 
 class MaterialBase extends WidgetLibrary {
   MaterialBase(this.data, this.widgetContext);
@@ -40,43 +45,20 @@ class MaterialBase extends WidgetLibrary {
   final Map<String, dynamic> data;
   final WidgetContext widgetContext;
 
-  static ActionCallback onAction =
-      (context, val) => DynamicWidget.onAction(context, val);
-
   @override
   Map<String, WidgetConfig> get library => {
-        'Container': ContainerBase(data, widgetContext),
-        'Center': CenterBase(data, widgetContext),
-        'Icon': IconBase(data, widgetContext),
-        'Expanded': ExpandedBase(data, widgetContext),
-        'Flexible': FlexibleBase(data, widgetContext),
-        'AppBar': AppBarBase(data, widgetContext),
-        'Scaffold': ScaffoldBase(data, widgetContext),
-        'Stack': StackBase(data, widgetContext),
-        'Positioned': PositionedBase(data, widgetContext),
-        'Column': ColumnBase(data, widgetContext),
-        'Flex': FlexBase(data, widgetContext),
-        'Row': RowBase(data, widgetContext),
+        ...basics,
+        ...layout,
+        ...properties,
         'FloatingActionButton': FloatingActionButtonBase(data, widgetContext),
         'Wrap': WrapBase(data, widgetContext),
-        'Text': TextBase(data, widgetContext),
         'SizedBox': SizedBoxBase(data, widgetContext),
         'FractionallySizedBox': FractionallySizedBoxBase(data, widgetContext),
-        'IconData': IconDataBase(data, widgetContext),
-        'TextStyle': TextStyleBase(data, widgetContext),
         'IconButton': IconButtonBase(data, widgetContext),
         'SingleChildScrollView': SingleChildScrollViewBase(data, widgetContext),
-        "FlutterLogo": FlutterLogoBase(data, widgetContext),
         "Theme": ThemeBase(data, widgetContext),
-        "ThemeData": ThemeDataBase(data, widgetContext),
         "MaterialApp": MaterialAppBase(data, widgetContext),
-        "TextTheme": TextThemeBase(data, widgetContext),
-        "Placeholder": PlaceholderBase(data, widgetContext),
-        "RaisedButton": RaisedButtonBase(data, widgetContext),
-        "RaisedButton.icon": RaisedButtonIconBase(data, widgetContext),
-        "FlatButton": FlatButtonBase(data, widgetContext),
-        "FlatButton.icon": FlatButtonIconBase(data, widgetContext),
-        "Image.network": ImageNetworkBase(data, widgetContext),
+        "Form": FormBase(data, widgetContext),
       };
 
   @override
@@ -90,4 +72,50 @@ class MaterialBase extends WidgetLibrary {
       widgetContext: widgetContext,
     )?.base;
   }
+
+  static ActionCallback onAction =
+      (context, val) => DynamicWidget.onAction(context, val);
+
+  Map<String, Map<String, WidgetConfig>> get categories => {
+        'Basics': basics,
+        'Layout': layout,
+      };
+
+  Map<String, WidgetConfig> get layout => {
+        'Center': CenterBase(data, widgetContext),
+        'Expanded': ExpandedBase(data, widgetContext),
+        'Flexible': FlexibleBase(data, widgetContext),
+        'Stack': StackBase(data, widgetContext),
+        'Positioned': PositionedBase(data, widgetContext),
+        'Flex': FlexBase(data, widgetContext),
+        'Align': AlignBase(data, widgetContext),
+        'AspectRatio': AspectRatioBase(data, widgetContext),
+        'Baseline': BaselineBase(data, widgetContext),
+        'ConstrainedBox': ConstrainedBoxBase(data, widgetContext),
+      };
+
+  Map<String, WidgetConfig> get properties => {
+        'TextTheme': TextThemeBase(data, widgetContext),
+        'ThemeData': ThemeDataBase(data, widgetContext),
+        'IconData': IconDataBase(data, widgetContext),
+        'TextStyle': TextStyleBase(data, widgetContext),
+        'BoxConstraints': BoxConstraintsBase(data, widgetContext),
+      };
+
+  Map<String, WidgetConfig> get basics => {
+        'AppBar': AppBarBase(data, widgetContext),
+        'Column': ColumnBase(data, widgetContext),
+        'Container': ContainerBase(data, widgetContext),
+        "FlutterLogo": FlutterLogoBase(data, widgetContext),
+        'Icon': IconBase(data, widgetContext),
+        'Image.network': ImageNetworkBase(data, widgetContext),
+        "Placeholder": PlaceholderBase(data, widgetContext),
+        'RaisedButton': RaisedButtonBase(data, widgetContext),
+        'RaisedButton.icon': RaisedButtonIconBase(data, widgetContext),
+        "FlatButton": FlatButtonBase(data, widgetContext),
+        "FlatButton.icon": FlatButtonIconBase(data, widgetContext),
+        'Row': RowBase(data, widgetContext),
+        'Scaffold': ScaffoldBase(data, widgetContext),
+        'Text': TextBase(data, widgetContext),
+      };
 }

@@ -3,7 +3,7 @@ import 'package:widget_gen/widget_gen_annotations.dart';
 
 import '../../../flutter_dynamic_widget.dart';
 import '../library.dart';
-import 'text_style.dart';
+import '../properties/text_style.dart';
 
 part 'text.g.dart';
 
@@ -11,17 +11,12 @@ part 'text.g.dart';
 class TextBase extends _$TextBase {
   TextBase(this.widgetData, this.widgetContext);
 
-  @PropertyKey(key: '0', defaultValue: '')
-  String data;
-
   Key key;
   Locale locale;
   int maxLines;
   String semanticsLabel;
   bool softWrap;
   StrutStyle strutStyle;
-  @SupportedKey()
-  TextStyleBase style;
   TextHeightBehavior textHeightBehavior;
   double textScaleFactor;
 
@@ -37,6 +32,12 @@ class TextBase extends _$TextBase {
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
+
+  @PropertyKey(key: '0', defaultValue: '')
+  String data;
+
+  @SupportedKey()
+  TextStyleBase style;
 
   @EnumKey(values: TextAlign.values)
   TextAlign textAlign;

@@ -9,32 +9,20 @@ part of 'icon.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, avoid_init_to_null
 
 abstract class _$IconBase extends WidgetBase {
-  String iconDataKey = '0';
   String colorKey = 'color';
   String semanticLabelKey = 'semanticLabel';
   String sizeKey = 'size';
+  String iconDataKey = '0';
   String textDirectionKey = 'textDirection';
 
   @override
   Map<String, String> get properties => {
-        '0': 'IconDataBase',
         'color': 'Color',
         'semanticLabel': 'String',
         'size': 'double',
+        '0': 'IconDataBase',
         'textDirection': 'TextDirection',
       };
-
-  IconDataBase get iconDataVal {
-    if (params[iconDataKey] != null) {
-      return IconDataBase(params[iconDataKey], widgetContext);
-    }
-    return null;
-  }
-
-  set iconDataVal(IconDataBase val) {
-    params[iconDataKey] = val;
-    widgetContext.onUpdate(id, widgetData);
-  }
 
   Color get colorVal {
     if (params[colorKey] != null) {
@@ -83,6 +71,18 @@ abstract class _$IconBase extends WidgetBase {
 
   set sizeVal(double val) {
     params[sizeKey] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  IconDataBase get iconDataVal {
+    if (params[iconDataKey] != null) {
+      return IconDataBase(params[iconDataKey], widgetContext);
+    }
+    return null;
+  }
+
+  set iconDataVal(IconDataBase val) {
+    params[iconDataKey] = val;
     widgetContext.onUpdate(id, widgetData);
   }
 

@@ -9,20 +9,20 @@ part of 'scaffold.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, avoid_init_to_null
 
 abstract class _$ScaffoldBase extends WidgetBase {
-  String appBarKey = 'appBar';
   String backgroundColorKey = 'backgroundColor';
-  String bodyKey = 'body';
-  String bottomNavigationBarKey = 'bottomNavigationBar';
   String bottomSheetKey = 'bottomSheet';
   String drawerKey = 'drawer';
   String drawerEdgeDragWidthKey = 'drawerEdgeDragWidth';
   String drawerScrimColorKey = 'drawerScrimColor';
   String endDrawerKey = 'endDrawer';
-  String floatingActionButtonKey = 'floatingActionButton';
   String keyKey = 'key';
-  String persistentFooterButtonsKey = 'persistentFooterButtons';
   String resizeToAvoidBottomInsetKey = 'resizeToAvoidBottomInset';
   String resizeToAvoidBottomPaddingKey = 'resizeToAvoidBottomPadding';
+  String appBarKey = 'appBar';
+  String bodyKey = 'body';
+  String bottomNavigationBarKey = 'bottomNavigationBar';
+  String floatingActionButtonKey = 'floatingActionButton';
+  String persistentFooterButtonsKey = 'persistentFooterButtons';
   String floatingActionButtonLocationKey = 'floatingActionButtonLocation';
   String primaryKey = 'primary';
   String drawerDragStartBehaviorKey = 'drawerDragStartBehavior';
@@ -33,20 +33,20 @@ abstract class _$ScaffoldBase extends WidgetBase {
 
   @override
   Map<String, String> get properties => {
-        'appBar': 'Widget',
         'backgroundColor': 'Color',
-        'body': 'Widget',
-        'bottomNavigationBar': 'Widget',
         'bottomSheet': 'Widget',
         'drawer': 'Widget',
         'drawerEdgeDragWidth': 'double',
         'drawerScrimColor': 'Color',
         'endDrawer': 'Widget',
-        'floatingActionButton': 'Widget',
         'key': 'Key',
-        'persistentFooterButtons': 'List<Widget>',
         'resizeToAvoidBottomInset': 'bool',
         'resizeToAvoidBottomPadding': 'bool',
+        'appBar': 'Widget',
+        'body': 'Widget',
+        'bottomNavigationBar': 'Widget',
+        'floatingActionButton': 'Widget',
+        'persistentFooterButtons': 'List<Widget>',
         'floatingActionButtonLocation': 'FloatingActionButtonLocation',
         'primary': 'bool',
         'drawerDragStartBehavior': 'DragStartBehavior',
@@ -55,27 +55,6 @@ abstract class _$ScaffoldBase extends WidgetBase {
         'drawerEnableOpenDragGesture': 'bool',
         'endDrawerEnableOpenDragGesture': 'bool',
       };
-
-  final _appBarListen = ValueNotifier<bool>(false);
-  WidgetBase get appBarVal {
-    if (params[appBarKey] != null) {
-      return widgetRender(params[appBarKey]);
-    }
-    return null;
-  }
-
-  void appBarValUpdate(Map<String, dynamic> val) {
-    final _data = val;
-    _data['id'] = 'dOAwxjzS1';
-    if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'C85_hp7LCw';
-    }
-    if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'XE7W-4KPFM';
-    }
-    params[appBarKey] = _data;
-    widgetContext.onUpdate(id, widgetData);
-  }
 
   Color get backgroundColorVal {
     if (params[backgroundColorKey] != null) {
@@ -103,48 +82,6 @@ abstract class _$ScaffoldBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
-  final _bodyListen = ValueNotifier<bool>(false);
-  WidgetBase get bodyVal {
-    if (params[bodyKey] != null) {
-      return widgetRender(params[bodyKey]);
-    }
-    return null;
-  }
-
-  void bodyValUpdate(Map<String, dynamic> val) {
-    final _data = val;
-    _data['id'] = 'lvZe6UKfZx';
-    if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'RsH7c-U63c';
-    }
-    if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'iuLgjXVV73';
-    }
-    params[bodyKey] = _data;
-    widgetContext.onUpdate(id, widgetData);
-  }
-
-  final _bottomNavigationBarListen = ValueNotifier<bool>(false);
-  WidgetBase get bottomNavigationBarVal {
-    if (params[bottomNavigationBarKey] != null) {
-      return widgetRender(params[bottomNavigationBarKey]);
-    }
-    return null;
-  }
-
-  void bottomNavigationBarValUpdate(Map<String, dynamic> val) {
-    final _data = val;
-    _data['id'] = '8cTMIafJQt';
-    if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'R-ZS9OpgLs';
-    }
-    if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'OYKvSMMoj9';
-    }
-    params[bottomNavigationBarKey] = _data;
-    widgetContext.onUpdate(id, widgetData);
-  }
-
   WidgetBase get bottomSheetVal {
     if (params[bottomSheetKey] != null) {
       return widgetRender(params[bottomSheetKey]);
@@ -154,12 +91,12 @@ abstract class _$ScaffoldBase extends WidgetBase {
 
   void bottomSheetValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'YpsufsVQ3G';
+    _data['id'] = '8PfBIhaeL';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'tdS3w_6yIw';
+      _data['params']['style']['id'] = 'j78edOvu4J';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'nnyznNI6Ez';
+      _data['params']['0']['id'] = 'p43bvBp2IG';
     }
     params[bottomSheetKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -174,12 +111,12 @@ abstract class _$ScaffoldBase extends WidgetBase {
 
   void drawerValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'vYvFjQOdqh';
+    _data['id'] = 'B57fl7N8Jk';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = '3SqAolgb5Y';
+      _data['params']['style']['id'] = 'UDpTnss54-';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'nPRYBPT1-i';
+      _data['params']['0']['id'] = '_5EazZas2h';
     }
     params[drawerKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -232,35 +169,14 @@ abstract class _$ScaffoldBase extends WidgetBase {
 
   void endDrawerValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'xYqnxQszk1';
+    _data['id'] = '2oVYOEvLZ3';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'BDW3BJ4ol2Q';
+      _data['params']['style']['id'] = 'Aw1nB31yvN';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = '6HQa1HLYqgi';
+      _data['params']['0']['id'] = '2sqEojxOdZ';
     }
     params[endDrawerKey] = _data;
-    widgetContext.onUpdate(id, widgetData);
-  }
-
-  final _floatingActionButtonListen = ValueNotifier<bool>(false);
-  WidgetBase get floatingActionButtonVal {
-    if (params[floatingActionButtonKey] != null) {
-      return widgetRender(params[floatingActionButtonKey]);
-    }
-    return null;
-  }
-
-  void floatingActionButtonValUpdate(Map<String, dynamic> val) {
-    final _data = val;
-    _data['id'] = 'g8f7f9vydo6';
-    if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'r2FG3OOzZVH';
-    }
-    if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'mLynCTur9i5';
-    }
-    params[floatingActionButtonKey] = _data;
     widgetContext.onUpdate(id, widgetData);
   }
 
@@ -290,29 +206,6 @@ abstract class _$ScaffoldBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
-  final _persistentFooterButtonsListen = ValueNotifier<bool>(false);
-  List<WidgetBase> get persistentFooterButtonsVal {
-    if (params[persistentFooterButtonsKey] != null) {
-      final _children = <WidgetBase>[];
-      final _list = List.from(params[persistentFooterButtonsKey]);
-      for (final item in _list) {
-        if (item is Map<String, dynamic>) {
-          _children.add(widgetRender(item));
-        }
-      }
-      return _children;
-    }
-    return null;
-  }
-
-  void persistentFooterButtonsValUpdate(Map<String, dynamic> val) {
-    if (params[persistentFooterButtonsKey] == null) {
-      params[persistentFooterButtonsKey] = [];
-    }
-    params[persistentFooterButtonsKey].add(val);
-    widgetContext.onUpdate(id, widgetData);
-  }
-
   bool get resizeToAvoidBottomInsetVal {
     if (params[resizeToAvoidBottomInsetKey] != null) {
       return params[resizeToAvoidBottomInsetKey] as bool;
@@ -334,6 +227,113 @@ abstract class _$ScaffoldBase extends WidgetBase {
 
   set resizeToAvoidBottomPaddingVal(bool val) {
     params[resizeToAvoidBottomPaddingKey] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  final _appBarListen = ValueNotifier<bool>(false);
+  WidgetBase get appBarVal {
+    if (params[appBarKey] != null) {
+      return widgetRender(params[appBarKey]);
+    }
+    return null;
+  }
+
+  void appBarValUpdate(Map<String, dynamic> val) {
+    final _data = val;
+    _data['id'] = 'lOT9LDzT4D';
+    if (_data['name'] == 'Text') {
+      _data['params']['style']['id'] = 'HnFDo25x8L';
+    }
+    if (_data['name'] == 'Icon') {
+      _data['params']['0']['id'] = 'j_2qrtbXM2';
+    }
+    params[appBarKey] = _data;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  final _bodyListen = ValueNotifier<bool>(false);
+  WidgetBase get bodyVal {
+    if (params[bodyKey] != null) {
+      return widgetRender(params[bodyKey]);
+    }
+    return null;
+  }
+
+  void bodyValUpdate(Map<String, dynamic> val) {
+    final _data = val;
+    _data['id'] = 'aNXdYn8i7q';
+    if (_data['name'] == 'Text') {
+      _data['params']['style']['id'] = 'xmujc_5s2x';
+    }
+    if (_data['name'] == 'Icon') {
+      _data['params']['0']['id'] = 'Hsz3FTYKOm';
+    }
+    params[bodyKey] = _data;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  final _bottomNavigationBarListen = ValueNotifier<bool>(false);
+  WidgetBase get bottomNavigationBarVal {
+    if (params[bottomNavigationBarKey] != null) {
+      return widgetRender(params[bottomNavigationBarKey]);
+    }
+    return null;
+  }
+
+  void bottomNavigationBarValUpdate(Map<String, dynamic> val) {
+    final _data = val;
+    _data['id'] = 'dKd_HJqml6';
+    if (_data['name'] == 'Text') {
+      _data['params']['style']['id'] = '8qs_P4sHsjr';
+    }
+    if (_data['name'] == 'Icon') {
+      _data['params']['0']['id'] = 'W8NyvSnWyKl';
+    }
+    params[bottomNavigationBarKey] = _data;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  final _floatingActionButtonListen = ValueNotifier<bool>(false);
+  WidgetBase get floatingActionButtonVal {
+    if (params[floatingActionButtonKey] != null) {
+      return widgetRender(params[floatingActionButtonKey]);
+    }
+    return null;
+  }
+
+  void floatingActionButtonValUpdate(Map<String, dynamic> val) {
+    final _data = val;
+    _data['id'] = 'mkKQPu76QhC';
+    if (_data['name'] == 'Text') {
+      _data['params']['style']['id'] = 'wjtOO9u5QBQ';
+    }
+    if (_data['name'] == 'Icon') {
+      _data['params']['0']['id'] = 'MCT256dyq1F';
+    }
+    params[floatingActionButtonKey] = _data;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  final _persistentFooterButtonsListen = ValueNotifier<bool>(false);
+  List<WidgetBase> get persistentFooterButtonsVal {
+    if (params[persistentFooterButtonsKey] != null) {
+      final _children = <WidgetBase>[];
+      final _list = List.from(params[persistentFooterButtonsKey]);
+      for (final item in _list) {
+        if (item is Map<String, dynamic>) {
+          _children.add(widgetRender(item));
+        }
+      }
+      return _children;
+    }
+    return null;
+  }
+
+  void persistentFooterButtonsValUpdate(Map<String, dynamic> val) {
+    if (params[persistentFooterButtonsKey] == null) {
+      params[persistentFooterButtonsKey] = [];
+    }
+    params[persistentFooterButtonsKey].add(val);
     widgetContext.onUpdate(id, widgetData);
   }
 

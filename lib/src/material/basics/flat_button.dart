@@ -24,7 +24,8 @@ class FlatButtonBase extends _$FlatButtonBase {
   Color hoverColor;
   Key key;
   MaterialTapTargetSize materialTapTargetSize;
-  MouseCursor mouseCursor;
+  Function onLongPress;
+  Function onPressed;
   EdgeInsets padding;
   ShapeBorder shape;
   Color splashColor;
@@ -43,6 +44,22 @@ class FlatButtonBase extends _$FlatButtonBase {
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
+
+  @EnumKey(
+    defaultValue: 'SystemMouseCursors.click',
+    values: [
+      'SystemMouseCursors.click',
+      'SystemMouseCursors.basic',
+      'SystemMouseCursors.forbidden',
+      'SystemMouseCursors.grab',
+      'SystemMouseCursors.grabbing',
+      'SystemMouseCursors.horizontalDoubleArrow',
+      'SystemMouseCursors.text',
+      'SystemMouseCursors.verticalDoubleArrow',
+      'SystemMouseCursors.none',
+    ],
+  )
+  SystemMouseCursors mouseCursor;
 
   @EnumKey(
     values: [
@@ -69,10 +86,6 @@ class FlatButtonBase extends _$FlatButtonBase {
     defaultValue: 'Placeholder',
   )
   Widget child;
-
-  Function onPressed;
-
-  Function onLongPress;
 
   void Function(bool) onHighlightChanged;
 }

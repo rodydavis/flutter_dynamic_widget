@@ -29,7 +29,8 @@ class RaisedButtonBase extends _$RaisedButtonBase {
   double hoverElevation;
   Key key;
   MaterialTapTargetSize materialTapTargetSize;
-  MouseCursor mouseCursor;
+  Function onLongPress;
+  Function onPressed;
   EdgeInsets padding;
   ShapeBorder shape;
   Color splashColor;
@@ -48,6 +49,22 @@ class RaisedButtonBase extends _$RaisedButtonBase {
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
+
+  @EnumKey(
+    defaultValue: 'SystemMouseCursors.click',
+    values: [
+      'SystemMouseCursors.click',
+      'SystemMouseCursors.basic',
+      'SystemMouseCursors.forbidden',
+      'SystemMouseCursors.grab',
+      'SystemMouseCursors.grabbing',
+      'SystemMouseCursors.horizontalDoubleArrow',
+      'SystemMouseCursors.text',
+      'SystemMouseCursors.verticalDoubleArrow',
+      'SystemMouseCursors.none',
+    ],
+  )
+  SystemMouseCursors mouseCursor;
 
   @EnumKey(
     values: [
@@ -74,10 +91,6 @@ class RaisedButtonBase extends _$RaisedButtonBase {
     defaultValue: 'Placeholder',
   )
   Widget child;
-
-  Function onPressed;
-
-  Function onLongPress;
 
   void Function(bool) onHighlightChanged;
 }

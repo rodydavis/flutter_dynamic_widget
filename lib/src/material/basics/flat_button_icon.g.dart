@@ -16,15 +16,16 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
   String highlightColorKey = 'highlightColor';
   String hoverColorKey = 'hoverColor';
   String keyKey = 'key';
+  String onLongPressKey = 'onLongPress';
+  String onPressedKey = 'onPressed';
   String paddingKey = 'padding';
   String splashColorKey = 'splashColor';
   String textColorKey = 'textColor';
+  String mouseCursorKey = 'mouseCursor';
   String autofocusKey = 'autofocus';
   String clipBehaviorKey = 'clipBehavior';
   String iconKey = 'icon';
   String labelKey = 'label';
-  String onPressedKey = 'onPressed';
-  String onLongPressKey = 'onLongPress';
 
   @override
   Map<String, String> get properties => {
@@ -35,15 +36,16 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
         'highlightColor': 'Color',
         'hoverColor': 'Color',
         'key': 'Key',
+        'onLongPress': 'Function',
+        'onPressed': 'Function',
         'padding': 'EdgeInsets',
         'splashColor': 'Color',
         'textColor': 'Color',
+        'mouseCursor': 'SystemMouseCursors',
         'autofocus': 'bool',
         'clipBehavior': 'Clip',
         'icon': 'Widget',
         'label': 'Widget',
-        'onPressed': 'Function',
-        'onLongPress': 'Function',
       };
 
   Color get colorVal {
@@ -228,6 +230,30 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
+  String get onLongPressVal {
+    if (params[onLongPressKey] != null) {
+      return params[onLongPressKey] as String;
+    }
+    return null;
+  }
+
+  set onLongPressVal(String val) {
+    params[onLongPressKey] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  String get onPressedVal {
+    if (params[onPressedKey] != null) {
+      return params[onPressedKey] as String;
+    }
+    return null;
+  }
+
+  set onPressedVal(String val) {
+    params[onPressedKey] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
   EdgeInsets get paddingVal {
     EdgeInsets _spacing = EdgeInsets.all(0.0);
     if (params[paddingKey] != null) {
@@ -311,6 +337,34 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
+  List<SystemMouseCursors> get mouseCursorValues => [
+        SystemMouseCursors.click,
+        SystemMouseCursors.basic,
+        SystemMouseCursors.forbidden,
+        SystemMouseCursors.grab,
+        SystemMouseCursors.grabbing,
+        SystemMouseCursors.horizontalDoubleArrow,
+        SystemMouseCursors.text,
+        SystemMouseCursors.verticalDoubleArrow,
+        SystemMouseCursors.none,
+      ];
+
+  SystemMouseCursors get mouseCursorVal {
+    if (params[mouseCursorKey] != null) {
+      final _value = params[mouseCursorKey].toString().replaceAll('#', '');
+      return mouseCursorValues.firstWhere(
+        (element) => element.toString() == _value,
+        orElse: () => SystemMouseCursors.click,
+      );
+    }
+    return SystemMouseCursors.click;
+  }
+
+  set mouseCursorVal(SystemMouseCursors val) {
+    params[mouseCursorKey] = "$val";
+    widgetContext.onUpdate(id, widgetData);
+  }
+
   bool get autofocusVal {
     if (params[autofocusKey] != null) {
       return params[autofocusKey] as bool;
@@ -356,12 +410,12 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
 
   void iconValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'gHTRWIxtY4D';
+    _data['id'] = '8WYkT1NQVcx';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'XPDS66VKeIU';
+      _data['params']['style']['id'] = 'C5PejLATY_u';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = '8pZjNUNrC4r';
+      _data['params']['0']['id'] = 'xV58MvLaYxQ';
     }
     params[iconKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -377,38 +431,14 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
 
   void labelValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'K7pJZX7_6nh';
+    _data['id'] = 'NwpQCK6pFTw';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'ITWNC6OaZ1X';
+      _data['params']['style']['id'] = 'LHObPA3xtWR';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'LhMjxRhP5eJ';
+      _data['params']['0']['id'] = 'NY5gMxKLbem';
     }
     params[labelKey] = _data;
-    widgetContext.onUpdate(id, widgetData);
-  }
-
-  String get onPressedVal {
-    if (params[onPressedKey] != null) {
-      return params[onPressedKey] as String;
-    }
-    return null;
-  }
-
-  set onPressedVal(String val) {
-    params[onPressedKey] = val;
-    widgetContext.onUpdate(id, widgetData);
-  }
-
-  String get onLongPressVal {
-    if (params[onLongPressKey] != null) {
-      return params[onLongPressKey] as String;
-    }
-    return null;
-  }
-
-  set onLongPressVal(String val) {
-    params[onLongPressKey] = val;
     widgetContext.onUpdate(id, widgetData);
   }
 
@@ -429,7 +459,7 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
                 (widgetContext.isDragging && iconVal?.build(context) != null)
             ? (iconVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': 'PhJuOuphASE',
+                  'id': 'BcjtZNIZsDi',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)
@@ -470,7 +500,7 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
                 (widgetContext.isDragging && labelVal?.build(context) != null)
             ? (labelVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': 'Tz6DtDZql1-',
+                  'id': '6qcxsiKp3r4',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)
@@ -506,6 +536,7 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
                   },
                 ),
               ),
+        mouseCursor: mouseCursorVal,
         onLongPress: () => onAction(context, onLongPressVal),
         onPressed: () => onAction(context, onPressedVal),
         padding: paddingVal,

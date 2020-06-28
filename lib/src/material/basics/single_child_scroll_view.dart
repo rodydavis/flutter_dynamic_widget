@@ -13,15 +13,9 @@ part 'single_child_scroll_view.g.dart';
 class SingleChildScrollViewBase extends _$SingleChildScrollViewBase {
   SingleChildScrollViewBase(this.widgetData, this.widgetContext);
 
-  @EnumKey(
-    defaultValue: 'Clip.hardEdge',
-    values: Clip.values,
-  )
-  Clip clipBehavior;
-
   ScrollController controller;
   Key key;
-  EdgeInsetsGeometry padding;
+  EdgeInsets padding;
   ScrollPhysics physics;
   bool primary;
 
@@ -37,6 +31,12 @@ class SingleChildScrollViewBase extends _$SingleChildScrollViewBase {
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
+
+  @EnumKey(
+    defaultValue: 'Clip.hardEdge',
+    values: Clip.values,
+  )
+  Clip clipBehavior;
 
   @WidgetKey.widget(
     defaultValue: 'Placeholder',

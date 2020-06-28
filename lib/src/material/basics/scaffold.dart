@@ -10,36 +10,15 @@ part 'scaffold.g.dart';
 @WidgetClass('Scaffold')
 class ScaffoldBase extends _$ScaffoldBase {
   ScaffoldBase(this.widgetData, this.widgetContext);
-  @WidgetKey.sizedWidget(
-    acceptWidth: 100,
-    acceptHeight: kToolbarHeight,
-  )
-  Widget appBar;
+
   Color backgroundColor;
-  @WidgetKey.widget(
-    acceptWidth: 100,
-    acceptHeight: 100,
-  )
-  Widget body;
-  @WidgetKey.widget(
-    acceptWidth: 100,
-    acceptHeight: 50,
-  )
-  Widget bottomNavigationBar;
   Widget bottomSheet;
   Widget drawer;
   double drawerEdgeDragWidth;
   Color drawerScrimColor;
   Widget endDrawer;
-  @WidgetKey.widget(
-    acceptWidth: 50,
-    acceptHeight: 50,
-  )
-  Widget floatingActionButton;
   FloatingActionButtonAnimator floatingActionButtonAnimator;
   Key key;
-  @ListWidgetKey(empty: false)
-  List<Widget> persistentFooterButtons;
   bool resizeToAvoidBottomInset;
   bool resizeToAvoidBottomPadding;
 
@@ -55,6 +34,33 @@ class ScaffoldBase extends _$ScaffoldBase {
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
+
+  @WidgetKey.sizedWidget(
+    acceptWidth: 100,
+    acceptHeight: kToolbarHeight,
+  )
+  Widget appBar;
+
+  @WidgetKey.widget(
+    acceptWidth: 100,
+    acceptHeight: 100,
+  )
+  Widget body;
+
+  @WidgetKey.widget(
+    acceptWidth: 100,
+    acceptHeight: 50,
+  )
+  Widget bottomNavigationBar;
+
+  @WidgetKey.widget(
+    acceptWidth: 50,
+    acceptHeight: 50,
+  )
+  Widget floatingActionButton;
+
+  @ListWidgetKey(empty: false)
+  List<Widget> persistentFooterButtons;
 
   @EnumKey.fab()
   FloatingActionButtonLocation floatingActionButtonLocation;

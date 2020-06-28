@@ -9,13 +9,13 @@ part of 'text.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, avoid_init_to_null
 
 abstract class _$TextBase extends WidgetBase {
-  String dataKey = '0';
   String keyKey = 'key';
   String maxLinesKey = 'maxLines';
   String semanticsLabelKey = 'semanticsLabel';
   String softWrapKey = 'softWrap';
-  String styleKey = 'style';
   String textScaleFactorKey = 'textScaleFactor';
+  String dataKey = '0';
+  String styleKey = 'style';
   String textAlignKey = 'textAlign';
   String textDirectionKey = 'textDirection';
   String overflowKey = 'overflow';
@@ -23,30 +23,18 @@ abstract class _$TextBase extends WidgetBase {
 
   @override
   Map<String, String> get properties => {
-        '0': 'String',
         'key': 'Key',
         'maxLines': 'int',
         'semanticsLabel': 'String',
         'softWrap': 'bool',
-        'style': 'TextStyleBase',
         'textScaleFactor': 'double',
+        '0': 'String',
+        'style': 'TextStyleBase',
         'textAlign': 'TextAlign',
         'textDirection': 'TextDirection',
         'overflow': 'TextOverflow',
         'textWidthBasis': 'TextWidthBasis',
       };
-
-  String get dataVal {
-    if (params[dataKey] != null) {
-      return params[dataKey] as String;
-    }
-    return '';
-  }
-
-  set dataVal(String val) {
-    params[dataKey] = val;
-    widgetContext.onUpdate(id, widgetData);
-  }
 
   Key get keyVal {
     if (params[keyKey] != null) {
@@ -110,18 +98,6 @@ abstract class _$TextBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
-  TextStyleBase get styleVal {
-    if (params[styleKey] != null) {
-      return TextStyleBase(params[styleKey], widgetContext);
-    }
-    return null;
-  }
-
-  set styleVal(TextStyleBase val) {
-    params[styleKey] = val;
-    widgetContext.onUpdate(id, widgetData);
-  }
-
   double get textScaleFactorVal {
     if (params[textScaleFactorKey] != null) {
       return params[textScaleFactorKey] as double;
@@ -131,6 +107,30 @@ abstract class _$TextBase extends WidgetBase {
 
   set textScaleFactorVal(double val) {
     params[textScaleFactorKey] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  String get dataVal {
+    if (params[dataKey] != null) {
+      return params[dataKey] as String;
+    }
+    return '';
+  }
+
+  set dataVal(String val) {
+    params[dataKey] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  TextStyleBase get styleVal {
+    if (params[styleKey] != null) {
+      return TextStyleBase(params[styleKey], widgetContext);
+    }
+    return null;
+  }
+
+  set styleVal(TextStyleBase val) {
+    params[styleKey] = val;
     widgetContext.onUpdate(id, widgetData);
   }
 

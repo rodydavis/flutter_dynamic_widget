@@ -102,23 +102,6 @@ FocusNode getFocusNode(Map<String, dynamic> data, [FocusNode fallback]) {
   );
 }
 
-BoxConstraints getBoxConstraints(Map<String, dynamic> data,
-    [BoxConstraints fallback]) {
-  if (data == null) return fallback;
-  if (data['params'] == null) return fallback;
-  final params = data['params'];
-  final maxWidth = getDouble(params['maxWidth']);
-  final minWidth = getDouble(params['minWidth']);
-  final maxHeight = getDouble(params['maxHeight']);
-  final minHeight = getDouble(params['minHeight']);
-  return BoxConstraints(
-    maxWidth: maxWidth,
-    minWidth: minWidth,
-    maxHeight: maxHeight,
-    minHeight: minHeight,
-  );
-}
-
 BorderSide getBorderSide(Map<String, dynamic> data,
     [BorderSide fallback = BorderSide.none]) {
   if (data == null) return fallback;

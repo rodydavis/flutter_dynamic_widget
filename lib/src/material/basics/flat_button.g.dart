@@ -16,15 +16,16 @@ abstract class _$FlatButtonBase extends WidgetBase {
   String highlightColorKey = 'highlightColor';
   String hoverColorKey = 'hoverColor';
   String keyKey = 'key';
+  String onLongPressKey = 'onLongPress';
+  String onPressedKey = 'onPressed';
   String paddingKey = 'padding';
   String splashColorKey = 'splashColor';
   String textColorKey = 'textColor';
+  String mouseCursorKey = 'mouseCursor';
   String visualDensityKey = 'visualDensity';
   String autofocusKey = 'autofocus';
   String clipBehaviorKey = 'clipBehavior';
   String childKey = 'child';
-  String onPressedKey = 'onPressed';
-  String onLongPressKey = 'onLongPress';
 
   @override
   Map<String, String> get properties => {
@@ -35,15 +36,16 @@ abstract class _$FlatButtonBase extends WidgetBase {
         'highlightColor': 'Color',
         'hoverColor': 'Color',
         'key': 'Key',
+        'onLongPress': 'Function',
+        'onPressed': 'Function',
         'padding': 'EdgeInsets',
         'splashColor': 'Color',
         'textColor': 'Color',
+        'mouseCursor': 'SystemMouseCursors',
         'visualDensity': 'VisualDensity',
         'autofocus': 'bool',
         'clipBehavior': 'Clip',
         'child': 'Widget',
-        'onPressed': 'Function',
-        'onLongPress': 'Function',
       };
 
   Color get colorVal {
@@ -228,6 +230,30 @@ abstract class _$FlatButtonBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
+  String get onLongPressVal {
+    if (params[onLongPressKey] != null) {
+      return params[onLongPressKey] as String;
+    }
+    return null;
+  }
+
+  set onLongPressVal(String val) {
+    params[onLongPressKey] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  String get onPressedVal {
+    if (params[onPressedKey] != null) {
+      return params[onPressedKey] as String;
+    }
+    return null;
+  }
+
+  set onPressedVal(String val) {
+    params[onPressedKey] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
   EdgeInsets get paddingVal {
     EdgeInsets _spacing = EdgeInsets.all(0.0);
     if (params[paddingKey] != null) {
@@ -311,6 +337,34 @@ abstract class _$FlatButtonBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
+  List<SystemMouseCursors> get mouseCursorValues => [
+        SystemMouseCursors.click,
+        SystemMouseCursors.basic,
+        SystemMouseCursors.forbidden,
+        SystemMouseCursors.grab,
+        SystemMouseCursors.grabbing,
+        SystemMouseCursors.horizontalDoubleArrow,
+        SystemMouseCursors.text,
+        SystemMouseCursors.verticalDoubleArrow,
+        SystemMouseCursors.none,
+      ];
+
+  SystemMouseCursors get mouseCursorVal {
+    if (params[mouseCursorKey] != null) {
+      final _value = params[mouseCursorKey].toString().replaceAll('#', '');
+      return mouseCursorValues.firstWhere(
+        (element) => element.toString() == _value,
+        orElse: () => SystemMouseCursors.click,
+      );
+    }
+    return SystemMouseCursors.click;
+  }
+
+  set mouseCursorVal(SystemMouseCursors val) {
+    params[mouseCursorKey] = "$val";
+    widgetContext.onUpdate(id, widgetData);
+  }
+
   List<VisualDensity> get visualDensityValues => [
         VisualDensity.adaptivePlatformDensity,
         VisualDensity.comfortable,
@@ -379,38 +433,14 @@ abstract class _$FlatButtonBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'SRjsINdrQte';
+    _data['id'] = 'K4--AIg6GTN';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'p-9LzKvURms';
+      _data['params']['style']['id'] = 'dVQnHFwPFdd';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'AnbGlFJYUSH';
+      _data['params']['0']['id'] = 'wufAlqsODXH';
     }
     params[childKey] = _data;
-    widgetContext.onUpdate(id, widgetData);
-  }
-
-  String get onPressedVal {
-    if (params[onPressedKey] != null) {
-      return params[onPressedKey] as String;
-    }
-    return null;
-  }
-
-  set onPressedVal(String val) {
-    params[onPressedKey] = val;
-    widgetContext.onUpdate(id, widgetData);
-  }
-
-  String get onLongPressVal {
-    if (params[onLongPressKey] != null) {
-      return params[onLongPressKey] as String;
-    }
-    return null;
-  }
-
-  set onLongPressVal(String val) {
-    params[onLongPressKey] = val;
     widgetContext.onUpdate(id, widgetData);
   }
 
@@ -424,7 +454,7 @@ abstract class _$FlatButtonBase extends WidgetBase {
                 (widgetContext.isDragging && childVal?.build(context) != null)
             ? (childVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': 'akvk6SL3gbC',
+                  'id': '2QRm3yduEcb',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)
@@ -468,6 +498,7 @@ abstract class _$FlatButtonBase extends WidgetBase {
         highlightColor: highlightColorVal,
         hoverColor: hoverColorVal,
         key: keyVal,
+        mouseCursor: mouseCursorVal,
         onLongPress: () => onAction(context, onLongPressVal),
         onPressed: () => onAction(context, onPressedVal),
         padding: paddingVal,

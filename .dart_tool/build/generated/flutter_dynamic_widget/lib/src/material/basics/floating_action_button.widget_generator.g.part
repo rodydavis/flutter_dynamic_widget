@@ -6,7 +6,6 @@
 
 abstract class _$FloatingActionButtonBase extends WidgetBase {
   String backgroundColorKey = 'backgroundColor';
-  String childKey = 'child';
   String disabledElevationKey = 'disabledElevation';
   String focusColorKey = 'focusColor';
   String focusElevationKey = 'focusElevation';
@@ -17,17 +16,18 @@ abstract class _$FloatingActionButtonBase extends WidgetBase {
   String onPressedKey = 'onPressed';
   String splashColorKey = 'splashColor';
   String tooltipKey = 'tooltip';
+  String childKey = 'child';
   String heroTagKey = 'heroTag';
   String autofocusKey = 'autofocus';
   String miniKey = 'mini';
   String isExtendedKey = 'isExtended';
   String materialTapTargetSizeKey = 'materialTapTargetSize';
   String clipBehaviorKey = 'clipBehavior';
+  String mouseCursorKey = 'mouseCursor';
 
   @override
   Map<String, String> get properties => {
         'backgroundColor': 'Color',
-        'child': 'Widget',
         'disabledElevation': 'double',
         'focusColor': 'Color',
         'focusElevation': 'double',
@@ -38,12 +38,14 @@ abstract class _$FloatingActionButtonBase extends WidgetBase {
         'onPressed': 'Function',
         'splashColor': 'Color',
         'tooltip': 'String',
+        'child': 'Widget',
         'heroTag': 'Object',
         'autofocus': 'bool',
         'mini': 'bool',
         'isExtended': 'bool',
         'materialTapTargetSize': 'MaterialTapTargetSize',
         'clipBehavior': 'Clip',
+        'mouseCursor': 'SystemMouseCursors',
       };
 
   Color get backgroundColorVal {
@@ -69,27 +71,6 @@ abstract class _$FloatingActionButtonBase extends WidgetBase {
 
   set backgroundColorVal(Color val) {
     params[backgroundColorKey] = "#Color(${val.value})";
-    widgetContext.onUpdate(id, widgetData);
-  }
-
-  final _childListen = ValueNotifier<bool>(false);
-  WidgetBase get childVal {
-    if (params[childKey] != null) {
-      return widgetRender(params[childKey]);
-    }
-    return null;
-  }
-
-  void childValUpdate(Map<String, dynamic> val) {
-    final _data = val;
-    _data['id'] = 'Eb452jl8Wck';
-    if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'k-jrT2mlP__';
-    }
-    if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'NgXBfWGdyhm';
-    }
-    params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);
   }
 
@@ -283,6 +264,27 @@ abstract class _$FloatingActionButtonBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
+  final _childListen = ValueNotifier<bool>(false);
+  WidgetBase get childVal {
+    if (params[childKey] != null) {
+      return widgetRender(params[childKey]);
+    }
+    return null;
+  }
+
+  void childValUpdate(Map<String, dynamic> val) {
+    final _data = val;
+    _data['id'] = 'FAkhaDif8S';
+    if (_data['name'] == 'Text') {
+      _data['params']['style']['id'] = 'oP6EmELbWV';
+    }
+    if (_data['name'] == 'Icon') {
+      _data['params']['0']['id'] = 'USfa_TTaFu';
+    }
+    params[childKey] = _data;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
   Object get heroTagVal {
     if (params[heroTagKey] != null) {
       return params[heroTagKey] as Object;
@@ -376,6 +378,34 @@ abstract class _$FloatingActionButtonBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
+  List<SystemMouseCursors> get mouseCursorValues => [
+        SystemMouseCursors.click,
+        SystemMouseCursors.basic,
+        SystemMouseCursors.forbidden,
+        SystemMouseCursors.grab,
+        SystemMouseCursors.grabbing,
+        SystemMouseCursors.horizontalDoubleArrow,
+        SystemMouseCursors.text,
+        SystemMouseCursors.verticalDoubleArrow,
+        SystemMouseCursors.none,
+      ];
+
+  SystemMouseCursors get mouseCursorVal {
+    if (params[mouseCursorKey] != null) {
+      final _value = params[mouseCursorKey].toString().replaceAll('#', '');
+      return mouseCursorValues.firstWhere(
+        (element) => element.toString() == _value,
+        orElse: () => SystemMouseCursors.click,
+      );
+    }
+    return SystemMouseCursors.click;
+  }
+
+  set mouseCursorVal(SystemMouseCursors val) {
+    params[mouseCursorKey] = "$val";
+    widgetContext.onUpdate(id, widgetData);
+  }
+
   @override
   Object build(BuildContext context) {
     return GestureDetector(
@@ -429,6 +459,7 @@ abstract class _$FloatingActionButtonBase extends WidgetBase {
         key: keyVal,
         materialTapTargetSize: materialTapTargetSizeVal,
         mini: miniVal,
+        mouseCursor: mouseCursorVal,
         onPressed: () => onAction(context, onPressedVal),
         splashColor: splashColorVal,
         tooltip: tooltipVal,

@@ -4,6 +4,7 @@ import 'package:widget_gen/widget_gen_annotations.dart';
 
 import '../../../flutter_dynamic_widget.dart';
 import '../library.dart';
+import '../properties/box_constraints.dart';
 
 part 'icon_button.g.dart';
 
@@ -12,10 +13,24 @@ class IconButtonBase extends _$IconButtonBase {
   IconButtonBase(this.widgetData, this.widgetContext);
 
   Color color;
-  BoxConstraints constraints;
+  BoxConstraintsBase constraints;
   Color disabledColor;
   Color focusColor;
-  // MouseCursor mouseCursor = SystemMouseCursors.click;
+  @EnumKey(
+    defaultValue: 'SystemMouseCursors.click',
+    values: [
+      'SystemMouseCursors.click',
+      'SystemMouseCursors.basic',
+      'SystemMouseCursors.forbidden',
+      'SystemMouseCursors.grab',
+      'SystemMouseCursors.grabbing',
+      'SystemMouseCursors.horizontalDoubleArrow',
+      'SystemMouseCursors.text',
+      'SystemMouseCursors.verticalDoubleArrow',
+      'SystemMouseCursors.none',
+    ],
+  )
+  SystemMouseCursors mouseCursor;
   FocusNode focusNode;
 
   Color highlightColor;
@@ -25,7 +40,6 @@ class IconButtonBase extends _$IconButtonBase {
   Color splashColor;
   double splashRadius;
   String tooltip;
-  VisualDensity visualDensity;
 
   @override
   final Map<String, dynamic> widgetData;
@@ -39,6 +53,16 @@ class IconButtonBase extends _$IconButtonBase {
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
+
+  @EnumKey(
+    values: [
+      'VisualDensity.adaptivePlatformDensity',
+      'VisualDensity.comfortable',
+      'VisualDensity.compact',
+      'VisualDensity.standard',
+    ],
+  )
+  VisualDensity visualDensity;
 
   @WidgetKey.widget(
     acceptWidth: 100,
