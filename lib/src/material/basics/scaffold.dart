@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dynamic_widget/src/material/enums.dart';
 import 'package:widget_gen/widget_gen_annotations.dart';
 
 import '../../../flutter_dynamic_widget.dart';
@@ -62,16 +63,13 @@ class ScaffoldBase extends _$ScaffoldBase {
   @ListWidgetKey(empty: false)
   List<Widget> persistentFooterButtons;
 
-  @EnumKey.fab()
+  @enumFloatingActionButtonLocation
   FloatingActionButtonLocation floatingActionButtonLocation;
 
   @PropertyKey(defaultValue: 'true')
   bool primary;
 
-  @EnumKey(
-    defaultValue: 'DragStartBehavior.start',
-    values: DragStartBehavior.values,
-  )
+  @enumDragStartBehavior
   DragStartBehavior drawerDragStartBehavior;
 
   @PropertyKey(defaultValue: 'false')

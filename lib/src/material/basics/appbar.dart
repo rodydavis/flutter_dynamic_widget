@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:widget_gen/widget_gen_annotations.dart';
 
 import '../../../flutter_dynamic_widget.dart';
+import '../enums.dart';
 import '../library.dart';
 import '../properties/text_theme.dart';
 
@@ -45,7 +46,7 @@ class AppBarBase extends _$AppBarBase {
   @PropertyKey(defaultValue: 'true')
   bool automaticallyImplyLeading;
 
-  @EnumKey(values: Brightness.values)
+  @enumBrightness
   Brightness brightness;
 
   @PropertyKey(defaultValue: 'true')

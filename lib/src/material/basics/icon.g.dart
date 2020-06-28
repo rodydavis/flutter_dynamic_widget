@@ -87,8 +87,8 @@ abstract class _$IconBase extends WidgetBase {
   }
 
   List<TextDirection> get textDirectionValues => [
-        TextDirection.rtl,
         TextDirection.ltr,
+        TextDirection.rtl,
       ];
 
   TextDirection get textDirectionVal {

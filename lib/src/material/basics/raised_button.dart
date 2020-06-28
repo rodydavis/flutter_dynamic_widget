@@ -5,6 +5,7 @@ import 'package:flutter/rendering.dart';
 import 'package:widget_gen/widget_gen_annotations.dart';
 
 import '../../../flutter_dynamic_widget.dart';
+import '../enums.dart';
 import '../library.dart';
 
 part 'raised_button.g.dart';
@@ -14,8 +15,13 @@ class RaisedButtonBase extends _$RaisedButtonBase {
   RaisedButtonBase(this.widgetData, this.widgetContext);
 
   Duration animationDuration;
+  @enumClip
+  Clip clipBehavior;
+
   Color color;
+  @enumBrightness
   Brightness colorBrightness;
+
   Color disabledColor;
   double disabledElevation;
   Color disabledTextColor;
@@ -36,6 +42,8 @@ class RaisedButtonBase extends _$RaisedButtonBase {
   Color splashColor;
   Color textColor;
   ButtonTextTheme textTheme;
+  @enumVisualDensity
+  VisualDensity visualDensity;
 
   @override
   final Map<String, dynamic> widgetData;
@@ -50,40 +58,11 @@ class RaisedButtonBase extends _$RaisedButtonBase {
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
 
-  @EnumKey(
-    defaultValue: 'SystemMouseCursors.click',
-    values: [
-      'SystemMouseCursors.click',
-      'SystemMouseCursors.basic',
-      'SystemMouseCursors.forbidden',
-      'SystemMouseCursors.grab',
-      'SystemMouseCursors.grabbing',
-      'SystemMouseCursors.horizontalDoubleArrow',
-      'SystemMouseCursors.text',
-      'SystemMouseCursors.verticalDoubleArrow',
-      'SystemMouseCursors.none',
-    ],
-  )
-  SystemMouseCursors mouseCursor;
-
-  @EnumKey(
-    values: [
-      'VisualDensity.adaptivePlatformDensity',
-      'VisualDensity.comfortable',
-      'VisualDensity.compact',
-      'VisualDensity.standard',
-    ],
-  )
-  VisualDensity visualDensity;
+  @enumMouseCursor
+  MouseCursor mouseCursor;
 
   @PropertyKey(defaultValue: 'false')
   bool autofocus;
-
-  @EnumKey(
-    defaultValue: 'Clip.none',
-    values: Clip.values,
-  )
-  Clip clipBehavior;
 
   @WidgetKey.widget(
     acceptWidth: 35,

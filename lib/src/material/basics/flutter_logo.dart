@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dynamic_widget/src/material/enums.dart';
 import 'package:widget_gen/widget_gen_annotations.dart';
 
 import '../../../flutter_dynamic_widget.dart';
@@ -10,10 +11,7 @@ part 'flutter_logo.g.dart';
 class FlutterLogoBase extends _$FlutterLogoBase {
   FlutterLogoBase(this.widgetData, this.widgetContext);
 
-  @EnumKey(
-    defaultValue: 'FlutterLogoStyle.markOnly',
-    values: FlutterLogoStyle.values,
-  )
+  @enumFlutterLogoStyle
   FlutterLogoStyle style = FlutterLogoStyle.markOnly;
 
   // @EnumKey(
@@ -47,3 +45,4 @@ class FlutterLogoBase extends _$FlutterLogoBase {
   @ColorKey(defaultValue: 0xFF616161)
   Color textColor;
 }
+

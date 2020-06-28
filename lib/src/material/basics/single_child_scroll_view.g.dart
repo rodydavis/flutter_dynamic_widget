@@ -9,26 +9,71 @@ part of 'single_child_scroll_view.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, avoid_init_to_null
 
 abstract class _$SingleChildScrollViewBase extends WidgetBase {
+  String clipBehaviorKey = 'clipBehavior';
+  String dragStartBehaviorKey = 'dragStartBehavior';
   String keyKey = 'key';
   String paddingKey = 'padding';
   String primaryKey = 'primary';
-  String clipBehaviorKey = 'clipBehavior';
-  String childKey = 'child';
   String scrollDirectionKey = 'scrollDirection';
+  String childKey = 'child';
   String reverseKey = 'reverse';
-  String dragStartBehaviorKey = 'dragStartBehavior';
 
   @override
   Map<String, String> get properties => {
+        'clipBehavior': 'Clip',
+        'dragStartBehavior': 'DragStartBehavior',
         'key': 'Key',
         'padding': 'EdgeInsets',
         'primary': 'bool',
-        'clipBehavior': 'Clip',
-        'child': 'Widget',
         'scrollDirection': 'Axis',
+        'child': 'Widget',
         'reverse': 'bool',
-        'dragStartBehavior': 'DragStartBehavior',
       };
+
+  List<Clip> get clipBehaviorValues => [
+        Clip.none,
+        Clip.antiAlias,
+        Clip.antiAliasWithSaveLayer,
+        Clip.hardEdge,
+      ];
+
+  Clip get clipBehaviorVal {
+    if (params[clipBehaviorKey] != null) {
+      final _value = params[clipBehaviorKey].toString().replaceAll('#', '');
+      return clipBehaviorValues.firstWhere(
+        (element) => element.toString() == _value,
+        orElse: () => Clip.hardEdge,
+      );
+    }
+    return Clip.hardEdge;
+  }
+
+  set clipBehaviorVal(Clip val) {
+    params[clipBehaviorKey] = "$val";
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  List<DragStartBehavior> get dragStartBehaviorValues => [
+        DragStartBehavior.start,
+        DragStartBehavior.down,
+      ];
+
+  DragStartBehavior get dragStartBehaviorVal {
+    if (params[dragStartBehaviorKey] != null) {
+      final _value =
+          params[dragStartBehaviorKey].toString().replaceAll('#', '');
+      return dragStartBehaviorValues.firstWhere(
+        (element) => element.toString() == _value,
+        orElse: () => DragStartBehavior.start,
+      );
+    }
+    return DragStartBehavior.start;
+  }
+
+  set dragStartBehaviorVal(DragStartBehavior val) {
+    params[dragStartBehaviorKey] = "$val";
+    widgetContext.onUpdate(id, widgetData);
+  }
 
   Key get keyVal {
     if (params[keyKey] != null) {
@@ -99,50 +144,6 @@ abstract class _$SingleChildScrollViewBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
-  List<Clip> get clipBehaviorValues => [
-        Clip.none,
-        Clip.hardEdge,
-        Clip.antiAlias,
-        Clip.antiAliasWithSaveLayer,
-      ];
-
-  Clip get clipBehaviorVal {
-    if (params[clipBehaviorKey] != null) {
-      final _value = params[clipBehaviorKey].toString().replaceAll('#', '');
-      return clipBehaviorValues.firstWhere(
-        (element) => element.toString() == _value,
-        orElse: () => Clip.hardEdge,
-      );
-    }
-    return Clip.hardEdge;
-  }
-
-  set clipBehaviorVal(Clip val) {
-    params[clipBehaviorKey] = "$val";
-    widgetContext.onUpdate(id, widgetData);
-  }
-
-  final _childListen = ValueNotifier<bool>(false);
-  WidgetBase get childVal {
-    if (params[childKey] != null) {
-      return widgetRender(params[childKey]);
-    }
-    return null;
-  }
-
-  void childValUpdate(Map<String, dynamic> val) {
-    final _data = val;
-    _data['id'] = 'wyTRdhpxwe';
-    if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'USQat96WqL';
-    }
-    if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'igEvuPQUVi';
-    }
-    params[childKey] = _data;
-    widgetContext.onUpdate(id, widgetData);
-  }
-
   List<Axis> get scrollDirectionValues => [
         Axis.horizontal,
         Axis.vertical,
@@ -164,6 +165,27 @@ abstract class _$SingleChildScrollViewBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
+  final _childListen = ValueNotifier<bool>(false);
+  WidgetBase get childVal {
+    if (params[childKey] != null) {
+      return widgetRender(params[childKey]);
+    }
+    return null;
+  }
+
+  void childValUpdate(Map<String, dynamic> val) {
+    final _data = val;
+    _data['id'] = 'puYAZyYZU8L';
+    if (_data['name'] == 'Text') {
+      _data['params']['style']['id'] = '4ictcfztIfX';
+    }
+    if (_data['name'] == 'Icon') {
+      _data['params']['0']['id'] = 'affv-1UOb2C';
+    }
+    params[childKey] = _data;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
   bool get reverseVal {
     if (params[reverseKey] != null) {
       return params[reverseKey] as bool;
@@ -176,28 +198,6 @@ abstract class _$SingleChildScrollViewBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
-  List<DragStartBehavior> get dragStartBehaviorValues => [
-        DragStartBehavior.down,
-        DragStartBehavior.start,
-      ];
-
-  DragStartBehavior get dragStartBehaviorVal {
-    if (params[dragStartBehaviorKey] != null) {
-      final _value =
-          params[dragStartBehaviorKey].toString().replaceAll('#', '');
-      return dragStartBehaviorValues.firstWhere(
-        (element) => element.toString() == _value,
-        orElse: () => DragStartBehavior.start,
-      );
-    }
-    return DragStartBehavior.start;
-  }
-
-  set dragStartBehaviorVal(DragStartBehavior val) {
-    params[dragStartBehaviorKey] = "$val";
-    widgetContext.onUpdate(id, widgetData);
-  }
-
   @override
   Object build(BuildContext context) {
     return GestureDetector(
@@ -207,7 +207,7 @@ abstract class _$SingleChildScrollViewBase extends WidgetBase {
                 (widgetContext.isDragging && childVal?.build(context) != null)
             ? (childVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': 'UD_ZnEOvEt',
+                  'id': 'BNWOegseh48',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)

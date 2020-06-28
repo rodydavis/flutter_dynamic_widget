@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:widget_gen/widget_gen_annotations.dart';
 
 import '../../../flutter_dynamic_widget.dart';
+import '../enums.dart';
 import '../library.dart';
 import '../properties/icon_data.dart';
 
@@ -31,6 +32,6 @@ class IconBase extends _$IconBase {
   @SupportedKey(key: '0')
   IconDataBase iconData;
 
-  @EnumKey(values: TextDirection.values)
+  @enumTextDirection
   TextDirection textDirection;
 }

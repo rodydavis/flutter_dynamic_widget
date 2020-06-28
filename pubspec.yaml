@@ -12,7 +12,7 @@ dependencies:
   build_runner: ^1.10.0
   shortid: ^0.1.1
   url_launcher: ^5.4.7
-  widget_gen: ^1.0.0+5
+  widget_gen: ^1.0.0+14
   meta: ^1.1.8
 
 dev_dependencies:

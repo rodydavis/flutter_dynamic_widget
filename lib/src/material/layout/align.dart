@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:widget_gen/widget_gen_annotations.dart';
 
 import '../../../flutter_dynamic_widget.dart';
+import '../enums.dart';
 import '../library.dart';
 
 part 'align.g.dart';
@@ -36,6 +37,6 @@ class AlignBase extends _$AlignBase {
   )
   Widget child;
 
-  @EnumKey.alignment('Alignment.center')
+  @enumAlignment
   Alignment alignment;
 }

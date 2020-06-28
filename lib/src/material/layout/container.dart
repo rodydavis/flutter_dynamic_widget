@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:widget_gen/widget_gen_annotations.dart';
 
 import '../../../flutter_dynamic_widget.dart';
+import '../enums.dart';
 import '../library.dart';
 import '../properties/box_constraints.dart';
 
@@ -40,12 +41,9 @@ class ContainerBase extends _$ContainerBase {
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
 
-  @EnumKey(
-    defaultValue: 'Clip.none',
-    values: Clip.values,
-  )
+  @enumClip
   Clip clipBehavior;
 
-  @EnumKey.alignment()
+  @enumAlignment
   Alignment alignment;
 }

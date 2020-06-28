@@ -43,9 +43,9 @@ abstract class _$MaterialAppBase extends WidgetBase {
       };
 
   List<ThemeMode> get themeModeValues => [
-        ThemeMode.system,
-        ThemeMode.light,
         ThemeMode.dark,
+        ThemeMode.light,
+        ThemeMode.system,
       ];
 
   ThemeMode get themeModeVal {
@@ -246,12 +246,12 @@ abstract class _$MaterialAppBase extends WidgetBase {
 
   void homeValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'yDrzZcn5Z';
+    _data['id'] = 'XexmCTOCDy';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'f5LzeHwgQO';
+      _data['params']['style']['id'] = '1w3eXfXkBV';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'ZT8VuGW4Jh';
+      _data['params']['0']['id'] = 'IZ8hDRRzJb';
     }
     params[homeKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -270,7 +270,7 @@ abstract class _$MaterialAppBase extends WidgetBase {
               (widgetContext.isDragging && homeVal?.build(context) != null)
           ? (homeVal?.build(context) ??
               (widgetRender(json.decode(json.encode({
-                'id': 'lu85b2QcVf',
+                'id': 'rQi7lDsYWV',
                 'name': 'Placeholder',
                 'params': {},
               }))) as WidgetBase)

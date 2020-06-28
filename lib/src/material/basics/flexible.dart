@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:widget_gen/widget_gen_annotations.dart';
 
 import '../../../flutter_dynamic_widget.dart';
+import '../enums.dart';
 import '../library.dart';
 
 part 'flexible.g.dart';
@@ -30,6 +31,6 @@ class FlexibleBase extends _$FlexibleBase {
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
 
-  @EnumKey(defaultValue: 'FlexFit.loose', values: FlexFit.values)
+  @enumFlexFit
   FlexFit fit;
 }

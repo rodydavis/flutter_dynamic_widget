@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:widget_gen/widget_gen_annotations.dart';
 
 import '../../../flutter_dynamic_widget.dart';
+import '../enums.dart';
 import '../library.dart';
 import '../properties/text_style.dart';
 
@@ -39,15 +40,15 @@ class TextBase extends _$TextBase {
   @SupportedKey()
   TextStyleBase style;
 
-  @EnumKey(values: TextAlign.values)
+  @enumTextAlign
   TextAlign textAlign;
 
-  @EnumKey(values: TextDirection.values)
+  @enumTextDirection
   TextDirection textDirection;
 
-  @EnumKey(values: TextOverflow.values)
+  @enumTextOverflow
   TextOverflow overflow;
 
-  @EnumKey(values: TextWidthBasis.values)
+  @enumTextWidthBasis
   TextWidthBasis textWidthBasis;
 }

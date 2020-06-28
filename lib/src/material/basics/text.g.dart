@@ -135,12 +135,12 @@ abstract class _$TextBase extends WidgetBase {
   }
 
   List<TextAlign> get textAlignValues => [
+        TextAlign.center,
+        TextAlign.end,
+        TextAlign.justify,
         TextAlign.left,
         TextAlign.right,
-        TextAlign.center,
-        TextAlign.justify,
         TextAlign.start,
-        TextAlign.end,
       ];
 
   TextAlign get textAlignVal {
@@ -160,8 +160,8 @@ abstract class _$TextBase extends WidgetBase {
   }
 
   List<TextDirection> get textDirectionValues => [
-        TextDirection.rtl,
         TextDirection.ltr,
+        TextDirection.rtl,
       ];
 
   TextDirection get textDirectionVal {
@@ -182,8 +182,8 @@ abstract class _$TextBase extends WidgetBase {
 
   List<TextOverflow> get overflowValues => [
         TextOverflow.clip,
-        TextOverflow.fade,
         TextOverflow.ellipsis,
+        TextOverflow.fade,
         TextOverflow.visible,
       ];
 

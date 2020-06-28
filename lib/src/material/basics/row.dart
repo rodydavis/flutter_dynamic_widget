@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:widget_gen/widget_gen_annotations.dart';
 
 import '../../../flutter_dynamic_widget.dart';
+import '../enums.dart';
 import '../library.dart';
 
 part 'row.g.dart';
@@ -26,33 +27,21 @@ class RowBase extends _$RowBase {
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
 
-  @EnumKey(
-    defaultValue: 'MainAxisSize.max',
-    values: MainAxisSize.values,
-  )
+  @enumMainAxisSize
   MainAxisSize mainAxisSize;
 
-  @EnumKey(values: TextBaseline.values)
+  @enumTextBaseline
   TextBaseline textBaseline;
 
-  @EnumKey(values: TextDirection.values)
+  @enumTextDirection
   TextDirection textDirection;
 
-  @EnumKey(
-    defaultValue: 'MainAxisAlignment.start',
-    values: MainAxisAlignment.values,
-  )
+  @enumMainAxisAlignment
   MainAxisAlignment mainAxisAlignment;
 
-  @EnumKey(
-    defaultValue: 'CrossAxisAlignment.center',
-    values: CrossAxisAlignment.values,
-  )
+  @enumCrossAxisAlignment
   CrossAxisAlignment crossAxisAlignment;
 
-  @EnumKey(
-    defaultValue: 'VerticalDirection.down',
-    values: VerticalDirection.values,
-  )
+  @enumVerticalDirection
   VerticalDirection verticalDirection;
 }

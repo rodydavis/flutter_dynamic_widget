@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:widget_gen/widget_gen_annotations.dart';
 
 import '../../../flutter_dynamic_widget.dart';
+import '../enums.dart';
 import '../library.dart';
 import 'text_theme.dart';
 
@@ -11,98 +12,83 @@ part 'theme_data.g.dart';
 @PropertyClass('ThemeData')
 class ThemeDataBase extends _$ThemeDataBase {
   ThemeDataBase(this.widgetData, this.widgetContext);
-  @EnumKey(
-    values: Brightness.values,
-  )
-  Brightness brightness;
-  @EnumKey(
-    values: [
-      'VisualDensity.adaptivePlatformDensity',
-      'VisualDensity.comfortable',
-      'VisualDensity.compact',
-      'VisualDensity.standard',
-    ],
-  )
-  VisualDensity visualDensity;
-  MaterialColor primarySwatch;
-  Color primaryColor;
-  @EnumKey(
-    values: Brightness.values,
-  )
-  Brightness primaryColorBrightness;
-  Color primaryColorLight;
-  Color primaryColorDark;
+
   Color accentColor;
-  @EnumKey(
-    values: Brightness.values,
-  )
+  @enumBrightness
   Brightness accentColorBrightness;
-  Color canvasColor;
-  Color scaffoldBackgroundColor;
+
+  IconThemeData accentIconTheme;
+  AppBarTheme appBarTheme;
+  bool applyElevationOverlayColor;
+  Color backgroundColor;
+  MaterialBannerThemeData bannerTheme;
   Color bottomAppBarColor;
-  Color cardColor;
-  Color dividerColor;
-  Color focusColor;
-  Color hoverColor;
-  Color highlightColor;
-  Color splashColor;
-  InteractiveInkFeatureFactory splashFactory;
-  Color selectedRowColor;
-  Color unselectedWidgetColor;
-  Color disabledColor;
+  BottomAppBarTheme bottomAppBarTheme;
+  BottomNavigationBarThemeData bottomNavigationBarTheme;
+  BottomSheetThemeData bottomSheetTheme;
+  @enumBrightness
+  Brightness brightness;
+
+  ButtonBarThemeData buttonBarTheme;
   Color buttonColor;
   ButtonThemeData buttonTheme;
-  ToggleButtonsThemeData toggleButtonsTheme;
-  Color secondaryHeaderColor;
-  Color textSelectionColor;
-  Color cursorColor;
-  Color textSelectionHandleColor;
-  Color backgroundColor;
-  Color dialogBackgroundColor;
-  Color indicatorColor;
-  Color hintColor;
-  Color errorColor;
-  Color toggleableActiveColor;
-  String fontFamily;
-  @SupportedKey()
-  TextThemeBase textTheme;
-  @SupportedKey()
-  TextThemeBase primaryTextTheme;
-  @SupportedKey()
-  TextThemeBase accentTextTheme;
-  InputDecorationTheme inputDecorationTheme;
-  IconThemeData iconTheme;
-  IconThemeData primaryIconTheme;
-  IconThemeData accentIconTheme;
-  SliderThemeData sliderTheme;
-  TabBarTheme tabBarTheme;
-  TooltipThemeData tooltipTheme;
+  Color canvasColor;
+  Color cardColor;
   CardTheme cardTheme;
   ChipThemeData chipTheme;
-  @EnumKey(
-    values: TargetPlatform.values,
-  )
-  TargetPlatform platform;
-  MaterialTapTargetSize materialTapTargetSize;
-  bool applyElevationOverlayColor;
-  PageTransitionsTheme pageTransitionsTheme;
-  AppBarTheme appBarTheme;
-  BottomAppBarTheme bottomAppBarTheme;
   ColorScheme colorScheme;
-  DialogTheme dialogTheme;
-  FloatingActionButtonThemeData floatingActionButtonTheme;
-  NavigationRailThemeData navigationRailTheme;
-  Typography typography;
   CupertinoThemeData cupertinoOverrideTheme;
-  SnackBarThemeData snackBarTheme;
-  BottomSheetThemeData bottomSheetTheme;
-  PopupMenuThemeData popupMenuTheme;
-  MaterialBannerThemeData bannerTheme;
+  Color cursorColor;
+  Color dialogBackgroundColor;
+  DialogTheme dialogTheme;
+  Color disabledColor;
+  Color dividerColor;
   DividerThemeData dividerTheme;
-  ButtonBarThemeData buttonBarTheme;
-  BottomNavigationBarThemeData bottomNavigationBarTheme;
+  Color errorColor;
   // TimePickerThemeData timePickerTheme;
   bool fixTextFieldOutlineLabel;
+
+  FloatingActionButtonThemeData floatingActionButtonTheme;
+  Color focusColor;
+  String fontFamily;
+  Color highlightColor;
+  Color hintColor;
+  Color hoverColor;
+  IconThemeData iconTheme;
+  Color indicatorColor;
+  InputDecorationTheme inputDecorationTheme;
+  MaterialTapTargetSize materialTapTargetSize;
+  NavigationRailThemeData navigationRailTheme;
+  PageTransitionsTheme pageTransitionsTheme;
+  @enumTargetPlatform
+  TargetPlatform platform;
+
+  PopupMenuThemeData popupMenuTheme;
+  Color primaryColor;
+  @enumBrightness
+  Brightness primaryColorBrightness;
+
+  Color primaryColorDark;
+  Color primaryColorLight;
+  IconThemeData primaryIconTheme;
+  MaterialColor primarySwatch;
+  Color scaffoldBackgroundColor;
+  Color secondaryHeaderColor;
+  Color selectedRowColor;
+  SliderThemeData sliderTheme;
+  SnackBarThemeData snackBarTheme;
+  Color splashColor;
+  InteractiveInkFeatureFactory splashFactory;
+  TabBarTheme tabBarTheme;
+  Color textSelectionColor;
+  Color textSelectionHandleColor;
+  Color toggleableActiveColor;
+  ToggleButtonsThemeData toggleButtonsTheme;
+  TooltipThemeData tooltipTheme;
+  Typography typography;
+  Color unselectedWidgetColor;
+  @enumVisualDensity
+  VisualDensity visualDensity;
 
   @override
   final Map<String, dynamic> widgetData;
@@ -111,9 +97,18 @@ class ThemeDataBase extends _$ThemeDataBase {
   final WidgetContext widgetContext;
 
   @override
-  get onAction => (context, val) => MaterialBase.onAction(context, val);
-
-  @override
   GenerateWidget get widgetRender =>
       (val) => MaterialBase(val, widgetContext).base;
+
+  @override
+  get onAction => (context, val) => MaterialBase.onAction(context, val);
+
+  @SupportedKey()
+  TextThemeBase textTheme;
+
+  @SupportedKey()
+  TextThemeBase primaryTextTheme;
+
+  @SupportedKey()
+  TextThemeBase accentTextTheme;
 }

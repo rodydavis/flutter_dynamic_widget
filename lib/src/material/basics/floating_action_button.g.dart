@@ -49,7 +49,7 @@ abstract class _$FloatingActionButtonBase extends WidgetBase {
         'isExtended': 'bool',
         'materialTapTargetSize': 'MaterialTapTargetSize',
         'clipBehavior': 'Clip',
-        'mouseCursor': 'SystemMouseCursors',
+        'mouseCursor': 'MouseCursor',
       };
 
   Color get backgroundColorVal {
@@ -278,12 +278,12 @@ abstract class _$FloatingActionButtonBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'FAkhaDif8S';
+    _data['id'] = 'YkqplQPsn';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'oP6EmELbWV';
+      _data['params']['style']['id'] = 'GTc6AQJKmW';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'USfa_TTaFu';
+      _data['params']['0']['id'] = 'suJzJe6Igz';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -338,8 +338,8 @@ abstract class _$FloatingActionButtonBase extends WidgetBase {
   }
 
   List<MaterialTapTargetSize> get materialTapTargetSizeValues => [
-        MaterialTapTargetSize.padded,
         MaterialTapTargetSize.shrinkWrap,
+        MaterialTapTargetSize.padded,
       ];
 
   MaterialTapTargetSize get materialTapTargetSizeVal {
@@ -361,9 +361,9 @@ abstract class _$FloatingActionButtonBase extends WidgetBase {
 
   List<Clip> get clipBehaviorValues => [
         Clip.none,
-        Clip.hardEdge,
         Clip.antiAlias,
         Clip.antiAliasWithSaveLayer,
+        Clip.hardEdge,
       ];
 
   Clip get clipBehaviorVal {
@@ -382,7 +382,7 @@ abstract class _$FloatingActionButtonBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
-  List<SystemMouseCursors> get mouseCursorValues => [
+  List<MouseCursor> get mouseCursorValues => [
         SystemMouseCursors.click,
         SystemMouseCursors.basic,
         SystemMouseCursors.forbidden,
@@ -394,7 +394,7 @@ abstract class _$FloatingActionButtonBase extends WidgetBase {
         SystemMouseCursors.none,
       ];
 
-  SystemMouseCursors get mouseCursorVal {
+  MouseCursor get mouseCursorVal {
     if (params[mouseCursorKey] != null) {
       final _value = params[mouseCursorKey].toString().replaceAll('#', '');
       return mouseCursorValues.firstWhere(
@@ -405,7 +405,7 @@ abstract class _$FloatingActionButtonBase extends WidgetBase {
     return SystemMouseCursors.click;
   }
 
-  set mouseCursorVal(SystemMouseCursors val) {
+  set mouseCursorVal(MouseCursor val) {
     params[mouseCursorKey] = "$val";
     widgetContext.onUpdate(id, widgetData);
   }

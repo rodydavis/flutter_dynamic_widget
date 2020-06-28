@@ -5,6 +5,7 @@ import 'package:flutter/rendering.dart';
 import 'package:widget_gen/widget_gen_annotations.dart';
 
 import '../../../flutter_dynamic_widget.dart';
+import '../enums.dart';
 import '../library.dart';
 
 part 'raised_button_icon.g.dart';
@@ -15,7 +16,6 @@ class RaisedButtonIconBase extends _$RaisedButtonIconBase {
 
   Duration animationDuration;
   Color color;
-  Brightness colorBrightness;
   Color disabledColor;
   double disabledElevation;
   Color disabledTextColor;
@@ -48,29 +48,16 @@ class RaisedButtonIconBase extends _$RaisedButtonIconBase {
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
 
-  @EnumKey(
-    defaultValue: 'SystemMouseCursors.click',
-    values: [
-      'SystemMouseCursors.click',
-      'SystemMouseCursors.basic',
-      'SystemMouseCursors.forbidden',
-      'SystemMouseCursors.grab',
-      'SystemMouseCursors.grabbing',
-      'SystemMouseCursors.horizontalDoubleArrow',
-      'SystemMouseCursors.text',
-      'SystemMouseCursors.verticalDoubleArrow',
-      'SystemMouseCursors.none',
-    ],
-  )
-  SystemMouseCursors mouseCursor;
+  @enumBrightness
+  Brightness colorBrightness;
+
+  @enumMouseCursor
+  MouseCursor mouseCursor;
 
   @PropertyKey(defaultValue: 'false')
   bool autofocus;
 
-  @EnumKey(
-    defaultValue: 'Clip.none',
-    values: Clip.values,
-  )
+  @enumClip
   Clip clipBehavior;
 
   @WidgetKey.widget(

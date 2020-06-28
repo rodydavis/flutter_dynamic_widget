@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:widget_gen/widget_gen_annotations.dart';
 
 import '../../../flutter_dynamic_widget.dart';
+import '../enums.dart';
 import '../library.dart';
 
 part 'baseline.g.dart';
@@ -35,6 +36,6 @@ class BaselineBase extends _$BaselineBase {
   )
   Widget child;
 
-  @EnumKey(values: TextBaseline.values)
+  @enumTextBaseline
   TextBaseline baselineType;
 }

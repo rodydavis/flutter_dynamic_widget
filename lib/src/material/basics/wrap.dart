@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:widget_gen/widget_gen_annotations.dart';
 
 import '../../../flutter_dynamic_widget.dart';
+import '../enums.dart';
 import '../library.dart';
 
 part 'wrap.g.dart';
@@ -26,31 +27,19 @@ class WrapBase extends _$WrapBase {
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
 
-  @EnumKey(
-    defaultValue: 'Axis.horizontal',
-    values: Axis.values,
-  )
+  @enumAxisHorizontal
   Axis direction;
 
-  @EnumKey(values: TextDirection.values)
+  @enumTextDirection
   TextDirection textDirection;
 
-  @EnumKey(
-    defaultValue: 'WrapAlignment.start',
-    values: WrapAlignment.values,
-  )
+  @enumWrapAlignment
   WrapAlignment alignment, runAlignment;
 
-  @EnumKey(
-    defaultValue: 'WrapCrossAlignment.center',
-    values: WrapCrossAlignment.values,
-  )
+  @enumWrapCrossAlignment
   WrapCrossAlignment crossAxisAlignment;
 
-  @EnumKey(
-    defaultValue: 'VerticalDirection.down',
-    values: VerticalDirection.values,
-  )
+  @enumVerticalDirection
   VerticalDirection verticalDirection;
 
   @PropertyKey(defaultValue: '0.0')

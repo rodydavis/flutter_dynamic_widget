@@ -305,10 +305,10 @@ abstract class _$TextStyleBase extends PropertyBase {
   }
 
   List<TextDecorationStyle> get decorationStyleValues => [
-        TextDecorationStyle.solid,
-        TextDecorationStyle.double,
-        TextDecorationStyle.dotted,
         TextDecorationStyle.dashed,
+        TextDecorationStyle.dotted,
+        TextDecorationStyle.double,
+        TextDecorationStyle.solid,
         TextDecorationStyle.wavy,
       ];
 

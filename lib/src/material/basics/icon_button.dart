@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_dynamic_widget/src/material/enums.dart';
 import 'package:widget_gen/widget_gen_annotations.dart';
 
 import '../../../flutter_dynamic_widget.dart';
@@ -16,23 +17,7 @@ class IconButtonBase extends _$IconButtonBase {
   BoxConstraintsBase constraints;
   Color disabledColor;
   Color focusColor;
-  @EnumKey(
-    defaultValue: 'SystemMouseCursors.click',
-    values: [
-      'SystemMouseCursors.click',
-      'SystemMouseCursors.basic',
-      'SystemMouseCursors.forbidden',
-      'SystemMouseCursors.grab',
-      'SystemMouseCursors.grabbing',
-      'SystemMouseCursors.horizontalDoubleArrow',
-      'SystemMouseCursors.text',
-      'SystemMouseCursors.verticalDoubleArrow',
-      'SystemMouseCursors.none',
-    ],
-  )
-  SystemMouseCursors mouseCursor;
   FocusNode focusNode;
-
   Color highlightColor;
   Color hoverColor;
   Key key;
@@ -53,6 +38,9 @@ class IconButtonBase extends _$IconButtonBase {
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
+
+  @enumMouseCursor
+  MouseCursor mouseCursor;
 
   @EnumKey(
     values: [
@@ -76,7 +64,7 @@ class IconButtonBase extends _$IconButtonBase {
   @EdgeInsetsKey(defaultValue: 8)
   EdgeInsets padding;
 
-  @EnumKey.alignment()
+  @enumAlignment
   Alignment alignment;
 
   @PropertyKey(defaultValue: 'false')

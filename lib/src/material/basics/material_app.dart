@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:widget_gen/widget_gen_annotations.dart';
 
 import '../../../flutter_dynamic_widget.dart';
+import '../enums.dart';
 import '../library.dart';
 import '../properties/theme_data.dart';
 
@@ -13,10 +14,7 @@ part 'material_app.g.dart';
 class MaterialAppBase extends _$MaterialAppBase {
   MaterialAppBase(this.widgetData, this.widgetContext);
 
-  @EnumKey(
-    defaultValue: 'ThemeMode.system',
-    values: ThemeMode.values,
-  )
+  @enumThemeMode
   ThemeMode themeMode = ThemeMode.system;
 
   Map<Type, Action<Intent>> actions;

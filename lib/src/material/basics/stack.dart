@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:widget_gen/widget_gen_annotations.dart';
 
 import '../../../flutter_dynamic_widget.dart';
+import '../enums.dart';
 import '../library.dart';
 
 part 'stack.g.dart';
@@ -26,18 +27,15 @@ class StackBase extends _$StackBase {
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
 
-  @EnumKey(
-    defaultValue: 'Overflow.clip',
-    values: Overflow.values,
-  )
+  @enumOverflow
   Overflow overflow;
 
-  @EnumKey.alignment('Alignment.topLeft')
+  @enumAlignmentTopLeft
   Alignment alignment;
 
-  @EnumKey(values: TextDirection.values)
+  @enumTextDirection
   TextDirection textDirection;
 
-  @EnumKey(defaultValue: 'StackFit.loose', values: StackFit.values)
+  @enumStackFit
   StackFit fit;
 }

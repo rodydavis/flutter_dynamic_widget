@@ -82,8 +82,8 @@ abstract class _$FlexBase extends WidgetBase {
   }
 
   List<MainAxisSize> get mainAxisSizeValues => [
-        MainAxisSize.min,
         MainAxisSize.max,
+        MainAxisSize.min,
       ];
 
   MainAxisSize get mainAxisSizeVal {
@@ -145,8 +145,8 @@ abstract class _$FlexBase extends WidgetBase {
   }
 
   List<TextDirection> get textDirectionValues => [
-        TextDirection.rtl,
         TextDirection.ltr,
+        TextDirection.rtl,
       ];
 
   TextDirection get textDirectionVal {
@@ -166,12 +166,12 @@ abstract class _$FlexBase extends WidgetBase {
   }
 
   List<MainAxisAlignment> get mainAxisAlignmentValues => [
-        MainAxisAlignment.start,
-        MainAxisAlignment.end,
         MainAxisAlignment.center,
-        MainAxisAlignment.spaceBetween,
+        MainAxisAlignment.end,
         MainAxisAlignment.spaceAround,
+        MainAxisAlignment.spaceBetween,
         MainAxisAlignment.spaceEvenly,
+        MainAxisAlignment.start,
       ];
 
   MainAxisAlignment get mainAxisAlignmentVal {
@@ -192,11 +192,11 @@ abstract class _$FlexBase extends WidgetBase {
   }
 
   List<CrossAxisAlignment> get crossAxisAlignmentValues => [
-        CrossAxisAlignment.start,
-        CrossAxisAlignment.end,
-        CrossAxisAlignment.center,
-        CrossAxisAlignment.stretch,
         CrossAxisAlignment.baseline,
+        CrossAxisAlignment.center,
+        CrossAxisAlignment.end,
+        CrossAxisAlignment.start,
+        CrossAxisAlignment.stretch,
       ];
 
   CrossAxisAlignment get crossAxisAlignmentVal {

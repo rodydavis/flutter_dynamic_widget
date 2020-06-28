@@ -111,12 +111,12 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
 
   void bottomValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'kkb2YIodnz-';
+    _data['id'] = 'nZDWRhAcZgD';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = '2KSYRm3rpgf';
+      _data['params']['style']['id'] = 'qB96FWDeNoe';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'bXSOYxsKDse';
+      _data['params']['0']['id'] = 'KpTXgVPzZQH';
     }
     params[bottomKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -155,12 +155,12 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
 
   void flexibleSpaceValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'wLd4fL-Mz9D';
+    _data['id'] = 'zHOskd8Tpqw';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'mvfM3Q1dBCi';
+      _data['params']['style']['id'] = 'Ztz1lEJ3myT';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'XPOMKaYnpCD';
+      _data['params']['0']['id'] = 'hqem6yu74hY';
     }
     params[flexibleSpaceKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -202,12 +202,12 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
 
   void leadingValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'lhhO5Oz2Cws';
+    _data['id'] = 'bWR3jYP2tDT';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'IYwl3MQwNvU';
+      _data['params']['style']['id'] = 'Pgpoc-lkd1J';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'ghTofg56kZW';
+      _data['params']['0']['id'] = 'UxfJI9WT3N-';
     }
     params[leadingKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -261,12 +261,12 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
 
   void titleValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = '_vI7b-Nn4Hy';
+    _data['id'] = '6QzuwXEFcpJ';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'lhnaj83BH_2';
+      _data['params']['style']['id'] = 'tteZi2iyPyQ';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'fIjlw8oJ8Ai';
+      _data['params']['0']['id'] = 'JpYYzFb5le6';
     }
     params[titleKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -285,8 +285,8 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
   }
 
   List<Brightness> get brightnessValues => [
-        Brightness.dark,
         Brightness.light,
+        Brightness.dark,
       ];
 
   Brightness get brightnessVal {

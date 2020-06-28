@@ -23,8 +23,8 @@ abstract class _$FlutterLogoBase extends WidgetBase {
       };
 
   List<FlutterLogoStyle> get styleValues => [
-        FlutterLogoStyle.markOnly,
         FlutterLogoStyle.horizontal,
+        FlutterLogoStyle.markOnly,
         FlutterLogoStyle.stacked,
       ];
 

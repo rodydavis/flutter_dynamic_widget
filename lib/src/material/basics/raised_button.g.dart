@@ -9,7 +9,9 @@ part of 'raised_button.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, avoid_init_to_null
 
 abstract class _$RaisedButtonBase extends WidgetBase {
+  String clipBehaviorKey = 'clipBehavior';
   String colorKey = 'color';
+  String colorBrightnessKey = 'colorBrightness';
   String disabledColorKey = 'disabledColor';
   String disabledElevationKey = 'disabledElevation';
   String disabledTextColorKey = 'disabledTextColor';
@@ -26,15 +28,16 @@ abstract class _$RaisedButtonBase extends WidgetBase {
   String paddingKey = 'padding';
   String splashColorKey = 'splashColor';
   String textColorKey = 'textColor';
-  String mouseCursorKey = 'mouseCursor';
   String visualDensityKey = 'visualDensity';
+  String mouseCursorKey = 'mouseCursor';
   String autofocusKey = 'autofocus';
-  String clipBehaviorKey = 'clipBehavior';
   String childKey = 'child';
 
   @override
   Map<String, String> get properties => {
+        'clipBehavior': 'Clip',
         'color': 'Color',
+        'colorBrightness': 'Brightness',
         'disabledColor': 'Color',
         'disabledElevation': 'double',
         'disabledTextColor': 'Color',
@@ -51,12 +54,34 @@ abstract class _$RaisedButtonBase extends WidgetBase {
         'padding': 'EdgeInsets',
         'splashColor': 'Color',
         'textColor': 'Color',
-        'mouseCursor': 'SystemMouseCursors',
         'visualDensity': 'VisualDensity',
+        'mouseCursor': 'MouseCursor',
         'autofocus': 'bool',
-        'clipBehavior': 'Clip',
         'child': 'Widget',
       };
+
+  List<Clip> get clipBehaviorValues => [
+        Clip.none,
+        Clip.antiAlias,
+        Clip.antiAliasWithSaveLayer,
+        Clip.hardEdge,
+      ];
+
+  Clip get clipBehaviorVal {
+    if (params[clipBehaviorKey] != null) {
+      final _value = params[clipBehaviorKey].toString().replaceAll('#', '');
+      return clipBehaviorValues.firstWhere(
+        (element) => element.toString() == _value,
+        orElse: () => Clip.none,
+      );
+    }
+    return Clip.none;
+  }
+
+  set clipBehaviorVal(Clip val) {
+    params[clipBehaviorKey] = "$val";
+    widgetContext.onUpdate(id, widgetData);
+  }
 
   Color get colorVal {
     if (params[colorKey] != null) {
@@ -81,6 +106,27 @@ abstract class _$RaisedButtonBase extends WidgetBase {
 
   set colorVal(Color val) {
     params[colorKey] = "#Color(${val.value})";
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  List<Brightness> get colorBrightnessValues => [
+        Brightness.light,
+        Brightness.dark,
+      ];
+
+  Brightness get colorBrightnessVal {
+    if (params[colorBrightnessKey] != null) {
+      final _value = params[colorBrightnessKey].toString().replaceAll('#', '');
+      return colorBrightnessValues.firstWhere(
+        (element) => element.toString() == _value,
+        orElse: () => null,
+      );
+    }
+    return null;
+  }
+
+  set colorBrightnessVal(Brightness val) {
+    params[colorBrightnessKey] = "$val";
     widgetContext.onUpdate(id, widgetData);
   }
 
@@ -407,34 +453,6 @@ abstract class _$RaisedButtonBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
-  List<SystemMouseCursors> get mouseCursorValues => [
-        SystemMouseCursors.click,
-        SystemMouseCursors.basic,
-        SystemMouseCursors.forbidden,
-        SystemMouseCursors.grab,
-        SystemMouseCursors.grabbing,
-        SystemMouseCursors.horizontalDoubleArrow,
-        SystemMouseCursors.text,
-        SystemMouseCursors.verticalDoubleArrow,
-        SystemMouseCursors.none,
-      ];
-
-  SystemMouseCursors get mouseCursorVal {
-    if (params[mouseCursorKey] != null) {
-      final _value = params[mouseCursorKey].toString().replaceAll('#', '');
-      return mouseCursorValues.firstWhere(
-        (element) => element.toString() == _value,
-        orElse: () => SystemMouseCursors.click,
-      );
-    }
-    return SystemMouseCursors.click;
-  }
-
-  set mouseCursorVal(SystemMouseCursors val) {
-    params[mouseCursorKey] = "$val";
-    widgetContext.onUpdate(id, widgetData);
-  }
-
   List<VisualDensity> get visualDensityValues => [
         VisualDensity.adaptivePlatformDensity,
         VisualDensity.comfortable,
@@ -458,6 +476,34 @@ abstract class _$RaisedButtonBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
+  List<MouseCursor> get mouseCursorValues => [
+        SystemMouseCursors.click,
+        SystemMouseCursors.basic,
+        SystemMouseCursors.forbidden,
+        SystemMouseCursors.grab,
+        SystemMouseCursors.grabbing,
+        SystemMouseCursors.horizontalDoubleArrow,
+        SystemMouseCursors.text,
+        SystemMouseCursors.verticalDoubleArrow,
+        SystemMouseCursors.none,
+      ];
+
+  MouseCursor get mouseCursorVal {
+    if (params[mouseCursorKey] != null) {
+      final _value = params[mouseCursorKey].toString().replaceAll('#', '');
+      return mouseCursorValues.firstWhere(
+        (element) => element.toString() == _value,
+        orElse: () => SystemMouseCursors.click,
+      );
+    }
+    return SystemMouseCursors.click;
+  }
+
+  set mouseCursorVal(MouseCursor val) {
+    params[mouseCursorKey] = "$val";
+    widgetContext.onUpdate(id, widgetData);
+  }
+
   bool get autofocusVal {
     if (params[autofocusKey] != null) {
       return params[autofocusKey] as bool;
@@ -467,29 +513,6 @@ abstract class _$RaisedButtonBase extends WidgetBase {
 
   set autofocusVal(bool val) {
     params[autofocusKey] = val;
-    widgetContext.onUpdate(id, widgetData);
-  }
-
-  List<Clip> get clipBehaviorValues => [
-        Clip.none,
-        Clip.hardEdge,
-        Clip.antiAlias,
-        Clip.antiAliasWithSaveLayer,
-      ];
-
-  Clip get clipBehaviorVal {
-    if (params[clipBehaviorKey] != null) {
-      final _value = params[clipBehaviorKey].toString().replaceAll('#', '');
-      return clipBehaviorValues.firstWhere(
-        (element) => element.toString() == _value,
-        orElse: () => Clip.none,
-      );
-    }
-    return Clip.none;
-  }
-
-  set clipBehaviorVal(Clip val) {
-    params[clipBehaviorKey] = "$val";
     widgetContext.onUpdate(id, widgetData);
   }
 
@@ -503,12 +526,12 @@ abstract class _$RaisedButtonBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'EpWfuGe38i3';
+    _data['id'] = 'Mc8wbVMGBBB';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'LvYiJFBmgDu';
+      _data['params']['style']['id'] = 'Wx4fhyD7Oft';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = '4cPWgqZjiRs';
+      _data['params']['0']['id'] = '21uOEvOFDwj';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -524,7 +547,7 @@ abstract class _$RaisedButtonBase extends WidgetBase {
                 (widgetContext.isDragging && childVal?.build(context) != null)
             ? (childVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': 'nDmSqJm69qP',
+                  'id': '64pI_6obucz',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)
@@ -562,6 +585,7 @@ abstract class _$RaisedButtonBase extends WidgetBase {
               ),
         clipBehavior: clipBehaviorVal,
         color: colorVal,
+        colorBrightness: colorBrightnessVal,
         disabledColor: disabledColorVal,
         disabledElevation: disabledElevationVal,
         disabledTextColor: disabledTextColorVal,

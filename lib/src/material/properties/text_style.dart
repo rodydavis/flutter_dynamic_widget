@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:widget_gen/widget_gen_annotations.dart';
 
 import '../../../flutter_dynamic_widget.dart';
+import '../enums.dart';
 import '../library.dart';
 
 part 'text_style.g.dart';
@@ -47,27 +48,15 @@ class TextStyleBase extends _$TextStyleBase {
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
 
-  @EnumKey(values: [
-    'FontWeight.bold',
-    'FontWeight.normal',
-    'FontWeight.w100',
-    'FontWeight.w200',
-    'FontWeight.w300',
-    'FontWeight.w400',
-    'FontWeight.w500',
-    'FontWeight.w600',
-    'FontWeight.w700',
-    'FontWeight.w800',
-    'FontWeight.w900',
-  ])
+  @enumFontWeight
   FontWeight fontWeight;
 
-  @EnumKey(values: FontStyle.values)
+  @enumFontStyle
   FontStyle fontStyle;
 
-  @EnumKey(values: TextBaseline.values)
+  @enumTextBaseline
   TextBaseline textBaseline;
 
-  @EnumKey(values: TextDecorationStyle.values)
+  @enumTextDecorationStyle
   TextDecorationStyle decorationStyle;
 }

@@ -105,8 +105,8 @@ abstract class _$WrapBase extends WidgetBase {
   }
 
   List<TextDirection> get textDirectionValues => [
-        TextDirection.rtl,
         TextDirection.ltr,
+        TextDirection.rtl,
       ];
 
   TextDirection get textDirectionVal {
@@ -126,12 +126,12 @@ abstract class _$WrapBase extends WidgetBase {
   }
 
   List<WrapAlignment> get alignmentValues => [
-        WrapAlignment.start,
-        WrapAlignment.end,
         WrapAlignment.center,
-        WrapAlignment.spaceBetween,
+        WrapAlignment.end,
         WrapAlignment.spaceAround,
+        WrapAlignment.spaceBetween,
         WrapAlignment.spaceEvenly,
+        WrapAlignment.start,
       ];
 
   WrapAlignment get alignmentVal {
@@ -151,12 +151,12 @@ abstract class _$WrapBase extends WidgetBase {
   }
 
   List<WrapAlignment> get runAlignmentValues => [
-        WrapAlignment.start,
-        WrapAlignment.end,
         WrapAlignment.center,
-        WrapAlignment.spaceBetween,
+        WrapAlignment.end,
         WrapAlignment.spaceAround,
+        WrapAlignment.spaceBetween,
         WrapAlignment.spaceEvenly,
+        WrapAlignment.start,
       ];
 
   WrapAlignment get runAlignmentVal {
@@ -176,9 +176,9 @@ abstract class _$WrapBase extends WidgetBase {
   }
 
   List<WrapCrossAlignment> get crossAxisAlignmentValues => [
-        WrapCrossAlignment.start,
-        WrapCrossAlignment.end,
         WrapCrossAlignment.center,
+        WrapCrossAlignment.end,
+        WrapCrossAlignment.start,
       ];
 
   WrapCrossAlignment get crossAxisAlignmentVal {

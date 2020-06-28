@@ -223,10 +223,10 @@ abstract class _$ImageNetworkBase extends WidgetBase {
   }
 
   List<ImageRepeat> get repeatValues => [
+        ImageRepeat.noRepeat,
         ImageRepeat.repeat,
         ImageRepeat.repeatX,
         ImageRepeat.repeatY,
-        ImageRepeat.noRepeat,
       ];
 
   ImageRepeat get repeatVal {
@@ -270,10 +270,10 @@ abstract class _$ImageNetworkBase extends WidgetBase {
   }
 
   List<FilterQuality> get filterQualityValues => [
-        FilterQuality.none,
+        FilterQuality.high,
         FilterQuality.low,
         FilterQuality.medium,
-        FilterQuality.high,
+        FilterQuality.none,
       ];
 
   FilterQuality get filterQualityVal {

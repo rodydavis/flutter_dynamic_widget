@@ -76,8 +76,8 @@ abstract class _$StackBase extends WidgetBase {
   }
 
   List<Overflow> get overflowValues => [
-        Overflow.visible,
         Overflow.clip,
+        Overflow.visible,
       ];
 
   Overflow get overflowVal {
@@ -125,8 +125,8 @@ abstract class _$StackBase extends WidgetBase {
   }
 
   List<TextDirection> get textDirectionValues => [
-        TextDirection.rtl,
         TextDirection.ltr,
+        TextDirection.rtl,
       ];
 
   TextDirection get textDirectionVal {

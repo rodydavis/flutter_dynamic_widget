@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:widget_gen/widget_gen_annotations.dart';
 
 import '../../../flutter_dynamic_widget.dart';
+import '../enums.dart';
 import '../library.dart';
 
 part 'single_child_scroll_view.g.dart';
@@ -13,11 +14,19 @@ part 'single_child_scroll_view.g.dart';
 class SingleChildScrollViewBase extends _$SingleChildScrollViewBase {
   SingleChildScrollViewBase(this.widgetData, this.widgetContext);
 
+  @enumClipHardEdge
+  Clip clipBehavior;
+
   ScrollController controller;
+  @enumDragStartBehavior
+  DragStartBehavior dragStartBehavior;
+
   Key key;
   EdgeInsets padding;
   ScrollPhysics physics;
   bool primary;
+  @enumAxis
+  Axis scrollDirection;
 
   @override
   final Map<String, dynamic> widgetData;
@@ -32,29 +41,12 @@ class SingleChildScrollViewBase extends _$SingleChildScrollViewBase {
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
 
-  @EnumKey(
-    defaultValue: 'Clip.hardEdge',
-    values: Clip.values,
-  )
-  Clip clipBehavior;
-
   @WidgetKey.widget(
     defaultValue: 'Placeholder',
   )
   Widget child;
 
-  @EnumKey(
-    defaultValue: 'Axis.vertical',
-    values: Axis.values,
-  )
-  Axis scrollDirection;
-
   @PropertyKey(defaultValue: 'false')
   bool reverse;
-
-  @EnumKey(
-    defaultValue: 'DragStartBehavior.start',
-    values: DragStartBehavior.values,
-  )
-  DragStartBehavior dragStartBehavior;
 }
+

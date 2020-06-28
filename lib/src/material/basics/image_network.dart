@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_dynamic_widget/src/material/enums.dart';
 import 'package:widget_gen/widget_gen_annotations.dart';
 
 import '../../../flutter_dynamic_widget.dart';
@@ -52,10 +53,10 @@ class ImageNetworkBase extends _$ImageNetworkBase {
   @PropertyKey(defaultValue: 'false')
   bool excludeFromSemantics;
 
-  @EnumKey.alignment('Alignment.center')
+  @enumAlignment
   Alignment alignment;
 
-  @EnumKey(values: ImageRepeat.values, defaultValue: 'ImageRepeat.noRepeat')
+  @enumImageRepeat
   ImageRepeat repeat;
 
   @PropertyKey(defaultValue: 'false')
@@ -64,7 +65,7 @@ class ImageNetworkBase extends _$ImageNetworkBase {
   @PropertyKey(defaultValue: 'false')
   bool gaplessPlayback;
 
-  @EnumKey(values: FilterQuality.values, defaultValue: 'FilterQuality.low')
+  @enumFilterQuality
   FilterQuality filterQuality;
 
   @PropertyKey(defaultValue: 'false')

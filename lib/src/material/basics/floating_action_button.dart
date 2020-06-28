@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:widget_gen/widget_gen_annotations.dart';
 
 import '../../../flutter_dynamic_widget.dart';
+import '../enums.dart';
 import '../library.dart';
 
 part 'floating_action_button.g.dart';
@@ -53,25 +54,12 @@ class FloatingActionButtonBase extends _$FloatingActionButtonBase {
   @PropertyKey(defaultValue: 'false')
   bool isExtended;
 
-  @EnumKey(values: MaterialTapTargetSize.values)
+  @enumMaterialTapTargetSize
   MaterialTapTargetSize materialTapTargetSize;
 
-  @EnumKey(defaultValue: 'Clip.none', values: Clip.values)
+  @enumClip
   Clip clipBehavior;
 
-  @EnumKey(
-    defaultValue: 'SystemMouseCursors.click',
-    values: [
-      'SystemMouseCursors.click',
-      'SystemMouseCursors.basic',
-      'SystemMouseCursors.forbidden',
-      'SystemMouseCursors.grab',
-      'SystemMouseCursors.grabbing',
-      'SystemMouseCursors.horizontalDoubleArrow',
-      'SystemMouseCursors.text',
-      'SystemMouseCursors.verticalDoubleArrow',
-      'SystemMouseCursors.none',
-    ],
-  )
-  SystemMouseCursors mouseCursor;
+  @enumMouseCursor
+  MouseCursor mouseCursor;
 }

@@ -12,7 +12,6 @@ abstract class _$IconButtonBase extends WidgetBase {
   String colorKey = 'color';
   String disabledColorKey = 'disabledColor';
   String focusColorKey = 'focusColor';
-  String mouseCursorKey = 'mouseCursor';
   String highlightColorKey = 'highlightColor';
   String hoverColorKey = 'hoverColor';
   String keyKey = 'key';
@@ -20,6 +19,7 @@ abstract class _$IconButtonBase extends WidgetBase {
   String splashColorKey = 'splashColor';
   String splashRadiusKey = 'splashRadius';
   String tooltipKey = 'tooltip';
+  String mouseCursorKey = 'mouseCursor';
   String visualDensityKey = 'visualDensity';
   String iconKey = 'icon';
   String iconSizeKey = 'iconSize';
@@ -33,7 +33,6 @@ abstract class _$IconButtonBase extends WidgetBase {
         'color': 'Color',
         'disabledColor': 'Color',
         'focusColor': 'Color',
-        'mouseCursor': 'SystemMouseCursors',
         'highlightColor': 'Color',
         'hoverColor': 'Color',
         'key': 'Key',
@@ -41,6 +40,7 @@ abstract class _$IconButtonBase extends WidgetBase {
         'splashColor': 'Color',
         'splashRadius': 'double',
         'tooltip': 'String',
+        'mouseCursor': 'MouseCursor',
         'visualDensity': 'VisualDensity',
         'icon': 'Widget',
         'iconSize': 'double',
@@ -125,34 +125,6 @@ abstract class _$IconButtonBase extends WidgetBase {
 
   set focusColorVal(Color val) {
     params[focusColorKey] = "#Color(${val.value})";
-    widgetContext.onUpdate(id, widgetData);
-  }
-
-  List<SystemMouseCursors> get mouseCursorValues => [
-        SystemMouseCursors.click,
-        SystemMouseCursors.basic,
-        SystemMouseCursors.forbidden,
-        SystemMouseCursors.grab,
-        SystemMouseCursors.grabbing,
-        SystemMouseCursors.horizontalDoubleArrow,
-        SystemMouseCursors.text,
-        SystemMouseCursors.verticalDoubleArrow,
-        SystemMouseCursors.none,
-      ];
-
-  SystemMouseCursors get mouseCursorVal {
-    if (params[mouseCursorKey] != null) {
-      final _value = params[mouseCursorKey].toString().replaceAll('#', '');
-      return mouseCursorValues.firstWhere(
-        (element) => element.toString() == _value,
-        orElse: () => SystemMouseCursors.click,
-      );
-    }
-    return SystemMouseCursors.click;
-  }
-
-  set mouseCursorVal(SystemMouseCursors val) {
-    params[mouseCursorKey] = "$val";
     widgetContext.onUpdate(id, widgetData);
   }
 
@@ -296,6 +268,34 @@ abstract class _$IconButtonBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
+  List<MouseCursor> get mouseCursorValues => [
+        SystemMouseCursors.click,
+        SystemMouseCursors.basic,
+        SystemMouseCursors.forbidden,
+        SystemMouseCursors.grab,
+        SystemMouseCursors.grabbing,
+        SystemMouseCursors.horizontalDoubleArrow,
+        SystemMouseCursors.text,
+        SystemMouseCursors.verticalDoubleArrow,
+        SystemMouseCursors.none,
+      ];
+
+  MouseCursor get mouseCursorVal {
+    if (params[mouseCursorKey] != null) {
+      final _value = params[mouseCursorKey].toString().replaceAll('#', '');
+      return mouseCursorValues.firstWhere(
+        (element) => element.toString() == _value,
+        orElse: () => SystemMouseCursors.click,
+      );
+    }
+    return SystemMouseCursors.click;
+  }
+
+  set mouseCursorVal(MouseCursor val) {
+    params[mouseCursorKey] = "$val";
+    widgetContext.onUpdate(id, widgetData);
+  }
+
   List<VisualDensity> get visualDensityValues => [
         VisualDensity.adaptivePlatformDensity,
         VisualDensity.comfortable,
@@ -329,12 +329,12 @@ abstract class _$IconButtonBase extends WidgetBase {
 
   void iconValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'xjvGSy5Ib-n';
+    _data['id'] = 'gkhPlQI_YZm';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'OQ4Br2mnG9o';
+      _data['params']['style']['id'] = 'aXj1UMxDl_q';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'ZwsV6_yAuQM';
+      _data['params']['0']['id'] = 'VZnv25OVoz4';
     }
     params[iconKey] = _data;
     widgetContext.onUpdate(id, widgetData);

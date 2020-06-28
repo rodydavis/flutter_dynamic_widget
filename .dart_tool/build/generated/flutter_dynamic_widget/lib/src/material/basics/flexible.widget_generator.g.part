@@ -27,12 +27,12 @@ abstract class _$FlexibleBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'PQRBubrcof2';
+    _data['id'] = 'FlU4CUZDwa';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = '6jiO8LBqN3g';
+      _data['params']['style']['id'] = 'g7jhJdfffBm';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'jCejhDMwG2s';
+      _data['params']['0']['id'] = 'aBQTPiWwCaV';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -77,8 +77,8 @@ abstract class _$FlexibleBase extends WidgetBase {
   }
 
   List<FlexFit> get fitValues => [
-        FlexFit.tight,
         FlexFit.loose,
+        FlexFit.tight,
       ];
 
   FlexFit get fitVal {
