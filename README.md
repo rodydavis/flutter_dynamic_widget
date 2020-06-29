@@ -8,6 +8,8 @@ A Dynamic Widget Runtime from JSON for Flutter Widgets.
 
 This package powers https://widget.studio
 
+Based on code gen from this package: https://github.com/rodydavis/widget_gen
+
 ## Currently Supported Widgets
 
 - Container
