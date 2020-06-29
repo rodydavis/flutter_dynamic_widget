@@ -15,7 +15,13 @@ class FlatButtonIconBase extends _$FlatButtonIconBase {
   FlatButtonIconBase(this.widgetData, this.widgetContext);
 
   Duration animationDuration;
+  @enumClip
+  Clip clipBehavior;
+
   Color color;
+  @enumBrightness
+  Brightness colorBrightness;
+
   Color disabledColor;
   Color disabledTextColor;
   Color focusColor;
@@ -24,12 +30,16 @@ class FlatButtonIconBase extends _$FlatButtonIconBase {
   Color hoverColor;
   Key key;
   MaterialTapTargetSize materialTapTargetSize;
+  @enumMouseCursor
+  MouseCursor mouseCursor;
+
   Function onLongPress;
   Function onPressed;
   EdgeInsets padding;
   ShapeBorder shape;
   Color splashColor;
   Color textColor;
+  @enumButtonTextTheme
   ButtonTextTheme textTheme;
 
   @override
@@ -45,17 +55,8 @@ class FlatButtonIconBase extends _$FlatButtonIconBase {
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
 
-  @enumBrightness
-  Brightness colorBrightness;
-
-  @enumMouseCursor
-  MouseCursor mouseCursor;
-
   @PropertyKey(defaultValue: 'false')
   bool autofocus;
-
-  @enumClip
-  Clip clipBehavior;
 
   @WidgetKey.widget(
     acceptWidth: 50,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'intrinsic_width.dart';
+part of 'drawer.dart';
 
 // **************************************************************************
 // WidgetGenerator
@@ -8,14 +8,18 @@ part of 'intrinsic_width.dart';
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, avoid_init_to_null
 
-abstract class _$IntrinsicWidthBase extends WidgetBase {
+abstract class _$DrawerBase extends WidgetBase {
   String keyKey = 'key';
+  String semanticLabelKey = 'semanticLabel';
   String childKey = 'child';
+  String elevationKey = 'elevation';
 
   @override
   Map<String, String> get properties => {
         'key': 'Key',
+        'semanticLabel': 'String',
         'child': 'Widget',
+        'elevation': 'double',
       };
 
   Key get keyVal {
@@ -44,6 +48,18 @@ abstract class _$IntrinsicWidthBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
+  String get semanticLabelVal {
+    if (params[semanticLabelKey] != null) {
+      return params[semanticLabelKey] as String;
+    }
+    return null;
+  }
+
+  set semanticLabelVal(String val) {
+    params[semanticLabelKey] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
   final _childListen = ValueNotifier<bool>(false);
   WidgetBase get childVal {
     if (params[childKey] != null) {
@@ -54,14 +70,26 @@ abstract class _$IntrinsicWidthBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'sigXkRI9zN8';
+    _data['id'] = 'yc4C5SfJtNL';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'OP_iWXSLPkD';
+      _data['params']['style']['id'] = 'GUK_cIgDE6X';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'RFjEls9lUp3';
+      _data['params']['0']['id'] = 'h6COGalKKUp';
     }
     params[childKey] = _data;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  double get elevationVal {
+    if (params[elevationKey] != null) {
+      return params[elevationKey] as double;
+    }
+    return 16.0;
+  }
+
+  set elevationVal(double val) {
+    params[elevationKey] = val;
     widgetContext.onUpdate(id, widgetData);
   }
 
@@ -69,12 +97,12 @@ abstract class _$IntrinsicWidthBase extends WidgetBase {
   Object build(BuildContext context) {
     return GestureDetector(
       onTap: () => widgetContext.onTap(id, widgetData),
-      child: IntrinsicWidth(
+      child: Drawer(
         child: !widgetContext.isDragging ||
                 (widgetContext.isDragging && childVal?.build(context) != null)
             ? (childVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': 'Pyq3YmQdUTI',
+                  'id': 'LFbRgs89yPF',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)
@@ -110,7 +138,9 @@ abstract class _$IntrinsicWidthBase extends WidgetBase {
                   },
                 ),
               ),
+        elevation: elevationVal,
         key: keyVal,
+        semanticLabel: semanticLabelVal,
       ),
     );
   }

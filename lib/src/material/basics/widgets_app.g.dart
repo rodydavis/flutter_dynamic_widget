@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'material_app.dart';
+part of 'widgets_app.dart';
 
 // **************************************************************************
 // WidgetGenerator
@@ -8,21 +8,17 @@ part of 'material_app.dart';
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, avoid_init_to_null
 
-abstract class _$MaterialAppBase extends WidgetBase {
+abstract class _$WidgetsAppBase extends WidgetBase {
   String navigatorObserversKey = 'navigatorObservers';
   String colorKey = 'color';
   String initialRouteKey = 'initialRoute';
   String keyKey = 'key';
-  String themeModeKey = 'themeMode';
   String titleKey = 'title';
   String checkerboardOffscreenLayersKey = 'checkerboardOffscreenLayers';
   String checkerboardRasterCacheImagesKey = 'checkerboardRasterCacheImages';
-  String darkThemeKey = 'darkTheme';
   String debugShowCheckedModeBannerKey = 'debugShowCheckedModeBanner';
-  String debugShowMaterialGridKey = 'debugShowMaterialGrid';
   String showPerformanceOverlayKey = 'showPerformanceOverlay';
   String showSemanticsDebuggerKey = 'showSemanticsDebugger';
-  String themeKey = 'theme';
   String homeKey = 'home';
 
   @override
@@ -31,16 +27,12 @@ abstract class _$MaterialAppBase extends WidgetBase {
         'color': 'Color',
         'initialRoute': 'String',
         'key': 'Key',
-        'themeMode': 'ThemeMode',
         'title': 'String',
         'checkerboardOffscreenLayers': 'bool',
         'checkerboardRasterCacheImages': 'bool',
-        'darkTheme': 'ThemeDataBase',
         'debugShowCheckedModeBanner': 'bool',
-        'debugShowMaterialGrid': 'bool',
         'showPerformanceOverlay': 'bool',
         'showSemanticsDebugger': 'bool',
-        'theme': 'ThemeDataBase',
         'home': 'Widget',
       };
 
@@ -131,28 +123,6 @@ abstract class _$MaterialAppBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
-  List<ThemeMode> get themeModeValues => [
-        ThemeMode.dark,
-        ThemeMode.light,
-        ThemeMode.system,
-      ];
-
-  ThemeMode get themeModeVal {
-    if (params[themeModeKey] != null) {
-      final _value = params[themeModeKey].toString().replaceAll('#', '');
-      return themeModeValues.firstWhere(
-        (element) => element.toString() == _value,
-        orElse: () => ThemeMode.system,
-      );
-    }
-    return ThemeMode.system;
-  }
-
-  set themeModeVal(ThemeMode val) {
-    params[themeModeKey] = "$val";
-    widgetContext.onUpdate(id, widgetData);
-  }
-
   String get titleVal {
     if (params[titleKey] != null) {
       return params[titleKey] as String;
@@ -189,18 +159,6 @@ abstract class _$MaterialAppBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
-  ThemeDataBase get darkThemeVal {
-    if (params[darkThemeKey] != null) {
-      return ThemeDataBase(params[darkThemeKey], widgetContext);
-    }
-    return null;
-  }
-
-  set darkThemeVal(ThemeDataBase val) {
-    params[darkThemeKey] = val;
-    widgetContext.onUpdate(id, widgetData);
-  }
-
   bool get debugShowCheckedModeBannerVal {
     if (params[debugShowCheckedModeBannerKey] != null) {
       return params[debugShowCheckedModeBannerKey] as bool;
@@ -210,18 +168,6 @@ abstract class _$MaterialAppBase extends WidgetBase {
 
   set debugShowCheckedModeBannerVal(bool val) {
     params[debugShowCheckedModeBannerKey] = val;
-    widgetContext.onUpdate(id, widgetData);
-  }
-
-  bool get debugShowMaterialGridVal {
-    if (params[debugShowMaterialGridKey] != null) {
-      return params[debugShowMaterialGridKey] as bool;
-    }
-    return false;
-  }
-
-  set debugShowMaterialGridVal(bool val) {
-    params[debugShowMaterialGridKey] = val;
     widgetContext.onUpdate(id, widgetData);
   }
 
@@ -249,18 +195,6 @@ abstract class _$MaterialAppBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
-  ThemeDataBase get themeVal {
-    if (params[themeKey] != null) {
-      return ThemeDataBase(params[themeKey], widgetContext);
-    }
-    return null;
-  }
-
-  set themeVal(ThemeDataBase val) {
-    params[themeKey] = val;
-    widgetContext.onUpdate(id, widgetData);
-  }
-
   final _homeListen = ValueNotifier<bool>(false);
   WidgetBase get homeVal {
     if (params[homeKey] != null) {
@@ -271,12 +205,12 @@ abstract class _$MaterialAppBase extends WidgetBase {
 
   void homeValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'TClBW1C7A3j';
+    _data['id'] = 'qdAJMhXYoUg';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = '4kxAiHfxYBh';
+      _data['params']['style']['id'] = 'rUhMqUlxeq9';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'f_AZdUPAECs';
+      _data['params']['0']['id'] = 'gmA2ihMfw7G';
     }
     params[homeKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -284,18 +218,16 @@ abstract class _$MaterialAppBase extends WidgetBase {
 
   @override
   Object build(BuildContext context) {
-    return MaterialApp(
+    return WidgetsApp(
       checkerboardOffscreenLayers: checkerboardOffscreenLayersVal,
       checkerboardRasterCacheImages: checkerboardRasterCacheImagesVal,
       color: colorVal,
-      darkTheme: darkThemeVal?.build(context),
       debugShowCheckedModeBanner: debugShowCheckedModeBannerVal,
-      debugShowMaterialGrid: debugShowMaterialGridVal,
       home: !widgetContext.isDragging ||
               (widgetContext.isDragging && homeVal?.build(context) != null)
           ? (homeVal?.build(context) ??
               (widgetRender(json.decode(json.encode({
-                'id': 'EqOMa5fZ6jC',
+                'id': 'k2TpdNXshlR',
                 'name': 'Placeholder',
                 'params': {},
               }))) as WidgetBase)
@@ -342,8 +274,6 @@ abstract class _$MaterialAppBase extends WidgetBase {
             ],
       showPerformanceOverlay: showPerformanceOverlayVal,
       showSemanticsDebugger: showSemanticsDebuggerVal,
-      theme: themeVal?.build(context),
-      themeMode: themeModeVal,
       title: titleVal,
     );
   }

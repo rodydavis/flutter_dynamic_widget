@@ -137,12 +137,12 @@ abstract class _$FittedBoxBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'BnEELbaV1_n';
+    _data['id'] = 'zbyQlVooi8D';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'CEfZqWxrK6W';
+      _data['params']['style']['id'] = 'pStDA8ofdHL';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'AKAcDqWNfCH';
+      _data['params']['0']['id'] = 'c2FKj-wW_we';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -158,7 +158,7 @@ abstract class _$FittedBoxBase extends WidgetBase {
                 (widgetContext.isDragging && childVal?.build(context) != null)
             ? (childVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': '_djM4gY5yCg',
+                  'id': 'xt5YjQczYdq',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)

@@ -115,12 +115,12 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
 
   void bottomValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'x1vhDzsXkF-';
+    _data['id'] = 'cV6Aj17rSZq';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'Ob72LFZPArA';
+      _data['params']['style']['id'] = 'T4C7WKmL7pf';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = '9f7353V54xt';
+      _data['params']['0']['id'] = 'FLkV84yZRH-';
     }
     params[bottomKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -180,12 +180,12 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
 
   void flexibleSpaceValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'iU9zySQYlsI';
+    _data['id'] = 'khSnzVrzt1e';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'gdJWIdcR7Xd';
+      _data['params']['style']['id'] = 'Xk59gKkjPfR';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'b7_dp1E_EjL';
+      _data['params']['0']['id'] = 'f5soVezZAzn';
     }
     params[flexibleSpaceKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -277,12 +277,12 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
 
   void leadingValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'ZsjNXxfRSGQ';
+    _data['id'] = 'vFgFLZt7ou4';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = '5GCtVJq6RUn';
+      _data['params']['style']['id'] = 'gxzxaYZ6Tz_';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'WQHzvUqKIhv';
+      _data['params']['0']['id'] = 'Vb-7BhJ1WAC';
     }
     params[leadingKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -310,12 +310,12 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
 
   void titleValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'AQ6eO7S7CpQ';
+    _data['id'] = '2sEeAYRHiYA';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'bVa9Qvk_DNM';
+      _data['params']['style']['id'] = 'YF3UEUpUz4O';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'Dp9q1_y4zK7';
+      _data['params']['0']['id'] = 'bYFXCbxAxwY';
     }
     params[titleKey] = _data;
     widgetContext.onUpdate(id, widgetData);

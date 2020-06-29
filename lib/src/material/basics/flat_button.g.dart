@@ -18,13 +18,14 @@ abstract class _$FlatButtonBase extends WidgetBase {
   String highlightColorKey = 'highlightColor';
   String hoverColorKey = 'hoverColor';
   String keyKey = 'key';
+  String mouseCursorKey = 'mouseCursor';
   String onLongPressKey = 'onLongPress';
   String onPressedKey = 'onPressed';
   String paddingKey = 'padding';
   String splashColorKey = 'splashColor';
   String textColorKey = 'textColor';
+  String textThemeKey = 'textTheme';
   String visualDensityKey = 'visualDensity';
-  String mouseCursorKey = 'mouseCursor';
   String autofocusKey = 'autofocus';
   String childKey = 'child';
 
@@ -39,13 +40,14 @@ abstract class _$FlatButtonBase extends WidgetBase {
         'highlightColor': 'Color',
         'hoverColor': 'Color',
         'key': 'Key',
+        'mouseCursor': 'MouseCursor',
         'onLongPress': 'Function',
         'onPressed': 'Function',
         'padding': 'EdgeInsets',
         'splashColor': 'Color',
         'textColor': 'Color',
+        'textTheme': 'ButtonTextTheme',
         'visualDensity': 'VisualDensity',
-        'mouseCursor': 'MouseCursor',
         'autofocus': 'bool',
         'child': 'Widget',
       };
@@ -276,6 +278,34 @@ abstract class _$FlatButtonBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
+  List<MouseCursor> get mouseCursorValues => [
+        SystemMouseCursors.click,
+        SystemMouseCursors.basic,
+        SystemMouseCursors.forbidden,
+        SystemMouseCursors.grab,
+        SystemMouseCursors.grabbing,
+        SystemMouseCursors.horizontalDoubleArrow,
+        SystemMouseCursors.text,
+        SystemMouseCursors.verticalDoubleArrow,
+        SystemMouseCursors.none,
+      ];
+
+  MouseCursor get mouseCursorVal {
+    if (params[mouseCursorKey] != null) {
+      final _value = params[mouseCursorKey].toString().replaceAll('#', '');
+      return mouseCursorValues.firstWhere(
+        (element) => element.toString() == _value,
+        orElse: () => SystemMouseCursors.click,
+      );
+    }
+    return SystemMouseCursors.click;
+  }
+
+  set mouseCursorVal(MouseCursor val) {
+    params[mouseCursorKey] = "$val";
+    widgetContext.onUpdate(id, widgetData);
+  }
+
   String get onLongPressVal {
     if (params[onLongPressKey] != null) {
       return params[onLongPressKey] as String;
@@ -383,6 +413,28 @@ abstract class _$FlatButtonBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
+  List<ButtonTextTheme> get textThemeValues => [
+        ButtonTextTheme.normal,
+        ButtonTextTheme.accent,
+        ButtonTextTheme.primary,
+      ];
+
+  ButtonTextTheme get textThemeVal {
+    if (params[textThemeKey] != null) {
+      final _value = params[textThemeKey].toString().replaceAll('#', '');
+      return textThemeValues.firstWhere(
+        (element) => element.toString() == _value,
+        orElse: () => null,
+      );
+    }
+    return null;
+  }
+
+  set textThemeVal(ButtonTextTheme val) {
+    params[textThemeKey] = "$val";
+    widgetContext.onUpdate(id, widgetData);
+  }
+
   List<VisualDensity> get visualDensityValues => [
         VisualDensity.adaptivePlatformDensity,
         VisualDensity.comfortable,
@@ -403,34 +455,6 @@ abstract class _$FlatButtonBase extends WidgetBase {
 
   set visualDensityVal(VisualDensity val) {
     params[visualDensityKey] = "$val";
-    widgetContext.onUpdate(id, widgetData);
-  }
-
-  List<MouseCursor> get mouseCursorValues => [
-        SystemMouseCursors.click,
-        SystemMouseCursors.basic,
-        SystemMouseCursors.forbidden,
-        SystemMouseCursors.grab,
-        SystemMouseCursors.grabbing,
-        SystemMouseCursors.horizontalDoubleArrow,
-        SystemMouseCursors.text,
-        SystemMouseCursors.verticalDoubleArrow,
-        SystemMouseCursors.none,
-      ];
-
-  MouseCursor get mouseCursorVal {
-    if (params[mouseCursorKey] != null) {
-      final _value = params[mouseCursorKey].toString().replaceAll('#', '');
-      return mouseCursorValues.firstWhere(
-        (element) => element.toString() == _value,
-        orElse: () => SystemMouseCursors.click,
-      );
-    }
-    return SystemMouseCursors.click;
-  }
-
-  set mouseCursorVal(MouseCursor val) {
-    params[mouseCursorKey] = "$val";
     widgetContext.onUpdate(id, widgetData);
   }
 
@@ -456,12 +480,12 @@ abstract class _$FlatButtonBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'PwjHAwzreOb';
+    _data['id'] = 'YB81GUvs3du';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'g3NDCEGGNuc';
+      _data['params']['style']['id'] = 'VglVopnO8xS';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'G5oLYUZYfQo';
+      _data['params']['0']['id'] = 'qnSPXKOBj2p';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -477,7 +501,7 @@ abstract class _$FlatButtonBase extends WidgetBase {
                 (widgetContext.isDragging && childVal?.build(context) != null)
             ? (childVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': 'rpjvr4L72ve',
+                  'id': '5VzdGF2Qmze',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)
@@ -528,6 +552,7 @@ abstract class _$FlatButtonBase extends WidgetBase {
         padding: paddingVal,
         splashColor: splashColorVal,
         textColor: textColorVal,
+        textTheme: textThemeVal,
         visualDensity: visualDensityVal,
       ),
     );

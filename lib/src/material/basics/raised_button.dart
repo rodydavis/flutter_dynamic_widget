@@ -35,13 +35,18 @@ class RaisedButtonBase extends _$RaisedButtonBase {
   double hoverElevation;
   Key key;
   MaterialTapTargetSize materialTapTargetSize;
+  @enumMouseCursor
+  MouseCursor mouseCursor;
+
   Function onLongPress;
   Function onPressed;
   EdgeInsets padding;
   ShapeBorder shape;
   Color splashColor;
   Color textColor;
+  @enumButtonTextTheme
   ButtonTextTheme textTheme;
+
   @enumVisualDensity
   VisualDensity visualDensity;
 
@@ -57,9 +62,6 @@ class RaisedButtonBase extends _$RaisedButtonBase {
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
-
-  @enumMouseCursor
-  MouseCursor mouseCursor;
 
   @PropertyKey(defaultValue: 'false')
   bool autofocus;

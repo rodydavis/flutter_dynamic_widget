@@ -1,27 +1,19 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
-
-part of 'raised_button.dart';
-
 // **************************************************************************
 // WidgetGenerator
 // **************************************************************************
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, avoid_init_to_null
 
-abstract class _$RaisedButtonBase extends WidgetBase {
+abstract class _$OutlineButtonBase extends WidgetBase {
   String clipBehaviorKey = 'clipBehavior';
   String colorKey = 'color';
-  String colorBrightnessKey = 'colorBrightness';
-  String disabledColorKey = 'disabledColor';
-  String disabledElevationKey = 'disabledElevation';
+  String disabledBorderColorKey = 'disabledBorderColor';
   String disabledTextColorKey = 'disabledTextColor';
-  String elevationKey = 'elevation';
   String focusColorKey = 'focusColor';
-  String focusElevationKey = 'focusElevation';
   String highlightColorKey = 'highlightColor';
+  String highlightedBorderColorKey = 'highlightedBorderColor';
   String highlightElevationKey = 'highlightElevation';
   String hoverColorKey = 'hoverColor';
-  String hoverElevationKey = 'hoverElevation';
   String keyKey = 'key';
   String mouseCursorKey = 'mouseCursor';
   String onLongPressKey = 'onLongPress';
@@ -38,17 +30,13 @@ abstract class _$RaisedButtonBase extends WidgetBase {
   Map<String, String> get properties => {
         'clipBehavior': 'Clip',
         'color': 'Color',
-        'colorBrightness': 'Brightness',
-        'disabledColor': 'Color',
-        'disabledElevation': 'double',
+        'disabledBorderColor': 'Color',
         'disabledTextColor': 'Color',
-        'elevation': 'double',
         'focusColor': 'Color',
-        'focusElevation': 'double',
         'highlightColor': 'Color',
+        'highlightedBorderColor': 'Color',
         'highlightElevation': 'double',
         'hoverColor': 'Color',
-        'hoverElevation': 'double',
         'key': 'Key',
         'mouseCursor': 'MouseCursor',
         'onLongPress': 'Function',
@@ -111,39 +99,18 @@ abstract class _$RaisedButtonBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
-  List<Brightness> get colorBrightnessValues => [
-        Brightness.light,
-        Brightness.dark,
-      ];
-
-  Brightness get colorBrightnessVal {
-    if (params[colorBrightnessKey] != null) {
-      final _value = params[colorBrightnessKey].toString().replaceAll('#', '');
-      return colorBrightnessValues.firstWhere(
-        (element) => element.toString() == _value,
-        orElse: () => null,
-      );
-    }
-    return null;
-  }
-
-  set colorBrightnessVal(Brightness val) {
-    params[colorBrightnessKey] = "$val";
-    widgetContext.onUpdate(id, widgetData);
-  }
-
-  Color get disabledColorVal {
-    if (params[disabledColorKey] != null) {
+  Color get disabledBorderColorVal {
+    if (params[disabledBorderColorKey] != null) {
       int _value = null;
-      String description = params[disabledColorKey].toString();
+      String description = params[disabledBorderColorKey].toString();
       if (description.startsWith('#')) {
         description = description.replaceAll('#Color(', '').replaceAll(')', '');
         _value = int.tryParse(description);
-      } else if (params[disabledColorKey] is Map) {
-        if (params[disabledColorKey]['name'] == 'Color' &&
-            params[disabledColorKey]['params'] != null &&
-            params[disabledColorKey]['params']['0'] != null) {
-          _value = int.tryParse(params[disabledColorKey]['params']['0']);
+      } else if (params[disabledBorderColorKey] is Map) {
+        if (params[disabledBorderColorKey]['name'] == 'Color' &&
+            params[disabledBorderColorKey]['params'] != null &&
+            params[disabledBorderColorKey]['params']['0'] != null) {
+          _value = int.tryParse(params[disabledBorderColorKey]['params']['0']);
         }
       }
       if (_value != null) {
@@ -153,20 +120,8 @@ abstract class _$RaisedButtonBase extends WidgetBase {
     return null;
   }
 
-  set disabledColorVal(Color val) {
-    params[disabledColorKey] = "#Color(${val.value})";
-    widgetContext.onUpdate(id, widgetData);
-  }
-
-  double get disabledElevationVal {
-    if (params[disabledElevationKey] != null) {
-      return params[disabledElevationKey] as double;
-    }
-    return null;
-  }
-
-  set disabledElevationVal(double val) {
-    params[disabledElevationKey] = val;
+  set disabledBorderColorVal(Color val) {
+    params[disabledBorderColorKey] = "#Color(${val.value})";
     widgetContext.onUpdate(id, widgetData);
   }
 
@@ -196,18 +151,6 @@ abstract class _$RaisedButtonBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
-  double get elevationVal {
-    if (params[elevationKey] != null) {
-      return params[elevationKey] as double;
-    }
-    return null;
-  }
-
-  set elevationVal(double val) {
-    params[elevationKey] = val;
-    widgetContext.onUpdate(id, widgetData);
-  }
-
   Color get focusColorVal {
     if (params[focusColorKey] != null) {
       int _value = null;
@@ -234,18 +177,6 @@ abstract class _$RaisedButtonBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
-  double get focusElevationVal {
-    if (params[focusElevationKey] != null) {
-      return params[focusElevationKey] as double;
-    }
-    return null;
-  }
-
-  set focusElevationVal(double val) {
-    params[focusElevationKey] = val;
-    widgetContext.onUpdate(id, widgetData);
-  }
-
   Color get highlightColorVal {
     if (params[highlightColorKey] != null) {
       int _value = null;
@@ -269,6 +200,33 @@ abstract class _$RaisedButtonBase extends WidgetBase {
 
   set highlightColorVal(Color val) {
     params[highlightColorKey] = "#Color(${val.value})";
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  Color get highlightedBorderColorVal {
+    if (params[highlightedBorderColorKey] != null) {
+      int _value = null;
+      String description = params[highlightedBorderColorKey].toString();
+      if (description.startsWith('#')) {
+        description = description.replaceAll('#Color(', '').replaceAll(')', '');
+        _value = int.tryParse(description);
+      } else if (params[highlightedBorderColorKey] is Map) {
+        if (params[highlightedBorderColorKey]['name'] == 'Color' &&
+            params[highlightedBorderColorKey]['params'] != null &&
+            params[highlightedBorderColorKey]['params']['0'] != null) {
+          _value =
+              int.tryParse(params[highlightedBorderColorKey]['params']['0']);
+        }
+      }
+      if (_value != null) {
+        return Color(_value);
+      }
+    }
+    return null;
+  }
+
+  set highlightedBorderColorVal(Color val) {
+    params[highlightedBorderColorKey] = "#Color(${val.value})";
     widgetContext.onUpdate(id, widgetData);
   }
 
@@ -307,18 +265,6 @@ abstract class _$RaisedButtonBase extends WidgetBase {
 
   set hoverColorVal(Color val) {
     params[hoverColorKey] = "#Color(${val.value})";
-    widgetContext.onUpdate(id, widgetData);
-  }
-
-  double get hoverElevationVal {
-    if (params[hoverElevationKey] != null) {
-      return params[hoverElevationKey] as double;
-    }
-    return null;
-  }
-
-  set hoverElevationVal(double val) {
-    params[hoverElevationKey] = val;
     widgetContext.onUpdate(id, widgetData);
   }
 
@@ -550,12 +496,12 @@ abstract class _$RaisedButtonBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'lyyGUnoHcC';
+    _data['id'] = 'Ks82CjhpoFY';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'HK2ghyPFTh';
+      _data['params']['style']['id'] = 'WnqzCrblPBc';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'Ztr3mbkAz1';
+      _data['params']['0']['id'] = 'pBM_L33BXNZ';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -565,13 +511,13 @@ abstract class _$RaisedButtonBase extends WidgetBase {
   Object build(BuildContext context) {
     return GestureDetector(
       onTap: () => widgetContext.onTap(id, widgetData),
-      child: RaisedButton(
+      child: OutlineButton(
         autofocus: autofocusVal,
         child: !widgetContext.isDragging ||
                 (widgetContext.isDragging && childVal?.build(context) != null)
             ? (childVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': 'ThQ5PiYnU3',
+                  'id': '6nwpcANpipR',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)
@@ -609,17 +555,13 @@ abstract class _$RaisedButtonBase extends WidgetBase {
               ),
         clipBehavior: clipBehaviorVal,
         color: colorVal,
-        colorBrightness: colorBrightnessVal,
-        disabledColor: disabledColorVal,
-        disabledElevation: disabledElevationVal,
+        disabledBorderColor: disabledBorderColorVal,
         disabledTextColor: disabledTextColorVal,
-        elevation: elevationVal,
         focusColor: focusColorVal,
-        focusElevation: focusElevationVal,
         highlightColor: highlightColorVal,
         highlightElevation: highlightElevationVal,
+        highlightedBorderColor: highlightedBorderColorVal,
         hoverColor: hoverColorVal,
-        hoverElevation: hoverElevationVal,
         key: keyVal,
         mouseCursor: mouseCursorVal,
         onLongPress: () => onAction(context, onLongPressVal),

@@ -9,46 +9,71 @@ part of 'flat_button_icon.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, avoid_init_to_null
 
 abstract class _$FlatButtonIconBase extends WidgetBase {
+  String clipBehaviorKey = 'clipBehavior';
   String colorKey = 'color';
+  String colorBrightnessKey = 'colorBrightness';
   String disabledColorKey = 'disabledColor';
   String disabledTextColorKey = 'disabledTextColor';
   String focusColorKey = 'focusColor';
   String highlightColorKey = 'highlightColor';
   String hoverColorKey = 'hoverColor';
   String keyKey = 'key';
+  String mouseCursorKey = 'mouseCursor';
   String onLongPressKey = 'onLongPress';
   String onPressedKey = 'onPressed';
   String paddingKey = 'padding';
   String splashColorKey = 'splashColor';
   String textColorKey = 'textColor';
-  String colorBrightnessKey = 'colorBrightness';
-  String mouseCursorKey = 'mouseCursor';
+  String textThemeKey = 'textTheme';
   String autofocusKey = 'autofocus';
-  String clipBehaviorKey = 'clipBehavior';
   String iconKey = 'icon';
   String labelKey = 'label';
 
   @override
   Map<String, String> get properties => {
+        'clipBehavior': 'Clip',
         'color': 'Color',
+        'colorBrightness': 'Brightness',
         'disabledColor': 'Color',
         'disabledTextColor': 'Color',
         'focusColor': 'Color',
         'highlightColor': 'Color',
         'hoverColor': 'Color',
         'key': 'Key',
+        'mouseCursor': 'MouseCursor',
         'onLongPress': 'Function',
         'onPressed': 'Function',
         'padding': 'EdgeInsets',
         'splashColor': 'Color',
         'textColor': 'Color',
-        'colorBrightness': 'Brightness',
-        'mouseCursor': 'MouseCursor',
+        'textTheme': 'ButtonTextTheme',
         'autofocus': 'bool',
-        'clipBehavior': 'Clip',
         'icon': 'Widget',
         'label': 'Widget',
       };
+
+  List<Clip> get clipBehaviorValues => [
+        Clip.none,
+        Clip.antiAlias,
+        Clip.antiAliasWithSaveLayer,
+        Clip.hardEdge,
+      ];
+
+  Clip get clipBehaviorVal {
+    if (params[clipBehaviorKey] != null) {
+      final _value = params[clipBehaviorKey].toString().replaceAll('#', '');
+      return clipBehaviorValues.firstWhere(
+        (element) => element.toString() == _value,
+        orElse: () => Clip.none,
+      );
+    }
+    return Clip.none;
+  }
+
+  set clipBehaviorVal(Clip val) {
+    params[clipBehaviorKey] = "$val";
+    widgetContext.onUpdate(id, widgetData);
+  }
 
   Color get colorVal {
     if (params[colorKey] != null) {
@@ -73,6 +98,27 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
 
   set colorVal(Color val) {
     params[colorKey] = "#Color(${val.value})";
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  List<Brightness> get colorBrightnessValues => [
+        Brightness.light,
+        Brightness.dark,
+      ];
+
+  Brightness get colorBrightnessVal {
+    if (params[colorBrightnessKey] != null) {
+      final _value = params[colorBrightnessKey].toString().replaceAll('#', '');
+      return colorBrightnessValues.firstWhere(
+        (element) => element.toString() == _value,
+        orElse: () => null,
+      );
+    }
+    return null;
+  }
+
+  set colorBrightnessVal(Brightness val) {
+    params[colorBrightnessKey] = "$val";
     widgetContext.onUpdate(id, widgetData);
   }
 
@@ -232,6 +278,34 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
+  List<MouseCursor> get mouseCursorValues => [
+        SystemMouseCursors.click,
+        SystemMouseCursors.basic,
+        SystemMouseCursors.forbidden,
+        SystemMouseCursors.grab,
+        SystemMouseCursors.grabbing,
+        SystemMouseCursors.horizontalDoubleArrow,
+        SystemMouseCursors.text,
+        SystemMouseCursors.verticalDoubleArrow,
+        SystemMouseCursors.none,
+      ];
+
+  MouseCursor get mouseCursorVal {
+    if (params[mouseCursorKey] != null) {
+      final _value = params[mouseCursorKey].toString().replaceAll('#', '');
+      return mouseCursorValues.firstWhere(
+        (element) => element.toString() == _value,
+        orElse: () => SystemMouseCursors.click,
+      );
+    }
+    return SystemMouseCursors.click;
+  }
+
+  set mouseCursorVal(MouseCursor val) {
+    params[mouseCursorKey] = "$val";
+    widgetContext.onUpdate(id, widgetData);
+  }
+
   String get onLongPressVal {
     if (params[onLongPressKey] != null) {
       return params[onLongPressKey] as String;
@@ -339,15 +413,16 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
-  List<Brightness> get colorBrightnessValues => [
-        Brightness.light,
-        Brightness.dark,
+  List<ButtonTextTheme> get textThemeValues => [
+        ButtonTextTheme.normal,
+        ButtonTextTheme.accent,
+        ButtonTextTheme.primary,
       ];
 
-  Brightness get colorBrightnessVal {
-    if (params[colorBrightnessKey] != null) {
-      final _value = params[colorBrightnessKey].toString().replaceAll('#', '');
-      return colorBrightnessValues.firstWhere(
+  ButtonTextTheme get textThemeVal {
+    if (params[textThemeKey] != null) {
+      final _value = params[textThemeKey].toString().replaceAll('#', '');
+      return textThemeValues.firstWhere(
         (element) => element.toString() == _value,
         orElse: () => null,
       );
@@ -355,36 +430,8 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
     return null;
   }
 
-  set colorBrightnessVal(Brightness val) {
-    params[colorBrightnessKey] = "$val";
-    widgetContext.onUpdate(id, widgetData);
-  }
-
-  List<MouseCursor> get mouseCursorValues => [
-        SystemMouseCursors.click,
-        SystemMouseCursors.basic,
-        SystemMouseCursors.forbidden,
-        SystemMouseCursors.grab,
-        SystemMouseCursors.grabbing,
-        SystemMouseCursors.horizontalDoubleArrow,
-        SystemMouseCursors.text,
-        SystemMouseCursors.verticalDoubleArrow,
-        SystemMouseCursors.none,
-      ];
-
-  MouseCursor get mouseCursorVal {
-    if (params[mouseCursorKey] != null) {
-      final _value = params[mouseCursorKey].toString().replaceAll('#', '');
-      return mouseCursorValues.firstWhere(
-        (element) => element.toString() == _value,
-        orElse: () => SystemMouseCursors.click,
-      );
-    }
-    return SystemMouseCursors.click;
-  }
-
-  set mouseCursorVal(MouseCursor val) {
-    params[mouseCursorKey] = "$val";
+  set textThemeVal(ButtonTextTheme val) {
+    params[textThemeKey] = "$val";
     widgetContext.onUpdate(id, widgetData);
   }
 
@@ -400,29 +447,6 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
-  List<Clip> get clipBehaviorValues => [
-        Clip.none,
-        Clip.antiAlias,
-        Clip.antiAliasWithSaveLayer,
-        Clip.hardEdge,
-      ];
-
-  Clip get clipBehaviorVal {
-    if (params[clipBehaviorKey] != null) {
-      final _value = params[clipBehaviorKey].toString().replaceAll('#', '');
-      return clipBehaviorValues.firstWhere(
-        (element) => element.toString() == _value,
-        orElse: () => Clip.none,
-      );
-    }
-    return Clip.none;
-  }
-
-  set clipBehaviorVal(Clip val) {
-    params[clipBehaviorKey] = "$val";
-    widgetContext.onUpdate(id, widgetData);
-  }
-
   final _iconListen = ValueNotifier<bool>(false);
   WidgetBase get iconVal {
     if (params[iconKey] != null) {
@@ -433,12 +457,12 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
 
   void iconValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'abVZCXuGec9';
+    _data['id'] = 'cmBQYboAluC';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'pfT6xwx3ipv';
+      _data['params']['style']['id'] = 'AtCdiyAYjPQ';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = '8y1OPbW6tpT';
+      _data['params']['0']['id'] = 'Vzy5JDrljAA';
     }
     params[iconKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -454,12 +478,12 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
 
   void labelValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'p832Ig9hA7y';
+    _data['id'] = 'Qo9tCzygBNN';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = '-qj8m2HQEiB';
+      _data['params']['style']['id'] = 'XPxJoRTOCJG';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'Illn9JgeSbf';
+      _data['params']['0']['id'] = 'Lh8kuEFHzoH';
     }
     params[labelKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -483,7 +507,7 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
                 (widgetContext.isDragging && iconVal?.build(context) != null)
             ? (iconVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': 'cXWEQvHGsc9',
+                  'id': '1WTHmVDsHwu',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)
@@ -524,7 +548,7 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
                 (widgetContext.isDragging && labelVal?.build(context) != null)
             ? (labelVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': 'JfLSFHYl1cn',
+                  'id': 'viLefdmZ5wr',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)
@@ -566,6 +590,7 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
         padding: paddingVal,
         splashColor: splashColorVal,
         textColor: textColorVal,
+        textTheme: textThemeVal,
       ),
     );
   }

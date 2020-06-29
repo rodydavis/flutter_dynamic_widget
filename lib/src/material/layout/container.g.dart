@@ -44,12 +44,12 @@ abstract class _$ContainerBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'XNXGnzBpMzr';
+    _data['id'] = 'yOnA3VTYL4k';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'pgOu953vdrY';
+      _data['params']['style']['id'] = '1ebhAdxJZRN';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'hHr_Ate-yhh';
+      _data['params']['0']['id'] = '_Zo3ZtAJJlg';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);

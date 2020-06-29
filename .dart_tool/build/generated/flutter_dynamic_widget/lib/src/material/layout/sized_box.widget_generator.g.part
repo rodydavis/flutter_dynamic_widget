@@ -54,12 +54,12 @@ abstract class _$SizedBoxBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'rPTgnXNDp_';
+    _data['id'] = 'qE-5BFEHTHx';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'KWvpwfag5J';
+      _data['params']['style']['id'] = '1IUQrdd87HU';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'kdjnu18vEg';
+      _data['params']['0']['id'] = 'gK64Z-tmG1e';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -98,7 +98,7 @@ abstract class _$SizedBoxBase extends WidgetBase {
                 (widgetContext.isDragging && childVal?.build(context) != null)
             ? (childVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': '22WR-VXD4W',
+                  'id': 'S-E8MIMv6Ho',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)

@@ -15,6 +15,7 @@ import 'basics/icon.dart';
 import 'basics/icon_button.dart';
 import 'basics/image_network.dart';
 import 'basics/material_app.dart';
+import 'basics/outline_button.dart';
 import 'basics/placeholder.dart';
 import 'basics/positioned.dart';
 import 'basics/raised_button.dart';
@@ -26,6 +27,7 @@ import 'basics/sized_box.dart';
 import 'basics/stack.dart';
 import 'basics/text.dart';
 import 'basics/theme.dart';
+import 'basics/widgets_app.dart';
 import 'basics/wrap.dart';
 import 'layout/align.dart';
 import 'layout/aspect_ratio.dart';
@@ -44,6 +46,8 @@ import 'layout/preferred_size.dart';
 import 'layout/sized_overflow_box.dart';
 import 'layout/transform.dart';
 import 'misc/bottom_navigation_bar.dart';
+import 'misc/button_bar.dart';
+import 'misc/drawer.dart';
 import 'properties/bottom_navigation_bar_item.dart';
 import 'properties/box_constraints.dart';
 import 'properties/icon_data.dart';
@@ -73,7 +77,6 @@ class MaterialBase extends WidgetLibrary {
         'IconButton': IconButtonBase(data, widgetContext),
         'SingleChildScrollView': SingleChildScrollViewBase(data, widgetContext),
         "Theme": ThemeBase(data, widgetContext),
-        "MaterialApp": MaterialAppBase(data, widgetContext),
         "Form": FormBase(data, widgetContext),
       };
 
@@ -150,11 +153,16 @@ class MaterialBase extends WidgetLibrary {
         'RaisedButton.icon': RaisedButtonIconBase(data, widgetContext),
         "FlatButton": FlatButtonBase(data, widgetContext),
         "FlatButton.icon": FlatButtonIconBase(data, widgetContext),
+        "OutlineButton": OutlineButtonBase(data, widgetContext),
         'Row': RowBase(data, widgetContext),
         'Scaffold': ScaffoldBase(data, widgetContext),
         'Text': TextBase(data, widgetContext),
       };
   Map<String, WidgetConfig> get misc => {
         'BottomNavigationBar': BottomNavigationBarBase(data, widgetContext),
+        'Drawer': DrawerBase(data, widgetContext),
+        'MaterialApp': MaterialAppBase(data, widgetContext),
+        'WidgetsApp': WidgetsAppBase(data, widgetContext),
+        'ButtonBar': ButtonBarBase(data, widgetContext),
       };
 }

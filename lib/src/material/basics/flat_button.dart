@@ -30,13 +30,18 @@ class FlatButtonBase extends _$FlatButtonBase {
   Color hoverColor;
   Key key;
   MaterialTapTargetSize materialTapTargetSize;
+  @enumMouseCursor
+  MouseCursor mouseCursor;
+
   Function onLongPress;
   Function onPressed;
   EdgeInsets padding;
   ShapeBorder shape;
   Color splashColor;
   Color textColor;
+  @enumButtonTextTheme
   ButtonTextTheme textTheme;
+
   @enumVisualDensity
   VisualDensity visualDensity;
 
@@ -52,9 +57,6 @@ class FlatButtonBase extends _$FlatButtonBase {
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
-
-  @enumMouseCursor
-  MouseCursor mouseCursor;
 
   @PropertyKey(defaultValue: 'false')
   bool autofocus;

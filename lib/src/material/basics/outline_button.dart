@@ -8,31 +8,26 @@ import '../../../flutter_dynamic_widget.dart';
 import '../enums.dart';
 import '../library.dart';
 
-part 'raised_button_icon.g.dart';
+part 'outline_button.g.dart';
 
-@WidgetClass('RaisedButton.icon')
-class RaisedButtonIconBase extends _$RaisedButtonIconBase {
-  RaisedButtonIconBase(this.widgetData, this.widgetContext);
+@WidgetClass('OutlineButton')
+class OutlineButtonBase extends _$OutlineButtonBase {
+  OutlineButtonBase(this.widgetData, this.widgetContext);
 
-  Duration animationDuration;
+  BorderSide borderSide;
   @enumClip
   Clip clipBehavior;
 
   Color color;
-  @enumBrightness
-  Brightness colorBrightness;
-
-  Color disabledColor;
-  double disabledElevation;
+  Color disabledBorderColor;
   Color disabledTextColor;
-  double elevation;
   Color focusColor;
   FocusNode focusNode;
   Color highlightColor;
+  Color highlightedBorderColor;
   double highlightElevation;
   Color hoverColor;
   Key key;
-  MaterialTapTargetSize materialTapTargetSize;
   @enumMouseCursor
   MouseCursor mouseCursor;
 
@@ -44,6 +39,9 @@ class RaisedButtonIconBase extends _$RaisedButtonIconBase {
   Color textColor;
   @enumButtonTextTheme
   ButtonTextTheme textTheme;
+
+  @enumVisualDensity
+  VisualDensity visualDensity;
 
   @override
   final Map<String, dynamic> widgetData;
@@ -62,18 +60,9 @@ class RaisedButtonIconBase extends _$RaisedButtonIconBase {
   bool autofocus;
 
   @WidgetKey.widget(
-    acceptWidth: 50,
-    acceptHeight: 35,
-    defaultValue: 'Placeholder',
-  )
-  Widget icon;
-
-  @WidgetKey.widget(
     acceptWidth: 35,
     acceptHeight: 35,
     defaultValue: 'Placeholder',
   )
-  Widget label;
-
-  void Function(bool) onHighlightChanged;
+  Widget child;
 }

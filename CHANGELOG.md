@@ -7,6 +7,10 @@ New Widgets:
 - TextTheme
 - BottomNavigationBar
 - BottomNavigationBarItem
+- Drawer
+- WidgetsApp
+- ButtonBar
+- OutlineButton
 
 # 1.0.1
 

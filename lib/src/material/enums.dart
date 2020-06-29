@@ -374,3 +374,18 @@ const enumBottomNavigationBarType = EnumKey(
     'BottomNavigationBarType.shifting',
   ],
 );
+
+const enumButtonBarLayoutBehavior = EnumKey(
+  values: [
+    'ButtonBarLayoutBehavior.constrained',
+    'ButtonBarLayoutBehavior.padded',
+  ],
+);
+
+const enumButtonTextTheme = EnumKey(
+  values: [
+    'ButtonTextTheme.normal',
+    'ButtonTextTheme.accent',
+    'ButtonTextTheme.primary',
+  ],
+);
