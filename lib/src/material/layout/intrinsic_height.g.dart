@@ -54,12 +54,12 @@ abstract class _$IntrinsicHeightBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'zZxW-OLPf';
+    _data['id'] = 'MQzvqk8xBWn';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'mb-vGoJd-d';
+      _data['params']['style']['id'] = '62Wt8ZcnpqE';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'gp9jLtQ8Xz';
+      _data['params']['0']['id'] = 'KWuZ8sGG42H';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -74,7 +74,7 @@ abstract class _$IntrinsicHeightBase extends WidgetBase {
                 (widgetContext.isDragging && childVal?.build(context) != null)
             ? (childVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': 'BDICbSQQM6',
+                  'id': 'kI_SOzxI82c',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)

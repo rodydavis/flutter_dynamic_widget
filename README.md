@@ -59,6 +59,23 @@ This package powers https://widget.studio
 - PreferredSize
 - BoxConstraints
 - Form
+- FloatingActionButtonTheme
+- IconButtonTheme
+- TextTheme
+- BottomNavigationBar
+- BottomNavigationBarItem
+- Drawer
+- WidgetsApp
+- ButtonBar
+- OutlineButton
+- Card
+- Chip
+- CircularProgressIndicator
+- LinearProgressIndicator
+- Tooltip
+- Divider
+- ListTile
+- AppBarTheme
 
 ## Example
 

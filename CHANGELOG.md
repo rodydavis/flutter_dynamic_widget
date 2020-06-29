@@ -11,6 +11,14 @@ New Widgets:
 - WidgetsApp
 - ButtonBar
 - OutlineButton
+- Card
+- Chip
+- CircularProgressIndicator
+- LinearProgressIndicator
+- Tooltip
+- Divider
+- ListTile
+- AppBarTheme
 
 # 1.0.1
 

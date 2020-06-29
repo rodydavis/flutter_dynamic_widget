@@ -11,6 +11,7 @@ part of 'theme_data.dart';
 abstract class _$ThemeDataBase extends PropertyBase {
   String accentColorKey = 'accentColor';
   String accentColorBrightnessKey = 'accentColorBrightness';
+  String appBarThemeKey = 'appBarTheme';
   String applyElevationOverlayColorKey = 'applyElevationOverlayColor';
   String backgroundColorKey = 'backgroundColor';
   String bottomAppBarColorKey = 'bottomAppBarColor';
@@ -56,6 +57,7 @@ abstract class _$ThemeDataBase extends PropertyBase {
   Map<String, String> get properties => {
         'accentColor': 'Color',
         'accentColorBrightness': 'Brightness',
+        'appBarTheme': 'AppBarThemeBase',
         'applyElevationOverlayColor': 'bool',
         'backgroundColor': 'Color',
         'bottomAppBarColor': 'Color',
@@ -143,6 +145,18 @@ abstract class _$ThemeDataBase extends PropertyBase {
 
   set accentColorBrightnessVal(Brightness val) {
     params[accentColorBrightnessKey] = "$val";
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  AppBarThemeBase get appBarThemeVal {
+    if (params[appBarThemeKey] != null) {
+      return AppBarThemeBase(params[appBarThemeKey], widgetContext);
+    }
+    return null;
+  }
+
+  set appBarThemeVal(AppBarThemeBase val) {
+    params[appBarThemeKey] = val;
     widgetContext.onUpdate(id, widgetData);
   }
 
@@ -1046,6 +1060,7 @@ abstract class _$ThemeDataBase extends PropertyBase {
       accentColorBrightness: accentColorBrightnessVal,
       accentIconTheme: accentIconThemeVal?.build(context),
       accentTextTheme: accentTextThemeVal?.build(context),
+      appBarTheme: appBarThemeVal?.build(context),
       applyElevationOverlayColor: applyElevationOverlayColorVal,
       backgroundColor: backgroundColorVal,
       bottomAppBarColor: bottomAppBarColorVal,

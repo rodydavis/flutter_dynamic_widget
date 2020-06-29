@@ -54,12 +54,12 @@ abstract class _$BottomNavigationBarItemBase extends PropertyBase {
 
   void iconValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = '2LM4nVwFygW';
+    _data['id'] = 'QBeq_hHbsBM';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'gt33Q---63x';
+      _data['params']['style']['id'] = 'EZpoHOasgXO';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'ddOSlm7LHaL';
+      _data['params']['0']['id'] = 'tIZMGTAi65j';
     }
     params[iconKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -75,12 +75,12 @@ abstract class _$BottomNavigationBarItemBase extends PropertyBase {
 
   void titleValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = '8n-Foi_37f7';
+    _data['id'] = '7NN-SGcE6Sf';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'Rhg5dS79bUX';
+      _data['params']['style']['id'] = 'oryF_ydR1Bi';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'nG61EO8MPEn';
+      _data['params']['0']['id'] = 'yGO4s4Bixk_';
     }
     params[titleKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -96,12 +96,12 @@ abstract class _$BottomNavigationBarItemBase extends PropertyBase {
 
   void activeIconValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'ExCbZIiQuaS';
+    _data['id'] = 'fEUcljZI1Lu';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 's7xAN21p4Eo';
+      _data['params']['style']['id'] = '5qvkNqwHVim';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'ToFkSdPI9v-';
+      _data['params']['0']['id'] = '2FHO1EQRGNa';
     }
     params[activeIconKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -150,7 +150,7 @@ abstract class _$BottomNavigationBarItemBase extends PropertyBase {
               (widgetContext.isDragging && iconVal?.build(context) != null)
           ? (iconVal?.build(context) ??
               (widgetRender(json.decode(json.encode({
-                'id': 'RtuJ7RAM5pi',
+                'id': '3l_yAW9u2Ad',
                 'name': 'Placeholder',
                 'params': {},
               }))) as WidgetBase)
@@ -190,7 +190,7 @@ abstract class _$BottomNavigationBarItemBase extends PropertyBase {
               (widgetContext.isDragging && titleVal?.build(context) != null)
           ? (titleVal?.build(context) ??
               (widgetRender(json.decode(json.encode({
-                'id': 'hV5G3LTRe7w',
+                'id': 'bRICa3eoNDO',
                 'name': 'Placeholder',
                 'params': {},
               }))) as WidgetBase)

@@ -47,11 +47,19 @@ import 'layout/sized_overflow_box.dart';
 import 'layout/transform.dart';
 import 'misc/bottom_navigation_bar.dart';
 import 'misc/button_bar.dart';
+import 'misc/card.dart';
+import 'misc/chip.dart';
+import 'misc/circular_progress_indicator.dart';
+import 'misc/divider.dart';
 import 'misc/drawer.dart';
+import 'misc/linear_progress_indicator.dart';
+import 'misc/list_tile.dart';
+import 'misc/tooltip.dart';
 import 'properties/bottom_navigation_bar_item.dart';
 import 'properties/box_constraints.dart';
 import 'properties/icon_data.dart';
 import 'properties/text_style.dart';
+import 'theme/app_bar_theme.dart';
 import 'theme/floating_action_button_theme.dart';
 import 'theme/icon_theme_data.dart';
 import 'theme/text_theme.dart';
@@ -137,6 +145,7 @@ class MaterialBase extends WidgetLibrary {
         'ThemeData': ThemeDataBase(data, widgetContext),
         'IconThemeData': IconThemeDataBase(data, widgetContext),
         'TextTheme': TextThemeBase(data, widgetContext),
+        'AppBarTheme': AppBarThemeBase(data, widgetContext),
         'FloatingActionButtonThemeData':
             FloatingActionButtonThemeDataBase(data, widgetContext),
       };
@@ -164,5 +173,14 @@ class MaterialBase extends WidgetLibrary {
         'MaterialApp': MaterialAppBase(data, widgetContext),
         'WidgetsApp': WidgetsAppBase(data, widgetContext),
         'ButtonBar': ButtonBarBase(data, widgetContext),
+        'Card': CardBase(data, widgetContext),
+        'Chip': ChipBase(data, widgetContext),
+        'Tooltip': TooltipBase(data, widgetContext),
+        'Divider': DividerBase(data, widgetContext),
+        'ListTile': ListTileBase(data, widgetContext),
+        'CircularProgressIndicator':
+            CircularProgressIndicatorBase(data, widgetContext),
+        'LinearProgressIndicator':
+            LinearProgressIndicatorBase(data, widgetContext),
       };
 }

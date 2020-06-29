@@ -6,6 +6,7 @@ import '../../../flutter_dynamic_widget.dart';
 import '../enums.dart';
 import '../library.dart';
 import '../theme/icon_theme_data.dart';
+import 'app_bar_theme.dart';
 import 'floating_action_button_theme.dart';
 import 'text_theme.dart';
 
@@ -19,7 +20,8 @@ class ThemeDataBase extends _$ThemeDataBase {
   @enumBrightness
   Brightness accentColorBrightness;
 
-  AppBarTheme appBarTheme;
+  @SupportedKey()
+  AppBarThemeBase appBarTheme;
   bool applyElevationOverlayColor;
   Color backgroundColor;
   MaterialBannerThemeData bannerTheme;

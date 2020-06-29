@@ -476,12 +476,12 @@ abstract class _$FlatButtonBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'YB81GUvs3du';
+    _data['id'] = 'iIEbPEw1nxU';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'VglVopnO8xS';
+      _data['params']['style']['id'] = '7qb1BFWen5e';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'qnSPXKOBj2p';
+      _data['params']['0']['id'] = '_c-n248G9SV';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -497,7 +497,7 @@ abstract class _$FlatButtonBase extends WidgetBase {
                 (widgetContext.isDragging && childVal?.build(context) != null)
             ? (childVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': '5VzdGF2Qmze',
+                  'id': 'dPkRyTHAvWM',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)

@@ -56,12 +56,12 @@ abstract class _$AspectRatioBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'dtbVCxtU2kW';
+    _data['id'] = 'NBydPdSngs';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'nqb_ZFeSLrk';
+      _data['params']['style']['id'] = '4r9y8YhE_b';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'vhA85Rvtj6l';
+      _data['params']['0']['id'] = 'ZjnafsCQXE';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -89,7 +89,7 @@ abstract class _$AspectRatioBase extends WidgetBase {
                 (widgetContext.isDragging && childVal?.build(context) != null)
             ? (childVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': 'dgeSvslnyln',
+                  'id': '5xhqG8pNII',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)

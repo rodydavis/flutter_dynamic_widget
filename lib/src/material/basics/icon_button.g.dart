@@ -329,12 +329,12 @@ abstract class _$IconButtonBase extends WidgetBase {
 
   void iconValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'xKBrJY1Ak5O';
+    _data['id'] = 'BrHSmKHHdaW';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'ol5kO24_sVm';
+      _data['params']['style']['id'] = 'M1I95mTyJ6y';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = '8mPScVPgOoG';
+      _data['params']['0']['id'] = 'aKDpEcQ43xh';
     }
     params[iconKey] = _data;
     widgetContext.onUpdate(id, widgetData);

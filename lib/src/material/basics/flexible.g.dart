@@ -31,12 +31,12 @@ abstract class _$FlexibleBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'YIFJ_OSJc4h';
+    _data['id'] = 'X-vfbJvcPN';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'TjpltePRmgE';
+      _data['params']['style']['id'] = 'MX67K2t1zP';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'V_icsJlCWap';
+      _data['params']['0']['id'] = 'CZ4rx4Ymsp';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);

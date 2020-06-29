@@ -64,12 +64,12 @@ abstract class _$OverflowBoxBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'pIqBI9Mz6qt';
+    _data['id'] = '2R6nSE-Os4f';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'qXkjRqIjV1U';
+      _data['params']['style']['id'] = 'f189qb5vOtj';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'zpEEBiZdjPs';
+      _data['params']['0']['id'] = 'Ho8H7HFkibI';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -161,7 +161,7 @@ abstract class _$OverflowBoxBase extends WidgetBase {
                 (widgetContext.isDragging && childVal?.build(context) != null)
             ? (childVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': '-JpZmtJY4Cg',
+                  'id': 'eKu_BbrtWY_',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)

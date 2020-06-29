@@ -271,12 +271,12 @@ abstract class _$MaterialAppBase extends WidgetBase {
 
   void homeValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'TClBW1C7A3j';
+    _data['id'] = '54F-Eev_AN3';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = '4kxAiHfxYBh';
+      _data['params']['style']['id'] = 'S_UbZjJHQH-';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'f_AZdUPAECs';
+      _data['params']['0']['id'] = 'NGVm1xE3tkp';
     }
     params[homeKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -295,7 +295,7 @@ abstract class _$MaterialAppBase extends WidgetBase {
               (widgetContext.isDragging && homeVal?.build(context) != null)
           ? (homeVal?.build(context) ??
               (widgetRender(json.decode(json.encode({
-                'id': 'EqOMa5fZ6jC',
+                'id': 'bFjLpYmdHHg',
                 'name': 'Placeholder',
                 'params': {},
               }))) as WidgetBase)

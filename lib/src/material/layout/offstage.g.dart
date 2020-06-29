@@ -68,12 +68,12 @@ abstract class _$OffstageBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'ri3OVZX3wTE';
+    _data['id'] = 'LFCAuv8Ip1o';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'qWPxB79wpPo';
+      _data['params']['style']['id'] = '-y5f7MflH1B';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'MVnkC5q9zlH';
+      _data['params']['0']['id'] = 'nWdhu9kLBS7';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -88,7 +88,7 @@ abstract class _$OffstageBase extends WidgetBase {
                 (widgetContext.isDragging && childVal?.build(context) != null)
             ? (childVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': '4IXZwS7UqZp',
+                  'id': 'P1pbLc5xvCO',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)
