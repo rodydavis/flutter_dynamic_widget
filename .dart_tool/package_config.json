@@ -129,9 +129,9 @@
     },
     {
       "name": "crypto",
-      "rootUri": "file:///usr/local/Caskroom/flutter/1.2.1/flutter/.pub-cache/hosted/pub.dartlang.org/crypto-2.1.5",
+      "rootUri": "file:///usr/local/Caskroom/flutter/1.2.1/flutter/.pub-cache/hosted/pub.dartlang.org/crypto-2.1.4",
       "packageUri": "lib/",
-      "languageVersion": "2.3"
+      "languageVersion": "2.1"
     },
     {
       "name": "csslib",
@@ -399,9 +399,9 @@
     },
     {
       "name": "typed_data",
-      "rootUri": "file:///usr/local/Caskroom/flutter/1.2.1/flutter/.pub-cache/hosted/pub.dartlang.org/typed_data-1.1.6",
+      "rootUri": "file:///usr/local/Caskroom/flutter/1.2.1/flutter/.pub-cache/hosted/pub.dartlang.org/typed_data-1.2.0",
       "packageUri": "lib/",
-      "languageVersion": "2.0"
+      "languageVersion": "2.4"
     },
     {
       "name": "url_launcher",
@@ -447,7 +447,7 @@
     },
     {
       "name": "widget_gen",
-      "rootUri": "file:///usr/local/Caskroom/flutter/1.2.1/flutter/.pub-cache/hosted/pub.dartlang.org/widget_gen-1.0.1",
+      "rootUri": "file:///usr/local/Caskroom/flutter/1.2.1/flutter/.pub-cache/hosted/pub.dartlang.org/widget_gen-1.0.1+1",
       "packageUri": "lib/",
       "languageVersion": "2.7"
     },
@@ -464,7 +464,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-06-28T08:26:09.949474Z",
+  "generated": "2020-06-29T09:28:18.735700Z",
   "generator": "pub",
-  "generatorVersion": "2.9.0-17.0.dev.flutter-7e72c9ae7e"
+  "generatorVersion": "2.9.0-19.0.dev.flutter-63cf56d925"
 }

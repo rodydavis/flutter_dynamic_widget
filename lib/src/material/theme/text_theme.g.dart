@@ -1,0 +1,367 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'text_theme.dart';
+
+// **************************************************************************
+// WidgetGenerator
+// **************************************************************************
+
+// ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, avoid_init_to_null
+
+abstract class _$TextThemeBase extends PropertyBase {
+  String headline1Key = 'headline1';
+  String headline2Key = 'headline2';
+  String headline3Key = 'headline3';
+  String headline4Key = 'headline4';
+  String headline5Key = 'headline5';
+  String headline6Key = 'headline6';
+  String subtitle1Key = 'subtitle1';
+  String subtitle2Key = 'subtitle2';
+  String bodyText1Key = 'bodyText1';
+  String bodyText2Key = 'bodyText2';
+  String captionKey = 'caption';
+  String buttonKey = 'button';
+  String overlineKey = 'overline';
+  String display4Key = 'display4';
+  String display3Key = 'display3';
+  String display2Key = 'display2';
+  String display1Key = 'display1';
+  String headlineKey = 'headline';
+  String titleKey = 'title';
+  String subheadKey = 'subhead';
+  String subtitleKey = 'subtitle';
+  String body2Key = 'body2';
+  String body1Key = 'body1';
+
+  @override
+  Map<String, String> get properties => {
+        'headline1': 'TextStyleBase',
+        'headline2': 'TextStyleBase',
+        'headline3': 'TextStyleBase',
+        'headline4': 'TextStyleBase',
+        'headline5': 'TextStyleBase',
+        'headline6': 'TextStyleBase',
+        'subtitle1': 'TextStyleBase',
+        'subtitle2': 'TextStyleBase',
+        'bodyText1': 'TextStyleBase',
+        'bodyText2': 'TextStyleBase',
+        'caption': 'TextStyleBase',
+        'button': 'TextStyleBase',
+        'overline': 'TextStyleBase',
+        'display4': 'TextStyleBase',
+        'display3': 'TextStyleBase',
+        'display2': 'TextStyleBase',
+        'display1': 'TextStyleBase',
+        'headline': 'TextStyleBase',
+        'title': 'TextStyleBase',
+        'subhead': 'TextStyleBase',
+        'subtitle': 'TextStyleBase',
+        'body2': 'TextStyleBase',
+        'body1': 'TextStyleBase',
+      };
+
+  TextStyleBase get headline1Val {
+    if (params[headline1Key] != null) {
+      return TextStyleBase(params[headline1Key], widgetContext);
+    }
+    return null;
+  }
+
+  set headline1Val(TextStyleBase val) {
+    params[headline1Key] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  TextStyleBase get headline2Val {
+    if (params[headline2Key] != null) {
+      return TextStyleBase(params[headline2Key], widgetContext);
+    }
+    return null;
+  }
+
+  set headline2Val(TextStyleBase val) {
+    params[headline2Key] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  TextStyleBase get headline3Val {
+    if (params[headline3Key] != null) {
+      return TextStyleBase(params[headline3Key], widgetContext);
+    }
+    return null;
+  }
+
+  set headline3Val(TextStyleBase val) {
+    params[headline3Key] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  TextStyleBase get headline4Val {
+    if (params[headline4Key] != null) {
+      return TextStyleBase(params[headline4Key], widgetContext);
+    }
+    return null;
+  }
+
+  set headline4Val(TextStyleBase val) {
+    params[headline4Key] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  TextStyleBase get headline5Val {
+    if (params[headline5Key] != null) {
+      return TextStyleBase(params[headline5Key], widgetContext);
+    }
+    return null;
+  }
+
+  set headline5Val(TextStyleBase val) {
+    params[headline5Key] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  TextStyleBase get headline6Val {
+    if (params[headline6Key] != null) {
+      return TextStyleBase(params[headline6Key], widgetContext);
+    }
+    return null;
+  }
+
+  set headline6Val(TextStyleBase val) {
+    params[headline6Key] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  TextStyleBase get subtitle1Val {
+    if (params[subtitle1Key] != null) {
+      return TextStyleBase(params[subtitle1Key], widgetContext);
+    }
+    return null;
+  }
+
+  set subtitle1Val(TextStyleBase val) {
+    params[subtitle1Key] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  TextStyleBase get subtitle2Val {
+    if (params[subtitle2Key] != null) {
+      return TextStyleBase(params[subtitle2Key], widgetContext);
+    }
+    return null;
+  }
+
+  set subtitle2Val(TextStyleBase val) {
+    params[subtitle2Key] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  TextStyleBase get bodyText1Val {
+    if (params[bodyText1Key] != null) {
+      return TextStyleBase(params[bodyText1Key], widgetContext);
+    }
+    return null;
+  }
+
+  set bodyText1Val(TextStyleBase val) {
+    params[bodyText1Key] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  TextStyleBase get bodyText2Val {
+    if (params[bodyText2Key] != null) {
+      return TextStyleBase(params[bodyText2Key], widgetContext);
+    }
+    return null;
+  }
+
+  set bodyText2Val(TextStyleBase val) {
+    params[bodyText2Key] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  TextStyleBase get captionVal {
+    if (params[captionKey] != null) {
+      return TextStyleBase(params[captionKey], widgetContext);
+    }
+    return null;
+  }
+
+  set captionVal(TextStyleBase val) {
+    params[captionKey] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  TextStyleBase get buttonVal {
+    if (params[buttonKey] != null) {
+      return TextStyleBase(params[buttonKey], widgetContext);
+    }
+    return null;
+  }
+
+  set buttonVal(TextStyleBase val) {
+    params[buttonKey] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  TextStyleBase get overlineVal {
+    if (params[overlineKey] != null) {
+      return TextStyleBase(params[overlineKey], widgetContext);
+    }
+    return null;
+  }
+
+  set overlineVal(TextStyleBase val) {
+    params[overlineKey] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  TextStyleBase get display4Val {
+    if (params[display4Key] != null) {
+      return TextStyleBase(params[display4Key], widgetContext);
+    }
+    return null;
+  }
+
+  set display4Val(TextStyleBase val) {
+    params[display4Key] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  TextStyleBase get display3Val {
+    if (params[display3Key] != null) {
+      return TextStyleBase(params[display3Key], widgetContext);
+    }
+    return null;
+  }
+
+  set display3Val(TextStyleBase val) {
+    params[display3Key] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  TextStyleBase get display2Val {
+    if (params[display2Key] != null) {
+      return TextStyleBase(params[display2Key], widgetContext);
+    }
+    return null;
+  }
+
+  set display2Val(TextStyleBase val) {
+    params[display2Key] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  TextStyleBase get display1Val {
+    if (params[display1Key] != null) {
+      return TextStyleBase(params[display1Key], widgetContext);
+    }
+    return null;
+  }
+
+  set display1Val(TextStyleBase val) {
+    params[display1Key] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  TextStyleBase get headlineVal {
+    if (params[headlineKey] != null) {
+      return TextStyleBase(params[headlineKey], widgetContext);
+    }
+    return null;
+  }
+
+  set headlineVal(TextStyleBase val) {
+    params[headlineKey] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  TextStyleBase get titleVal {
+    if (params[titleKey] != null) {
+      return TextStyleBase(params[titleKey], widgetContext);
+    }
+    return null;
+  }
+
+  set titleVal(TextStyleBase val) {
+    params[titleKey] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  TextStyleBase get subheadVal {
+    if (params[subheadKey] != null) {
+      return TextStyleBase(params[subheadKey], widgetContext);
+    }
+    return null;
+  }
+
+  set subheadVal(TextStyleBase val) {
+    params[subheadKey] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  TextStyleBase get subtitleVal {
+    if (params[subtitleKey] != null) {
+      return TextStyleBase(params[subtitleKey], widgetContext);
+    }
+    return null;
+  }
+
+  set subtitleVal(TextStyleBase val) {
+    params[subtitleKey] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  TextStyleBase get body2Val {
+    if (params[body2Key] != null) {
+      return TextStyleBase(params[body2Key], widgetContext);
+    }
+    return null;
+  }
+
+  set body2Val(TextStyleBase val) {
+    params[body2Key] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  TextStyleBase get body1Val {
+    if (params[body1Key] != null) {
+      return TextStyleBase(params[body1Key], widgetContext);
+    }
+    return null;
+  }
+
+  set body1Val(TextStyleBase val) {
+    params[body1Key] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  @override
+  Object build(BuildContext context) {
+    return TextTheme(
+      body1: body1Val?.build(context),
+      body2: body2Val?.build(context),
+      bodyText1: bodyText1Val?.build(context),
+      bodyText2: bodyText2Val?.build(context),
+      button: buttonVal?.build(context),
+      caption: captionVal?.build(context),
+      display1: display1Val?.build(context),
+      display2: display2Val?.build(context),
+      display3: display3Val?.build(context),
+      display4: display4Val?.build(context),
+      headline: headlineVal?.build(context),
+      headline1: headline1Val?.build(context),
+      headline2: headline2Val?.build(context),
+      headline3: headline3Val?.build(context),
+      headline4: headline4Val?.build(context),
+      headline5: headline5Val?.build(context),
+      headline6: headline6Val?.build(context),
+      overline: overlineVal?.build(context),
+      subhead: subheadVal?.build(context),
+      subtitle: subtitleVal?.build(context),
+      subtitle1: subtitle1Val?.build(context),
+      subtitle2: subtitle2Val?.build(context),
+      title: titleVal?.build(context),
+    );
+  }
+}

@@ -278,12 +278,12 @@ abstract class _$FloatingActionButtonBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'VwZtAttheq8';
+    _data['id'] = 'mtY8yXZm71t';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'JWciBRemU2L';
+      _data['params']['style']['id'] = 'k5_wkuSeD76';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'nwhQyQ4eMAo';
+      _data['params']['0']['id'] = '3ttsOTssyA5';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);

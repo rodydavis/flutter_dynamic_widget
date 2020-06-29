@@ -1,3 +1,13 @@
+# 1.0.2
+
+New Widgets:
+
+- FloatingActionButtonTheme
+- IconButtonTheme
+- TextTheme
+- BottomNavigationBar
+- BottomNavigationBarItem
+
 # 1.0.1
 
 New Widgets:

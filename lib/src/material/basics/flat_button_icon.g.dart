@@ -433,12 +433,12 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
 
   void iconValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'yGKehgjxlb9';
+    _data['id'] = 'abVZCXuGec9';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'Et_rNEDD_XW';
+      _data['params']['style']['id'] = 'pfT6xwx3ipv';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'K1-68XVUloy';
+      _data['params']['0']['id'] = '8y1OPbW6tpT';
     }
     params[iconKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -454,12 +454,12 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
 
   void labelValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'B9jWXljbl6i';
+    _data['id'] = 'p832Ig9hA7y';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'NLpwS_CXZza';
+      _data['params']['style']['id'] = '-qj8m2HQEiB';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = '1fVF8JkYjla';
+      _data['params']['0']['id'] = 'Illn9JgeSbf';
     }
     params[labelKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -483,7 +483,7 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
                 (widgetContext.isDragging && iconVal?.build(context) != null)
             ? (iconVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': 'k2ITPyU1_wl',
+                  'id': 'cXWEQvHGsc9',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)
@@ -524,7 +524,7 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
                 (widgetContext.isDragging && labelVal?.build(context) != null)
             ? (labelVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': 'seOTFgFlh48',
+                  'id': 'JfLSFHYl1cn',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)

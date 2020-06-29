@@ -475,12 +475,12 @@ abstract class _$RaisedButtonIconBase extends WidgetBase {
 
   void iconValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = '9bHEqA9nM9e';
+    _data['id'] = '1pw9DphT6mc';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'k3EtiKEWte1';
+      _data['params']['style']['id'] = 'IUCOXIVXfRp';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'p-JSIe1eeBc';
+      _data['params']['0']['id'] = 'BvhIm4w6aZn';
     }
     params[iconKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -496,12 +496,12 @@ abstract class _$RaisedButtonIconBase extends WidgetBase {
 
   void labelValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'KJn3oKt26le';
+    _data['id'] = 'JffEfdOKNze';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'FQOVcZFf6y_';
+      _data['params']['style']['id'] = 'Wi55XY18yHX';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'Q9-dn8Hrb8v';
+      _data['params']['0']['id'] = 'NOg8-brh7Vx';
     }
     params[labelKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -528,7 +528,7 @@ abstract class _$RaisedButtonIconBase extends WidgetBase {
                 (widgetContext.isDragging && iconVal?.build(context) != null)
             ? (iconVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': '8_2iJykT98d',
+                  'id': 'zsyiTKnrh5X',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)
@@ -569,7 +569,7 @@ abstract class _$RaisedButtonIconBase extends WidgetBase {
                 (widgetContext.isDragging && labelVal?.build(context) != null)
             ? (labelVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': '48frn1KWeXo',
+                  'id': 'gzKBibBRdYB',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)

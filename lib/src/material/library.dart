@@ -43,11 +43,15 @@ import 'layout/padding.dart';
 import 'layout/preferred_size.dart';
 import 'layout/sized_overflow_box.dart';
 import 'layout/transform.dart';
+import 'misc/bottom_navigation_bar.dart';
+import 'properties/bottom_navigation_bar_item.dart';
 import 'properties/box_constraints.dart';
 import 'properties/icon_data.dart';
 import 'properties/text_style.dart';
-import 'properties/text_theme.dart';
-import 'properties/theme_data.dart';
+import 'theme/floating_action_button_theme.dart';
+import 'theme/icon_theme_data.dart';
+import 'theme/text_theme.dart';
+import 'theme/theme_data.dart';
 
 class MaterialBase extends WidgetLibrary {
   MaterialBase(this.data, this.widgetContext);
@@ -59,6 +63,8 @@ class MaterialBase extends WidgetLibrary {
   Map<String, WidgetConfig> get library => {
         ...basics,
         ...layout,
+        ...misc,
+        ...themes,
         ...properties,
         'FloatingActionButton': FloatingActionButtonBase(data, widgetContext),
         'Wrap': WrapBase(data, widgetContext),
@@ -89,6 +95,7 @@ class MaterialBase extends WidgetLibrary {
   Map<String, Map<String, WidgetConfig>> get categories => {
         'Basics': basics,
         'Layout': layout,
+        'Misc': misc,
       };
 
   Map<String, WidgetConfig> get layout => {
@@ -116,11 +123,19 @@ class MaterialBase extends WidgetLibrary {
       };
 
   Map<String, WidgetConfig> get properties => {
-        'TextTheme': TextThemeBase(data, widgetContext),
-        'ThemeData': ThemeDataBase(data, widgetContext),
         'IconData': IconDataBase(data, widgetContext),
         'TextStyle': TextStyleBase(data, widgetContext),
         'BoxConstraints': BoxConstraintsBase(data, widgetContext),
+        'BottomNavigationBarItem':
+            BottomNavigationBarItemBase(data, widgetContext),
+      };
+
+  Map<String, WidgetConfig> get themes => {
+        'ThemeData': ThemeDataBase(data, widgetContext),
+        'IconThemeData': IconThemeDataBase(data, widgetContext),
+        'TextTheme': TextThemeBase(data, widgetContext),
+        'FloatingActionButtonThemeData':
+            FloatingActionButtonThemeDataBase(data, widgetContext),
       };
 
   Map<String, WidgetConfig> get basics => {
@@ -138,5 +153,8 @@ class MaterialBase extends WidgetLibrary {
         'Row': RowBase(data, widgetContext),
         'Scaffold': ScaffoldBase(data, widgetContext),
         'Text': TextBase(data, widgetContext),
+      };
+  Map<String, WidgetConfig> get misc => {
+        'BottomNavigationBar': BottomNavigationBarBase(data, widgetContext),
       };
 }

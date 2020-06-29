@@ -4,7 +4,8 @@ import 'package:widget_gen/widget_gen_annotations.dart';
 import '../../../flutter_dynamic_widget.dart';
 import '../enums.dart';
 import '../library.dart';
-import '../properties/text_theme.dart';
+import '../theme/icon_theme_data.dart';
+import '../theme/text_theme.dart';
 
 part 'appbar.g.dart';
 
@@ -13,22 +14,17 @@ class AppBarBase extends _$AppBarBase {
   AppBarBase(this.widgetData, this.widgetContext);
 
   List<Widget> actions;
-  IconThemeData actionsIconTheme;
   Color backgroundColor;
   Widget bottom;
+  @enumBrightness
+  Brightness brightness;
+
   bool centerTitle;
   double elevation;
   Widget flexibleSpace;
-  IconThemeData iconTheme;
   Key key;
-  @WidgetKey.widget()
-  Widget leading;
   Color shadowColor;
   ShapeBorder shape;
-  @SupportedKey()
-  TextThemeBase textTheme;
-  @WidgetKey.widget(acceptWidth: 100)
-  Widget title;
 
   @override
   final Map<String, dynamic> widgetData;
@@ -43,11 +39,23 @@ class AppBarBase extends _$AppBarBase {
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
 
+  @SupportedKey()
+  IconThemeDataBase actionsIconTheme;
+
+  @SupportedKey()
+  IconThemeDataBase iconTheme;
+
+  @WidgetKey.widget()
+  Widget leading;
+
+  @SupportedKey()
+  TextThemeBase textTheme;
+
+  @WidgetKey.widget(acceptWidth: 100)
+  Widget title;
+
   @PropertyKey(defaultValue: 'true')
   bool automaticallyImplyLeading;
-
-  @enumBrightness
-  Brightness brightness;
 
   @PropertyKey(defaultValue: 'true')
   bool primary;

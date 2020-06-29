@@ -12,16 +12,18 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
   String actionsKey = 'actions';
   String backgroundColorKey = 'backgroundColor';
   String bottomKey = 'bottom';
+  String brightnessKey = 'brightness';
   String centerTitleKey = 'centerTitle';
   String elevationKey = 'elevation';
   String flexibleSpaceKey = 'flexibleSpace';
   String keyKey = 'key';
-  String leadingKey = 'leading';
   String shadowColorKey = 'shadowColor';
+  String actionsIconThemeKey = 'actionsIconTheme';
+  String iconThemeKey = 'iconTheme';
+  String leadingKey = 'leading';
   String textThemeKey = 'textTheme';
   String titleKey = 'title';
   String automaticallyImplyLeadingKey = 'automaticallyImplyLeading';
-  String brightnessKey = 'brightness';
   String primaryKey = 'primary';
   String titleSpacingKey = 'titleSpacing';
   String toolbarOpacityKey = 'toolbarOpacity';
@@ -36,16 +38,18 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
         'actions': 'List<Widget>',
         'backgroundColor': 'Color',
         'bottom': 'Widget',
+        'brightness': 'Brightness',
         'centerTitle': 'bool',
         'elevation': 'double',
         'flexibleSpace': 'Widget',
         'key': 'Key',
-        'leading': 'Widget',
         'shadowColor': 'Color',
+        'actionsIconTheme': 'IconThemeDataBase',
+        'iconTheme': 'IconThemeDataBase',
+        'leading': 'Widget',
         'textTheme': 'TextThemeBase',
         'title': 'Widget',
         'automaticallyImplyLeading': 'bool',
-        'brightness': 'Brightness',
         'primary': 'bool',
         'titleSpacing': 'double',
         'toolbarOpacity': 'double',
@@ -111,14 +115,35 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
 
   void bottomValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'BFmB7zRDbhf';
+    _data['id'] = 'x1vhDzsXkF-';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'DVBXAVvNioc';
+      _data['params']['style']['id'] = 'Ob72LFZPArA';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = '5qmfwZDL8zX';
+      _data['params']['0']['id'] = '9f7353V54xt';
     }
     params[bottomKey] = _data;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  List<Brightness> get brightnessValues => [
+        Brightness.light,
+        Brightness.dark,
+      ];
+
+  Brightness get brightnessVal {
+    if (params[brightnessKey] != null) {
+      final _value = params[brightnessKey].toString().replaceAll('#', '');
+      return brightnessValues.firstWhere(
+        (element) => element.toString() == _value,
+        orElse: () => null,
+      );
+    }
+    return null;
+  }
+
+  set brightnessVal(Brightness val) {
+    params[brightnessKey] = "$val";
     widgetContext.onUpdate(id, widgetData);
   }
 
@@ -155,12 +180,12 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
 
   void flexibleSpaceValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'mYRCxl_ff_M';
+    _data['id'] = 'iU9zySQYlsI';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'QN5FS3Ni-Ep';
+      _data['params']['style']['id'] = 'gdJWIdcR7Xd';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'v8lKkfunNSK';
+      _data['params']['0']['id'] = 'b7_dp1E_EjL';
     }
     params[flexibleSpaceKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -192,27 +217,6 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
-  final _leadingListen = ValueNotifier<bool>(false);
-  WidgetBase get leadingVal {
-    if (params[leadingKey] != null) {
-      return widgetRender(params[leadingKey]);
-    }
-    return null;
-  }
-
-  void leadingValUpdate(Map<String, dynamic> val) {
-    final _data = val;
-    _data['id'] = 'RT1aWRtSCo2';
-    if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'yiyRaL4ubHv';
-    }
-    if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'FR4W7K5zXK1';
-    }
-    params[leadingKey] = _data;
-    widgetContext.onUpdate(id, widgetData);
-  }
-
   Color get shadowColorVal {
     if (params[shadowColorKey] != null) {
       int _value = null;
@@ -239,6 +243,51 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
+  IconThemeDataBase get actionsIconThemeVal {
+    if (params[actionsIconThemeKey] != null) {
+      return IconThemeDataBase(params[actionsIconThemeKey], widgetContext);
+    }
+    return null;
+  }
+
+  set actionsIconThemeVal(IconThemeDataBase val) {
+    params[actionsIconThemeKey] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  IconThemeDataBase get iconThemeVal {
+    if (params[iconThemeKey] != null) {
+      return IconThemeDataBase(params[iconThemeKey], widgetContext);
+    }
+    return null;
+  }
+
+  set iconThemeVal(IconThemeDataBase val) {
+    params[iconThemeKey] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  final _leadingListen = ValueNotifier<bool>(false);
+  WidgetBase get leadingVal {
+    if (params[leadingKey] != null) {
+      return widgetRender(params[leadingKey]);
+    }
+    return null;
+  }
+
+  void leadingValUpdate(Map<String, dynamic> val) {
+    final _data = val;
+    _data['id'] = 'ZsjNXxfRSGQ';
+    if (_data['name'] == 'Text') {
+      _data['params']['style']['id'] = '5GCtVJq6RUn';
+    }
+    if (_data['name'] == 'Icon') {
+      _data['params']['0']['id'] = 'WQHzvUqKIhv';
+    }
+    params[leadingKey] = _data;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
   TextThemeBase get textThemeVal {
     if (params[textThemeKey] != null) {
       return TextThemeBase(params[textThemeKey], widgetContext);
@@ -261,12 +310,12 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
 
   void titleValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'Sgl3V_TCXFs';
+    _data['id'] = 'AQ6eO7S7CpQ';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'HQyHss7XCgz';
+      _data['params']['style']['id'] = 'bVa9Qvk_DNM';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = '1mO7WL8SkFp';
+      _data['params']['0']['id'] = 'Dp9q1_y4zK7';
     }
     params[titleKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -281,27 +330,6 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
 
   set automaticallyImplyLeadingVal(bool val) {
     params[automaticallyImplyLeadingKey] = val;
-    widgetContext.onUpdate(id, widgetData);
-  }
-
-  List<Brightness> get brightnessValues => [
-        Brightness.light,
-        Brightness.dark,
-      ];
-
-  Brightness get brightnessVal {
-    if (params[brightnessKey] != null) {
-      final _value = params[brightnessKey].toString().replaceAll('#', '');
-      return brightnessValues.firstWhere(
-        (element) => element.toString() == _value,
-        orElse: () => null,
-      );
-    }
-    return null;
-  }
-
-  set brightnessVal(Brightness val) {
-    params[brightnessKey] = "$val";
     widgetContext.onUpdate(id, widgetData);
   }
 
@@ -407,6 +435,7 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
                       },
                     ),
                 ],
+          actionsIconTheme: actionsIconThemeVal?.build(context),
           automaticallyImplyLeading: automaticallyImplyLeadingVal,
           backgroundColor: backgroundColorVal,
           bottom: bottomVal?.build(context),
@@ -416,6 +445,7 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
           elevation: elevationVal,
           excludeHeaderSemantics: excludeHeaderSemanticsVal,
           flexibleSpace: flexibleSpaceVal?.build(context),
+          iconTheme: iconThemeVal?.build(context),
           key: keyVal,
           leading: !widgetContext.isDragging ||
                   (widgetContext.isDragging &&

@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:widget_gen/widget_gen_annotations.dart';
 
 const enumAlignment = EnumKey(
@@ -363,5 +364,13 @@ const enumBoxFit = EnumKey(
     'BoxFit.fitWidth',
     'BoxFit.none',
     'BoxFit.scaleDown',
+  ],
+);
+
+const enumBottomNavigationBarType = EnumKey(
+  defaultValue: 'BottomNavigationBarType.fixed',
+  values: [
+    'BottomNavigationBarType.fixed',
+    'BottomNavigationBarType.shifting',
   ],
 );

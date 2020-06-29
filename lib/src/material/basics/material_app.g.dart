@@ -9,10 +9,11 @@ part of 'material_app.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, avoid_init_to_null
 
 abstract class _$MaterialAppBase extends WidgetBase {
-  String themeModeKey = 'themeMode';
+  String navigatorObserversKey = 'navigatorObservers';
   String colorKey = 'color';
   String initialRouteKey = 'initialRoute';
   String keyKey = 'key';
+  String themeModeKey = 'themeMode';
   String titleKey = 'title';
   String checkerboardOffscreenLayersKey = 'checkerboardOffscreenLayers';
   String checkerboardRasterCacheImagesKey = 'checkerboardRasterCacheImages';
@@ -26,10 +27,11 @@ abstract class _$MaterialAppBase extends WidgetBase {
 
   @override
   Map<String, String> get properties => {
-        'themeMode': 'ThemeMode',
+        'navigatorObservers': 'List<NavigatorObserver>',
         'color': 'Color',
         'initialRoute': 'String',
         'key': 'Key',
+        'themeMode': 'ThemeMode',
         'title': 'String',
         'checkerboardOffscreenLayers': 'bool',
         'checkerboardRasterCacheImages': 'bool',
@@ -42,25 +44,26 @@ abstract class _$MaterialAppBase extends WidgetBase {
         'home': 'Widget',
       };
 
-  List<ThemeMode> get themeModeValues => [
-        ThemeMode.dark,
-        ThemeMode.light,
-        ThemeMode.system,
-      ];
-
-  ThemeMode get themeModeVal {
-    if (params[themeModeKey] != null) {
-      final _value = params[themeModeKey].toString().replaceAll('#', '');
-      return themeModeValues.firstWhere(
-        (element) => element.toString() == _value,
-        orElse: () => ThemeMode.system,
-      );
+  final _navigatorObserversListen = ValueNotifier<bool>(false);
+  List<WidgetBase> get navigatorObserversVal {
+    if (params[navigatorObserversKey] != null) {
+      final _children = <WidgetBase>[];
+      final _list = List.from(params[navigatorObserversKey]);
+      for (final item in _list) {
+        if (item is Map<String, dynamic>) {
+          _children.add(widgetRender(item));
+        }
+      }
+      return _children;
     }
-    return ThemeMode.system;
+    return null;
   }
 
-  set themeModeVal(ThemeMode val) {
-    params[themeModeKey] = "$val";
+  void navigatorObserversValUpdate(Map<String, dynamic> val) {
+    if (params[navigatorObserversKey] == null) {
+      params[navigatorObserversKey] = [];
+    }
+    params[navigatorObserversKey].add(val);
     widgetContext.onUpdate(id, widgetData);
   }
 
@@ -125,6 +128,28 @@ abstract class _$MaterialAppBase extends WidgetBase {
     } else {
       params[keyKey] = "#ValueKey('$val')";
     }
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  List<ThemeMode> get themeModeValues => [
+        ThemeMode.dark,
+        ThemeMode.light,
+        ThemeMode.system,
+      ];
+
+  ThemeMode get themeModeVal {
+    if (params[themeModeKey] != null) {
+      final _value = params[themeModeKey].toString().replaceAll('#', '');
+      return themeModeValues.firstWhere(
+        (element) => element.toString() == _value,
+        orElse: () => ThemeMode.system,
+      );
+    }
+    return ThemeMode.system;
+  }
+
+  set themeModeVal(ThemeMode val) {
+    params[themeModeKey] = "$val";
     widgetContext.onUpdate(id, widgetData);
   }
 
@@ -246,12 +271,12 @@ abstract class _$MaterialAppBase extends WidgetBase {
 
   void homeValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'PYP4Jk5OA22';
+    _data['id'] = 'Khu_E3YNha';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'UieqlordWHA';
+      _data['params']['style']['id'] = 'w2UZvswLcI';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = '5Ei-sZ_3eNW';
+      _data['params']['0']['id'] = 'bqNIzbkgfB';
     }
     params[homeKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -270,7 +295,7 @@ abstract class _$MaterialAppBase extends WidgetBase {
               (widgetContext.isDragging && homeVal?.build(context) != null)
           ? (homeVal?.build(context) ??
               (widgetRender(json.decode(json.encode({
-                'id': 'fLT82d6bmB3',
+                'id': 'FF_dNuE7Mb',
                 'name': 'Placeholder',
                 'params': {},
               }))) as WidgetBase)
@@ -308,6 +333,13 @@ abstract class _$MaterialAppBase extends WidgetBase {
             ),
       initialRoute: initialRouteVal,
       key: keyVal,
+      navigatorObservers: navigatorObserversVal == null &&
+              !widgetContext.isDragging
+          ? []
+          : [
+              if (navigatorObserversVal != null)
+                for (final item in navigatorObserversVal) item.build(context),
+            ],
       showPerformanceOverlay: showPerformanceOverlayVal,
       showSemanticsDebugger: showSemanticsDebuggerVal,
       theme: themeVal?.build(context),

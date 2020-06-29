@@ -1,0 +1,242 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'floating_action_button_theme.dart';
+
+// **************************************************************************
+// WidgetGenerator
+// **************************************************************************
+
+// ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, avoid_init_to_null
+
+abstract class _$FloatingActionButtonThemeDataBase extends PropertyBase {
+  String foregroundColorKey = 'foregroundColor';
+  String backgroundColorKey = 'backgroundColor';
+  String focusColorKey = 'focusColor';
+  String hoverColorKey = 'hoverColor';
+  String splashColorKey = 'splashColor';
+  String elevationKey = 'elevation';
+  String focusElevationKey = 'focusElevation';
+  String hoverElevationKey = 'hoverElevation';
+  String disabledElevationKey = 'disabledElevation';
+  String highlightElevationKey = 'highlightElevation';
+
+  @override
+  Map<String, String> get properties => {
+        'foregroundColor': 'Color',
+        'backgroundColor': 'Color',
+        'focusColor': 'Color',
+        'hoverColor': 'Color',
+        'splashColor': 'Color',
+        'elevation': 'double',
+        'focusElevation': 'double',
+        'hoverElevation': 'double',
+        'disabledElevation': 'double',
+        'highlightElevation': 'double',
+      };
+
+  Color get foregroundColorVal {
+    if (params[foregroundColorKey] != null) {
+      int _value = null;
+      String description = params[foregroundColorKey].toString();
+      if (description.startsWith('#')) {
+        description = description.replaceAll('#Color(', '').replaceAll(')', '');
+        _value = int.tryParse(description);
+      } else if (params[foregroundColorKey] is Map) {
+        if (params[foregroundColorKey]['name'] == 'Color' &&
+            params[foregroundColorKey]['params'] != null &&
+            params[foregroundColorKey]['params']['0'] != null) {
+          _value = int.tryParse(params[foregroundColorKey]['params']['0']);
+        }
+      }
+      if (_value != null) {
+        return Color(_value);
+      }
+    }
+    return null;
+  }
+
+  set foregroundColorVal(Color val) {
+    params[foregroundColorKey] = "#Color(${val.value})";
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  Color get backgroundColorVal {
+    if (params[backgroundColorKey] != null) {
+      int _value = null;
+      String description = params[backgroundColorKey].toString();
+      if (description.startsWith('#')) {
+        description = description.replaceAll('#Color(', '').replaceAll(')', '');
+        _value = int.tryParse(description);
+      } else if (params[backgroundColorKey] is Map) {
+        if (params[backgroundColorKey]['name'] == 'Color' &&
+            params[backgroundColorKey]['params'] != null &&
+            params[backgroundColorKey]['params']['0'] != null) {
+          _value = int.tryParse(params[backgroundColorKey]['params']['0']);
+        }
+      }
+      if (_value != null) {
+        return Color(_value);
+      }
+    }
+    return null;
+  }
+
+  set backgroundColorVal(Color val) {
+    params[backgroundColorKey] = "#Color(${val.value})";
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  Color get focusColorVal {
+    if (params[focusColorKey] != null) {
+      int _value = null;
+      String description = params[focusColorKey].toString();
+      if (description.startsWith('#')) {
+        description = description.replaceAll('#Color(', '').replaceAll(')', '');
+        _value = int.tryParse(description);
+      } else if (params[focusColorKey] is Map) {
+        if (params[focusColorKey]['name'] == 'Color' &&
+            params[focusColorKey]['params'] != null &&
+            params[focusColorKey]['params']['0'] != null) {
+          _value = int.tryParse(params[focusColorKey]['params']['0']);
+        }
+      }
+      if (_value != null) {
+        return Color(_value);
+      }
+    }
+    return null;
+  }
+
+  set focusColorVal(Color val) {
+    params[focusColorKey] = "#Color(${val.value})";
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  Color get hoverColorVal {
+    if (params[hoverColorKey] != null) {
+      int _value = null;
+      String description = params[hoverColorKey].toString();
+      if (description.startsWith('#')) {
+        description = description.replaceAll('#Color(', '').replaceAll(')', '');
+        _value = int.tryParse(description);
+      } else if (params[hoverColorKey] is Map) {
+        if (params[hoverColorKey]['name'] == 'Color' &&
+            params[hoverColorKey]['params'] != null &&
+            params[hoverColorKey]['params']['0'] != null) {
+          _value = int.tryParse(params[hoverColorKey]['params']['0']);
+        }
+      }
+      if (_value != null) {
+        return Color(_value);
+      }
+    }
+    return null;
+  }
+
+  set hoverColorVal(Color val) {
+    params[hoverColorKey] = "#Color(${val.value})";
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  Color get splashColorVal {
+    if (params[splashColorKey] != null) {
+      int _value = null;
+      String description = params[splashColorKey].toString();
+      if (description.startsWith('#')) {
+        description = description.replaceAll('#Color(', '').replaceAll(')', '');
+        _value = int.tryParse(description);
+      } else if (params[splashColorKey] is Map) {
+        if (params[splashColorKey]['name'] == 'Color' &&
+            params[splashColorKey]['params'] != null &&
+            params[splashColorKey]['params']['0'] != null) {
+          _value = int.tryParse(params[splashColorKey]['params']['0']);
+        }
+      }
+      if (_value != null) {
+        return Color(_value);
+      }
+    }
+    return null;
+  }
+
+  set splashColorVal(Color val) {
+    params[splashColorKey] = "#Color(${val.value})";
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  double get elevationVal {
+    if (params[elevationKey] != null) {
+      return params[elevationKey] as double;
+    }
+    return null;
+  }
+
+  set elevationVal(double val) {
+    params[elevationKey] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  double get focusElevationVal {
+    if (params[focusElevationKey] != null) {
+      return params[focusElevationKey] as double;
+    }
+    return null;
+  }
+
+  set focusElevationVal(double val) {
+    params[focusElevationKey] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  double get hoverElevationVal {
+    if (params[hoverElevationKey] != null) {
+      return params[hoverElevationKey] as double;
+    }
+    return null;
+  }
+
+  set hoverElevationVal(double val) {
+    params[hoverElevationKey] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  double get disabledElevationVal {
+    if (params[disabledElevationKey] != null) {
+      return params[disabledElevationKey] as double;
+    }
+    return null;
+  }
+
+  set disabledElevationVal(double val) {
+    params[disabledElevationKey] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  double get highlightElevationVal {
+    if (params[highlightElevationKey] != null) {
+      return params[highlightElevationKey] as double;
+    }
+    return null;
+  }
+
+  set highlightElevationVal(double val) {
+    params[highlightElevationKey] = val;
+    widgetContext.onUpdate(id, widgetData);
+  }
+
+  @override
+  Object build(BuildContext context) {
+    return FloatingActionButtonThemeData(
+      backgroundColor: backgroundColorVal,
+      disabledElevation: disabledElevationVal,
+      elevation: elevationVal,
+      focusColor: focusColorVal,
+      focusElevation: focusElevationVal,
+      foregroundColor: foregroundColorVal,
+      highlightElevation: highlightElevationVal,
+      hoverColor: hoverColorVal,
+      hoverElevation: hoverElevationVal,
+      splashColor: splashColorVal,
+    );
+  }
+}
