@@ -13,7 +13,6 @@ abstract class _$AppBarThemeBase extends PropertyBase {
   String textThemeKey = 'textTheme';
   String iconThemeKey = 'iconTheme';
   String actionsIconThemeKey = 'actionsIconTheme';
-  String shouldCapTextScaleForTitleKey = 'shouldCapTextScaleForTitle';
 
   @override
   Map<String, String> get properties => {
@@ -25,7 +24,6 @@ abstract class _$AppBarThemeBase extends PropertyBase {
         'textTheme': 'TextThemeBase',
         'iconTheme': 'IconThemeDataBase',
         'actionsIconTheme': 'IconThemeDataBase',
-        'shouldCapTextScaleForTitle': 'bool',
       };
 
   List<Brightness> get brightnessValues => [
@@ -161,18 +159,6 @@ abstract class _$AppBarThemeBase extends PropertyBase {
     widgetContext.onUpdate(id, widgetData);
   }
 
-  bool get shouldCapTextScaleForTitleVal {
-    if (params[shouldCapTextScaleForTitleKey] != null) {
-      return params[shouldCapTextScaleForTitleKey] as bool;
-    }
-    return false;
-  }
-
-  set shouldCapTextScaleForTitleVal(bool val) {
-    params[shouldCapTextScaleForTitleKey] = val;
-    widgetContext.onUpdate(id, widgetData);
-  }
-
   @override
   Object build(BuildContext context) {
     return AppBarTheme(
@@ -183,7 +169,6 @@ abstract class _$AppBarThemeBase extends PropertyBase {
       elevation: elevationVal,
       iconTheme: iconThemeVal?.build(context),
       shadowColor: shadowColorVal,
-      shouldCapTextScaleForTitle: shouldCapTextScaleForTitleVal,
       textTheme: textThemeVal?.build(context),
     );
   }

@@ -278,12 +278,12 @@ abstract class _$FloatingActionButtonBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'XFiLiIS7DnW';
+    _data['id'] = 'Q5sJutLHlN';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = '1bKxnXhmLoC';
+      _data['params']['style']['id'] = 'sW-G1RFPot';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'hm8Zk7dw9LQ';
+      _data['params']['0']['id'] = 'QjLEaFgdOk';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -388,9 +388,7 @@ abstract class _$FloatingActionButtonBase extends WidgetBase {
         SystemMouseCursors.forbidden,
         SystemMouseCursors.grab,
         SystemMouseCursors.grabbing,
-        SystemMouseCursors.horizontalDoubleArrow,
         SystemMouseCursors.text,
-        SystemMouseCursors.verticalDoubleArrow,
         SystemMouseCursors.none,
       ];
 

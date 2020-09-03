@@ -205,9 +205,7 @@ const enumMouseCursor = EnumKey(
     'SystemMouseCursors.forbidden',
     'SystemMouseCursors.grab',
     'SystemMouseCursors.grabbing',
-    'SystemMouseCursors.horizontalDoubleArrow',
     'SystemMouseCursors.text',
-    'SystemMouseCursors.verticalDoubleArrow',
     'SystemMouseCursors.none',
   ],
 );

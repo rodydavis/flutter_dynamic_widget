@@ -274,9 +274,7 @@ abstract class _$IconButtonBase extends WidgetBase {
         SystemMouseCursors.forbidden,
         SystemMouseCursors.grab,
         SystemMouseCursors.grabbing,
-        SystemMouseCursors.horizontalDoubleArrow,
         SystemMouseCursors.text,
-        SystemMouseCursors.verticalDoubleArrow,
         SystemMouseCursors.none,
       ];
 
@@ -329,12 +327,12 @@ abstract class _$IconButtonBase extends WidgetBase {
 
   void iconValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'BrHSmKHHdaW';
+    _data['id'] = 'KqO3owW2mre';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'M1I95mTyJ6y';
+      _data['params']['style']['id'] = 'RDaNH3B5xLp';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'aKDpEcQ43xh';
+      _data['params']['0']['id'] = '6eW6fMEv18m';
     }
     params[iconKey] = _data;
     widgetContext.onUpdate(id, widgetData);

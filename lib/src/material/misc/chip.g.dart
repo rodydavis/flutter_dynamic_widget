@@ -130,12 +130,12 @@ abstract class _$ChipBase extends WidgetBase {
 
   void deleteIconValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = '_g3RREzONqJ';
+    _data['id'] = 'R5fMtujo4ZQ';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'XlxEMQJLRnO';
+      _data['params']['style']['id'] = 'wlMFsn455U2';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'fLnB4Gc736k';
+      _data['params']['0']['id'] = '1-WK-VW1IB3';
     }
     params[deleteIconKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -360,12 +360,12 @@ abstract class _$ChipBase extends WidgetBase {
 
   void labelValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'nIwvaT_EUbq';
+    _data['id'] = 'J1yDWNWBVdr';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'nr_5aD2YVoC';
+      _data['params']['style']['id'] = 'TgERe9tzNAm';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'rC3WM89nfcz';
+      _data['params']['0']['id'] = 'gvNyqTnlBwy';
     }
     params[labelKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -381,12 +381,12 @@ abstract class _$ChipBase extends WidgetBase {
 
   void avatarValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'gYKhU35hGai';
+    _data['id'] = '1FtHYLkszoM';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = '2njIdaGetE_';
+      _data['params']['style']['id'] = 'plRP36y4UQG';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'XNwqNW5Zozp';
+      _data['params']['0']['id'] = 'W2jd3JDNd6v';
     }
     params[avatarKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -455,7 +455,7 @@ abstract class _$ChipBase extends WidgetBase {
                 (widgetContext.isDragging && labelVal?.build(context) != null)
             ? (labelVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': 'OsFIMlF1twv',
+                  'id': 'JbSxrhYD7GU',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)

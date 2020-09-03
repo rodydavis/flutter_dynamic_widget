@@ -284,9 +284,7 @@ abstract class _$FlatButtonBase extends WidgetBase {
         SystemMouseCursors.forbidden,
         SystemMouseCursors.grab,
         SystemMouseCursors.grabbing,
-        SystemMouseCursors.horizontalDoubleArrow,
         SystemMouseCursors.text,
-        SystemMouseCursors.verticalDoubleArrow,
         SystemMouseCursors.none,
       ];
 
@@ -480,12 +478,12 @@ abstract class _$FlatButtonBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'iIEbPEw1nxU';
+    _data['id'] = '-Eoa7lCfqjK';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = '7qb1BFWen5e';
+      _data['params']['style']['id'] = 'QWry9m8JL9s';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = '_c-n248G9SV';
+      _data['params']['0']['id'] = 'ROs2FflllkR';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -501,7 +499,7 @@ abstract class _$FlatButtonBase extends WidgetBase {
                 (widgetContext.isDragging && childVal?.build(context) != null)
             ? (childVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': 'dPkRyTHAvWM',
+                  'id': 'l9eI6cD87T9',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)

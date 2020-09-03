@@ -58,12 +58,12 @@ abstract class _$SizedOverflowBoxBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = '3ol48ZNnasR';
+    _data['id'] = '5cn31ucsm';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'vHX13AJio15';
+      _data['params']['style']['id'] = 'UGLhZ8yG8D';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'U8DKMvVEnUN';
+      _data['params']['0']['id'] = 'xJPHpcWvGA';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -132,7 +132,7 @@ abstract class _$SizedOverflowBoxBase extends WidgetBase {
                 (widgetContext.isDragging && childVal?.build(context) != null)
             ? (childVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': '4GrzLXstQo-',
+                  'id': 'Ze_ALZ9zeL',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)

@@ -188,12 +188,12 @@ abstract class _$TooltipBase extends WidgetBase {
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = '69V8V2y_FxG';
+    _data['id'] = 'Qu2pRJRPajh';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'S8ZRywgC3nQ';
+      _data['params']['style']['id'] = 'Gp3YcJHatuj';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = '6q1Esy3Og93';
+      _data['params']['0']['id'] = 'vxPofS_SG2f';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -220,7 +220,7 @@ abstract class _$TooltipBase extends WidgetBase {
                 (widgetContext.isDragging && childVal?.build(context) != null)
             ? (childVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': 'VVR2x9kWSX3',
+                  'id': 'iufXgvexrRa',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)

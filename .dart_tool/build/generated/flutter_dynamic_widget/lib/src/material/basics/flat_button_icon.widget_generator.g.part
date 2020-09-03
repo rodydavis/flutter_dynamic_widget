@@ -280,9 +280,7 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
         SystemMouseCursors.forbidden,
         SystemMouseCursors.grab,
         SystemMouseCursors.grabbing,
-        SystemMouseCursors.horizontalDoubleArrow,
         SystemMouseCursors.text,
-        SystemMouseCursors.verticalDoubleArrow,
         SystemMouseCursors.none,
       ];
 
@@ -453,12 +451,12 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
 
   void iconValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'leI8Ro-zwY_';
+    _data['id'] = 'VvOB8j122NK';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'f4B91nCZ-PZ';
+      _data['params']['style']['id'] = 'aoy7wlmYwPr';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'ISDoYHY3XmT';
+      _data['params']['0']['id'] = 'yj2bnYtXOXx';
     }
     params[iconKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -474,12 +472,12 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
 
   void labelValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'ou5MQi48BKm';
+    _data['id'] = 'VWuJr7Izfx4';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'ObDXEsm1CGi';
+      _data['params']['style']['id'] = 'jlPObWDcMGS';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'G9zwZIp3EG9';
+      _data['params']['0']['id'] = 'kGY7UCRjG78';
     }
     params[labelKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -503,7 +501,7 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
                 (widgetContext.isDragging && iconVal?.build(context) != null)
             ? (iconVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': 'fBGFsNw3XCZ',
+                  'id': 'WHgyIX8Loz9',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)
@@ -544,7 +542,7 @@ abstract class _$FlatButtonIconBase extends WidgetBase {
                 (widgetContext.isDragging && labelVal?.build(context) != null)
             ? (labelVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': 'Fw7mFKj1y2E',
+                  'id': '5UZ2wueOk7z',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)

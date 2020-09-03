@@ -322,9 +322,7 @@ abstract class _$RaisedButtonIconBase extends WidgetBase {
         SystemMouseCursors.forbidden,
         SystemMouseCursors.grab,
         SystemMouseCursors.grabbing,
-        SystemMouseCursors.horizontalDoubleArrow,
         SystemMouseCursors.text,
-        SystemMouseCursors.verticalDoubleArrow,
         SystemMouseCursors.none,
       ];
 
@@ -495,12 +493,12 @@ abstract class _$RaisedButtonIconBase extends WidgetBase {
 
   void iconValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = '4GYDnoYoqwc';
+    _data['id'] = '37x5-OeHU9f';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'jrwttbEXoQF';
+      _data['params']['style']['id'] = '13RwXoRpmxk';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = '7H4vvSNeYR6';
+      _data['params']['0']['id'] = 'zU6g7wM4XmP';
     }
     params[iconKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -516,12 +514,12 @@ abstract class _$RaisedButtonIconBase extends WidgetBase {
 
   void labelValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'e8xGdXcxtiE';
+    _data['id'] = 'K2o71Ie5yfK';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'A2nqyf5dcis';
+      _data['params']['style']['id'] = 'hjGIVTjPCcV';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'sILgtlfmUiY';
+      _data['params']['0']['id'] = 'grtRKzfim6K';
     }
     params[labelKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -548,7 +546,7 @@ abstract class _$RaisedButtonIconBase extends WidgetBase {
                 (widgetContext.isDragging && iconVal?.build(context) != null)
             ? (iconVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': 'sp1iyg9YK1l',
+                  'id': 'RsX1Gi2Wd4K',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)
@@ -589,7 +587,7 @@ abstract class _$RaisedButtonIconBase extends WidgetBase {
                 (widgetContext.isDragging && labelVal?.build(context) != null)
             ? (labelVal?.build(context) ??
                 (widgetRender(json.decode(json.encode({
-                  'id': 'ws4OY1dolHg',
+                  'id': '5dsa5dbRO7z',
                   'name': 'Placeholder',
                   'params': {},
                 }))) as WidgetBase)

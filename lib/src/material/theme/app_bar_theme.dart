@@ -41,7 +41,4 @@ class AppBarThemeBase extends _$AppBarThemeBase {
 
   @SupportedKey()
   IconThemeDataBase actionsIconTheme;
-
-  @PropertyKey(defaultValue: 'false')
-  bool shouldCapTextScaleForTitle;
 }
