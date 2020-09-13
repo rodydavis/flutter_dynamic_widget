@@ -9,7 +9,7 @@ part 'flexible.g.dart';
 
 @WidgetClass('Flexible', allowTap: false)
 class FlexibleBase extends _$FlexibleBase {
-  FlexibleBase(this.widgetData, this.widgetContext);
+  FlexibleBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   @WidgetKey(
     defaultValue: 'Placeholder',
@@ -24,9 +24,8 @@ class FlexibleBase extends _$FlexibleBase {
   @override
   final WidgetContext widgetContext;
 
-  @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+   @override
+  final GenerateWidget widgetRender;
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

@@ -120,7 +120,7 @@ abstract class _$TextBase extends WidgetBase {
 
   TextStyleBase get styleVal {
     if (params[styleKey] != null) {
-      return TextStyleBase(params[styleKey], widgetContext);
+      return TextStyleBase(params[styleKey], widgetContext, widgetRender);
     }
     return null;
   }

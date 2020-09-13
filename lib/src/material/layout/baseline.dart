@@ -11,7 +11,7 @@ part 'baseline.g.dart';
 
 @WidgetClass('Baseline')
 class BaselineBase extends _$BaselineBase {
-  BaselineBase(this.widgetData, this.widgetContext);
+  BaselineBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   double baseline;
   Key key;
@@ -23,8 +23,7 @@ class BaselineBase extends _$BaselineBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

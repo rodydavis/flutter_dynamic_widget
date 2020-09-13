@@ -8,7 +8,7 @@ part 'placeholder.g.dart';
 
 @WidgetClass('Placeholder')
 class PlaceholderBase extends _$PlaceholderBase {
-  PlaceholderBase(this.widgetData, this.widgetContext);
+  PlaceholderBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   Key key;
 
@@ -19,8 +19,8 @@ class PlaceholderBase extends _$PlaceholderBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

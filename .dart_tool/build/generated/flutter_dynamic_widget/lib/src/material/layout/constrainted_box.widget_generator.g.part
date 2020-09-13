@@ -45,19 +45,19 @@ abstract class _$ConstrainedBoxBase extends WidgetBase {
   final _childListen = ValueNotifier<bool>(false);
   WidgetBase get childVal {
     if (params[childKey] != null) {
-      return widgetRender(params[childKey]);
+      return widgetRender(widgetContext, params[childKey]);
     }
     return null;
   }
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'i7k6smz5va';
+    _data['id'] = 'LyuuUg8cTi4';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'ea1VKS8xeI';
+      _data['params']['style']['id'] = 'j-yc4n8RlUJ';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'CsrVxGG98X';
+      _data['params']['0']['id'] = 'OCaMjlPFv7Y';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -65,7 +65,8 @@ abstract class _$ConstrainedBoxBase extends WidgetBase {
 
   BoxConstraintsBase get constraintsVal {
     if (params[constraintsKey] != null) {
-      return BoxConstraintsBase(params[constraintsKey], widgetContext);
+      return BoxConstraintsBase(
+          params[constraintsKey], widgetContext, widgetRender);
     }
     return null;
   }
@@ -83,12 +84,13 @@ abstract class _$ConstrainedBoxBase extends WidgetBase {
         child: !widgetContext.isDragging ||
                 (widgetContext.isDragging && childVal?.build(context) != null)
             ? (childVal?.build(context) ??
-                (widgetRender(json.decode(json.encode({
-                  'id': 'eVajjXN5zU',
-                  'name': 'Placeholder',
-                  'params': {},
-                }))) as WidgetBase)
-                    .build(context))
+                (widgetRender(
+                    widgetContext,
+                    json.decode(json.encode({
+                      'id': '41bZupv3YH2',
+                      'name': 'Placeholder',
+                      'params': {},
+                    })))).build(context))
             : PreferredSize(
                 preferredSize: Size(100.0, 100.0),
                 child: DragTarget<WidgetBaseData>(

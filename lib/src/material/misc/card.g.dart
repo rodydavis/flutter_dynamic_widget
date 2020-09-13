@@ -179,19 +179,19 @@ abstract class _$CardBase extends WidgetBase {
   final _childListen = ValueNotifier<bool>(false);
   WidgetBase get childVal {
     if (params[childKey] != null) {
-      return widgetRender(params[childKey]);
+      return widgetRender(widgetContext, params[childKey]);
     }
     return null;
   }
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'yTwC5Eam-y8';
+    _data['id'] = 'Cr-MoTCxr75';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'chsRa1v-dVK';
+      _data['params']['style']['id'] = '2Ww6MURHQau';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'IrcRpbrKpS3';
+      _data['params']['0']['id'] = 'rsPl3fx6F_8';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -230,12 +230,13 @@ abstract class _$CardBase extends WidgetBase {
         child: !widgetContext.isDragging ||
                 (widgetContext.isDragging && childVal?.build(context) != null)
             ? (childVal?.build(context) ??
-                (widgetRender(json.decode(json.encode({
-                  'id': 'Y6zSHZZrmp9',
-                  'name': 'Placeholder',
-                  'params': {},
-                }))) as WidgetBase)
-                    .build(context))
+                (widgetRender(
+                    widgetContext,
+                    json.decode(json.encode({
+                      'id': 'jZDaZ9LmeA1',
+                      'name': 'Placeholder',
+                      'params': {},
+                    })))).build(context))
             : PreferredSize(
                 preferredSize: Size(100.0, 100.0),
                 child: DragTarget<WidgetBaseData>(

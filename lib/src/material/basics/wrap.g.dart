@@ -41,7 +41,7 @@ abstract class _$WrapBase extends WidgetBase {
       final _list = List.from(params[childrenKey]);
       for (final item in _list) {
         if (item is Map<String, dynamic>) {
-          _children.add(widgetRender(item));
+          _children.add(widgetRender(widgetContext, item));
         }
       }
       return _children;

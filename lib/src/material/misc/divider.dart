@@ -10,7 +10,7 @@ part 'divider.g.dart';
 
 @WidgetClass('Divider')
 class DividerBase extends _$DividerBase {
-  DividerBase(this.widgetData, this.widgetContext);
+  DividerBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   Color color;
   double endIndent;
@@ -26,8 +26,8 @@ class DividerBase extends _$DividerBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

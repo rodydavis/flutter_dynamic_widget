@@ -10,7 +10,7 @@ part 'scaffold.g.dart';
 
 @WidgetClass('Scaffold')
 class ScaffoldBase extends _$ScaffoldBase {
-  ScaffoldBase(this.widgetData, this.widgetContext);
+  ScaffoldBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   Color backgroundColor;
   Widget bottomSheet;
@@ -30,8 +30,8 @@ class ScaffoldBase extends _$ScaffoldBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

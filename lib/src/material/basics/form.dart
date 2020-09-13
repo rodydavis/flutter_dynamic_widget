@@ -10,7 +10,7 @@ part 'form.g.dart';
 
 @WidgetClass('Form')
 class FormBase extends _$FormBase {
-  FormBase(this.widgetData, this.widgetContext);
+  FormBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   Key key;
   Function onChanged;
@@ -22,8 +22,8 @@ class FormBase extends _$FormBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

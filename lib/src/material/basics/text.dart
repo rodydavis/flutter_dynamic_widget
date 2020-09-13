@@ -10,7 +10,7 @@ part 'text.g.dart';
 
 @WidgetClass('Text')
 class TextBase extends _$TextBase {
-  TextBase(this.widgetData, this.widgetContext);
+  TextBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   Key key;
   Locale locale;
@@ -28,8 +28,8 @@ class TextBase extends _$TextBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

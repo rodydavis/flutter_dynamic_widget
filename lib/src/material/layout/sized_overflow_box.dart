@@ -12,7 +12,7 @@ part 'sized_overflow_box.g.dart';
 
 @WidgetClass('SizedOverflowBox')
 class SizedOverflowBoxBase extends _$SizedOverflowBoxBase {
-  SizedOverflowBoxBase(this.widgetData, this.widgetContext);
+  SizedOverflowBoxBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   Key key;
 
@@ -23,8 +23,8 @@ class SizedOverflowBoxBase extends _$SizedOverflowBoxBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

@@ -129,7 +129,7 @@ abstract class _$AppBarThemeBase extends PropertyBase {
 
   TextThemeBase get textThemeVal {
     if (params[textThemeKey] != null) {
-      return TextThemeBase(params[textThemeKey], widgetContext);
+      return TextThemeBase(params[textThemeKey], widgetContext, widgetRender);
     }
     return null;
   }
@@ -141,7 +141,8 @@ abstract class _$AppBarThemeBase extends PropertyBase {
 
   IconThemeDataBase get iconThemeVal {
     if (params[iconThemeKey] != null) {
-      return IconThemeDataBase(params[iconThemeKey], widgetContext);
+      return IconThemeDataBase(
+          params[iconThemeKey], widgetContext, widgetRender);
     }
     return null;
   }
@@ -153,7 +154,8 @@ abstract class _$AppBarThemeBase extends PropertyBase {
 
   IconThemeDataBase get actionsIconThemeVal {
     if (params[actionsIconThemeKey] != null) {
-      return IconThemeDataBase(params[actionsIconThemeKey], widgetContext);
+      return IconThemeDataBase(
+          params[actionsIconThemeKey], widgetContext, widgetRender);
     }
     return null;
   }

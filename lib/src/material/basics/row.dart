@@ -9,7 +9,7 @@ part 'row.g.dart';
 
 @WidgetClass('Row')
 class RowBase extends _$RowBase {
-  RowBase(this.widgetData, this.widgetContext);
+  RowBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   List<Widget> children;
   Key key;
@@ -21,8 +21,8 @@ class RowBase extends _$RowBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

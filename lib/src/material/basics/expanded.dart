@@ -10,7 +10,7 @@ part 'expanded.g.dart';
 
 @WidgetClass('Expanded', allowTap: false)
 class ExpandedBase extends _$ExpandedBase {
-  ExpandedBase(this.widgetData, this.widgetContext);
+  ExpandedBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   @WidgetKey.widget(
     acceptWidth: 100,
@@ -28,8 +28,7 @@ class ExpandedBase extends _$ExpandedBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

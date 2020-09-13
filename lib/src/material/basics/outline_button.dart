@@ -12,7 +12,7 @@ part 'outline_button.g.dart';
 
 @WidgetClass('OutlineButton')
 class OutlineButtonBase extends _$OutlineButtonBase {
-  OutlineButtonBase(this.widgetData, this.widgetContext);
+  OutlineButtonBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   BorderSide borderSide;
   @enumClip
@@ -50,8 +50,8 @@ class OutlineButtonBase extends _$OutlineButtonBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

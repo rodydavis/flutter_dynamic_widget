@@ -37,19 +37,19 @@ abstract class _$ContainerBase extends WidgetBase {
   final _childListen = ValueNotifier<bool>(false);
   WidgetBase get childVal {
     if (params[childKey] != null) {
-      return widgetRender(params[childKey]);
+      return widgetRender(widgetContext, params[childKey]);
     }
     return null;
   }
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'QlsFzaCXvCZ';
+    _data['id'] = 'adNloGn9-T';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'wJxDYrKpFMy';
+      _data['params']['style']['id'] = 'PGWbt5yZJA';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = '-XvJ9RWrcOq';
+      _data['params']['0']['id'] = 'pGUYavohZR';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);

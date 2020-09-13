@@ -8,7 +8,7 @@ part 'sized_box.g.dart';
 
 @WidgetClass('SizedBox')
 class SizedBoxBase extends _$SizedBoxBase {
-  SizedBoxBase(this.widgetData, this.widgetContext);
+  SizedBoxBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   @WidgetKey.widget(
     acceptWidth: 100,
@@ -29,6 +29,6 @@ class SizedBoxBase extends _$SizedBoxBase {
   get onAction => (context, val) => MaterialBase.onAction(context, val);
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 }

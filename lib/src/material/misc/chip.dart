@@ -12,7 +12,7 @@ part 'chip.g.dart';
 
 @WidgetClass('Chip')
 class ChipBase extends _$ChipBase {
-  ChipBase(this.widgetData, this.widgetContext);
+  ChipBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   bool autofocus = false;
   Color backgroundColor;
@@ -43,8 +43,8 @@ class ChipBase extends _$ChipBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

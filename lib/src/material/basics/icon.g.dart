@@ -76,7 +76,7 @@ abstract class _$IconBase extends WidgetBase {
 
   IconDataBase get iconDataVal {
     if (params[iconDataKey] != null) {
-      return IconDataBase(params[iconDataKey], widgetContext);
+      return IconDataBase(params[iconDataKey], widgetContext, widgetRender);
     }
     return null;
   }

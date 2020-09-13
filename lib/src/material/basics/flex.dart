@@ -9,7 +9,7 @@ part 'flex.g.dart';
 
 @WidgetClass('Flex')
 class FlexBase extends _$FlexBase {
-  FlexBase(this.widgetData, this.widgetContext);
+  FlexBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   List<Widget> children;
   Key key;
@@ -20,9 +20,8 @@ class FlexBase extends _$FlexBase {
   @override
   final WidgetContext widgetContext;
 
-  @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+   @override
+  final GenerateWidget widgetRender;
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

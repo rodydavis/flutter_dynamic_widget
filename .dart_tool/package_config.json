@@ -459,7 +459,7 @@
     },
     {
       "name": "widget_gen",
-      "rootUri": "file:///usr/local/Caskroom/flutter/1.2.1/flutter/.pub-cache/hosted/pub.dartlang.org/widget_gen-1.0.1+1",
+      "rootUri": "file:///usr/local/Caskroom/flutter/1.2.1/flutter/.pub-cache/hosted/pub.dartlang.org/widget_gen-1.0.1+3",
       "packageUri": "lib/",
       "languageVersion": "2.7"
     },
@@ -476,7 +476,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-09-03T23:16:08.694306Z",
+  "generated": "2020-09-07T03:28:55.866178Z",
   "generator": "pub",
   "generatorVersion": "2.10.0-77.0.dev"
 }

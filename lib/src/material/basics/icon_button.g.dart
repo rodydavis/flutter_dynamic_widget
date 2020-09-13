@@ -320,19 +320,19 @@ abstract class _$IconButtonBase extends WidgetBase {
   final _iconListen = ValueNotifier<bool>(false);
   WidgetBase get iconVal {
     if (params[iconKey] != null) {
-      return widgetRender(params[iconKey]);
+      return widgetRender(widgetContext, params[iconKey]);
     }
     return null;
   }
 
   void iconValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'KqO3owW2mre';
+    _data['id'] = '7rFqcTnDOYE';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'RDaNH3B5xLp';
+      _data['params']['style']['id'] = 'Ngf8TXCYHuG';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = '6eW6fMEv18m';
+      _data['params']['0']['id'] = '5hEqFN7lRFK';
     }
     params[iconKey] = _data;
     widgetContext.onUpdate(id, widgetData);

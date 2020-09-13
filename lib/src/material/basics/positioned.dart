@@ -10,7 +10,7 @@ part 'positioned.g.dart';
 
 @WidgetClass('Positioned', allowTap: false)
 class PositionedBase extends _$PositionedBase {
-  PositionedBase(this.widgetData, this.widgetContext);
+  PositionedBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   Key key;
   @WidgetKey.widget(
@@ -32,6 +32,6 @@ class PositionedBase extends _$PositionedBase {
   get onAction => (context, val) => MaterialBase.onAction(context, val);
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 }

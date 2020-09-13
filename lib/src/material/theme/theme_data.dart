@@ -14,7 +14,7 @@ part 'theme_data.g.dart';
 
 @PropertyClass('ThemeData')
 class ThemeDataBase extends _$ThemeDataBase {
-  ThemeDataBase(this.widgetData, this.widgetContext);
+  ThemeDataBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   Color accentColor;
   @enumBrightness
@@ -97,8 +97,8 @@ class ThemeDataBase extends _$ThemeDataBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

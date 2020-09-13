@@ -150,7 +150,8 @@ abstract class _$ThemeDataBase extends PropertyBase {
 
   AppBarThemeBase get appBarThemeVal {
     if (params[appBarThemeKey] != null) {
-      return AppBarThemeBase(params[appBarThemeKey], widgetContext);
+      return AppBarThemeBase(
+          params[appBarThemeKey], widgetContext, widgetRender);
     }
     return null;
   }
@@ -971,7 +972,7 @@ abstract class _$ThemeDataBase extends PropertyBase {
   FloatingActionButtonThemeDataBase get floatingActionButtonThemeVal {
     if (params[floatingActionButtonThemeKey] != null) {
       return FloatingActionButtonThemeDataBase(
-          params[floatingActionButtonThemeKey], widgetContext);
+          params[floatingActionButtonThemeKey], widgetContext, widgetRender);
     }
     return null;
   }
@@ -983,7 +984,8 @@ abstract class _$ThemeDataBase extends PropertyBase {
 
   IconThemeDataBase get accentIconThemeVal {
     if (params[accentIconThemeKey] != null) {
-      return IconThemeDataBase(params[accentIconThemeKey], widgetContext);
+      return IconThemeDataBase(
+          params[accentIconThemeKey], widgetContext, widgetRender);
     }
     return null;
   }
@@ -995,7 +997,8 @@ abstract class _$ThemeDataBase extends PropertyBase {
 
   IconThemeDataBase get iconThemeVal {
     if (params[iconThemeKey] != null) {
-      return IconThemeDataBase(params[iconThemeKey], widgetContext);
+      return IconThemeDataBase(
+          params[iconThemeKey], widgetContext, widgetRender);
     }
     return null;
   }
@@ -1007,7 +1010,8 @@ abstract class _$ThemeDataBase extends PropertyBase {
 
   IconThemeDataBase get primaryIconThemeVal {
     if (params[primaryIconThemeKey] != null) {
-      return IconThemeDataBase(params[primaryIconThemeKey], widgetContext);
+      return IconThemeDataBase(
+          params[primaryIconThemeKey], widgetContext, widgetRender);
     }
     return null;
   }
@@ -1019,7 +1023,7 @@ abstract class _$ThemeDataBase extends PropertyBase {
 
   TextThemeBase get textThemeVal {
     if (params[textThemeKey] != null) {
-      return TextThemeBase(params[textThemeKey], widgetContext);
+      return TextThemeBase(params[textThemeKey], widgetContext, widgetRender);
     }
     return null;
   }
@@ -1031,7 +1035,8 @@ abstract class _$ThemeDataBase extends PropertyBase {
 
   TextThemeBase get primaryTextThemeVal {
     if (params[primaryTextThemeKey] != null) {
-      return TextThemeBase(params[primaryTextThemeKey], widgetContext);
+      return TextThemeBase(
+          params[primaryTextThemeKey], widgetContext, widgetRender);
     }
     return null;
   }
@@ -1043,7 +1048,8 @@ abstract class _$ThemeDataBase extends PropertyBase {
 
   TextThemeBase get accentTextThemeVal {
     if (params[accentTextThemeKey] != null) {
-      return TextThemeBase(params[accentTextThemeKey], widgetContext);
+      return TextThemeBase(
+          params[accentTextThemeKey], widgetContext, widgetRender);
     }
     return null;
   }

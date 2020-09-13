@@ -12,7 +12,7 @@ part 'transform.g.dart';
 
 @WidgetClass('Transform')
 class TransformBase extends _$TransformBase {
-  TransformBase(this.widgetData, this.widgetContext);
+  TransformBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   @enumAlignment
   Alignment alignment;
@@ -28,8 +28,8 @@ class TransformBase extends _$TransformBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

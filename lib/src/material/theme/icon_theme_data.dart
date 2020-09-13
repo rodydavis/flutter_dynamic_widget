@@ -8,7 +8,7 @@ part 'icon_theme_data.g.dart';
 
 @PropertyClass('IconThemeData')
 class IconThemeDataBase extends _$IconThemeDataBase {
-  IconThemeDataBase(this.widgetData, this.widgetContext);
+  IconThemeDataBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   @override
   final Map<String, dynamic> widgetData;
@@ -17,8 +17,8 @@ class IconThemeDataBase extends _$IconThemeDataBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

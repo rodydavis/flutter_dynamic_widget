@@ -271,19 +271,19 @@ abstract class _$FloatingActionButtonBase extends WidgetBase {
   final _childListen = ValueNotifier<bool>(false);
   WidgetBase get childVal {
     if (params[childKey] != null) {
-      return widgetRender(params[childKey]);
+      return widgetRender(widgetContext, params[childKey]);
     }
     return null;
   }
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'Q5sJutLHlN';
+    _data['id'] = 'kJ2w_O1MFU';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'sW-G1RFPot';
+      _data['params']['style']['id'] = 'YfVd7j3uGi';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'QjLEaFgdOk';
+      _data['params']['0']['id'] = 'MsEsXrT6n1';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);

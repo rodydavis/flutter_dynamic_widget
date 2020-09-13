@@ -11,7 +11,7 @@ part 'align.g.dart';
 
 @WidgetClass('Align')
 class AlignBase extends _$AlignBase {
-  AlignBase(this.widgetData, this.widgetContext);
+  AlignBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   double heightFactor;
   Key key;
@@ -24,8 +24,7 @@ class AlignBase extends _$AlignBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

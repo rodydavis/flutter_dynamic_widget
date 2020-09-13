@@ -11,7 +11,7 @@ part 'tooltip.g.dart';
 
 @WidgetClass('Tooltip')
 class TooltipBase extends _$TooltipBase {
-  TooltipBase(this.widgetData, this.widgetContext);
+  TooltipBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   Decoration decoration;
   bool excludeFromSemantics;
@@ -33,8 +33,8 @@ class TooltipBase extends _$TooltipBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

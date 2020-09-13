@@ -280,7 +280,7 @@ abstract class _$BottomNavigationBarBase extends WidgetBase {
       final _list = List.from(params[itemsKey]);
       for (final item in _list) {
         if (item is Map<String, dynamic>) {
-          _children.add(widgetRender(item));
+          _children.add(widgetRender(widgetContext, item));
         }
       }
       return _children;
@@ -310,7 +310,8 @@ abstract class _$BottomNavigationBarBase extends WidgetBase {
 
   IconThemeDataBase get selectedIconThemeVal {
     if (params[selectedIconThemeKey] != null) {
-      return IconThemeDataBase(params[selectedIconThemeKey], widgetContext);
+      return IconThemeDataBase(
+          params[selectedIconThemeKey], widgetContext, widgetRender);
     }
     return null;
   }
@@ -322,7 +323,8 @@ abstract class _$BottomNavigationBarBase extends WidgetBase {
 
   IconThemeDataBase get unselectedIconThemeVal {
     if (params[unselectedIconThemeKey] != null) {
-      return IconThemeDataBase(params[unselectedIconThemeKey], widgetContext);
+      return IconThemeDataBase(
+          params[unselectedIconThemeKey], widgetContext, widgetRender);
     }
     return null;
   }
@@ -334,7 +336,8 @@ abstract class _$BottomNavigationBarBase extends WidgetBase {
 
   TextStyleBase get selectedLabelStyleVal {
     if (params[selectedLabelStyleKey] != null) {
-      return TextStyleBase(params[selectedLabelStyleKey], widgetContext);
+      return TextStyleBase(
+          params[selectedLabelStyleKey], widgetContext, widgetRender);
     }
     return null;
   }
@@ -346,7 +349,8 @@ abstract class _$BottomNavigationBarBase extends WidgetBase {
 
   TextStyleBase get unselectedLabelStyleVal {
     if (params[unselectedLabelStyleKey] != null) {
-      return TextStyleBase(params[unselectedLabelStyleKey], widgetContext);
+      return TextStyleBase(
+          params[unselectedLabelStyleKey], widgetContext, widgetRender);
     }
     return null;
   }

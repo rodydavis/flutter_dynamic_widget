@@ -10,7 +10,8 @@ part 'floating_action_button.g.dart';
 
 @WidgetClass('FloatingActionButton')
 class FloatingActionButtonBase extends _$FloatingActionButtonBase {
-  FloatingActionButtonBase(this.widgetData, this.widgetContext);
+  FloatingActionButtonBase(
+      this.widgetData, this.widgetContext, this.widgetRender);
 
   Color backgroundColor;
   double disabledElevation;
@@ -33,8 +34,7 @@ class FloatingActionButtonBase extends _$FloatingActionButtonBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

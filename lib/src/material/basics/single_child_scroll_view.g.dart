@@ -168,19 +168,19 @@ abstract class _$SingleChildScrollViewBase extends WidgetBase {
   final _childListen = ValueNotifier<bool>(false);
   WidgetBase get childVal {
     if (params[childKey] != null) {
-      return widgetRender(params[childKey]);
+      return widgetRender(widgetContext, params[childKey]);
     }
     return null;
   }
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'Kghybpafkl';
+    _data['id'] = 'uQwrTTKp7';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'vyHyIZqZJE';
+      _data['params']['style']['id'] = 'ki31QXZogS';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'uTdh1G3eV4';
+      _data['params']['0']['id'] = 'iblkchlboD';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -206,12 +206,13 @@ abstract class _$SingleChildScrollViewBase extends WidgetBase {
         child: !widgetContext.isDragging ||
                 (widgetContext.isDragging && childVal?.build(context) != null)
             ? (childVal?.build(context) ??
-                (widgetRender(json.decode(json.encode({
-                  'id': '3CvoQleuSq',
-                  'name': 'Placeholder',
-                  'params': {},
-                }))) as WidgetBase)
-                    .build(context))
+                (widgetRender(
+                    widgetContext,
+                    json.decode(json.encode({
+                      'id': '6tKIMyPEXW',
+                      'name': 'Placeholder',
+                      'params': {},
+                    })))).build(context))
             : PreferredSize(
                 preferredSize: Size(30.0, 30.0),
                 child: DragTarget<WidgetBaseData>(

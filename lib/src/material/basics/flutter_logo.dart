@@ -9,7 +9,7 @@ part 'flutter_logo.g.dart';
 
 @WidgetClass('FlutterLogo')
 class FlutterLogoBase extends _$FlutterLogoBase {
-  FlutterLogoBase(this.widgetData, this.widgetContext);
+  FlutterLogoBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   @enumFlutterLogoStyle
   FlutterLogoStyle style = FlutterLogoStyle.markOnly;
@@ -36,8 +36,8 @@ class FlutterLogoBase extends _$FlutterLogoBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

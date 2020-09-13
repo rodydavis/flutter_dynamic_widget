@@ -10,7 +10,7 @@ part 'icon.g.dart';
 
 @WidgetClass('Icon')
 class IconBase extends _$IconBase {
-  IconBase(this.widgetData, this.widgetContext);
+  IconBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   Color color;
   String semanticLabel;
@@ -23,8 +23,8 @@ class IconBase extends _$IconBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

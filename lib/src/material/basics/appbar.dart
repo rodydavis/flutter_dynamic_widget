@@ -11,7 +11,7 @@ part 'appbar.g.dart';
 
 @WidgetClass('AppBar', preferredHeight: kToolbarHeight)
 class AppBarBase extends _$AppBarBase {
-  AppBarBase(this.widgetData, this.widgetContext);
+  AppBarBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   List<Widget> actions;
   Color backgroundColor;
@@ -33,8 +33,7 @@ class AppBarBase extends _$AppBarBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

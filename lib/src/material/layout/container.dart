@@ -10,7 +10,7 @@ part 'container.g.dart';
 
 @WidgetClass('Container')
 class ContainerBase extends _$ContainerBase {
-  ContainerBase(this.widgetData, this.widgetContext);
+  ContainerBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   @WidgetKey.widget(
     acceptWidth: 100,
@@ -35,8 +35,8 @@ class ContainerBase extends _$ContainerBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

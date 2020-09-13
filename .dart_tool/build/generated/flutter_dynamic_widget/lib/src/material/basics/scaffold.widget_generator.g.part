@@ -80,19 +80,19 @@ abstract class _$ScaffoldBase extends WidgetBase {
 
   WidgetBase get bottomSheetVal {
     if (params[bottomSheetKey] != null) {
-      return widgetRender(params[bottomSheetKey]);
+      return widgetRender(widgetContext, params[bottomSheetKey]);
     }
     return null;
   }
 
   void bottomSheetValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'yOoTbRfnGr2';
+    _data['id'] = 'I4q6Uy7GEIh';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'kVGRgZtbTjE';
+      _data['params']['style']['id'] = 'J9azwBNjfuj';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'fQymihNuegx';
+      _data['params']['0']['id'] = 'mDAfwi9XDIG';
     }
     params[bottomSheetKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -100,19 +100,19 @@ abstract class _$ScaffoldBase extends WidgetBase {
 
   WidgetBase get drawerVal {
     if (params[drawerKey] != null) {
-      return widgetRender(params[drawerKey]);
+      return widgetRender(widgetContext, params[drawerKey]);
     }
     return null;
   }
 
   void drawerValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'b4-3JkNgKjv';
+    _data['id'] = 'JnFm7SiCEVm';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'Z35bnbpvO2j';
+      _data['params']['style']['id'] = 'B6AnOAwfHNr';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'SS9DdfAf767';
+      _data['params']['0']['id'] = 'dvF8QmLbTqI';
     }
     params[drawerKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -158,19 +158,19 @@ abstract class _$ScaffoldBase extends WidgetBase {
 
   WidgetBase get endDrawerVal {
     if (params[endDrawerKey] != null) {
-      return widgetRender(params[endDrawerKey]);
+      return widgetRender(widgetContext, params[endDrawerKey]);
     }
     return null;
   }
 
   void endDrawerValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = '7IY6NMzjCLm';
+    _data['id'] = 'L8al4s_rfdU';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'bDU23ptFKAA';
+      _data['params']['style']['id'] = 'xwo6UUj2So3';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'Mw6lCK8vR9S';
+      _data['params']['0']['id'] = 'P7IRlAouhZQ';
     }
     params[endDrawerKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -229,19 +229,19 @@ abstract class _$ScaffoldBase extends WidgetBase {
   final _appBarListen = ValueNotifier<bool>(false);
   WidgetBase get appBarVal {
     if (params[appBarKey] != null) {
-      return widgetRender(params[appBarKey]);
+      return widgetRender(widgetContext, params[appBarKey]);
     }
     return null;
   }
 
   void appBarValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'fpqBv5dkCW7';
+    _data['id'] = '5_D946EWQsI';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'EjkuidZns3F';
+      _data['params']['style']['id'] = 'qd-32NGdeEJ';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'z7QyDdqq2AZ';
+      _data['params']['0']['id'] = 'pCRE5Gul_7s';
     }
     params[appBarKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -250,19 +250,19 @@ abstract class _$ScaffoldBase extends WidgetBase {
   final _bodyListen = ValueNotifier<bool>(false);
   WidgetBase get bodyVal {
     if (params[bodyKey] != null) {
-      return widgetRender(params[bodyKey]);
+      return widgetRender(widgetContext, params[bodyKey]);
     }
     return null;
   }
 
   void bodyValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'xOb-JWZTEgB';
+    _data['id'] = 'TKQcbQKNiGx';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'kz2aDC1Ks8c';
+      _data['params']['style']['id'] = 'HbrlFiW7K2_';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = '9CmMuiVrEr4';
+      _data['params']['0']['id'] = '_qrogDf43qS';
     }
     params[bodyKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -271,19 +271,19 @@ abstract class _$ScaffoldBase extends WidgetBase {
   final _bottomNavigationBarListen = ValueNotifier<bool>(false);
   WidgetBase get bottomNavigationBarVal {
     if (params[bottomNavigationBarKey] != null) {
-      return widgetRender(params[bottomNavigationBarKey]);
+      return widgetRender(widgetContext, params[bottomNavigationBarKey]);
     }
     return null;
   }
 
   void bottomNavigationBarValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'SLxnBsRXR8h';
+    _data['id'] = 'eu6FStw9ufM';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'v6nYjqhLeWn';
+      _data['params']['style']['id'] = 'nl6Swcd5qVS';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'CP4cC5jmpGN';
+      _data['params']['0']['id'] = 'GVKxExlEfT9';
     }
     params[bottomNavigationBarKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -292,19 +292,19 @@ abstract class _$ScaffoldBase extends WidgetBase {
   final _floatingActionButtonListen = ValueNotifier<bool>(false);
   WidgetBase get floatingActionButtonVal {
     if (params[floatingActionButtonKey] != null) {
-      return widgetRender(params[floatingActionButtonKey]);
+      return widgetRender(widgetContext, params[floatingActionButtonKey]);
     }
     return null;
   }
 
   void floatingActionButtonValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'Jpwd8UmgMl_';
+    _data['id'] = 'EBgUdYqIKas';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'XAwet8z5vEf';
+      _data['params']['style']['id'] = 'bt3TZZvVVoC';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'QO8muQxQDvc';
+      _data['params']['0']['id'] = 'hodnir3yYsn';
     }
     params[floatingActionButtonKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -317,7 +317,7 @@ abstract class _$ScaffoldBase extends WidgetBase {
       final _list = List.from(params[persistentFooterButtonsKey]);
       for (final item in _list) {
         if (item is Map<String, dynamic>) {
-          _children.add(widgetRender(item));
+          _children.add(widgetRender(widgetContext, item));
         }
       }
       return _children;

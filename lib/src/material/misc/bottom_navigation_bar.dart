@@ -14,7 +14,7 @@ part 'bottom_navigation_bar.g.dart';
 
 @WidgetClass('BottomNavigationBar')
 class BottomNavigationBarBase extends _$BottomNavigationBarBase {
-  BottomNavigationBarBase(this.widgetData, this.widgetContext);
+  BottomNavigationBarBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   Color backgroundColor;
   double elevation;
@@ -38,8 +38,8 @@ class BottomNavigationBarBase extends _$BottomNavigationBarBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

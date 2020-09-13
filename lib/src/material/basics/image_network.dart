@@ -11,7 +11,7 @@ part 'image_network.g.dart';
 
 @WidgetClass('Image.network')
 class ImageNetworkBase extends _$ImageNetworkBase {
-  ImageNetworkBase(this.widgetData, this.widgetContext);
+  ImageNetworkBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   int cacheHeight;
   int cacheWidth;
@@ -32,8 +32,8 @@ class ImageNetworkBase extends _$ImageNetworkBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

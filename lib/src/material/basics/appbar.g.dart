@@ -64,7 +64,7 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
       final _list = List.from(params[actionsKey]);
       for (final item in _list) {
         if (item is Map<String, dynamic>) {
-          _children.add(widgetRender(item));
+          _children.add(widgetRender(widgetContext, item));
         }
       }
       return _children;
@@ -108,19 +108,19 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
 
   WidgetBase get bottomVal {
     if (params[bottomKey] != null) {
-      return widgetRender(params[bottomKey]);
+      return widgetRender(widgetContext, params[bottomKey]);
     }
     return null;
   }
 
   void bottomValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'hW_si_xtqr_';
+    _data['id'] = 'ItU1xQCIz8o';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'G9gdjlYK47R';
+      _data['params']['style']['id'] = 'DeY68MS4BC5';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'IYb7YFnPFZv';
+      _data['params']['0']['id'] = 'g6eoOkme9M8';
     }
     params[bottomKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -173,19 +173,19 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
 
   WidgetBase get flexibleSpaceVal {
     if (params[flexibleSpaceKey] != null) {
-      return widgetRender(params[flexibleSpaceKey]);
+      return widgetRender(widgetContext, params[flexibleSpaceKey]);
     }
     return null;
   }
 
   void flexibleSpaceValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'OtOIrKvKdpH';
+    _data['id'] = 'Ra7aIA-iJBE';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = '-qYvTBneri-';
+      _data['params']['style']['id'] = 'rQunSaedU1k';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = '92-PF9XJS1j';
+      _data['params']['0']['id'] = 'Wp24GRsdnAh';
     }
     params[flexibleSpaceKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -245,7 +245,8 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
 
   IconThemeDataBase get actionsIconThemeVal {
     if (params[actionsIconThemeKey] != null) {
-      return IconThemeDataBase(params[actionsIconThemeKey], widgetContext);
+      return IconThemeDataBase(
+          params[actionsIconThemeKey], widgetContext, widgetRender);
     }
     return null;
   }
@@ -257,7 +258,8 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
 
   IconThemeDataBase get iconThemeVal {
     if (params[iconThemeKey] != null) {
-      return IconThemeDataBase(params[iconThemeKey], widgetContext);
+      return IconThemeDataBase(
+          params[iconThemeKey], widgetContext, widgetRender);
     }
     return null;
   }
@@ -270,19 +272,19 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
   final _leadingListen = ValueNotifier<bool>(false);
   WidgetBase get leadingVal {
     if (params[leadingKey] != null) {
-      return widgetRender(params[leadingKey]);
+      return widgetRender(widgetContext, params[leadingKey]);
     }
     return null;
   }
 
   void leadingValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'H-cJAzMVASo';
+    _data['id'] = 'J5ByDf7gp-I';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'sUjza3cWXOc';
+      _data['params']['style']['id'] = 'pECVZ76SiUN';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'ivCh4ChtKrP';
+      _data['params']['0']['id'] = 'hqN_qjzEohG';
     }
     params[leadingKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -290,7 +292,7 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
 
   TextThemeBase get textThemeVal {
     if (params[textThemeKey] != null) {
-      return TextThemeBase(params[textThemeKey], widgetContext);
+      return TextThemeBase(params[textThemeKey], widgetContext, widgetRender);
     }
     return null;
   }
@@ -303,19 +305,19 @@ abstract class _$AppBarBase extends WidgetPreferredSizedBase {
   final _titleListen = ValueNotifier<bool>(false);
   WidgetBase get titleVal {
     if (params[titleKey] != null) {
-      return widgetRender(params[titleKey]);
+      return widgetRender(widgetContext, params[titleKey]);
     }
     return null;
   }
 
   void titleValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'K4emf5DGpC8';
+    _data['id'] = '-rzvtkdjuvP';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = '65nd3WEIQ7t';
+      _data['params']['style']['id'] = '-fp7eX8rfaE';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'GoOv1B8tAjo';
+      _data['params']['0']['id'] = 'TunbKegzcsA';
     }
     params[titleKey] = _data;
     widgetContext.onUpdate(id, widgetData);

@@ -11,7 +11,7 @@ part 'icon_button.g.dart';
 
 @WidgetClass('IconButton')
 class IconButtonBase extends _$IconButtonBase {
-  IconButtonBase(this.widgetData, this.widgetContext);
+  IconButtonBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   Color color;
   BoxConstraintsBase constraints;
@@ -33,8 +33,8 @@ class IconButtonBase extends _$IconButtonBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

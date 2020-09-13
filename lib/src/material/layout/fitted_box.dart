@@ -11,7 +11,7 @@ part 'fitted_box.g.dart';
 
 @WidgetClass('FittedBox')
 class FittedBoxBase extends _$FittedBoxBase {
-  FittedBoxBase(this.widgetData, this.widgetContext);
+  FittedBoxBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   @enumAlignment
   Alignment alignment;
@@ -31,8 +31,8 @@ class FittedBoxBase extends _$FittedBoxBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

@@ -12,7 +12,7 @@ part 'material_app.g.dart';
 
 @WidgetClass('MaterialApp', allowTap: false)
 class MaterialAppBase extends _$MaterialAppBase {
-  MaterialAppBase(this.widgetData, this.widgetContext);
+  MaterialAppBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   @ListWidgetKey(acceptType: '')
   List<NavigatorObserver> navigatorObservers = const <NavigatorObserver>[];
@@ -41,8 +41,8 @@ class MaterialAppBase extends _$MaterialAppBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

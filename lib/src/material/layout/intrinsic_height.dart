@@ -10,7 +10,7 @@ part 'intrinsic_height.g.dart';
 
 @WidgetClass('IntrinsicHeight')
 class IntrinsicHeightBase extends _$IntrinsicHeightBase {
-  IntrinsicHeightBase(this.widgetData, this.widgetContext);
+  IntrinsicHeightBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   Key key;
 
@@ -21,8 +21,8 @@ class IntrinsicHeightBase extends _$IntrinsicHeightBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

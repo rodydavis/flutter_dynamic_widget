@@ -8,7 +8,7 @@ part 'box_constraints.g.dart';
 
 @PropertyClass('BoxConstraints')
 class BoxConstraintsBase extends _$BoxConstraintsBase {
-  BoxConstraintsBase(this.widgetData, this.widgetContext);
+  BoxConstraintsBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   @override
   final Map<String, dynamic> widgetData;
@@ -17,8 +17,8 @@ class BoxConstraintsBase extends _$BoxConstraintsBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

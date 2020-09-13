@@ -12,7 +12,7 @@ part 'list_tile.g.dart';
 
 @WidgetClass('ListTile')
 class ListTileBase extends _$ListTileBase {
-  ListTileBase(this.widgetData, this.widgetContext);
+  ListTileBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   EdgeInsets contentPadding;
   bool dense;
@@ -34,8 +34,8 @@ class ListTileBase extends _$ListTileBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

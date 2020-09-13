@@ -10,7 +10,7 @@ part 'intrinsic_width.g.dart';
 
 @WidgetClass('IntrinsicWidth')
 class IntrinsicWidthBase extends _$IntrinsicWidthBase {
-  IntrinsicWidthBase(this.widgetData, this.widgetContext);
+  IntrinsicWidthBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   Key key;
 
@@ -21,8 +21,8 @@ class IntrinsicWidthBase extends _$IntrinsicWidthBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

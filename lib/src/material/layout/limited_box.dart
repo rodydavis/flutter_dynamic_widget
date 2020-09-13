@@ -11,7 +11,7 @@ part 'limited_box.g.dart';
 
 @WidgetClass('LimitedBox')
 class LimitedBoxBase extends _$LimitedBoxBase {
-  LimitedBoxBase(this.widgetData, this.widgetContext);
+  LimitedBoxBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   Key key;
 
@@ -22,8 +22,8 @@ class LimitedBoxBase extends _$LimitedBoxBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

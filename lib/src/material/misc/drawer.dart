@@ -10,7 +10,7 @@ part 'drawer.g.dart';
 
 @WidgetClass('Drawer')
 class DrawerBase extends _$DrawerBase {
-  DrawerBase(this.widgetData, this.widgetContext);
+  DrawerBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   Key key;
   String semanticLabel;
@@ -22,8 +22,8 @@ class DrawerBase extends _$DrawerBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

@@ -12,7 +12,7 @@ part 'flat_button_icon.g.dart';
 
 @WidgetClass('FlatButton.icon')
 class FlatButtonIconBase extends _$FlatButtonIconBase {
-  FlatButtonIconBase(this.widgetData, this.widgetContext);
+  FlatButtonIconBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   Duration animationDuration;
   @enumClip
@@ -48,9 +48,8 @@ class FlatButtonIconBase extends _$FlatButtonIconBase {
   @override
   final WidgetContext widgetContext;
 
-  @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+   @override
+  final GenerateWidget widgetRender;
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

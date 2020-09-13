@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:widget_gen/widget_gen_annotations.dart';
 
 const enumAlignment = EnumKey(
@@ -190,6 +189,7 @@ const _clipValues = [
   'Clip.antiAliasWithSaveLayer',
   'Clip.hardEdge',
 ];
+
 const enumClipHardEdge = EnumKey(
   propertyType: 'Clip',
   defaultValue: 'Clip.hardEdge',

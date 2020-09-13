@@ -10,7 +10,7 @@ part 'center.g.dart';
 
 @WidgetClass('Center')
 class CenterBase extends _$CenterBase {
-  CenterBase(this.widgetData, this.widgetContext);
+  CenterBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   double heightFactor;
   Key key;
@@ -23,8 +23,7 @@ class CenterBase extends _$CenterBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

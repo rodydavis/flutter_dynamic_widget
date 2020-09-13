@@ -43,7 +43,7 @@ abstract class _$WidgetsAppBase extends WidgetBase {
       final _list = List.from(params[navigatorObserversKey]);
       for (final item in _list) {
         if (item is Map<String, dynamic>) {
-          _children.add(widgetRender(item));
+          _children.add(widgetRender(widgetContext, item));
         }
       }
       return _children;
@@ -198,19 +198,19 @@ abstract class _$WidgetsAppBase extends WidgetBase {
   final _homeListen = ValueNotifier<bool>(false);
   WidgetBase get homeVal {
     if (params[homeKey] != null) {
-      return widgetRender(params[homeKey]);
+      return widgetRender(widgetContext, params[homeKey]);
     }
     return null;
   }
 
   void homeValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = '-V4t4D3bpm';
+    _data['id'] = 'wOt4TdPI--';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'OJDz1n1lbU';
+      _data['params']['style']['id'] = 'vi6TcrDRcoP';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'fw4HGJq3pp';
+      _data['params']['0']['id'] = '1h_TtKtg4ot';
     }
     params[homeKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -226,12 +226,13 @@ abstract class _$WidgetsAppBase extends WidgetBase {
       home: !widgetContext.isDragging ||
               (widgetContext.isDragging && homeVal?.build(context) != null)
           ? (homeVal?.build(context) ??
-              (widgetRender(json.decode(json.encode({
-                'id': '4x7teE3kW8',
-                'name': 'Placeholder',
-                'params': {},
-              }))) as WidgetBase)
-                  .build(context))
+              (widgetRender(
+                  widgetContext,
+                  json.decode(json.encode({
+                    'id': 'Acy1f5i-Yqd',
+                    'name': 'Placeholder',
+                    'params': {},
+                  })))).build(context))
           : PreferredSize(
               preferredSize: Size(100.0, 100.0),
               child: DragTarget<WidgetBaseData>(

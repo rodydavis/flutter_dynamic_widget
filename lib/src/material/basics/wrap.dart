@@ -9,7 +9,7 @@ part 'wrap.g.dart';
 
 @WidgetClass('Wrap')
 class WrapBase extends _$WrapBase {
-  WrapBase(this.widgetData, this.widgetContext);
+  WrapBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   List<Widget> children;
   Key key;
@@ -21,8 +21,8 @@ class WrapBase extends _$WrapBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

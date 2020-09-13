@@ -12,7 +12,7 @@ part 'raised_button_icon.g.dart';
 
 @WidgetClass('RaisedButton.icon')
 class RaisedButtonIconBase extends _$RaisedButtonIconBase {
-  RaisedButtonIconBase(this.widgetData, this.widgetContext);
+  RaisedButtonIconBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   Duration animationDuration;
   @enumClip
@@ -52,8 +52,8 @@ class RaisedButtonIconBase extends _$RaisedButtonIconBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

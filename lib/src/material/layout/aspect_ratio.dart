@@ -10,7 +10,7 @@ part 'aspect_ratio.g.dart';
 
 @WidgetClass('AspectRatio')
 class AspectRatioBase extends _$AspectRatioBase {
-  AspectRatioBase(this.widgetData, this.widgetContext);
+  AspectRatioBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   Key key;
 
@@ -21,8 +21,7 @@ class AspectRatioBase extends _$AspectRatioBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

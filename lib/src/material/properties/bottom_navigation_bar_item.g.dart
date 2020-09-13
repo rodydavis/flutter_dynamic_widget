@@ -51,19 +51,19 @@ abstract class _$BottomNavigationBarItemBase extends PropertyBase {
   final _iconListen = ValueNotifier<bool>(false);
   WidgetBase get iconVal {
     if (params[iconKey] != null) {
-      return widgetRender(params[iconKey]);
+      return widgetRender(widgetContext, params[iconKey]);
     }
     return null;
   }
 
   void iconValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'AAS_dmdLpJp';
+    _data['id'] = 'LuGlm7HLGs4';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = '4VCYWaoB9O-';
+      _data['params']['style']['id'] = 'uGkw17-I1BM';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'o1sICPQxjJA';
+      _data['params']['0']['id'] = 'YVZ6PK6JfqN';
     }
     params[iconKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -72,19 +72,19 @@ abstract class _$BottomNavigationBarItemBase extends PropertyBase {
   final _titleListen = ValueNotifier<bool>(false);
   WidgetBase get titleVal {
     if (params[titleKey] != null) {
-      return widgetRender(params[titleKey]);
+      return widgetRender(widgetContext, params[titleKey]);
     }
     return null;
   }
 
   void titleValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'KjvXq_qy4po';
+    _data['id'] = '1DPgCQuw4a_';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'CwtD2chXbEx';
+      _data['params']['style']['id'] = 'fc8E8GSu7cq';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'B1wchfR7oLF';
+      _data['params']['0']['id'] = 'OGBOPsxLiFf';
     }
     params[titleKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -93,19 +93,19 @@ abstract class _$BottomNavigationBarItemBase extends PropertyBase {
   final _activeIconListen = ValueNotifier<bool>(false);
   WidgetBase get activeIconVal {
     if (params[activeIconKey] != null) {
-      return widgetRender(params[activeIconKey]);
+      return widgetRender(widgetContext, params[activeIconKey]);
     }
     return null;
   }
 
   void activeIconValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'Vyw8bChV8Cr';
+    _data['id'] = 'B8QNdyibY_y';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'OzamBZtZ8oF';
+      _data['params']['style']['id'] = '8j48ds74uG2';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = '4MMWHfHrDVQ';
+      _data['params']['0']['id'] = 'z7sliNks-to';
     }
     params[activeIconKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -153,12 +153,13 @@ abstract class _$BottomNavigationBarItemBase extends PropertyBase {
       icon: !widgetContext.isDragging ||
               (widgetContext.isDragging && iconVal?.build(context) != null)
           ? (iconVal?.build(context) ??
-              (widgetRender(json.decode(json.encode({
-                'id': '3q3QG3VpJ76',
-                'name': 'Placeholder',
-                'params': {},
-              }))) as WidgetBase)
-                  .build(context))
+              (widgetRender(
+                  widgetContext,
+                  json.decode(json.encode({
+                    'id': 'qkzwycKNvNp',
+                    'name': 'Placeholder',
+                    'params': {},
+                  })))).build(context))
           : PreferredSize(
               preferredSize: Size(35.0, 35.0),
               child: DragTarget<WidgetBaseData>(
@@ -193,12 +194,13 @@ abstract class _$BottomNavigationBarItemBase extends PropertyBase {
       title: !widgetContext.isDragging ||
               (widgetContext.isDragging && titleVal?.build(context) != null)
           ? (titleVal?.build(context) ??
-              (widgetRender(json.decode(json.encode({
-                'id': '9gBmT9SUHsI',
-                'name': 'Placeholder',
-                'params': {},
-              }))) as WidgetBase)
-                  .build(context))
+              (widgetRender(
+                  widgetContext,
+                  json.decode(json.encode({
+                    'id': 'NZsevuNwUjn',
+                    'name': 'Placeholder',
+                    'params': {},
+                  })))).build(context))
           : PreferredSize(
               preferredSize: Size(60.0, 35.0),
               child: DragTarget<WidgetBaseData>(

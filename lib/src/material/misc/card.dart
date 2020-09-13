@@ -11,7 +11,7 @@ part 'card.g.dart';
 
 @WidgetClass('Card')
 class CardBase extends _$CardBase {
-  CardBase(this.widgetData, this.widgetContext);
+  CardBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   @enumClip
   Clip clipBehavior;
@@ -30,8 +30,8 @@ class CardBase extends _$CardBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

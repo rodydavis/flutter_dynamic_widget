@@ -27,19 +27,19 @@ abstract class _$FractionallySizedBoxBase extends WidgetBase {
   final _childListen = ValueNotifier<bool>(false);
   WidgetBase get childVal {
     if (params[childKey] != null) {
-      return widgetRender(params[childKey]);
+      return widgetRender(widgetContext, params[childKey]);
     }
     return null;
   }
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'wid8_SjMR8H';
+    _data['id'] = 'G_D8L2MAgn-';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'mkO8xZJilHr';
+      _data['params']['style']['id'] = 'Mi44I6m4pXe';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'C4U4OtZOzSs';
+      _data['params']['0']['id'] = 'wdk4tE7_CL7';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);

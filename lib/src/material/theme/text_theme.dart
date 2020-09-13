@@ -9,7 +9,7 @@ part 'text_theme.g.dart';
 
 @PropertyClass('TextTheme')
 class TextThemeBase extends _$TextThemeBase {
-  TextThemeBase(this.widgetData, this.widgetContext);
+  TextThemeBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   @override
   final Map<String, dynamic> widgetData;
@@ -18,8 +18,8 @@ class TextThemeBase extends _$TextThemeBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

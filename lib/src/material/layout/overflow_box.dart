@@ -11,7 +11,7 @@ part 'overflow_box.g.dart';
 
 @WidgetClass('OverflowBox')
 class OverflowBoxBase extends _$OverflowBoxBase {
-  OverflowBoxBase(this.widgetData, this.widgetContext);
+  OverflowBoxBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   Key key;
 
@@ -22,8 +22,8 @@ class OverflowBoxBase extends _$OverflowBoxBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

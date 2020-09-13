@@ -62,7 +62,7 @@ abstract class _$TextThemeBase extends PropertyBase {
 
   TextStyleBase get headline1Val {
     if (params[headline1Key] != null) {
-      return TextStyleBase(params[headline1Key], widgetContext);
+      return TextStyleBase(params[headline1Key], widgetContext, widgetRender);
     }
     return null;
   }
@@ -74,7 +74,7 @@ abstract class _$TextThemeBase extends PropertyBase {
 
   TextStyleBase get headline2Val {
     if (params[headline2Key] != null) {
-      return TextStyleBase(params[headline2Key], widgetContext);
+      return TextStyleBase(params[headline2Key], widgetContext, widgetRender);
     }
     return null;
   }
@@ -86,7 +86,7 @@ abstract class _$TextThemeBase extends PropertyBase {
 
   TextStyleBase get headline3Val {
     if (params[headline3Key] != null) {
-      return TextStyleBase(params[headline3Key], widgetContext);
+      return TextStyleBase(params[headline3Key], widgetContext, widgetRender);
     }
     return null;
   }
@@ -98,7 +98,7 @@ abstract class _$TextThemeBase extends PropertyBase {
 
   TextStyleBase get headline4Val {
     if (params[headline4Key] != null) {
-      return TextStyleBase(params[headline4Key], widgetContext);
+      return TextStyleBase(params[headline4Key], widgetContext, widgetRender);
     }
     return null;
   }
@@ -110,7 +110,7 @@ abstract class _$TextThemeBase extends PropertyBase {
 
   TextStyleBase get headline5Val {
     if (params[headline5Key] != null) {
-      return TextStyleBase(params[headline5Key], widgetContext);
+      return TextStyleBase(params[headline5Key], widgetContext, widgetRender);
     }
     return null;
   }
@@ -122,7 +122,7 @@ abstract class _$TextThemeBase extends PropertyBase {
 
   TextStyleBase get headline6Val {
     if (params[headline6Key] != null) {
-      return TextStyleBase(params[headline6Key], widgetContext);
+      return TextStyleBase(params[headline6Key], widgetContext, widgetRender);
     }
     return null;
   }
@@ -134,7 +134,7 @@ abstract class _$TextThemeBase extends PropertyBase {
 
   TextStyleBase get subtitle1Val {
     if (params[subtitle1Key] != null) {
-      return TextStyleBase(params[subtitle1Key], widgetContext);
+      return TextStyleBase(params[subtitle1Key], widgetContext, widgetRender);
     }
     return null;
   }
@@ -146,7 +146,7 @@ abstract class _$TextThemeBase extends PropertyBase {
 
   TextStyleBase get subtitle2Val {
     if (params[subtitle2Key] != null) {
-      return TextStyleBase(params[subtitle2Key], widgetContext);
+      return TextStyleBase(params[subtitle2Key], widgetContext, widgetRender);
     }
     return null;
   }
@@ -158,7 +158,7 @@ abstract class _$TextThemeBase extends PropertyBase {
 
   TextStyleBase get bodyText1Val {
     if (params[bodyText1Key] != null) {
-      return TextStyleBase(params[bodyText1Key], widgetContext);
+      return TextStyleBase(params[bodyText1Key], widgetContext, widgetRender);
     }
     return null;
   }
@@ -170,7 +170,7 @@ abstract class _$TextThemeBase extends PropertyBase {
 
   TextStyleBase get bodyText2Val {
     if (params[bodyText2Key] != null) {
-      return TextStyleBase(params[bodyText2Key], widgetContext);
+      return TextStyleBase(params[bodyText2Key], widgetContext, widgetRender);
     }
     return null;
   }
@@ -182,7 +182,7 @@ abstract class _$TextThemeBase extends PropertyBase {
 
   TextStyleBase get captionVal {
     if (params[captionKey] != null) {
-      return TextStyleBase(params[captionKey], widgetContext);
+      return TextStyleBase(params[captionKey], widgetContext, widgetRender);
     }
     return null;
   }
@@ -194,7 +194,7 @@ abstract class _$TextThemeBase extends PropertyBase {
 
   TextStyleBase get buttonVal {
     if (params[buttonKey] != null) {
-      return TextStyleBase(params[buttonKey], widgetContext);
+      return TextStyleBase(params[buttonKey], widgetContext, widgetRender);
     }
     return null;
   }
@@ -206,7 +206,7 @@ abstract class _$TextThemeBase extends PropertyBase {
 
   TextStyleBase get overlineVal {
     if (params[overlineKey] != null) {
-      return TextStyleBase(params[overlineKey], widgetContext);
+      return TextStyleBase(params[overlineKey], widgetContext, widgetRender);
     }
     return null;
   }
@@ -218,7 +218,7 @@ abstract class _$TextThemeBase extends PropertyBase {
 
   TextStyleBase get display4Val {
     if (params[display4Key] != null) {
-      return TextStyleBase(params[display4Key], widgetContext);
+      return TextStyleBase(params[display4Key], widgetContext, widgetRender);
     }
     return null;
   }
@@ -230,7 +230,7 @@ abstract class _$TextThemeBase extends PropertyBase {
 
   TextStyleBase get display3Val {
     if (params[display3Key] != null) {
-      return TextStyleBase(params[display3Key], widgetContext);
+      return TextStyleBase(params[display3Key], widgetContext, widgetRender);
     }
     return null;
   }
@@ -242,7 +242,7 @@ abstract class _$TextThemeBase extends PropertyBase {
 
   TextStyleBase get display2Val {
     if (params[display2Key] != null) {
-      return TextStyleBase(params[display2Key], widgetContext);
+      return TextStyleBase(params[display2Key], widgetContext, widgetRender);
     }
     return null;
   }
@@ -254,7 +254,7 @@ abstract class _$TextThemeBase extends PropertyBase {
 
   TextStyleBase get display1Val {
     if (params[display1Key] != null) {
-      return TextStyleBase(params[display1Key], widgetContext);
+      return TextStyleBase(params[display1Key], widgetContext, widgetRender);
     }
     return null;
   }
@@ -266,7 +266,7 @@ abstract class _$TextThemeBase extends PropertyBase {
 
   TextStyleBase get headlineVal {
     if (params[headlineKey] != null) {
-      return TextStyleBase(params[headlineKey], widgetContext);
+      return TextStyleBase(params[headlineKey], widgetContext, widgetRender);
     }
     return null;
   }
@@ -278,7 +278,7 @@ abstract class _$TextThemeBase extends PropertyBase {
 
   TextStyleBase get titleVal {
     if (params[titleKey] != null) {
-      return TextStyleBase(params[titleKey], widgetContext);
+      return TextStyleBase(params[titleKey], widgetContext, widgetRender);
     }
     return null;
   }
@@ -290,7 +290,7 @@ abstract class _$TextThemeBase extends PropertyBase {
 
   TextStyleBase get subheadVal {
     if (params[subheadKey] != null) {
-      return TextStyleBase(params[subheadKey], widgetContext);
+      return TextStyleBase(params[subheadKey], widgetContext, widgetRender);
     }
     return null;
   }
@@ -302,7 +302,7 @@ abstract class _$TextThemeBase extends PropertyBase {
 
   TextStyleBase get subtitleVal {
     if (params[subtitleKey] != null) {
-      return TextStyleBase(params[subtitleKey], widgetContext);
+      return TextStyleBase(params[subtitleKey], widgetContext, widgetRender);
     }
     return null;
   }
@@ -314,7 +314,7 @@ abstract class _$TextThemeBase extends PropertyBase {
 
   TextStyleBase get body2Val {
     if (params[body2Key] != null) {
-      return TextStyleBase(params[body2Key], widgetContext);
+      return TextStyleBase(params[body2Key], widgetContext, widgetRender);
     }
     return null;
   }
@@ -326,7 +326,7 @@ abstract class _$TextThemeBase extends PropertyBase {
 
   TextStyleBase get body1Val {
     if (params[body1Key] != null) {
-      return TextStyleBase(params[body1Key], widgetContext);
+      return TextStyleBase(params[body1Key], widgetContext, widgetRender);
     }
     return null;
   }

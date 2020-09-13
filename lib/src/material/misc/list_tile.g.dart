@@ -217,19 +217,19 @@ abstract class _$ListTileBase extends WidgetBase {
   final _leadingListen = ValueNotifier<bool>(false);
   WidgetBase get leadingVal {
     if (params[leadingKey] != null) {
-      return widgetRender(params[leadingKey]);
+      return widgetRender(widgetContext, params[leadingKey]);
     }
     return null;
   }
 
   void leadingValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'lhpoapzpy';
+    _data['id'] = 'BSl6rHHEeVk';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'SMo2kcj_qw';
+      _data['params']['style']['id'] = 'yXcFIe6xCPI';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'KrgtjRj3Tb';
+      _data['params']['0']['id'] = 'sJlRq1rpNO1';
     }
     params[leadingKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -238,19 +238,19 @@ abstract class _$ListTileBase extends WidgetBase {
   final _titleListen = ValueNotifier<bool>(false);
   WidgetBase get titleVal {
     if (params[titleKey] != null) {
-      return widgetRender(params[titleKey]);
+      return widgetRender(widgetContext, params[titleKey]);
     }
     return null;
   }
 
   void titleValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'eBXuEVM1Zx';
+    _data['id'] = 'mO2rKDPtrqI';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'gpJ4ifmLox';
+      _data['params']['style']['id'] = 'Njb-X8MEOyb';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'ndX7zENpZg';
+      _data['params']['0']['id'] = 'tzEJ8kFiWYB';
     }
     params[titleKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -259,19 +259,19 @@ abstract class _$ListTileBase extends WidgetBase {
   final _subtitleListen = ValueNotifier<bool>(false);
   WidgetBase get subtitleVal {
     if (params[subtitleKey] != null) {
-      return widgetRender(params[subtitleKey]);
+      return widgetRender(widgetContext, params[subtitleKey]);
     }
     return null;
   }
 
   void subtitleValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'vUMp1Df-Kn';
+    _data['id'] = 'ezhjgAmeabt';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'M2pavD-1ds';
+      _data['params']['style']['id'] = 'S5b1DlyJnwH';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'WaVbQnRuYY';
+      _data['params']['0']['id'] = 'WS1d9gzsMgj';
     }
     params[subtitleKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -280,19 +280,19 @@ abstract class _$ListTileBase extends WidgetBase {
   final _trailingListen = ValueNotifier<bool>(false);
   WidgetBase get trailingVal {
     if (params[trailingKey] != null) {
-      return widgetRender(params[trailingKey]);
+      return widgetRender(widgetContext, params[trailingKey]);
     }
     return null;
   }
 
   void trailingValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 't8OVW3As6I';
+    _data['id'] = 'Wm_gW4mX3Ud';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = '6q7B2iSDne';
+      _data['params']['style']['id'] = 'jY3VbmXoQUf';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'oXtjuRoEqR';
+      _data['params']['0']['id'] = 'ELc6LpExk_p';
     }
     params[trailingKey] = _data;
     widgetContext.onUpdate(id, widgetData);

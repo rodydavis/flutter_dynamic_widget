@@ -11,7 +11,7 @@ part 'offstage.g.dart';
 
 @WidgetClass('Offstage')
 class OffstageBase extends _$OffstageBase {
-  OffstageBase(this.widgetData, this.widgetContext);
+  OffstageBase(this.widgetData, this.widgetContext, this.widgetRender);
   @PropertyKey(defaultValue: 'true')
   bool offstage;
 
@@ -24,8 +24,8 @@ class OffstageBase extends _$OffstageBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

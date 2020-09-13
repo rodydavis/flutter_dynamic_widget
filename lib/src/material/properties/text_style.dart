@@ -9,7 +9,7 @@ part 'text_style.g.dart';
 
 @PropertyClass('TextStyle')
 class TextStyleBase extends _$TextStyleBase {
-  TextStyleBase(this.widgetData, this.widgetContext);
+  TextStyleBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   @PropertyKey(defaultValue: 'true')
   bool inherit = true;
@@ -42,8 +42,8 @@ class TextStyleBase extends _$TextStyleBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

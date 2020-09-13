@@ -123,19 +123,19 @@ abstract class _$ChipBase extends WidgetBase {
 
   WidgetBase get deleteIconVal {
     if (params[deleteIconKey] != null) {
-      return widgetRender(params[deleteIconKey]);
+      return widgetRender(widgetContext, params[deleteIconKey]);
     }
     return null;
   }
 
   void deleteIconValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'R5fMtujo4ZQ';
+    _data['id'] = 'BfceEGXsSk';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'wlMFsn455U2';
+      _data['params']['style']['id'] = 'p2bOc83OnN';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = '1-WK-VW1IB3';
+      _data['params']['0']['id'] = 'lnemx1rBto';
     }
     params[deleteIconKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -353,19 +353,19 @@ abstract class _$ChipBase extends WidgetBase {
   final _labelListen = ValueNotifier<bool>(false);
   WidgetBase get labelVal {
     if (params[labelKey] != null) {
-      return widgetRender(params[labelKey]);
+      return widgetRender(widgetContext, params[labelKey]);
     }
     return null;
   }
 
   void labelValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'J1yDWNWBVdr';
+    _data['id'] = 'KfQgA6-mAw';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'TgERe9tzNAm';
+      _data['params']['style']['id'] = 'IQenNr4nPr';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'gvNyqTnlBwy';
+      _data['params']['0']['id'] = '9wrKmSWnHz';
     }
     params[labelKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -374,19 +374,19 @@ abstract class _$ChipBase extends WidgetBase {
   final _avatarListen = ValueNotifier<bool>(false);
   WidgetBase get avatarVal {
     if (params[avatarKey] != null) {
-      return widgetRender(params[avatarKey]);
+      return widgetRender(widgetContext, params[avatarKey]);
     }
     return null;
   }
 
   void avatarValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = '1FtHYLkszoM';
+    _data['id'] = 'CwyyiGqX45';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'plRP36y4UQG';
+      _data['params']['style']['id'] = 'OYkodQIc1T';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'W2jd3JDNd6v';
+      _data['params']['0']['id'] = '45KPM-zeoEr';
     }
     params[avatarKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -394,7 +394,7 @@ abstract class _$ChipBase extends WidgetBase {
 
   TextStyleBase get labelStyleVal {
     if (params[labelStyleKey] != null) {
-      return TextStyleBase(params[labelStyleKey], widgetContext);
+      return TextStyleBase(params[labelStyleKey], widgetContext, widgetRender);
     }
     return null;
   }
@@ -454,12 +454,13 @@ abstract class _$ChipBase extends WidgetBase {
         label: !widgetContext.isDragging ||
                 (widgetContext.isDragging && labelVal?.build(context) != null)
             ? (labelVal?.build(context) ??
-                (widgetRender(json.decode(json.encode({
-                  'id': 'JbSxrhYD7GU',
-                  'name': 'Placeholder',
-                  'params': {},
-                }))) as WidgetBase)
-                    .build(context))
+                (widgetRender(
+                    widgetContext,
+                    json.decode(json.encode({
+                      'id': 'uiUv852rOKR',
+                      'name': 'Placeholder',
+                      'params': {},
+                    })))).build(context))
             : PreferredSize(
                 preferredSize: Size(60.0, 35.0),
                 child: DragTarget<WidgetBaseData>(

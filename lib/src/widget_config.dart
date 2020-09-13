@@ -8,7 +8,8 @@ import 'package:meta/meta.dart';
 import 'base_class.dart';
 import 'widget_index.dart';
 
-typedef GenerateWidget = WidgetConfig Function(Map<String, dynamic> data);
+typedef GenerateWidget = WidgetBase Function(
+    WidgetContext context, dynamic data);
 typedef ActionCallback = void Function(BuildContext context, String url);
 
 /// The `SettingsStore` mixin is primarily meant for code-generation and used as part of the

@@ -11,7 +11,7 @@ part 'app_bar_theme.g.dart';
 
 @PropertyClass('AppBarTheme')
 class AppBarThemeBase extends _$AppBarThemeBase {
-  AppBarThemeBase(this.widgetData, this.widgetContext);
+  AppBarThemeBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   @enumBrightness
   Brightness brightness;
@@ -30,8 +30,8 @@ class AppBarThemeBase extends _$AppBarThemeBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

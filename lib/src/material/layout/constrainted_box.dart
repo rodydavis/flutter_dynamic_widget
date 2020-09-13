@@ -11,7 +11,7 @@ part 'constrainted_box.g.dart';
 
 @WidgetClass('ConstrainedBox')
 class ConstrainedBoxBase extends _$ConstrainedBoxBase {
-  ConstrainedBoxBase(this.widgetData, this.widgetContext);
+  ConstrainedBoxBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   Key key;
 
@@ -22,8 +22,8 @@ class ConstrainedBoxBase extends _$ConstrainedBoxBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

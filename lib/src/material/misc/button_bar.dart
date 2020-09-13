@@ -9,7 +9,7 @@ part 'button_bar.g.dart';
 
 @WidgetClass('ButtonBar')
 class ButtonBarBase extends _$ButtonBarBase {
-  ButtonBarBase(this.widgetData, this.widgetContext);
+  ButtonBarBase(this.widgetData, this.widgetContext, this.widgetRender);
 
   @enumMainAxisAlignment
   MainAxisAlignment alignment;
@@ -39,8 +39,8 @@ class ButtonBarBase extends _$ButtonBarBase {
   final WidgetContext widgetContext;
 
   @override
-  GenerateWidget get widgetRender =>
-      (val) => MaterialBase(val, widgetContext).base;
+  final GenerateWidget widgetRender;
+     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

@@ -185,19 +185,19 @@ abstract class _$TooltipBase extends WidgetBase {
   final _childListen = ValueNotifier<bool>(false);
   WidgetBase get childVal {
     if (params[childKey] != null) {
-      return widgetRender(params[childKey]);
+      return widgetRender(widgetContext, params[childKey]);
     }
     return null;
   }
 
   void childValUpdate(Map<String, dynamic> val) {
     final _data = val;
-    _data['id'] = 'Qu2pRJRPajh';
+    _data['id'] = 'TaD8dgrrRk';
     if (_data['name'] == 'Text') {
-      _data['params']['style']['id'] = 'Gp3YcJHatuj';
+      _data['params']['style']['id'] = '_QrtS9WoYe';
     }
     if (_data['name'] == 'Icon') {
-      _data['params']['0']['id'] = 'vxPofS_SG2f';
+      _data['params']['0']['id'] = '9JxMU2irtD';
     }
     params[childKey] = _data;
     widgetContext.onUpdate(id, widgetData);
@@ -205,7 +205,7 @@ abstract class _$TooltipBase extends WidgetBase {
 
   TextStyleBase get textStyleVal {
     if (params[textStyleKey] != null) {
-      return TextStyleBase(params[textStyleKey], widgetContext);
+      return TextStyleBase(params[textStyleKey], widgetContext, widgetRender);
     }
     return null;
   }
@@ -223,12 +223,13 @@ abstract class _$TooltipBase extends WidgetBase {
         child: !widgetContext.isDragging ||
                 (widgetContext.isDragging && childVal?.build(context) != null)
             ? (childVal?.build(context) ??
-                (widgetRender(json.decode(json.encode({
-                  'id': 'iufXgvexrRa',
-                  'name': 'Placeholder',
-                  'params': {},
-                }))) as WidgetBase)
-                    .build(context))
+                (widgetRender(
+                    widgetContext,
+                    json.decode(json.encode({
+                      'id': 'EtsVSBWoWL',
+                      'name': 'Placeholder',
+                      'params': {},
+                    })))).build(context))
             : PreferredSize(
                 preferredSize: Size(100.0, 100.0),
                 child: DragTarget<WidgetBaseData>(
