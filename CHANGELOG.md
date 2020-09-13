@@ -1,3 +1,7 @@
+# 1.1.1
+
+- Changing Render Method
+
 # 1.1.0
 
 - Updating for Flutter Version: `1.22.0-10.0.pre.79`
