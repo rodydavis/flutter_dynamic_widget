@@ -1,0 +1,472 @@
+{
+  "file": {
+    "name": null,
+    "imports": [
+      "dart:ui",
+      "package:flutter/foundation.dart",
+      "package:flutter/widgets.dart",
+      "theme.dart"
+    ],
+    "classes": [
+      {
+        "name": "BottomAppBarTheme",
+        "comments": [
+          "   application."
+        ],
+        "fields": [
+          {
+            "name": "color",
+            "type": "Color"
+          },
+          {
+            "name": "elevation",
+            "type": "double"
+          },
+          {
+            "name": "shape",
+            "type": "NotchedShape"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "BottomAppBarTheme",
+            "properties": [
+              {
+                "value": null,
+                "name": "color",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "elevation",
+                "type": "double",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "shape",
+                "type": "NotchedShape",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "copyWith",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "BottomAppBarTheme"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "BottomAppBarTheme",
+                              "arguments": {
+                                "color": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "color"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "elevation": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "elevation"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "shape": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "shape"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "of",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "BottomAppBarTheme"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "lerp",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "BottomAppBarTheme"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "BottomAppBarTheme",
+                              "arguments": {
+                                "color": {
+                                  "name": "constructor",
+                                  "value": "lerp",
+                                  "arguments": {}
+                                },
+                                "elevation": {
+                                  "name": "constructor",
+                                  "value": "lerpDouble",
+                                  "arguments": {}
+                                },
+                                "shape": {
+                                  "name": "conditional",
+                                  "values": [
+                                    {
+                                      "name": "binary",
+                                      "left": {
+                                        "name": "name",
+                                        "props": {
+                                          "0": "t"
+                                        }
+                                      },
+                                      "right": {
+                                        "name": "value",
+                                        "props": {
+                                          "0": {
+                                            "type": "double",
+                                            "value": "0.5"
+                                          }
+                                        }
+                                      },
+                                      "operation": "<"
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "hashCode",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "int"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "hashValues",
+                              "arguments": {}
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "==",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "identical",
+                              "arguments": {}
+                            },
+                            {
+                              "name": "return",
+                              "values": [
+                                {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "bool",
+                                      "value": "true"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": {
+                                "name": "name",
+                                "props": {
+                                  "0": "runtimeType"
+                                }
+                              },
+                              "operation": "!="
+                            },
+                            {
+                              "name": "return",
+                              "values": [
+                                {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "bool",
+                                      "value": "false"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "binary",
+                                "left": {
+                                  "name": "binary",
+                                  "left": null,
+                                  "right": {
+                                    "name": "binary",
+                                    "left": null,
+                                    "right": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "color"
+                                      }
+                                    },
+                                    "operation": "=="
+                                  },
+                                  "operation": "&&"
+                                },
+                                "right": {
+                                  "name": "binary",
+                                  "left": null,
+                                  "right": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "elevation"
+                                    }
+                                  },
+                                  "operation": "=="
+                                },
+                                "operation": "&&"
+                              },
+                              "right": {
+                                "name": "binary",
+                                "left": null,
+                                "right": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "shape"
+                                  }
+                                },
+                                "operation": "=="
+                              },
+                              "operation": "&&"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "debugFillProperties",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      }
+    ],
+    "enums": [],
+    "fields": [],
+    "methods": []
+  },
+  "errors": []
+}

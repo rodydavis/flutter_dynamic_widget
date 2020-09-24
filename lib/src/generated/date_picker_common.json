@@ -1,0 +1,237 @@
+{
+  "file": {
+    "name": null,
+    "imports": [
+      "dart:ui",
+      "package:flutter/foundation.dart"
+    ],
+    "classes": [
+      {
+        "name": "DateTimeRange",
+        "comments": [
+          "   select a date range."
+        ],
+        "fields": [
+          {
+            "name": "start",
+            "type": "DateTime"
+          },
+          {
+            "name": "end",
+            "type": "DateTime"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "DateTimeRange",
+            "properties": [
+              {
+                "value": null,
+                "name": "start",
+                "type": "DateTime",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "end",
+                "type": "DateTime",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "duration",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Duration"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "==",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": {
+                                "name": "name",
+                                "props": {
+                                  "0": "runtimeType"
+                                }
+                              },
+                              "operation": "!="
+                            },
+                            {
+                              "name": "return",
+                              "values": [
+                                {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "bool",
+                                      "value": "false"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "binary",
+                                "left": null,
+                                "right": {
+                                  "name": "binary",
+                                  "left": null,
+                                  "right": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "start"
+                                    }
+                                  },
+                                  "operation": "=="
+                                },
+                                "operation": "&&"
+                              },
+                              "right": {
+                                "name": "binary",
+                                "left": null,
+                                "right": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "end"
+                                  }
+                                },
+                                "operation": "=="
+                              },
+                              "operation": "&&"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "hashCode",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "int"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "toString",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "String"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      }
+    ],
+    "enums": [
+      {
+        "name": "DatePickerEntryMode",
+        "values": [
+          "calendar",
+          "input"
+        ]
+      },
+      {
+        "name": "DatePickerMode",
+        "values": [
+          "day",
+          "year"
+        ]
+      }
+    ],
+    "fields": [],
+    "methods": []
+  },
+  "errors": []
+}

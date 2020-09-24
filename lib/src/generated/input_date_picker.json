@@ -1,0 +1,886 @@
+{
+  "file": {
+    "name": null,
+    "imports": [
+      "package:flutter/services.dart",
+      "package:flutter/widgets.dart",
+      "../input_border.dart",
+      "../input_decorator.dart",
+      "../material_localizations.dart",
+      "../text_form_field.dart",
+      "../theme.dart",
+      "date_picker_common.dart",
+      "date_utils.dart"
+    ],
+    "classes": [
+      {
+        "name": "InputDatePickerFormField",
+        "comments": [
+          "///"
+        ],
+        "fields": [
+          {
+            "name": "initialDate",
+            "type": "DateTime"
+          },
+          {
+            "name": "firstDate",
+            "type": "DateTime"
+          },
+          {
+            "name": "lastDate",
+            "type": "DateTime"
+          },
+          {
+            "name": "onDateSubmitted",
+            "type": "ValueChanged<DateTime>"
+          },
+          {
+            "name": "onDateSaved",
+            "type": "ValueChanged<DateTime>"
+          },
+          {
+            "name": "selectableDayPredicate",
+            "type": "SelectableDayPredicate"
+          },
+          {
+            "name": "errorFormatText",
+            "type": "String"
+          },
+          {
+            "name": "errorInvalidText",
+            "type": "String"
+          },
+          {
+            "name": "fieldHintText",
+            "type": "String"
+          },
+          {
+            "name": "fieldLabelText",
+            "type": "String"
+          },
+          {
+            "name": "autofocus",
+            "type": "bool"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "InputDatePickerFormField",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "initialDate",
+                "type": "DateTime",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "firstDate",
+                "type": "DateTime",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "lastDate",
+                "type": "DateTime",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "onDateSubmitted",
+                "type": "ValueChanged<DateTime>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "onDateSaved",
+                "type": "ValueChanged<DateTime>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "selectableDayPredicate",
+                "type": "SelectableDayPredicate",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "errorFormatText",
+                "type": "String",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "errorInvalidText",
+                "type": "String",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "fieldHintText",
+                "type": "String",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "fieldLabelText",
+                "type": "String",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "false",
+                "name": "autofocus",
+                "type": "bool",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "createState",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "_InputDatePickerFormFieldState"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ],
+        "tree": null
+      },
+      {
+        "name": "_InputDatePickerFormFieldState",
+        "comments": [],
+        "fields": [
+          {
+            "name": "_controller",
+            "type": "TextEditingController"
+          },
+          {
+            "name": "_selectedDate",
+            "type": "DateTime"
+          },
+          {
+            "name": "_inputText",
+            "type": "String"
+          },
+          {
+            "name": "_autoSelected",
+            "type": "bool"
+          }
+        ],
+        "constructors": [],
+        "methods": [
+          {
+            "name": "initState",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "dispose",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "didChangeDependencies",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "name",
+                                "props": {
+                                  "0": "_selectedDate"
+                                }
+                              },
+                              "right": {
+                                "name": "value",
+                                "props": {
+                                  "0": {
+                                    "type": null,
+                                    "value": "null"
+                                  }
+                                }
+                              },
+                              "operation": "!="
+                            },
+                            {
+                              "name": "block",
+                              "values": [
+                                {
+                                  "name": "if",
+                                  "values": [
+                                    {
+                                      "name": "binary",
+                                      "left": null,
+                                      "right": null,
+                                      "operation": "&&"
+                                    },
+                                    {
+                                      "name": "block",
+                                      "values": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_parseDate",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "DateTime"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "parseCompactDate",
+                              "arguments": {}
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_isValidAcceptableDate",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "binary",
+                                "left": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "binary",
+                                    "left": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "date"
+                                      }
+                                    },
+                                    "right": {
+                                      "name": "value",
+                                      "props": {
+                                        "0": {
+                                          "type": null,
+                                          "value": "null"
+                                        }
+                                      }
+                                    },
+                                    "operation": "!="
+                                  },
+                                  "right": null,
+                                  "operation": "&&"
+                                },
+                                "right": null,
+                                "operation": "&&"
+                              },
+                              "right": null,
+                              "operation": "&&"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_validateDate",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "String"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "name",
+                                "props": {
+                                  "0": "date"
+                                }
+                              },
+                              "right": {
+                                "name": "value",
+                                "props": {
+                                  "0": {
+                                    "type": null,
+                                    "value": "null"
+                                  }
+                                }
+                              },
+                              "operation": "=="
+                            },
+                            {
+                              "name": "block",
+                              "values": [
+                                {
+                                  "name": "return",
+                                  "values": [
+                                    {
+                                      "name": "binary",
+                                      "left": null,
+                                      "right": null,
+                                      "operation": "??"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "if",
+                              "values": [
+                                {
+                                  "name": "block",
+                                  "values": [
+                                    {
+                                      "name": "return",
+                                      "values": [
+                                        {
+                                          "name": "binary",
+                                          "left": null,
+                                          "right": null,
+                                          "operation": "??"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "value",
+                              "props": {
+                                "0": {
+                                  "type": null,
+                                  "value": "null"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_handleSaved",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": {
+                                "name": "value",
+                                "props": {
+                                  "0": {
+                                    "type": null,
+                                    "value": "null"
+                                  }
+                                }
+                              },
+                              "operation": "!="
+                            },
+                            {
+                              "name": "block",
+                              "values": [
+                                {
+                                  "name": "if",
+                                  "values": [
+                                    {
+                                      "name": "constructor",
+                                      "value": "_isValidAcceptableDate",
+                                      "arguments": {}
+                                    },
+                                    {
+                                      "name": "block",
+                                      "values": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_handleSubmitted",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": {
+                                "name": "value",
+                                "props": {
+                                  "0": {
+                                    "type": null,
+                                    "value": "null"
+                                  }
+                                }
+                              },
+                              "operation": "!="
+                            },
+                            {
+                              "name": "block",
+                              "values": [
+                                {
+                                  "name": "if",
+                                  "values": [
+                                    {
+                                      "name": "constructor",
+                                      "value": "_isValidAcceptableDate",
+                                      "arguments": {}
+                                    },
+                                    {
+                                      "name": "block",
+                                      "values": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "build",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "TextFormField",
+                              "arguments": {
+                                "decoration": {
+                                  "name": "constructor",
+                                  "value": "InputDecoration",
+                                  "arguments": {
+                                    "border": {
+                                      "name": "binary",
+                                      "left": null,
+                                      "right": null,
+                                      "operation": "??"
+                                    },
+                                    "filled": {
+                                      "name": "binary",
+                                      "left": null,
+                                      "right": {
+                                        "name": "value",
+                                        "props": {
+                                          "0": {
+                                            "type": "bool",
+                                            "value": "true"
+                                          }
+                                        }
+                                      },
+                                      "operation": "??"
+                                    },
+                                    "hintText": {
+                                      "name": "binary",
+                                      "left": null,
+                                      "right": null,
+                                      "operation": "??"
+                                    },
+                                    "labelText": {
+                                      "name": "binary",
+                                      "left": null,
+                                      "right": null,
+                                      "operation": "??"
+                                    }
+                                  }
+                                },
+                                "validator": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "_validateDate"
+                                  }
+                                },
+                                "keyboardType": null,
+                                "onSaved": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "_handleSaved"
+                                  }
+                                },
+                                "onFieldSubmitted": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "_handleSubmitted"
+                                  }
+                                },
+                                "autofocus": null,
+                                "controller": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "_controller"
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      }
+    ],
+    "enums": [],
+    "fields": [],
+    "methods": []
+  },
+  "errors": []
+}

@@ -1,0 +1,1018 @@
+{
+  "file": {
+    "name": null,
+    "imports": [
+      "dart:math",
+      "package:flutter/widgets.dart",
+      "package:flutter/rendering.dart",
+      "package:flutter/gestures.dart",
+      "button_bar.dart",
+      "card.dart",
+      "constants.dart",
+      "data_table.dart",
+      "data_table_source.dart",
+      "debug.dart",
+      "dropdown.dart",
+      "icon_button.dart",
+      "icons.dart",
+      "ink_decoration.dart",
+      "material_localizations.dart",
+      "progress_indicator.dart",
+      "theme.dart"
+    ],
+    "classes": [
+      {
+        "name": "PaginatedDataTable",
+        "comments": [
+          " * <https://material.io/go/design-data-tables#data-tables-tables-within-cards>"
+        ],
+        "fields": [
+          {
+            "name": "header",
+            "type": "Widget"
+          },
+          {
+            "name": "actions",
+            "type": "List<Widget>"
+          },
+          {
+            "name": "columns",
+            "type": "List<DataColumn>"
+          },
+          {
+            "name": "sortColumnIndex",
+            "type": "int"
+          },
+          {
+            "name": "sortAscending",
+            "type": "bool"
+          },
+          {
+            "name": "onSelectAll",
+            "type": "ValueSetter<bool>"
+          },
+          {
+            "name": "dataRowHeight",
+            "type": "double"
+          },
+          {
+            "name": "headingRowHeight",
+            "type": "double"
+          },
+          {
+            "name": "horizontalMargin",
+            "type": "double"
+          },
+          {
+            "name": "columnSpacing",
+            "type": "double"
+          },
+          {
+            "name": "showCheckboxColumn",
+            "type": "bool"
+          },
+          {
+            "name": "initialFirstRowIndex",
+            "type": "int"
+          },
+          {
+            "name": "onPageChanged",
+            "type": "ValueChanged<int>"
+          },
+          {
+            "name": "rowsPerPage",
+            "type": "int"
+          },
+          {
+            "name": "defaultRowsPerPage",
+            "type": "int"
+          },
+          {
+            "name": "availableRowsPerPage",
+            "type": "List<int>"
+          },
+          {
+            "name": "onRowsPerPageChanged",
+            "type": "ValueChanged<int>"
+          },
+          {
+            "name": "source",
+            "type": "DataTableSource"
+          },
+          {
+            "name": "dragStartBehavior",
+            "type": "DragStartBehavior"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "PaginatedDataTable",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "header",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "actions",
+                "type": "List<Widget>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "columns",
+                "type": "List<DataColumn>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "sortColumnIndex",
+                "type": "int",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "true",
+                "name": "sortAscending",
+                "type": "bool",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "onSelectAll",
+                "type": "ValueSetter<bool>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "dataRowHeight",
+                "type": "double",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "56.0",
+                "name": "headingRowHeight",
+                "type": "double",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "24.0",
+                "name": "horizontalMargin",
+                "type": "double",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "56.0",
+                "name": "columnSpacing",
+                "type": "double",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "true",
+                "name": "showCheckboxColumn",
+                "type": "bool",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "0",
+                "name": "initialFirstRowIndex",
+                "type": "int",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "onPageChanged",
+                "type": "ValueChanged<int>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "rowsPerPage",
+                "type": "int",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "const <int>[defaultRowsPerPage, defaultRowsPerPage * 2, defaultRowsPerPage * 5, defaultRowsPerPage * 10]",
+                "name": "availableRowsPerPage",
+                "type": "List<int>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "onRowsPerPageChanged",
+                "type": "ValueChanged<int>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "dragStartBehavior",
+                "type": "DragStartBehavior",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "source",
+                "type": "DataTableSource",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "createState",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "PaginatedDataTableState"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ],
+        "tree": null
+      },
+      {
+        "name": "PaginatedDataTableState",
+        "comments": [
+          "The table can be programmatically paged using the [pageTo] method."
+        ],
+        "fields": [
+          {
+            "name": "_firstRowIndex",
+            "type": "int"
+          },
+          {
+            "name": "_rowCount",
+            "type": "int"
+          },
+          {
+            "name": "_rowCountApproximate",
+            "type": "bool"
+          },
+          {
+            "name": "_selectedRowCount",
+            "type": "int"
+          },
+          {
+            "name": "_rows",
+            "type": "Map<int, DataRow>"
+          },
+          {
+            "name": "_tableKey",
+            "type": "GlobalKey"
+          }
+        ],
+        "constructors": [],
+        "methods": [
+          {
+            "name": "initState",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "didUpdateWidget",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": null,
+                              "operation": "!="
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "dispose",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_handleDataSourceChanged",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "pageTo",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": null,
+                              "operation": "&&"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_getBlankRowFor",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "DataRow"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "byIndex",
+                              "arguments": {
+                                "index": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "index"
+                                  }
+                                },
+                                "cells": {
+                                  "name": "constructor",
+                                  "value": "toList",
+                                  "arguments": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_getProgressIndicatorRowFor",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "DataRow"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "byIndex",
+                              "arguments": {
+                                "index": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "index"
+                                  }
+                                },
+                                "cells": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "cells"
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_getRows",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "List<DataRow>"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "name",
+                              "props": {
+                                "0": "result"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_handlePrevious",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_handleNext",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "build",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "name",
+                                "props": {
+                                  "0": "_selectedRowCount"
+                                }
+                              },
+                              "right": {
+                                "name": "value",
+                                "props": {
+                                  "0": {
+                                    "type": "int",
+                                    "value": "0"
+                                  }
+                                }
+                              },
+                              "operation": "=="
+                            },
+                            {
+                              "name": "block",
+                              "values": [
+                                {
+                                  "name": "if",
+                                  "values": [
+                                    {
+                                      "name": "block",
+                                      "values": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": {
+                                "name": "value",
+                                "props": {
+                                  "0": {
+                                    "type": null,
+                                    "value": "null"
+                                  }
+                                }
+                              },
+                              "operation": "!="
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": {
+                                "name": "value",
+                                "props": {
+                                  "0": {
+                                    "type": null,
+                                    "value": "null"
+                                  }
+                                }
+                              },
+                              "operation": "!="
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "LayoutBuilder",
+                              "arguments": {
+                                "builder": {
+                                  "name": "function",
+                                  "values": [
+                                    {
+                                      "name": "block_body",
+                                      "values": [
+                                        {
+                                          "name": "block",
+                                          "values": [
+                                            {
+                                              "name": "return",
+                                              "values": [
+                                                {
+                                                  "name": "constructor",
+                                                  "value": "Card",
+                                                  "arguments": {
+                                                    "semanticContainer": {
+                                                      "name": "value",
+                                                      "props": {
+                                                        "0": {
+                                                          "type": "bool",
+                                                          "value": "false"
+                                                        }
+                                                      }
+                                                    },
+                                                    "child": {
+                                                      "name": "constructor",
+                                                      "value": "Column",
+                                                      "arguments": {
+                                                        "crossAxisAlignment": null,
+                                                        "children": {
+                                                          "name": "value",
+                                                          "props": {
+                                                            "0": {
+                                                              "type": "List",
+                                                              "value": "<Widget>[Semantics(container: true, child: DefaultTextStyle(style: _selectedRowCount > 0 ? themeData.textTheme.subtitle1.copyWith(color: themeData.accentColor) : themeData.textTheme.headline6.copyWith(fontWeight: FontWeight.w400), child: IconTheme.merge(data: const IconThemeData(opacity: 0.54), child: Ink(height: 64.0, color: _selectedRowCount > 0 ? themeData.secondaryHeaderColor : null, child: Padding(padding: EdgeInsetsDirectional.only(start: startPadding, end: 14.0), child: Row(mainAxisAlignment: MainAxisAlignment.end, children: headerWidgets)))))), SingleChildScrollView(scrollDirection: Axis.horizontal, dragStartBehavior: widget.dragStartBehavior, child: ConstrainedBox(constraints: BoxConstraints(minWidth: constraints.minWidth), child: DataTable(key: _tableKey, columns: widget.columns, sortColumnIndex: widget.sortColumnIndex, sortAscending: widget.sortAscending, onSelectAll: widget.onSelectAll, dataRowHeight: widget.dataRowHeight, headingRowHeight: widget.headingRowHeight, horizontalMargin: widget.horizontalMargin, columnSpacing: widget.columnSpacing, showCheckboxColumn: widget.showCheckboxColumn, showBottomBorder: true, rows: _getRows(_firstRowIndex, widget.rowsPerPage)))), DefaultTextStyle(style: footerTextStyle, child: IconTheme.merge(data: const IconThemeData(opacity: 0.54), child: Container(height: 56.0, child: SingleChildScrollView(dragStartBehavior: widget.dragStartBehavior, scrollDirection: Axis.horizontal, reverse: true, child: Row(children: footerWidgets)))))]"
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      }
+    ],
+    "enums": [],
+    "fields": [],
+    "methods": []
+  },
+  "errors": []
+}

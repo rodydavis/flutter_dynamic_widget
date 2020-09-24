@@ -1,0 +1,1059 @@
+{
+  "file": {
+    "name": null,
+    "imports": [
+      "package:flutter/rendering.dart",
+      "package:flutter/widgets.dart",
+      "constants.dart",
+      "expand_icon.dart",
+      "ink_well.dart",
+      "material_localizations.dart",
+      "mergeable_material.dart",
+      "shadows.dart",
+      "theme.dart"
+    ],
+    "classes": [
+      {
+        "name": "_SaltedKey",
+        "comments": [],
+        "fields": [
+          {
+            "name": "salt",
+            "type": "S"
+          },
+          {
+            "name": "value",
+            "type": "V"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_SaltedKey",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "==",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": {
+                                "name": "name",
+                                "props": {
+                                  "0": "runtimeType"
+                                }
+                              },
+                              "operation": "!="
+                            },
+                            {
+                              "name": "return",
+                              "values": [
+                                {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "bool",
+                                      "value": "false"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "binary",
+                                "left": null,
+                                "right": {
+                                  "name": "binary",
+                                  "left": null,
+                                  "right": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "salt"
+                                    }
+                                  },
+                                  "operation": "=="
+                                },
+                                "operation": "&&"
+                              },
+                              "right": {
+                                "name": "binary",
+                                "left": null,
+                                "right": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "value"
+                                  }
+                                },
+                                "operation": "=="
+                              },
+                              "operation": "&&"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "hashCode",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "int"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "toString",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "String"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "value",
+                              "props": {
+                                "0": {
+                                  "type": "String",
+                                  "value": "null"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "ExpansionPanel",
+        "comments": [
+          " * <https://material.io/design/components/lists.html#types>"
+        ],
+        "fields": [
+          {
+            "name": "headerBuilder",
+            "type": "ExpansionPanelHeaderBuilder"
+          },
+          {
+            "name": "body",
+            "type": "Widget"
+          },
+          {
+            "name": "isExpanded",
+            "type": "bool"
+          },
+          {
+            "name": "canTapOnHeader",
+            "type": "bool"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "ExpansionPanel",
+            "properties": [
+              {
+                "value": null,
+                "name": "headerBuilder",
+                "type": "ExpansionPanelHeaderBuilder",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "body",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "false",
+                "name": "isExpanded",
+                "type": "bool",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "false",
+                "name": "canTapOnHeader",
+                "type": "bool",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": []
+      },
+      {
+        "name": "ExpansionPanelRadio",
+        "comments": [
+          "See [ExpansionPanelList.radio] for a sample implementation."
+        ],
+        "fields": [
+          {
+            "name": "value",
+            "type": "Object"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "ExpansionPanelRadio",
+            "properties": [
+              {
+                "value": null,
+                "name": "value",
+                "type": "Object",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "headerBuilder",
+                "type": "ExpansionPanelHeaderBuilder",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "body",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "false",
+                "name": "canTapOnHeader",
+                "type": "bool",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": []
+      },
+      {
+        "name": "ExpansionPanelList",
+        "comments": [
+          " * <https://material.io/design/components/lists.html#types>"
+        ],
+        "fields": [
+          {
+            "name": "children",
+            "type": "List<ExpansionPanel>"
+          },
+          {
+            "name": "expansionCallback",
+            "type": "ExpansionPanelCallback"
+          },
+          {
+            "name": "animationDuration",
+            "type": "Duration"
+          },
+          {
+            "name": "_allowOnlyOnePanelOpen",
+            "type": "bool"
+          },
+          {
+            "name": "initialOpenPanelValue",
+            "type": "Object"
+          },
+          {
+            "name": "expandedHeaderPadding",
+            "type": "EdgeInsets"
+          },
+          {
+            "name": "dividerColor",
+            "type": "Color"
+          },
+          {
+            "name": "elevation",
+            "type": "int"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "ExpansionPanelList",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "const <ExpansionPanel>[]",
+                "name": "children",
+                "type": "List<ExpansionPanel>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "expansionCallback",
+                "type": "ExpansionPanelCallback",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "animationDuration",
+                "type": "Duration",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "expandedHeaderPadding",
+                "type": "EdgeInsets",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "dividerColor",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "2",
+                "name": "elevation",
+                "type": "int",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          },
+          {
+            "name": "radio",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "const <ExpansionPanelRadio>[]",
+                "name": "children",
+                "type": "List<ExpansionPanel>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "expansionCallback",
+                "type": "ExpansionPanelCallback",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "animationDuration",
+                "type": "Duration",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "initialOpenPanelValue",
+                "type": "Object",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "expandedHeaderPadding",
+                "type": "EdgeInsets",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "dividerColor",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "2",
+                "name": "elevation",
+                "type": "int",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "createState",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "State<StatefulWidget>"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ],
+        "tree": null
+      },
+      {
+        "name": "_ExpansionPanelListState",
+        "comments": [],
+        "fields": [
+          {
+            "name": "_currentOpenPanel",
+            "type": "ExpansionPanelRadio"
+          }
+        ],
+        "constructors": [],
+        "methods": [
+          {
+            "name": "initState",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "block",
+                              "values": [
+                                {
+                                  "name": "if",
+                                  "values": [
+                                    {
+                                      "name": "binary",
+                                      "left": null,
+                                      "right": {
+                                        "name": "value",
+                                        "props": {
+                                          "0": {
+                                            "type": null,
+                                            "value": "null"
+                                          }
+                                        }
+                                      },
+                                      "operation": "!="
+                                    },
+                                    {
+                                      "name": "block",
+                                      "values": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "didUpdateWidget",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "block",
+                              "values": [
+                                {
+                                  "name": "if",
+                                  "values": [
+                                    {
+                                      "name": "block",
+                                      "values": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_allIdentifiersUnique",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": null,
+                              "operation": "=="
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_isChildExpanded",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "block",
+                              "values": [
+                                {
+                                  "name": "return",
+                                  "values": [
+                                    {
+                                      "name": "binary",
+                                      "left": null,
+                                      "right": null,
+                                      "operation": "=="
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_handlePressed",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": {
+                                "name": "value",
+                                "props": {
+                                  "0": {
+                                    "type": null,
+                                    "value": "null"
+                                  }
+                                }
+                              },
+                              "operation": "!="
+                            }
+                          ]
+                        },
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "searchPanelByValue",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "ExpansionPanelRadio"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "value",
+                              "props": {
+                                "0": {
+                                  "type": null,
+                                  "value": "null"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "build",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "MergeableMaterial",
+                              "arguments": {
+                                "hasDividers": {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "bool",
+                                      "value": "true"
+                                    }
+                                  }
+                                },
+                                "dividerColor": null,
+                                "elevation": null,
+                                "children": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "items"
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      }
+    ],
+    "enums": [],
+    "fields": [
+      {
+        "name": "_kPanelHeaderCollapsedHeight",
+        "type": "double"
+      },
+      {
+        "name": "_kPanelHeaderExpandedDefaultPadding",
+        "type": "EdgeInsets"
+      }
+    ],
+    "methods": []
+  },
+  "errors": []
+}

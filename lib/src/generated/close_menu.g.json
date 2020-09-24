@@ -1,0 +1,16 @@
+{
+  "file": {
+    "name": null,
+    "imports": [],
+    "classes": [],
+    "enums": [],
+    "fields": [
+      {
+        "name": "_$close_menu",
+        "type": "_AnimatedIconData"
+      }
+    ],
+    "methods": []
+  },
+  "errors": []
+}

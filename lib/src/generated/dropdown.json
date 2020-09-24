@@ -1,0 +1,5086 @@
+{
+  "file": {
+    "name": null,
+    "imports": [
+      "dart:math",
+      "dart:ui",
+      "package:flutter/foundation.dart",
+      "package:flutter/rendering.dart",
+      "package:flutter/services.dart",
+      "package:flutter/widgets.dart",
+      "button_theme.dart",
+      "colors.dart",
+      "constants.dart",
+      "debug.dart",
+      "icons.dart",
+      "ink_well.dart",
+      "input_decorator.dart",
+      "material.dart",
+      "material_localizations.dart",
+      "scrollbar.dart",
+      "shadows.dart",
+      "theme.dart"
+    ],
+    "classes": [
+      {
+        "name": "_DropdownMenuPainter",
+        "comments": [],
+        "fields": [
+          {
+            "name": "color",
+            "type": "Color"
+          },
+          {
+            "name": "elevation",
+            "type": "int"
+          },
+          {
+            "name": "selectedIndex",
+            "type": "int"
+          },
+          {
+            "name": "resize",
+            "type": "Animation<double>"
+          },
+          {
+            "name": "getSelectedItemOffset",
+            "type": "ValueGetter<double>"
+          },
+          {
+            "name": "_painter",
+            "type": "BoxPainter"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_DropdownMenuPainter",
+            "properties": [
+              {
+                "value": null,
+                "name": "color",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "elevation",
+                "type": "int",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "selectedIndex",
+                "type": "int",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "resize",
+                "type": "Animation<double>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "getSelectedItemOffset",
+                "type": "ValueGetter<double>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "paint",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "shouldRepaint",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "binary",
+                                "left": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "binary",
+                                    "left": null,
+                                    "right": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "color"
+                                      }
+                                    },
+                                    "operation": "!="
+                                  },
+                                  "right": {
+                                    "name": "binary",
+                                    "left": null,
+                                    "right": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "elevation"
+                                      }
+                                    },
+                                    "operation": "!="
+                                  },
+                                  "operation": "||"
+                                },
+                                "right": {
+                                  "name": "binary",
+                                  "left": null,
+                                  "right": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "selectedIndex"
+                                    }
+                                  },
+                                  "operation": "!="
+                                },
+                                "operation": "||"
+                              },
+                              "right": {
+                                "name": "binary",
+                                "left": null,
+                                "right": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "resize"
+                                  }
+                                },
+                                "operation": "!="
+                              },
+                              "operation": "||"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_DropdownScrollBehavior",
+        "comments": [],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "_DropdownScrollBehavior",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "getPlatform",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "TargetPlatform"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "buildViewportChrome",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "getScrollPhysics",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "ScrollPhysics"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_DropdownMenuItemButton",
+        "comments": [],
+        "fields": [
+          {
+            "name": "route",
+            "type": "_DropdownRoute<T>"
+          },
+          {
+            "name": "padding",
+            "type": "EdgeInsets"
+          },
+          {
+            "name": "buttonRect",
+            "type": "Rect"
+          },
+          {
+            "name": "constraints",
+            "type": "BoxConstraints"
+          },
+          {
+            "name": "itemIndex",
+            "type": "int"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_DropdownMenuItemButton",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "padding",
+                "type": "EdgeInsets",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "route",
+                "type": "_DropdownRoute<T>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "buttonRect",
+                "type": "Rect",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "constraints",
+                "type": "BoxConstraints",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "itemIndex",
+                "type": "int",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "createState",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "_DropdownMenuItemButtonState<T>"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ],
+        "tree": null
+      },
+      {
+        "name": "_DropdownMenuItemButtonState",
+        "comments": [],
+        "fields": [
+          {
+            "name": "_webShortcuts",
+            "type": "Map<LogicalKeySet, Intent>"
+          }
+        ],
+        "constructors": [],
+        "methods": [
+          {
+            "name": "_handleFocusChange",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "name",
+                                "props": {
+                                  "0": "focused"
+                                }
+                              },
+                              "right": {
+                                "name": "name",
+                                "props": {
+                                  "0": "inTraditionalMode"
+                                }
+                              },
+                              "operation": "&&"
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_handleOnTap",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": {
+                                "name": "value",
+                                "props": {
+                                  "0": {
+                                    "type": null,
+                                    "value": "null"
+                                  }
+                                }
+                              },
+                              "operation": "!="
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "build",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": null,
+                              "operation": "=="
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "name",
+                              "props": {
+                                "0": "kIsWeb"
+                              }
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "name",
+                              "props": {
+                                "0": "child"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_DropdownMenu",
+        "comments": [],
+        "fields": [
+          {
+            "name": "route",
+            "type": "_DropdownRoute<T>"
+          },
+          {
+            "name": "padding",
+            "type": "EdgeInsets"
+          },
+          {
+            "name": "buttonRect",
+            "type": "Rect"
+          },
+          {
+            "name": "constraints",
+            "type": "BoxConstraints"
+          },
+          {
+            "name": "dropdownColor",
+            "type": "Color"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_DropdownMenu",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "padding",
+                "type": "EdgeInsets",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "route",
+                "type": "_DropdownRoute<T>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "buttonRect",
+                "type": "Rect",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "constraints",
+                "type": "BoxConstraints",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "dropdownColor",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "createState",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "_DropdownMenuState<T>"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ],
+        "tree": null
+      },
+      {
+        "name": "_DropdownMenuState",
+        "comments": [],
+        "fields": [
+          {
+            "name": "_fadeOpacity",
+            "type": "CurvedAnimation"
+          },
+          {
+            "name": "_resize",
+            "type": "CurvedAnimation"
+          }
+        ],
+        "constructors": [],
+        "methods": [
+          {
+            "name": "initState",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "build",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "FadeTransition",
+                              "arguments": {
+                                "opacity": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "_fadeOpacity"
+                                  }
+                                },
+                                "child": {
+                                  "name": "constructor",
+                                  "value": "CustomPaint",
+                                  "arguments": {
+                                    "painter": {
+                                      "name": "constructor",
+                                      "value": "_DropdownMenuPainter",
+                                      "arguments": {
+                                        "color": {
+                                          "name": "binary",
+                                          "left": null,
+                                          "right": null,
+                                          "operation": "??"
+                                        },
+                                        "elevation": null,
+                                        "selectedIndex": null,
+                                        "resize": {
+                                          "name": "name",
+                                          "props": {
+                                            "0": "_resize"
+                                          }
+                                        },
+                                        "getSelectedItemOffset": {
+                                          "name": "function",
+                                          "values": []
+                                        }
+                                      }
+                                    },
+                                    "child": {
+                                      "name": "constructor",
+                                      "value": "Semantics",
+                                      "arguments": {
+                                        "scopesRoute": {
+                                          "name": "value",
+                                          "props": {
+                                            "0": {
+                                              "type": "bool",
+                                              "value": "true"
+                                            }
+                                          }
+                                        },
+                                        "namesRoute": {
+                                          "name": "value",
+                                          "props": {
+                                            "0": {
+                                              "type": "bool",
+                                              "value": "true"
+                                            }
+                                          }
+                                        },
+                                        "explicitChildNodes": {
+                                          "name": "value",
+                                          "props": {
+                                            "0": {
+                                              "type": "bool",
+                                              "value": "true"
+                                            }
+                                          }
+                                        },
+                                        "label": null,
+                                        "child": {
+                                          "name": "constructor",
+                                          "value": "Material",
+                                          "arguments": {
+                                            "type": null,
+                                            "textStyle": null,
+                                            "child": {
+                                              "name": "constructor",
+                                              "value": "ScrollConfiguration",
+                                              "arguments": {
+                                                "behavior": null,
+                                                "child": {
+                                                  "name": "constructor",
+                                                  "value": "Scrollbar",
+                                                  "arguments": {
+                                                    "child": {
+                                                      "name": "constructor",
+                                                      "value": "ListView",
+                                                      "arguments": {
+                                                        "controller": null,
+                                                        "padding": {
+                                                          "name": "name",
+                                                          "props": {
+                                                            "0": "kMaterialListPadding"
+                                                          }
+                                                        },
+                                                        "shrinkWrap": {
+                                                          "name": "value",
+                                                          "props": {
+                                                            "0": {
+                                                              "type": "bool",
+                                                              "value": "true"
+                                                            }
+                                                          }
+                                                        },
+                                                        "children": {
+                                                          "name": "name",
+                                                          "props": {
+                                                            "0": "children"
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_DropdownMenuRouteLayout",
+        "comments": [],
+        "fields": [
+          {
+            "name": "buttonRect",
+            "type": "Rect"
+          },
+          {
+            "name": "route",
+            "type": "_DropdownRoute<T>"
+          },
+          {
+            "name": "textDirection",
+            "type": "TextDirection"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_DropdownMenuRouteLayout",
+            "properties": [
+              {
+                "value": null,
+                "name": "buttonRect",
+                "type": "Rect",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "route",
+                "type": "_DropdownRoute<T>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "textDirection",
+                "type": "TextDirection",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "getConstraintsForChild",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "BoxConstraints"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "BoxConstraints",
+                              "arguments": {
+                                "minWidth": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "width"
+                                  }
+                                },
+                                "maxWidth": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "width"
+                                  }
+                                },
+                                "minHeight": {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "double",
+                                      "value": "0.0"
+                                    }
+                                  }
+                                },
+                                "maxHeight": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "maxHeight"
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "getPositionForChild",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Offset"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "Offset",
+                              "arguments": {}
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "shouldRelayout",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "binary",
+                                "left": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "buttonRect"
+                                  }
+                                },
+                                "right": null,
+                                "operation": "!="
+                              },
+                              "right": {
+                                "name": "binary",
+                                "left": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "textDirection"
+                                  }
+                                },
+                                "right": null,
+                                "operation": "!="
+                              },
+                              "operation": "||"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_DropdownRouteResult",
+        "comments": [],
+        "fields": [
+          {
+            "name": "result",
+            "type": "T"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_DropdownRouteResult",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "==",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": {
+                                "name": "binary",
+                                "left": null,
+                                "right": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "result"
+                                  }
+                                },
+                                "operation": "=="
+                              },
+                              "operation": "&&"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "hashCode",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "int"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_MenuLimits",
+        "comments": [],
+        "fields": [
+          {
+            "name": "top",
+            "type": "double"
+          },
+          {
+            "name": "bottom",
+            "type": "double"
+          },
+          {
+            "name": "height",
+            "type": "double"
+          },
+          {
+            "name": "scrollOffset",
+            "type": "double"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_MenuLimits",
+            "properties": []
+          }
+        ],
+        "methods": []
+      },
+      {
+        "name": "_DropdownRoute",
+        "comments": [],
+        "fields": [
+          {
+            "name": "items",
+            "type": "List<_MenuItem<T>>"
+          },
+          {
+            "name": "padding",
+            "type": "EdgeInsetsGeometry"
+          },
+          {
+            "name": "buttonRect",
+            "type": "Rect"
+          },
+          {
+            "name": "selectedIndex",
+            "type": "int"
+          },
+          {
+            "name": "elevation",
+            "type": "int"
+          },
+          {
+            "name": "theme",
+            "type": "ThemeData"
+          },
+          {
+            "name": "style",
+            "type": "TextStyle"
+          },
+          {
+            "name": "itemHeight",
+            "type": "double"
+          },
+          {
+            "name": "dropdownColor",
+            "type": "Color"
+          },
+          {
+            "name": "itemHeights",
+            "type": "List<double>"
+          },
+          {
+            "name": "scrollController",
+            "type": "ScrollController"
+          },
+          {
+            "name": "barrierLabel",
+            "type": "String"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_DropdownRoute",
+            "properties": [
+              {
+                "value": null,
+                "name": "items",
+                "type": "List<_MenuItem<T>>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "padding",
+                "type": "EdgeInsetsGeometry",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "buttonRect",
+                "type": "Rect",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "selectedIndex",
+                "type": "int",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "8",
+                "name": "elevation",
+                "type": "int",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "theme",
+                "type": "ThemeData",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "style",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "barrierLabel",
+                "type": "String",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "itemHeight",
+                "type": "double",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "dropdownColor",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "transitionDuration",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Duration"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "barrierDismissible",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "barrierColor",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Color"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "buildPage",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "LayoutBuilder",
+                              "arguments": {
+                                "builder": {
+                                  "name": "function",
+                                  "values": [
+                                    {
+                                      "name": "block_body",
+                                      "values": [
+                                        {
+                                          "name": "block",
+                                          "values": [
+                                            {
+                                              "name": "return",
+                                              "values": [
+                                                {
+                                                  "name": "constructor",
+                                                  "value": "_DropdownRoutePage",
+                                                  "arguments": {
+                                                    "route": null,
+                                                    "constraints": {
+                                                      "name": "name",
+                                                      "props": {
+                                                        "0": "constraints"
+                                                      }
+                                                    },
+                                                    "items": {
+                                                      "name": "name",
+                                                      "props": {
+                                                        "0": "items"
+                                                      }
+                                                    },
+                                                    "padding": {
+                                                      "name": "name",
+                                                      "props": {
+                                                        "0": "padding"
+                                                      }
+                                                    },
+                                                    "buttonRect": {
+                                                      "name": "name",
+                                                      "props": {
+                                                        "0": "buttonRect"
+                                                      }
+                                                    },
+                                                    "selectedIndex": {
+                                                      "name": "name",
+                                                      "props": {
+                                                        "0": "selectedIndex"
+                                                      }
+                                                    },
+                                                    "elevation": {
+                                                      "name": "name",
+                                                      "props": {
+                                                        "0": "elevation"
+                                                      }
+                                                    },
+                                                    "theme": {
+                                                      "name": "name",
+                                                      "props": {
+                                                        "0": "theme"
+                                                      }
+                                                    },
+                                                    "style": {
+                                                      "name": "name",
+                                                      "props": {
+                                                        "0": "style"
+                                                      }
+                                                    },
+                                                    "dropdownColor": {
+                                                      "name": "name",
+                                                      "props": {
+                                                        "0": "dropdownColor"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_dismiss",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "getItemOffset",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "double"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": {
+                                "name": "binary",
+                                "left": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "index"
+                                  }
+                                },
+                                "right": {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "int",
+                                      "value": "0"
+                                    }
+                                  }
+                                },
+                                "operation": ">"
+                              },
+                              "operation": "&&"
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "name",
+                              "props": {
+                                "0": "offset"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "getMenuLimits",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "_MenuLimits"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": []
+                        },
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "name",
+                                "props": {
+                                  "0": "menuTop"
+                                }
+                              },
+                              "right": {
+                                "name": "name",
+                                "props": {
+                                  "0": "topLimit"
+                                }
+                              },
+                              "operation": "<"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "name",
+                                "props": {
+                                  "0": "menuBottom"
+                                }
+                              },
+                              "right": {
+                                "name": "name",
+                                "props": {
+                                  "0": "bottomLimit"
+                                }
+                              },
+                              "operation": ">"
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "_MenuLimits",
+                              "arguments": {}
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_DropdownRoutePage",
+        "comments": [],
+        "fields": [
+          {
+            "name": "route",
+            "type": "_DropdownRoute<T>"
+          },
+          {
+            "name": "constraints",
+            "type": "BoxConstraints"
+          },
+          {
+            "name": "items",
+            "type": "List<_MenuItem<T>>"
+          },
+          {
+            "name": "padding",
+            "type": "EdgeInsetsGeometry"
+          },
+          {
+            "name": "buttonRect",
+            "type": "Rect"
+          },
+          {
+            "name": "selectedIndex",
+            "type": "int"
+          },
+          {
+            "name": "elevation",
+            "type": "int"
+          },
+          {
+            "name": "theme",
+            "type": "ThemeData"
+          },
+          {
+            "name": "style",
+            "type": "TextStyle"
+          },
+          {
+            "name": "dropdownColor",
+            "type": "Color"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_DropdownRoutePage",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "route",
+                "type": "_DropdownRoute<T>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "constraints",
+                "type": "BoxConstraints",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "items",
+                "type": "List<_MenuItem<T>>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "padding",
+                "type": "EdgeInsetsGeometry",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "buttonRect",
+                "type": "Rect",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "selectedIndex",
+                "type": "int",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "8",
+                "name": "elevation",
+                "type": "int",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "theme",
+                "type": "ThemeData",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "style",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "dropdownColor",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "build",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": {
+                                "name": "value",
+                                "props": {
+                                  "0": {
+                                    "type": null,
+                                    "value": "null"
+                                  }
+                                }
+                              },
+                              "operation": "=="
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "name",
+                                "props": {
+                                  "0": "theme"
+                                }
+                              },
+                              "right": {
+                                "name": "value",
+                                "props": {
+                                  "0": {
+                                    "type": null,
+                                    "value": "null"
+                                  }
+                                }
+                              },
+                              "operation": "!="
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "removePadding",
+                              "arguments": {
+                                "context": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "context"
+                                  }
+                                },
+                                "removeTop": {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "bool",
+                                      "value": "true"
+                                    }
+                                  }
+                                },
+                                "removeBottom": {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "bool",
+                                      "value": "true"
+                                    }
+                                  }
+                                },
+                                "removeLeft": {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "bool",
+                                      "value": "true"
+                                    }
+                                  }
+                                },
+                                "removeRight": {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "bool",
+                                      "value": "true"
+                                    }
+                                  }
+                                },
+                                "child": {
+                                  "name": "constructor",
+                                  "value": "Builder",
+                                  "arguments": {
+                                    "builder": {
+                                      "name": "function",
+                                      "values": [
+                                        {
+                                          "name": "block_body",
+                                          "values": [
+                                            {
+                                              "name": "block",
+                                              "values": [
+                                                {
+                                                  "name": "return",
+                                                  "values": [
+                                                    {
+                                                      "name": "constructor",
+                                                      "value": "CustomSingleChildLayout",
+                                                      "arguments": {
+                                                        "delegate": {
+                                                          "name": "constructor",
+                                                          "value": "_DropdownMenuRouteLayout",
+                                                          "arguments": {
+                                                            "buttonRect": {
+                                                              "name": "name",
+                                                              "props": {
+                                                                "0": "buttonRect"
+                                                              }
+                                                            },
+                                                            "route": {
+                                                              "name": "name",
+                                                              "props": {
+                                                                "0": "route"
+                                                              }
+                                                            },
+                                                            "textDirection": {
+                                                              "name": "name",
+                                                              "props": {
+                                                                "0": "textDirection"
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "child": {
+                                                          "name": "name",
+                                                          "props": {
+                                                            "0": "menu"
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ],
+        "tree": {
+          "name": null,
+          "body": {
+            "name": "block_body",
+            "values": [
+              {
+                "name": "block",
+                "values": [
+                  {
+                    "name": "if",
+                    "values": [
+                      {
+                        "name": "binary",
+                        "left": null,
+                        "right": {
+                          "name": "value",
+                          "props": {
+                            "0": {
+                              "type": null,
+                              "value": "null"
+                            }
+                          }
+                        },
+                        "operation": "=="
+                      },
+                      {
+                        "name": "block",
+                        "values": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "if",
+                    "values": [
+                      {
+                        "name": "binary",
+                        "left": {
+                          "name": "name",
+                          "props": {
+                            "0": "theme"
+                          }
+                        },
+                        "right": {
+                          "name": "value",
+                          "props": {
+                            "0": {
+                              "type": null,
+                              "value": "null"
+                            }
+                          }
+                        },
+                        "operation": "!="
+                      }
+                    ]
+                  },
+                  {
+                    "name": "return",
+                    "values": [
+                      {
+                        "name": "constructor",
+                        "value": "removePadding",
+                        "arguments": {
+                          "context": {
+                            "name": "name",
+                            "props": {
+                              "0": "context"
+                            }
+                          },
+                          "removeTop": {
+                            "name": "value",
+                            "props": {
+                              "0": {
+                                "type": "bool",
+                                "value": "true"
+                              }
+                            }
+                          },
+                          "removeBottom": {
+                            "name": "value",
+                            "props": {
+                              "0": {
+                                "type": "bool",
+                                "value": "true"
+                              }
+                            }
+                          },
+                          "removeLeft": {
+                            "name": "value",
+                            "props": {
+                              "0": {
+                                "type": "bool",
+                                "value": "true"
+                              }
+                            }
+                          },
+                          "removeRight": {
+                            "name": "value",
+                            "props": {
+                              "0": {
+                                "type": "bool",
+                                "value": "true"
+                              }
+                            }
+                          },
+                          "child": {
+                            "name": "constructor",
+                            "value": "Builder",
+                            "arguments": {
+                              "builder": {
+                                "name": "function",
+                                "values": [
+                                  {
+                                    "name": "block_body",
+                                    "values": [
+                                      {
+                                        "name": "block",
+                                        "values": [
+                                          {
+                                            "name": "return",
+                                            "values": [
+                                              {
+                                                "name": "constructor",
+                                                "value": "CustomSingleChildLayout",
+                                                "arguments": {
+                                                  "delegate": {
+                                                    "name": "constructor",
+                                                    "value": "_DropdownMenuRouteLayout",
+                                                    "arguments": {
+                                                      "buttonRect": {
+                                                        "name": "name",
+                                                        "props": {
+                                                          "0": "buttonRect"
+                                                        }
+                                                      },
+                                                      "route": {
+                                                        "name": "name",
+                                                        "props": {
+                                                          "0": "route"
+                                                        }
+                                                      },
+                                                      "textDirection": {
+                                                        "name": "name",
+                                                        "props": {
+                                                          "0": "textDirection"
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "child": {
+                                                    "name": "name",
+                                                    "props": {
+                                                      "0": "menu"
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "parameters": []
+        }
+      },
+      {
+        "name": "_MenuItem",
+        "comments": [],
+        "fields": [
+          {
+            "name": "onLayout",
+            "type": "ValueChanged<Size>"
+          },
+          {
+            "name": "item",
+            "type": "DropdownMenuItem<T>"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_MenuItem",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "onLayout",
+                "type": "ValueChanged<Size>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "item",
+                "type": "DropdownMenuItem<T>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "createRenderObject",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "RenderObject"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "_RenderMenuItem",
+                              "arguments": {}
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "updateRenderObject",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_RenderMenuItem",
+        "comments": [],
+        "fields": [
+          {
+            "name": "onLayout",
+            "type": "ValueChanged<Size>"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_RenderMenuItem",
+            "properties": [
+              {
+                "value": null,
+                "name": "child",
+                "type": "RenderBox",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": false,
+                "isOptional": true,
+                "isPositional": true,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": false
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "performLayout",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_DropdownMenuItemContainer",
+        "comments": [],
+        "fields": [
+          {
+            "name": "child",
+            "type": "Widget"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_DropdownMenuItemContainer",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "child",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "build",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "Container",
+                              "arguments": {
+                                "constraints": null,
+                                "alignment": null,
+                                "child": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "child"
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ],
+        "tree": {
+          "name": null,
+          "body": {
+            "name": "block_body",
+            "values": [
+              {
+                "name": "block",
+                "values": [
+                  {
+                    "name": "return",
+                    "values": [
+                      {
+                        "name": "constructor",
+                        "value": "Container",
+                        "arguments": {
+                          "constraints": null,
+                          "alignment": null,
+                          "child": {
+                            "name": "name",
+                            "props": {
+                              "0": "child"
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "parameters": []
+        }
+      },
+      {
+        "name": "DropdownMenuItem",
+        "comments": [
+          "in a given menu must represent values with consistent types."
+        ],
+        "fields": [
+          {
+            "name": "onTap",
+            "type": "VoidCallback"
+          },
+          {
+            "name": "value",
+            "type": "T"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "DropdownMenuItem",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "onTap",
+                "type": "VoidCallback",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "value",
+                "type": "T",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "child",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": []
+      },
+      {
+        "name": "DropdownButtonHideUnderline",
+        "comments": [
+          "required by the material design specification."
+        ],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "DropdownButtonHideUnderline",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "child",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "at",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "constructor",
+                                "value": "dependOnInheritedWidgetOfExactType",
+                                "arguments": {}
+                              },
+                              "right": {
+                                "name": "value",
+                                "props": {
+                                  "0": {
+                                    "type": null,
+                                    "value": "null"
+                                  }
+                                }
+                              },
+                              "operation": "!="
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "updateShouldNotify",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "DropdownButton",
+        "comments": [
+          " * <https://material.io/design/components/menus.html#dropdown-menu>"
+        ],
+        "fields": [
+          {
+            "name": "items",
+            "type": "List<DropdownMenuItem<T>>"
+          },
+          {
+            "name": "value",
+            "type": "T"
+          },
+          {
+            "name": "hint",
+            "type": "Widget"
+          },
+          {
+            "name": "disabledHint",
+            "type": "Widget"
+          },
+          {
+            "name": "onChanged",
+            "type": "ValueChanged<T>"
+          },
+          {
+            "name": "onTap",
+            "type": "VoidCallback"
+          },
+          {
+            "name": "selectedItemBuilder",
+            "type": "DropdownButtonBuilder"
+          },
+          {
+            "name": "elevation",
+            "type": "int"
+          },
+          {
+            "name": "style",
+            "type": "TextStyle"
+          },
+          {
+            "name": "underline",
+            "type": "Widget"
+          },
+          {
+            "name": "icon",
+            "type": "Widget"
+          },
+          {
+            "name": "iconDisabledColor",
+            "type": "Color"
+          },
+          {
+            "name": "iconEnabledColor",
+            "type": "Color"
+          },
+          {
+            "name": "iconSize",
+            "type": "double"
+          },
+          {
+            "name": "isDense",
+            "type": "bool"
+          },
+          {
+            "name": "isExpanded",
+            "type": "bool"
+          },
+          {
+            "name": "itemHeight",
+            "type": "double"
+          },
+          {
+            "name": "focusColor",
+            "type": "Color"
+          },
+          {
+            "name": "focusNode",
+            "type": "FocusNode"
+          },
+          {
+            "name": "autofocus",
+            "type": "bool"
+          },
+          {
+            "name": "dropdownColor",
+            "type": "Color"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "DropdownButton",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "items",
+                "type": "List<DropdownMenuItem<T>>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "selectedItemBuilder",
+                "type": "DropdownButtonBuilder",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "value",
+                "type": "T",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "hint",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "disabledHint",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "onChanged",
+                "type": "ValueChanged<T>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "onTap",
+                "type": "VoidCallback",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "8",
+                "name": "elevation",
+                "type": "int",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "style",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "underline",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "icon",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "iconDisabledColor",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "iconEnabledColor",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "24.0",
+                "name": "iconSize",
+                "type": "double",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "false",
+                "name": "isDense",
+                "type": "bool",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "false",
+                "name": "isExpanded",
+                "type": "bool",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "itemHeight",
+                "type": "double",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "focusColor",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "focusNode",
+                "type": "FocusNode",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "false",
+                "name": "autofocus",
+                "type": "bool",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "dropdownColor",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "createState",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "_DropdownButtonState<T>"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ],
+        "tree": null
+      },
+      {
+        "name": "_DropdownButtonState",
+        "comments": [],
+        "fields": [
+          {
+            "name": "_selectedIndex",
+            "type": "int"
+          },
+          {
+            "name": "_dropdownRoute",
+            "type": "_DropdownRoute<T>"
+          },
+          {
+            "name": "_lastOrientation",
+            "type": "Orientation"
+          },
+          {
+            "name": "_internalNode",
+            "type": "FocusNode"
+          },
+          {
+            "name": "_hasPrimaryFocus",
+            "type": "bool"
+          },
+          {
+            "name": "_actionMap",
+            "type": "Map<Type, Action<Intent>>"
+          },
+          {
+            "name": "_focusHighlightMode",
+            "type": "FocusHighlightMode"
+          }
+        ],
+        "constructors": [],
+        "methods": [
+          {
+            "name": "focusNode",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "FocusNode"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_createFocusNode",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "FocusNode"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "FocusNode",
+                              "arguments": {
+                                "debugLabel": {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "String",
+                                      "value": "null"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "initState",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": {
+                                "name": "value",
+                                "props": {
+                                  "0": {
+                                    "type": null,
+                                    "value": "null"
+                                  }
+                                }
+                              },
+                              "operation": "=="
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "dispose",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_removeDropdownRoute",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_handleFocusChanged",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "name",
+                                "props": {
+                                  "0": "_hasPrimaryFocus"
+                                }
+                              },
+                              "right": null,
+                              "operation": "!="
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_handleFocusHighlightModeChange",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "block",
+                              "values": [
+                                {
+                                  "name": "return",
+                                  "values": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "didUpdateWidget",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": null,
+                              "operation": "!="
+                            },
+                            {
+                              "name": "block",
+                              "values": [
+                                {
+                                  "name": "if",
+                                  "values": [
+                                    {
+                                      "name": "binary",
+                                      "left": null,
+                                      "right": {
+                                        "name": "value",
+                                        "props": {
+                                          "0": {
+                                            "type": null,
+                                            "value": "null"
+                                          }
+                                        }
+                                      },
+                                      "operation": "=="
+                                    },
+                                    {
+                                      "name": "block",
+                                      "values": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_updateSelectedIndex",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "block",
+                              "values": [
+                                {
+                                  "name": "return",
+                                  "values": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_textStyle",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "TextStyle"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_handleTap",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": {
+                                "name": "value",
+                                "props": {
+                                  "0": {
+                                    "type": null,
+                                    "value": "null"
+                                  }
+                                }
+                              },
+                              "operation": "!="
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_denseButtonHeight",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "double"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "max",
+                              "arguments": {}
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_iconColor",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Color"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "name",
+                              "props": {
+                                "0": "_enabled"
+                              }
+                            },
+                            {
+                              "name": "block",
+                              "values": [
+                                {
+                                  "name": "if",
+                                  "values": [
+                                    {
+                                      "name": "binary",
+                                      "left": null,
+                                      "right": {
+                                        "name": "value",
+                                        "props": {
+                                          "0": {
+                                            "type": null,
+                                            "value": "null"
+                                          }
+                                        }
+                                      },
+                                      "operation": "!="
+                                    },
+                                    {
+                                      "name": "return",
+                                      "values": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "block",
+                              "values": [
+                                {
+                                  "name": "if",
+                                  "values": [
+                                    {
+                                      "name": "binary",
+                                      "left": null,
+                                      "right": {
+                                        "name": "value",
+                                        "props": {
+                                          "0": {
+                                            "type": null,
+                                            "value": "null"
+                                          }
+                                        }
+                                      },
+                                      "operation": "!="
+                                    },
+                                    {
+                                      "name": "return",
+                                      "values": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "value",
+                              "props": {
+                                "0": {
+                                  "type": null,
+                                  "value": "null"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_enabled",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_getOrientation",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Orientation"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "name",
+                                "props": {
+                                  "0": "result"
+                                }
+                              },
+                              "right": {
+                                "name": "value",
+                                "props": {
+                                  "0": {
+                                    "type": null,
+                                    "value": "null"
+                                  }
+                                }
+                              },
+                              "operation": "=="
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "name",
+                              "props": {
+                                "0": "result"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_showHighlight",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "value",
+                              "props": {
+                                "0": {
+                                  "type": null,
+                                  "value": "null"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "build",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "name",
+                                "props": {
+                                  "0": "newOrientation"
+                                }
+                              },
+                              "right": {
+                                "name": "name",
+                                "props": {
+                                  "0": "_lastOrientation"
+                                }
+                              },
+                              "operation": "!="
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "name",
+                              "props": {
+                                "0": "_enabled"
+                              }
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "binary",
+                                "left": null,
+                                "right": {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": null,
+                                      "value": "null"
+                                    }
+                                  }
+                                },
+                                "operation": "!="
+                              },
+                              "right": null,
+                              "operation": "||"
+                            },
+                            {
+                              "name": "block",
+                              "values": [
+                                {
+                                  "name": "if",
+                                  "values": [
+                                    {
+                                      "name": "binary",
+                                      "left": null,
+                                      "right": {
+                                        "name": "value",
+                                        "props": {
+                                          "0": {
+                                            "type": null,
+                                            "value": "null"
+                                          }
+                                        }
+                                      },
+                                      "operation": "=="
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "block",
+                              "values": []
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "Semantics",
+                              "arguments": {
+                                "button": {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "bool",
+                                      "value": "true"
+                                    }
+                                  }
+                                },
+                                "child": {
+                                  "name": "constructor",
+                                  "value": "Actions",
+                                  "arguments": {
+                                    "actions": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "_actionMap"
+                                      }
+                                    },
+                                    "child": {
+                                      "name": "constructor",
+                                      "value": "Focus",
+                                      "arguments": {
+                                        "canRequestFocus": {
+                                          "name": "name",
+                                          "props": {
+                                            "0": "_enabled"
+                                          }
+                                        },
+                                        "focusNode": {
+                                          "name": "name",
+                                          "props": {
+                                            "0": "focusNode"
+                                          }
+                                        },
+                                        "autofocus": null,
+                                        "child": {
+                                          "name": "constructor",
+                                          "value": "GestureDetector",
+                                          "arguments": {
+                                            "onTap": {
+                                              "name": "conditional",
+                                              "values": [
+                                                {
+                                                  "name": "name",
+                                                  "props": {
+                                                    "0": "_enabled"
+                                                  }
+                                                },
+                                                {
+                                                  "name": "name",
+                                                  "props": {
+                                                    "0": "_handleTap"
+                                                  }
+                                                },
+                                                {
+                                                  "name": "value",
+                                                  "props": {
+                                                    "0": {
+                                                      "type": null,
+                                                      "value": "null"
+                                                    }
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            "behavior": null,
+                                            "child": {
+                                              "name": "name",
+                                              "props": {
+                                                "0": "result"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "DropdownButtonFormField",
+        "comments": [
+          "A convenience widget that makes a [DropdownButton] into a [FormField]."
+        ],
+        "fields": [
+          {
+            "name": "onChanged",
+            "type": "ValueChanged<T>"
+          },
+          {
+            "name": "decoration",
+            "type": "InputDecoration"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "DropdownButtonFormField",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "items",
+                "type": "List<DropdownMenuItem<T>>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "selectedItemBuilder",
+                "type": "DropdownButtonBuilder",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "value",
+                "type": "T",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "hint",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "disabledHint",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "onChanged",
+                "type": "ValueChanged<T>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "onTap",
+                "type": "VoidCallback",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "8",
+                "name": "elevation",
+                "type": "int",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "style",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "icon",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "iconDisabledColor",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "iconEnabledColor",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "24.0",
+                "name": "iconSize",
+                "type": "double",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "true",
+                "name": "isDense",
+                "type": "bool",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "false",
+                "name": "isExpanded",
+                "type": "bool",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "itemHeight",
+                "type": "double",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "focusColor",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "focusNode",
+                "type": "FocusNode",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "false",
+                "name": "autofocus",
+                "type": "bool",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "dropdownColor",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "decoration",
+                "type": "InputDecoration",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "onSaved",
+                "type": "FormFieldSetter<T>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "validator",
+                "type": "FormFieldValidator<T>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "false",
+                "name": "autovalidate",
+                "type": "bool",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "autovalidateMode",
+                "type": "AutovalidateMode",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "createState",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "FormFieldState<T>"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_DropdownButtonFormFieldState",
+        "comments": [],
+        "fields": [],
+        "constructors": [],
+        "methods": [
+          {
+            "name": "widget",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "DropdownButtonFormField<T>"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "didChange",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "didUpdateWidget",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": null,
+                              "operation": "!="
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      }
+    ],
+    "enums": [],
+    "fields": [
+      {
+        "name": "_kDropdownMenuDuration",
+        "type": "Duration"
+      },
+      {
+        "name": "_kMenuItemHeight",
+        "type": "double"
+      },
+      {
+        "name": "_kDenseButtonHeight",
+        "type": "double"
+      },
+      {
+        "name": "_kMenuItemPadding",
+        "type": "EdgeInsets"
+      },
+      {
+        "name": "_kAlignedButtonPadding",
+        "type": "EdgeInsetsGeometry"
+      },
+      {
+        "name": "_kUnalignedButtonPadding",
+        "type": "EdgeInsets"
+      },
+      {
+        "name": "_kAlignedMenuMargin",
+        "type": "EdgeInsets"
+      },
+      {
+        "name": "_kUnalignedMenuMargin",
+        "type": "EdgeInsetsGeometry"
+      }
+    ],
+    "methods": []
+  },
+  "errors": []
+}

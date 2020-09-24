@@ -1,0 +1,1349 @@
+{
+  "file": {
+    "name": null,
+    "imports": [
+      "dart:math",
+      "package:flutter/foundation.dart",
+      "package:flutter/widgets.dart",
+      "scaffold.dart"
+    ],
+    "classes": [
+      {
+        "name": "FloatingActionButtonLocation",
+        "comments": [
+          "   [FloatingActionButtonLocation]s use to position the [FloatingActionButton]."
+        ],
+        "fields": [
+          {
+            "name": "startTop",
+            "type": "FloatingActionButtonLocation"
+          },
+          {
+            "name": "miniStartTop",
+            "type": "FloatingActionButtonLocation"
+          },
+          {
+            "name": "centerTop",
+            "type": "FloatingActionButtonLocation"
+          },
+          {
+            "name": "miniCenterTop",
+            "type": "FloatingActionButtonLocation"
+          },
+          {
+            "name": "endTop",
+            "type": "FloatingActionButtonLocation"
+          },
+          {
+            "name": "miniEndTop",
+            "type": "FloatingActionButtonLocation"
+          },
+          {
+            "name": "startFloat",
+            "type": "FloatingActionButtonLocation"
+          },
+          {
+            "name": "miniStartFloat",
+            "type": "FloatingActionButtonLocation"
+          },
+          {
+            "name": "centerFloat",
+            "type": "FloatingActionButtonLocation"
+          },
+          {
+            "name": "miniCenterFloat",
+            "type": "FloatingActionButtonLocation"
+          },
+          {
+            "name": "endFloat",
+            "type": "FloatingActionButtonLocation"
+          },
+          {
+            "name": "miniEndFloat",
+            "type": "FloatingActionButtonLocation"
+          },
+          {
+            "name": "startDocked",
+            "type": "FloatingActionButtonLocation"
+          },
+          {
+            "name": "miniStartDocked",
+            "type": "FloatingActionButtonLocation"
+          },
+          {
+            "name": "centerDocked",
+            "type": "FloatingActionButtonLocation"
+          },
+          {
+            "name": "miniCenterDocked",
+            "type": "FloatingActionButtonLocation"
+          },
+          {
+            "name": "endDocked",
+            "type": "FloatingActionButtonLocation"
+          },
+          {
+            "name": "miniEndDocked",
+            "type": "FloatingActionButtonLocation"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "FloatingActionButtonLocation",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "getOffset",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Offset"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "toString",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "String"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "StandardFabLocation",
+        "comments": [
+          "///"
+        ],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "StandardFabLocation",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "getOffsetX",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "double"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "getOffsetY",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "double"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "isMini",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "getOffset",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Offset"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "Offset",
+                              "arguments": {}
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_leftOffsetX",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "double"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "binary",
+                                "left": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "kFloatingActionButtonMargin"
+                                  }
+                                },
+                                "right": null,
+                                "operation": "+"
+                              },
+                              "right": {
+                                "name": "name",
+                                "props": {
+                                  "0": "adjustment"
+                                }
+                              },
+                              "operation": "-"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_rightOffsetX",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "double"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "binary",
+                                "left": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "binary",
+                                    "left": null,
+                                    "right": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "kFloatingActionButtonMargin"
+                                      }
+                                    },
+                                    "operation": "-"
+                                  },
+                                  "right": null,
+                                  "operation": "-"
+                                },
+                                "right": null,
+                                "operation": "-"
+                              },
+                              "right": {
+                                "name": "name",
+                                "props": {
+                                  "0": "adjustment"
+                                }
+                              },
+                              "operation": "+"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_StartTopFabLocation",
+        "comments": [],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "_StartTopFabLocation",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "toString",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "String"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_MiniStartTopFabLocation",
+        "comments": [],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "_MiniStartTopFabLocation",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "toString",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "String"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_CenterTopFabLocation",
+        "comments": [],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "_CenterTopFabLocation",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "toString",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "String"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_MiniCenterTopFabLocation",
+        "comments": [],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "_MiniCenterTopFabLocation",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "toString",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "String"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_EndTopFabLocation",
+        "comments": [],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "_EndTopFabLocation",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "toString",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "String"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_MiniEndTopFabLocation",
+        "comments": [],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "_MiniEndTopFabLocation",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "toString",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "String"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_StartFloatFabLocation",
+        "comments": [],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "_StartFloatFabLocation",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "toString",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "String"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_MiniStartFloatFabLocation",
+        "comments": [],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "_MiniStartFloatFabLocation",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "toString",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "String"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_CenterFloatFabLocation",
+        "comments": [],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "_CenterFloatFabLocation",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "toString",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "String"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_MiniCenterFloatFabLocation",
+        "comments": [],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "_MiniCenterFloatFabLocation",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "toString",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "String"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_EndFloatFabLocation",
+        "comments": [],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "_EndFloatFabLocation",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "toString",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "String"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_MiniEndFloatFabLocation",
+        "comments": [],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "_MiniEndFloatFabLocation",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "toString",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "String"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_StartDockedFabLocation",
+        "comments": [],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "_StartDockedFabLocation",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "toString",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "String"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_MiniStartDockedFabLocation",
+        "comments": [],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "_MiniStartDockedFabLocation",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "toString",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "String"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_CenterDockedFabLocation",
+        "comments": [],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "_CenterDockedFabLocation",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "toString",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "String"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_MiniCenterDockedFabLocation",
+        "comments": [],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "_MiniCenterDockedFabLocation",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "toString",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "String"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_EndDockedFabLocation",
+        "comments": [],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "_EndDockedFabLocation",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "toString",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "String"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_MiniEndDockedFabLocation",
+        "comments": [],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "_MiniEndDockedFabLocation",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "toString",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "String"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "FloatingActionButtonAnimator",
+        "comments": [
+          "   [Scaffold.floatingActionButton] within the [Scaffold]'s layout."
+        ],
+        "fields": [
+          {
+            "name": "scaling",
+            "type": "FloatingActionButtonAnimator"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "FloatingActionButtonAnimator",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "getOffset",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Offset"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "getScaleAnimation",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Animation<double>"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "getRotationAnimation",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Animation<double>"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "getAnimationRestart",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "double"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "toString",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "String"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_ScalingFabMotionAnimator",
+        "comments": [],
+        "fields": [
+          {
+            "name": "_rotationTween",
+            "type": "Animatable<double>"
+          },
+          {
+            "name": "_thresholdCenterTween",
+            "type": "Animatable<double>"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_ScalingFabMotionAnimator",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "getOffset",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Offset"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "name",
+                                "props": {
+                                  "0": "progress"
+                                }
+                              },
+                              "right": {
+                                "name": "value",
+                                "props": {
+                                  "0": {
+                                    "type": "double",
+                                    "value": "0.5"
+                                  }
+                                }
+                              },
+                              "operation": "<"
+                            },
+                            {
+                              "name": "block",
+                              "values": [
+                                {
+                                  "name": "return",
+                                  "values": [
+                                    {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "begin"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "block",
+                              "values": [
+                                {
+                                  "name": "return",
+                                  "values": [
+                                    {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "end"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "getScaleAnimation",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Animation<double>"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "_AnimationSwap",
+                              "arguments": {
+                                "3": {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "double",
+                                      "value": "0.5"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "getRotationAnimation",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Animation<double>"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "_AnimationSwap",
+                              "arguments": {
+                                "3": {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "double",
+                                      "value": "0.5"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "getAnimationRestart",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "double"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_AnimationSwap",
+        "comments": [
+          "and the value of [next] otherwise."
+        ],
+        "fields": [
+          {
+            "name": "parent",
+            "type": "Animation<double>"
+          },
+          {
+            "name": "swapThreshold",
+            "type": "double"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_AnimationSwap",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "value",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "T"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      }
+    ],
+    "enums": [],
+    "fields": [
+      {
+        "name": "kFloatingActionButtonMargin",
+        "type": "double"
+      },
+      {
+        "name": "kFloatingActionButtonSegue",
+        "type": "Duration"
+      },
+      {
+        "name": "kFloatingActionButtonTurnInterval",
+        "type": "double"
+      },
+      {
+        "name": "kMiniButtonOffsetAdjustment",
+        "type": "double"
+      }
+    ],
+    "methods": []
+  },
+  "errors": []
+}

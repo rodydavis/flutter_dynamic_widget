@@ -1,0 +1,519 @@
+{
+  "file": {
+    "name": null,
+    "imports": [
+      "package:flutter/foundation.dart",
+      "package:flutter/rendering.dart",
+      "package:flutter/widgets.dart",
+      "bottom_app_bar_theme.dart",
+      "elevation_overlay.dart",
+      "material.dart",
+      "scaffold.dart",
+      "theme.dart"
+    ],
+    "classes": [
+      {
+        "name": "BottomAppBar",
+        "comments": [
+          " * [AppBar] for a toolbar that is shown at the top of the screen."
+        ],
+        "fields": [
+          {
+            "name": "child",
+            "type": "Widget"
+          },
+          {
+            "name": "color",
+            "type": "Color"
+          },
+          {
+            "name": "elevation",
+            "type": "double"
+          },
+          {
+            "name": "shape",
+            "type": "NotchedShape"
+          },
+          {
+            "name": "clipBehavior",
+            "type": "Clip"
+          },
+          {
+            "name": "notchMargin",
+            "type": "double"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "BottomAppBar",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "color",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "elevation",
+                "type": "double",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "shape",
+                "type": "NotchedShape",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "clipBehavior",
+                "type": "Clip",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "4.0",
+                "name": "notchMargin",
+                "type": "double",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "child",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "createState",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "State"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ],
+        "tree": null
+      },
+      {
+        "name": "_BottomAppBarState",
+        "comments": [],
+        "fields": [
+          {
+            "name": "geometryListenable",
+            "type": "ValueListenable<ScaffoldGeometry>"
+          },
+          {
+            "name": "_defaultElevation",
+            "type": "double"
+          }
+        ],
+        "constructors": [],
+        "methods": [
+          {
+            "name": "didChangeDependencies",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "build",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "PhysicalShape",
+                              "arguments": {
+                                "clipper": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "clipper"
+                                  }
+                                },
+                                "elevation": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "elevation"
+                                  }
+                                },
+                                "color": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "effectiveColor"
+                                  }
+                                },
+                                "clipBehavior": null,
+                                "child": {
+                                  "name": "constructor",
+                                  "value": "Material",
+                                  "arguments": {
+                                    "type": null,
+                                    "child": {
+                                      "name": "conditional",
+                                      "values": [
+                                        {
+                                          "name": "binary",
+                                          "left": null,
+                                          "right": {
+                                            "name": "value",
+                                            "props": {
+                                              "0": {
+                                                "type": null,
+                                                "value": "null"
+                                              }
+                                            }
+                                          },
+                                          "operation": "=="
+                                        },
+                                        {
+                                          "name": "value",
+                                          "props": {
+                                            "0": {
+                                              "type": null,
+                                              "value": "null"
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "name": "constructor",
+                                          "value": "SafeArea",
+                                          "arguments": {
+                                            "child": null
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_BottomAppBarClipper",
+        "comments": [],
+        "fields": [
+          {
+            "name": "geometry",
+            "type": "ValueListenable<ScaffoldGeometry>"
+          },
+          {
+            "name": "shape",
+            "type": "NotchedShape"
+          },
+          {
+            "name": "notchMargin",
+            "type": "double"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_BottomAppBarClipper",
+            "properties": [
+              {
+                "value": null,
+                "name": "geometry",
+                "type": "ValueListenable<ScaffoldGeometry>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "shape",
+                "type": "NotchedShape",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "notchMargin",
+                "type": "double",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "getClip",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Path"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "getOuterPath",
+                              "arguments": {}
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "shouldReclip",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "binary",
+                                "left": {
+                                  "name": "binary",
+                                  "left": null,
+                                  "right": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "geometry"
+                                    }
+                                  },
+                                  "operation": "!="
+                                },
+                                "right": {
+                                  "name": "binary",
+                                  "left": null,
+                                  "right": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "shape"
+                                    }
+                                  },
+                                  "operation": "!="
+                                },
+                                "operation": "||"
+                              },
+                              "right": {
+                                "name": "binary",
+                                "left": null,
+                                "right": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "notchMargin"
+                                  }
+                                },
+                                "operation": "!="
+                              },
+                              "operation": "||"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      }
+    ],
+    "enums": [],
+    "fields": [],
+    "methods": []
+  },
+  "errors": []
+}

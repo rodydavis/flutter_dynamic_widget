@@ -1,0 +1,911 @@
+{
+  "file": {
+    "name": null,
+    "imports": [
+      "dart:math",
+      "package:flutter/services.dart",
+      "package:flutter/widgets.dart",
+      "../color_scheme.dart",
+      "../debug.dart",
+      "../dialog.dart",
+      "../icons.dart",
+      "../material_localizations.dart",
+      "../text_button.dart",
+      "../text_theme.dart",
+      "../theme.dart",
+      "calendar_date_picker.dart",
+      "date_picker_common.dart",
+      "date_picker_header.dart",
+      "date_utils.dart",
+      "input_date_picker.dart"
+    ],
+    "classes": [
+      {
+        "name": "_DatePickerDialog",
+        "comments": [],
+        "fields": [
+          {
+            "name": "initialDate",
+            "type": "DateTime"
+          },
+          {
+            "name": "firstDate",
+            "type": "DateTime"
+          },
+          {
+            "name": "lastDate",
+            "type": "DateTime"
+          },
+          {
+            "name": "currentDate",
+            "type": "DateTime"
+          },
+          {
+            "name": "initialEntryMode",
+            "type": "DatePickerEntryMode"
+          },
+          {
+            "name": "selectableDayPredicate",
+            "type": "SelectableDayPredicate"
+          },
+          {
+            "name": "cancelText",
+            "type": "String"
+          },
+          {
+            "name": "confirmText",
+            "type": "String"
+          },
+          {
+            "name": "helpText",
+            "type": "String"
+          },
+          {
+            "name": "initialCalendarMode",
+            "type": "DatePickerMode"
+          },
+          {
+            "name": "errorFormatText",
+            "type": "String"
+          },
+          {
+            "name": "errorInvalidText",
+            "type": "String"
+          },
+          {
+            "name": "fieldHintText",
+            "type": "String"
+          },
+          {
+            "name": "fieldLabelText",
+            "type": "String"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_DatePickerDialog",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "initialDate",
+                "type": "DateTime",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "firstDate",
+                "type": "DateTime",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "lastDate",
+                "type": "DateTime",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "currentDate",
+                "type": "DateTime",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "initialEntryMode",
+                "type": "DatePickerEntryMode",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "selectableDayPredicate",
+                "type": "SelectableDayPredicate",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "cancelText",
+                "type": "String",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "confirmText",
+                "type": "String",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "helpText",
+                "type": "String",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "initialCalendarMode",
+                "type": "DatePickerMode",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "errorFormatText",
+                "type": "String",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "errorInvalidText",
+                "type": "String",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "fieldHintText",
+                "type": "String",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "fieldLabelText",
+                "type": "String",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "createState",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "_DatePickerDialogState"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ],
+        "tree": null
+      },
+      {
+        "name": "_DatePickerDialogState",
+        "comments": [],
+        "fields": [
+          {
+            "name": "_entryMode",
+            "type": "DatePickerEntryMode"
+          },
+          {
+            "name": "_selectedDate",
+            "type": "DateTime"
+          },
+          {
+            "name": "_autoValidate",
+            "type": "bool"
+          },
+          {
+            "name": "_calendarPickerKey",
+            "type": "GlobalKey"
+          },
+          {
+            "name": "_formKey",
+            "type": "GlobalKey<FormState>"
+          },
+          {
+            "name": "_formShortcutMap",
+            "type": "Map<LogicalKeySet, Intent>"
+          }
+        ],
+        "constructors": [],
+        "methods": [
+          {
+            "name": "initState",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_handleOk",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "name",
+                                "props": {
+                                  "0": "_entryMode"
+                                }
+                              },
+                              "right": null,
+                              "operation": "=="
+                            },
+                            {
+                              "name": "block",
+                              "values": [
+                                {
+                                  "name": "if",
+                                  "values": [
+                                    {
+                                      "name": "block",
+                                      "values": [
+                                        {
+                                          "name": "return",
+                                          "values": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_handleCancel",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_handleEntryModeToggle",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_handleDateChanged",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_dialogSize",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Size"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "value",
+                              "props": {
+                                "0": {
+                                  "type": null,
+                                  "value": "null"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "build",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "Dialog",
+                              "arguments": {
+                                "child": {
+                                  "name": "constructor",
+                                  "value": "AnimatedContainer",
+                                  "arguments": {
+                                    "width": null,
+                                    "height": null,
+                                    "duration": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "_dialogSizeAnimationDuration"
+                                      }
+                                    },
+                                    "curve": null,
+                                    "child": {
+                                      "name": "constructor",
+                                      "value": "MediaQuery",
+                                      "arguments": {
+                                        "data": {
+                                          "name": "constructor",
+                                          "value": "copyWith",
+                                          "arguments": {
+                                            "textScaleFactor": {
+                                              "name": "name",
+                                              "props": {
+                                                "0": "textScaleFactor"
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "child": {
+                                          "name": "constructor",
+                                          "value": "Builder",
+                                          "arguments": {
+                                            "builder": {
+                                              "name": "function",
+                                              "values": [
+                                                {
+                                                  "name": "block_body",
+                                                  "values": [
+                                                    {
+                                                      "name": "block",
+                                                      "values": [
+                                                        {
+                                                          "name": "return",
+                                                          "values": [
+                                                            {
+                                                              "name": "value",
+                                                              "props": {
+                                                                "0": {
+                                                                  "type": null,
+                                                                  "value": "null"
+                                                                }
+                                                              }
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "insetPadding": null,
+                                "clipBehavior": null
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      }
+    ],
+    "enums": [],
+    "fields": [
+      {
+        "name": "_calendarPortraitDialogSize",
+        "type": "Size"
+      },
+      {
+        "name": "_calendarLandscapeDialogSize",
+        "type": "Size"
+      },
+      {
+        "name": "_inputPortraitDialogSize",
+        "type": "Size"
+      },
+      {
+        "name": "_inputLandscapeDialogSize",
+        "type": "Size"
+      },
+      {
+        "name": "_dialogSizeAnimationDuration",
+        "type": "Duration"
+      },
+      {
+        "name": "_inputFormPortraitHeight",
+        "type": "double"
+      },
+      {
+        "name": "_inputFormLandscapeHeight",
+        "type": "double"
+      }
+    ],
+    "methods": [
+      {
+        "name": "showDatePicker",
+        "body": {
+          "name": "function_declaration",
+          "values": [
+            {
+              "name": "type",
+              "props": {
+                "0": "Future<DateTime>"
+              }
+            },
+            {
+              "name": "declaration",
+              "values": []
+            },
+            {
+              "name": "function",
+              "values": [
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "name",
+                                "props": {
+                                  "0": "textDirection"
+                                }
+                              },
+                              "right": {
+                                "name": "value",
+                                "props": {
+                                  "0": {
+                                    "type": null,
+                                    "value": "null"
+                                  }
+                                }
+                              },
+                              "operation": "!="
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "name",
+                                "props": {
+                                  "0": "locale"
+                                }
+                              },
+                              "right": {
+                                "name": "value",
+                                "props": {
+                                  "0": {
+                                    "type": null,
+                                    "value": "null"
+                                  }
+                                }
+                              },
+                              "operation": "!="
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "showDialog",
+                              "arguments": {
+                                "context": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "context"
+                                  }
+                                },
+                                "useRootNavigator": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "useRootNavigator"
+                                  }
+                                },
+                                "routeSettings": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "routeSettings"
+                                  }
+                                },
+                                "builder": {
+                                  "name": "function",
+                                  "values": [
+                                    {
+                                      "name": "block_body",
+                                      "values": [
+                                        {
+                                          "name": "block",
+                                          "values": [
+                                            {
+                                              "name": "return",
+                                              "values": [
+                                                {
+                                                  "name": "conditional",
+                                                  "values": [
+                                                    {
+                                                      "name": "binary",
+                                                      "left": {
+                                                        "name": "name",
+                                                        "props": {
+                                                          "0": "builder"
+                                                        }
+                                                      },
+                                                      "right": {
+                                                        "name": "value",
+                                                        "props": {
+                                                          "0": {
+                                                            "type": null,
+                                                            "value": "null"
+                                                          }
+                                                        }
+                                                      },
+                                                      "operation": "=="
+                                                    },
+                                                    {
+                                                      "name": "name",
+                                                      "props": {
+                                                        "0": "dialog"
+                                                      }
+                                                    },
+                                                    {
+                                                      "name": "constructor",
+                                                      "value": "builder",
+                                                      "arguments": {}
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "parameters": []
+      }
+    ]
+  },
+  "errors": []
+}

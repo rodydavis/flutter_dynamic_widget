@@ -1,0 +1,16 @@
+{
+  "file": {
+    "name": null,
+    "imports": [],
+    "classes": [],
+    "enums": [],
+    "fields": [
+      {
+        "name": "_$pause_play",
+        "type": "_AnimatedIconData"
+      }
+    ],
+    "methods": []
+  },
+  "errors": []
+}

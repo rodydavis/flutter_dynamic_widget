@@ -1,0 +1,1021 @@
+{
+  "file": {
+    "name": null,
+    "imports": [
+      "dart:ui",
+      "package:flutter/foundation.dart",
+      "package:flutter/widgets.dart",
+      "button_theme.dart",
+      "theme.dart"
+    ],
+    "classes": [
+      {
+        "name": "ButtonBarThemeData",
+        "comments": [
+          "   button widgets."
+        ],
+        "fields": [
+          {
+            "name": "alignment",
+            "type": "MainAxisAlignment"
+          },
+          {
+            "name": "mainAxisSize",
+            "type": "MainAxisSize"
+          },
+          {
+            "name": "buttonTextTheme",
+            "type": "ButtonTextTheme"
+          },
+          {
+            "name": "buttonMinWidth",
+            "type": "double"
+          },
+          {
+            "name": "buttonHeight",
+            "type": "double"
+          },
+          {
+            "name": "buttonPadding",
+            "type": "EdgeInsetsGeometry"
+          },
+          {
+            "name": "buttonAlignedDropdown",
+            "type": "bool"
+          },
+          {
+            "name": "layoutBehavior",
+            "type": "ButtonBarLayoutBehavior"
+          },
+          {
+            "name": "overflowDirection",
+            "type": "VerticalDirection"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "ButtonBarThemeData",
+            "properties": [
+              {
+                "value": null,
+                "name": "alignment",
+                "type": "MainAxisAlignment",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "mainAxisSize",
+                "type": "MainAxisSize",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "buttonTextTheme",
+                "type": "ButtonTextTheme",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "buttonMinWidth",
+                "type": "double",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "buttonHeight",
+                "type": "double",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "buttonPadding",
+                "type": "EdgeInsetsGeometry",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "buttonAlignedDropdown",
+                "type": "bool",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "layoutBehavior",
+                "type": "ButtonBarLayoutBehavior",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "overflowDirection",
+                "type": "VerticalDirection",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "copyWith",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "ButtonBarThemeData"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "ButtonBarThemeData",
+                              "arguments": {
+                                "alignment": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "alignment"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "mainAxisSize": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "mainAxisSize"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "buttonTextTheme": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "buttonTextTheme"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "buttonMinWidth": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "buttonMinWidth"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "buttonHeight": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "buttonHeight"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "buttonPadding": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "buttonPadding"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "buttonAlignedDropdown": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "buttonAlignedDropdown"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "layoutBehavior": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "layoutBehavior"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "overflowDirection": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "overflowDirection"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "lerp",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "ButtonBarThemeData"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "binary",
+                                "left": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "a"
+                                  }
+                                },
+                                "right": {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": null,
+                                      "value": "null"
+                                    }
+                                  }
+                                },
+                                "operation": "=="
+                              },
+                              "right": {
+                                "name": "binary",
+                                "left": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "b"
+                                  }
+                                },
+                                "right": {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": null,
+                                      "value": "null"
+                                    }
+                                  }
+                                },
+                                "operation": "=="
+                              },
+                              "operation": "&&"
+                            },
+                            {
+                              "name": "return",
+                              "values": [
+                                {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": null,
+                                      "value": "null"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "ButtonBarThemeData",
+                              "arguments": {
+                                "alignment": {
+                                  "name": "conditional",
+                                  "values": [
+                                    {
+                                      "name": "binary",
+                                      "left": {
+                                        "name": "name",
+                                        "props": {
+                                          "0": "t"
+                                        }
+                                      },
+                                      "right": {
+                                        "name": "value",
+                                        "props": {
+                                          "0": {
+                                            "type": "double",
+                                            "value": "0.5"
+                                          }
+                                        }
+                                      },
+                                      "operation": "<"
+                                    }
+                                  ]
+                                },
+                                "mainAxisSize": {
+                                  "name": "conditional",
+                                  "values": [
+                                    {
+                                      "name": "binary",
+                                      "left": {
+                                        "name": "name",
+                                        "props": {
+                                          "0": "t"
+                                        }
+                                      },
+                                      "right": {
+                                        "name": "value",
+                                        "props": {
+                                          "0": {
+                                            "type": "double",
+                                            "value": "0.5"
+                                          }
+                                        }
+                                      },
+                                      "operation": "<"
+                                    }
+                                  ]
+                                },
+                                "buttonTextTheme": {
+                                  "name": "conditional",
+                                  "values": [
+                                    {
+                                      "name": "binary",
+                                      "left": {
+                                        "name": "name",
+                                        "props": {
+                                          "0": "t"
+                                        }
+                                      },
+                                      "right": {
+                                        "name": "value",
+                                        "props": {
+                                          "0": {
+                                            "type": "double",
+                                            "value": "0.5"
+                                          }
+                                        }
+                                      },
+                                      "operation": "<"
+                                    }
+                                  ]
+                                },
+                                "buttonMinWidth": {
+                                  "name": "constructor",
+                                  "value": "lerpDouble",
+                                  "arguments": {}
+                                },
+                                "buttonHeight": {
+                                  "name": "constructor",
+                                  "value": "lerpDouble",
+                                  "arguments": {}
+                                },
+                                "buttonPadding": {
+                                  "name": "constructor",
+                                  "value": "lerp",
+                                  "arguments": {}
+                                },
+                                "buttonAlignedDropdown": {
+                                  "name": "conditional",
+                                  "values": [
+                                    {
+                                      "name": "binary",
+                                      "left": {
+                                        "name": "name",
+                                        "props": {
+                                          "0": "t"
+                                        }
+                                      },
+                                      "right": {
+                                        "name": "value",
+                                        "props": {
+                                          "0": {
+                                            "type": "double",
+                                            "value": "0.5"
+                                          }
+                                        }
+                                      },
+                                      "operation": "<"
+                                    }
+                                  ]
+                                },
+                                "layoutBehavior": {
+                                  "name": "conditional",
+                                  "values": [
+                                    {
+                                      "name": "binary",
+                                      "left": {
+                                        "name": "name",
+                                        "props": {
+                                          "0": "t"
+                                        }
+                                      },
+                                      "right": {
+                                        "name": "value",
+                                        "props": {
+                                          "0": {
+                                            "type": "double",
+                                            "value": "0.5"
+                                          }
+                                        }
+                                      },
+                                      "operation": "<"
+                                    }
+                                  ]
+                                },
+                                "overflowDirection": {
+                                  "name": "conditional",
+                                  "values": [
+                                    {
+                                      "name": "binary",
+                                      "left": {
+                                        "name": "name",
+                                        "props": {
+                                          "0": "t"
+                                        }
+                                      },
+                                      "right": {
+                                        "name": "value",
+                                        "props": {
+                                          "0": {
+                                            "type": "double",
+                                            "value": "0.5"
+                                          }
+                                        }
+                                      },
+                                      "operation": "<"
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "hashCode",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "int"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "hashValues",
+                              "arguments": {}
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "==",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "identical",
+                              "arguments": {}
+                            },
+                            {
+                              "name": "return",
+                              "values": [
+                                {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "bool",
+                                      "value": "true"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": {
+                                "name": "name",
+                                "props": {
+                                  "0": "runtimeType"
+                                }
+                              },
+                              "operation": "!="
+                            },
+                            {
+                              "name": "return",
+                              "values": [
+                                {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "bool",
+                                      "value": "false"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "binary",
+                                "left": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "binary",
+                                    "left": {
+                                      "name": "binary",
+                                      "left": {
+                                        "name": "binary",
+                                        "left": {
+                                          "name": "binary",
+                                          "left": {
+                                            "name": "binary",
+                                            "left": {
+                                              "name": "binary",
+                                              "left": null,
+                                              "right": {
+                                                "name": "binary",
+                                                "left": null,
+                                                "right": {
+                                                  "name": "name",
+                                                  "props": {
+                                                    "0": "alignment"
+                                                  }
+                                                },
+                                                "operation": "=="
+                                              },
+                                              "operation": "&&"
+                                            },
+                                            "right": {
+                                              "name": "binary",
+                                              "left": null,
+                                              "right": {
+                                                "name": "name",
+                                                "props": {
+                                                  "0": "mainAxisSize"
+                                                }
+                                              },
+                                              "operation": "=="
+                                            },
+                                            "operation": "&&"
+                                          },
+                                          "right": {
+                                            "name": "binary",
+                                            "left": null,
+                                            "right": {
+                                              "name": "name",
+                                              "props": {
+                                                "0": "buttonTextTheme"
+                                              }
+                                            },
+                                            "operation": "=="
+                                          },
+                                          "operation": "&&"
+                                        },
+                                        "right": {
+                                          "name": "binary",
+                                          "left": null,
+                                          "right": {
+                                            "name": "name",
+                                            "props": {
+                                              "0": "buttonMinWidth"
+                                            }
+                                          },
+                                          "operation": "=="
+                                        },
+                                        "operation": "&&"
+                                      },
+                                      "right": {
+                                        "name": "binary",
+                                        "left": null,
+                                        "right": {
+                                          "name": "name",
+                                          "props": {
+                                            "0": "buttonHeight"
+                                          }
+                                        },
+                                        "operation": "=="
+                                      },
+                                      "operation": "&&"
+                                    },
+                                    "right": {
+                                      "name": "binary",
+                                      "left": null,
+                                      "right": {
+                                        "name": "name",
+                                        "props": {
+                                          "0": "buttonPadding"
+                                        }
+                                      },
+                                      "operation": "=="
+                                    },
+                                    "operation": "&&"
+                                  },
+                                  "right": {
+                                    "name": "binary",
+                                    "left": null,
+                                    "right": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "buttonAlignedDropdown"
+                                      }
+                                    },
+                                    "operation": "=="
+                                  },
+                                  "operation": "&&"
+                                },
+                                "right": {
+                                  "name": "binary",
+                                  "left": null,
+                                  "right": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "layoutBehavior"
+                                    }
+                                  },
+                                  "operation": "=="
+                                },
+                                "operation": "&&"
+                              },
+                              "right": {
+                                "name": "binary",
+                                "left": null,
+                                "right": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "overflowDirection"
+                                  }
+                                },
+                                "operation": "=="
+                              },
+                              "operation": "&&"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "debugFillProperties",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "ButtonBarTheme",
+        "comments": [
+          "   bar theme."
+        ],
+        "fields": [
+          {
+            "name": "data",
+            "type": "ButtonBarThemeData"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "ButtonBarTheme",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "data",
+                "type": "ButtonBarThemeData",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "child",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "of",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "ButtonBarThemeData"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": null,
+                              "operation": "??"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "updateShouldNotify",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      }
+    ],
+    "enums": [],
+    "fields": [],
+    "methods": []
+  },
+  "errors": []
+}

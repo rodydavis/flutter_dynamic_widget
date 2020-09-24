@@ -1,0 +1,2415 @@
+{
+  "file": {
+    "name": null,
+    "imports": [
+      "package:flutter/cupertino.dart",
+      "package:flutter/foundation.dart",
+      "package:flutter/widgets.dart",
+      "colors.dart",
+      "theme.dart"
+    ],
+    "classes": [
+      {
+        "name": "_FadeUpwardsPageTransition",
+        "comments": [],
+        "fields": [
+          {
+            "name": "_bottomUpTween",
+            "type": "Tween<Offset>"
+          },
+          {
+            "name": "_fastOutSlowInTween",
+            "type": "Animatable<double>"
+          },
+          {
+            "name": "_easeInTween",
+            "type": "Animatable<double>"
+          },
+          {
+            "name": "_positionAnimation",
+            "type": "Animation<Offset>"
+          },
+          {
+            "name": "_opacityAnimation",
+            "type": "Animation<double>"
+          },
+          {
+            "name": "child",
+            "type": "Widget"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_FadeUpwardsPageTransition",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "routeAnimation",
+                "type": "Animation<double>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "child",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "build",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "SlideTransition",
+                              "arguments": {
+                                "position": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "_positionAnimation"
+                                  }
+                                },
+                                "child": {
+                                  "name": "constructor",
+                                  "value": "FadeTransition",
+                                  "arguments": {
+                                    "opacity": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "_opacityAnimation"
+                                      }
+                                    },
+                                    "child": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "child"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ],
+        "tree": {
+          "name": null,
+          "body": {
+            "name": "block_body",
+            "values": [
+              {
+                "name": "block",
+                "values": [
+                  {
+                    "name": "return",
+                    "values": [
+                      {
+                        "name": "constructor",
+                        "value": "SlideTransition",
+                        "arguments": {
+                          "position": {
+                            "name": "name",
+                            "props": {
+                              "0": "_positionAnimation"
+                            }
+                          },
+                          "child": {
+                            "name": "constructor",
+                            "value": "FadeTransition",
+                            "arguments": {
+                              "opacity": {
+                                "name": "name",
+                                "props": {
+                                  "0": "_opacityAnimation"
+                                }
+                              },
+                              "child": {
+                                "name": "name",
+                                "props": {
+                                  "0": "child"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "parameters": []
+        }
+      },
+      {
+        "name": "_OpenUpwardsPageTransition",
+        "comments": [],
+        "fields": [
+          {
+            "name": "_primaryTranslationTween",
+            "type": "Tween<Offset>"
+          },
+          {
+            "name": "_secondaryTranslationTween",
+            "type": "Tween<Offset>"
+          },
+          {
+            "name": "_scrimOpacityTween",
+            "type": "Tween<double>"
+          },
+          {
+            "name": "_transitionCurve",
+            "type": "Curve"
+          },
+          {
+            "name": "animation",
+            "type": "Animation<double>"
+          },
+          {
+            "name": "secondaryAnimation",
+            "type": "Animation<double>"
+          },
+          {
+            "name": "child",
+            "type": "Widget"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_OpenUpwardsPageTransition",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "animation",
+                "type": "Animation<double>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "secondaryAnimation",
+                "type": "Animation<double>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "child",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "build",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "LayoutBuilder",
+                              "arguments": {
+                                "builder": {
+                                  "name": "function",
+                                  "values": [
+                                    {
+                                      "name": "block_body",
+                                      "values": [
+                                        {
+                                          "name": "block",
+                                          "values": [
+                                            {
+                                              "name": "return",
+                                              "values": [
+                                                {
+                                                  "name": "constructor",
+                                                  "value": "AnimatedBuilder",
+                                                  "arguments": {
+                                                    "animation": {
+                                                      "name": "name",
+                                                      "props": {
+                                                        "0": "animation"
+                                                      }
+                                                    },
+                                                    "builder": {
+                                                      "name": "function",
+                                                      "values": [
+                                                        {
+                                                          "name": "block_body",
+                                                          "values": [
+                                                            {
+                                                              "name": "block",
+                                                              "values": [
+                                                                {
+                                                                  "name": "return",
+                                                                  "values": [
+                                                                    {
+                                                                      "name": "constructor",
+                                                                      "value": "Container",
+                                                                      "arguments": {
+                                                                        "color": {
+                                                                          "name": "constructor",
+                                                                          "value": "withOpacity",
+                                                                          "arguments": {}
+                                                                        },
+                                                                        "alignment": null,
+                                                                        "child": {
+                                                                          "name": "constructor",
+                                                                          "value": "ClipRect",
+                                                                          "arguments": {
+                                                                            "child": {
+                                                                              "name": "constructor",
+                                                                              "value": "SizedBox",
+                                                                              "arguments": {
+                                                                                "height": null,
+                                                                                "child": {
+                                                                                  "name": "constructor",
+                                                                                  "value": "OverflowBox",
+                                                                                  "arguments": {
+                                                                                    "alignment": null,
+                                                                                    "maxHeight": null,
+                                                                                    "child": {
+                                                                                      "name": "name",
+                                                                                      "props": {
+                                                                                        "0": "child"
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    "child": {
+                                                      "name": "constructor",
+                                                      "value": "AnimatedBuilder",
+                                                      "arguments": {
+                                                        "animation": {
+                                                          "name": "name",
+                                                          "props": {
+                                                            "0": "secondaryAnimation"
+                                                          }
+                                                        },
+                                                        "child": {
+                                                          "name": "constructor",
+                                                          "value": "FractionalTranslation",
+                                                          "arguments": {
+                                                            "translation": null,
+                                                            "child": {
+                                                              "name": "name",
+                                                              "props": {
+                                                                "0": "child"
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "builder": {
+                                                          "name": "function",
+                                                          "values": [
+                                                            {
+                                                              "name": "block_body",
+                                                              "values": [
+                                                                {
+                                                                  "name": "block",
+                                                                  "values": [
+                                                                    {
+                                                                      "name": "return",
+                                                                      "values": [
+                                                                        {
+                                                                          "name": "constructor",
+                                                                          "value": "FractionalTranslation",
+                                                                          "arguments": {
+                                                                            "translation": null,
+                                                                            "child": {
+                                                                              "name": "name",
+                                                                              "props": {
+                                                                                "0": "child"
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ],
+        "tree": {
+          "name": null,
+          "body": {
+            "name": "block_body",
+            "values": [
+              {
+                "name": "block",
+                "values": [
+                  {
+                    "name": "return",
+                    "values": [
+                      {
+                        "name": "constructor",
+                        "value": "LayoutBuilder",
+                        "arguments": {
+                          "builder": {
+                            "name": "function",
+                            "values": [
+                              {
+                                "name": "block_body",
+                                "values": [
+                                  {
+                                    "name": "block",
+                                    "values": [
+                                      {
+                                        "name": "return",
+                                        "values": [
+                                          {
+                                            "name": "constructor",
+                                            "value": "AnimatedBuilder",
+                                            "arguments": {
+                                              "animation": {
+                                                "name": "name",
+                                                "props": {
+                                                  "0": "animation"
+                                                }
+                                              },
+                                              "builder": {
+                                                "name": "function",
+                                                "values": [
+                                                  {
+                                                    "name": "block_body",
+                                                    "values": [
+                                                      {
+                                                        "name": "block",
+                                                        "values": [
+                                                          {
+                                                            "name": "return",
+                                                            "values": [
+                                                              {
+                                                                "name": "constructor",
+                                                                "value": "Container",
+                                                                "arguments": {
+                                                                  "color": {
+                                                                    "name": "constructor",
+                                                                    "value": "withOpacity",
+                                                                    "arguments": {}
+                                                                  },
+                                                                  "alignment": null,
+                                                                  "child": {
+                                                                    "name": "constructor",
+                                                                    "value": "ClipRect",
+                                                                    "arguments": {
+                                                                      "child": {
+                                                                        "name": "constructor",
+                                                                        "value": "SizedBox",
+                                                                        "arguments": {
+                                                                          "height": null,
+                                                                          "child": {
+                                                                            "name": "constructor",
+                                                                            "value": "OverflowBox",
+                                                                            "arguments": {
+                                                                              "alignment": null,
+                                                                              "maxHeight": null,
+                                                                              "child": {
+                                                                                "name": "name",
+                                                                                "props": {
+                                                                                  "0": "child"
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              "child": {
+                                                "name": "constructor",
+                                                "value": "AnimatedBuilder",
+                                                "arguments": {
+                                                  "animation": {
+                                                    "name": "name",
+                                                    "props": {
+                                                      "0": "secondaryAnimation"
+                                                    }
+                                                  },
+                                                  "child": {
+                                                    "name": "constructor",
+                                                    "value": "FractionalTranslation",
+                                                    "arguments": {
+                                                      "translation": null,
+                                                      "child": {
+                                                        "name": "name",
+                                                        "props": {
+                                                          "0": "child"
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "builder": {
+                                                    "name": "function",
+                                                    "values": [
+                                                      {
+                                                        "name": "block_body",
+                                                        "values": [
+                                                          {
+                                                            "name": "block",
+                                                            "values": [
+                                                              {
+                                                                "name": "return",
+                                                                "values": [
+                                                                  {
+                                                                    "name": "constructor",
+                                                                    "value": "FractionalTranslation",
+                                                                    "arguments": {
+                                                                      "translation": null,
+                                                                      "child": {
+                                                                        "name": "name",
+                                                                        "props": {
+                                                                          "0": "child"
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                ]
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "parameters": []
+        }
+      },
+      {
+        "name": "_ZoomPageTransition",
+        "comments": [],
+        "fields": [
+          {
+            "name": "fastOutExtraSlowInTweenSequenceItems",
+            "type": "List<TweenSequenceItem<double>>"
+          },
+          {
+            "name": "_scaleCurveSequence",
+            "type": "TweenSequence<double>"
+          },
+          {
+            "name": "animation",
+            "type": "Animation<double>"
+          },
+          {
+            "name": "secondaryAnimation",
+            "type": "Animation<double>"
+          },
+          {
+            "name": "child",
+            "type": "Widget"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_ZoomPageTransition",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "animation",
+                "type": "Animation<double>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "secondaryAnimation",
+                "type": "Animation<double>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "child",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "build",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "DualTransitionBuilder",
+                              "arguments": {
+                                "animation": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "animation"
+                                  }
+                                },
+                                "forwardBuilder": {
+                                  "name": "function",
+                                  "values": [
+                                    {
+                                      "name": "block_body",
+                                      "values": [
+                                        {
+                                          "name": "block",
+                                          "values": [
+                                            {
+                                              "name": "return",
+                                              "values": [
+                                                {
+                                                  "name": "constructor",
+                                                  "value": "_ZoomEnterTransition",
+                                                  "arguments": {
+                                                    "animation": {
+                                                      "name": "name",
+                                                      "props": {
+                                                        "0": "animation"
+                                                      }
+                                                    },
+                                                    "child": {
+                                                      "name": "name",
+                                                      "props": {
+                                                        "0": "child"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                "reverseBuilder": {
+                                  "name": "function",
+                                  "values": [
+                                    {
+                                      "name": "block_body",
+                                      "values": [
+                                        {
+                                          "name": "block",
+                                          "values": [
+                                            {
+                                              "name": "return",
+                                              "values": [
+                                                {
+                                                  "name": "constructor",
+                                                  "value": "_ZoomExitTransition",
+                                                  "arguments": {
+                                                    "animation": {
+                                                      "name": "name",
+                                                      "props": {
+                                                        "0": "animation"
+                                                      }
+                                                    },
+                                                    "reverse": {
+                                                      "name": "value",
+                                                      "props": {
+                                                        "0": {
+                                                          "type": "bool",
+                                                          "value": "true"
+                                                        }
+                                                      }
+                                                    },
+                                                    "child": {
+                                                      "name": "name",
+                                                      "props": {
+                                                        "0": "child"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                "child": {
+                                  "name": "constructor",
+                                  "value": "DualTransitionBuilder",
+                                  "arguments": {
+                                    "animation": {
+                                      "name": "constructor",
+                                      "value": "ReverseAnimation",
+                                      "arguments": {}
+                                    },
+                                    "forwardBuilder": {
+                                      "name": "function",
+                                      "values": [
+                                        {
+                                          "name": "block_body",
+                                          "values": [
+                                            {
+                                              "name": "block",
+                                              "values": [
+                                                {
+                                                  "name": "return",
+                                                  "values": [
+                                                    {
+                                                      "name": "constructor",
+                                                      "value": "_ZoomEnterTransition",
+                                                      "arguments": {
+                                                        "animation": {
+                                                          "name": "name",
+                                                          "props": {
+                                                            "0": "animation"
+                                                          }
+                                                        },
+                                                        "reverse": {
+                                                          "name": "value",
+                                                          "props": {
+                                                            "0": {
+                                                              "type": "bool",
+                                                              "value": "true"
+                                                            }
+                                                          }
+                                                        },
+                                                        "child": {
+                                                          "name": "name",
+                                                          "props": {
+                                                            "0": "child"
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    "reverseBuilder": {
+                                      "name": "function",
+                                      "values": [
+                                        {
+                                          "name": "block_body",
+                                          "values": [
+                                            {
+                                              "name": "block",
+                                              "values": [
+                                                {
+                                                  "name": "return",
+                                                  "values": [
+                                                    {
+                                                      "name": "constructor",
+                                                      "value": "_ZoomExitTransition",
+                                                      "arguments": {
+                                                        "animation": {
+                                                          "name": "name",
+                                                          "props": {
+                                                            "0": "animation"
+                                                          }
+                                                        },
+                                                        "child": {
+                                                          "name": "name",
+                                                          "props": {
+                                                            "0": "child"
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    "child": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "child"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ],
+        "tree": {
+          "name": null,
+          "body": {
+            "name": "block_body",
+            "values": [
+              {
+                "name": "block",
+                "values": [
+                  {
+                    "name": "return",
+                    "values": [
+                      {
+                        "name": "constructor",
+                        "value": "DualTransitionBuilder",
+                        "arguments": {
+                          "animation": {
+                            "name": "name",
+                            "props": {
+                              "0": "animation"
+                            }
+                          },
+                          "forwardBuilder": {
+                            "name": "function",
+                            "values": [
+                              {
+                                "name": "block_body",
+                                "values": [
+                                  {
+                                    "name": "block",
+                                    "values": [
+                                      {
+                                        "name": "return",
+                                        "values": [
+                                          {
+                                            "name": "constructor",
+                                            "value": "_ZoomEnterTransition",
+                                            "arguments": {
+                                              "animation": {
+                                                "name": "name",
+                                                "props": {
+                                                  "0": "animation"
+                                                }
+                                              },
+                                              "child": {
+                                                "name": "name",
+                                                "props": {
+                                                  "0": "child"
+                                                }
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          "reverseBuilder": {
+                            "name": "function",
+                            "values": [
+                              {
+                                "name": "block_body",
+                                "values": [
+                                  {
+                                    "name": "block",
+                                    "values": [
+                                      {
+                                        "name": "return",
+                                        "values": [
+                                          {
+                                            "name": "constructor",
+                                            "value": "_ZoomExitTransition",
+                                            "arguments": {
+                                              "animation": {
+                                                "name": "name",
+                                                "props": {
+                                                  "0": "animation"
+                                                }
+                                              },
+                                              "reverse": {
+                                                "name": "value",
+                                                "props": {
+                                                  "0": {
+                                                    "type": "bool",
+                                                    "value": "true"
+                                                  }
+                                                }
+                                              },
+                                              "child": {
+                                                "name": "name",
+                                                "props": {
+                                                  "0": "child"
+                                                }
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          "child": {
+                            "name": "constructor",
+                            "value": "DualTransitionBuilder",
+                            "arguments": {
+                              "animation": {
+                                "name": "constructor",
+                                "value": "ReverseAnimation",
+                                "arguments": {}
+                              },
+                              "forwardBuilder": {
+                                "name": "function",
+                                "values": [
+                                  {
+                                    "name": "block_body",
+                                    "values": [
+                                      {
+                                        "name": "block",
+                                        "values": [
+                                          {
+                                            "name": "return",
+                                            "values": [
+                                              {
+                                                "name": "constructor",
+                                                "value": "_ZoomEnterTransition",
+                                                "arguments": {
+                                                  "animation": {
+                                                    "name": "name",
+                                                    "props": {
+                                                      "0": "animation"
+                                                    }
+                                                  },
+                                                  "reverse": {
+                                                    "name": "value",
+                                                    "props": {
+                                                      "0": {
+                                                        "type": "bool",
+                                                        "value": "true"
+                                                      }
+                                                    }
+                                                  },
+                                                  "child": {
+                                                    "name": "name",
+                                                    "props": {
+                                                      "0": "child"
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              "reverseBuilder": {
+                                "name": "function",
+                                "values": [
+                                  {
+                                    "name": "block_body",
+                                    "values": [
+                                      {
+                                        "name": "block",
+                                        "values": [
+                                          {
+                                            "name": "return",
+                                            "values": [
+                                              {
+                                                "name": "constructor",
+                                                "value": "_ZoomExitTransition",
+                                                "arguments": {
+                                                  "animation": {
+                                                    "name": "name",
+                                                    "props": {
+                                                      "0": "animation"
+                                                    }
+                                                  },
+                                                  "child": {
+                                                    "name": "name",
+                                                    "props": {
+                                                      "0": "child"
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              "child": {
+                                "name": "name",
+                                "props": {
+                                  "0": "child"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "parameters": []
+        }
+      },
+      {
+        "name": "_ZoomEnterTransition",
+        "comments": [],
+        "fields": [
+          {
+            "name": "animation",
+            "type": "Animation<double>"
+          },
+          {
+            "name": "child",
+            "type": "Widget"
+          },
+          {
+            "name": "reverse",
+            "type": "bool"
+          },
+          {
+            "name": "_fadeInTransition",
+            "type": "Animatable<double>"
+          },
+          {
+            "name": "_scaleDownTransition",
+            "type": "Animatable<double>"
+          },
+          {
+            "name": "_scaleUpTransition",
+            "type": "Animatable<double>"
+          },
+          {
+            "name": "_scrimOpacityTween",
+            "type": "Animatable<double>"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_ZoomEnterTransition",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "animation",
+                "type": "Animation<double>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "false",
+                "name": "reverse",
+                "type": "bool",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "child",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "build",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": {
+                                "name": "binary",
+                                "left": null,
+                                "right": null,
+                                "operation": "!="
+                              },
+                              "operation": "&&"
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "AnimatedBuilder",
+                              "arguments": {
+                                "animation": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "animation"
+                                  }
+                                },
+                                "builder": {
+                                  "name": "function",
+                                  "values": [
+                                    {
+                                      "name": "block_body",
+                                      "values": [
+                                        {
+                                          "name": "block",
+                                          "values": [
+                                            {
+                                              "name": "return",
+                                              "values": [
+                                                {
+                                                  "name": "constructor",
+                                                  "value": "Container",
+                                                  "arguments": {
+                                                    "color": {
+                                                      "name": "constructor",
+                                                      "value": "withOpacity",
+                                                      "arguments": {}
+                                                    },
+                                                    "child": {
+                                                      "name": "name",
+                                                      "props": {
+                                                        "0": "child"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                "child": {
+                                  "name": "constructor",
+                                  "value": "FadeTransition",
+                                  "arguments": {
+                                    "opacity": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fadeTransition"
+                                      }
+                                    },
+                                    "child": {
+                                      "name": "constructor",
+                                      "value": "ScaleTransition",
+                                      "arguments": {
+                                        "scale": {
+                                          "name": "name",
+                                          "props": {
+                                            "0": "scaleTransition"
+                                          }
+                                        },
+                                        "child": {
+                                          "name": "name",
+                                          "props": {
+                                            "0": "child"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ],
+        "tree": {
+          "name": null,
+          "body": {
+            "name": "block_body",
+            "values": [
+              {
+                "name": "block",
+                "values": [
+                  {
+                    "name": "if",
+                    "values": [
+                      {
+                        "name": "binary",
+                        "left": null,
+                        "right": {
+                          "name": "binary",
+                          "left": null,
+                          "right": null,
+                          "operation": "!="
+                        },
+                        "operation": "&&"
+                      },
+                      {
+                        "name": "block",
+                        "values": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "return",
+                    "values": [
+                      {
+                        "name": "constructor",
+                        "value": "AnimatedBuilder",
+                        "arguments": {
+                          "animation": {
+                            "name": "name",
+                            "props": {
+                              "0": "animation"
+                            }
+                          },
+                          "builder": {
+                            "name": "function",
+                            "values": [
+                              {
+                                "name": "block_body",
+                                "values": [
+                                  {
+                                    "name": "block",
+                                    "values": [
+                                      {
+                                        "name": "return",
+                                        "values": [
+                                          {
+                                            "name": "constructor",
+                                            "value": "Container",
+                                            "arguments": {
+                                              "color": {
+                                                "name": "constructor",
+                                                "value": "withOpacity",
+                                                "arguments": {}
+                                              },
+                                              "child": {
+                                                "name": "name",
+                                                "props": {
+                                                  "0": "child"
+                                                }
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          "child": {
+                            "name": "constructor",
+                            "value": "FadeTransition",
+                            "arguments": {
+                              "opacity": {
+                                "name": "name",
+                                "props": {
+                                  "0": "fadeTransition"
+                                }
+                              },
+                              "child": {
+                                "name": "constructor",
+                                "value": "ScaleTransition",
+                                "arguments": {
+                                  "scale": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "scaleTransition"
+                                    }
+                                  },
+                                  "child": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "child"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "parameters": []
+        }
+      },
+      {
+        "name": "_ZoomExitTransition",
+        "comments": [],
+        "fields": [
+          {
+            "name": "animation",
+            "type": "Animation<double>"
+          },
+          {
+            "name": "reverse",
+            "type": "bool"
+          },
+          {
+            "name": "child",
+            "type": "Widget"
+          },
+          {
+            "name": "_fadeOutTransition",
+            "type": "Animatable<double>"
+          },
+          {
+            "name": "_scaleUpTransition",
+            "type": "Animatable<double>"
+          },
+          {
+            "name": "_scaleDownTransition",
+            "type": "Animatable<double>"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_ZoomExitTransition",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "animation",
+                "type": "Animation<double>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "false",
+                "name": "reverse",
+                "type": "bool",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "child",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "build",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "FadeTransition",
+                              "arguments": {
+                                "opacity": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "fadeTransition"
+                                  }
+                                },
+                                "child": {
+                                  "name": "constructor",
+                                  "value": "ScaleTransition",
+                                  "arguments": {
+                                    "scale": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "scaleTransition"
+                                      }
+                                    },
+                                    "child": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "child"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ],
+        "tree": {
+          "name": null,
+          "body": {
+            "name": "block_body",
+            "values": [
+              {
+                "name": "block",
+                "values": [
+                  {
+                    "name": "return",
+                    "values": [
+                      {
+                        "name": "constructor",
+                        "value": "FadeTransition",
+                        "arguments": {
+                          "opacity": {
+                            "name": "name",
+                            "props": {
+                              "0": "fadeTransition"
+                            }
+                          },
+                          "child": {
+                            "name": "constructor",
+                            "value": "ScaleTransition",
+                            "arguments": {
+                              "scale": {
+                                "name": "name",
+                                "props": {
+                                  "0": "scaleTransition"
+                                }
+                              },
+                              "child": {
+                                "name": "name",
+                                "props": {
+                                  "0": "child"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "parameters": []
+        }
+      },
+      {
+        "name": "PageTransitionsBuilder",
+        "comments": [
+          "   transition that matches native iOS page transitions."
+        ],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "PageTransitionsBuilder",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "buildTransitions",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "FadeUpwardsPageTransitionsBuilder",
+        "comments": [
+          "   transition that matches native iOS page transitions."
+        ],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "FadeUpwardsPageTransitionsBuilder",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "buildTransitions",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "_FadeUpwardsPageTransition",
+                              "arguments": {
+                                "routeAnimation": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "animation"
+                                  }
+                                },
+                                "child": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "child"
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "OpenUpwardsPageTransitionsBuilder",
+        "comments": [
+          "   transition that matches native iOS page transitions."
+        ],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "OpenUpwardsPageTransitionsBuilder",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "buildTransitions",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "_OpenUpwardsPageTransition",
+                              "arguments": {
+                                "animation": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "animation"
+                                  }
+                                },
+                                "secondaryAnimation": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "secondaryAnimation"
+                                  }
+                                },
+                                "child": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "child"
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "ZoomPageTransitionsBuilder",
+        "comments": [
+          "   transition that matches native iOS page transitions."
+        ],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "ZoomPageTransitionsBuilder",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "buildTransitions",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "_ZoomPageTransition",
+                              "arguments": {
+                                "animation": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "animation"
+                                  }
+                                },
+                                "secondaryAnimation": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "secondaryAnimation"
+                                  }
+                                },
+                                "child": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "child"
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "CupertinoPageTransitionsBuilder",
+        "comments": [
+          "   to the one provided in Android 10."
+        ],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "CupertinoPageTransitionsBuilder",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "buildTransitions",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "buildPageTransitions",
+                              "arguments": {}
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "PageTransitionsTheme",
+        "comments": [
+          "   transition that matches native iOS page transitions."
+        ],
+        "fields": [
+          {
+            "name": "_defaultBuilders",
+            "type": "Map<TargetPlatform, PageTransitionsBuilder>"
+          },
+          {
+            "name": "_builders",
+            "type": "Map<TargetPlatform, PageTransitionsBuilder>"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "PageTransitionsTheme",
+            "properties": [
+              {
+                "value": null,
+                "name": "builders",
+                "type": "Map<TargetPlatform, PageTransitionsBuilder>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "builders",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Map<TargetPlatform, PageTransitionsBuilder>"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "buildTransitions",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "isPopGestureInProgress",
+                              "arguments": {}
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "buildTransitions",
+                              "arguments": {}
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_all",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "List<PageTransitionsBuilder>"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "toList",
+                              "arguments": {}
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "==",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "identical",
+                              "arguments": {}
+                            },
+                            {
+                              "name": "return",
+                              "values": [
+                                {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "bool",
+                                      "value": "true"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": {
+                                "name": "name",
+                                "props": {
+                                  "0": "runtimeType"
+                                }
+                              },
+                              "operation": "!="
+                            },
+                            {
+                              "name": "return",
+                              "values": [
+                                {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "bool",
+                                      "value": "false"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": {
+                                "name": "constructor",
+                                "value": "identical",
+                                "arguments": {}
+                              },
+                              "operation": "&&"
+                            },
+                            {
+                              "name": "return",
+                              "values": [
+                                {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "bool",
+                                      "value": "true"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": {
+                                "name": "constructor",
+                                "value": "listEquals",
+                                "arguments": {}
+                              },
+                              "operation": "&&"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "hashCode",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "int"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "debugFillProperties",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      }
+    ],
+    "enums": [],
+    "fields": [],
+    "methods": []
+  },
+  "errors": []
+}

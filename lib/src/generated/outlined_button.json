@@ -1,0 +1,1175 @@
+{
+  "file": {
+    "name": null,
+    "imports": [
+      "dart:math",
+      "dart:ui",
+      "package:flutter/foundation.dart",
+      "package:flutter/rendering.dart",
+      "package:flutter/widgets.dart",
+      "button_style.dart",
+      "button_style_button.dart",
+      "color_scheme.dart",
+      "colors.dart",
+      "constants.dart",
+      "material_state.dart",
+      "outlined_button_theme.dart",
+      "theme.dart",
+      "theme_data.dart"
+    ],
+    "classes": [
+      {
+        "name": "OutlinedButton",
+        "comments": [
+          " * <https://material.io/design/components/buttons.html>"
+        ],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "OutlinedButton",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "onPressed",
+                "type": "VoidCallback",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "onLongPress",
+                "type": "VoidCallback",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "style",
+                "type": "ButtonStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "focusNode",
+                "type": "FocusNode",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "false",
+                "name": "autofocus",
+                "type": "bool",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "clipBehavior",
+                "type": "Clip",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "child",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          },
+          {
+            "name": "icon",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "onPressed",
+                "type": "VoidCallback",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "onLongPress",
+                "type": "VoidCallback",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "style",
+                "type": "ButtonStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "focusNode",
+                "type": "FocusNode",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "autofocus",
+                "type": "bool",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "clipBehavior",
+                "type": "Clip",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "icon",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "label",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "styleFrom",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "ButtonStyle"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "ButtonStyle",
+                              "arguments": {
+                                "textStyle": {
+                                  "name": "constructor",
+                                  "value": "allOrNull",
+                                  "arguments": {}
+                                },
+                                "foregroundColor": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "foregroundColor"
+                                  }
+                                },
+                                "backgroundColor": {
+                                  "name": "constructor",
+                                  "value": "allOrNull",
+                                  "arguments": {}
+                                },
+                                "overlayColor": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "overlayColor"
+                                  }
+                                },
+                                "shadowColor": {
+                                  "name": "constructor",
+                                  "value": "allOrNull",
+                                  "arguments": {}
+                                },
+                                "elevation": {
+                                  "name": "constructor",
+                                  "value": "allOrNull",
+                                  "arguments": {}
+                                },
+                                "padding": {
+                                  "name": "constructor",
+                                  "value": "allOrNull",
+                                  "arguments": {}
+                                },
+                                "minimumSize": {
+                                  "name": "constructor",
+                                  "value": "allOrNull",
+                                  "arguments": {}
+                                },
+                                "side": {
+                                  "name": "constructor",
+                                  "value": "allOrNull",
+                                  "arguments": {}
+                                },
+                                "shape": {
+                                  "name": "constructor",
+                                  "value": "allOrNull",
+                                  "arguments": {}
+                                },
+                                "mouseCursor": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "mouseCursor"
+                                  }
+                                },
+                                "visualDensity": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "visualDensity"
+                                  }
+                                },
+                                "tapTargetSize": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "tapTargetSize"
+                                  }
+                                },
+                                "animationDuration": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "animationDuration"
+                                  }
+                                },
+                                "enableFeedback": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "enableFeedback"
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "defaultStyleOf",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "ButtonStyle"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "styleFrom",
+                              "arguments": {
+                                "primary": null,
+                                "onSurface": null,
+                                "backgroundColor": null,
+                                "shadowColor": null,
+                                "elevation": {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "int",
+                                      "value": "0"
+                                    }
+                                  }
+                                },
+                                "textStyle": null,
+                                "padding": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "scaledPadding"
+                                  }
+                                },
+                                "minimumSize": null,
+                                "side": {
+                                  "name": "constructor",
+                                  "value": "BorderSide",
+                                  "arguments": {
+                                    "color": {
+                                      "name": "constructor",
+                                      "value": "withOpacity",
+                                      "arguments": {
+                                        "0": {
+                                          "name": "value",
+                                          "props": {
+                                            "0": {
+                                              "type": "double",
+                                              "value": "0.12"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "width": {
+                                      "name": "value",
+                                      "props": {
+                                        "0": {
+                                          "type": "int",
+                                          "value": "1"
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "shape": null,
+                                "enabledMouseCursor": null,
+                                "disabledMouseCursor": null,
+                                "visualDensity": null,
+                                "tapTargetSize": null,
+                                "animationDuration": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "kThemeChangeDuration"
+                                  }
+                                },
+                                "enableFeedback": {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "bool",
+                                      "value": "true"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "themeStyleOf",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "ButtonStyle"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_OutlinedButtonDefaultForeground",
+        "comments": [],
+        "fields": [
+          {
+            "name": "primary",
+            "type": "Color"
+          },
+          {
+            "name": "onSurface",
+            "type": "Color"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_OutlinedButtonDefaultForeground",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "resolve",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Color"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "contains",
+                              "arguments": {}
+                            },
+                            {
+                              "name": "return",
+                              "values": [
+                                {
+                                  "name": "constructor",
+                                  "value": "withOpacity",
+                                  "arguments": {
+                                    "0": {
+                                      "name": "value",
+                                      "props": {
+                                        "0": {
+                                          "type": "double",
+                                          "value": "0.38"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "name",
+                              "props": {
+                                "0": "primary"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_OutlinedButtonDefaultOverlay",
+        "comments": [],
+        "fields": [
+          {
+            "name": "primary",
+            "type": "Color"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_OutlinedButtonDefaultOverlay",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "resolve",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Color"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "contains",
+                              "arguments": {}
+                            },
+                            {
+                              "name": "return",
+                              "values": [
+                                {
+                                  "name": "constructor",
+                                  "value": "withOpacity",
+                                  "arguments": {
+                                    "0": {
+                                      "name": "value",
+                                      "props": {
+                                        "0": {
+                                          "type": "double",
+                                          "value": "0.04"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "constructor",
+                                "value": "contains",
+                                "arguments": {}
+                              },
+                              "right": {
+                                "name": "constructor",
+                                "value": "contains",
+                                "arguments": {}
+                              },
+                              "operation": "||"
+                            },
+                            {
+                              "name": "return",
+                              "values": [
+                                {
+                                  "name": "constructor",
+                                  "value": "withOpacity",
+                                  "arguments": {
+                                    "0": {
+                                      "name": "value",
+                                      "props": {
+                                        "0": {
+                                          "type": "double",
+                                          "value": "0.12"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "value",
+                              "props": {
+                                "0": {
+                                  "type": null,
+                                  "value": "null"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_OutlinedButtonDefaultMouseCursor",
+        "comments": [],
+        "fields": [
+          {
+            "name": "enabledCursor",
+            "type": "MouseCursor"
+          },
+          {
+            "name": "disabledCursor",
+            "type": "MouseCursor"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_OutlinedButtonDefaultMouseCursor",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "resolve",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "MouseCursor"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "contains",
+                              "arguments": {}
+                            },
+                            {
+                              "name": "return",
+                              "values": [
+                                {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "disabledCursor"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "name",
+                              "props": {
+                                "0": "enabledCursor"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_OutlinedButtonWithIcon",
+        "comments": [],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "_OutlinedButtonWithIcon",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "onPressed",
+                "type": "VoidCallback",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "onLongPress",
+                "type": "VoidCallback",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "style",
+                "type": "ButtonStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "focusNode",
+                "type": "FocusNode",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "autofocus",
+                "type": "bool",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "clipBehavior",
+                "type": "Clip",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "icon",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "label",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": []
+      },
+      {
+        "name": "_OutlinedButtonWithIconChild",
+        "comments": [],
+        "fields": [
+          {
+            "name": "label",
+            "type": "Widget"
+          },
+          {
+            "name": "icon",
+            "type": "Widget"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_OutlinedButtonWithIconChild",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "label",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "icon",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "build",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "Row",
+                              "arguments": {
+                                "mainAxisSize": null,
+                                "children": {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "List",
+                                      "value": "<Widget>[icon, SizedBox(width: gap), label]"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ],
+        "tree": {
+          "name": null,
+          "body": {
+            "name": "block_body",
+            "values": [
+              {
+                "name": "block",
+                "values": [
+                  {
+                    "name": "return",
+                    "values": [
+                      {
+                        "name": "constructor",
+                        "value": "Row",
+                        "arguments": {
+                          "mainAxisSize": null,
+                          "children": {
+                            "name": "value",
+                            "props": {
+                              "0": {
+                                "type": "List",
+                                "value": "<Widget>[icon, SizedBox(width: gap), label]"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "parameters": []
+        }
+      }
+    ],
+    "enums": [],
+    "fields": [],
+    "methods": []
+  },
+  "errors": []
+}

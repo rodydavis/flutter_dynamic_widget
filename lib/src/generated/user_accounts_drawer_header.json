@@ -1,0 +1,1180 @@
+{
+  "file": {
+    "name": null,
+    "imports": [
+      "dart:math",
+      "package:flutter/widgets.dart",
+      "package:flutter/foundation.dart",
+      "colors.dart",
+      "debug.dart",
+      "drawer_header.dart",
+      "icons.dart",
+      "ink_well.dart",
+      "material_localizations.dart",
+      "theme.dart"
+    ],
+    "classes": [
+      {
+        "name": "_AccountPictures",
+        "comments": [],
+        "fields": [
+          {
+            "name": "currentAccountPicture",
+            "type": "Widget"
+          },
+          {
+            "name": "otherAccountsPictures",
+            "type": "List<Widget>"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_AccountPictures",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "currentAccountPicture",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "otherAccountsPictures",
+                "type": "List<Widget>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "build",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "Stack",
+                              "arguments": {
+                                "children": {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "List",
+                                      "value": "<Widget>[PositionedDirectional(top: 0.0, end: 0.0, child: Row(children: (otherAccountsPictures ?? <Widget>[]).take(3).map<Widget>((Widget picture) {return Padding(padding: const EdgeInsetsDirectional.only(start: 8.0), child: Semantics(container: true, child: Container(padding: const EdgeInsets.only(left: 8.0, bottom: 8.0), width: 48.0, height: 48.0, child: picture)));}).toList())), Positioned(top: 0.0, child: Semantics(explicitChildNodes: true, child: SizedBox(width: 72.0, height: 72.0, child: currentAccountPicture)))]"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ],
+        "tree": {
+          "name": null,
+          "body": {
+            "name": "block_body",
+            "values": [
+              {
+                "name": "block",
+                "values": [
+                  {
+                    "name": "return",
+                    "values": [
+                      {
+                        "name": "constructor",
+                        "value": "Stack",
+                        "arguments": {
+                          "children": {
+                            "name": "value",
+                            "props": {
+                              "0": {
+                                "type": "List",
+                                "value": "<Widget>[PositionedDirectional(top: 0.0, end: 0.0, child: Row(children: (otherAccountsPictures ?? <Widget>[]).take(3).map<Widget>((Widget picture) {return Padding(padding: const EdgeInsetsDirectional.only(start: 8.0), child: Semantics(container: true, child: Container(padding: const EdgeInsets.only(left: 8.0, bottom: 8.0), width: 48.0, height: 48.0, child: picture)));}).toList())), Positioned(top: 0.0, child: Semantics(explicitChildNodes: true, child: SizedBox(width: 72.0, height: 72.0, child: currentAccountPicture)))]"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "parameters": []
+        }
+      },
+      {
+        "name": "_AccountDetails",
+        "comments": [],
+        "fields": [
+          {
+            "name": "accountName",
+            "type": "Widget"
+          },
+          {
+            "name": "accountEmail",
+            "type": "Widget"
+          },
+          {
+            "name": "onTap",
+            "type": "VoidCallback"
+          },
+          {
+            "name": "isOpen",
+            "type": "bool"
+          },
+          {
+            "name": "arrowColor",
+            "type": "Color"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_AccountDetails",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "accountName",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "accountEmail",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "onTap",
+                "type": "VoidCallback",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "isOpen",
+                "type": "bool",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "arrowColor",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "createState",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "_AccountDetailsState"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ],
+        "tree": null
+      },
+      {
+        "name": "_AccountDetailsState",
+        "comments": [],
+        "fields": [
+          {
+            "name": "_animation",
+            "type": "Animation<double>"
+          },
+          {
+            "name": "_controller",
+            "type": "AnimationController"
+          }
+        ],
+        "constructors": [],
+        "methods": [
+          {
+            "name": "initState",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "dispose",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "didUpdateWidget",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": null,
+                              "operation": "=="
+                            },
+                            {
+                              "name": "block",
+                              "values": [
+                                {
+                                  "name": "return",
+                                  "values": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "block",
+                              "values": []
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "build",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": {
+                                "name": "value",
+                                "props": {
+                                  "0": {
+                                    "type": null,
+                                    "value": "null"
+                                  }
+                                }
+                              },
+                              "operation": "!="
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "SizedBox",
+                              "arguments": {
+                                "height": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "_kAccountDetailsHeight"
+                                  }
+                                },
+                                "child": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "accountDetails"
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_AccountDetailsLayout",
+        "comments": [],
+        "fields": [
+          {
+            "name": "accountName",
+            "type": "String"
+          },
+          {
+            "name": "accountEmail",
+            "type": "String"
+          },
+          {
+            "name": "dropdownIcon",
+            "type": "String"
+          },
+          {
+            "name": "textDirection",
+            "type": "TextDirection"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_AccountDetailsLayout",
+            "properties": [
+              {
+                "value": null,
+                "name": "textDirection",
+                "type": "TextDirection",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "performLayout",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "hasChild",
+                              "arguments": {}
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "name",
+                                "props": {
+                                  "0": "bottomLine"
+                                }
+                              },
+                              "right": {
+                                "name": "value",
+                                "props": {
+                                  "0": {
+                                    "type": null,
+                                    "value": "null"
+                                  }
+                                }
+                              },
+                              "operation": "!="
+                            },
+                            {
+                              "name": "block",
+                              "values": [
+                                {
+                                  "name": "if",
+                                  "values": [
+                                    {
+                                      "name": "binary",
+                                      "left": {
+                                        "name": "binary",
+                                        "left": {
+                                          "name": "name",
+                                          "props": {
+                                            "0": "bottomLine"
+                                          }
+                                        },
+                                        "right": {
+                                          "name": "name",
+                                          "props": {
+                                            "0": "accountEmail"
+                                          }
+                                        },
+                                        "operation": "=="
+                                      },
+                                      "right": {
+                                        "name": "constructor",
+                                        "value": "hasChild",
+                                        "arguments": {}
+                                      },
+                                      "operation": "&&"
+                                    },
+                                    {
+                                      "name": "block",
+                                      "values": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "shouldRelayout",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_offsetForIcon",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Offset"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "value",
+                              "props": {
+                                "0": {
+                                  "type": null,
+                                  "value": "null"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_offsetForBottomLine",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Offset"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "value",
+                              "props": {
+                                "0": {
+                                  "type": null,
+                                  "value": "null"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_offsetForName",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Offset"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "value",
+                              "props": {
+                                "0": {
+                                  "type": null,
+                                  "value": "null"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "UserAccountsDrawerHeader",
+        "comments": [
+          " * <https://material.io/design/components/navigation-drawer.html#anatomy>"
+        ],
+        "fields": [
+          {
+            "name": "decoration",
+            "type": "Decoration"
+          },
+          {
+            "name": "margin",
+            "type": "EdgeInsetsGeometry"
+          },
+          {
+            "name": "currentAccountPicture",
+            "type": "Widget"
+          },
+          {
+            "name": "otherAccountsPictures",
+            "type": "List<Widget>"
+          },
+          {
+            "name": "accountName",
+            "type": "Widget"
+          },
+          {
+            "name": "accountEmail",
+            "type": "Widget"
+          },
+          {
+            "name": "onDetailsPressed",
+            "type": "VoidCallback"
+          },
+          {
+            "name": "arrowColor",
+            "type": "Color"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "UserAccountsDrawerHeader",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "decoration",
+                "type": "Decoration",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "margin",
+                "type": "EdgeInsetsGeometry",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "currentAccountPicture",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "otherAccountsPictures",
+                "type": "List<Widget>",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "accountName",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "accountEmail",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "onDetailsPressed",
+                "type": "VoidCallback",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "arrowColor",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "createState",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "_UserAccountsDrawerHeaderState"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ],
+        "tree": null
+      },
+      {
+        "name": "_UserAccountsDrawerHeaderState",
+        "comments": [],
+        "fields": [
+          {
+            "name": "_isOpen",
+            "type": "bool"
+          }
+        ],
+        "constructors": [],
+        "methods": [
+          {
+            "name": "_handleDetailsPressed",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "build",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "Semantics",
+                              "arguments": {
+                                "container": {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "bool",
+                                      "value": "true"
+                                    }
+                                  }
+                                },
+                                "label": null,
+                                "child": {
+                                  "name": "constructor",
+                                  "value": "DrawerHeader",
+                                  "arguments": {
+                                    "decoration": {
+                                      "name": "binary",
+                                      "left": null,
+                                      "right": {
+                                        "name": "constructor",
+                                        "value": "BoxDecoration",
+                                        "arguments": {
+                                          "color": null
+                                        }
+                                      },
+                                      "operation": "??"
+                                    },
+                                    "margin": null,
+                                    "padding": null,
+                                    "child": {
+                                      "name": "constructor",
+                                      "value": "SafeArea",
+                                      "arguments": {
+                                        "bottom": {
+                                          "name": "value",
+                                          "props": {
+                                            "0": {
+                                              "type": "bool",
+                                              "value": "false"
+                                            }
+                                          }
+                                        },
+                                        "child": {
+                                          "name": "constructor",
+                                          "value": "Column",
+                                          "arguments": {
+                                            "crossAxisAlignment": null,
+                                            "children": {
+                                              "name": "value",
+                                              "props": {
+                                                "0": {
+                                                  "type": "List",
+                                                  "value": "<Widget>[Expanded(child: Padding(padding: const EdgeInsetsDirectional.only(end: 16.0), child: _AccountPictures(currentAccountPicture: widget.currentAccountPicture, otherAccountsPictures: widget.otherAccountsPictures))), _AccountDetails(accountName: widget.accountName, accountEmail: widget.accountEmail, isOpen: _isOpen, onTap: widget.onDetailsPressed == null ? null : _handleDetailsPressed, arrowColor: widget.arrowColor)]"
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      }
+    ],
+    "enums": [],
+    "fields": [
+      {
+        "name": "_kAccountDetailsHeight",
+        "type": "double"
+      }
+    ],
+    "methods": []
+  },
+  "errors": []
+}

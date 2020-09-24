@@ -1,0 +1,880 @@
+{
+  "file": {
+    "name": null,
+    "imports": [
+      "dart:ui",
+      "package:flutter/foundation.dart",
+      "package:flutter/rendering.dart"
+    ],
+    "classes": [
+      {
+        "name": "FloatingActionButtonThemeData",
+        "comments": [
+          "   application."
+        ],
+        "fields": [
+          {
+            "name": "foregroundColor",
+            "type": "Color"
+          },
+          {
+            "name": "backgroundColor",
+            "type": "Color"
+          },
+          {
+            "name": "focusColor",
+            "type": "Color"
+          },
+          {
+            "name": "hoverColor",
+            "type": "Color"
+          },
+          {
+            "name": "splashColor",
+            "type": "Color"
+          },
+          {
+            "name": "elevation",
+            "type": "double"
+          },
+          {
+            "name": "focusElevation",
+            "type": "double"
+          },
+          {
+            "name": "hoverElevation",
+            "type": "double"
+          },
+          {
+            "name": "disabledElevation",
+            "type": "double"
+          },
+          {
+            "name": "highlightElevation",
+            "type": "double"
+          },
+          {
+            "name": "shape",
+            "type": "ShapeBorder"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "FloatingActionButtonThemeData",
+            "properties": [
+              {
+                "value": null,
+                "name": "foregroundColor",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "backgroundColor",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "focusColor",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "hoverColor",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "splashColor",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "elevation",
+                "type": "double",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "focusElevation",
+                "type": "double",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "hoverElevation",
+                "type": "double",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "disabledElevation",
+                "type": "double",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "highlightElevation",
+                "type": "double",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "shape",
+                "type": "ShapeBorder",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "copyWith",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "FloatingActionButtonThemeData"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "FloatingActionButtonThemeData",
+                              "arguments": {
+                                "foregroundColor": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "foregroundColor"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "backgroundColor": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "backgroundColor"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "focusColor": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "focusColor"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "hoverColor": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "hoverColor"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "splashColor": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "splashColor"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "elevation": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "elevation"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "focusElevation": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "focusElevation"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "hoverElevation": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "hoverElevation"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "disabledElevation": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "disabledElevation"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "highlightElevation": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "highlightElevation"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "shape": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "shape"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "lerp",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "FloatingActionButtonThemeData"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "binary",
+                                "left": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "a"
+                                  }
+                                },
+                                "right": {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": null,
+                                      "value": "null"
+                                    }
+                                  }
+                                },
+                                "operation": "=="
+                              },
+                              "right": {
+                                "name": "binary",
+                                "left": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "b"
+                                  }
+                                },
+                                "right": {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": null,
+                                      "value": "null"
+                                    }
+                                  }
+                                },
+                                "operation": "=="
+                              },
+                              "operation": "&&"
+                            },
+                            {
+                              "name": "return",
+                              "values": [
+                                {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": null,
+                                      "value": "null"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "FloatingActionButtonThemeData",
+                              "arguments": {
+                                "foregroundColor": {
+                                  "name": "constructor",
+                                  "value": "lerp",
+                                  "arguments": {}
+                                },
+                                "backgroundColor": {
+                                  "name": "constructor",
+                                  "value": "lerp",
+                                  "arguments": {}
+                                },
+                                "focusColor": {
+                                  "name": "constructor",
+                                  "value": "lerp",
+                                  "arguments": {}
+                                },
+                                "hoverColor": {
+                                  "name": "constructor",
+                                  "value": "lerp",
+                                  "arguments": {}
+                                },
+                                "splashColor": {
+                                  "name": "constructor",
+                                  "value": "lerp",
+                                  "arguments": {}
+                                },
+                                "elevation": {
+                                  "name": "constructor",
+                                  "value": "lerpDouble",
+                                  "arguments": {}
+                                },
+                                "focusElevation": {
+                                  "name": "constructor",
+                                  "value": "lerpDouble",
+                                  "arguments": {}
+                                },
+                                "hoverElevation": {
+                                  "name": "constructor",
+                                  "value": "lerpDouble",
+                                  "arguments": {}
+                                },
+                                "disabledElevation": {
+                                  "name": "constructor",
+                                  "value": "lerpDouble",
+                                  "arguments": {}
+                                },
+                                "highlightElevation": {
+                                  "name": "constructor",
+                                  "value": "lerpDouble",
+                                  "arguments": {}
+                                },
+                                "shape": {
+                                  "name": "constructor",
+                                  "value": "lerp",
+                                  "arguments": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "hashCode",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "int"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "hashValues",
+                              "arguments": {}
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "==",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "identical",
+                              "arguments": {}
+                            },
+                            {
+                              "name": "return",
+                              "values": [
+                                {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "bool",
+                                      "value": "true"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": {
+                                "name": "name",
+                                "props": {
+                                  "0": "runtimeType"
+                                }
+                              },
+                              "operation": "!="
+                            },
+                            {
+                              "name": "return",
+                              "values": [
+                                {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "bool",
+                                      "value": "false"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "binary",
+                                "left": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "binary",
+                                    "left": {
+                                      "name": "binary",
+                                      "left": {
+                                        "name": "binary",
+                                        "left": {
+                                          "name": "binary",
+                                          "left": {
+                                            "name": "binary",
+                                            "left": {
+                                              "name": "binary",
+                                              "left": {
+                                                "name": "binary",
+                                                "left": {
+                                                  "name": "binary",
+                                                  "left": null,
+                                                  "right": {
+                                                    "name": "binary",
+                                                    "left": null,
+                                                    "right": {
+                                                      "name": "name",
+                                                      "props": {
+                                                        "0": "foregroundColor"
+                                                      }
+                                                    },
+                                                    "operation": "=="
+                                                  },
+                                                  "operation": "&&"
+                                                },
+                                                "right": {
+                                                  "name": "binary",
+                                                  "left": null,
+                                                  "right": {
+                                                    "name": "name",
+                                                    "props": {
+                                                      "0": "backgroundColor"
+                                                    }
+                                                  },
+                                                  "operation": "=="
+                                                },
+                                                "operation": "&&"
+                                              },
+                                              "right": {
+                                                "name": "binary",
+                                                "left": null,
+                                                "right": {
+                                                  "name": "name",
+                                                  "props": {
+                                                    "0": "focusColor"
+                                                  }
+                                                },
+                                                "operation": "=="
+                                              },
+                                              "operation": "&&"
+                                            },
+                                            "right": {
+                                              "name": "binary",
+                                              "left": null,
+                                              "right": {
+                                                "name": "name",
+                                                "props": {
+                                                  "0": "hoverColor"
+                                                }
+                                              },
+                                              "operation": "=="
+                                            },
+                                            "operation": "&&"
+                                          },
+                                          "right": {
+                                            "name": "binary",
+                                            "left": null,
+                                            "right": {
+                                              "name": "name",
+                                              "props": {
+                                                "0": "splashColor"
+                                              }
+                                            },
+                                            "operation": "=="
+                                          },
+                                          "operation": "&&"
+                                        },
+                                        "right": {
+                                          "name": "binary",
+                                          "left": null,
+                                          "right": {
+                                            "name": "name",
+                                            "props": {
+                                              "0": "elevation"
+                                            }
+                                          },
+                                          "operation": "=="
+                                        },
+                                        "operation": "&&"
+                                      },
+                                      "right": {
+                                        "name": "binary",
+                                        "left": null,
+                                        "right": {
+                                          "name": "name",
+                                          "props": {
+                                            "0": "focusElevation"
+                                          }
+                                        },
+                                        "operation": "=="
+                                      },
+                                      "operation": "&&"
+                                    },
+                                    "right": {
+                                      "name": "binary",
+                                      "left": null,
+                                      "right": {
+                                        "name": "name",
+                                        "props": {
+                                          "0": "hoverElevation"
+                                        }
+                                      },
+                                      "operation": "=="
+                                    },
+                                    "operation": "&&"
+                                  },
+                                  "right": {
+                                    "name": "binary",
+                                    "left": null,
+                                    "right": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "disabledElevation"
+                                      }
+                                    },
+                                    "operation": "=="
+                                  },
+                                  "operation": "&&"
+                                },
+                                "right": {
+                                  "name": "binary",
+                                  "left": null,
+                                  "right": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "highlightElevation"
+                                    }
+                                  },
+                                  "operation": "=="
+                                },
+                                "operation": "&&"
+                              },
+                              "right": {
+                                "name": "binary",
+                                "left": null,
+                                "right": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "shape"
+                                  }
+                                },
+                                "operation": "=="
+                              },
+                              "operation": "&&"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "debugFillProperties",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      }
+    ],
+    "enums": [],
+    "fields": [],
+    "methods": []
+  },
+  "errors": []
+}

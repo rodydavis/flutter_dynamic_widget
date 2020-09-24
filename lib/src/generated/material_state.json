@@ -1,0 +1,584 @@
+{
+  "file": {
+    "name": null,
+    "imports": [
+      "dart:ui",
+      "package:flutter/foundation.dart",
+      "package:flutter/rendering.dart"
+    ],
+    "classes": [
+      {
+        "name": "MaterialStateColor",
+        "comments": [
+          "{@end-tool}"
+        ],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "MaterialStateColor",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "resolveWith",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "MaterialStateColor"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "resolve",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Color"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_MaterialStateColor",
+        "comments": [
+          "Used by [MaterialStateColor.resolveWith]."
+        ],
+        "fields": [
+          {
+            "name": "_resolve",
+            "type": "MaterialPropertyResolver<Color>"
+          },
+          {
+            "name": "_defaultStates",
+            "type": "Set<MaterialState>"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_MaterialStateColor",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "resolve",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Color"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "MaterialStateMouseCursor",
+        "comments": [
+          "   native platforms."
+        ],
+        "fields": [
+          {
+            "name": "clickable",
+            "type": "MaterialStateMouseCursor"
+          },
+          {
+            "name": "textable",
+            "type": "MaterialStateMouseCursor"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "MaterialStateMouseCursor",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "createSession",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "MouseCursorSession"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "createSession",
+                              "arguments": {}
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "resolve",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "MouseCursor"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_EnabledAndDisabledMouseCursor",
+        "comments": [],
+        "fields": [
+          {
+            "name": "enabledCursor",
+            "type": "MouseCursor"
+          },
+          {
+            "name": "disabledCursor",
+            "type": "MouseCursor"
+          },
+          {
+            "name": "name",
+            "type": "String"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_EnabledAndDisabledMouseCursor",
+            "properties": [
+              {
+                "value": null,
+                "name": "enabledCursor",
+                "type": "MouseCursor",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "disabledCursor",
+                "type": "MouseCursor",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "name",
+                "type": "String",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "resolve",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "MouseCursor"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "contains",
+                              "arguments": {}
+                            },
+                            {
+                              "name": "block",
+                              "values": [
+                                {
+                                  "name": "return",
+                                  "values": [
+                                    {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "disabledCursor"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "name",
+                              "props": {
+                                "0": "enabledCursor"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "debugDescription",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "String"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "MaterialStateProperty",
+        "comments": [
+          "   [MaterialStateProperty<MouseCursor>]."
+        ],
+        "fields": [],
+        "constructors": [],
+        "methods": [
+          {
+            "name": "resolve",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "T"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "resolveAs",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "T"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "block",
+                              "values": [
+                                {
+                                  "name": "return",
+                                  "values": [
+                                    {
+                                      "name": "constructor",
+                                      "value": "resolve",
+                                      "arguments": {}
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "name",
+                              "props": {
+                                "0": "value"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "resolveWith",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "MaterialStateProperty<T>"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "all",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "MaterialStateProperty<T>"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_MaterialStatePropertyWith",
+        "comments": [],
+        "fields": [
+          {
+            "name": "_resolve",
+            "type": "MaterialPropertyResolver<T>"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_MaterialStatePropertyWith",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "resolve",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "T"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_MaterialStatePropertyAll",
+        "comments": [],
+        "fields": [
+          {
+            "name": "value",
+            "type": "T"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_MaterialStatePropertyAll",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "resolve",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "T"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "toString",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "String"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      }
+    ],
+    "enums": [
+      {
+        "name": "MaterialState",
+        "values": [
+          "hovered",
+          "focused",
+          "pressed",
+          "dragged",
+          "selected",
+          "disabled",
+          "error"
+        ]
+      }
+    ],
+    "fields": [],
+    "methods": []
+  },
+  "errors": []
+}

@@ -1,0 +1,16 @@
+{
+  "file": {
+    "name": null,
+    "imports": [],
+    "classes": [],
+    "enums": [],
+    "fields": [
+      {
+        "name": "_$search_ellipsis",
+        "type": "_AnimatedIconData"
+      }
+    ],
+    "methods": []
+  },
+  "errors": []
+}

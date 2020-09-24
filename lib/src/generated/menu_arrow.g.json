@@ -1,0 +1,16 @@
+{
+  "file": {
+    "name": null,
+    "imports": [],
+    "classes": [],
+    "enums": [],
+    "fields": [
+      {
+        "name": "_$menu_arrow",
+        "type": "_AnimatedIconData"
+      }
+    ],
+    "methods": []
+  },
+  "errors": []
+}

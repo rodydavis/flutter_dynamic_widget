@@ -1,0 +1,153 @@
+{
+  "file": {
+    "name": null,
+    "imports": [],
+    "classes": [
+      {
+        "name": "AnimatedIcons",
+        "comments": [
+          "Use with [AnimatedIcon] class to show specific animated icons."
+        ],
+        "fields": [
+          {
+            "name": "add_event",
+            "type": "AnimatedIconData"
+          },
+          {
+            "name": "arrow_menu",
+            "type": "AnimatedIconData"
+          },
+          {
+            "name": "close_menu",
+            "type": "AnimatedIconData"
+          },
+          {
+            "name": "ellipsis_search",
+            "type": "AnimatedIconData"
+          },
+          {
+            "name": "event_add",
+            "type": "AnimatedIconData"
+          },
+          {
+            "name": "home_menu",
+            "type": "AnimatedIconData"
+          },
+          {
+            "name": "list_view",
+            "type": "AnimatedIconData"
+          },
+          {
+            "name": "menu_arrow",
+            "type": "AnimatedIconData"
+          },
+          {
+            "name": "menu_close",
+            "type": "AnimatedIconData"
+          },
+          {
+            "name": "menu_home",
+            "type": "AnimatedIconData"
+          },
+          {
+            "name": "pause_play",
+            "type": "AnimatedIconData"
+          },
+          {
+            "name": "play_pause",
+            "type": "AnimatedIconData"
+          },
+          {
+            "name": "search_ellipsis",
+            "type": "AnimatedIconData"
+          },
+          {
+            "name": "view_list",
+            "type": "AnimatedIconData"
+          }
+        ],
+        "constructors": [],
+        "methods": []
+      },
+      {
+        "name": "AnimatedIconData",
+        "comments": [
+          " * [AnimatedIcons], a class that contains constants that implement this interface."
+        ],
+        "fields": [],
+        "constructors": [
+          {
+            "name": "AnimatedIconData",
+            "properties": []
+          }
+        ],
+        "methods": [
+          {
+            "name": "matchTextDirection",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "name": "_AnimatedIconData",
+        "comments": [],
+        "fields": [
+          {
+            "name": "size",
+            "type": "Size"
+          },
+          {
+            "name": "paths",
+            "type": "List<_PathFrames>"
+          },
+          {
+            "name": "matchTextDirection",
+            "type": "bool"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "_AnimatedIconData",
+            "properties": [
+              {
+                "value": "false",
+                "name": "matchTextDirection",
+                "type": "bool",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": []
+      }
+    ],
+    "enums": [],
+    "fields": [],
+    "methods": []
+  },
+  "errors": []
+}

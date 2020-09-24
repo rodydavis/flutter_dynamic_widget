@@ -1,0 +1,290 @@
+{
+  "file": {
+    "name": null,
+    "imports": [
+      "package:flutter/widgets.dart"
+    ],
+    "classes": [
+      {
+        "name": "FlutterLogo",
+        "comments": [
+          " * [ImageIcon], for showing icons from [AssetImage]s or other [ImageProvider]s."
+        ],
+        "fields": [
+          {
+            "name": "size",
+            "type": "double"
+          },
+          {
+            "name": "textColor",
+            "type": "Color"
+          },
+          {
+            "name": "style",
+            "type": "FlutterLogoStyle"
+          },
+          {
+            "name": "duration",
+            "type": "Duration"
+          },
+          {
+            "name": "curve",
+            "type": "Curve"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "FlutterLogo",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "size",
+                "type": "double",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "textColor",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "style",
+                "type": "FlutterLogoStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "duration",
+                "type": "Duration",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "curve",
+                "type": "Curve",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "build",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "AnimatedContainer",
+                              "arguments": {
+                                "width": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "iconSize"
+                                  }
+                                },
+                                "height": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "iconSize"
+                                  }
+                                },
+                                "duration": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "duration"
+                                  }
+                                },
+                                "curve": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "curve"
+                                  }
+                                },
+                                "decoration": {
+                                  "name": "constructor",
+                                  "value": "FlutterLogoDecoration",
+                                  "arguments": {
+                                    "style": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "style"
+                                      }
+                                    },
+                                    "textColor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "textColor"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ],
+        "tree": {
+          "name": null,
+          "body": {
+            "name": "block_body",
+            "values": [
+              {
+                "name": "block",
+                "values": [
+                  {
+                    "name": "return",
+                    "values": [
+                      {
+                        "name": "constructor",
+                        "value": "AnimatedContainer",
+                        "arguments": {
+                          "width": {
+                            "name": "name",
+                            "props": {
+                              "0": "iconSize"
+                            }
+                          },
+                          "height": {
+                            "name": "name",
+                            "props": {
+                              "0": "iconSize"
+                            }
+                          },
+                          "duration": {
+                            "name": "name",
+                            "props": {
+                              "0": "duration"
+                            }
+                          },
+                          "curve": {
+                            "name": "name",
+                            "props": {
+                              "0": "curve"
+                            }
+                          },
+                          "decoration": {
+                            "name": "constructor",
+                            "value": "FlutterLogoDecoration",
+                            "arguments": {
+                              "style": {
+                                "name": "name",
+                                "props": {
+                                  "0": "style"
+                                }
+                              },
+                              "textColor": {
+                                "name": "name",
+                                "props": {
+                                  "0": "textColor"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "parameters": []
+        }
+      }
+    ],
+    "enums": [],
+    "fields": [],
+    "methods": []
+  },
+  "errors": []
+}

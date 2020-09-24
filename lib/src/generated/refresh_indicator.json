@@ -1,0 +1,1257 @@
+{
+  "file": {
+    "name": null,
+    "imports": [
+      "dart:async",
+      "dart:math",
+      "package:flutter/widgets.dart",
+      "debug.dart",
+      "material_localizations.dart",
+      "progress_indicator.dart",
+      "theme.dart"
+    ],
+    "classes": [
+      {
+        "name": "RefreshIndicator",
+        "comments": [
+          "   being overlaid on top of it."
+        ],
+        "fields": [
+          {
+            "name": "child",
+            "type": "Widget"
+          },
+          {
+            "name": "displacement",
+            "type": "double"
+          },
+          {
+            "name": "onRefresh",
+            "type": "RefreshCallback"
+          },
+          {
+            "name": "color",
+            "type": "Color"
+          },
+          {
+            "name": "backgroundColor",
+            "type": "Color"
+          },
+          {
+            "name": "notificationPredicate",
+            "type": "ScrollNotificationPredicate"
+          },
+          {
+            "name": "semanticsLabel",
+            "type": "String"
+          },
+          {
+            "name": "semanticsValue",
+            "type": "String"
+          },
+          {
+            "name": "strokeWidth",
+            "type": "double"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "RefreshIndicator",
+            "properties": [
+              {
+                "value": null,
+                "name": "key",
+                "type": "Key",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "child",
+                "type": "Widget",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "40.0",
+                "name": "displacement",
+                "type": "double",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "onRefresh",
+                "type": "RefreshCallback",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "color",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "backgroundColor",
+                "type": "Color",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "notificationPredicate",
+                "type": "ScrollNotificationPredicate",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "semanticsLabel",
+                "type": "String",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "semanticsValue",
+                "type": "String",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": "2.0",
+                "name": "strokeWidth",
+                "type": "double",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "createState",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "RefreshIndicatorState"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ],
+        "tree": null
+      },
+      {
+        "name": "RefreshIndicatorState",
+        "comments": [
+          "programmatically show the refresh indicator, see the [show] method."
+        ],
+        "fields": [
+          {
+            "name": "_positionController",
+            "type": "AnimationController"
+          },
+          {
+            "name": "_scaleController",
+            "type": "AnimationController"
+          },
+          {
+            "name": "_positionFactor",
+            "type": "Animation<double>"
+          },
+          {
+            "name": "_scaleFactor",
+            "type": "Animation<double>"
+          },
+          {
+            "name": "_value",
+            "type": "Animation<double>"
+          },
+          {
+            "name": "_valueColor",
+            "type": "Animation<Color>"
+          },
+          {
+            "name": "_mode",
+            "type": "_RefreshIndicatorMode"
+          },
+          {
+            "name": "_pendingRefreshFuture",
+            "type": "Future<void>"
+          },
+          {
+            "name": "_isIndicatorAtTop",
+            "type": "bool"
+          },
+          {
+            "name": "_dragOffset",
+            "type": "double"
+          },
+          {
+            "name": "_threeQuarterTween",
+            "type": "Animatable<double>"
+          },
+          {
+            "name": "_kDragSizeFactorLimitTween",
+            "type": "Animatable<double>"
+          },
+          {
+            "name": "_oneToZeroTween",
+            "type": "Animatable<double>"
+          }
+        ],
+        "constructors": [],
+        "methods": [
+          {
+            "name": "initState",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "didChangeDependencies",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "dispose",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_handleScrollNotification",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "return",
+                              "values": [
+                                {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "bool",
+                                      "value": "false"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "binary",
+                                "left": {
+                                  "name": "binary",
+                                  "left": null,
+                                  "right": {
+                                    "name": "binary",
+                                    "left": null,
+                                    "right": {
+                                      "name": "value",
+                                      "props": {
+                                        "0": {
+                                          "type": "double",
+                                          "value": "0.0"
+                                        }
+                                      }
+                                    },
+                                    "operation": "=="
+                                  },
+                                  "operation": "&&"
+                                },
+                                "right": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "_mode"
+                                    }
+                                  },
+                                  "right": {
+                                    "name": "value",
+                                    "props": {
+                                      "0": {
+                                        "type": null,
+                                        "value": "null"
+                                      }
+                                    }
+                                  },
+                                  "operation": "=="
+                                },
+                                "operation": "&&"
+                              },
+                              "right": {
+                                "name": "constructor",
+                                "value": "_start",
+                                "arguments": {}
+                              },
+                              "operation": "&&"
+                            },
+                            {
+                              "name": "block",
+                              "values": [
+                                {
+                                  "name": "return",
+                                  "values": [
+                                    {
+                                      "name": "value",
+                                      "props": {
+                                        "0": {
+                                          "type": "bool",
+                                          "value": "false"
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "name",
+                                "props": {
+                                  "0": "indicatorAtTopNow"
+                                }
+                              },
+                              "right": {
+                                "name": "name",
+                                "props": {
+                                  "0": "_isIndicatorAtTop"
+                                }
+                              },
+                              "operation": "!="
+                            },
+                            {
+                              "name": "block",
+                              "values": [
+                                {
+                                  "name": "if",
+                                  "values": [
+                                    {
+                                      "name": "binary",
+                                      "left": {
+                                        "name": "binary",
+                                        "left": {
+                                          "name": "name",
+                                          "props": {
+                                            "0": "_mode"
+                                          }
+                                        },
+                                        "right": null,
+                                        "operation": "=="
+                                      },
+                                      "right": {
+                                        "name": "binary",
+                                        "left": {
+                                          "name": "name",
+                                          "props": {
+                                            "0": "_mode"
+                                          }
+                                        },
+                                        "right": null,
+                                        "operation": "=="
+                                      },
+                                      "operation": "||"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "if",
+                              "values": [
+                                {
+                                  "name": "block",
+                                  "values": [
+                                    {
+                                      "name": "if",
+                                      "values": [
+                                        {
+                                          "name": "binary",
+                                          "left": {
+                                            "name": "binary",
+                                            "left": {
+                                              "name": "name",
+                                              "props": {
+                                                "0": "_mode"
+                                              }
+                                            },
+                                            "right": null,
+                                            "operation": "=="
+                                          },
+                                          "right": {
+                                            "name": "binary",
+                                            "left": {
+                                              "name": "name",
+                                              "props": {
+                                                "0": "_mode"
+                                              }
+                                            },
+                                            "right": null,
+                                            "operation": "=="
+                                          },
+                                          "operation": "||"
+                                        },
+                                        {
+                                          "name": "block",
+                                          "values": [
+                                            {
+                                              "name": "if",
+                                              "values": [
+                                                {
+                                                  "name": "binary",
+                                                  "left": null,
+                                                  "right": {
+                                                    "name": "value",
+                                                    "props": {
+                                                      "0": {
+                                                        "type": "double",
+                                                        "value": "0.0"
+                                                      }
+                                                    }
+                                                  },
+                                                  "operation": ">"
+                                                },
+                                                {
+                                                  "name": "block",
+                                                  "values": []
+                                                },
+                                                {
+                                                  "name": "block",
+                                                  "values": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "if",
+                                      "values": [
+                                        {
+                                          "name": "binary",
+                                          "left": {
+                                            "name": "binary",
+                                            "left": {
+                                              "name": "name",
+                                              "props": {
+                                                "0": "_mode"
+                                              }
+                                            },
+                                            "right": null,
+                                            "operation": "=="
+                                          },
+                                          "right": {
+                                            "name": "binary",
+                                            "left": null,
+                                            "right": {
+                                              "name": "value",
+                                              "props": {
+                                                "0": {
+                                                  "type": null,
+                                                  "value": "null"
+                                                }
+                                              }
+                                            },
+                                            "operation": "=="
+                                          },
+                                          "operation": "&&"
+                                        },
+                                        {
+                                          "name": "block",
+                                          "values": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "if",
+                                  "values": [
+                                    {
+                                      "name": "block",
+                                      "values": [
+                                        {
+                                          "name": "if",
+                                          "values": [
+                                            {
+                                              "name": "binary",
+                                              "left": {
+                                                "name": "binary",
+                                                "left": {
+                                                  "name": "name",
+                                                  "props": {
+                                                    "0": "_mode"
+                                                  }
+                                                },
+                                                "right": null,
+                                                "operation": "=="
+                                              },
+                                              "right": {
+                                                "name": "binary",
+                                                "left": {
+                                                  "name": "name",
+                                                  "props": {
+                                                    "0": "_mode"
+                                                  }
+                                                },
+                                                "right": null,
+                                                "operation": "=="
+                                              },
+                                              "operation": "||"
+                                            },
+                                            {
+                                              "name": "block",
+                                              "values": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "if",
+                                      "values": [
+                                        {
+                                          "name": "block",
+                                          "values": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "value",
+                              "props": {
+                                "0": {
+                                  "type": "bool",
+                                  "value": "false"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_handleGlowNotification",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "binary",
+                                "left": null,
+                                "right": {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "int",
+                                      "value": "0"
+                                    }
+                                  }
+                                },
+                                "operation": "!="
+                              },
+                              "right": null,
+                              "operation": "||"
+                            },
+                            {
+                              "name": "return",
+                              "values": [
+                                {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "bool",
+                                      "value": "false"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "name",
+                                "props": {
+                                  "0": "_mode"
+                                }
+                              },
+                              "right": null,
+                              "operation": "=="
+                            },
+                            {
+                              "name": "block",
+                              "values": [
+                                {
+                                  "name": "return",
+                                  "values": [
+                                    {
+                                      "name": "value",
+                                      "props": {
+                                        "0": {
+                                          "type": "bool",
+                                          "value": "true"
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "value",
+                              "props": {
+                                "0": {
+                                  "type": "bool",
+                                  "value": "false"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_start",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "value",
+                              "props": {
+                                "0": {
+                                  "type": "bool",
+                                  "value": "true"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_checkDragOffset",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "name",
+                                "props": {
+                                  "0": "_mode"
+                                }
+                              },
+                              "right": null,
+                              "operation": "=="
+                            }
+                          ]
+                        },
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "binary",
+                                "left": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "_mode"
+                                  }
+                                },
+                                "right": null,
+                                "operation": "=="
+                              },
+                              "right": {
+                                "name": "binary",
+                                "left": null,
+                                "right": {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "int",
+                                      "value": "255"
+                                    }
+                                  }
+                                },
+                                "operation": "=="
+                              },
+                              "operation": "&&"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_dismiss",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Future<void>"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "name",
+                                "props": {
+                                  "0": "mounted"
+                                }
+                              },
+                              "right": {
+                                "name": "binary",
+                                "left": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "_mode"
+                                  }
+                                },
+                                "right": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "newMode"
+                                  }
+                                },
+                                "operation": "=="
+                              },
+                              "operation": "&&"
+                            },
+                            {
+                              "name": "block",
+                              "values": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "_show",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "show",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Future<void>"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "binary",
+                                "left": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "_mode"
+                                  }
+                                },
+                                "right": null,
+                                "operation": "!="
+                              },
+                              "right": {
+                                "name": "binary",
+                                "left": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "_mode"
+                                  }
+                                },
+                                "right": null,
+                                "operation": "!="
+                              },
+                              "operation": "&&"
+                            },
+                            {
+                              "name": "block",
+                              "values": [
+                                {
+                                  "name": "if",
+                                  "values": [
+                                    {
+                                      "name": "binary",
+                                      "left": {
+                                        "name": "name",
+                                        "props": {
+                                          "0": "_mode"
+                                        }
+                                      },
+                                      "right": {
+                                        "name": "value",
+                                        "props": {
+                                          "0": {
+                                            "type": null,
+                                            "value": "null"
+                                          }
+                                        }
+                                      },
+                                      "operation": "=="
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "name",
+                              "props": {
+                                "0": "_pendingRefreshFuture"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "build",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "Widget"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "Stack",
+                              "arguments": {
+                                "children": {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "List",
+                                      "value": "<Widget>[child, if (_mode != null) Positioned(top: _isIndicatorAtTop ? 0.0 : null, bottom: !_isIndicatorAtTop ? 0.0 : null, left: 0.0, right: 0.0, child: SizeTransition(axisAlignment: _isIndicatorAtTop ? 1.0 : -1.0, sizeFactor: _positionFactor, child: Container(padding: _isIndicatorAtTop ? EdgeInsets.only(top: widget.displacement) : EdgeInsets.only(bottom: widget.displacement), alignment: _isIndicatorAtTop ? Alignment.topCenter : Alignment.bottomCenter, child: ScaleTransition(scale: _scaleFactor, child: AnimatedBuilder(animation: _positionController, builder: (BuildContext context, Widget child) {return RefreshProgressIndicator(semanticsLabel: widget.semanticsLabel ?? MaterialLocalizations.of(context).refreshIndicatorSemanticLabel, semanticsValue: widget.semanticsValue, value: showIndeterminateIndicator ? null : _value.value, valueColor: _valueColor, backgroundColor: widget.backgroundColor, strokeWidth: widget.strokeWidth);})))))]"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      }
+    ],
+    "enums": [
+      {
+        "name": "_RefreshIndicatorMode",
+        "values": [
+          "drag",
+          "armed",
+          "snap",
+          "refresh",
+          "done",
+          "canceled"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "name": "_kDragContainerExtentPercentage",
+        "type": "double"
+      },
+      {
+        "name": "_kDragSizeFactorLimit",
+        "type": "double"
+      },
+      {
+        "name": "_kIndicatorSnapDuration",
+        "type": "Duration"
+      },
+      {
+        "name": "_kIndicatorScaleDuration",
+        "type": "Duration"
+      }
+    ],
+    "methods": []
+  },
+  "errors": []
+}

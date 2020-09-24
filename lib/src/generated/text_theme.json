@@ -1,0 +1,2221 @@
+{
+  "file": {
+    "name": null,
+    "imports": [
+      "package:flutter/foundation.dart",
+      "package:flutter/painting.dart",
+      "typography.dart"
+    ],
+    "classes": [
+      {
+        "name": "TextTheme",
+        "comments": [
+          " * <https://material.io/design/typography/>"
+        ],
+        "fields": [
+          {
+            "name": "headline1",
+            "type": "TextStyle"
+          },
+          {
+            "name": "headline2",
+            "type": "TextStyle"
+          },
+          {
+            "name": "headline3",
+            "type": "TextStyle"
+          },
+          {
+            "name": "headline4",
+            "type": "TextStyle"
+          },
+          {
+            "name": "headline5",
+            "type": "TextStyle"
+          },
+          {
+            "name": "headline6",
+            "type": "TextStyle"
+          },
+          {
+            "name": "subtitle1",
+            "type": "TextStyle"
+          },
+          {
+            "name": "subtitle2",
+            "type": "TextStyle"
+          },
+          {
+            "name": "bodyText1",
+            "type": "TextStyle"
+          },
+          {
+            "name": "bodyText2",
+            "type": "TextStyle"
+          },
+          {
+            "name": "caption",
+            "type": "TextStyle"
+          },
+          {
+            "name": "button",
+            "type": "TextStyle"
+          },
+          {
+            "name": "overline",
+            "type": "TextStyle"
+          }
+        ],
+        "constructors": [
+          {
+            "name": "TextTheme",
+            "properties": [
+              {
+                "value": null,
+                "name": "headline1",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "headline2",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "headline3",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "headline4",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "headline5",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "headline6",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "subtitle1",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "subtitle2",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "bodyText1",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "bodyText2",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "caption",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "button",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "overline",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "display4",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "display3",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "display2",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "display1",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "headline",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "title",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "subhead",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "subtitle",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "body2",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              },
+              {
+                "value": null,
+                "name": "body1",
+                "type": "TextStyle",
+                "isConst": false,
+                "isFinal": false,
+                "isNamed": true,
+                "isOptional": true,
+                "isPositional": false,
+                "isRequired": false,
+                "isRequiredPositional": false,
+                "isSynthetic": false,
+                "isRequiredNamed": false,
+                "isOptionalNamed": true
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "display4",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "TextStyle"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "display3",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "TextStyle"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "display2",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "TextStyle"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "display1",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "TextStyle"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "headline",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "TextStyle"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "title",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "TextStyle"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "subhead",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "TextStyle"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "subtitle",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "TextStyle"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "body2",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "TextStyle"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "body1",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "TextStyle"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "copyWith",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "TextTheme"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "TextTheme",
+                              "arguments": {
+                                "headline1": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "binary",
+                                    "left": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "headline1"
+                                      }
+                                    },
+                                    "right": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "display4"
+                                      }
+                                    },
+                                    "operation": "??"
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "headline2": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "binary",
+                                    "left": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "headline2"
+                                      }
+                                    },
+                                    "right": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "display3"
+                                      }
+                                    },
+                                    "operation": "??"
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "headline3": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "binary",
+                                    "left": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "headline3"
+                                      }
+                                    },
+                                    "right": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "display2"
+                                      }
+                                    },
+                                    "operation": "??"
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "headline4": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "binary",
+                                    "left": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "headline4"
+                                      }
+                                    },
+                                    "right": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "display1"
+                                      }
+                                    },
+                                    "operation": "??"
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "headline5": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "binary",
+                                    "left": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "headline5"
+                                      }
+                                    },
+                                    "right": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "headline"
+                                      }
+                                    },
+                                    "operation": "??"
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "headline6": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "binary",
+                                    "left": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "headline6"
+                                      }
+                                    },
+                                    "right": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "title"
+                                      }
+                                    },
+                                    "operation": "??"
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "subtitle1": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "binary",
+                                    "left": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "subtitle1"
+                                      }
+                                    },
+                                    "right": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "subhead"
+                                      }
+                                    },
+                                    "operation": "??"
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "subtitle2": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "binary",
+                                    "left": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "subtitle2"
+                                      }
+                                    },
+                                    "right": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "subtitle"
+                                      }
+                                    },
+                                    "operation": "??"
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "bodyText1": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "binary",
+                                    "left": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "bodyText1"
+                                      }
+                                    },
+                                    "right": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "body2"
+                                      }
+                                    },
+                                    "operation": "??"
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "bodyText2": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "binary",
+                                    "left": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "bodyText2"
+                                      }
+                                    },
+                                    "right": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "body1"
+                                      }
+                                    },
+                                    "operation": "??"
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "caption": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "caption"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "button": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "button"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "overline": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "overline"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "merge",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "TextTheme"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "name",
+                                "props": {
+                                  "0": "other"
+                                }
+                              },
+                              "right": {
+                                "name": "value",
+                                "props": {
+                                  "0": {
+                                    "type": null,
+                                    "value": "null"
+                                  }
+                                }
+                              },
+                              "operation": "=="
+                            },
+                            {
+                              "name": "return",
+                              "values": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "copyWith",
+                              "arguments": {
+                                "headline1": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "constructor",
+                                    "value": "merge",
+                                    "arguments": {}
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "headline2": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "constructor",
+                                    "value": "merge",
+                                    "arguments": {}
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "headline3": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "constructor",
+                                    "value": "merge",
+                                    "arguments": {}
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "headline4": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "constructor",
+                                    "value": "merge",
+                                    "arguments": {}
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "headline5": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "constructor",
+                                    "value": "merge",
+                                    "arguments": {}
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "headline6": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "constructor",
+                                    "value": "merge",
+                                    "arguments": {}
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "subtitle1": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "constructor",
+                                    "value": "merge",
+                                    "arguments": {}
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "subtitle2": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "constructor",
+                                    "value": "merge",
+                                    "arguments": {}
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "bodyText1": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "constructor",
+                                    "value": "merge",
+                                    "arguments": {}
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "bodyText2": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "constructor",
+                                    "value": "merge",
+                                    "arguments": {}
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "caption": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "constructor",
+                                    "value": "merge",
+                                    "arguments": {}
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "button": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "constructor",
+                                    "value": "merge",
+                                    "arguments": {}
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                },
+                                "overline": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "constructor",
+                                    "value": "merge",
+                                    "arguments": {}
+                                  },
+                                  "right": null,
+                                  "operation": "??"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "apply",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "TextTheme"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "TextTheme",
+                              "arguments": {
+                                "headline1": {
+                                  "name": "constructor",
+                                  "value": "apply",
+                                  "arguments": {
+                                    "color": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "displayColor"
+                                      }
+                                    },
+                                    "decoration": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decoration"
+                                      }
+                                    },
+                                    "decorationColor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationColor"
+                                      }
+                                    },
+                                    "decorationStyle": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationStyle"
+                                      }
+                                    },
+                                    "fontFamily": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontFamily"
+                                      }
+                                    },
+                                    "fontSizeFactor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeFactor"
+                                      }
+                                    },
+                                    "fontSizeDelta": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeDelta"
+                                      }
+                                    }
+                                  }
+                                },
+                                "headline2": {
+                                  "name": "constructor",
+                                  "value": "apply",
+                                  "arguments": {
+                                    "color": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "displayColor"
+                                      }
+                                    },
+                                    "decoration": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decoration"
+                                      }
+                                    },
+                                    "decorationColor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationColor"
+                                      }
+                                    },
+                                    "decorationStyle": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationStyle"
+                                      }
+                                    },
+                                    "fontFamily": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontFamily"
+                                      }
+                                    },
+                                    "fontSizeFactor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeFactor"
+                                      }
+                                    },
+                                    "fontSizeDelta": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeDelta"
+                                      }
+                                    }
+                                  }
+                                },
+                                "headline3": {
+                                  "name": "constructor",
+                                  "value": "apply",
+                                  "arguments": {
+                                    "color": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "displayColor"
+                                      }
+                                    },
+                                    "decoration": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decoration"
+                                      }
+                                    },
+                                    "decorationColor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationColor"
+                                      }
+                                    },
+                                    "decorationStyle": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationStyle"
+                                      }
+                                    },
+                                    "fontFamily": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontFamily"
+                                      }
+                                    },
+                                    "fontSizeFactor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeFactor"
+                                      }
+                                    },
+                                    "fontSizeDelta": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeDelta"
+                                      }
+                                    }
+                                  }
+                                },
+                                "headline4": {
+                                  "name": "constructor",
+                                  "value": "apply",
+                                  "arguments": {
+                                    "color": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "displayColor"
+                                      }
+                                    },
+                                    "decoration": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decoration"
+                                      }
+                                    },
+                                    "decorationColor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationColor"
+                                      }
+                                    },
+                                    "decorationStyle": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationStyle"
+                                      }
+                                    },
+                                    "fontFamily": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontFamily"
+                                      }
+                                    },
+                                    "fontSizeFactor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeFactor"
+                                      }
+                                    },
+                                    "fontSizeDelta": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeDelta"
+                                      }
+                                    }
+                                  }
+                                },
+                                "headline5": {
+                                  "name": "constructor",
+                                  "value": "apply",
+                                  "arguments": {
+                                    "color": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "bodyColor"
+                                      }
+                                    },
+                                    "decoration": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decoration"
+                                      }
+                                    },
+                                    "decorationColor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationColor"
+                                      }
+                                    },
+                                    "decorationStyle": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationStyle"
+                                      }
+                                    },
+                                    "fontFamily": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontFamily"
+                                      }
+                                    },
+                                    "fontSizeFactor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeFactor"
+                                      }
+                                    },
+                                    "fontSizeDelta": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeDelta"
+                                      }
+                                    }
+                                  }
+                                },
+                                "headline6": {
+                                  "name": "constructor",
+                                  "value": "apply",
+                                  "arguments": {
+                                    "color": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "bodyColor"
+                                      }
+                                    },
+                                    "decoration": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decoration"
+                                      }
+                                    },
+                                    "decorationColor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationColor"
+                                      }
+                                    },
+                                    "decorationStyle": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationStyle"
+                                      }
+                                    },
+                                    "fontFamily": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontFamily"
+                                      }
+                                    },
+                                    "fontSizeFactor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeFactor"
+                                      }
+                                    },
+                                    "fontSizeDelta": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeDelta"
+                                      }
+                                    }
+                                  }
+                                },
+                                "subtitle1": {
+                                  "name": "constructor",
+                                  "value": "apply",
+                                  "arguments": {
+                                    "color": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "bodyColor"
+                                      }
+                                    },
+                                    "decoration": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decoration"
+                                      }
+                                    },
+                                    "decorationColor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationColor"
+                                      }
+                                    },
+                                    "decorationStyle": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationStyle"
+                                      }
+                                    },
+                                    "fontFamily": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontFamily"
+                                      }
+                                    },
+                                    "fontSizeFactor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeFactor"
+                                      }
+                                    },
+                                    "fontSizeDelta": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeDelta"
+                                      }
+                                    }
+                                  }
+                                },
+                                "subtitle2": {
+                                  "name": "constructor",
+                                  "value": "apply",
+                                  "arguments": {
+                                    "color": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "bodyColor"
+                                      }
+                                    },
+                                    "decoration": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decoration"
+                                      }
+                                    },
+                                    "decorationColor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationColor"
+                                      }
+                                    },
+                                    "decorationStyle": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationStyle"
+                                      }
+                                    },
+                                    "fontFamily": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontFamily"
+                                      }
+                                    },
+                                    "fontSizeFactor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeFactor"
+                                      }
+                                    },
+                                    "fontSizeDelta": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeDelta"
+                                      }
+                                    }
+                                  }
+                                },
+                                "bodyText1": {
+                                  "name": "constructor",
+                                  "value": "apply",
+                                  "arguments": {
+                                    "color": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "bodyColor"
+                                      }
+                                    },
+                                    "decoration": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decoration"
+                                      }
+                                    },
+                                    "decorationColor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationColor"
+                                      }
+                                    },
+                                    "decorationStyle": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationStyle"
+                                      }
+                                    },
+                                    "fontFamily": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontFamily"
+                                      }
+                                    },
+                                    "fontSizeFactor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeFactor"
+                                      }
+                                    },
+                                    "fontSizeDelta": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeDelta"
+                                      }
+                                    }
+                                  }
+                                },
+                                "bodyText2": {
+                                  "name": "constructor",
+                                  "value": "apply",
+                                  "arguments": {
+                                    "color": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "bodyColor"
+                                      }
+                                    },
+                                    "decoration": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decoration"
+                                      }
+                                    },
+                                    "decorationColor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationColor"
+                                      }
+                                    },
+                                    "decorationStyle": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationStyle"
+                                      }
+                                    },
+                                    "fontFamily": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontFamily"
+                                      }
+                                    },
+                                    "fontSizeFactor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeFactor"
+                                      }
+                                    },
+                                    "fontSizeDelta": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeDelta"
+                                      }
+                                    }
+                                  }
+                                },
+                                "caption": {
+                                  "name": "constructor",
+                                  "value": "apply",
+                                  "arguments": {
+                                    "color": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "displayColor"
+                                      }
+                                    },
+                                    "decoration": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decoration"
+                                      }
+                                    },
+                                    "decorationColor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationColor"
+                                      }
+                                    },
+                                    "decorationStyle": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationStyle"
+                                      }
+                                    },
+                                    "fontFamily": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontFamily"
+                                      }
+                                    },
+                                    "fontSizeFactor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeFactor"
+                                      }
+                                    },
+                                    "fontSizeDelta": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeDelta"
+                                      }
+                                    }
+                                  }
+                                },
+                                "button": {
+                                  "name": "constructor",
+                                  "value": "apply",
+                                  "arguments": {
+                                    "color": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "bodyColor"
+                                      }
+                                    },
+                                    "decoration": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decoration"
+                                      }
+                                    },
+                                    "decorationColor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationColor"
+                                      }
+                                    },
+                                    "decorationStyle": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationStyle"
+                                      }
+                                    },
+                                    "fontFamily": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontFamily"
+                                      }
+                                    },
+                                    "fontSizeFactor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeFactor"
+                                      }
+                                    },
+                                    "fontSizeDelta": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeDelta"
+                                      }
+                                    }
+                                  }
+                                },
+                                "overline": {
+                                  "name": "constructor",
+                                  "value": "apply",
+                                  "arguments": {
+                                    "color": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "bodyColor"
+                                      }
+                                    },
+                                    "decoration": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decoration"
+                                      }
+                                    },
+                                    "decorationColor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationColor"
+                                      }
+                                    },
+                                    "decorationStyle": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "decorationStyle"
+                                      }
+                                    },
+                                    "fontFamily": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontFamily"
+                                      }
+                                    },
+                                    "fontSizeFactor": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeFactor"
+                                      }
+                                    },
+                                    "fontSizeDelta": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "fontSizeDelta"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "lerp",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "TextTheme"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "TextTheme",
+                              "arguments": {
+                                "headline1": {
+                                  "name": "constructor",
+                                  "value": "lerp",
+                                  "arguments": {}
+                                },
+                                "headline2": {
+                                  "name": "constructor",
+                                  "value": "lerp",
+                                  "arguments": {}
+                                },
+                                "headline3": {
+                                  "name": "constructor",
+                                  "value": "lerp",
+                                  "arguments": {}
+                                },
+                                "headline4": {
+                                  "name": "constructor",
+                                  "value": "lerp",
+                                  "arguments": {}
+                                },
+                                "headline5": {
+                                  "name": "constructor",
+                                  "value": "lerp",
+                                  "arguments": {}
+                                },
+                                "headline6": {
+                                  "name": "constructor",
+                                  "value": "lerp",
+                                  "arguments": {}
+                                },
+                                "subtitle1": {
+                                  "name": "constructor",
+                                  "value": "lerp",
+                                  "arguments": {}
+                                },
+                                "subtitle2": {
+                                  "name": "constructor",
+                                  "value": "lerp",
+                                  "arguments": {}
+                                },
+                                "bodyText1": {
+                                  "name": "constructor",
+                                  "value": "lerp",
+                                  "arguments": {}
+                                },
+                                "bodyText2": {
+                                  "name": "constructor",
+                                  "value": "lerp",
+                                  "arguments": {}
+                                },
+                                "caption": {
+                                  "name": "constructor",
+                                  "value": "lerp",
+                                  "arguments": {}
+                                },
+                                "button": {
+                                  "name": "constructor",
+                                  "value": "lerp",
+                                  "arguments": {}
+                                },
+                                "overline": {
+                                  "name": "constructor",
+                                  "value": "lerp",
+                                  "arguments": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "==",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "bool"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "identical",
+                              "arguments": {}
+                            },
+                            {
+                              "name": "return",
+                              "values": [
+                                {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "bool",
+                                      "value": "true"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "if",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": null,
+                              "right": {
+                                "name": "name",
+                                "props": {
+                                  "0": "runtimeType"
+                                }
+                              },
+                              "operation": "!="
+                            },
+                            {
+                              "name": "return",
+                              "values": [
+                                {
+                                  "name": "value",
+                                  "props": {
+                                    "0": {
+                                      "type": "bool",
+                                      "value": "false"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "binary",
+                              "left": {
+                                "name": "binary",
+                                "left": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "binary",
+                                    "left": {
+                                      "name": "binary",
+                                      "left": {
+                                        "name": "binary",
+                                        "left": {
+                                          "name": "binary",
+                                          "left": {
+                                            "name": "binary",
+                                            "left": {
+                                              "name": "binary",
+                                              "left": {
+                                                "name": "binary",
+                                                "left": {
+                                                  "name": "binary",
+                                                  "left": {
+                                                    "name": "binary",
+                                                    "left": {
+                                                      "name": "binary",
+                                                      "left": null,
+                                                      "right": {
+                                                        "name": "binary",
+                                                        "left": {
+                                                          "name": "name",
+                                                          "props": {
+                                                            "0": "headline1"
+                                                          }
+                                                        },
+                                                        "right": null,
+                                                        "operation": "=="
+                                                      },
+                                                      "operation": "&&"
+                                                    },
+                                                    "right": {
+                                                      "name": "binary",
+                                                      "left": {
+                                                        "name": "name",
+                                                        "props": {
+                                                          "0": "headline2"
+                                                        }
+                                                      },
+                                                      "right": null,
+                                                      "operation": "=="
+                                                    },
+                                                    "operation": "&&"
+                                                  },
+                                                  "right": {
+                                                    "name": "binary",
+                                                    "left": {
+                                                      "name": "name",
+                                                      "props": {
+                                                        "0": "headline3"
+                                                      }
+                                                    },
+                                                    "right": null,
+                                                    "operation": "=="
+                                                  },
+                                                  "operation": "&&"
+                                                },
+                                                "right": {
+                                                  "name": "binary",
+                                                  "left": {
+                                                    "name": "name",
+                                                    "props": {
+                                                      "0": "headline4"
+                                                    }
+                                                  },
+                                                  "right": null,
+                                                  "operation": "=="
+                                                },
+                                                "operation": "&&"
+                                              },
+                                              "right": {
+                                                "name": "binary",
+                                                "left": {
+                                                  "name": "name",
+                                                  "props": {
+                                                    "0": "headline5"
+                                                  }
+                                                },
+                                                "right": null,
+                                                "operation": "=="
+                                              },
+                                              "operation": "&&"
+                                            },
+                                            "right": {
+                                              "name": "binary",
+                                              "left": {
+                                                "name": "name",
+                                                "props": {
+                                                  "0": "headline6"
+                                                }
+                                              },
+                                              "right": null,
+                                              "operation": "=="
+                                            },
+                                            "operation": "&&"
+                                          },
+                                          "right": {
+                                            "name": "binary",
+                                            "left": {
+                                              "name": "name",
+                                              "props": {
+                                                "0": "subtitle1"
+                                              }
+                                            },
+                                            "right": null,
+                                            "operation": "=="
+                                          },
+                                          "operation": "&&"
+                                        },
+                                        "right": {
+                                          "name": "binary",
+                                          "left": {
+                                            "name": "name",
+                                            "props": {
+                                              "0": "subtitle2"
+                                            }
+                                          },
+                                          "right": null,
+                                          "operation": "=="
+                                        },
+                                        "operation": "&&"
+                                      },
+                                      "right": {
+                                        "name": "binary",
+                                        "left": {
+                                          "name": "name",
+                                          "props": {
+                                            "0": "bodyText1"
+                                          }
+                                        },
+                                        "right": null,
+                                        "operation": "=="
+                                      },
+                                      "operation": "&&"
+                                    },
+                                    "right": {
+                                      "name": "binary",
+                                      "left": {
+                                        "name": "name",
+                                        "props": {
+                                          "0": "bodyText2"
+                                        }
+                                      },
+                                      "right": null,
+                                      "operation": "=="
+                                    },
+                                    "operation": "&&"
+                                  },
+                                  "right": {
+                                    "name": "binary",
+                                    "left": {
+                                      "name": "name",
+                                      "props": {
+                                        "0": "caption"
+                                      }
+                                    },
+                                    "right": null,
+                                    "operation": "=="
+                                  },
+                                  "operation": "&&"
+                                },
+                                "right": {
+                                  "name": "binary",
+                                  "left": {
+                                    "name": "name",
+                                    "props": {
+                                      "0": "button"
+                                    }
+                                  },
+                                  "right": null,
+                                  "operation": "=="
+                                },
+                                "operation": "&&"
+                              },
+                              "right": {
+                                "name": "binary",
+                                "left": {
+                                  "name": "name",
+                                  "props": {
+                                    "0": "overline"
+                                  }
+                                },
+                                "right": null,
+                                "operation": "=="
+                              },
+                              "operation": "&&"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "hashCode",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "int"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": [
+                        {
+                          "name": "return",
+                          "values": [
+                            {
+                              "name": "constructor",
+                              "value": "hashValues",
+                              "arguments": {}
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          },
+          {
+            "name": "debugFillProperties",
+            "body": {
+              "name": "method_declaration",
+              "values": [
+                {
+                  "name": "type",
+                  "props": {
+                    "0": "void"
+                  }
+                },
+                {
+                  "name": "declaration",
+                  "values": []
+                },
+                {
+                  "name": "block_body",
+                  "values": [
+                    {
+                      "name": "block",
+                      "values": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": []
+          }
+        ]
+      }
+    ],
+    "enums": [],
+    "fields": [],
+    "methods": []
+  },
+  "errors": []
+}
