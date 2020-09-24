@@ -1,0 +1,6 @@
+[submodule "third_party/widget_gen"]
+	path = third_party/widget_gen
+	url = https://rodydavis@github.com/rodydavis/widget_gen
+[submodule "third_party/flutter_ast"]
+	path = third_party/flutter_ast
+	url = https://rodydavis@github.com/rodydavis/flutter_ast
