@@ -14,6 +14,7 @@
       "constants.dart",
       "debug.dart",
       "dialog.dart",
+      "divider.dart",
       "floating_action_button.dart",
       "floating_action_button_location.dart",
       "ink_decoration.dart",

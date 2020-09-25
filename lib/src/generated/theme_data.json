@@ -282,7 +282,7 @@
           },
           {
             "name": "cupertinoOverrideTheme",
-            "type": "CupertinoThemeData"
+            "type": "NoDefaultCupertinoThemeData"
           },
           {
             "name": "bottomSheetTheme",
@@ -1256,7 +1256,7 @@
               {
                 "value": null,
                 "name": "cupertinoOverrideTheme",
-                "type": "CupertinoThemeData",
+                "type": "NoDefaultCupertinoThemeData",
                 "isConst": false,
                 "isFinal": false,
                 "isNamed": true,
@@ -2356,7 +2356,7 @@
               {
                 "value": null,
                 "name": "cupertinoOverrideTheme",
-                "type": "CupertinoThemeData",
+                "type": "NoDefaultCupertinoThemeData",
                 "isConst": false,
                 "isFinal": false,
                 "isNamed": true,
@@ -5448,7 +5448,7 @@
           },
           {
             "name": "_cupertinoOverrideTheme",
-            "type": "CupertinoThemeData"
+            "type": "NoDefaultCupertinoThemeData"
           }
         ],
         "constructors": [
