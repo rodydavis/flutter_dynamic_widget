@@ -6,21 +6,78 @@ import 'package:flutter/gestures.dart';
 class MaterialPageRender<T> extends StatelessWidget {
 
   const MaterialPageRender({
-    this.builder,
-    this.maintainState,
-    this.fullscreenDialog,
-    this.name,
-    this.arguments,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final WidgetBuilder builder;
-  final bool maintainState;
-  final bool fullscreenDialog;
-  final String name;
-  final Object arguments;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  WidgetBuilder get builder {
+    return null;
+  }
+
+  set builder(WidgetBuilder val) {
+    if (val == this.builder) {
+      return;
+    }
+  }
+
+  bool get maintainState {
+    return null;
+  }
+
+  set maintainState(bool val) {
+    if (val == this.maintainState) {
+      return;
+    }
+  }
+
+  bool get fullscreenDialog {
+    return null;
+  }
+
+  set fullscreenDialog(bool val) {
+    if (val == this.fullscreenDialog) {
+      return;
+    }
+  }
+
+  String get name {
+    return null;
+  }
+
+  set name(String val) {
+    if (val == this.name) {
+      return;
+    }
+  }
+
+  Object get arguments {
+    return null;
+  }
+
+  set arguments(Object val) {
+    if (val == this.arguments) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -34,25 +91,26 @@ class MaterialPageRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': MaterialPage(
-       builder: this.builder,
-       maintainState: this.maintainState,
-       fullscreenDialog: this.fullscreenDialog,
-       key: this.key,
-       name: this.name,
-       arguments: this.arguments,
+       builder : this.builder,
+       maintainState : this.maintainState,
+       fullscreenDialog : this.fullscreenDialog,
+       key : this.key,
+       name : this.name,
+       arguments : this.arguments,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

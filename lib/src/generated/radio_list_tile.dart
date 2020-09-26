@@ -6,37 +6,158 @@ import 'package:flutter/gestures.dart';
 class RadioListTileRender<T> extends StatelessWidget {
 
   const RadioListTileRender({
-    this.value,
-    this.groupValue,
-    this.onChanged,
-    this.toggleable,
-    this.activeColor,
-    this.title,
-    this.subtitle,
-    this.secondary,
-    this.isThreeLine,
-    this.dense,
-    this.selected,
-    this.controlAffinity,
-    this.autofocus,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final T value;
-  final T groupValue;
-  final ValueChanged<T> onChanged;
-  final bool toggleable;
-  final Color activeColor;
-  final Widget title;
-  final Widget subtitle;
-  final Widget secondary;
-  final bool isThreeLine;
-  final bool dense;
-  final bool selected;
-  final ListTileControlAffinity controlAffinity;
-  final bool autofocus;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  T get value {
+    return null;
+  }
+
+  set value(T val) {
+    if (val == this.value) {
+      return;
+    }
+  }
+
+  T get groupValue {
+    return null;
+  }
+
+  set groupValue(T val) {
+    if (val == this.groupValue) {
+      return;
+    }
+  }
+
+  ValueChanged<T> get onChanged {
+    return null;
+  }
+
+  set onChanged(ValueChanged<T> val) {
+    if (val == this.onChanged) {
+      return;
+    }
+  }
+
+  bool get toggleable {
+    return null;
+  }
+
+  set toggleable(bool val) {
+    if (val == this.toggleable) {
+      return;
+    }
+  }
+
+  Color get activeColor {
+    return null;
+  }
+
+  set activeColor(Color val) {
+    if (val == this.activeColor) {
+      return;
+    }
+  }
+
+  Widget get title {
+    return null;
+  }
+
+  set title(Widget val) {
+    if (val == this.title) {
+      return;
+    }
+  }
+
+  Widget get subtitle {
+    return null;
+  }
+
+  set subtitle(Widget val) {
+    if (val == this.subtitle) {
+      return;
+    }
+  }
+
+  Widget get secondary {
+    return null;
+  }
+
+  set secondary(Widget val) {
+    if (val == this.secondary) {
+      return;
+    }
+  }
+
+  bool get isThreeLine {
+    return null;
+  }
+
+  set isThreeLine(bool val) {
+    if (val == this.isThreeLine) {
+      return;
+    }
+  }
+
+  bool get dense {
+    return null;
+  }
+
+  set dense(bool val) {
+    if (val == this.dense) {
+      return;
+    }
+  }
+
+  bool get selected {
+    return null;
+  }
+
+  set selected(bool val) {
+    if (val == this.selected) {
+      return;
+    }
+  }
+
+  ListTileControlAffinity get controlAffinity {
+    return null;
+  }
+
+  set controlAffinity(ListTileControlAffinity val) {
+    if (val == this.controlAffinity) {
+      return;
+    }
+  }
+
+  bool get autofocus {
+    return null;
+  }
+
+  set autofocus(bool val) {
+    if (val == this.autofocus) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -50,33 +171,34 @@ class RadioListTileRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': RadioListTile(
-       key: this.key,
-       value: this.value,
-       groupValue: this.groupValue,
-       onChanged: this.onChanged,
-       toggleable: this.toggleable,
-       activeColor: this.activeColor,
-       title: this.title,
-       subtitle: this.subtitle,
-       isThreeLine: this.isThreeLine,
-       dense: this.dense,
-       secondary: this.secondary,
-       selected: this.selected,
-       controlAffinity: this.controlAffinity,
-       autofocus: this.autofocus,
+       key : this.key,
+       value : this.value,
+       groupValue : this.groupValue,
+       onChanged : this.onChanged,
+       toggleable : this.toggleable,
+       activeColor : this.activeColor,
+       title : this.title,
+       subtitle : this.subtitle,
+       isThreeLine : this.isThreeLine,
+       dense : this.dense,
+       secondary : this.secondary,
+       selected : this.selected,
+       controlAffinity : this.controlAffinity,
+       autofocus : this.autofocus,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

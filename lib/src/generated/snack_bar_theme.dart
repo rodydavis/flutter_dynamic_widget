@@ -6,25 +6,98 @@ import 'package:flutter/gestures.dart';
 class SnackBarThemeDataRender<T> extends StatelessWidget {
 
   const SnackBarThemeDataRender({
-    this.backgroundColor,
-    this.actionTextColor,
-    this.disabledActionTextColor,
-    this.contentTextStyle,
-    this.elevation,
-    this.shape,
-    this.behavior,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final Color backgroundColor;
-  final Color actionTextColor;
-  final Color disabledActionTextColor;
-  final TextStyle contentTextStyle;
-  final double elevation;
-  final ShapeBorder shape;
-  final SnackBarBehavior behavior;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  Color get backgroundColor {
+    return null;
+  }
+
+  set backgroundColor(Color val) {
+    if (val == this.backgroundColor) {
+      return;
+    }
+  }
+
+  Color get actionTextColor {
+    return null;
+  }
+
+  set actionTextColor(Color val) {
+    if (val == this.actionTextColor) {
+      return;
+    }
+  }
+
+  Color get disabledActionTextColor {
+    return null;
+  }
+
+  set disabledActionTextColor(Color val) {
+    if (val == this.disabledActionTextColor) {
+      return;
+    }
+  }
+
+  TextStyle get contentTextStyle {
+    return null;
+  }
+
+  set contentTextStyle(TextStyle val) {
+    if (val == this.contentTextStyle) {
+      return;
+    }
+  }
+
+  double get elevation {
+    return null;
+  }
+
+  set elevation(double val) {
+    if (val == this.elevation) {
+      return;
+    }
+  }
+
+  ShapeBorder get shape {
+    return null;
+  }
+
+  set shape(ShapeBorder val) {
+    if (val == this.shape) {
+      return;
+    }
+  }
+
+  SnackBarBehavior get behavior {
+    return null;
+  }
+
+  set behavior(SnackBarBehavior val) {
+    if (val == this.behavior) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -38,26 +111,27 @@ class SnackBarThemeDataRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': SnackBarThemeData(
-       backgroundColor: this.backgroundColor,
-       actionTextColor: this.actionTextColor,
-       disabledActionTextColor: this.disabledActionTextColor,
-       contentTextStyle: this.contentTextStyle,
-       elevation: this.elevation,
-       shape: this.shape,
-       behavior: this.behavior,
+       backgroundColor : this.backgroundColor,
+       actionTextColor : this.actionTextColor,
+       disabledActionTextColor : this.disabledActionTextColor,
+       contentTextStyle : this.contentTextStyle,
+       elevation : this.elevation,
+       shape : this.shape,
+       behavior : this.behavior,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

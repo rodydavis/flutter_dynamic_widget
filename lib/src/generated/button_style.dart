@@ -6,41 +6,178 @@ import 'package:flutter/gestures.dart';
 class ButtonStyleRender<T> extends StatelessWidget {
 
   const ButtonStyleRender({
-    this.textStyle,
-    this.backgroundColor,
-    this.foregroundColor,
-    this.overlayColor,
-    this.shadowColor,
-    this.elevation,
-    this.padding,
-    this.minimumSize,
-    this.side,
-    this.shape,
-    this.mouseCursor,
-    this.visualDensity,
-    this.tapTargetSize,
-    this.animationDuration,
-    this.enableFeedback,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final MaterialStateProperty<TextStyle> textStyle;
-  final MaterialStateProperty<Color> backgroundColor;
-  final MaterialStateProperty<Color> foregroundColor;
-  final MaterialStateProperty<Color> overlayColor;
-  final MaterialStateProperty<Color> shadowColor;
-  final MaterialStateProperty<double> elevation;
-  final MaterialStateProperty<EdgeInsetsGeometry> padding;
-  final MaterialStateProperty<Size> minimumSize;
-  final MaterialStateProperty<BorderSide> side;
-  final MaterialStateProperty<OutlinedBorder> shape;
-  final MaterialStateProperty<MouseCursor> mouseCursor;
-  final VisualDensity visualDensity;
-  final MaterialTapTargetSize tapTargetSize;
-  final Duration animationDuration;
-  final bool enableFeedback;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  MaterialStateProperty<TextStyle> get textStyle {
+    return null;
+  }
+
+  set textStyle(MaterialStateProperty<TextStyle> val) {
+    if (val == this.textStyle) {
+      return;
+    }
+  }
+
+  MaterialStateProperty<Color> get backgroundColor {
+    return null;
+  }
+
+  set backgroundColor(MaterialStateProperty<Color> val) {
+    if (val == this.backgroundColor) {
+      return;
+    }
+  }
+
+  MaterialStateProperty<Color> get foregroundColor {
+    return null;
+  }
+
+  set foregroundColor(MaterialStateProperty<Color> val) {
+    if (val == this.foregroundColor) {
+      return;
+    }
+  }
+
+  MaterialStateProperty<Color> get overlayColor {
+    return null;
+  }
+
+  set overlayColor(MaterialStateProperty<Color> val) {
+    if (val == this.overlayColor) {
+      return;
+    }
+  }
+
+  MaterialStateProperty<Color> get shadowColor {
+    return null;
+  }
+
+  set shadowColor(MaterialStateProperty<Color> val) {
+    if (val == this.shadowColor) {
+      return;
+    }
+  }
+
+  MaterialStateProperty<double> get elevation {
+    return null;
+  }
+
+  set elevation(MaterialStateProperty<double> val) {
+    if (val == this.elevation) {
+      return;
+    }
+  }
+
+  MaterialStateProperty<EdgeInsetsGeometry> get padding {
+    return null;
+  }
+
+  set padding(MaterialStateProperty<EdgeInsetsGeometry> val) {
+    if (val == this.padding) {
+      return;
+    }
+  }
+
+  MaterialStateProperty<Size> get minimumSize {
+    return null;
+  }
+
+  set minimumSize(MaterialStateProperty<Size> val) {
+    if (val == this.minimumSize) {
+      return;
+    }
+  }
+
+  MaterialStateProperty<BorderSide> get side {
+    return null;
+  }
+
+  set side(MaterialStateProperty<BorderSide> val) {
+    if (val == this.side) {
+      return;
+    }
+  }
+
+  MaterialStateProperty<OutlinedBorder> get shape {
+    return null;
+  }
+
+  set shape(MaterialStateProperty<OutlinedBorder> val) {
+    if (val == this.shape) {
+      return;
+    }
+  }
+
+  MaterialStateProperty<MouseCursor> get mouseCursor {
+    return null;
+  }
+
+  set mouseCursor(MaterialStateProperty<MouseCursor> val) {
+    if (val == this.mouseCursor) {
+      return;
+    }
+  }
+
+  VisualDensity get visualDensity {
+    return null;
+  }
+
+  set visualDensity(VisualDensity val) {
+    if (val == this.visualDensity) {
+      return;
+    }
+  }
+
+  MaterialTapTargetSize get tapTargetSize {
+    return null;
+  }
+
+  set tapTargetSize(MaterialTapTargetSize val) {
+    if (val == this.tapTargetSize) {
+      return;
+    }
+  }
+
+  Duration get animationDuration {
+    return null;
+  }
+
+  set animationDuration(Duration val) {
+    if (val == this.animationDuration) {
+      return;
+    }
+  }
+
+  bool get enableFeedback {
+    return null;
+  }
+
+  set enableFeedback(bool val) {
+    if (val == this.enableFeedback) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -54,34 +191,35 @@ class ButtonStyleRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': ButtonStyle(
-       textStyle: this.textStyle,
-       backgroundColor: this.backgroundColor,
-       foregroundColor: this.foregroundColor,
-       overlayColor: this.overlayColor,
-       shadowColor: this.shadowColor,
-       elevation: this.elevation,
-       padding: this.padding,
-       minimumSize: this.minimumSize,
-       side: this.side,
-       shape: this.shape,
-       mouseCursor: this.mouseCursor,
-       visualDensity: this.visualDensity,
-       tapTargetSize: this.tapTargetSize,
-       animationDuration: this.animationDuration,
-       enableFeedback: this.enableFeedback,
+       textStyle : this.textStyle,
+       backgroundColor : this.backgroundColor,
+       foregroundColor : this.foregroundColor,
+       overlayColor : this.overlayColor,
+       shadowColor : this.shadowColor,
+       elevation : this.elevation,
+       padding : this.padding,
+       minimumSize : this.minimumSize,
+       side : this.side,
+       shape : this.shape,
+       mouseCursor : this.mouseCursor,
+       visualDensity : this.visualDensity,
+       tapTargetSize : this.tapTargetSize,
+       animationDuration : this.animationDuration,
+       enableFeedback : this.enableFeedback,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

@@ -6,13 +6,38 @@ import 'package:flutter/gestures.dart';
 class PageTransitionsThemeRender<T> extends StatelessWidget {
 
   const PageTransitionsThemeRender({
-    this.builders,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final Map<TargetPlatform, PageTransitionsBuilder> builders;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  Map<TargetPlatform, PageTransitionsBuilder> get builders {
+    return null;
+  }
+
+  set builders(Map<TargetPlatform, PageTransitionsBuilder> val) {
+    if (val == this.builders) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   '_defaultBuilders': null,
   };
@@ -27,20 +52,21 @@ class PageTransitionsThemeRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': PageTransitionsTheme(
-       builders: this.builders,
+       builders : this.builders,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

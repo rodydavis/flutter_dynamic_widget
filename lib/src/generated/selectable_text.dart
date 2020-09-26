@@ -6,59 +6,268 @@ import 'package:flutter/gestures.dart';
 class SelectableTextRender<T> extends StatelessWidget {
 
   const SelectableTextRender({
-    this.data,
-    this.textSpan,
-    this.focusNode,
-    this.style,
-    this.strutStyle,
-    this.textAlign,
-    this.textDirection,
-    this.textScaleFactor,
-    this.autofocus,
-    this.minLines,
-    this.maxLines,
-    this.showCursor,
-    this.cursorWidth,
-    this.cursorHeight,
-    this.cursorRadius,
-    this.cursorColor,
-    this.enableInteractiveSelection,
-    this.dragStartBehavior,
-    this.toolbarOptions,
-    this.onTap,
-    this.scrollPhysics,
-    this.textHeightBehavior,
-    this.textWidthBasis,
-    this.onSelectionChanged,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final String data;
-  final TextSpan textSpan;
-  final FocusNode focusNode;
-  final TextStyle style;
-  final StrutStyle strutStyle;
-  final TextAlign textAlign;
-  final TextDirection textDirection;
-  final double textScaleFactor;
-  final bool autofocus;
-  final int minLines;
-  final int maxLines;
-  final bool showCursor;
-  final double cursorWidth;
-  final double cursorHeight;
-  final Radius cursorRadius;
-  final Color cursorColor;
-  final bool enableInteractiveSelection;
-  final DragStartBehavior dragStartBehavior;
-  final ToolbarOptions toolbarOptions;
-  final GestureTapCallback onTap;
-  final ScrollPhysics scrollPhysics;
-  final TextHeightBehavior textHeightBehavior;
-  final TextWidthBasis textWidthBasis;
-  final SelectionChangedCallback onSelectionChanged;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  String get data {
+    return null;
+  }
+
+  set data(String val) {
+    if (val == this.data) {
+      return;
+    }
+  }
+
+  TextSpan get textSpan {
+    return null;
+  }
+
+  set textSpan(TextSpan val) {
+    if (val == this.textSpan) {
+      return;
+    }
+  }
+
+  FocusNode get focusNode {
+    return null;
+  }
+
+  set focusNode(FocusNode val) {
+    if (val == this.focusNode) {
+      return;
+    }
+  }
+
+  TextStyle get style {
+    return null;
+  }
+
+  set style(TextStyle val) {
+    if (val == this.style) {
+      return;
+    }
+  }
+
+  StrutStyle get strutStyle {
+    return null;
+  }
+
+  set strutStyle(StrutStyle val) {
+    if (val == this.strutStyle) {
+      return;
+    }
+  }
+
+  TextAlign get textAlign {
+    return null;
+  }
+
+  set textAlign(TextAlign val) {
+    if (val == this.textAlign) {
+      return;
+    }
+  }
+
+  TextDirection get textDirection {
+    return null;
+  }
+
+  set textDirection(TextDirection val) {
+    if (val == this.textDirection) {
+      return;
+    }
+  }
+
+  double get textScaleFactor {
+    return null;
+  }
+
+  set textScaleFactor(double val) {
+    if (val == this.textScaleFactor) {
+      return;
+    }
+  }
+
+  bool get autofocus {
+    return null;
+  }
+
+  set autofocus(bool val) {
+    if (val == this.autofocus) {
+      return;
+    }
+  }
+
+  int get minLines {
+    return null;
+  }
+
+  set minLines(int val) {
+    if (val == this.minLines) {
+      return;
+    }
+  }
+
+  int get maxLines {
+    return null;
+  }
+
+  set maxLines(int val) {
+    if (val == this.maxLines) {
+      return;
+    }
+  }
+
+  bool get showCursor {
+    return null;
+  }
+
+  set showCursor(bool val) {
+    if (val == this.showCursor) {
+      return;
+    }
+  }
+
+  double get cursorWidth {
+    return null;
+  }
+
+  set cursorWidth(double val) {
+    if (val == this.cursorWidth) {
+      return;
+    }
+  }
+
+  double get cursorHeight {
+    return null;
+  }
+
+  set cursorHeight(double val) {
+    if (val == this.cursorHeight) {
+      return;
+    }
+  }
+
+  Radius get cursorRadius {
+    return null;
+  }
+
+  set cursorRadius(Radius val) {
+    if (val == this.cursorRadius) {
+      return;
+    }
+  }
+
+  Color get cursorColor {
+    return null;
+  }
+
+  set cursorColor(Color val) {
+    if (val == this.cursorColor) {
+      return;
+    }
+  }
+
+  bool get enableInteractiveSelection {
+    return null;
+  }
+
+  set enableInteractiveSelection(bool val) {
+    if (val == this.enableInteractiveSelection) {
+      return;
+    }
+  }
+
+  DragStartBehavior get dragStartBehavior {
+    return null;
+  }
+
+  set dragStartBehavior(DragStartBehavior val) {
+    if (val == this.dragStartBehavior) {
+      return;
+    }
+  }
+
+  ToolbarOptions get toolbarOptions {
+    return null;
+  }
+
+  set toolbarOptions(ToolbarOptions val) {
+    if (val == this.toolbarOptions) {
+      return;
+    }
+  }
+
+  GestureTapCallback get onTap {
+    return null;
+  }
+
+  set onTap(GestureTapCallback val) {
+    if (val == this.onTap) {
+      return;
+    }
+  }
+
+  ScrollPhysics get scrollPhysics {
+    return null;
+  }
+
+  set scrollPhysics(ScrollPhysics val) {
+    if (val == this.scrollPhysics) {
+      return;
+    }
+  }
+
+  TextHeightBehavior get textHeightBehavior {
+    return null;
+  }
+
+  set textHeightBehavior(TextHeightBehavior val) {
+    if (val == this.textHeightBehavior) {
+      return;
+    }
+  }
+
+  TextWidthBasis get textWidthBasis {
+    return null;
+  }
+
+  set textWidthBasis(TextWidthBasis val) {
+    if (val == this.textWidthBasis) {
+      return;
+    }
+  }
+
+  SelectionChangedCallback get onSelectionChanged {
+    return null;
+  }
+
+  set onSelectionChanged(SelectionChangedCallback val) {
+    if (val == this.onSelectionChanged) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -72,67 +281,68 @@ class SelectableTextRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': SelectableText(
-       key: this.key,
-       focusNode: this.focusNode,
-       style: this.style,
-       strutStyle: this.strutStyle,
-       textAlign: this.textAlign,
-       textDirection: this.textDirection,
-       textScaleFactor: this.textScaleFactor,
-       showCursor: this.showCursor,
-       autofocus: this.autofocus,
-       toolbarOptions: this.toolbarOptions,
-       minLines: this.minLines,
-       maxLines: this.maxLines,
-       cursorWidth: this.cursorWidth,
-       cursorHeight: this.cursorHeight,
-       cursorRadius: this.cursorRadius,
-       cursorColor: this.cursorColor,
-       dragStartBehavior: this.dragStartBehavior,
-       enableInteractiveSelection: this.enableInteractiveSelection,
-       onTap: this.onTap,
-       scrollPhysics: this.scrollPhysics,
-       textHeightBehavior: this.textHeightBehavior,
-       textWidthBasis: this.textWidthBasis,
-       onSelectionChanged: this.onSelectionChanged,
+       key : this.key,
+       focusNode : this.focusNode,
+       style : this.style,
+       strutStyle : this.strutStyle,
+       textAlign : this.textAlign,
+       textDirection : this.textDirection,
+       textScaleFactor : this.textScaleFactor,
+       showCursor : this.showCursor,
+       autofocus : this.autofocus,
+       toolbarOptions : this.toolbarOptions,
+       minLines : this.minLines,
+       maxLines : this.maxLines,
+       cursorWidth : this.cursorWidth,
+       cursorHeight : this.cursorHeight,
+       cursorRadius : this.cursorRadius,
+       cursorColor : this.cursorColor,
+       dragStartBehavior : this.dragStartBehavior,
+       enableInteractiveSelection : this.enableInteractiveSelection,
+       onTap : this.onTap,
+       scrollPhysics : this.scrollPhysics,
+       textHeightBehavior : this.textHeightBehavior,
+       textWidthBasis : this.textWidthBasis,
+       onSelectionChanged : this.onSelectionChanged,
     ),
     'rich': SelectableText.rich(
-       key: this.key,
-       focusNode: this.focusNode,
-       style: this.style,
-       strutStyle: this.strutStyle,
-       textAlign: this.textAlign,
-       textDirection: this.textDirection,
-       textScaleFactor: this.textScaleFactor,
-       showCursor: this.showCursor,
-       autofocus: this.autofocus,
-       toolbarOptions: this.toolbarOptions,
-       minLines: this.minLines,
-       maxLines: this.maxLines,
-       cursorWidth: this.cursorWidth,
-       cursorHeight: this.cursorHeight,
-       cursorRadius: this.cursorRadius,
-       cursorColor: this.cursorColor,
-       dragStartBehavior: this.dragStartBehavior,
-       enableInteractiveSelection: this.enableInteractiveSelection,
-       onTap: this.onTap,
-       scrollPhysics: this.scrollPhysics,
-       textHeightBehavior: this.textHeightBehavior,
-       textWidthBasis: this.textWidthBasis,
-       onSelectionChanged: this.onSelectionChanged,
+       key : this.key,
+       focusNode : this.focusNode,
+       style : this.style,
+       strutStyle : this.strutStyle,
+       textAlign : this.textAlign,
+       textDirection : this.textDirection,
+       textScaleFactor : this.textScaleFactor,
+       showCursor : this.showCursor,
+       autofocus : this.autofocus,
+       toolbarOptions : this.toolbarOptions,
+       minLines : this.minLines,
+       maxLines : this.maxLines,
+       cursorWidth : this.cursorWidth,
+       cursorHeight : this.cursorHeight,
+       cursorRadius : this.cursorRadius,
+       cursorColor : this.cursorColor,
+       dragStartBehavior : this.dragStartBehavior,
+       enableInteractiveSelection : this.enableInteractiveSelection,
+       onTap : this.onTap,
+       scrollPhysics : this.scrollPhysics,
+       textHeightBehavior : this.textHeightBehavior,
+       textWidthBasis : this.textWidthBasis,
+       onSelectionChanged : this.onSelectionChanged,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

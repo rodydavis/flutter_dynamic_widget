@@ -6,49 +6,218 @@ import 'package:flutter/gestures.dart';
 class ChipThemeDataRender<T> extends StatelessWidget {
 
   const ChipThemeDataRender({
-    this.backgroundColor,
-    this.deleteIconColor,
-    this.disabledColor,
-    this.selectedColor,
-    this.secondarySelectedColor,
-    this.shadowColor,
-    this.selectedShadowColor,
-    this.showCheckmark,
-    this.checkmarkColor,
-    this.labelPadding,
-    this.padding,
-    this.shape,
-    this.labelStyle,
-    this.secondaryLabelStyle,
-    this.brightness,
-    this.elevation,
-    this.pressElevation,
-    this.primaryColor,
-    this.secondaryColor,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final Color backgroundColor;
-  final Color deleteIconColor;
-  final Color disabledColor;
-  final Color selectedColor;
-  final Color secondarySelectedColor;
-  final Color shadowColor;
-  final Color selectedShadowColor;
-  final bool showCheckmark;
-  final Color checkmarkColor;
-  final EdgeInsetsGeometry labelPadding;
-  final EdgeInsetsGeometry padding;
-  final ShapeBorder shape;
-  final TextStyle labelStyle;
-  final TextStyle secondaryLabelStyle;
-  final Brightness brightness;
-  final double elevation;
-  final double pressElevation;
-  final Color primaryColor;
-  final Color secondaryColor;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  Color get backgroundColor {
+    return null;
+  }
+
+  set backgroundColor(Color val) {
+    if (val == this.backgroundColor) {
+      return;
+    }
+  }
+
+  Color get deleteIconColor {
+    return null;
+  }
+
+  set deleteIconColor(Color val) {
+    if (val == this.deleteIconColor) {
+      return;
+    }
+  }
+
+  Color get disabledColor {
+    return null;
+  }
+
+  set disabledColor(Color val) {
+    if (val == this.disabledColor) {
+      return;
+    }
+  }
+
+  Color get selectedColor {
+    return null;
+  }
+
+  set selectedColor(Color val) {
+    if (val == this.selectedColor) {
+      return;
+    }
+  }
+
+  Color get secondarySelectedColor {
+    return null;
+  }
+
+  set secondarySelectedColor(Color val) {
+    if (val == this.secondarySelectedColor) {
+      return;
+    }
+  }
+
+  Color get shadowColor {
+    return null;
+  }
+
+  set shadowColor(Color val) {
+    if (val == this.shadowColor) {
+      return;
+    }
+  }
+
+  Color get selectedShadowColor {
+    return null;
+  }
+
+  set selectedShadowColor(Color val) {
+    if (val == this.selectedShadowColor) {
+      return;
+    }
+  }
+
+  bool get showCheckmark {
+    return null;
+  }
+
+  set showCheckmark(bool val) {
+    if (val == this.showCheckmark) {
+      return;
+    }
+  }
+
+  Color get checkmarkColor {
+    return null;
+  }
+
+  set checkmarkColor(Color val) {
+    if (val == this.checkmarkColor) {
+      return;
+    }
+  }
+
+  EdgeInsetsGeometry get labelPadding {
+    return null;
+  }
+
+  set labelPadding(EdgeInsetsGeometry val) {
+    if (val == this.labelPadding) {
+      return;
+    }
+  }
+
+  EdgeInsetsGeometry get padding {
+    return null;
+  }
+
+  set padding(EdgeInsetsGeometry val) {
+    if (val == this.padding) {
+      return;
+    }
+  }
+
+  ShapeBorder get shape {
+    return null;
+  }
+
+  set shape(ShapeBorder val) {
+    if (val == this.shape) {
+      return;
+    }
+  }
+
+  TextStyle get labelStyle {
+    return null;
+  }
+
+  set labelStyle(TextStyle val) {
+    if (val == this.labelStyle) {
+      return;
+    }
+  }
+
+  TextStyle get secondaryLabelStyle {
+    return null;
+  }
+
+  set secondaryLabelStyle(TextStyle val) {
+    if (val == this.secondaryLabelStyle) {
+      return;
+    }
+  }
+
+  Brightness get brightness {
+    return null;
+  }
+
+  set brightness(Brightness val) {
+    if (val == this.brightness) {
+      return;
+    }
+  }
+
+  double get elevation {
+    return null;
+  }
+
+  set elevation(double val) {
+    if (val == this.elevation) {
+      return;
+    }
+  }
+
+  double get pressElevation {
+    return null;
+  }
+
+  set pressElevation(double val) {
+    if (val == this.pressElevation) {
+      return;
+    }
+  }
+
+  Color get primaryColor {
+    return null;
+  }
+
+  set primaryColor(Color val) {
+    if (val == this.primaryColor) {
+      return;
+    }
+  }
+
+  Color get secondaryColor {
+    return null;
+  }
+
+  set secondaryColor(Color val) {
+    if (val == this.secondaryColor) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -62,42 +231,43 @@ class ChipThemeDataRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': ChipThemeData(
-       backgroundColor: this.backgroundColor,
-       deleteIconColor: this.deleteIconColor,
-       disabledColor: this.disabledColor,
-       selectedColor: this.selectedColor,
-       secondarySelectedColor: this.secondarySelectedColor,
-       shadowColor: this.shadowColor,
-       selectedShadowColor: this.selectedShadowColor,
-       showCheckmark: this.showCheckmark,
-       checkmarkColor: this.checkmarkColor,
-       labelPadding: this.labelPadding,
-       padding: this.padding,
-       shape: this.shape,
-       labelStyle: this.labelStyle,
-       secondaryLabelStyle: this.secondaryLabelStyle,
-       brightness: this.brightness,
-       elevation: this.elevation,
-       pressElevation: this.pressElevation,
+       backgroundColor : this.backgroundColor,
+       deleteIconColor : this.deleteIconColor,
+       disabledColor : this.disabledColor,
+       selectedColor : this.selectedColor,
+       secondarySelectedColor : this.secondarySelectedColor,
+       shadowColor : this.shadowColor,
+       selectedShadowColor : this.selectedShadowColor,
+       showCheckmark : this.showCheckmark,
+       checkmarkColor : this.checkmarkColor,
+       labelPadding : this.labelPadding,
+       padding : this.padding,
+       shape : this.shape,
+       labelStyle : this.labelStyle,
+       secondaryLabelStyle : this.secondaryLabelStyle,
+       brightness : this.brightness,
+       elevation : this.elevation,
+       pressElevation : this.pressElevation,
     ),
     'fromDefaults': ChipThemeData.fromDefaults(
-       brightness: this.brightness,
-       primaryColor: this.primaryColor,
-       secondaryColor: this.secondaryColor,
-       labelStyle: this.labelStyle,
+       brightness : this.brightness,
+       primaryColor : this.primaryColor,
+       secondaryColor : this.secondaryColor,
+       labelStyle : this.labelStyle,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

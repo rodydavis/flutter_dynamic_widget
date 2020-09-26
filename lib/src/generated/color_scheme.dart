@@ -6,49 +6,218 @@ import 'package:flutter/gestures.dart';
 class ColorSchemeRender<T> extends StatelessWidget {
 
   const ColorSchemeRender({
-    this.primary,
-    this.primaryVariant,
-    this.secondary,
-    this.secondaryVariant,
-    this.surface,
-    this.background,
-    this.error,
-    this.onPrimary,
-    this.onSecondary,
-    this.onSurface,
-    this.onBackground,
-    this.onError,
-    this.brightness,
-    this.primarySwatch,
-    this.primaryColorDark,
-    this.accentColor,
-    this.cardColor,
-    this.backgroundColor,
-    this.errorColor,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final Color primary;
-  final Color primaryVariant;
-  final Color secondary;
-  final Color secondaryVariant;
-  final Color surface;
-  final Color background;
-  final Color error;
-  final Color onPrimary;
-  final Color onSecondary;
-  final Color onSurface;
-  final Color onBackground;
-  final Color onError;
-  final Brightness brightness;
-  final MaterialColor primarySwatch;
-  final Color primaryColorDark;
-  final Color accentColor;
-  final Color cardColor;
-  final Color backgroundColor;
-  final Color errorColor;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  Color get primary {
+    return null;
+  }
+
+  set primary(Color val) {
+    if (val == this.primary) {
+      return;
+    }
+  }
+
+  Color get primaryVariant {
+    return null;
+  }
+
+  set primaryVariant(Color val) {
+    if (val == this.primaryVariant) {
+      return;
+    }
+  }
+
+  Color get secondary {
+    return null;
+  }
+
+  set secondary(Color val) {
+    if (val == this.secondary) {
+      return;
+    }
+  }
+
+  Color get secondaryVariant {
+    return null;
+  }
+
+  set secondaryVariant(Color val) {
+    if (val == this.secondaryVariant) {
+      return;
+    }
+  }
+
+  Color get surface {
+    return null;
+  }
+
+  set surface(Color val) {
+    if (val == this.surface) {
+      return;
+    }
+  }
+
+  Color get background {
+    return null;
+  }
+
+  set background(Color val) {
+    if (val == this.background) {
+      return;
+    }
+  }
+
+  Color get error {
+    return null;
+  }
+
+  set error(Color val) {
+    if (val == this.error) {
+      return;
+    }
+  }
+
+  Color get onPrimary {
+    return null;
+  }
+
+  set onPrimary(Color val) {
+    if (val == this.onPrimary) {
+      return;
+    }
+  }
+
+  Color get onSecondary {
+    return null;
+  }
+
+  set onSecondary(Color val) {
+    if (val == this.onSecondary) {
+      return;
+    }
+  }
+
+  Color get onSurface {
+    return null;
+  }
+
+  set onSurface(Color val) {
+    if (val == this.onSurface) {
+      return;
+    }
+  }
+
+  Color get onBackground {
+    return null;
+  }
+
+  set onBackground(Color val) {
+    if (val == this.onBackground) {
+      return;
+    }
+  }
+
+  Color get onError {
+    return null;
+  }
+
+  set onError(Color val) {
+    if (val == this.onError) {
+      return;
+    }
+  }
+
+  Brightness get brightness {
+    return null;
+  }
+
+  set brightness(Brightness val) {
+    if (val == this.brightness) {
+      return;
+    }
+  }
+
+  MaterialColor get primarySwatch {
+    return null;
+  }
+
+  set primarySwatch(MaterialColor val) {
+    if (val == this.primarySwatch) {
+      return;
+    }
+  }
+
+  Color get primaryColorDark {
+    return null;
+  }
+
+  set primaryColorDark(Color val) {
+    if (val == this.primaryColorDark) {
+      return;
+    }
+  }
+
+  Color get accentColor {
+    return null;
+  }
+
+  set accentColor(Color val) {
+    if (val == this.accentColor) {
+      return;
+    }
+  }
+
+  Color get cardColor {
+    return null;
+  }
+
+  set cardColor(Color val) {
+    if (val == this.cardColor) {
+      return;
+    }
+  }
+
+  Color get backgroundColor {
+    return null;
+  }
+
+  set backgroundColor(Color val) {
+    if (val == this.backgroundColor) {
+      return;
+    }
+  }
+
+  Color get errorColor {
+    return null;
+  }
+
+  set errorColor(Color val) {
+    if (val == this.errorColor) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -62,101 +231,102 @@ class ColorSchemeRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': ColorScheme(
-       primary: this.primary,
-       primaryVariant: this.primaryVariant,
-       secondary: this.secondary,
-       secondaryVariant: this.secondaryVariant,
-       surface: this.surface,
-       background: this.background,
-       error: this.error,
-       onPrimary: this.onPrimary,
-       onSecondary: this.onSecondary,
-       onSurface: this.onSurface,
-       onBackground: this.onBackground,
-       onError: this.onError,
-       brightness: this.brightness,
+       primary : this.primary,
+       primaryVariant : this.primaryVariant,
+       secondary : this.secondary,
+       secondaryVariant : this.secondaryVariant,
+       surface : this.surface,
+       background : this.background,
+       error : this.error,
+       onPrimary : this.onPrimary,
+       onSecondary : this.onSecondary,
+       onSurface : this.onSurface,
+       onBackground : this.onBackground,
+       onError : this.onError,
+       brightness : this.brightness,
     ),
     'light': ColorScheme.light(
-       primary: this.primary,
-       primaryVariant: this.primaryVariant,
-       secondary: this.secondary,
-       secondaryVariant: this.secondaryVariant,
-       surface: this.surface,
-       background: this.background,
-       error: this.error,
-       onPrimary: this.onPrimary,
-       onSecondary: this.onSecondary,
-       onSurface: this.onSurface,
-       onBackground: this.onBackground,
-       onError: this.onError,
-       brightness: this.brightness,
+       primary : this.primary,
+       primaryVariant : this.primaryVariant,
+       secondary : this.secondary,
+       secondaryVariant : this.secondaryVariant,
+       surface : this.surface,
+       background : this.background,
+       error : this.error,
+       onPrimary : this.onPrimary,
+       onSecondary : this.onSecondary,
+       onSurface : this.onSurface,
+       onBackground : this.onBackground,
+       onError : this.onError,
+       brightness : this.brightness,
     ),
     'dark': ColorScheme.dark(
-       primary: this.primary,
-       primaryVariant: this.primaryVariant,
-       secondary: this.secondary,
-       secondaryVariant: this.secondaryVariant,
-       surface: this.surface,
-       background: this.background,
-       error: this.error,
-       onPrimary: this.onPrimary,
-       onSecondary: this.onSecondary,
-       onSurface: this.onSurface,
-       onBackground: this.onBackground,
-       onError: this.onError,
-       brightness: this.brightness,
+       primary : this.primary,
+       primaryVariant : this.primaryVariant,
+       secondary : this.secondary,
+       secondaryVariant : this.secondaryVariant,
+       surface : this.surface,
+       background : this.background,
+       error : this.error,
+       onPrimary : this.onPrimary,
+       onSecondary : this.onSecondary,
+       onSurface : this.onSurface,
+       onBackground : this.onBackground,
+       onError : this.onError,
+       brightness : this.brightness,
     ),
     'highContrastLight': ColorScheme.highContrastLight(
-       primary: this.primary,
-       primaryVariant: this.primaryVariant,
-       secondary: this.secondary,
-       secondaryVariant: this.secondaryVariant,
-       surface: this.surface,
-       background: this.background,
-       error: this.error,
-       onPrimary: this.onPrimary,
-       onSecondary: this.onSecondary,
-       onSurface: this.onSurface,
-       onBackground: this.onBackground,
-       onError: this.onError,
-       brightness: this.brightness,
+       primary : this.primary,
+       primaryVariant : this.primaryVariant,
+       secondary : this.secondary,
+       secondaryVariant : this.secondaryVariant,
+       surface : this.surface,
+       background : this.background,
+       error : this.error,
+       onPrimary : this.onPrimary,
+       onSecondary : this.onSecondary,
+       onSurface : this.onSurface,
+       onBackground : this.onBackground,
+       onError : this.onError,
+       brightness : this.brightness,
     ),
     'highContrastDark': ColorScheme.highContrastDark(
-       primary: this.primary,
-       primaryVariant: this.primaryVariant,
-       secondary: this.secondary,
-       secondaryVariant: this.secondaryVariant,
-       surface: this.surface,
-       background: this.background,
-       error: this.error,
-       onPrimary: this.onPrimary,
-       onSecondary: this.onSecondary,
-       onSurface: this.onSurface,
-       onBackground: this.onBackground,
-       onError: this.onError,
-       brightness: this.brightness,
+       primary : this.primary,
+       primaryVariant : this.primaryVariant,
+       secondary : this.secondary,
+       secondaryVariant : this.secondaryVariant,
+       surface : this.surface,
+       background : this.background,
+       error : this.error,
+       onPrimary : this.onPrimary,
+       onSecondary : this.onSecondary,
+       onSurface : this.onSurface,
+       onBackground : this.onBackground,
+       onError : this.onError,
+       brightness : this.brightness,
     ),
     'fromSwatch': ColorScheme.fromSwatch(
-       primarySwatch: this.primarySwatch,
-       primaryColorDark: this.primaryColorDark,
-       accentColor: this.accentColor,
-       cardColor: this.cardColor,
-       backgroundColor: this.backgroundColor,
-       errorColor: this.errorColor,
-       brightness: this.brightness,
+       primarySwatch : this.primarySwatch,
+       primaryColorDark : this.primaryColorDark,
+       accentColor : this.accentColor,
+       cardColor : this.cardColor,
+       backgroundColor : this.backgroundColor,
+       errorColor : this.errorColor,
+       brightness : this.brightness,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

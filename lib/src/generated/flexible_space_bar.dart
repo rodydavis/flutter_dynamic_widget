@@ -6,21 +6,78 @@ import 'package:flutter/gestures.dart';
 class FlexibleSpaceBarSettingsRender<T> extends StatelessWidget {
 
   const FlexibleSpaceBarSettingsRender({
-    this.toolbarOpacity,
-    this.minExtent,
-    this.maxExtent,
-    this.currentExtent,
-    this.child,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final double toolbarOpacity;
-  final double minExtent;
-  final double maxExtent;
-  final double currentExtent;
-  final Widget child;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  double get toolbarOpacity {
+    return null;
+  }
+
+  set toolbarOpacity(double val) {
+    if (val == this.toolbarOpacity) {
+      return;
+    }
+  }
+
+  double get minExtent {
+    return null;
+  }
+
+  set minExtent(double val) {
+    if (val == this.minExtent) {
+      return;
+    }
+  }
+
+  double get maxExtent {
+    return null;
+  }
+
+  set maxExtent(double val) {
+    if (val == this.maxExtent) {
+      return;
+    }
+  }
+
+  double get currentExtent {
+    return null;
+  }
+
+  set currentExtent(double val) {
+    if (val == this.currentExtent) {
+      return;
+    }
+  }
+
+  Widget get child {
+    return null;
+  }
+
+  set child(Widget val) {
+    if (val == this.child) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -34,25 +91,26 @@ class FlexibleSpaceBarSettingsRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': FlexibleSpaceBarSettings(
-       key: this.key,
-       toolbarOpacity: this.toolbarOpacity,
-       minExtent: this.minExtent,
-       maxExtent: this.maxExtent,
-       currentExtent: this.currentExtent,
-       child: this.child,
+       key : this.key,
+       toolbarOpacity : this.toolbarOpacity,
+       minExtent : this.minExtent,
+       maxExtent : this.maxExtent,
+       currentExtent : this.currentExtent,
+       child : this.child,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

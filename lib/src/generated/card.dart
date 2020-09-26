@@ -6,29 +6,118 @@ import 'package:flutter/gestures.dart';
 class CardRender<T> extends StatelessWidget {
 
   const CardRender({
-    this.color,
-    this.shadowColor,
-    this.elevation,
-    this.shape,
-    this.borderOnForeground,
-    this.clipBehavior,
-    this.margin,
-    this.semanticContainer,
-    this.child,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final Color color;
-  final Color shadowColor;
-  final double elevation;
-  final ShapeBorder shape;
-  final bool borderOnForeground;
-  final Clip clipBehavior;
-  final EdgeInsetsGeometry margin;
-  final bool semanticContainer;
-  final Widget child;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  Color get color {
+    return null;
+  }
+
+  set color(Color val) {
+    if (val == this.color) {
+      return;
+    }
+  }
+
+  Color get shadowColor {
+    return null;
+  }
+
+  set shadowColor(Color val) {
+    if (val == this.shadowColor) {
+      return;
+    }
+  }
+
+  double get elevation {
+    return null;
+  }
+
+  set elevation(double val) {
+    if (val == this.elevation) {
+      return;
+    }
+  }
+
+  ShapeBorder get shape {
+    return null;
+  }
+
+  set shape(ShapeBorder val) {
+    if (val == this.shape) {
+      return;
+    }
+  }
+
+  bool get borderOnForeground {
+    return null;
+  }
+
+  set borderOnForeground(bool val) {
+    if (val == this.borderOnForeground) {
+      return;
+    }
+  }
+
+  Clip get clipBehavior {
+    return null;
+  }
+
+  set clipBehavior(Clip val) {
+    if (val == this.clipBehavior) {
+      return;
+    }
+  }
+
+  EdgeInsetsGeometry get margin {
+    return null;
+  }
+
+  set margin(EdgeInsetsGeometry val) {
+    if (val == this.margin) {
+      return;
+    }
+  }
+
+  bool get semanticContainer {
+    return null;
+  }
+
+  set semanticContainer(bool val) {
+    if (val == this.semanticContainer) {
+      return;
+    }
+  }
+
+  Widget get child {
+    return null;
+  }
+
+  set child(Widget val) {
+    if (val == this.child) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   '_defaultElevation': null,
   };
@@ -43,29 +132,30 @@ class CardRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': Card(
-       key: this.key,
-       color: this.color,
-       shadowColor: this.shadowColor,
-       elevation: this.elevation,
-       shape: this.shape,
-       borderOnForeground: this.borderOnForeground,
-       margin: this.margin,
-       clipBehavior: this.clipBehavior,
-       child: this.child,
-       semanticContainer: this.semanticContainer,
+       key : this.key,
+       color : this.color,
+       shadowColor : this.shadowColor,
+       elevation : this.elevation,
+       shape : this.shape,
+       borderOnForeground : this.borderOnForeground,
+       margin : this.margin,
+       clipBehavior : this.clipBehavior,
+       child : this.child,
+       semanticContainer : this.semanticContainer,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

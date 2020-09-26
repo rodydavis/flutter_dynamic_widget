@@ -6,21 +6,78 @@ import 'package:flutter/gestures.dart';
 class DialogThemeRender<T> extends StatelessWidget {
 
   const DialogThemeRender({
-    this.backgroundColor,
-    this.elevation,
-    this.shape,
-    this.titleTextStyle,
-    this.contentTextStyle,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final Color backgroundColor;
-  final double elevation;
-  final ShapeBorder shape;
-  final TextStyle titleTextStyle;
-  final TextStyle contentTextStyle;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  Color get backgroundColor {
+    return null;
+  }
+
+  set backgroundColor(Color val) {
+    if (val == this.backgroundColor) {
+      return;
+    }
+  }
+
+  double get elevation {
+    return null;
+  }
+
+  set elevation(double val) {
+    if (val == this.elevation) {
+      return;
+    }
+  }
+
+  ShapeBorder get shape {
+    return null;
+  }
+
+  set shape(ShapeBorder val) {
+    if (val == this.shape) {
+      return;
+    }
+  }
+
+  TextStyle get titleTextStyle {
+    return null;
+  }
+
+  set titleTextStyle(TextStyle val) {
+    if (val == this.titleTextStyle) {
+      return;
+    }
+  }
+
+  TextStyle get contentTextStyle {
+    return null;
+  }
+
+  set contentTextStyle(TextStyle val) {
+    if (val == this.contentTextStyle) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -34,24 +91,25 @@ class DialogThemeRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': DialogTheme(
-       backgroundColor: this.backgroundColor,
-       elevation: this.elevation,
-       shape: this.shape,
-       titleTextStyle: this.titleTextStyle,
-       contentTextStyle: this.contentTextStyle,
+       backgroundColor : this.backgroundColor,
+       elevation : this.elevation,
+       shape : this.shape,
+       titleTextStyle : this.titleTextStyle,
+       contentTextStyle : this.contentTextStyle,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

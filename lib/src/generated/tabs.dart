@@ -6,19 +6,68 @@ import 'package:flutter/gestures.dart';
 class TabPageSelectorRender<T> extends StatelessWidget {
 
   const TabPageSelectorRender({
-    this.controller,
-    this.indicatorSize,
-    this.color,
-    this.selectedColor,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final TabController controller;
-  final double indicatorSize;
-  final Color color;
-  final Color selectedColor;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  TabController get controller {
+    return null;
+  }
+
+  set controller(TabController val) {
+    if (val == this.controller) {
+      return;
+    }
+  }
+
+  double get indicatorSize {
+    return null;
+  }
+
+  set indicatorSize(double val) {
+    if (val == this.indicatorSize) {
+      return;
+    }
+  }
+
+  Color get color {
+    return null;
+  }
+
+  set color(Color val) {
+    if (val == this.color) {
+      return;
+    }
+  }
+
+  Color get selectedColor {
+    return null;
+  }
+
+  set selectedColor(Color val) {
+    if (val == this.selectedColor) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -32,24 +81,25 @@ class TabPageSelectorRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': TabPageSelector(
-       key: this.key,
-       controller: this.controller,
-       indicatorSize: this.indicatorSize,
-       color: this.color,
-       selectedColor: this.selectedColor,
+       key : this.key,
+       controller : this.controller,
+       indicatorSize : this.indicatorSize,
+       color : this.color,
+       selectedColor : this.selectedColor,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

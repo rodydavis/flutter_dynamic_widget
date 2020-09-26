@@ -6,49 +6,218 @@ import 'package:flutter/gestures.dart';
 class IconButtonRender<T> extends StatelessWidget {
 
   const IconButtonRender({
-    this.iconSize,
-    this.visualDensity,
-    this.padding,
-    this.alignment,
-    this.splashRadius,
-    this.icon,
-    this.focusColor,
-    this.hoverColor,
-    this.color,
-    this.splashColor,
-    this.highlightColor,
-    this.disabledColor,
-    this.onPressed,
-    this.mouseCursor,
-    this.focusNode,
-    this.autofocus,
-    this.tooltip,
-    this.enableFeedback,
-    this.constraints,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final double iconSize;
-  final VisualDensity visualDensity;
-  final EdgeInsetsGeometry padding;
-  final AlignmentGeometry alignment;
-  final double splashRadius;
-  final Widget icon;
-  final Color focusColor;
-  final Color hoverColor;
-  final Color color;
-  final Color splashColor;
-  final Color highlightColor;
-  final Color disabledColor;
-  final VoidCallback onPressed;
-  final MouseCursor mouseCursor;
-  final FocusNode focusNode;
-  final bool autofocus;
-  final String tooltip;
-  final bool enableFeedback;
-  final BoxConstraints constraints;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  double get iconSize {
+    return null;
+  }
+
+  set iconSize(double val) {
+    if (val == this.iconSize) {
+      return;
+    }
+  }
+
+  VisualDensity get visualDensity {
+    return null;
+  }
+
+  set visualDensity(VisualDensity val) {
+    if (val == this.visualDensity) {
+      return;
+    }
+  }
+
+  EdgeInsetsGeometry get padding {
+    return null;
+  }
+
+  set padding(EdgeInsetsGeometry val) {
+    if (val == this.padding) {
+      return;
+    }
+  }
+
+  AlignmentGeometry get alignment {
+    return null;
+  }
+
+  set alignment(AlignmentGeometry val) {
+    if (val == this.alignment) {
+      return;
+    }
+  }
+
+  double get splashRadius {
+    return null;
+  }
+
+  set splashRadius(double val) {
+    if (val == this.splashRadius) {
+      return;
+    }
+  }
+
+  Widget get icon {
+    return null;
+  }
+
+  set icon(Widget val) {
+    if (val == this.icon) {
+      return;
+    }
+  }
+
+  Color get focusColor {
+    return null;
+  }
+
+  set focusColor(Color val) {
+    if (val == this.focusColor) {
+      return;
+    }
+  }
+
+  Color get hoverColor {
+    return null;
+  }
+
+  set hoverColor(Color val) {
+    if (val == this.hoverColor) {
+      return;
+    }
+  }
+
+  Color get color {
+    return null;
+  }
+
+  set color(Color val) {
+    if (val == this.color) {
+      return;
+    }
+  }
+
+  Color get splashColor {
+    return null;
+  }
+
+  set splashColor(Color val) {
+    if (val == this.splashColor) {
+      return;
+    }
+  }
+
+  Color get highlightColor {
+    return null;
+  }
+
+  set highlightColor(Color val) {
+    if (val == this.highlightColor) {
+      return;
+    }
+  }
+
+  Color get disabledColor {
+    return null;
+  }
+
+  set disabledColor(Color val) {
+    if (val == this.disabledColor) {
+      return;
+    }
+  }
+
+  VoidCallback get onPressed {
+    return null;
+  }
+
+  set onPressed(VoidCallback val) {
+    if (val == this.onPressed) {
+      return;
+    }
+  }
+
+  MouseCursor get mouseCursor {
+    return null;
+  }
+
+  set mouseCursor(MouseCursor val) {
+    if (val == this.mouseCursor) {
+      return;
+    }
+  }
+
+  FocusNode get focusNode {
+    return null;
+  }
+
+  set focusNode(FocusNode val) {
+    if (val == this.focusNode) {
+      return;
+    }
+  }
+
+  bool get autofocus {
+    return null;
+  }
+
+  set autofocus(bool val) {
+    if (val == this.autofocus) {
+      return;
+    }
+  }
+
+  String get tooltip {
+    return null;
+  }
+
+  set tooltip(String val) {
+    if (val == this.tooltip) {
+      return;
+    }
+  }
+
+  bool get enableFeedback {
+    return null;
+  }
+
+  set enableFeedback(bool val) {
+    if (val == this.enableFeedback) {
+      return;
+    }
+  }
+
+  BoxConstraints get constraints {
+    return null;
+  }
+
+  set constraints(BoxConstraints val) {
+    if (val == this.constraints) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -62,39 +231,40 @@ class IconButtonRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': IconButton(
-       key: this.key,
-       iconSize: this.iconSize,
-       visualDensity: this.visualDensity,
-       padding: this.padding,
-       alignment: this.alignment,
-       splashRadius: this.splashRadius,
-       icon: this.icon,
-       color: this.color,
-       focusColor: this.focusColor,
-       hoverColor: this.hoverColor,
-       highlightColor: this.highlightColor,
-       splashColor: this.splashColor,
-       disabledColor: this.disabledColor,
-       onPressed: this.onPressed,
-       mouseCursor: this.mouseCursor,
-       focusNode: this.focusNode,
-       autofocus: this.autofocus,
-       tooltip: this.tooltip,
-       enableFeedback: this.enableFeedback,
-       constraints: this.constraints,
+       key : this.key,
+       iconSize : this.iconSize,
+       visualDensity : this.visualDensity,
+       padding : this.padding,
+       alignment : this.alignment,
+       splashRadius : this.splashRadius,
+       icon : this.icon,
+       color : this.color,
+       focusColor : this.focusColor,
+       hoverColor : this.hoverColor,
+       highlightColor : this.highlightColor,
+       splashColor : this.splashColor,
+       disabledColor : this.disabledColor,
+       onPressed : this.onPressed,
+       mouseCursor : this.mouseCursor,
+       focusNode : this.focusNode,
+       autofocus : this.autofocus,
+       tooltip : this.tooltip,
+       enableFeedback : this.enableFeedback,
+       constraints : this.constraints,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

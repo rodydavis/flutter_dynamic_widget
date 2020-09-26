@@ -6,21 +6,78 @@ import 'package:flutter/gestures.dart';
 class ScrollbarRender<T> extends StatelessWidget {
 
   const ScrollbarRender({
-    this.child,
-    this.controller,
-    this.isAlwaysShown,
-    this.thickness,
-    this.radius,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final Widget child;
-  final ScrollController controller;
-  final bool isAlwaysShown;
-  final double thickness;
-  final Radius radius;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  Widget get child {
+    return null;
+  }
+
+  set child(Widget val) {
+    if (val == this.child) {
+      return;
+    }
+  }
+
+  ScrollController get controller {
+    return null;
+  }
+
+  set controller(ScrollController val) {
+    if (val == this.controller) {
+      return;
+    }
+  }
+
+  bool get isAlwaysShown {
+    return null;
+  }
+
+  set isAlwaysShown(bool val) {
+    if (val == this.isAlwaysShown) {
+      return;
+    }
+  }
+
+  double get thickness {
+    return null;
+  }
+
+  set thickness(double val) {
+    if (val == this.thickness) {
+      return;
+    }
+  }
+
+  Radius get radius {
+    return null;
+  }
+
+  set radius(Radius val) {
+    if (val == this.radius) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -34,25 +91,26 @@ class ScrollbarRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': Scrollbar(
-       key: this.key,
-       child: this.child,
-       controller: this.controller,
-       isAlwaysShown: this.isAlwaysShown,
-       thickness: this.thickness,
-       radius: this.radius,
+       key : this.key,
+       child : this.child,
+       controller : this.controller,
+       isAlwaysShown : this.isAlwaysShown,
+       thickness : this.thickness,
+       radius : this.radius,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

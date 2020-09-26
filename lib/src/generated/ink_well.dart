@@ -6,59 +6,268 @@ import 'package:flutter/gestures.dart';
 class InkWellRender<T> extends StatelessWidget {
 
   const InkWellRender({
-    this.child,
-    this.onTap,
-    this.onDoubleTap,
-    this.onLongPress,
-    this.onTapDown,
-    this.onTapCancel,
-    this.onHighlightChanged,
-    this.onHover,
-    this.mouseCursor,
-    this.focusColor,
-    this.hoverColor,
-    this.highlightColor,
-    this.overlayColor,
-    this.splashColor,
-    this.splashFactory,
-    this.radius,
-    this.borderRadius,
-    this.customBorder,
-    this.enableFeedback,
-    this.excludeFromSemantics,
-    this.focusNode,
-    this.canRequestFocus,
-    this.onFocusChange,
-    this.autofocus,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final Widget child;
-  final GestureTapCallback onTap;
-  final GestureTapCallback onDoubleTap;
-  final GestureLongPressCallback onLongPress;
-  final GestureTapDownCallback onTapDown;
-  final GestureTapCancelCallback onTapCancel;
-  final ValueChanged<bool> onHighlightChanged;
-  final ValueChanged<bool> onHover;
-  final MouseCursor mouseCursor;
-  final Color focusColor;
-  final Color hoverColor;
-  final Color highlightColor;
-  final MaterialStateProperty<Color> overlayColor;
-  final Color splashColor;
-  final InteractiveInkFeatureFactory splashFactory;
-  final double radius;
-  final BorderRadius borderRadius;
-  final ShapeBorder customBorder;
-  final bool enableFeedback;
-  final bool excludeFromSemantics;
-  final FocusNode focusNode;
-  final bool canRequestFocus;
-  final ValueChanged<bool> onFocusChange;
-  final bool autofocus;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  Widget get child {
+    return null;
+  }
+
+  set child(Widget val) {
+    if (val == this.child) {
+      return;
+    }
+  }
+
+  GestureTapCallback get onTap {
+    return null;
+  }
+
+  set onTap(GestureTapCallback val) {
+    if (val == this.onTap) {
+      return;
+    }
+  }
+
+  GestureTapCallback get onDoubleTap {
+    return null;
+  }
+
+  set onDoubleTap(GestureTapCallback val) {
+    if (val == this.onDoubleTap) {
+      return;
+    }
+  }
+
+  GestureLongPressCallback get onLongPress {
+    return null;
+  }
+
+  set onLongPress(GestureLongPressCallback val) {
+    if (val == this.onLongPress) {
+      return;
+    }
+  }
+
+  GestureTapDownCallback get onTapDown {
+    return null;
+  }
+
+  set onTapDown(GestureTapDownCallback val) {
+    if (val == this.onTapDown) {
+      return;
+    }
+  }
+
+  GestureTapCancelCallback get onTapCancel {
+    return null;
+  }
+
+  set onTapCancel(GestureTapCancelCallback val) {
+    if (val == this.onTapCancel) {
+      return;
+    }
+  }
+
+  ValueChanged<bool> get onHighlightChanged {
+    return null;
+  }
+
+  set onHighlightChanged(ValueChanged<bool> val) {
+    if (val == this.onHighlightChanged) {
+      return;
+    }
+  }
+
+  ValueChanged<bool> get onHover {
+    return null;
+  }
+
+  set onHover(ValueChanged<bool> val) {
+    if (val == this.onHover) {
+      return;
+    }
+  }
+
+  MouseCursor get mouseCursor {
+    return null;
+  }
+
+  set mouseCursor(MouseCursor val) {
+    if (val == this.mouseCursor) {
+      return;
+    }
+  }
+
+  Color get focusColor {
+    return null;
+  }
+
+  set focusColor(Color val) {
+    if (val == this.focusColor) {
+      return;
+    }
+  }
+
+  Color get hoverColor {
+    return null;
+  }
+
+  set hoverColor(Color val) {
+    if (val == this.hoverColor) {
+      return;
+    }
+  }
+
+  Color get highlightColor {
+    return null;
+  }
+
+  set highlightColor(Color val) {
+    if (val == this.highlightColor) {
+      return;
+    }
+  }
+
+  MaterialStateProperty<Color> get overlayColor {
+    return null;
+  }
+
+  set overlayColor(MaterialStateProperty<Color> val) {
+    if (val == this.overlayColor) {
+      return;
+    }
+  }
+
+  Color get splashColor {
+    return null;
+  }
+
+  set splashColor(Color val) {
+    if (val == this.splashColor) {
+      return;
+    }
+  }
+
+  InteractiveInkFeatureFactory get splashFactory {
+    return null;
+  }
+
+  set splashFactory(InteractiveInkFeatureFactory val) {
+    if (val == this.splashFactory) {
+      return;
+    }
+  }
+
+  double get radius {
+    return null;
+  }
+
+  set radius(double val) {
+    if (val == this.radius) {
+      return;
+    }
+  }
+
+  BorderRadius get borderRadius {
+    return null;
+  }
+
+  set borderRadius(BorderRadius val) {
+    if (val == this.borderRadius) {
+      return;
+    }
+  }
+
+  ShapeBorder get customBorder {
+    return null;
+  }
+
+  set customBorder(ShapeBorder val) {
+    if (val == this.customBorder) {
+      return;
+    }
+  }
+
+  bool get enableFeedback {
+    return null;
+  }
+
+  set enableFeedback(bool val) {
+    if (val == this.enableFeedback) {
+      return;
+    }
+  }
+
+  bool get excludeFromSemantics {
+    return null;
+  }
+
+  set excludeFromSemantics(bool val) {
+    if (val == this.excludeFromSemantics) {
+      return;
+    }
+  }
+
+  FocusNode get focusNode {
+    return null;
+  }
+
+  set focusNode(FocusNode val) {
+    if (val == this.focusNode) {
+      return;
+    }
+  }
+
+  bool get canRequestFocus {
+    return null;
+  }
+
+  set canRequestFocus(bool val) {
+    if (val == this.canRequestFocus) {
+      return;
+    }
+  }
+
+  ValueChanged<bool> get onFocusChange {
+    return null;
+  }
+
+  set onFocusChange(ValueChanged<bool> val) {
+    if (val == this.onFocusChange) {
+      return;
+    }
+  }
+
+  bool get autofocus {
+    return null;
+  }
+
+  set autofocus(bool val) {
+    if (val == this.autofocus) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -72,44 +281,45 @@ class InkWellRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': InkWell(
-       key: this.key,
-       child: this.child,
-       onTap: this.onTap,
-       onDoubleTap: this.onDoubleTap,
-       onLongPress: this.onLongPress,
-       onTapDown: this.onTapDown,
-       onTapCancel: this.onTapCancel,
-       onHighlightChanged: this.onHighlightChanged,
-       onHover: this.onHover,
-       mouseCursor: this.mouseCursor,
-       focusColor: this.focusColor,
-       hoverColor: this.hoverColor,
-       highlightColor: this.highlightColor,
-       overlayColor: this.overlayColor,
-       splashColor: this.splashColor,
-       splashFactory: this.splashFactory,
-       radius: this.radius,
-       borderRadius: this.borderRadius,
-       customBorder: this.customBorder,
-       enableFeedback: this.enableFeedback,
-       excludeFromSemantics: this.excludeFromSemantics,
-       focusNode: this.focusNode,
-       canRequestFocus: this.canRequestFocus,
-       onFocusChange: this.onFocusChange,
-       autofocus: this.autofocus,
+       key : this.key,
+       child : this.child,
+       onTap : this.onTap,
+       onDoubleTap : this.onDoubleTap,
+       onLongPress : this.onLongPress,
+       onTapDown : this.onTapDown,
+       onTapCancel : this.onTapCancel,
+       onHighlightChanged : this.onHighlightChanged,
+       onHover : this.onHover,
+       mouseCursor : this.mouseCursor,
+       focusColor : this.focusColor,
+       hoverColor : this.hoverColor,
+       highlightColor : this.highlightColor,
+       overlayColor : this.overlayColor,
+       splashColor : this.splashColor,
+       splashFactory : this.splashFactory,
+       radius : this.radius,
+       borderRadius : this.borderRadius,
+       customBorder : this.customBorder,
+       enableFeedback : this.enableFeedback,
+       excludeFromSemantics : this.excludeFromSemantics,
+       focusNode : this.focusNode,
+       canRequestFocus : this.canRequestFocus,
+       onFocusChange : this.onFocusChange,
+       autofocus : this.autofocus,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

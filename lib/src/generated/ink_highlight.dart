@@ -6,33 +6,138 @@ import 'package:flutter/gestures.dart';
 class InkHighlightRender<T> extends StatelessWidget {
 
   const InkHighlightRender({
-    this.controller,
-    this.referenceBox,
-    this.color,
-    this.textDirection,
-    this.shape,
-    this.radius,
-    this.borderRadius,
-    this.customBorder,
-    this.rectCallback,
-    this.onRemoved,
-    this.fadeDuration,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final MaterialInkController controller;
-  final RenderBox referenceBox;
-  final Color color;
-  final TextDirection textDirection;
-  final BoxShape shape;
-  final double radius;
-  final BorderRadius borderRadius;
-  final ShapeBorder customBorder;
-  final RectCallback rectCallback;
-  final VoidCallback onRemoved;
-  final Duration fadeDuration;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  MaterialInkController get controller {
+    return null;
+  }
+
+  set controller(MaterialInkController val) {
+    if (val == this.controller) {
+      return;
+    }
+  }
+
+  RenderBox get referenceBox {
+    return null;
+  }
+
+  set referenceBox(RenderBox val) {
+    if (val == this.referenceBox) {
+      return;
+    }
+  }
+
+  Color get color {
+    return null;
+  }
+
+  set color(Color val) {
+    if (val == this.color) {
+      return;
+    }
+  }
+
+  TextDirection get textDirection {
+    return null;
+  }
+
+  set textDirection(TextDirection val) {
+    if (val == this.textDirection) {
+      return;
+    }
+  }
+
+  BoxShape get shape {
+    return null;
+  }
+
+  set shape(BoxShape val) {
+    if (val == this.shape) {
+      return;
+    }
+  }
+
+  double get radius {
+    return null;
+  }
+
+  set radius(double val) {
+    if (val == this.radius) {
+      return;
+    }
+  }
+
+  BorderRadius get borderRadius {
+    return null;
+  }
+
+  set borderRadius(BorderRadius val) {
+    if (val == this.borderRadius) {
+      return;
+    }
+  }
+
+  ShapeBorder get customBorder {
+    return null;
+  }
+
+  set customBorder(ShapeBorder val) {
+    if (val == this.customBorder) {
+      return;
+    }
+  }
+
+  RectCallback get rectCallback {
+    return null;
+  }
+
+  set rectCallback(RectCallback val) {
+    if (val == this.rectCallback) {
+      return;
+    }
+  }
+
+  VoidCallback get onRemoved {
+    return null;
+  }
+
+  set onRemoved(VoidCallback val) {
+    if (val == this.onRemoved) {
+      return;
+    }
+  }
+
+  Duration get fadeDuration {
+    return null;
+  }
+
+  set fadeDuration(Duration val) {
+    if (val == this.fadeDuration) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   '_alpha': null,
   '_alphaController': null,
@@ -49,30 +154,31 @@ class InkHighlightRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': InkHighlight(
-       controller: this.controller,
-       referenceBox: this.referenceBox,
-       color: this.color,
-       textDirection: this.textDirection,
-       shape: this.shape,
-       radius: this.radius,
-       borderRadius: this.borderRadius,
-       customBorder: this.customBorder,
-       rectCallback: this.rectCallback,
-       onRemoved: this.onRemoved,
-       fadeDuration: this.fadeDuration,
+       controller : this.controller,
+       referenceBox : this.referenceBox,
+       color : this.color,
+       textDirection : this.textDirection,
+       shape : this.shape,
+       radius : this.radius,
+       borderRadius : this.borderRadius,
+       customBorder : this.customBorder,
+       rectCallback : this.rectCallback,
+       onRemoved : this.onRemoved,
+       fadeDuration : this.fadeDuration,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

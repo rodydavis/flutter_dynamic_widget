@@ -6,61 +6,278 @@ import 'package:flutter/gestures.dart';
 class OutlineButtonRender<T> extends StatelessWidget {
 
   const OutlineButtonRender({
-    this.highlightedBorderColor,
-    this.disabledBorderColor,
-    this.borderSide,
-    this.onPressed,
-    this.onLongPress,
-    this.mouseCursor,
-    this.textTheme,
-    this.textColor,
-    this.disabledTextColor,
-    this.color,
-    this.focusColor,
-    this.hoverColor,
-    this.highlightColor,
-    this.splashColor,
-    this.highlightElevation,
-    this.padding,
-    this.visualDensity,
-    this.shape,
-    this.clipBehavior,
-    this.focusNode,
-    this.autofocus,
-    this.materialTapTargetSize,
-    this.child,
-    this.icon,
-    this.label,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final Color highlightedBorderColor;
-  final Color disabledBorderColor;
-  final BorderSide borderSide;
-  final VoidCallback onPressed;
-  final VoidCallback onLongPress;
-  final MouseCursor mouseCursor;
-  final ButtonTextTheme textTheme;
-  final Color textColor;
-  final Color disabledTextColor;
-  final Color color;
-  final Color focusColor;
-  final Color hoverColor;
-  final Color highlightColor;
-  final Color splashColor;
-  final double highlightElevation;
-  final EdgeInsetsGeometry padding;
-  final VisualDensity visualDensity;
-  final ShapeBorder shape;
-  final Clip clipBehavior;
-  final FocusNode focusNode;
-  final bool autofocus;
-  final MaterialTapTargetSize materialTapTargetSize;
-  final Widget child;
-  final Widget icon;
-  final Widget label;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  Color get highlightedBorderColor {
+    return null;
+  }
+
+  set highlightedBorderColor(Color val) {
+    if (val == this.highlightedBorderColor) {
+      return;
+    }
+  }
+
+  Color get disabledBorderColor {
+    return null;
+  }
+
+  set disabledBorderColor(Color val) {
+    if (val == this.disabledBorderColor) {
+      return;
+    }
+  }
+
+  BorderSide get borderSide {
+    return null;
+  }
+
+  set borderSide(BorderSide val) {
+    if (val == this.borderSide) {
+      return;
+    }
+  }
+
+  VoidCallback get onPressed {
+    return null;
+  }
+
+  set onPressed(VoidCallback val) {
+    if (val == this.onPressed) {
+      return;
+    }
+  }
+
+  VoidCallback get onLongPress {
+    return null;
+  }
+
+  set onLongPress(VoidCallback val) {
+    if (val == this.onLongPress) {
+      return;
+    }
+  }
+
+  MouseCursor get mouseCursor {
+    return null;
+  }
+
+  set mouseCursor(MouseCursor val) {
+    if (val == this.mouseCursor) {
+      return;
+    }
+  }
+
+  ButtonTextTheme get textTheme {
+    return null;
+  }
+
+  set textTheme(ButtonTextTheme val) {
+    if (val == this.textTheme) {
+      return;
+    }
+  }
+
+  Color get textColor {
+    return null;
+  }
+
+  set textColor(Color val) {
+    if (val == this.textColor) {
+      return;
+    }
+  }
+
+  Color get disabledTextColor {
+    return null;
+  }
+
+  set disabledTextColor(Color val) {
+    if (val == this.disabledTextColor) {
+      return;
+    }
+  }
+
+  Color get color {
+    return null;
+  }
+
+  set color(Color val) {
+    if (val == this.color) {
+      return;
+    }
+  }
+
+  Color get focusColor {
+    return null;
+  }
+
+  set focusColor(Color val) {
+    if (val == this.focusColor) {
+      return;
+    }
+  }
+
+  Color get hoverColor {
+    return null;
+  }
+
+  set hoverColor(Color val) {
+    if (val == this.hoverColor) {
+      return;
+    }
+  }
+
+  Color get highlightColor {
+    return null;
+  }
+
+  set highlightColor(Color val) {
+    if (val == this.highlightColor) {
+      return;
+    }
+  }
+
+  Color get splashColor {
+    return null;
+  }
+
+  set splashColor(Color val) {
+    if (val == this.splashColor) {
+      return;
+    }
+  }
+
+  double get highlightElevation {
+    return null;
+  }
+
+  set highlightElevation(double val) {
+    if (val == this.highlightElevation) {
+      return;
+    }
+  }
+
+  EdgeInsetsGeometry get padding {
+    return null;
+  }
+
+  set padding(EdgeInsetsGeometry val) {
+    if (val == this.padding) {
+      return;
+    }
+  }
+
+  VisualDensity get visualDensity {
+    return null;
+  }
+
+  set visualDensity(VisualDensity val) {
+    if (val == this.visualDensity) {
+      return;
+    }
+  }
+
+  ShapeBorder get shape {
+    return null;
+  }
+
+  set shape(ShapeBorder val) {
+    if (val == this.shape) {
+      return;
+    }
+  }
+
+  Clip get clipBehavior {
+    return null;
+  }
+
+  set clipBehavior(Clip val) {
+    if (val == this.clipBehavior) {
+      return;
+    }
+  }
+
+  FocusNode get focusNode {
+    return null;
+  }
+
+  set focusNode(FocusNode val) {
+    if (val == this.focusNode) {
+      return;
+    }
+  }
+
+  bool get autofocus {
+    return null;
+  }
+
+  set autofocus(bool val) {
+    if (val == this.autofocus) {
+      return;
+    }
+  }
+
+  MaterialTapTargetSize get materialTapTargetSize {
+    return null;
+  }
+
+  set materialTapTargetSize(MaterialTapTargetSize val) {
+    if (val == this.materialTapTargetSize) {
+      return;
+    }
+  }
+
+  Widget get child {
+    return null;
+  }
+
+  set child(Widget val) {
+    if (val == this.child) {
+      return;
+    }
+  }
+
+  Widget get icon {
+    return null;
+  }
+
+  set icon(Widget val) {
+    if (val == this.icon) {
+      return;
+    }
+  }
+
+  Widget get label {
+    return null;
+  }
+
+  set label(Widget val) {
+    if (val == this.label) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -74,70 +291,71 @@ class OutlineButtonRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': OutlineButton(
-       key: this.key,
-       onPressed: this.onPressed,
-       onLongPress: this.onLongPress,
-       mouseCursor: this.mouseCursor,
-       textTheme: this.textTheme,
-       textColor: this.textColor,
-       disabledTextColor: this.disabledTextColor,
-       color: this.color,
-       focusColor: this.focusColor,
-       hoverColor: this.hoverColor,
-       highlightColor: this.highlightColor,
-       splashColor: this.splashColor,
-       highlightElevation: this.highlightElevation,
-       borderSide: this.borderSide,
-       disabledBorderColor: this.disabledBorderColor,
-       highlightedBorderColor: this.highlightedBorderColor,
-       padding: this.padding,
-       visualDensity: this.visualDensity,
-       shape: this.shape,
-       clipBehavior: this.clipBehavior,
-       focusNode: this.focusNode,
-       autofocus: this.autofocus,
-       materialTapTargetSize: this.materialTapTargetSize,
-       child: this.child,
+       key : this.key,
+       onPressed : this.onPressed,
+       onLongPress : this.onLongPress,
+       mouseCursor : this.mouseCursor,
+       textTheme : this.textTheme,
+       textColor : this.textColor,
+       disabledTextColor : this.disabledTextColor,
+       color : this.color,
+       focusColor : this.focusColor,
+       hoverColor : this.hoverColor,
+       highlightColor : this.highlightColor,
+       splashColor : this.splashColor,
+       highlightElevation : this.highlightElevation,
+       borderSide : this.borderSide,
+       disabledBorderColor : this.disabledBorderColor,
+       highlightedBorderColor : this.highlightedBorderColor,
+       padding : this.padding,
+       visualDensity : this.visualDensity,
+       shape : this.shape,
+       clipBehavior : this.clipBehavior,
+       focusNode : this.focusNode,
+       autofocus : this.autofocus,
+       materialTapTargetSize : this.materialTapTargetSize,
+       child : this.child,
     ),
     'icon': OutlineButton.icon(
-       key: this.key,
-       onPressed: this.onPressed,
-       onLongPress: this.onLongPress,
-       mouseCursor: this.mouseCursor,
-       textTheme: this.textTheme,
-       textColor: this.textColor,
-       disabledTextColor: this.disabledTextColor,
-       color: this.color,
-       focusColor: this.focusColor,
-       hoverColor: this.hoverColor,
-       highlightColor: this.highlightColor,
-       splashColor: this.splashColor,
-       highlightElevation: this.highlightElevation,
-       highlightedBorderColor: this.highlightedBorderColor,
-       disabledBorderColor: this.disabledBorderColor,
-       borderSide: this.borderSide,
-       padding: this.padding,
-       visualDensity: this.visualDensity,
-       shape: this.shape,
-       clipBehavior: this.clipBehavior,
-       focusNode: this.focusNode,
-       autofocus: this.autofocus,
-       materialTapTargetSize: this.materialTapTargetSize,
-       icon: this.icon,
-       label: this.label,
+       key : this.key,
+       onPressed : this.onPressed,
+       onLongPress : this.onLongPress,
+       mouseCursor : this.mouseCursor,
+       textTheme : this.textTheme,
+       textColor : this.textColor,
+       disabledTextColor : this.disabledTextColor,
+       color : this.color,
+       focusColor : this.focusColor,
+       hoverColor : this.hoverColor,
+       highlightColor : this.highlightColor,
+       splashColor : this.splashColor,
+       highlightElevation : this.highlightElevation,
+       highlightedBorderColor : this.highlightedBorderColor,
+       disabledBorderColor : this.disabledBorderColor,
+       borderSide : this.borderSide,
+       padding : this.padding,
+       visualDensity : this.visualDensity,
+       shape : this.shape,
+       clipBehavior : this.clipBehavior,
+       focusNode : this.focusNode,
+       autofocus : this.autofocus,
+       materialTapTargetSize : this.materialTapTargetSize,
+       icon : this.icon,
+       label : this.label,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

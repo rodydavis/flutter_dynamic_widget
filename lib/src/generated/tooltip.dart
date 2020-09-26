@@ -6,35 +6,148 @@ import 'package:flutter/gestures.dart';
 class TooltipRender<T> extends StatelessWidget {
 
   const TooltipRender({
-    this.message,
-    this.height,
-    this.padding,
-    this.margin,
-    this.verticalOffset,
-    this.preferBelow,
-    this.excludeFromSemantics,
-    this.child,
-    this.decoration,
-    this.textStyle,
-    this.waitDuration,
-    this.showDuration,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final String message;
-  final double height;
-  final EdgeInsetsGeometry padding;
-  final EdgeInsetsGeometry margin;
-  final double verticalOffset;
-  final bool preferBelow;
-  final bool excludeFromSemantics;
-  final Widget child;
-  final Decoration decoration;
-  final TextStyle textStyle;
-  final Duration waitDuration;
-  final Duration showDuration;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  String get message {
+    return null;
+  }
+
+  set message(String val) {
+    if (val == this.message) {
+      return;
+    }
+  }
+
+  double get height {
+    return null;
+  }
+
+  set height(double val) {
+    if (val == this.height) {
+      return;
+    }
+  }
+
+  EdgeInsetsGeometry get padding {
+    return null;
+  }
+
+  set padding(EdgeInsetsGeometry val) {
+    if (val == this.padding) {
+      return;
+    }
+  }
+
+  EdgeInsetsGeometry get margin {
+    return null;
+  }
+
+  set margin(EdgeInsetsGeometry val) {
+    if (val == this.margin) {
+      return;
+    }
+  }
+
+  double get verticalOffset {
+    return null;
+  }
+
+  set verticalOffset(double val) {
+    if (val == this.verticalOffset) {
+      return;
+    }
+  }
+
+  bool get preferBelow {
+    return null;
+  }
+
+  set preferBelow(bool val) {
+    if (val == this.preferBelow) {
+      return;
+    }
+  }
+
+  bool get excludeFromSemantics {
+    return null;
+  }
+
+  set excludeFromSemantics(bool val) {
+    if (val == this.excludeFromSemantics) {
+      return;
+    }
+  }
+
+  Widget get child {
+    return null;
+  }
+
+  set child(Widget val) {
+    if (val == this.child) {
+      return;
+    }
+  }
+
+  Decoration get decoration {
+    return null;
+  }
+
+  set decoration(Decoration val) {
+    if (val == this.decoration) {
+      return;
+    }
+  }
+
+  TextStyle get textStyle {
+    return null;
+  }
+
+  set textStyle(TextStyle val) {
+    if (val == this.textStyle) {
+      return;
+    }
+  }
+
+  Duration get waitDuration {
+    return null;
+  }
+
+  set waitDuration(Duration val) {
+    if (val == this.waitDuration) {
+      return;
+    }
+  }
+
+  Duration get showDuration {
+    return null;
+  }
+
+  set showDuration(Duration val) {
+    if (val == this.showDuration) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -48,32 +161,33 @@ class TooltipRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': Tooltip(
-       key: this.key,
-       message: this.message,
-       height: this.height,
-       padding: this.padding,
-       margin: this.margin,
-       verticalOffset: this.verticalOffset,
-       preferBelow: this.preferBelow,
-       excludeFromSemantics: this.excludeFromSemantics,
-       decoration: this.decoration,
-       textStyle: this.textStyle,
-       waitDuration: this.waitDuration,
-       showDuration: this.showDuration,
-       child: this.child,
+       key : this.key,
+       message : this.message,
+       height : this.height,
+       padding : this.padding,
+       margin : this.margin,
+       verticalOffset : this.verticalOffset,
+       preferBelow : this.preferBelow,
+       excludeFromSemantics : this.excludeFromSemantics,
+       decoration : this.decoration,
+       textStyle : this.textStyle,
+       waitDuration : this.waitDuration,
+       showDuration : this.showDuration,
+       child : this.child,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

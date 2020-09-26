@@ -6,19 +6,68 @@ import 'package:flutter/gestures.dart';
 class LicensePageRender<T> extends StatelessWidget {
 
   const LicensePageRender({
-    this.applicationName,
-    this.applicationVersion,
-    this.applicationIcon,
-    this.applicationLegalese,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final String applicationName;
-  final String applicationVersion;
-  final Widget applicationIcon;
-  final String applicationLegalese;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  String get applicationName {
+    return null;
+  }
+
+  set applicationName(String val) {
+    if (val == this.applicationName) {
+      return;
+    }
+  }
+
+  String get applicationVersion {
+    return null;
+  }
+
+  set applicationVersion(String val) {
+    if (val == this.applicationVersion) {
+      return;
+    }
+  }
+
+  Widget get applicationIcon {
+    return null;
+  }
+
+  set applicationIcon(Widget val) {
+    if (val == this.applicationIcon) {
+      return;
+    }
+  }
+
+  String get applicationLegalese {
+    return null;
+  }
+
+  set applicationLegalese(String val) {
+    if (val == this.applicationLegalese) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -32,24 +81,25 @@ class LicensePageRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': LicensePage(
-       key: this.key,
-       applicationName: this.applicationName,
-       applicationVersion: this.applicationVersion,
-       applicationIcon: this.applicationIcon,
-       applicationLegalese: this.applicationLegalese,
+       key : this.key,
+       applicationName : this.applicationName,
+       applicationVersion : this.applicationVersion,
+       applicationIcon : this.applicationIcon,
+       applicationLegalese : this.applicationLegalese,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

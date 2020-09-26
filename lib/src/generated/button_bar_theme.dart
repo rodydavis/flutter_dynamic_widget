@@ -6,15 +6,48 @@ import 'package:flutter/gestures.dart';
 class ButtonBarThemeRender<T> extends StatelessWidget {
 
   const ButtonBarThemeRender({
-    this.data,
-    this.child,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final ButtonBarThemeData data;
-  final Widget child;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  ButtonBarThemeData get data {
+    return null;
+  }
+
+  set data(ButtonBarThemeData val) {
+    if (val == this.data) {
+      return;
+    }
+  }
+
+  Widget get child {
+    return null;
+  }
+
+  set child(Widget val) {
+    if (val == this.child) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -28,22 +61,23 @@ class ButtonBarThemeRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': ButtonBarTheme(
-       key: this.key,
-       data: this.data,
-       child: this.child,
+       key : this.key,
+       data : this.data,
+       child : this.child,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

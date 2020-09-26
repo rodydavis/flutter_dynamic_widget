@@ -6,17 +6,58 @@ import 'package:flutter/gestures.dart';
 class BottomAppBarThemeRender<T> extends StatelessWidget {
 
   const BottomAppBarThemeRender({
-    this.color,
-    this.elevation,
-    this.shape,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final Color color;
-  final double elevation;
-  final NotchedShape shape;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  Color get color {
+    return null;
+  }
+
+  set color(Color val) {
+    if (val == this.color) {
+      return;
+    }
+  }
+
+  double get elevation {
+    return null;
+  }
+
+  set elevation(double val) {
+    if (val == this.elevation) {
+      return;
+    }
+  }
+
+  NotchedShape get shape {
+    return null;
+  }
+
+  set shape(NotchedShape val) {
+    if (val == this.shape) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -30,22 +71,23 @@ class BottomAppBarThemeRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': BottomAppBarTheme(
-       color: this.color,
-       elevation: this.elevation,
-       shape: this.shape,
+       color : this.color,
+       elevation : this.elevation,
+       shape : this.shape,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

@@ -6,15 +6,48 @@ import 'package:flutter/gestures.dart';
 class VisualDensityRender<T> extends StatelessWidget {
 
   const VisualDensityRender({
-    this.horizontal,
-    this.vertical,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final double horizontal;
-  final double vertical;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  double get horizontal {
+    return null;
+  }
+
+  set horizontal(double val) {
+    if (val == this.horizontal) {
+      return;
+    }
+  }
+
+  double get vertical {
+    return null;
+  }
+
+  set vertical(double val) {
+    if (val == this.vertical) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   'minimumDensity': null,
   'maximumDensity': null,
@@ -33,21 +66,22 @@ class VisualDensityRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': VisualDensity(
-       horizontal: this.horizontal,
-       vertical: this.vertical,
+       horizontal : this.horizontal,
+       vertical : this.vertical,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

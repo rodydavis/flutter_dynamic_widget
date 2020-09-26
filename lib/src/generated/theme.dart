@@ -6,23 +6,88 @@ import 'package:flutter/gestures.dart';
 class AnimatedThemeRender<T> extends StatelessWidget {
 
   const AnimatedThemeRender({
-    this.data,
-    this.isMaterialAppTheme,
-    this.child,
-    this.curve,
-    this.duration,
-    this.onEnd,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final ThemeData data;
-  final bool isMaterialAppTheme;
-  final Widget child;
-  final Curve curve;
-  final Duration duration;
-  final VoidCallback onEnd;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  ThemeData get data {
+    return null;
+  }
+
+  set data(ThemeData val) {
+    if (val == this.data) {
+      return;
+    }
+  }
+
+  bool get isMaterialAppTheme {
+    return null;
+  }
+
+  set isMaterialAppTheme(bool val) {
+    if (val == this.isMaterialAppTheme) {
+      return;
+    }
+  }
+
+  Widget get child {
+    return null;
+  }
+
+  set child(Widget val) {
+    if (val == this.child) {
+      return;
+    }
+  }
+
+  Curve get curve {
+    return null;
+  }
+
+  set curve(Curve val) {
+    if (val == this.curve) {
+      return;
+    }
+  }
+
+  Duration get duration {
+    return null;
+  }
+
+  set duration(Duration val) {
+    if (val == this.duration) {
+      return;
+    }
+  }
+
+  VoidCallback get onEnd {
+    return null;
+  }
+
+  set onEnd(VoidCallback val) {
+    if (val == this.onEnd) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -36,26 +101,27 @@ class AnimatedThemeRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': AnimatedTheme(
-       key: this.key,
-       data: this.data,
-       isMaterialAppTheme: this.isMaterialAppTheme,
-       curve: this.curve,
-       duration: this.duration,
-       onEnd: this.onEnd,
-       child: this.child,
+       key : this.key,
+       data : this.data,
+       isMaterialAppTheme : this.isMaterialAppTheme,
+       curve : this.curve,
+       duration : this.duration,
+       onEnd : this.onEnd,
+       child : this.child,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

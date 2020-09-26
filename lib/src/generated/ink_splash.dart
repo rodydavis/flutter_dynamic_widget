@@ -6,33 +6,138 @@ import 'package:flutter/gestures.dart';
 class InkSplashRender<T> extends StatelessWidget {
 
   const InkSplashRender({
-    this.controller,
-    this.referenceBox,
-    this.textDirection,
-    this.position,
-    this.color,
-    this.containedInkWell,
-    this.rectCallback,
-    this.borderRadius,
-    this.customBorder,
-    this.radius,
-    this.onRemoved,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final MaterialInkController controller;
-  final RenderBox referenceBox;
-  final TextDirection textDirection;
-  final Offset position;
-  final Color color;
-  final bool containedInkWell;
-  final RectCallback rectCallback;
-  final BorderRadius borderRadius;
-  final ShapeBorder customBorder;
-  final double radius;
-  final VoidCallback onRemoved;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  MaterialInkController get controller {
+    return null;
+  }
+
+  set controller(MaterialInkController val) {
+    if (val == this.controller) {
+      return;
+    }
+  }
+
+  RenderBox get referenceBox {
+    return null;
+  }
+
+  set referenceBox(RenderBox val) {
+    if (val == this.referenceBox) {
+      return;
+    }
+  }
+
+  TextDirection get textDirection {
+    return null;
+  }
+
+  set textDirection(TextDirection val) {
+    if (val == this.textDirection) {
+      return;
+    }
+  }
+
+  Offset get position {
+    return null;
+  }
+
+  set position(Offset val) {
+    if (val == this.position) {
+      return;
+    }
+  }
+
+  Color get color {
+    return null;
+  }
+
+  set color(Color val) {
+    if (val == this.color) {
+      return;
+    }
+  }
+
+  bool get containedInkWell {
+    return null;
+  }
+
+  set containedInkWell(bool val) {
+    if (val == this.containedInkWell) {
+      return;
+    }
+  }
+
+  RectCallback get rectCallback {
+    return null;
+  }
+
+  set rectCallback(RectCallback val) {
+    if (val == this.rectCallback) {
+      return;
+    }
+  }
+
+  BorderRadius get borderRadius {
+    return null;
+  }
+
+  set borderRadius(BorderRadius val) {
+    if (val == this.borderRadius) {
+      return;
+    }
+  }
+
+  ShapeBorder get customBorder {
+    return null;
+  }
+
+  set customBorder(ShapeBorder val) {
+    if (val == this.customBorder) {
+      return;
+    }
+  }
+
+  double get radius {
+    return null;
+  }
+
+  set radius(double val) {
+    if (val == this.radius) {
+      return;
+    }
+  }
+
+  VoidCallback get onRemoved {
+    return null;
+  }
+
+  set onRemoved(VoidCallback val) {
+    if (val == this.onRemoved) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   '_radius': null,
   '_radiusController': null,
@@ -51,30 +156,31 @@ class InkSplashRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': InkSplash(
-       controller: this.controller,
-       referenceBox: this.referenceBox,
-       textDirection: this.textDirection,
-       position: this.position,
-       color: this.color,
-       containedInkWell: this.containedInkWell,
-       rectCallback: this.rectCallback,
-       borderRadius: this.borderRadius,
-       customBorder: this.customBorder,
-       radius: this.radius,
-       onRemoved: this.onRemoved,
+       controller : this.controller,
+       referenceBox : this.referenceBox,
+       textDirection : this.textDirection,
+       position : this.position,
+       color : this.color,
+       containedInkWell : this.containedInkWell,
+       rectCallback : this.rectCallback,
+       borderRadius : this.borderRadius,
+       customBorder : this.customBorder,
+       radius : this.radius,
+       onRemoved : this.onRemoved,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

@@ -6,23 +6,88 @@ import 'package:flutter/gestures.dart';
 class BottomAppBarRender<T> extends StatelessWidget {
 
   const BottomAppBarRender({
-    this.child,
-    this.color,
-    this.elevation,
-    this.shape,
-    this.clipBehavior,
-    this.notchMargin,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final Widget child;
-  final Color color;
-  final double elevation;
-  final NotchedShape shape;
-  final Clip clipBehavior;
-  final double notchMargin;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  Widget get child {
+    return null;
+  }
+
+  set child(Widget val) {
+    if (val == this.child) {
+      return;
+    }
+  }
+
+  Color get color {
+    return null;
+  }
+
+  set color(Color val) {
+    if (val == this.color) {
+      return;
+    }
+  }
+
+  double get elevation {
+    return null;
+  }
+
+  set elevation(double val) {
+    if (val == this.elevation) {
+      return;
+    }
+  }
+
+  NotchedShape get shape {
+    return null;
+  }
+
+  set shape(NotchedShape val) {
+    if (val == this.shape) {
+      return;
+    }
+  }
+
+  Clip get clipBehavior {
+    return null;
+  }
+
+  set clipBehavior(Clip val) {
+    if (val == this.clipBehavior) {
+      return;
+    }
+  }
+
+  double get notchMargin {
+    return null;
+  }
+
+  set notchMargin(double val) {
+    if (val == this.notchMargin) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -36,26 +101,27 @@ class BottomAppBarRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': BottomAppBar(
-       key: this.key,
-       color: this.color,
-       elevation: this.elevation,
-       shape: this.shape,
-       clipBehavior: this.clipBehavior,
-       notchMargin: this.notchMargin,
-       child: this.child,
+       key : this.key,
+       color : this.color,
+       elevation : this.elevation,
+       shape : this.shape,
+       clipBehavior : this.clipBehavior,
+       notchMargin : this.notchMargin,
+       child : this.child,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

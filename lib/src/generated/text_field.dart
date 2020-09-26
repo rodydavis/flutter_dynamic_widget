@@ -8,109 +8,518 @@ import 'dart:ui' as ui;
 class TextFieldRender<T> extends StatelessWidget {
 
   const TextFieldRender({
-    this.controller,
-    this.focusNode,
-    this.decoration,
-    this.keyboardType,
-    this.textInputAction,
-    this.textCapitalization,
-    this.style,
-    this.strutStyle,
-    this.textAlign,
-    this.textAlignVertical,
-    this.textDirection,
-    this.autofocus,
-    this.obscuringCharacter,
-    this.obscureText,
-    this.autocorrect,
-    this.smartDashesType,
-    this.smartQuotesType,
-    this.enableSuggestions,
-    this.maxLines,
-    this.minLines,
-    this.expands,
-    this.readOnly,
-    this.toolbarOptions,
-    this.showCursor,
-    this.maxLength,
-    this.maxLengthEnforced,
-    this.onChanged,
-    this.onEditingComplete,
-    this.onSubmitted,
-    this.onAppPrivateCommand,
-    this.inputFormatters,
-    this.enabled,
-    this.cursorWidth,
-    this.cursorHeight,
-    this.cursorRadius,
-    this.cursorColor,
-    this.selectionHeightStyle,
-    this.selectionWidthStyle,
-    this.keyboardAppearance,
-    this.scrollPadding,
-    this.enableInteractiveSelection,
-    this.dragStartBehavior,
-    this.onTap,
-    this.mouseCursor,
-    this.buildCounter,
-    this.scrollPhysics,
-    this.scrollController,
-    this.autofillHints,
-    this.restorationId,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final TextEditingController controller;
-  final FocusNode focusNode;
-  final InputDecoration decoration;
-  final TextInputType keyboardType;
-  final TextInputAction textInputAction;
-  final TextCapitalization textCapitalization;
-  final TextStyle style;
-  final StrutStyle strutStyle;
-  final TextAlign textAlign;
-  final TextAlignVertical textAlignVertical;
-  final TextDirection textDirection;
-  final bool autofocus;
-  final String obscuringCharacter;
-  final bool obscureText;
-  final bool autocorrect;
-  final SmartDashesType smartDashesType;
-  final SmartQuotesType smartQuotesType;
-  final bool enableSuggestions;
-  final int maxLines;
-  final int minLines;
-  final bool expands;
-  final bool readOnly;
-  final ToolbarOptions toolbarOptions;
-  final bool showCursor;
-  final int maxLength;
-  final bool maxLengthEnforced;
-  final ValueChanged<String> onChanged;
-  final VoidCallback onEditingComplete;
-  final ValueChanged<String> onSubmitted;
-  final AppPrivateCommandCallback onAppPrivateCommand;
-  final List<TextInputFormatter> inputFormatters;
-  final bool enabled;
-  final double cursorWidth;
-  final double cursorHeight;
-  final Radius cursorRadius;
-  final Color cursorColor;
-  final ui.BoxHeightStyle selectionHeightStyle;
-  final ui.BoxWidthStyle selectionWidthStyle;
-  final Brightness keyboardAppearance;
-  final EdgeInsets scrollPadding;
-  final bool enableInteractiveSelection;
-  final DragStartBehavior dragStartBehavior;
-  final GestureTapCallback onTap;
-  final MouseCursor mouseCursor;
-  final InputCounterWidgetBuilder buildCounter;
-  final ScrollPhysics scrollPhysics;
-  final ScrollController scrollController;
-  final Iterable<String> autofillHints;
-  final String restorationId;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  TextEditingController get controller {
+    return null;
+  }
+
+  set controller(TextEditingController val) {
+    if (val == this.controller) {
+      return;
+    }
+  }
+
+  FocusNode get focusNode {
+    return null;
+  }
+
+  set focusNode(FocusNode val) {
+    if (val == this.focusNode) {
+      return;
+    }
+  }
+
+  InputDecoration get decoration {
+    return null;
+  }
+
+  set decoration(InputDecoration val) {
+    if (val == this.decoration) {
+      return;
+    }
+  }
+
+  TextInputType get keyboardType {
+    return null;
+  }
+
+  set keyboardType(TextInputType val) {
+    if (val == this.keyboardType) {
+      return;
+    }
+  }
+
+  TextInputAction get textInputAction {
+    return null;
+  }
+
+  set textInputAction(TextInputAction val) {
+    if (val == this.textInputAction) {
+      return;
+    }
+  }
+
+  TextCapitalization get textCapitalization {
+    return null;
+  }
+
+  set textCapitalization(TextCapitalization val) {
+    if (val == this.textCapitalization) {
+      return;
+    }
+  }
+
+  TextStyle get style {
+    return null;
+  }
+
+  set style(TextStyle val) {
+    if (val == this.style) {
+      return;
+    }
+  }
+
+  StrutStyle get strutStyle {
+    return null;
+  }
+
+  set strutStyle(StrutStyle val) {
+    if (val == this.strutStyle) {
+      return;
+    }
+  }
+
+  TextAlign get textAlign {
+    return null;
+  }
+
+  set textAlign(TextAlign val) {
+    if (val == this.textAlign) {
+      return;
+    }
+  }
+
+  TextAlignVertical get textAlignVertical {
+    return null;
+  }
+
+  set textAlignVertical(TextAlignVertical val) {
+    if (val == this.textAlignVertical) {
+      return;
+    }
+  }
+
+  TextDirection get textDirection {
+    return null;
+  }
+
+  set textDirection(TextDirection val) {
+    if (val == this.textDirection) {
+      return;
+    }
+  }
+
+  bool get autofocus {
+    return null;
+  }
+
+  set autofocus(bool val) {
+    if (val == this.autofocus) {
+      return;
+    }
+  }
+
+  String get obscuringCharacter {
+    return null;
+  }
+
+  set obscuringCharacter(String val) {
+    if (val == this.obscuringCharacter) {
+      return;
+    }
+  }
+
+  bool get obscureText {
+    return null;
+  }
+
+  set obscureText(bool val) {
+    if (val == this.obscureText) {
+      return;
+    }
+  }
+
+  bool get autocorrect {
+    return null;
+  }
+
+  set autocorrect(bool val) {
+    if (val == this.autocorrect) {
+      return;
+    }
+  }
+
+  SmartDashesType get smartDashesType {
+    return null;
+  }
+
+  set smartDashesType(SmartDashesType val) {
+    if (val == this.smartDashesType) {
+      return;
+    }
+  }
+
+  SmartQuotesType get smartQuotesType {
+    return null;
+  }
+
+  set smartQuotesType(SmartQuotesType val) {
+    if (val == this.smartQuotesType) {
+      return;
+    }
+  }
+
+  bool get enableSuggestions {
+    return null;
+  }
+
+  set enableSuggestions(bool val) {
+    if (val == this.enableSuggestions) {
+      return;
+    }
+  }
+
+  int get maxLines {
+    return null;
+  }
+
+  set maxLines(int val) {
+    if (val == this.maxLines) {
+      return;
+    }
+  }
+
+  int get minLines {
+    return null;
+  }
+
+  set minLines(int val) {
+    if (val == this.minLines) {
+      return;
+    }
+  }
+
+  bool get expands {
+    return null;
+  }
+
+  set expands(bool val) {
+    if (val == this.expands) {
+      return;
+    }
+  }
+
+  bool get readOnly {
+    return null;
+  }
+
+  set readOnly(bool val) {
+    if (val == this.readOnly) {
+      return;
+    }
+  }
+
+  ToolbarOptions get toolbarOptions {
+    return null;
+  }
+
+  set toolbarOptions(ToolbarOptions val) {
+    if (val == this.toolbarOptions) {
+      return;
+    }
+  }
+
+  bool get showCursor {
+    return null;
+  }
+
+  set showCursor(bool val) {
+    if (val == this.showCursor) {
+      return;
+    }
+  }
+
+  int get maxLength {
+    return null;
+  }
+
+  set maxLength(int val) {
+    if (val == this.maxLength) {
+      return;
+    }
+  }
+
+  bool get maxLengthEnforced {
+    return null;
+  }
+
+  set maxLengthEnforced(bool val) {
+    if (val == this.maxLengthEnforced) {
+      return;
+    }
+  }
+
+  ValueChanged<String> get onChanged {
+    return null;
+  }
+
+  set onChanged(ValueChanged<String> val) {
+    if (val == this.onChanged) {
+      return;
+    }
+  }
+
+  VoidCallback get onEditingComplete {
+    return null;
+  }
+
+  set onEditingComplete(VoidCallback val) {
+    if (val == this.onEditingComplete) {
+      return;
+    }
+  }
+
+  ValueChanged<String> get onSubmitted {
+    return null;
+  }
+
+  set onSubmitted(ValueChanged<String> val) {
+    if (val == this.onSubmitted) {
+      return;
+    }
+  }
+
+  AppPrivateCommandCallback get onAppPrivateCommand {
+    return null;
+  }
+
+  set onAppPrivateCommand(AppPrivateCommandCallback val) {
+    if (val == this.onAppPrivateCommand) {
+      return;
+    }
+  }
+
+  List<TextInputFormatter> get inputFormatters {
+    return null;
+  }
+
+  set inputFormatters(List<TextInputFormatter> val) {
+    if (val == this.inputFormatters) {
+      return;
+    }
+  }
+
+  bool get enabled {
+    return null;
+  }
+
+  set enabled(bool val) {
+    if (val == this.enabled) {
+      return;
+    }
+  }
+
+  double get cursorWidth {
+    return null;
+  }
+
+  set cursorWidth(double val) {
+    if (val == this.cursorWidth) {
+      return;
+    }
+  }
+
+  double get cursorHeight {
+    return null;
+  }
+
+  set cursorHeight(double val) {
+    if (val == this.cursorHeight) {
+      return;
+    }
+  }
+
+  Radius get cursorRadius {
+    return null;
+  }
+
+  set cursorRadius(Radius val) {
+    if (val == this.cursorRadius) {
+      return;
+    }
+  }
+
+  Color get cursorColor {
+    return null;
+  }
+
+  set cursorColor(Color val) {
+    if (val == this.cursorColor) {
+      return;
+    }
+  }
+
+  ui.BoxHeightStyle get selectionHeightStyle {
+    return null;
+  }
+
+  set selectionHeightStyle(ui.BoxHeightStyle val) {
+    if (val == this.selectionHeightStyle) {
+      return;
+    }
+  }
+
+  ui.BoxWidthStyle get selectionWidthStyle {
+    return null;
+  }
+
+  set selectionWidthStyle(ui.BoxWidthStyle val) {
+    if (val == this.selectionWidthStyle) {
+      return;
+    }
+  }
+
+  Brightness get keyboardAppearance {
+    return null;
+  }
+
+  set keyboardAppearance(Brightness val) {
+    if (val == this.keyboardAppearance) {
+      return;
+    }
+  }
+
+  EdgeInsets get scrollPadding {
+    return null;
+  }
+
+  set scrollPadding(EdgeInsets val) {
+    if (val == this.scrollPadding) {
+      return;
+    }
+  }
+
+  bool get enableInteractiveSelection {
+    return null;
+  }
+
+  set enableInteractiveSelection(bool val) {
+    if (val == this.enableInteractiveSelection) {
+      return;
+    }
+  }
+
+  DragStartBehavior get dragStartBehavior {
+    return null;
+  }
+
+  set dragStartBehavior(DragStartBehavior val) {
+    if (val == this.dragStartBehavior) {
+      return;
+    }
+  }
+
+  GestureTapCallback get onTap {
+    return null;
+  }
+
+  set onTap(GestureTapCallback val) {
+    if (val == this.onTap) {
+      return;
+    }
+  }
+
+  MouseCursor get mouseCursor {
+    return null;
+  }
+
+  set mouseCursor(MouseCursor val) {
+    if (val == this.mouseCursor) {
+      return;
+    }
+  }
+
+  InputCounterWidgetBuilder get buildCounter {
+    return null;
+  }
+
+  set buildCounter(InputCounterWidgetBuilder val) {
+    if (val == this.buildCounter) {
+      return;
+    }
+  }
+
+  ScrollPhysics get scrollPhysics {
+    return null;
+  }
+
+  set scrollPhysics(ScrollPhysics val) {
+    if (val == this.scrollPhysics) {
+      return;
+    }
+  }
+
+  ScrollController get scrollController {
+    return null;
+  }
+
+  set scrollController(ScrollController val) {
+    if (val == this.scrollController) {
+      return;
+    }
+  }
+
+  Iterable<String> get autofillHints {
+    return null;
+  }
+
+  set autofillHints(Iterable<String> val) {
+    if (val == this.autofillHints) {
+      return;
+    }
+  }
+
+  String get restorationId {
+    return null;
+  }
+
+  set restorationId(String val) {
+    if (val == this.restorationId) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   'noMaxLength': null,
   };
@@ -125,69 +534,70 @@ class TextFieldRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': TextField(
-       key: this.key,
-       controller: this.controller,
-       focusNode: this.focusNode,
-       decoration: this.decoration,
-       keyboardType: this.keyboardType,
-       textInputAction: this.textInputAction,
-       textCapitalization: this.textCapitalization,
-       style: this.style,
-       strutStyle: this.strutStyle,
-       textAlign: this.textAlign,
-       textAlignVertical: this.textAlignVertical,
-       textDirection: this.textDirection,
-       readOnly: this.readOnly,
-       toolbarOptions: this.toolbarOptions,
-       showCursor: this.showCursor,
-       autofocus: this.autofocus,
-       obscuringCharacter: this.obscuringCharacter,
-       obscureText: this.obscureText,
-       autocorrect: this.autocorrect,
-       smartDashesType: this.smartDashesType,
-       smartQuotesType: this.smartQuotesType,
-       enableSuggestions: this.enableSuggestions,
-       maxLines: this.maxLines,
-       minLines: this.minLines,
-       expands: this.expands,
-       maxLength: this.maxLength,
-       maxLengthEnforced: this.maxLengthEnforced,
-       onChanged: this.onChanged,
-       onEditingComplete: this.onEditingComplete,
-       onSubmitted: this.onSubmitted,
-       onAppPrivateCommand: this.onAppPrivateCommand,
-       inputFormatters: this.inputFormatters,
-       enabled: this.enabled,
-       cursorWidth: this.cursorWidth,
-       cursorHeight: this.cursorHeight,
-       cursorRadius: this.cursorRadius,
-       cursorColor: this.cursorColor,
-       selectionHeightStyle: this.selectionHeightStyle,
-       selectionWidthStyle: this.selectionWidthStyle,
-       keyboardAppearance: this.keyboardAppearance,
-       scrollPadding: this.scrollPadding,
-       dragStartBehavior: this.dragStartBehavior,
-       enableInteractiveSelection: this.enableInteractiveSelection,
-       onTap: this.onTap,
-       mouseCursor: this.mouseCursor,
-       buildCounter: this.buildCounter,
-       scrollController: this.scrollController,
-       scrollPhysics: this.scrollPhysics,
-       autofillHints: this.autofillHints,
-       restorationId: this.restorationId,
+       key : this.key,
+       controller : this.controller,
+       focusNode : this.focusNode,
+       decoration : this.decoration,
+       keyboardType : this.keyboardType,
+       textInputAction : this.textInputAction,
+       textCapitalization : this.textCapitalization,
+       style : this.style,
+       strutStyle : this.strutStyle,
+       textAlign : this.textAlign,
+       textAlignVertical : this.textAlignVertical,
+       textDirection : this.textDirection,
+       readOnly : this.readOnly,
+       toolbarOptions : this.toolbarOptions,
+       showCursor : this.showCursor,
+       autofocus : this.autofocus,
+       obscuringCharacter : this.obscuringCharacter,
+       obscureText : this.obscureText,
+       autocorrect : this.autocorrect,
+       smartDashesType : this.smartDashesType,
+       smartQuotesType : this.smartQuotesType,
+       enableSuggestions : this.enableSuggestions,
+       maxLines : this.maxLines,
+       minLines : this.minLines,
+       expands : this.expands,
+       maxLength : this.maxLength,
+       maxLengthEnforced : this.maxLengthEnforced,
+       onChanged : this.onChanged,
+       onEditingComplete : this.onEditingComplete,
+       onSubmitted : this.onSubmitted,
+       onAppPrivateCommand : this.onAppPrivateCommand,
+       inputFormatters : this.inputFormatters,
+       enabled : this.enabled,
+       cursorWidth : this.cursorWidth,
+       cursorHeight : this.cursorHeight,
+       cursorRadius : this.cursorRadius,
+       cursorColor : this.cursorColor,
+       selectionHeightStyle : this.selectionHeightStyle,
+       selectionWidthStyle : this.selectionWidthStyle,
+       keyboardAppearance : this.keyboardAppearance,
+       scrollPadding : this.scrollPadding,
+       dragStartBehavior : this.dragStartBehavior,
+       enableInteractiveSelection : this.enableInteractiveSelection,
+       onTap : this.onTap,
+       mouseCursor : this.mouseCursor,
+       buildCounter : this.buildCounter,
+       scrollController : this.scrollController,
+       scrollPhysics : this.scrollPhysics,
+       autofillHints : this.autofillHints,
+       restorationId : this.restorationId,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

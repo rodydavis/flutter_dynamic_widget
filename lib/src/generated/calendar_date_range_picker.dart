@@ -6,25 +6,98 @@ import 'package:flutter/gestures.dart';
 class CalendarDateRangePickerRender<T> extends StatelessWidget {
 
   const CalendarDateRangePickerRender({
-    this.initialStartDate,
-    this.initialEndDate,
-    this.firstDate,
-    this.lastDate,
-    this.currentDate,
-    this.onStartDateChanged,
-    this.onEndDateChanged,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final DateTime initialStartDate;
-  final DateTime initialEndDate;
-  final DateTime firstDate;
-  final DateTime lastDate;
-  final DateTime currentDate;
-  final ValueChanged<DateTime> onStartDateChanged;
-  final ValueChanged<DateTime> onEndDateChanged;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  DateTime get initialStartDate {
+    return null;
+  }
+
+  set initialStartDate(DateTime val) {
+    if (val == this.initialStartDate) {
+      return;
+    }
+  }
+
+  DateTime get initialEndDate {
+    return null;
+  }
+
+  set initialEndDate(DateTime val) {
+    if (val == this.initialEndDate) {
+      return;
+    }
+  }
+
+  DateTime get firstDate {
+    return null;
+  }
+
+  set firstDate(DateTime val) {
+    if (val == this.firstDate) {
+      return;
+    }
+  }
+
+  DateTime get lastDate {
+    return null;
+  }
+
+  set lastDate(DateTime val) {
+    if (val == this.lastDate) {
+      return;
+    }
+  }
+
+  DateTime get currentDate {
+    return null;
+  }
+
+  set currentDate(DateTime val) {
+    if (val == this.currentDate) {
+      return;
+    }
+  }
+
+  ValueChanged<DateTime> get onStartDateChanged {
+    return null;
+  }
+
+  set onStartDateChanged(ValueChanged<DateTime> val) {
+    if (val == this.onStartDateChanged) {
+      return;
+    }
+  }
+
+  ValueChanged<DateTime> get onEndDateChanged {
+    return null;
+  }
+
+  set onEndDateChanged(ValueChanged<DateTime> val) {
+    if (val == this.onEndDateChanged) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -38,27 +111,28 @@ class CalendarDateRangePickerRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': CalendarDateRangePicker(
-       key: this.key,
-       initialStartDate: this.initialStartDate,
-       initialEndDate: this.initialEndDate,
-       firstDate: this.firstDate,
-       lastDate: this.lastDate,
-       currentDate: this.currentDate,
-       onStartDateChanged: this.onStartDateChanged,
-       onEndDateChanged: this.onEndDateChanged,
+       key : this.key,
+       initialStartDate : this.initialStartDate,
+       initialEndDate : this.initialEndDate,
+       firstDate : this.firstDate,
+       lastDate : this.lastDate,
+       currentDate : this.currentDate,
+       onStartDateChanged : this.onStartDateChanged,
+       onEndDateChanged : this.onEndDateChanged,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

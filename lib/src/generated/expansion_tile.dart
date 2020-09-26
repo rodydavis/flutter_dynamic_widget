@@ -6,37 +6,158 @@ import 'package:flutter/gestures.dart';
 class ExpansionTileRender<T> extends StatelessWidget {
 
   const ExpansionTileRender({
-    this.leading,
-    this.title,
-    this.subtitle,
-    this.onExpansionChanged,
-    this.children,
-    this.backgroundColor,
-    this.trailing,
-    this.initiallyExpanded,
-    this.maintainState,
-    this.tilePadding,
-    this.expandedAlignment,
-    this.expandedCrossAxisAlignment,
-    this.childrenPadding,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final Widget leading;
-  final Widget title;
-  final Widget subtitle;
-  final ValueChanged<bool> onExpansionChanged;
-  final List<Widget> children;
-  final Color backgroundColor;
-  final Widget trailing;
-  final bool initiallyExpanded;
-  final bool maintainState;
-  final EdgeInsetsGeometry tilePadding;
-  final Alignment expandedAlignment;
-  final CrossAxisAlignment expandedCrossAxisAlignment;
-  final EdgeInsetsGeometry childrenPadding;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  Widget get leading {
+    return null;
+  }
+
+  set leading(Widget val) {
+    if (val == this.leading) {
+      return;
+    }
+  }
+
+  Widget get title {
+    return null;
+  }
+
+  set title(Widget val) {
+    if (val == this.title) {
+      return;
+    }
+  }
+
+  Widget get subtitle {
+    return null;
+  }
+
+  set subtitle(Widget val) {
+    if (val == this.subtitle) {
+      return;
+    }
+  }
+
+  ValueChanged<bool> get onExpansionChanged {
+    return null;
+  }
+
+  set onExpansionChanged(ValueChanged<bool> val) {
+    if (val == this.onExpansionChanged) {
+      return;
+    }
+  }
+
+  List<Widget> get children {
+    return null;
+  }
+
+  set children(List<Widget> val) {
+    if (val == this.children) {
+      return;
+    }
+  }
+
+  Color get backgroundColor {
+    return null;
+  }
+
+  set backgroundColor(Color val) {
+    if (val == this.backgroundColor) {
+      return;
+    }
+  }
+
+  Widget get trailing {
+    return null;
+  }
+
+  set trailing(Widget val) {
+    if (val == this.trailing) {
+      return;
+    }
+  }
+
+  bool get initiallyExpanded {
+    return null;
+  }
+
+  set initiallyExpanded(bool val) {
+    if (val == this.initiallyExpanded) {
+      return;
+    }
+  }
+
+  bool get maintainState {
+    return null;
+  }
+
+  set maintainState(bool val) {
+    if (val == this.maintainState) {
+      return;
+    }
+  }
+
+  EdgeInsetsGeometry get tilePadding {
+    return null;
+  }
+
+  set tilePadding(EdgeInsetsGeometry val) {
+    if (val == this.tilePadding) {
+      return;
+    }
+  }
+
+  Alignment get expandedAlignment {
+    return null;
+  }
+
+  set expandedAlignment(Alignment val) {
+    if (val == this.expandedAlignment) {
+      return;
+    }
+  }
+
+  CrossAxisAlignment get expandedCrossAxisAlignment {
+    return null;
+  }
+
+  set expandedCrossAxisAlignment(CrossAxisAlignment val) {
+    if (val == this.expandedCrossAxisAlignment) {
+      return;
+    }
+  }
+
+  EdgeInsetsGeometry get childrenPadding {
+    return null;
+  }
+
+  set childrenPadding(EdgeInsetsGeometry val) {
+    if (val == this.childrenPadding) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -50,33 +171,34 @@ class ExpansionTileRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': ExpansionTile(
-       key: this.key,
-       leading: this.leading,
-       title: this.title,
-       subtitle: this.subtitle,
-       backgroundColor: this.backgroundColor,
-       onExpansionChanged: this.onExpansionChanged,
-       children: this.children,
-       trailing: this.trailing,
-       initiallyExpanded: this.initiallyExpanded,
-       maintainState: this.maintainState,
-       tilePadding: this.tilePadding,
-       expandedCrossAxisAlignment: this.expandedCrossAxisAlignment,
-       expandedAlignment: this.expandedAlignment,
-       childrenPadding: this.childrenPadding,
+       key : this.key,
+       leading : this.leading,
+       title : this.title,
+       subtitle : this.subtitle,
+       backgroundColor : this.backgroundColor,
+       onExpansionChanged : this.onExpansionChanged,
+       children : this.children,
+       trailing : this.trailing,
+       initiallyExpanded : this.initiallyExpanded,
+       maintainState : this.maintainState,
+       tilePadding : this.tilePadding,
+       expandedCrossAxisAlignment : this.expandedCrossAxisAlignment,
+       expandedAlignment : this.expandedAlignment,
+       childrenPadding : this.childrenPadding,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

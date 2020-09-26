@@ -6,15 +6,48 @@ import 'package:flutter/gestures.dart';
 class MaterialRectCenterArcTweenRender<T> extends StatelessWidget {
 
   const MaterialRectCenterArcTweenRender({
-    this.begin,
-    this.end,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final Rect begin;
-  final Rect end;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  Rect get begin {
+    return null;
+  }
+
+  set begin(Rect val) {
+    if (val == this.begin) {
+      return;
+    }
+  }
+
+  Rect get end {
+    return null;
+  }
+
+  set end(Rect val) {
+    if (val == this.end) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   '_dirty': null,
   '_centerArc': null,
@@ -30,21 +63,22 @@ class MaterialRectCenterArcTweenRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': MaterialRectCenterArcTween(
-       begin: this.begin,
-       end: this.end,
+       begin : this.begin,
+       end : this.end,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

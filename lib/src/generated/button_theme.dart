@@ -6,41 +6,178 @@ import 'package:flutter/gestures.dart';
 class ButtonThemeDataRender<T> extends StatelessWidget {
 
   const ButtonThemeDataRender({
-    this.minWidth,
-    this.height,
-    this.textTheme,
-    this.layoutBehavior,
-    this.alignedDropdown,
-    this.colorScheme,
-    this.padding,
-    this.shape,
-    this.buttonColor,
-    this.disabledColor,
-    this.focusColor,
-    this.hoverColor,
-    this.highlightColor,
-    this.splashColor,
-    this.materialTapTargetSize,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final double minWidth;
-  final double height;
-  final ButtonTextTheme textTheme;
-  final ButtonBarLayoutBehavior layoutBehavior;
-  final bool alignedDropdown;
-  final ColorScheme colorScheme;
-  final EdgeInsetsGeometry padding;
-  final ShapeBorder shape;
-  final Color buttonColor;
-  final Color disabledColor;
-  final Color focusColor;
-  final Color hoverColor;
-  final Color highlightColor;
-  final Color splashColor;
-  final MaterialTapTargetSize materialTapTargetSize;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  double get minWidth {
+    return null;
+  }
+
+  set minWidth(double val) {
+    if (val == this.minWidth) {
+      return;
+    }
+  }
+
+  double get height {
+    return null;
+  }
+
+  set height(double val) {
+    if (val == this.height) {
+      return;
+    }
+  }
+
+  ButtonTextTheme get textTheme {
+    return null;
+  }
+
+  set textTheme(ButtonTextTheme val) {
+    if (val == this.textTheme) {
+      return;
+    }
+  }
+
+  ButtonBarLayoutBehavior get layoutBehavior {
+    return null;
+  }
+
+  set layoutBehavior(ButtonBarLayoutBehavior val) {
+    if (val == this.layoutBehavior) {
+      return;
+    }
+  }
+
+  bool get alignedDropdown {
+    return null;
+  }
+
+  set alignedDropdown(bool val) {
+    if (val == this.alignedDropdown) {
+      return;
+    }
+  }
+
+  ColorScheme get colorScheme {
+    return null;
+  }
+
+  set colorScheme(ColorScheme val) {
+    if (val == this.colorScheme) {
+      return;
+    }
+  }
+
+  EdgeInsetsGeometry get padding {
+    return null;
+  }
+
+  set padding(EdgeInsetsGeometry val) {
+    if (val == this.padding) {
+      return;
+    }
+  }
+
+  ShapeBorder get shape {
+    return null;
+  }
+
+  set shape(ShapeBorder val) {
+    if (val == this.shape) {
+      return;
+    }
+  }
+
+  Color get buttonColor {
+    return null;
+  }
+
+  set buttonColor(Color val) {
+    if (val == this.buttonColor) {
+      return;
+    }
+  }
+
+  Color get disabledColor {
+    return null;
+  }
+
+  set disabledColor(Color val) {
+    if (val == this.disabledColor) {
+      return;
+    }
+  }
+
+  Color get focusColor {
+    return null;
+  }
+
+  set focusColor(Color val) {
+    if (val == this.focusColor) {
+      return;
+    }
+  }
+
+  Color get hoverColor {
+    return null;
+  }
+
+  set hoverColor(Color val) {
+    if (val == this.hoverColor) {
+      return;
+    }
+  }
+
+  Color get highlightColor {
+    return null;
+  }
+
+  set highlightColor(Color val) {
+    if (val == this.highlightColor) {
+      return;
+    }
+  }
+
+  Color get splashColor {
+    return null;
+  }
+
+  set splashColor(Color val) {
+    if (val == this.splashColor) {
+      return;
+    }
+  }
+
+  MaterialTapTargetSize get materialTapTargetSize {
+    return null;
+  }
+
+  set materialTapTargetSize(MaterialTapTargetSize val) {
+    if (val == this.materialTapTargetSize) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -54,34 +191,35 @@ class ButtonThemeDataRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': ButtonThemeData(
-       textTheme: this.textTheme,
-       minWidth: this.minWidth,
-       height: this.height,
-       padding: this.padding,
-       shape: this.shape,
-       layoutBehavior: this.layoutBehavior,
-       alignedDropdown: this.alignedDropdown,
-       buttonColor: this.buttonColor,
-       disabledColor: this.disabledColor,
-       focusColor: this.focusColor,
-       hoverColor: this.hoverColor,
-       highlightColor: this.highlightColor,
-       splashColor: this.splashColor,
-       colorScheme: this.colorScheme,
-       materialTapTargetSize: this.materialTapTargetSize,
+       textTheme : this.textTheme,
+       minWidth : this.minWidth,
+       height : this.height,
+       padding : this.padding,
+       shape : this.shape,
+       layoutBehavior : this.layoutBehavior,
+       alignedDropdown : this.alignedDropdown,
+       buttonColor : this.buttonColor,
+       disabledColor : this.disabledColor,
+       focusColor : this.focusColor,
+       hoverColor : this.hoverColor,
+       highlightColor : this.highlightColor,
+       splashColor : this.splashColor,
+       colorScheme : this.colorScheme,
+       materialTapTargetSize : this.materialTapTargetSize,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

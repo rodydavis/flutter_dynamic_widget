@@ -6,23 +6,88 @@ import 'package:flutter/gestures.dart';
 class BottomSheetThemeDataRender<T> extends StatelessWidget {
 
   const BottomSheetThemeDataRender({
-    this.backgroundColor,
-    this.elevation,
-    this.modalBackgroundColor,
-    this.modalElevation,
-    this.shape,
-    this.clipBehavior,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final Color backgroundColor;
-  final double elevation;
-  final Color modalBackgroundColor;
-  final double modalElevation;
-  final ShapeBorder shape;
-  final Clip clipBehavior;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  Color get backgroundColor {
+    return null;
+  }
+
+  set backgroundColor(Color val) {
+    if (val == this.backgroundColor) {
+      return;
+    }
+  }
+
+  double get elevation {
+    return null;
+  }
+
+  set elevation(double val) {
+    if (val == this.elevation) {
+      return;
+    }
+  }
+
+  Color get modalBackgroundColor {
+    return null;
+  }
+
+  set modalBackgroundColor(Color val) {
+    if (val == this.modalBackgroundColor) {
+      return;
+    }
+  }
+
+  double get modalElevation {
+    return null;
+  }
+
+  set modalElevation(double val) {
+    if (val == this.modalElevation) {
+      return;
+    }
+  }
+
+  ShapeBorder get shape {
+    return null;
+  }
+
+  set shape(ShapeBorder val) {
+    if (val == this.shape) {
+      return;
+    }
+  }
+
+  Clip get clipBehavior {
+    return null;
+  }
+
+  set clipBehavior(Clip val) {
+    if (val == this.clipBehavior) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -36,25 +101,26 @@ class BottomSheetThemeDataRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': BottomSheetThemeData(
-       backgroundColor: this.backgroundColor,
-       elevation: this.elevation,
-       modalBackgroundColor: this.modalBackgroundColor,
-       modalElevation: this.modalElevation,
-       shape: this.shape,
-       clipBehavior: this.clipBehavior,
+       backgroundColor : this.backgroundColor,
+       elevation : this.elevation,
+       modalBackgroundColor : this.modalBackgroundColor,
+       modalElevation : this.modalElevation,
+       shape : this.shape,
+       clipBehavior : this.clipBehavior,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

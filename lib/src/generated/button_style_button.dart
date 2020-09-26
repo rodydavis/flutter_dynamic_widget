@@ -6,25 +6,98 @@ import 'package:flutter/gestures.dart';
 class ButtonStyleButtonRender<T> extends StatelessWidget {
 
   const ButtonStyleButtonRender({
-    this.onPressed,
-    this.onLongPress,
-    this.style,
-    this.clipBehavior,
-    this.focusNode,
-    this.autofocus,
-    this.child,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final VoidCallback onPressed;
-  final VoidCallback onLongPress;
-  final ButtonStyle style;
-  final Clip clipBehavior;
-  final FocusNode focusNode;
-  final bool autofocus;
-  final Widget child;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  VoidCallback get onPressed {
+    return null;
+  }
+
+  set onPressed(VoidCallback val) {
+    if (val == this.onPressed) {
+      return;
+    }
+  }
+
+  VoidCallback get onLongPress {
+    return null;
+  }
+
+  set onLongPress(VoidCallback val) {
+    if (val == this.onLongPress) {
+      return;
+    }
+  }
+
+  ButtonStyle get style {
+    return null;
+  }
+
+  set style(ButtonStyle val) {
+    if (val == this.style) {
+      return;
+    }
+  }
+
+  Clip get clipBehavior {
+    return null;
+  }
+
+  set clipBehavior(Clip val) {
+    if (val == this.clipBehavior) {
+      return;
+    }
+  }
+
+  FocusNode get focusNode {
+    return null;
+  }
+
+  set focusNode(FocusNode val) {
+    if (val == this.focusNode) {
+      return;
+    }
+  }
+
+  bool get autofocus {
+    return null;
+  }
+
+  set autofocus(bool val) {
+    if (val == this.autofocus) {
+      return;
+    }
+  }
+
+  Widget get child {
+    return null;
+  }
+
+  set child(Widget val) {
+    if (val == this.child) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -38,27 +111,28 @@ class ButtonStyleButtonRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': ButtonStyleButton(
-       key: this.key,
-       onPressed: this.onPressed,
-       onLongPress: this.onLongPress,
-       style: this.style,
-       focusNode: this.focusNode,
-       autofocus: this.autofocus,
-       clipBehavior: this.clipBehavior,
-       child: this.child,
+       key : this.key,
+       onPressed : this.onPressed,
+       onLongPress : this.onLongPress,
+       style : this.style,
+       focusNode : this.focusNode,
+       autofocus : this.autofocus,
+       clipBehavior : this.clipBehavior,
+       child : this.child,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

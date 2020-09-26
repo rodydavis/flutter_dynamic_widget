@@ -6,17 +6,58 @@ import 'package:flutter/gestures.dart';
 class OutlineInputBorderRender<T> extends StatelessWidget {
 
   const OutlineInputBorderRender({
-    this.gapPadding,
-    this.borderRadius,
-    this.borderSide,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final double gapPadding;
-  final BorderRadius borderRadius;
-  final BorderSide borderSide;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  double get gapPadding {
+    return null;
+  }
+
+  set gapPadding(double val) {
+    if (val == this.gapPadding) {
+      return;
+    }
+  }
+
+  BorderRadius get borderRadius {
+    return null;
+  }
+
+  set borderRadius(BorderRadius val) {
+    if (val == this.borderRadius) {
+      return;
+    }
+  }
+
+  BorderSide get borderSide {
+    return null;
+  }
+
+  set borderSide(BorderSide val) {
+    if (val == this.borderSide) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -30,22 +71,23 @@ class OutlineInputBorderRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': OutlineInputBorder(
-       borderSide: this.borderSide,
-       borderRadius: this.borderRadius,
-       gapPadding: this.gapPadding,
+       borderSide : this.borderSide,
+       borderRadius : this.borderRadius,
+       gapPadding : this.gapPadding,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

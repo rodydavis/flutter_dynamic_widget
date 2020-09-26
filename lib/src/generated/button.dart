@@ -6,63 +6,288 @@ import 'package:flutter/gestures.dart';
 class RawMaterialButtonRender<T> extends StatelessWidget {
 
   const RawMaterialButtonRender({
-    this.onPressed,
-    this.onLongPress,
-    this.onHighlightChanged,
-    this.mouseCursor,
-    this.textStyle,
-    this.fillColor,
-    this.focusColor,
-    this.hoverColor,
-    this.highlightColor,
-    this.splashColor,
-    this.elevation,
-    this.hoverElevation,
-    this.focusElevation,
-    this.highlightElevation,
-    this.disabledElevation,
-    this.padding,
-    this.visualDensity,
-    this.constraints,
-    this.shape,
-    this.animationDuration,
-    this.child,
-    this.materialTapTargetSize,
-    this.focusNode,
-    this.autofocus,
-    this.clipBehavior,
-    this.enableFeedback,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final VoidCallback onPressed;
-  final VoidCallback onLongPress;
-  final ValueChanged<bool> onHighlightChanged;
-  final MouseCursor mouseCursor;
-  final TextStyle textStyle;
-  final Color fillColor;
-  final Color focusColor;
-  final Color hoverColor;
-  final Color highlightColor;
-  final Color splashColor;
-  final double elevation;
-  final double hoverElevation;
-  final double focusElevation;
-  final double highlightElevation;
-  final double disabledElevation;
-  final EdgeInsetsGeometry padding;
-  final VisualDensity visualDensity;
-  final BoxConstraints constraints;
-  final ShapeBorder shape;
-  final Duration animationDuration;
-  final Widget child;
-  final MaterialTapTargetSize materialTapTargetSize;
-  final FocusNode focusNode;
-  final bool autofocus;
-  final Clip clipBehavior;
-  final bool enableFeedback;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  VoidCallback get onPressed {
+    return null;
+  }
+
+  set onPressed(VoidCallback val) {
+    if (val == this.onPressed) {
+      return;
+    }
+  }
+
+  VoidCallback get onLongPress {
+    return null;
+  }
+
+  set onLongPress(VoidCallback val) {
+    if (val == this.onLongPress) {
+      return;
+    }
+  }
+
+  ValueChanged<bool> get onHighlightChanged {
+    return null;
+  }
+
+  set onHighlightChanged(ValueChanged<bool> val) {
+    if (val == this.onHighlightChanged) {
+      return;
+    }
+  }
+
+  MouseCursor get mouseCursor {
+    return null;
+  }
+
+  set mouseCursor(MouseCursor val) {
+    if (val == this.mouseCursor) {
+      return;
+    }
+  }
+
+  TextStyle get textStyle {
+    return null;
+  }
+
+  set textStyle(TextStyle val) {
+    if (val == this.textStyle) {
+      return;
+    }
+  }
+
+  Color get fillColor {
+    return null;
+  }
+
+  set fillColor(Color val) {
+    if (val == this.fillColor) {
+      return;
+    }
+  }
+
+  Color get focusColor {
+    return null;
+  }
+
+  set focusColor(Color val) {
+    if (val == this.focusColor) {
+      return;
+    }
+  }
+
+  Color get hoverColor {
+    return null;
+  }
+
+  set hoverColor(Color val) {
+    if (val == this.hoverColor) {
+      return;
+    }
+  }
+
+  Color get highlightColor {
+    return null;
+  }
+
+  set highlightColor(Color val) {
+    if (val == this.highlightColor) {
+      return;
+    }
+  }
+
+  Color get splashColor {
+    return null;
+  }
+
+  set splashColor(Color val) {
+    if (val == this.splashColor) {
+      return;
+    }
+  }
+
+  double get elevation {
+    return null;
+  }
+
+  set elevation(double val) {
+    if (val == this.elevation) {
+      return;
+    }
+  }
+
+  double get hoverElevation {
+    return null;
+  }
+
+  set hoverElevation(double val) {
+    if (val == this.hoverElevation) {
+      return;
+    }
+  }
+
+  double get focusElevation {
+    return null;
+  }
+
+  set focusElevation(double val) {
+    if (val == this.focusElevation) {
+      return;
+    }
+  }
+
+  double get highlightElevation {
+    return null;
+  }
+
+  set highlightElevation(double val) {
+    if (val == this.highlightElevation) {
+      return;
+    }
+  }
+
+  double get disabledElevation {
+    return null;
+  }
+
+  set disabledElevation(double val) {
+    if (val == this.disabledElevation) {
+      return;
+    }
+  }
+
+  EdgeInsetsGeometry get padding {
+    return null;
+  }
+
+  set padding(EdgeInsetsGeometry val) {
+    if (val == this.padding) {
+      return;
+    }
+  }
+
+  VisualDensity get visualDensity {
+    return null;
+  }
+
+  set visualDensity(VisualDensity val) {
+    if (val == this.visualDensity) {
+      return;
+    }
+  }
+
+  BoxConstraints get constraints {
+    return null;
+  }
+
+  set constraints(BoxConstraints val) {
+    if (val == this.constraints) {
+      return;
+    }
+  }
+
+  ShapeBorder get shape {
+    return null;
+  }
+
+  set shape(ShapeBorder val) {
+    if (val == this.shape) {
+      return;
+    }
+  }
+
+  Duration get animationDuration {
+    return null;
+  }
+
+  set animationDuration(Duration val) {
+    if (val == this.animationDuration) {
+      return;
+    }
+  }
+
+  Widget get child {
+    return null;
+  }
+
+  set child(Widget val) {
+    if (val == this.child) {
+      return;
+    }
+  }
+
+  MaterialTapTargetSize get materialTapTargetSize {
+    return null;
+  }
+
+  set materialTapTargetSize(MaterialTapTargetSize val) {
+    if (val == this.materialTapTargetSize) {
+      return;
+    }
+  }
+
+  FocusNode get focusNode {
+    return null;
+  }
+
+  set focusNode(FocusNode val) {
+    if (val == this.focusNode) {
+      return;
+    }
+  }
+
+  bool get autofocus {
+    return null;
+  }
+
+  set autofocus(bool val) {
+    if (val == this.autofocus) {
+      return;
+    }
+  }
+
+  Clip get clipBehavior {
+    return null;
+  }
+
+  set clipBehavior(Clip val) {
+    if (val == this.clipBehavior) {
+      return;
+    }
+  }
+
+  bool get enableFeedback {
+    return null;
+  }
+
+  set enableFeedback(bool val) {
+    if (val == this.enableFeedback) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -76,46 +301,47 @@ class RawMaterialButtonRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': RawMaterialButton(
-       key: this.key,
-       onPressed: this.onPressed,
-       onLongPress: this.onLongPress,
-       onHighlightChanged: this.onHighlightChanged,
-       mouseCursor: this.mouseCursor,
-       textStyle: this.textStyle,
-       fillColor: this.fillColor,
-       focusColor: this.focusColor,
-       hoverColor: this.hoverColor,
-       highlightColor: this.highlightColor,
-       splashColor: this.splashColor,
-       elevation: this.elevation,
-       focusElevation: this.focusElevation,
-       hoverElevation: this.hoverElevation,
-       highlightElevation: this.highlightElevation,
-       disabledElevation: this.disabledElevation,
-       padding: this.padding,
-       visualDensity: this.visualDensity,
-       constraints: this.constraints,
-       shape: this.shape,
-       animationDuration: this.animationDuration,
-       clipBehavior: this.clipBehavior,
-       focusNode: this.focusNode,
-       autofocus: this.autofocus,
-       materialTapTargetSize: this.materialTapTargetSize,
-       child: this.child,
-       enableFeedback: this.enableFeedback,
+       key : this.key,
+       onPressed : this.onPressed,
+       onLongPress : this.onLongPress,
+       onHighlightChanged : this.onHighlightChanged,
+       mouseCursor : this.mouseCursor,
+       textStyle : this.textStyle,
+       fillColor : this.fillColor,
+       focusColor : this.focusColor,
+       hoverColor : this.hoverColor,
+       highlightColor : this.highlightColor,
+       splashColor : this.splashColor,
+       elevation : this.elevation,
+       focusElevation : this.focusElevation,
+       hoverElevation : this.hoverElevation,
+       highlightElevation : this.highlightElevation,
+       disabledElevation : this.disabledElevation,
+       padding : this.padding,
+       visualDensity : this.visualDensity,
+       constraints : this.constraints,
+       shape : this.shape,
+       animationDuration : this.animationDuration,
+       clipBehavior : this.clipBehavior,
+       focusNode : this.focusNode,
+       autofocus : this.autofocus,
+       materialTapTargetSize : this.materialTapTargetSize,
+       child : this.child,
+       enableFeedback : this.enableFeedback,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

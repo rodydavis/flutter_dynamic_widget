@@ -6,23 +6,88 @@ import 'package:flutter/gestures.dart';
 class TableRowInkWellRender<T> extends StatelessWidget {
 
   const TableRowInkWellRender({
-    this.child,
-    this.onTap,
-    this.onDoubleTap,
-    this.onLongPress,
-    this.onHighlightChanged,
-    this.overlayColor,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final Widget child;
-  final GestureTapCallback onTap;
-  final GestureTapCallback onDoubleTap;
-  final GestureLongPressCallback onLongPress;
-  final ValueChanged<bool> onHighlightChanged;
-  final MaterialStateProperty<Color> overlayColor;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  Widget get child {
+    return null;
+  }
+
+  set child(Widget val) {
+    if (val == this.child) {
+      return;
+    }
+  }
+
+  GestureTapCallback get onTap {
+    return null;
+  }
+
+  set onTap(GestureTapCallback val) {
+    if (val == this.onTap) {
+      return;
+    }
+  }
+
+  GestureTapCallback get onDoubleTap {
+    return null;
+  }
+
+  set onDoubleTap(GestureTapCallback val) {
+    if (val == this.onDoubleTap) {
+      return;
+    }
+  }
+
+  GestureLongPressCallback get onLongPress {
+    return null;
+  }
+
+  set onLongPress(GestureLongPressCallback val) {
+    if (val == this.onLongPress) {
+      return;
+    }
+  }
+
+  ValueChanged<bool> get onHighlightChanged {
+    return null;
+  }
+
+  set onHighlightChanged(ValueChanged<bool> val) {
+    if (val == this.onHighlightChanged) {
+      return;
+    }
+  }
+
+  MaterialStateProperty<Color> get overlayColor {
+    return null;
+  }
+
+  set overlayColor(MaterialStateProperty<Color> val) {
+    if (val == this.overlayColor) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -36,26 +101,27 @@ class TableRowInkWellRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': TableRowInkWell(
-       key: this.key,
-       child: this.child,
-       onTap: this.onTap,
-       onDoubleTap: this.onDoubleTap,
-       onLongPress: this.onLongPress,
-       onHighlightChanged: this.onHighlightChanged,
-       overlayColor: this.overlayColor,
+       key : this.key,
+       child : this.child,
+       onTap : this.onTap,
+       onDoubleTap : this.onDoubleTap,
+       onLongPress : this.onLongPress,
+       onHighlightChanged : this.onHighlightChanged,
+       overlayColor : this.overlayColor,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

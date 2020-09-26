@@ -6,17 +6,58 @@ import 'package:flutter/gestures.dart';
 class GridTileRender<T> extends StatelessWidget {
 
   const GridTileRender({
-    this.header,
-    this.footer,
-    this.child,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final Widget header;
-  final Widget footer;
-  final Widget child;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  Widget get header {
+    return null;
+  }
+
+  set header(Widget val) {
+    if (val == this.header) {
+      return;
+    }
+  }
+
+  Widget get footer {
+    return null;
+  }
+
+  set footer(Widget val) {
+    if (val == this.footer) {
+      return;
+    }
+  }
+
+  Widget get child {
+    return null;
+  }
+
+  set child(Widget val) {
+    if (val == this.child) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -30,23 +71,24 @@ class GridTileRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': GridTile(
-       key: this.key,
-       header: this.header,
-       footer: this.footer,
-       child: this.child,
+       key : this.key,
+       header : this.header,
+       footer : this.footer,
+       child : this.child,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

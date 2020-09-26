@@ -6,25 +6,98 @@ import 'package:flutter/gestures.dart';
 class ExpandIconRender<T> extends StatelessWidget {
 
   const ExpandIconRender({
-    this.isExpanded,
-    this.size,
-    this.onPressed,
-    this.padding,
-    this.color,
-    this.disabledColor,
-    this.expandedColor,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final bool isExpanded;
-  final double size;
-  final ValueChanged<bool> onPressed;
-  final EdgeInsetsGeometry padding;
-  final Color color;
-  final Color disabledColor;
-  final Color expandedColor;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  bool get isExpanded {
+    return null;
+  }
+
+  set isExpanded(bool val) {
+    if (val == this.isExpanded) {
+      return;
+    }
+  }
+
+  double get size {
+    return null;
+  }
+
+  set size(double val) {
+    if (val == this.size) {
+      return;
+    }
+  }
+
+  ValueChanged<bool> get onPressed {
+    return null;
+  }
+
+  set onPressed(ValueChanged<bool> val) {
+    if (val == this.onPressed) {
+      return;
+    }
+  }
+
+  EdgeInsetsGeometry get padding {
+    return null;
+  }
+
+  set padding(EdgeInsetsGeometry val) {
+    if (val == this.padding) {
+      return;
+    }
+  }
+
+  Color get color {
+    return null;
+  }
+
+  set color(Color val) {
+    if (val == this.color) {
+      return;
+    }
+  }
+
+  Color get disabledColor {
+    return null;
+  }
+
+  set disabledColor(Color val) {
+    if (val == this.disabledColor) {
+      return;
+    }
+  }
+
+  Color get expandedColor {
+    return null;
+  }
+
+  set expandedColor(Color val) {
+    if (val == this.expandedColor) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -38,27 +111,28 @@ class ExpandIconRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': ExpandIcon(
-       key: this.key,
-       isExpanded: this.isExpanded,
-       size: this.size,
-       onPressed: this.onPressed,
-       padding: this.padding,
-       color: this.color,
-       disabledColor: this.disabledColor,
-       expandedColor: this.expandedColor,
+       key : this.key,
+       isExpanded : this.isExpanded,
+       size : this.size,
+       onPressed : this.onPressed,
+       padding : this.padding,
+       color : this.color,
+       disabledColor : this.disabledColor,
+       expandedColor : this.expandedColor,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

@@ -6,17 +6,58 @@ import 'package:flutter/gestures.dart';
 class DefaultTabControllerRender<T> extends StatelessWidget {
 
   const DefaultTabControllerRender({
-    this.length,
-    this.initialIndex,
-    this.child,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final int length;
-  final int initialIndex;
-  final Widget child;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  int get length {
+    return null;
+  }
+
+  set length(int val) {
+    if (val == this.length) {
+      return;
+    }
+  }
+
+  int get initialIndex {
+    return null;
+  }
+
+  set initialIndex(int val) {
+    if (val == this.initialIndex) {
+      return;
+    }
+  }
+
+  Widget get child {
+    return null;
+  }
+
+  set child(Widget val) {
+    if (val == this.child) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -30,23 +71,24 @@ class DefaultTabControllerRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': DefaultTabController(
-       key: this.key,
-       length: this.length,
-       initialIndex: this.initialIndex,
-       child: this.child,
+       key : this.key,
+       length : this.length,
+       initialIndex : this.initialIndex,
+       child : this.child,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

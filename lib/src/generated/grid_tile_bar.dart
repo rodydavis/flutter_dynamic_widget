@@ -6,21 +6,78 @@ import 'package:flutter/gestures.dart';
 class GridTileBarRender<T> extends StatelessWidget {
 
   const GridTileBarRender({
-    this.backgroundColor,
-    this.leading,
-    this.title,
-    this.subtitle,
-    this.trailing,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final Color backgroundColor;
-  final Widget leading;
-  final Widget title;
-  final Widget subtitle;
-  final Widget trailing;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  Color get backgroundColor {
+    return null;
+  }
+
+  set backgroundColor(Color val) {
+    if (val == this.backgroundColor) {
+      return;
+    }
+  }
+
+  Widget get leading {
+    return null;
+  }
+
+  set leading(Widget val) {
+    if (val == this.leading) {
+      return;
+    }
+  }
+
+  Widget get title {
+    return null;
+  }
+
+  set title(Widget val) {
+    if (val == this.title) {
+      return;
+    }
+  }
+
+  Widget get subtitle {
+    return null;
+  }
+
+  set subtitle(Widget val) {
+    if (val == this.subtitle) {
+      return;
+    }
+  }
+
+  Widget get trailing {
+    return null;
+  }
+
+  set trailing(Widget val) {
+    if (val == this.trailing) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -34,25 +91,26 @@ class GridTileBarRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': GridTileBar(
-       key: this.key,
-       backgroundColor: this.backgroundColor,
-       leading: this.leading,
-       title: this.title,
-       subtitle: this.subtitle,
-       trailing: this.trailing,
+       key : this.key,
+       backgroundColor : this.backgroundColor,
+       leading : this.leading,
+       title : this.title,
+       subtitle : this.subtitle,
+       trailing : this.trailing,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

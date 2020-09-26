@@ -6,11 +6,28 @@ import 'package:flutter/gestures.dart';
 class IconsRender<T> extends StatelessWidget {
 
   const IconsRender({
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   'ten_k': null,
   'ten_mp': null,
@@ -5682,13 +5699,14 @@ class IconsRender<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

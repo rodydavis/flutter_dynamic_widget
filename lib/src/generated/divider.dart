@@ -6,21 +6,78 @@ import 'package:flutter/gestures.dart';
 class VerticalDividerRender<T> extends StatelessWidget {
 
   const VerticalDividerRender({
-    this.width,
-    this.thickness,
-    this.indent,
-    this.endIndent,
-    this.color,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final double width;
-  final double thickness;
-  final double indent;
-  final double endIndent;
-  final Color color;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  double get width {
+    return null;
+  }
+
+  set width(double val) {
+    if (val == this.width) {
+      return;
+    }
+  }
+
+  double get thickness {
+    return null;
+  }
+
+  set thickness(double val) {
+    if (val == this.thickness) {
+      return;
+    }
+  }
+
+  double get indent {
+    return null;
+  }
+
+  set indent(double val) {
+    if (val == this.indent) {
+      return;
+    }
+  }
+
+  double get endIndent {
+    return null;
+  }
+
+  set endIndent(double val) {
+    if (val == this.endIndent) {
+      return;
+    }
+  }
+
+  Color get color {
+    return null;
+  }
+
+  set color(Color val) {
+    if (val == this.color) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -34,25 +91,26 @@ class VerticalDividerRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': VerticalDivider(
-       key: this.key,
-       width: this.width,
-       thickness: this.thickness,
-       indent: this.indent,
-       endIndent: this.endIndent,
-       color: this.color,
+       key : this.key,
+       width : this.width,
+       thickness : this.thickness,
+       indent : this.indent,
+       endIndent : this.endIndent,
+       color : this.color,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

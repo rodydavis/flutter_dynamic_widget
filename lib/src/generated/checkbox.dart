@@ -6,35 +6,148 @@ import 'package:flutter/gestures.dart';
 class CheckboxRender<T> extends StatelessWidget {
 
   const CheckboxRender({
-    this.value,
-    this.onChanged,
-    this.mouseCursor,
-    this.activeColor,
-    this.checkColor,
-    this.tristate,
-    this.materialTapTargetSize,
-    this.visualDensity,
-    this.focusColor,
-    this.hoverColor,
-    this.focusNode,
-    this.autofocus,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final bool value;
-  final ValueChanged<bool> onChanged;
-  final MouseCursor mouseCursor;
-  final Color activeColor;
-  final Color checkColor;
-  final bool tristate;
-  final MaterialTapTargetSize materialTapTargetSize;
-  final VisualDensity visualDensity;
-  final Color focusColor;
-  final Color hoverColor;
-  final FocusNode focusNode;
-  final bool autofocus;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  bool get value {
+    return null;
+  }
+
+  set value(bool val) {
+    if (val == this.value) {
+      return;
+    }
+  }
+
+  ValueChanged<bool> get onChanged {
+    return null;
+  }
+
+  set onChanged(ValueChanged<bool> val) {
+    if (val == this.onChanged) {
+      return;
+    }
+  }
+
+  MouseCursor get mouseCursor {
+    return null;
+  }
+
+  set mouseCursor(MouseCursor val) {
+    if (val == this.mouseCursor) {
+      return;
+    }
+  }
+
+  Color get activeColor {
+    return null;
+  }
+
+  set activeColor(Color val) {
+    if (val == this.activeColor) {
+      return;
+    }
+  }
+
+  Color get checkColor {
+    return null;
+  }
+
+  set checkColor(Color val) {
+    if (val == this.checkColor) {
+      return;
+    }
+  }
+
+  bool get tristate {
+    return null;
+  }
+
+  set tristate(bool val) {
+    if (val == this.tristate) {
+      return;
+    }
+  }
+
+  MaterialTapTargetSize get materialTapTargetSize {
+    return null;
+  }
+
+  set materialTapTargetSize(MaterialTapTargetSize val) {
+    if (val == this.materialTapTargetSize) {
+      return;
+    }
+  }
+
+  VisualDensity get visualDensity {
+    return null;
+  }
+
+  set visualDensity(VisualDensity val) {
+    if (val == this.visualDensity) {
+      return;
+    }
+  }
+
+  Color get focusColor {
+    return null;
+  }
+
+  set focusColor(Color val) {
+    if (val == this.focusColor) {
+      return;
+    }
+  }
+
+  Color get hoverColor {
+    return null;
+  }
+
+  set hoverColor(Color val) {
+    if (val == this.hoverColor) {
+      return;
+    }
+  }
+
+  FocusNode get focusNode {
+    return null;
+  }
+
+  set focusNode(FocusNode val) {
+    if (val == this.focusNode) {
+      return;
+    }
+  }
+
+  bool get autofocus {
+    return null;
+  }
+
+  set autofocus(bool val) {
+    if (val == this.autofocus) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   'width': null,
   };
@@ -49,32 +162,33 @@ class CheckboxRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': Checkbox(
-       key: this.key,
-       value: this.value,
-       tristate: this.tristate,
-       onChanged: this.onChanged,
-       mouseCursor: this.mouseCursor,
-       activeColor: this.activeColor,
-       checkColor: this.checkColor,
-       focusColor: this.focusColor,
-       hoverColor: this.hoverColor,
-       materialTapTargetSize: this.materialTapTargetSize,
-       visualDensity: this.visualDensity,
-       focusNode: this.focusNode,
-       autofocus: this.autofocus,
+       key : this.key,
+       value : this.value,
+       tristate : this.tristate,
+       onChanged : this.onChanged,
+       mouseCursor : this.mouseCursor,
+       activeColor : this.activeColor,
+       checkColor : this.checkColor,
+       focusColor : this.focusColor,
+       hoverColor : this.hoverColor,
+       materialTapTargetSize : this.materialTapTargetSize,
+       visualDensity : this.visualDensity,
+       focusNode : this.focusNode,
+       autofocus : this.autofocus,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

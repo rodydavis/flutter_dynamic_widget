@@ -6,15 +6,48 @@ import 'package:flutter/gestures.dart';
 class RangeLabelsRender<T> extends StatelessWidget {
 
   const RangeLabelsRender({
-    this.start,
-    this.end,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final String start;
-  final String end;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  String get start {
+    return null;
+  }
+
+  set start(String val) {
+    if (val == this.start) {
+      return;
+    }
+  }
+
+  String get end {
+    return null;
+  }
+
+  set end(String val) {
+    if (val == this.end) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -34,13 +67,14 @@ class RangeLabelsRender<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

@@ -6,51 +6,228 @@ import 'package:flutter/gestures.dart';
 class ListTileRender<T> extends StatelessWidget {
 
   const ListTileRender({
-    this.leading,
-    this.title,
-    this.subtitle,
-    this.trailing,
-    this.isThreeLine,
-    this.dense,
-    this.visualDensity,
-    this.shape,
-    this.contentPadding,
-    this.enabled,
-    this.onTap,
-    this.onLongPress,
-    this.mouseCursor,
-    this.selected,
-    this.focusColor,
-    this.hoverColor,
-    this.focusNode,
-    this.autofocus,
-    this.tileColor,
-    this.selectedTileColor,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final Widget leading;
-  final Widget title;
-  final Widget subtitle;
-  final Widget trailing;
-  final bool isThreeLine;
-  final bool dense;
-  final VisualDensity visualDensity;
-  final ShapeBorder shape;
-  final EdgeInsetsGeometry contentPadding;
-  final bool enabled;
-  final GestureTapCallback onTap;
-  final GestureLongPressCallback onLongPress;
-  final MouseCursor mouseCursor;
-  final bool selected;
-  final Color focusColor;
-  final Color hoverColor;
-  final FocusNode focusNode;
-  final bool autofocus;
-  final Color tileColor;
-  final Color selectedTileColor;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  Widget get leading {
+    return null;
+  }
+
+  set leading(Widget val) {
+    if (val == this.leading) {
+      return;
+    }
+  }
+
+  Widget get title {
+    return null;
+  }
+
+  set title(Widget val) {
+    if (val == this.title) {
+      return;
+    }
+  }
+
+  Widget get subtitle {
+    return null;
+  }
+
+  set subtitle(Widget val) {
+    if (val == this.subtitle) {
+      return;
+    }
+  }
+
+  Widget get trailing {
+    return null;
+  }
+
+  set trailing(Widget val) {
+    if (val == this.trailing) {
+      return;
+    }
+  }
+
+  bool get isThreeLine {
+    return null;
+  }
+
+  set isThreeLine(bool val) {
+    if (val == this.isThreeLine) {
+      return;
+    }
+  }
+
+  bool get dense {
+    return null;
+  }
+
+  set dense(bool val) {
+    if (val == this.dense) {
+      return;
+    }
+  }
+
+  VisualDensity get visualDensity {
+    return null;
+  }
+
+  set visualDensity(VisualDensity val) {
+    if (val == this.visualDensity) {
+      return;
+    }
+  }
+
+  ShapeBorder get shape {
+    return null;
+  }
+
+  set shape(ShapeBorder val) {
+    if (val == this.shape) {
+      return;
+    }
+  }
+
+  EdgeInsetsGeometry get contentPadding {
+    return null;
+  }
+
+  set contentPadding(EdgeInsetsGeometry val) {
+    if (val == this.contentPadding) {
+      return;
+    }
+  }
+
+  bool get enabled {
+    return null;
+  }
+
+  set enabled(bool val) {
+    if (val == this.enabled) {
+      return;
+    }
+  }
+
+  GestureTapCallback get onTap {
+    return null;
+  }
+
+  set onTap(GestureTapCallback val) {
+    if (val == this.onTap) {
+      return;
+    }
+  }
+
+  GestureLongPressCallback get onLongPress {
+    return null;
+  }
+
+  set onLongPress(GestureLongPressCallback val) {
+    if (val == this.onLongPress) {
+      return;
+    }
+  }
+
+  MouseCursor get mouseCursor {
+    return null;
+  }
+
+  set mouseCursor(MouseCursor val) {
+    if (val == this.mouseCursor) {
+      return;
+    }
+  }
+
+  bool get selected {
+    return null;
+  }
+
+  set selected(bool val) {
+    if (val == this.selected) {
+      return;
+    }
+  }
+
+  Color get focusColor {
+    return null;
+  }
+
+  set focusColor(Color val) {
+    if (val == this.focusColor) {
+      return;
+    }
+  }
+
+  Color get hoverColor {
+    return null;
+  }
+
+  set hoverColor(Color val) {
+    if (val == this.hoverColor) {
+      return;
+    }
+  }
+
+  FocusNode get focusNode {
+    return null;
+  }
+
+  set focusNode(FocusNode val) {
+    if (val == this.focusNode) {
+      return;
+    }
+  }
+
+  bool get autofocus {
+    return null;
+  }
+
+  set autofocus(bool val) {
+    if (val == this.autofocus) {
+      return;
+    }
+  }
+
+  Color get tileColor {
+    return null;
+  }
+
+  set tileColor(Color val) {
+    if (val == this.tileColor) {
+      return;
+    }
+  }
+
+  Color get selectedTileColor {
+    return null;
+  }
+
+  set selectedTileColor(Color val) {
+    if (val == this.selectedTileColor) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -64,40 +241,41 @@ class ListTileRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': ListTile(
-       key: this.key,
-       leading: this.leading,
-       title: this.title,
-       subtitle: this.subtitle,
-       trailing: this.trailing,
-       isThreeLine: this.isThreeLine,
-       dense: this.dense,
-       visualDensity: this.visualDensity,
-       shape: this.shape,
-       contentPadding: this.contentPadding,
-       enabled: this.enabled,
-       onTap: this.onTap,
-       onLongPress: this.onLongPress,
-       mouseCursor: this.mouseCursor,
-       selected: this.selected,
-       focusColor: this.focusColor,
-       hoverColor: this.hoverColor,
-       focusNode: this.focusNode,
-       autofocus: this.autofocus,
-       tileColor: this.tileColor,
-       selectedTileColor: this.selectedTileColor,
+       key : this.key,
+       leading : this.leading,
+       title : this.title,
+       subtitle : this.subtitle,
+       trailing : this.trailing,
+       isThreeLine : this.isThreeLine,
+       dense : this.dense,
+       visualDensity : this.visualDensity,
+       shape : this.shape,
+       contentPadding : this.contentPadding,
+       enabled : this.enabled,
+       onTap : this.onTap,
+       onLongPress : this.onLongPress,
+       mouseCursor : this.mouseCursor,
+       selected : this.selected,
+       focusColor : this.focusColor,
+       hoverColor : this.hoverColor,
+       focusNode : this.focusNode,
+       autofocus : this.autofocus,
+       tileColor : this.tileColor,
+       selectedTileColor : this.selectedTileColor,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

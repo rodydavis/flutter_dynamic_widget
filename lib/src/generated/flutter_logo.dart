@@ -6,21 +6,78 @@ import 'package:flutter/gestures.dart';
 class FlutterLogoRender<T> extends StatelessWidget {
 
   const FlutterLogoRender({
-    this.size,
-    this.textColor,
-    this.style,
-    this.duration,
-    this.curve,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final double size;
-  final Color textColor;
-  final FlutterLogoStyle style;
-  final Duration duration;
-  final Curve curve;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  double get size {
+    return null;
+  }
+
+  set size(double val) {
+    if (val == this.size) {
+      return;
+    }
+  }
+
+  Color get textColor {
+    return null;
+  }
+
+  set textColor(Color val) {
+    if (val == this.textColor) {
+      return;
+    }
+  }
+
+  FlutterLogoStyle get style {
+    return null;
+  }
+
+  set style(FlutterLogoStyle val) {
+    if (val == this.style) {
+      return;
+    }
+  }
+
+  Duration get duration {
+    return null;
+  }
+
+  set duration(Duration val) {
+    if (val == this.duration) {
+      return;
+    }
+  }
+
+  Curve get curve {
+    return null;
+  }
+
+  set curve(Curve val) {
+    if (val == this.curve) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -34,25 +91,26 @@ class FlutterLogoRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': FlutterLogo(
-       key: this.key,
-       size: this.size,
-       textColor: this.textColor,
-       style: this.style,
-       duration: this.duration,
-       curve: this.curve,
+       key : this.key,
+       size : this.size,
+       textColor : this.textColor,
+       style : this.style,
+       duration : this.duration,
+       curve : this.curve,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

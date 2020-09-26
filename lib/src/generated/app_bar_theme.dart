@@ -6,27 +6,108 @@ import 'package:flutter/gestures.dart';
 class AppBarThemeRender<T> extends StatelessWidget {
 
   const AppBarThemeRender({
-    this.brightness,
-    this.color,
-    this.elevation,
-    this.shadowColor,
-    this.iconTheme,
-    this.actionsIconTheme,
-    this.textTheme,
-    this.centerTitle,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final Brightness brightness;
-  final Color color;
-  final double elevation;
-  final Color shadowColor;
-  final IconThemeData iconTheme;
-  final IconThemeData actionsIconTheme;
-  final TextTheme textTheme;
-  final bool centerTitle;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  Brightness get brightness {
+    return null;
+  }
+
+  set brightness(Brightness val) {
+    if (val == this.brightness) {
+      return;
+    }
+  }
+
+  Color get color {
+    return null;
+  }
+
+  set color(Color val) {
+    if (val == this.color) {
+      return;
+    }
+  }
+
+  double get elevation {
+    return null;
+  }
+
+  set elevation(double val) {
+    if (val == this.elevation) {
+      return;
+    }
+  }
+
+  Color get shadowColor {
+    return null;
+  }
+
+  set shadowColor(Color val) {
+    if (val == this.shadowColor) {
+      return;
+    }
+  }
+
+  IconThemeData get iconTheme {
+    return null;
+  }
+
+  set iconTheme(IconThemeData val) {
+    if (val == this.iconTheme) {
+      return;
+    }
+  }
+
+  IconThemeData get actionsIconTheme {
+    return null;
+  }
+
+  set actionsIconTheme(IconThemeData val) {
+    if (val == this.actionsIconTheme) {
+      return;
+    }
+  }
+
+  TextTheme get textTheme {
+    return null;
+  }
+
+  set textTheme(TextTheme val) {
+    if (val == this.textTheme) {
+      return;
+    }
+  }
+
+  bool get centerTitle {
+    return null;
+  }
+
+  set centerTitle(bool val) {
+    if (val == this.centerTitle) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -40,27 +121,28 @@ class AppBarThemeRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': AppBarTheme(
-       brightness: this.brightness,
-       color: this.color,
-       elevation: this.elevation,
-       shadowColor: this.shadowColor,
-       iconTheme: this.iconTheme,
-       actionsIconTheme: this.actionsIconTheme,
-       textTheme: this.textTheme,
-       centerTitle: this.centerTitle,
+       brightness : this.brightness,
+       color : this.color,
+       elevation : this.elevation,
+       shadowColor : this.shadowColor,
+       iconTheme : this.iconTheme,
+       actionsIconTheme : this.actionsIconTheme,
+       textTheme : this.textTheme,
+       centerTitle : this.centerTitle,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

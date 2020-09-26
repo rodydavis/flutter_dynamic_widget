@@ -6,25 +6,98 @@ import 'package:flutter/gestures.dart';
 class TabBarThemeRender<T> extends StatelessWidget {
 
   const TabBarThemeRender({
-    this.indicator,
-    this.indicatorSize,
-    this.labelColor,
-    this.labelPadding,
-    this.labelStyle,
-    this.unselectedLabelColor,
-    this.unselectedLabelStyle,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final Decoration indicator;
-  final TabBarIndicatorSize indicatorSize;
-  final Color labelColor;
-  final EdgeInsetsGeometry labelPadding;
-  final TextStyle labelStyle;
-  final Color unselectedLabelColor;
-  final TextStyle unselectedLabelStyle;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  Decoration get indicator {
+    return null;
+  }
+
+  set indicator(Decoration val) {
+    if (val == this.indicator) {
+      return;
+    }
+  }
+
+  TabBarIndicatorSize get indicatorSize {
+    return null;
+  }
+
+  set indicatorSize(TabBarIndicatorSize val) {
+    if (val == this.indicatorSize) {
+      return;
+    }
+  }
+
+  Color get labelColor {
+    return null;
+  }
+
+  set labelColor(Color val) {
+    if (val == this.labelColor) {
+      return;
+    }
+  }
+
+  EdgeInsetsGeometry get labelPadding {
+    return null;
+  }
+
+  set labelPadding(EdgeInsetsGeometry val) {
+    if (val == this.labelPadding) {
+      return;
+    }
+  }
+
+  TextStyle get labelStyle {
+    return null;
+  }
+
+  set labelStyle(TextStyle val) {
+    if (val == this.labelStyle) {
+      return;
+    }
+  }
+
+  Color get unselectedLabelColor {
+    return null;
+  }
+
+  set unselectedLabelColor(Color val) {
+    if (val == this.unselectedLabelColor) {
+      return;
+    }
+  }
+
+  TextStyle get unselectedLabelStyle {
+    return null;
+  }
+
+  set unselectedLabelStyle(TextStyle val) {
+    if (val == this.unselectedLabelStyle) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -38,26 +111,27 @@ class TabBarThemeRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': TabBarTheme(
-       indicator: this.indicator,
-       indicatorSize: this.indicatorSize,
-       labelColor: this.labelColor,
-       labelPadding: this.labelPadding,
-       labelStyle: this.labelStyle,
-       unselectedLabelColor: this.unselectedLabelColor,
-       unselectedLabelStyle: this.unselectedLabelStyle,
+       indicator : this.indicator,
+       indicatorSize : this.indicatorSize,
+       labelColor : this.labelColor,
+       labelPadding : this.labelPadding,
+       labelStyle : this.labelStyle,
+       unselectedLabelColor : this.unselectedLabelColor,
+       unselectedLabelStyle : this.unselectedLabelStyle,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

@@ -6,27 +6,108 @@ import 'package:flutter/gestures.dart';
 class UserAccountsDrawerHeaderRender<T> extends StatelessWidget {
 
   const UserAccountsDrawerHeaderRender({
-    this.decoration,
-    this.margin,
-    this.currentAccountPicture,
-    this.otherAccountsPictures,
-    this.accountName,
-    this.accountEmail,
-    this.onDetailsPressed,
-    this.arrowColor,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final Decoration decoration;
-  final EdgeInsetsGeometry margin;
-  final Widget currentAccountPicture;
-  final List<Widget> otherAccountsPictures;
-  final Widget accountName;
-  final Widget accountEmail;
-  final VoidCallback onDetailsPressed;
-  final Color arrowColor;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  Decoration get decoration {
+    return null;
+  }
+
+  set decoration(Decoration val) {
+    if (val == this.decoration) {
+      return;
+    }
+  }
+
+  EdgeInsetsGeometry get margin {
+    return null;
+  }
+
+  set margin(EdgeInsetsGeometry val) {
+    if (val == this.margin) {
+      return;
+    }
+  }
+
+  Widget get currentAccountPicture {
+    return null;
+  }
+
+  set currentAccountPicture(Widget val) {
+    if (val == this.currentAccountPicture) {
+      return;
+    }
+  }
+
+  List<Widget> get otherAccountsPictures {
+    return null;
+  }
+
+  set otherAccountsPictures(List<Widget> val) {
+    if (val == this.otherAccountsPictures) {
+      return;
+    }
+  }
+
+  Widget get accountName {
+    return null;
+  }
+
+  set accountName(Widget val) {
+    if (val == this.accountName) {
+      return;
+    }
+  }
+
+  Widget get accountEmail {
+    return null;
+  }
+
+  set accountEmail(Widget val) {
+    if (val == this.accountEmail) {
+      return;
+    }
+  }
+
+  VoidCallback get onDetailsPressed {
+    return null;
+  }
+
+  set onDetailsPressed(VoidCallback val) {
+    if (val == this.onDetailsPressed) {
+      return;
+    }
+  }
+
+  Color get arrowColor {
+    return null;
+  }
+
+  set arrowColor(Color val) {
+    if (val == this.arrowColor) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -40,28 +121,29 @@ class UserAccountsDrawerHeaderRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': UserAccountsDrawerHeader(
-       key: this.key,
-       decoration: this.decoration,
-       margin: this.margin,
-       currentAccountPicture: this.currentAccountPicture,
-       otherAccountsPictures: this.otherAccountsPictures,
-       accountName: this.accountName,
-       accountEmail: this.accountEmail,
-       onDetailsPressed: this.onDetailsPressed,
-       arrowColor: this.arrowColor,
+       key : this.key,
+       decoration : this.decoration,
+       margin : this.margin,
+       currentAccountPicture : this.currentAccountPicture,
+       otherAccountsPictures : this.otherAccountsPictures,
+       accountName : this.accountName,
+       accountEmail : this.accountEmail,
+       onDetailsPressed : this.onDetailsPressed,
+       arrowColor : this.arrowColor,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

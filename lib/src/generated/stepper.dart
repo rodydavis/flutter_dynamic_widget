@@ -6,27 +6,108 @@ import 'package:flutter/gestures.dart';
 class StepperRender<T> extends StatelessWidget {
 
   const StepperRender({
-    this.steps,
-    this.physics,
-    this.type,
-    this.currentStep,
-    this.onStepTapped,
-    this.onStepContinue,
-    this.onStepCancel,
-    this.controlsBuilder,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final List<Step> steps;
-  final ScrollPhysics physics;
-  final StepperType type;
-  final int currentStep;
-  final ValueChanged<int> onStepTapped;
-  final VoidCallback onStepContinue;
-  final VoidCallback onStepCancel;
-  final ControlsWidgetBuilder controlsBuilder;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  List<Step> get steps {
+    return null;
+  }
+
+  set steps(List<Step> val) {
+    if (val == this.steps) {
+      return;
+    }
+  }
+
+  ScrollPhysics get physics {
+    return null;
+  }
+
+  set physics(ScrollPhysics val) {
+    if (val == this.physics) {
+      return;
+    }
+  }
+
+  StepperType get type {
+    return null;
+  }
+
+  set type(StepperType val) {
+    if (val == this.type) {
+      return;
+    }
+  }
+
+  int get currentStep {
+    return null;
+  }
+
+  set currentStep(int val) {
+    if (val == this.currentStep) {
+      return;
+    }
+  }
+
+  ValueChanged<int> get onStepTapped {
+    return null;
+  }
+
+  set onStepTapped(ValueChanged<int> val) {
+    if (val == this.onStepTapped) {
+      return;
+    }
+  }
+
+  VoidCallback get onStepContinue {
+    return null;
+  }
+
+  set onStepContinue(VoidCallback val) {
+    if (val == this.onStepContinue) {
+      return;
+    }
+  }
+
+  VoidCallback get onStepCancel {
+    return null;
+  }
+
+  set onStepCancel(VoidCallback val) {
+    if (val == this.onStepCancel) {
+      return;
+    }
+  }
+
+  ControlsWidgetBuilder get controlsBuilder {
+    return null;
+  }
+
+  set controlsBuilder(ControlsWidgetBuilder val) {
+    if (val == this.controlsBuilder) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -40,28 +121,29 @@ class StepperRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': Stepper(
-       key: this.key,
-       steps: this.steps,
-       physics: this.physics,
-       type: this.type,
-       currentStep: this.currentStep,
-       onStepTapped: this.onStepTapped,
-       onStepContinue: this.onStepContinue,
-       onStepCancel: this.onStepCancel,
-       controlsBuilder: this.controlsBuilder,
+       key : this.key,
+       steps : this.steps,
+       physics : this.physics,
+       type : this.type,
+       currentStep : this.currentStep,
+       onStepTapped : this.onStepTapped,
+       onStepContinue : this.onStepContinue,
+       onStepCancel : this.onStepCancel,
+       controlsBuilder : this.controlsBuilder,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override

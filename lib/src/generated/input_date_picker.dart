@@ -6,33 +6,138 @@ import 'package:flutter/gestures.dart';
 class InputDatePickerFormFieldRender<T> extends StatelessWidget {
 
   const InputDatePickerFormFieldRender({
-    this.initialDate,
-    this.firstDate,
-    this.lastDate,
-    this.onDateSubmitted,
-    this.onDateSaved,
-    this.selectableDayPredicate,
-    this.errorFormatText,
-    this.errorInvalidText,
-    this.fieldHintText,
-    this.fieldLabelText,
-    this.autofocus,
-    this.widgetKey,
+    @required this.wData,
+    @required this.wUpdate,
   });
 
-  final DateTime initialDate;
-  final DateTime firstDate;
-  final DateTime lastDate;
-  final ValueChanged<DateTime> onDateSubmitted;
-  final ValueChanged<DateTime> onDateSaved;
-  final SelectableDayPredicate selectableDayPredicate;
-  final String errorFormatText;
-  final String errorInvalidText;
-  final String fieldHintText;
-  final String fieldLabelText;
-  final bool autofocus;
-  final Key widgetKey;
+  @override
+  final Map<String, dynamic> wData;
 
+  @override
+  final VoidCallback wUpdate;
+
+  DateTime get initialDate {
+    return null;
+  }
+
+  set initialDate(DateTime val) {
+    if (val == this.initialDate) {
+      return;
+    }
+  }
+
+  DateTime get firstDate {
+    return null;
+  }
+
+  set firstDate(DateTime val) {
+    if (val == this.firstDate) {
+      return;
+    }
+  }
+
+  DateTime get lastDate {
+    return null;
+  }
+
+  set lastDate(DateTime val) {
+    if (val == this.lastDate) {
+      return;
+    }
+  }
+
+  ValueChanged<DateTime> get onDateSubmitted {
+    return null;
+  }
+
+  set onDateSubmitted(ValueChanged<DateTime> val) {
+    if (val == this.onDateSubmitted) {
+      return;
+    }
+  }
+
+  ValueChanged<DateTime> get onDateSaved {
+    return null;
+  }
+
+  set onDateSaved(ValueChanged<DateTime> val) {
+    if (val == this.onDateSaved) {
+      return;
+    }
+  }
+
+  SelectableDayPredicate get selectableDayPredicate {
+    return null;
+  }
+
+  set selectableDayPredicate(SelectableDayPredicate val) {
+    if (val == this.selectableDayPredicate) {
+      return;
+    }
+  }
+
+  String get errorFormatText {
+    return null;
+  }
+
+  set errorFormatText(String val) {
+    if (val == this.errorFormatText) {
+      return;
+    }
+  }
+
+  String get errorInvalidText {
+    return null;
+  }
+
+  set errorInvalidText(String val) {
+    if (val == this.errorInvalidText) {
+      return;
+    }
+  }
+
+  String get fieldHintText {
+    return null;
+  }
+
+  set fieldHintText(String val) {
+    if (val == this.fieldHintText) {
+      return;
+    }
+  }
+
+  String get fieldLabelText {
+    return null;
+  }
+
+  set fieldLabelText(String val) {
+    if (val == this.fieldLabelText) {
+      return;
+    }
+  }
+
+  bool get autofocus {
+    return null;
+  }
+
+  set autofocus(bool val) {
+    if (val == this.autofocus) {
+      return;
+    }
+  }
+
+  Key get widgetKey {
+    return null;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+  }
+
+
+  @override
   Map<String, dynamic> get staticFields => {
   };
 
@@ -46,31 +151,32 @@ class InputDatePickerFormFieldRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return <String, Object>{
     'default': InputDatePickerFormField(
-       key: this.key,
-       initialDate: this.initialDate,
-       firstDate: this.firstDate,
-       lastDate: this.lastDate,
-       onDateSubmitted: this.onDateSubmitted,
-       onDateSaved: this.onDateSaved,
-       selectableDayPredicate: this.selectableDayPredicate,
-       errorFormatText: this.errorFormatText,
-       errorInvalidText: this.errorInvalidText,
-       fieldHintText: this.fieldHintText,
-       fieldLabelText: this.fieldLabelText,
-       autofocus: this.autofocus,
+       key : this.key,
+       initialDate : this.initialDate,
+       firstDate : this.firstDate,
+       lastDate : this.lastDate,
+       onDateSubmitted : this.onDateSubmitted,
+       onDateSaved : this.onDateSaved,
+       selectableDayPredicate : this.selectableDayPredicate,
+       errorFormatText : this.errorFormatText,
+       errorInvalidText : this.errorInvalidText,
+       fieldHintText : this.fieldHintText,
+       fieldLabelText : this.fieldLabelText,
+       autofocus : this.autofocus,
     ),
     };
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isWidget) {
-      return defaultBase;
-    }
+    if (isWidget) return defaultBase;
     return Container();
   }
 
+  @override
   bool get isWidget => defaultBase is Widget;
+  
+  @override
   Object get defaultBase => constructors['default'];
 
   @override
