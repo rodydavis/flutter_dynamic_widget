@@ -1,0 +1,55 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/gestures.dart';
+
+class InputDateRangePickerStateRender<T> extends StatelessWidget {
+
+  const InputDateRangePickerStateRender({
+    this.widgetKey,
+  });
+
+  final Key widgetKey;
+
+  Map<String, dynamic> get staticFields => {
+  '_startInputText': null,
+  '_endInputText': null,
+  '_startDate': null,
+  '_endDate': null,
+  '_startController': null,
+  '_endController': null,
+  '_startErrorText': null,
+  '_endErrorText': null,
+  '_autoSelected': null,
+  };
+
+  @override
+  String get description {
+    final sb = StringBuffer();
+    return sb.toString();
+  }
+
+  @override
+  Map<String, Object> get constructors {
+     return <String, Object>{
+    };
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (isWidget) {
+      return defaultBase;
+    }
+    return Container();
+  }
+
+  bool get isWidget => defaultBase is Widget;
+  Object get defaultBase => constructors['default'];
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
+  }
+}
+
