@@ -14,7 +14,8 @@ class FeedbackRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return Feedback(
+    );
   }
 
   @override

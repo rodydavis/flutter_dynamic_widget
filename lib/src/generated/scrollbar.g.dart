@@ -26,7 +26,14 @@ class ScrollbarRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return Scrollbar(
+        key:this.key,
+        child:this.child,
+        controller:this.controller,
+        isAlwaysShown:this.isAlwaysShown,
+        thickness:this.thickness,
+        radius:this.radius,
+    );
   }
 
   @override

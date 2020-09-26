@@ -18,7 +18,10 @@ class DateTimeRangeRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return DateTimeRange(
+        start:this.start,
+        end:this.end,
+    );
   }
 
   @override

@@ -30,7 +30,16 @@ class ButtonStyleButtonRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return ButtonStyleButton(
+        key:this.key,
+        onPressed:this.onPressed,
+        onLongPress:this.onLongPress,
+        style:this.style,
+        focusNode:this.focusNode,
+        autofocus:this.autofocus,
+        clipBehavior:this.clipBehavior,
+        child:this.child,
+    );
   }
 
   @override

@@ -54,7 +54,28 @@ class BottomNavigationBarRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return BottomNavigationBar(
+        key:this.key,
+        items:this.items,
+        onTap:this.onTap,
+        currentIndex:this.currentIndex,
+        elevation:this.elevation,
+        type:this.type,
+        fixedColor:this.fixedColor,
+        backgroundColor:this.backgroundColor,
+        iconSize:this.iconSize,
+        selectedItemColor:this.selectedItemColor,
+        unselectedItemColor:this.unselectedItemColor,
+        selectedIconTheme:this.selectedIconTheme,
+        unselectedIconTheme:this.unselectedIconTheme,
+        selectedFontSize:this.selectedFontSize,
+        unselectedFontSize:this.unselectedFontSize,
+        selectedLabelStyle:this.selectedLabelStyle,
+        unselectedLabelStyle:this.unselectedLabelStyle,
+        showSelectedLabels:this.showSelectedLabels,
+        showUnselectedLabels:this.showUnselectedLabels,
+        mouseCursor:this.mouseCursor,
+    );
   }
 
   @override

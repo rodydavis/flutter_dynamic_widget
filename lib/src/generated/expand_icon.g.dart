@@ -30,7 +30,16 @@ class ExpandIconRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return ExpandIcon(
+        key:this.key,
+        isExpanded:this.isExpanded,
+        size:this.size,
+        onPressed:this.onPressed,
+        padding:this.padding,
+        color:this.color,
+        disabledColor:this.disabledColor,
+        expandedColor:this.expandedColor,
+    );
   }
 
   @override

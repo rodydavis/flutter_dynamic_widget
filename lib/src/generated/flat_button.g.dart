@@ -64,7 +64,33 @@ class FlatButtonRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return FlatButton(
+        key:this.key,
+        onPressed:this.onPressed,
+        onLongPress:this.onLongPress,
+        onHighlightChanged:this.onHighlightChanged,
+        mouseCursor:this.mouseCursor,
+        textTheme:this.textTheme,
+        textColor:this.textColor,
+        disabledTextColor:this.disabledTextColor,
+        color:this.color,
+        disabledColor:this.disabledColor,
+        focusColor:this.focusColor,
+        hoverColor:this.hoverColor,
+        highlightColor:this.highlightColor,
+        splashColor:this.splashColor,
+        colorBrightness:this.colorBrightness,
+        padding:this.padding,
+        visualDensity:this.visualDensity,
+        shape:this.shape,
+        clipBehavior:this.clipBehavior,
+        focusNode:this.focusNode,
+        autofocus:this.autofocus,
+        materialTapTargetSize:this.materialTapTargetSize,
+        child:this.child,
+        height:this.height,
+        minWidth:this.minWidth,
+    );
   }
 
   @override

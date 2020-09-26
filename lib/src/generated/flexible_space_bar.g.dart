@@ -28,7 +28,15 @@ class FlexibleSpaceBarRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return FlexibleSpaceBar(
+        key:this.key,
+        title:this.title,
+        background:this.background,
+        centerTitle:this.centerTitle,
+        titlePadding:this.titlePadding,
+        collapseMode:this.collapseMode,
+        stretchModes:this.stretchModes,
+    );
   }
 
   @override

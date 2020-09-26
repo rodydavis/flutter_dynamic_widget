@@ -48,7 +48,25 @@ class ButtonThemeRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return ButtonTheme(
+        key:this.key,
+        textTheme:this.textTheme,
+        layoutBehavior:this.layoutBehavior,
+        minWidth:this.minWidth,
+        height:this.height,
+        padding:this.padding,
+        shape:this.shape,
+        alignedDropdown:this.alignedDropdown,
+        buttonColor:this.buttonColor,
+        disabledColor:this.disabledColor,
+        focusColor:this.focusColor,
+        hoverColor:this.hoverColor,
+        highlightColor:this.highlightColor,
+        splashColor:this.splashColor,
+        colorScheme:this.colorScheme,
+        materialTapTargetSize:this.materialTapTargetSize,
+        child:this.child,
+    );
   }
 
   @override

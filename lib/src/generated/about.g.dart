@@ -32,7 +32,17 @@ class AboutListTileRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return AboutListTile(
+        key:this.key,
+        icon:this.icon,
+        child:this.child,
+        applicationName:this.applicationName,
+        applicationVersion:this.applicationVersion,
+        applicationIcon:this.applicationIcon,
+        applicationLegalese:this.applicationLegalese,
+        aboutBoxChildren:this.aboutBoxChildren,
+        dense:this.dense,
+    );
   }
 
   @override

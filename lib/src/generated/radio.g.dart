@@ -40,7 +40,21 @@ class RadioRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return Radio(
+        key:this.key,
+        value:this.value,
+        groupValue:this.groupValue,
+        onChanged:this.onChanged,
+        mouseCursor:this.mouseCursor,
+        toggleable:this.toggleable,
+        activeColor:this.activeColor,
+        focusColor:this.focusColor,
+        hoverColor:this.hoverColor,
+        materialTapTargetSize:this.materialTapTargetSize,
+        visualDensity:this.visualDensity,
+        focusNode:this.focusNode,
+        autofocus:this.autofocus,
+    );
   }
 
   @override

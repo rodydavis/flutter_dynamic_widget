@@ -30,7 +30,16 @@ class CalendarDateRangePickerRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return CalendarDateRangePicker(
+        key:this.key,
+        initialStartDate:this.initialStartDate,
+        initialEndDate:this.initialEndDate,
+        firstDate:this.firstDate,
+        lastDate:this.lastDate,
+        currentDate:this.currentDate,
+        onStartDateChanged:this.onStartDateChanged,
+        onEndDateChanged:this.onEndDateChanged,
+    );
   }
 
   @override

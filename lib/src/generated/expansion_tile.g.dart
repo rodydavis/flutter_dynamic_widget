@@ -42,7 +42,22 @@ class ExpansionTileRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return ExpansionTile(
+        key:this.key,
+        leading:this.leading,
+        title:this.title,
+        subtitle:this.subtitle,
+        backgroundColor:this.backgroundColor,
+        onExpansionChanged:this.onExpansionChanged,
+        children:this.children,
+        trailing:this.trailing,
+        initiallyExpanded:this.initiallyExpanded,
+        maintainState:this.maintainState,
+        tilePadding:this.tilePadding,
+        expandedCrossAxisAlignment:this.expandedCrossAxisAlignment,
+        expandedAlignment:this.expandedAlignment,
+        childrenPadding:this.childrenPadding,
+    );
   }
 
   @override

@@ -76,7 +76,39 @@ class MaterialAppRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return MaterialApp(
+        key:this.key,
+        navigatorKey:this.navigatorKey,
+        home:this.home,
+        routes:this.routes,
+        initialRoute:this.initialRoute,
+        onGenerateRoute:this.onGenerateRoute,
+        onGenerateInitialRoutes:this.onGenerateInitialRoutes,
+        onUnknownRoute:this.onUnknownRoute,
+        navigatorObservers:this.navigatorObservers,
+        builder:this.builder,
+        title:this.title,
+        onGenerateTitle:this.onGenerateTitle,
+        color:this.color,
+        theme:this.theme,
+        darkTheme:this.darkTheme,
+        highContrastTheme:this.highContrastTheme,
+        highContrastDarkTheme:this.highContrastDarkTheme,
+        themeMode:this.themeMode,
+        locale:this.locale,
+        localizationsDelegates:this.localizationsDelegates,
+        localeListResolutionCallback:this.localeListResolutionCallback,
+        localeResolutionCallback:this.localeResolutionCallback,
+        supportedLocales:this.supportedLocales,
+        debugShowMaterialGrid:this.debugShowMaterialGrid,
+        showPerformanceOverlay:this.showPerformanceOverlay,
+        checkerboardRasterCacheImages:this.checkerboardRasterCacheImages,
+        checkerboardOffscreenLayers:this.checkerboardOffscreenLayers,
+        showSemanticsDebugger:this.showSemanticsDebugger,
+        debugShowCheckedModeBanner:this.debugShowCheckedModeBanner,
+        shortcuts:this.shortcuts,
+        actions:this.actions,
+    );
   }
 
   @override

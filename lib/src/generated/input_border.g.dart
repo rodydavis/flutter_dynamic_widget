@@ -16,7 +16,9 @@ class InputBorderRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return InputBorder(
+        borderSide:this.borderSide,
+    );
   }
 
   @override

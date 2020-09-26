@@ -14,7 +14,8 @@ class AnimatedIconsRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return AnimatedIcons(
+    );
   }
 
   @override

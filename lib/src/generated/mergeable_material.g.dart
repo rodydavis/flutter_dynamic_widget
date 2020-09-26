@@ -14,7 +14,8 @@ class MergeableMaterialItemRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return MergeableMaterialItem(
+    );
   }
 
   @override

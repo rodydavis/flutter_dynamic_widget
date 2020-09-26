@@ -20,7 +20,11 @@ class TextSelectionThemeDataRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return TextSelectionThemeData(
+        cursorColor:this.cursorColor,
+        selectionColor:this.selectionColor,
+        selectionHandleColor:this.selectionHandleColor,
+    );
   }
 
   @override

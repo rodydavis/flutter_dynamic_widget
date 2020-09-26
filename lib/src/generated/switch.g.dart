@@ -50,7 +50,26 @@ class SwitchRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return Switch(
+        key:this.key,
+        value:this.value,
+        onChanged:this.onChanged,
+        activeColor:this.activeColor,
+        activeTrackColor:this.activeTrackColor,
+        inactiveThumbColor:this.inactiveThumbColor,
+        inactiveTrackColor:this.inactiveTrackColor,
+        activeThumbImage:this.activeThumbImage,
+        onActiveThumbImageError:this.onActiveThumbImageError,
+        inactiveThumbImage:this.inactiveThumbImage,
+        onInactiveThumbImageError:this.onInactiveThumbImageError,
+        materialTapTargetSize:this.materialTapTargetSize,
+        dragStartBehavior:this.dragStartBehavior,
+        mouseCursor:this.mouseCursor,
+        focusColor:this.focusColor,
+        hoverColor:this.hoverColor,
+        focusNode:this.focusNode,
+        autofocus:this.autofocus,
+    );
   }
 
   @override

@@ -28,7 +28,15 @@ class BottomAppBarRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return BottomAppBar(
+        key:this.key,
+        color:this.color,
+        elevation:this.elevation,
+        shape:this.shape,
+        clipBehavior:this.clipBehavior,
+        notchMargin:this.notchMargin,
+        child:this.child,
+    );
   }
 
   @override

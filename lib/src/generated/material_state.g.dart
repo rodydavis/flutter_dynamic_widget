@@ -14,7 +14,8 @@ class MaterialStateColorRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return MaterialStateColor(
+    );
   }
 
   @override

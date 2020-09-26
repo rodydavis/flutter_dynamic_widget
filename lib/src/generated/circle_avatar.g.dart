@@ -32,7 +32,17 @@ class CircleAvatarRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return CircleAvatar(
+        key:this.key,
+        child:this.child,
+        backgroundColor:this.backgroundColor,
+        backgroundImage:this.backgroundImage,
+        onBackgroundImageError:this.onBackgroundImageError,
+        foregroundColor:this.foregroundColor,
+        radius:this.radius,
+        minRadius:this.minRadius,
+        maxRadius:this.maxRadius,
+    );
   }
 
   @override

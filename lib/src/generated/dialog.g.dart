@@ -32,7 +32,17 @@ class DialogRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return Dialog(
+        key:this.key,
+        backgroundColor:this.backgroundColor,
+        elevation:this.elevation,
+        insetAnimationDuration:this.insetAnimationDuration,
+        insetAnimationCurve:this.insetAnimationCurve,
+        insetPadding:this.insetPadding,
+        clipBehavior:this.clipBehavior,
+        shape:this.shape,
+        child:this.child,
+    );
   }
 
   @override

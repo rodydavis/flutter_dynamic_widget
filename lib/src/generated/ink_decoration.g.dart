@@ -28,7 +28,15 @@ class InkRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return Ink(
+        key:this.key,
+        padding:this.padding,
+        color:this.color,
+        decoration:this.decoration,
+        width:this.width,
+        height:this.height,
+        child:this.child,
+    );
   }
 
   @override

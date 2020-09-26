@@ -20,7 +20,11 @@ class SliderThemeRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return SliderTheme(
+        key:this.key,
+        data:this.data,
+        child:this.child,
+    );
   }
 
   @override

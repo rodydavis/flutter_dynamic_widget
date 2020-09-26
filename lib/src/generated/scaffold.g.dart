@@ -32,7 +32,17 @@ class ScaffoldPrelayoutGeometryRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return ScaffoldPrelayoutGeometry(
+        bottomSheetSize:this.bottomSheetSize,
+        contentBottom:this.contentBottom,
+        contentTop:this.contentTop,
+        floatingActionButtonSize:this.floatingActionButtonSize,
+        minInsets:this.minInsets,
+        minViewPadding:this.minViewPadding,
+        scaffoldSize:this.scaffoldSize,
+        snackBarSize:this.snackBarSize,
+        textDirection:this.textDirection,
+    );
   }
 
   @override

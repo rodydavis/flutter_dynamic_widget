@@ -36,7 +36,19 @@ class FloatingActionButtonThemeDataRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return FloatingActionButtonThemeData(
+        foregroundColor:this.foregroundColor,
+        backgroundColor:this.backgroundColor,
+        focusColor:this.focusColor,
+        hoverColor:this.hoverColor,
+        splashColor:this.splashColor,
+        elevation:this.elevation,
+        focusElevation:this.focusElevation,
+        hoverElevation:this.hoverElevation,
+        disabledElevation:this.disabledElevation,
+        highlightElevation:this.highlightElevation,
+        shape:this.shape,
+    );
   }
 
   @override

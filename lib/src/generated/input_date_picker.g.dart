@@ -38,7 +38,20 @@ class InputDatePickerFormFieldRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return InputDatePickerFormField(
+        key:this.key,
+        initialDate:this.initialDate,
+        firstDate:this.firstDate,
+        lastDate:this.lastDate,
+        onDateSubmitted:this.onDateSubmitted,
+        onDateSaved:this.onDateSaved,
+        selectableDayPredicate:this.selectableDayPredicate,
+        errorFormatText:this.errorFormatText,
+        errorInvalidText:this.errorInvalidText,
+        fieldHintText:this.fieldHintText,
+        fieldLabelText:this.fieldLabelText,
+        autofocus:this.autofocus,
+    );
   }
 
   @override

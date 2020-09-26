@@ -36,7 +36,19 @@ class BottomNavigationBarThemeDataRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return BottomNavigationBarThemeData(
+        backgroundColor:this.backgroundColor,
+        elevation:this.elevation,
+        selectedIconTheme:this.selectedIconTheme,
+        unselectedIconTheme:this.unselectedIconTheme,
+        selectedItemColor:this.selectedItemColor,
+        unselectedItemColor:this.unselectedItemColor,
+        selectedLabelStyle:this.selectedLabelStyle,
+        unselectedLabelStyle:this.unselectedLabelStyle,
+        showSelectedLabels:this.showSelectedLabels,
+        showUnselectedLabels:this.showUnselectedLabels,
+        type:this.type,
+    );
   }
 
   @override

@@ -16,7 +16,9 @@ class OutlinedButtonThemeDataRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return OutlinedButtonThemeData(
+        style:this.style,
+    );
   }
 
   @override

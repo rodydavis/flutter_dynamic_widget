@@ -34,7 +34,18 @@ class TooltipThemeDataRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return TooltipThemeData(
+        height:this.height,
+        padding:this.padding,
+        margin:this.margin,
+        verticalOffset:this.verticalOffset,
+        preferBelow:this.preferBelow,
+        excludeFromSemantics:this.excludeFromSemantics,
+        decoration:this.decoration,
+        textStyle:this.textStyle,
+        waitDuration:this.waitDuration,
+        showDuration:this.showDuration,
+    );
   }
 
   @override

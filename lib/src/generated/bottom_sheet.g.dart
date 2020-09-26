@@ -36,7 +36,19 @@ class BottomSheetRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return BottomSheet(
+        key:this.key,
+        animationController:this.animationController,
+        enableDrag:this.enableDrag,
+        onDragStart:this.onDragStart,
+        onDragEnd:this.onDragEnd,
+        backgroundColor:this.backgroundColor,
+        elevation:this.elevation,
+        shape:this.shape,
+        clipBehavior:this.clipBehavior,
+        onClosing:this.onClosing,
+        builder:this.builder,
+    );
   }
 
   @override

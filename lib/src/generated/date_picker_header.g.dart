@@ -34,7 +34,18 @@ class DatePickerHeaderRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return DatePickerHeader(
+        key:this.key,
+        helpText:this.helpText,
+        titleText:this.titleText,
+        titleSemanticsLabel:this.titleSemanticsLabel,
+        titleStyle:this.titleStyle,
+        orientation:this.orientation,
+        isShort:this.isShort,
+        icon:this.icon,
+        iconTooltip:this.iconTooltip,
+        onIconPressed:this.onIconPressed,
+    );
   }
 
   @override

@@ -20,7 +20,11 @@ class TabControllerRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return TabController(
+        initialIndex:this.initialIndex,
+        length:this.length,
+        vsync:this.vsync,
+    );
   }
 
   @override

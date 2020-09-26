@@ -72,7 +72,37 @@ class RaisedButtonRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return RaisedButton(
+        key:this.key,
+        onPressed:this.onPressed,
+        onLongPress:this.onLongPress,
+        onHighlightChanged:this.onHighlightChanged,
+        mouseCursor:this.mouseCursor,
+        textTheme:this.textTheme,
+        textColor:this.textColor,
+        disabledTextColor:this.disabledTextColor,
+        color:this.color,
+        disabledColor:this.disabledColor,
+        focusColor:this.focusColor,
+        hoverColor:this.hoverColor,
+        highlightColor:this.highlightColor,
+        splashColor:this.splashColor,
+        colorBrightness:this.colorBrightness,
+        elevation:this.elevation,
+        focusElevation:this.focusElevation,
+        hoverElevation:this.hoverElevation,
+        highlightElevation:this.highlightElevation,
+        disabledElevation:this.disabledElevation,
+        padding:this.padding,
+        visualDensity:this.visualDensity,
+        shape:this.shape,
+        clipBehavior:this.clipBehavior,
+        focusNode:this.focusNode,
+        autofocus:this.autofocus,
+        materialTapTargetSize:this.materialTapTargetSize,
+        animationDuration:this.animationDuration,
+        child:this.child,
+    );
   }
 
   @override

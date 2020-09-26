@@ -42,7 +42,22 @@ class RadioListTileRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return RadioListTile(
+        key:this.key,
+        value:this.value,
+        groupValue:this.groupValue,
+        onChanged:this.onChanged,
+        toggleable:this.toggleable,
+        activeColor:this.activeColor,
+        title:this.title,
+        subtitle:this.subtitle,
+        isThreeLine:this.isThreeLine,
+        dense:this.dense,
+        secondary:this.secondary,
+        selected:this.selected,
+        controlAffinity:this.controlAffinity,
+        autofocus:this.autofocus,
+    );
   }
 
   @override

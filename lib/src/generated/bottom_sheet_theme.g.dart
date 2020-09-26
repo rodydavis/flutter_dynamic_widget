@@ -26,7 +26,14 @@ class BottomSheetThemeDataRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return BottomSheetThemeData(
+        backgroundColor:this.backgroundColor,
+        elevation:this.elevation,
+        modalBackgroundColor:this.modalBackgroundColor,
+        modalElevation:this.modalElevation,
+        shape:this.shape,
+        clipBehavior:this.clipBehavior,
+    );
   }
 
   @override

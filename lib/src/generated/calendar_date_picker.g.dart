@@ -32,7 +32,17 @@ class CalendarDatePickerRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return CalendarDatePicker(
+        key:this.key,
+        initialDate:this.initialDate,
+        firstDate:this.firstDate,
+        lastDate:this.lastDate,
+        currentDate:this.currentDate,
+        onDateChanged:this.onDateChanged,
+        onDisplayedMonthChanged:this.onDisplayedMonthChanged,
+        initialCalendarMode:this.initialCalendarMode,
+        selectableDayPredicate:this.selectableDayPredicate,
+    );
   }
 
   @override

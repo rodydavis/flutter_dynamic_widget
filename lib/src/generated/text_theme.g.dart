@@ -60,7 +60,31 @@ class TextThemeRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return TextTheme(
+        headline1:this.headline1,
+        headline2:this.headline2,
+        headline3:this.headline3,
+        headline4:this.headline4,
+        headline5:this.headline5,
+        headline6:this.headline6,
+        subtitle1:this.subtitle1,
+        subtitle2:this.subtitle2,
+        bodyText1:this.bodyText1,
+        bodyText2:this.bodyText2,
+        caption:this.caption,
+        button:this.button,
+        overline:this.overline,
+        display4:this.display4,
+        display3:this.display3,
+        display2:this.display2,
+        display1:this.display1,
+        headline:this.headline,
+        title:this.title,
+        subhead:this.subhead,
+        subtitle:this.subtitle,
+        body2:this.body2,
+        body1:this.body1,
+    );
   }
 
   @override

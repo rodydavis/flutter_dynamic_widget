@@ -52,7 +52,27 @@ class PaginatedDataTableRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return PaginatedDataTable(
+        key:this.key,
+        header:this.header,
+        actions:this.actions,
+        columns:this.columns,
+        sortColumnIndex:this.sortColumnIndex,
+        sortAscending:this.sortAscending,
+        onSelectAll:this.onSelectAll,
+        dataRowHeight:this.dataRowHeight,
+        headingRowHeight:this.headingRowHeight,
+        horizontalMargin:this.horizontalMargin,
+        columnSpacing:this.columnSpacing,
+        showCheckboxColumn:this.showCheckboxColumn,
+        initialFirstRowIndex:this.initialFirstRowIndex,
+        onPageChanged:this.onPageChanged,
+        rowsPerPage:this.rowsPerPage,
+        availableRowsPerPage:this.availableRowsPerPage,
+        onRowsPerPageChanged:this.onRowsPerPageChanged,
+        dragStartBehavior:this.dragStartBehavior,
+        source:this.source,
+    );
   }
 
   @override

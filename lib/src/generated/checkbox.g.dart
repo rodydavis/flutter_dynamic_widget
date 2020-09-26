@@ -40,7 +40,21 @@ class CheckboxRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return Checkbox(
+        key:this.key,
+        value:this.value,
+        tristate:this.tristate,
+        onChanged:this.onChanged,
+        mouseCursor:this.mouseCursor,
+        activeColor:this.activeColor,
+        checkColor:this.checkColor,
+        focusColor:this.focusColor,
+        hoverColor:this.hoverColor,
+        materialTapTargetSize:this.materialTapTargetSize,
+        visualDensity:this.visualDensity,
+        focusNode:this.focusNode,
+        autofocus:this.autofocus,
+    );
   }
 
   @override

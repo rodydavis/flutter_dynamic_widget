@@ -14,7 +14,8 @@ class ElevationOverlayRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return ElevationOverlay(
+    );
   }
 
   @override

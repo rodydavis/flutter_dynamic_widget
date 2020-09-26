@@ -18,7 +18,10 @@ class MaterialPointArcTweenRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return MaterialPointArcTween(
+        begin:this.begin,
+        end:this.end,
+    );
   }
 
   @override

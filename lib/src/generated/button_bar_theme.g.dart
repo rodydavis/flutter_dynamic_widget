@@ -32,7 +32,17 @@ class ButtonBarThemeDataRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return ButtonBarThemeData(
+        alignment:this.alignment,
+        mainAxisSize:this.mainAxisSize,
+        buttonTextTheme:this.buttonTextTheme,
+        buttonMinWidth:this.buttonMinWidth,
+        buttonHeight:this.buttonHeight,
+        buttonPadding:this.buttonPadding,
+        buttonAlignedDropdown:this.buttonAlignedDropdown,
+        layoutBehavior:this.layoutBehavior,
+        overflowDirection:this.overflowDirection,
+    );
   }
 
   @override

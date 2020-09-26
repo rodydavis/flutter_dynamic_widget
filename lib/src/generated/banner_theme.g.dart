@@ -22,7 +22,12 @@ class MaterialBannerThemeDataRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return MaterialBannerThemeData(
+        backgroundColor:this.backgroundColor,
+        contentTextStyle:this.contentTextStyle,
+        padding:this.padding,
+        leadingPadding:this.leadingPadding,
+    );
   }
 
   @override

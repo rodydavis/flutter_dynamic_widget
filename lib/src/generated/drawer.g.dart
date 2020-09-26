@@ -22,7 +22,12 @@ class DrawerRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return Drawer(
+        key:this.key,
+        elevation:this.elevation,
+        child:this.child,
+        semanticLabel:this.semanticLabel,
+    );
   }
 
   @override

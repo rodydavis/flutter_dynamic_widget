@@ -30,7 +30,16 @@ class AppBarThemeRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return AppBarTheme(
+        brightness:this.brightness,
+        color:this.color,
+        elevation:this.elevation,
+        shadowColor:this.shadowColor,
+        iconTheme:this.iconTheme,
+        actionsIconTheme:this.actionsIconTheme,
+        textTheme:this.textTheme,
+        centerTitle:this.centerTitle,
+    );
   }
 
   @override

@@ -36,7 +36,19 @@ class InkHighlightRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return InkHighlight(
+        controller:this.controller,
+        referenceBox:this.referenceBox,
+        color:this.color,
+        textDirection:this.textDirection,
+        shape:this.shape,
+        radius:this.radius,
+        borderRadius:this.borderRadius,
+        customBorder:this.customBorder,
+        rectCallback:this.rectCallback,
+        onRemoved:this.onRemoved,
+        fadeDuration:this.fadeDuration,
+    );
   }
 
   @override

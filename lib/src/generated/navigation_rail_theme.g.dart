@@ -30,7 +30,16 @@ class NavigationRailThemeDataRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return NavigationRailThemeData(
+        backgroundColor:this.backgroundColor,
+        elevation:this.elevation,
+        unselectedLabelTextStyle:this.unselectedLabelTextStyle,
+        selectedLabelTextStyle:this.selectedLabelTextStyle,
+        unselectedIconTheme:this.unselectedIconTheme,
+        selectedIconTheme:this.selectedIconTheme,
+        groupAlignment:this.groupAlignment,
+        labelType:this.labelType,
+    );
   }
 
   @override

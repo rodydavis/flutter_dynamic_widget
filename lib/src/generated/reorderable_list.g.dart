@@ -30,7 +30,16 @@ class ReorderableListViewRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return ReorderableListView(
+        key:this.key,
+        header:this.header,
+        children:this.children,
+        onReorder:this.onReorder,
+        scrollController:this.scrollController,
+        scrollDirection:this.scrollDirection,
+        padding:this.padding,
+        reverse:this.reverse,
+    );
   }
 
   @override

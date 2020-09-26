@@ -28,7 +28,15 @@ class SnackBarThemeDataRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return SnackBarThemeData(
+        backgroundColor:this.backgroundColor,
+        actionTextColor:this.actionTextColor,
+        disabledActionTextColor:this.disabledActionTextColor,
+        contentTextStyle:this.contentTextStyle,
+        elevation:this.elevation,
+        shape:this.shape,
+        behavior:this.behavior,
+    );
   }
 
   @override

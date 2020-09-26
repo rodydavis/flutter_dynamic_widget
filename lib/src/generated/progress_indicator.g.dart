@@ -26,7 +26,14 @@ class ProgressIndicatorRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return ProgressIndicator(
+        key:this.key,
+        value:this.value,
+        backgroundColor:this.backgroundColor,
+        valueColor:this.valueColor,
+        semanticsLabel:this.semanticsLabel,
+        semanticsValue:this.semanticsValue,
+    );
   }
 
   @override

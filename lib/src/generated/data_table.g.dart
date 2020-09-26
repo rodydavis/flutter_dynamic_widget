@@ -22,7 +22,12 @@ class DataColumnRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return DataColumn(
+        label:this.label,
+        tooltip:this.tooltip,
+        numeric:this.numeric,
+        onSort:this.onSort,
+    );
   }
 
   @override

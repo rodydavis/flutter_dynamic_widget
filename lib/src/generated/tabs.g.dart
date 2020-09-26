@@ -24,7 +24,13 @@ class TabRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return Tab(
+        key:this.key,
+        text:this.text,
+        icon:this.icon,
+        iconMargin:this.iconMargin,
+        child:this.child,
+    );
   }
 
   @override

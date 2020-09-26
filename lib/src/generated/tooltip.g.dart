@@ -40,7 +40,21 @@ class TooltipRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return Tooltip(
+        key:this.key,
+        message:this.message,
+        height:this.height,
+        padding:this.padding,
+        margin:this.margin,
+        verticalOffset:this.verticalOffset,
+        preferBelow:this.preferBelow,
+        excludeFromSemantics:this.excludeFromSemantics,
+        decoration:this.decoration,
+        textStyle:this.textStyle,
+        waitDuration:this.waitDuration,
+        showDuration:this.showDuration,
+        child:this.child,
+    );
   }
 
   @override

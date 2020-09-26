@@ -28,7 +28,15 @@ class TabBarThemeRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return TabBarTheme(
+        indicator:this.indicator,
+        indicatorSize:this.indicatorSize,
+        labelColor:this.labelColor,
+        labelPadding:this.labelPadding,
+        labelStyle:this.labelStyle,
+        unselectedLabelColor:this.unselectedLabelColor,
+        unselectedLabelStyle:this.unselectedLabelStyle,
+    );
   }
 
   @override

@@ -28,7 +28,15 @@ class DrawerHeaderRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return DrawerHeader(
+        key:this.key,
+        decoration:this.decoration,
+        margin:this.margin,
+        padding:this.padding,
+        duration:this.duration,
+        curve:this.curve,
+        child:this.child,
+    );
   }
 
   @override

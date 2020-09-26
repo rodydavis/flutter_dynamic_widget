@@ -26,7 +26,14 @@ class TypographyRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return Typography(
+        platform:this.platform,
+        black:this.black,
+        white:this.white,
+        englishLike:this.englishLike,
+        dense:this.dense,
+        tall:this.tall,
+    );
   }
 
   @override

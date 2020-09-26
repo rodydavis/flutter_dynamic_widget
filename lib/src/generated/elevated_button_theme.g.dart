@@ -16,7 +16,9 @@ class ElevatedButtonThemeDataRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return ElevatedButtonThemeData(
+        style:this.style,
+    );
   }
 
   @override

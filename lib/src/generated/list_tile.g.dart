@@ -36,7 +36,19 @@ class ListTileThemeRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return ListTileTheme(
+        key:this.key,
+        dense:this.dense,
+        shape:this.shape,
+        style:this.style,
+        selectedColor:this.selectedColor,
+        iconColor:this.iconColor,
+        textColor:this.textColor,
+        contentPadding:this.contentPadding,
+        tileColor:this.tileColor,
+        selectedTileColor:this.selectedTileColor,
+        child:this.child,
+    );
   }
 
   @override

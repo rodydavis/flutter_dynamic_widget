@@ -34,7 +34,18 @@ class CardRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return Card(
+        key:this.key,
+        color:this.color,
+        shadowColor:this.shadowColor,
+        elevation:this.elevation,
+        shape:this.shape,
+        borderOnForeground:this.borderOnForeground,
+        margin:this.margin,
+        clipBehavior:this.clipBehavior,
+        child:this.child,
+        semanticContainer:this.semanticContainer,
+    );
   }
 
   @override

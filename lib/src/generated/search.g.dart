@@ -22,7 +22,12 @@ class SearchDelegateRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return SearchDelegate(
+        searchFieldLabel:this.searchFieldLabel,
+        searchFieldStyle:this.searchFieldStyle,
+        keyboardType:this.keyboardType,
+        textInputAction:this.textInputAction,
+    );
   }
 
   @override

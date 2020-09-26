@@ -16,7 +16,9 @@ class PopupMenuEntryRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return PopupMenuEntry(
+        key:this.key,
+    );
   }
 
   @override

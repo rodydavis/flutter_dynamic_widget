@@ -24,7 +24,13 @@ class StepRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return Step(
+        title:this.title,
+        subtitle:this.subtitle,
+        content:this.content,
+        state:this.state,
+        isActive:this.isActive,
+    );
   }
 
   @override

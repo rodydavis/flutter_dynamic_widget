@@ -28,7 +28,15 @@ class AnimatedIconRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return AnimatedIcon(
+        key:this.key,
+        icon:this.icon,
+        progress:this.progress,
+        color:this.color,
+        size:this.size,
+        semanticLabel:this.semanticLabel,
+        textDirection:this.textDirection,
+    );
   }
 
   @override

@@ -58,7 +58,30 @@ class ToggleButtonsRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return ToggleButtons(
+        key:this.key,
+        children:this.children,
+        isSelected:this.isSelected,
+        onPressed:this.onPressed,
+        mouseCursor:this.mouseCursor,
+        textStyle:this.textStyle,
+        constraints:this.constraints,
+        color:this.color,
+        selectedColor:this.selectedColor,
+        disabledColor:this.disabledColor,
+        fillColor:this.fillColor,
+        focusColor:this.focusColor,
+        highlightColor:this.highlightColor,
+        hoverColor:this.hoverColor,
+        splashColor:this.splashColor,
+        focusNodes:this.focusNodes,
+        renderBorder:this.renderBorder,
+        borderColor:this.borderColor,
+        selectedBorderColor:this.selectedBorderColor,
+        disabledBorderColor:this.disabledBorderColor,
+        borderRadius:this.borderRadius,
+        borderWidth:this.borderWidth,
+    );
   }
 
   @override

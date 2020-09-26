@@ -26,7 +26,14 @@ class CardThemeRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return CardTheme(
+        clipBehavior:this.clipBehavior,
+        color:this.color,
+        shadowColor:this.shadowColor,
+        elevation:this.elevation,
+        margin:this.margin,
+        shape:this.shape,
+    );
   }
 
   @override

@@ -62,7 +62,32 @@ class OutlineButtonRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return OutlineButton(
+        key:this.key,
+        onPressed:this.onPressed,
+        onLongPress:this.onLongPress,
+        mouseCursor:this.mouseCursor,
+        textTheme:this.textTheme,
+        textColor:this.textColor,
+        disabledTextColor:this.disabledTextColor,
+        color:this.color,
+        focusColor:this.focusColor,
+        hoverColor:this.hoverColor,
+        highlightColor:this.highlightColor,
+        splashColor:this.splashColor,
+        highlightElevation:this.highlightElevation,
+        borderSide:this.borderSide,
+        disabledBorderColor:this.disabledBorderColor,
+        highlightedBorderColor:this.highlightedBorderColor,
+        padding:this.padding,
+        visualDensity:this.visualDensity,
+        shape:this.shape,
+        clipBehavior:this.clipBehavior,
+        focusNode:this.focusNode,
+        autofocus:this.autofocus,
+        materialTapTargetSize:this.materialTapTargetSize,
+        child:this.child,
+    );
   }
 
   @override

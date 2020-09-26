@@ -46,7 +46,24 @@ class NavigationRailRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return NavigationRail(
+        backgroundColor:this.backgroundColor,
+        extended:this.extended,
+        leading:this.leading,
+        trailing:this.trailing,
+        destinations:this.destinations,
+        selectedIndex:this.selectedIndex,
+        onDestinationSelected:this.onDestinationSelected,
+        elevation:this.elevation,
+        groupAlignment:this.groupAlignment,
+        labelType:this.labelType,
+        unselectedLabelTextStyle:this.unselectedLabelTextStyle,
+        selectedLabelTextStyle:this.selectedLabelTextStyle,
+        unselectedIconTheme:this.unselectedIconTheme,
+        selectedIconTheme:this.selectedIconTheme,
+        minWidth:this.minWidth,
+        minExtendedWidth:this.minExtendedWidth,
+    );
   }
 
   @override

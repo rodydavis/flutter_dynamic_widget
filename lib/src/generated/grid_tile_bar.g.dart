@@ -26,7 +26,14 @@ class GridTileBarRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return GridTileBar(
+        key:this.key,
+        backgroundColor:this.backgroundColor,
+        leading:this.leading,
+        title:this.title,
+        subtitle:this.subtitle,
+        trailing:this.trailing,
+    );
   }
 
   @override

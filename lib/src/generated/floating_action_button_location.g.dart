@@ -14,7 +14,8 @@ class FloatingActionButtonLocationRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return FloatingActionButtonLocation(
+    );
   }
 
   @override

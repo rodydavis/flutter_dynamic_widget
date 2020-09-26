@@ -24,7 +24,13 @@ class SnackBarActionRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return SnackBarAction(
+        key:this.key,
+        textColor:this.textColor,
+        disabledTextColor:this.disabledTextColor,
+        label:this.label,
+        onPressed:this.onPressed,
+    );
   }
 
   @override

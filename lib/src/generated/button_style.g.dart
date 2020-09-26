@@ -44,7 +44,23 @@ class ButtonStyleRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return ButtonStyle(
+        textStyle:this.textStyle,
+        backgroundColor:this.backgroundColor,
+        foregroundColor:this.foregroundColor,
+        overlayColor:this.overlayColor,
+        shadowColor:this.shadowColor,
+        elevation:this.elevation,
+        padding:this.padding,
+        minimumSize:this.minimumSize,
+        side:this.side,
+        shape:this.shape,
+        mouseCursor:this.mouseCursor,
+        visualDensity:this.visualDensity,
+        tapTargetSize:this.tapTargetSize,
+        animationDuration:this.animationDuration,
+        enableFeedback:this.enableFeedback,
+    );
   }
 
   @override

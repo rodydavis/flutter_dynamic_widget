@@ -40,7 +40,21 @@ class ColorSchemeRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return ColorScheme(
+        primary:this.primary,
+        primaryVariant:this.primaryVariant,
+        secondary:this.secondary,
+        secondaryVariant:this.secondaryVariant,
+        surface:this.surface,
+        background:this.background,
+        error:this.error,
+        onPrimary:this.onPrimary,
+        onSecondary:this.onSecondary,
+        onSurface:this.onSurface,
+        onBackground:this.onBackground,
+        onError:this.onError,
+        brightness:this.brightness,
+    );
   }
 
   @override

@@ -22,7 +22,12 @@ class PopupMenuThemeDataRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return PopupMenuThemeData(
+        color:this.color,
+        shape:this.shape,
+        elevation:this.elevation,
+        textStyle:this.textStyle,
+    );
   }
 
   @override

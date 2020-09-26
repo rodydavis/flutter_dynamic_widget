@@ -36,7 +36,19 @@ class RenderToggleableRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return RenderToggleable(
+        value:this.value,
+        tristate:this.tristate,
+        activeColor:this.activeColor,
+        inactiveColor:this.inactiveColor,
+        hoverColor:this.hoverColor,
+        focusColor:this.focusColor,
+        onChanged:this.onChanged,
+        additionalConstraints:this.additionalConstraints,
+        vsync:this.vsync,
+        hasFocus:this.hasFocus,
+        hovering:this.hovering,
+    );
   }
 
   @override

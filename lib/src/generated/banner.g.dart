@@ -32,7 +32,17 @@ class MaterialBannerRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return MaterialBanner(
+        key:this.key,
+        content:this.content,
+        contentTextStyle:this.contentTextStyle,
+        actions:this.actions,
+        leading:this.leading,
+        backgroundColor:this.backgroundColor,
+        padding:this.padding,
+        leadingPadding:this.leadingPadding,
+        forceActionsBelow:this.forceActionsBelow,
+    );
   }
 
   @override

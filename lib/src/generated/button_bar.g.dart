@@ -38,7 +38,20 @@ class ButtonBarRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return ButtonBar(
+        key:this.key,
+        alignment:this.alignment,
+        mainAxisSize:this.mainAxisSize,
+        buttonTextTheme:this.buttonTextTheme,
+        buttonMinWidth:this.buttonMinWidth,
+        buttonHeight:this.buttonHeight,
+        buttonPadding:this.buttonPadding,
+        buttonAlignedDropdown:this.buttonAlignedDropdown,
+        layoutBehavior:this.layoutBehavior,
+        overflowDirection:this.overflowDirection,
+        overflowButtonSpacing:this.overflowButtonSpacing,
+        children:this.children,
+    );
   }
 
   @override

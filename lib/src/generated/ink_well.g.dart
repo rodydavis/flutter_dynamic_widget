@@ -22,7 +22,12 @@ class InteractiveInkFeatureRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return InteractiveInkFeature(
+        controller:this.controller,
+        referenceBox:this.referenceBox,
+        color:this.color,
+        onRemoved:this.onRemoved,
+    );
   }
 
   @override

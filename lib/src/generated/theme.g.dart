@@ -22,7 +22,12 @@ class ThemeRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return Theme(
+        key:this.key,
+        data:this.data,
+        isMaterialAppTheme:this.isMaterialAppTheme,
+        child:this.child,
+    );
   }
 
   @override

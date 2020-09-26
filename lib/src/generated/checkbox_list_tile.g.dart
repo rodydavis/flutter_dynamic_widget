@@ -44,7 +44,23 @@ class CheckboxListTileRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return CheckboxListTile(
+        key:this.key,
+        value:this.value,
+        onChanged:this.onChanged,
+        activeColor:this.activeColor,
+        checkColor:this.checkColor,
+        title:this.title,
+        subtitle:this.subtitle,
+        isThreeLine:this.isThreeLine,
+        dense:this.dense,
+        secondary:this.secondary,
+        selected:this.selected,
+        controlAffinity:this.controlAffinity,
+        autofocus:this.autofocus,
+        contentPadding:this.contentPadding,
+        tristate:this.tristate,
+    );
   }
 
   @override

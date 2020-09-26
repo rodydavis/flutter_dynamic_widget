@@ -50,7 +50,26 @@ class SwitchListTileRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return SwitchListTile(
+        key:this.key,
+        value:this.value,
+        onChanged:this.onChanged,
+        activeColor:this.activeColor,
+        activeTrackColor:this.activeTrackColor,
+        inactiveThumbColor:this.inactiveThumbColor,
+        inactiveTrackColor:this.inactiveTrackColor,
+        activeThumbImage:this.activeThumbImage,
+        inactiveThumbImage:this.inactiveThumbImage,
+        title:this.title,
+        subtitle:this.subtitle,
+        isThreeLine:this.isThreeLine,
+        dense:this.dense,
+        contentPadding:this.contentPadding,
+        secondary:this.secondary,
+        selected:this.selected,
+        autofocus:this.autofocus,
+        controlAffinity:this.controlAffinity,
+    );
   }
 
   @override

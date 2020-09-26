@@ -32,7 +32,17 @@ class DataTableThemeDataRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return DataTableThemeData(
+        dataRowColor:this.dataRowColor,
+        dataRowHeight:this.dataRowHeight,
+        dataTextStyle:this.dataTextStyle,
+        headingRowColor:this.headingRowColor,
+        headingRowHeight:this.headingRowHeight,
+        headingTextStyle:this.headingTextStyle,
+        horizontalMargin:this.horizontalMargin,
+        columnSpacing:this.columnSpacing,
+        dividerThickness:this.dividerThickness,
+    );
   }
 
   @override

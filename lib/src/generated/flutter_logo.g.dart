@@ -26,7 +26,14 @@ class FlutterLogoRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return FlutterLogo(
+        key:this.key,
+        size:this.size,
+        textColor:this.textColor,
+        style:this.style,
+        duration:this.duration,
+        curve:this.curve,
+    );
   }
 
   @override

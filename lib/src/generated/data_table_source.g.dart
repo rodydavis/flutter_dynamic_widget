@@ -14,7 +14,8 @@ class DataTableSourceRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return DataTableSource(
+    );
   }
 
   @override

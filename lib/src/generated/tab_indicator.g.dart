@@ -18,7 +18,10 @@ class UnderlineTabIndicatorRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return UnderlineTabIndicator(
+        borderSide:this.borderSide,
+        insets:this.insets,
+    );
   }
 
   @override

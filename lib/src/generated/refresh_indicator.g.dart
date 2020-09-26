@@ -34,7 +34,18 @@ class RefreshIndicatorRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return RefreshIndicator(
+        key:this.key,
+        child:this.child,
+        displacement:this.displacement,
+        onRefresh:this.onRefresh,
+        color:this.color,
+        backgroundColor:this.backgroundColor,
+        notificationPredicate:this.notificationPredicate,
+        semanticsLabel:this.semanticsLabel,
+        semanticsValue:this.semanticsValue,
+        strokeWidth:this.strokeWidth,
+    );
   }
 
   @override

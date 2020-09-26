@@ -54,7 +54,28 @@ class IconButtonRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return IconButton(
+        key:this.key,
+        iconSize:this.iconSize,
+        visualDensity:this.visualDensity,
+        padding:this.padding,
+        alignment:this.alignment,
+        splashRadius:this.splashRadius,
+        icon:this.icon,
+        color:this.color,
+        focusColor:this.focusColor,
+        hoverColor:this.hoverColor,
+        highlightColor:this.highlightColor,
+        splashColor:this.splashColor,
+        disabledColor:this.disabledColor,
+        onPressed:this.onPressed,
+        mouseCursor:this.mouseCursor,
+        focusNode:this.focusNode,
+        autofocus:this.autofocus,
+        tooltip:this.tooltip,
+        enableFeedback:this.enableFeedback,
+        constraints:this.constraints,
+    );
   }
 
   @override

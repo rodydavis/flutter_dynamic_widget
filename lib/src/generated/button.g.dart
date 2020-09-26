@@ -68,7 +68,35 @@ class RawMaterialButtonRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return RawMaterialButton(
+        key:this.key,
+        onPressed:this.onPressed,
+        onLongPress:this.onLongPress,
+        onHighlightChanged:this.onHighlightChanged,
+        mouseCursor:this.mouseCursor,
+        textStyle:this.textStyle,
+        fillColor:this.fillColor,
+        focusColor:this.focusColor,
+        hoverColor:this.hoverColor,
+        highlightColor:this.highlightColor,
+        splashColor:this.splashColor,
+        elevation:this.elevation,
+        focusElevation:this.focusElevation,
+        hoverElevation:this.hoverElevation,
+        highlightElevation:this.highlightElevation,
+        disabledElevation:this.disabledElevation,
+        padding:this.padding,
+        visualDensity:this.visualDensity,
+        constraints:this.constraints,
+        shape:this.shape,
+        animationDuration:this.animationDuration,
+        clipBehavior:this.clipBehavior,
+        focusNode:this.focusNode,
+        autofocus:this.autofocus,
+        materialTapTargetSize:this.materialTapTargetSize,
+        child:this.child,
+        enableFeedback:this.enableFeedback,
+    );
   }
 
   @override

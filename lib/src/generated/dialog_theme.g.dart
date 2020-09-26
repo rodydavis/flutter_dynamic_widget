@@ -24,7 +24,13 @@ class DialogThemeRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return DialogTheme(
+        backgroundColor:this.backgroundColor,
+        elevation:this.elevation,
+        shape:this.shape,
+        titleTextStyle:this.titleTextStyle,
+        contentTextStyle:this.contentTextStyle,
+    );
   }
 
   @override

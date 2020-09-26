@@ -14,7 +14,8 @@ class MaterialInkControllerRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return MaterialInkController(
+    );
   }
 
   @override

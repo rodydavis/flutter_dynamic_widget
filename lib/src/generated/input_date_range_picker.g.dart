@@ -48,7 +48,25 @@ class InputDateRangePickerRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return InputDateRangePicker(
+        key:this.key,
+        initialStartDate:this.initialStartDate,
+        initialEndDate:this.initialEndDate,
+        firstDate:this.firstDate,
+        lastDate:this.lastDate,
+        onStartDateChanged:this.onStartDateChanged,
+        onEndDateChanged:this.onEndDateChanged,
+        helpText:this.helpText,
+        errorFormatText:this.errorFormatText,
+        errorInvalidText:this.errorInvalidText,
+        errorInvalidRangeText:this.errorInvalidRangeText,
+        fieldStartHintText:this.fieldStartHintText,
+        fieldEndHintText:this.fieldEndHintText,
+        fieldStartLabelText:this.fieldStartLabelText,
+        fieldEndLabelText:this.fieldEndLabelText,
+        autofocus:this.autofocus,
+        autovalidate:this.autovalidate,
+    );
   }
 
   @override

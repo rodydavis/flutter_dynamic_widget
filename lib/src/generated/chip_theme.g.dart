@@ -20,7 +20,11 @@ class ChipThemeRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return ChipTheme(
+        key:this.key,
+        data:this.data,
+        child:this.child,
+    );
   }
 
   @override

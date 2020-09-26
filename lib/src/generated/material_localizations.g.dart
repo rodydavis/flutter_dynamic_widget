@@ -14,7 +14,8 @@ class MaterialLocalizationsRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return MaterialLocalizations(
+    );
   }
 
   @override

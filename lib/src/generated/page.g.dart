@@ -22,7 +22,12 @@ class MaterialPageRouteRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return MaterialPageRoute(
+        builder:this.builder,
+        settings:this.settings,
+        maintainState:this.maintainState,
+        fullscreenDialog:this.fullscreenDialog,
+    );
   }
 
   @override

@@ -48,7 +48,25 @@ class TimePickerThemeDataRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return TimePickerThemeData(
+        backgroundColor:this.backgroundColor,
+        hourMinuteTextColor:this.hourMinuteTextColor,
+        hourMinuteColor:this.hourMinuteColor,
+        dayPeriodTextColor:this.dayPeriodTextColor,
+        dayPeriodColor:this.dayPeriodColor,
+        dialHandColor:this.dialHandColor,
+        dialBackgroundColor:this.dialBackgroundColor,
+        dialTextColor:this.dialTextColor,
+        entryModeIconColor:this.entryModeIconColor,
+        hourMinuteTextStyle:this.hourMinuteTextStyle,
+        dayPeriodTextStyle:this.dayPeriodTextStyle,
+        helpTextStyle:this.helpTextStyle,
+        shape:this.shape,
+        hourMinuteShape:this.hourMinuteShape,
+        dayPeriodShape:this.dayPeriodShape,
+        dayPeriodBorderSide:this.dayPeriodBorderSide,
+        inputDecorationTheme:this.inputDecorationTheme,
+    );
   }
 
   @override

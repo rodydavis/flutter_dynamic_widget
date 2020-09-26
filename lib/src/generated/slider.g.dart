@@ -44,7 +44,23 @@ class SliderRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return Slider(
+        key:this.key,
+        value:this.value,
+        onChanged:this.onChanged,
+        onChangeStart:this.onChangeStart,
+        onChangeEnd:this.onChangeEnd,
+        min:this.min,
+        max:this.max,
+        divisions:this.divisions,
+        label:this.label,
+        activeColor:this.activeColor,
+        inactiveColor:this.inactiveColor,
+        mouseCursor:this.mouseCursor,
+        semanticFormatterCallback:this.semanticFormatterCallback,
+        focusNode:this.focusNode,
+        autofocus:this.autofocus,
+    );
   }
 
   @override

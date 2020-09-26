@@ -26,7 +26,14 @@ class DividerRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return Divider(
+        key:this.key,
+        height:this.height,
+        thickness:this.thickness,
+        indent:this.indent,
+        endIndent:this.endIndent,
+        color:this.color,
+    );
   }
 
   @override

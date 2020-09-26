@@ -20,7 +20,11 @@ class BottomAppBarThemeRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return BottomAppBarTheme(
+        color:this.color,
+        elevation:this.elevation,
+        shape:this.shape,
+    );
   }
 
   @override

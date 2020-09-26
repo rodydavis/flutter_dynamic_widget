@@ -16,7 +16,9 @@ class BackButtonIconRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return BackButtonIcon(
+        key:this.key,
+    );
   }
 
   @override

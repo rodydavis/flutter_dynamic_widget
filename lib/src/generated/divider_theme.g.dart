@@ -24,7 +24,13 @@ class DividerThemeDataRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return DividerThemeData(
+        color:this.color,
+        space:this.space,
+        thickness:this.thickness,
+        indent:this.indent,
+        endIndent:this.endIndent,
+    );
   }
 
   @override

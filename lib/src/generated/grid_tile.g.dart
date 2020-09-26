@@ -22,7 +22,12 @@ class GridTileRender extends StatelessWidget {
 
   @override
   Widget get base {
-    return Container();
+    return GridTile(
+        key:this.key,
+        header:this.header,
+        footer:this.footer,
+        child:this.child,
+    );
   }
 
   @override
