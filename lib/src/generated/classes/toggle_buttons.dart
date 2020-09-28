@@ -8,28 +8,27 @@ class ToggleButtonsRender<T> extends StatelessWidget {
 
   factory ToggleButtonsRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return ToggleButtonsRender(update,
-      childrenVal: null,
-      isSelectedVal: null,
-      onPressedVal: null,
-      mouseCursorVal: null,
-      textStyleVal: null,
-      constraintsVal: null,
-      colorVal: null,
-      selectedColorVal: null,
-      disabledColorVal: null,
-      fillColorVal: null,
-      focusColorVal: null,
-      highlightColorVal: null,
-      splashColorVal: null,
-      hoverColorVal: null,
-      focusNodesVal: null,
-      renderBorderVal: null,
-      borderColorVal: null,
-      selectedBorderColorVal: null,
-      disabledBorderColorVal: null,
-      borderWidthVal: null,
-      borderRadiusVal: null,
-      widgetKeyVal: null,
+      childrenVal: BaseCore<List<Widget>>(null, update),
+      isSelectedVal: BaseCore<List<bool>>(null, update),
+      onPressedVal: BaseCore<>(null, update),
+      mouseCursorVal: BaseCore<MouseCursor>(null, update),
+      textStyleVal: BaseCore<TextStyle>(null, update),
+      constraintsVal: BaseCore<BoxConstraints>(null, update),
+      colorVal: BaseCore<Color>(null, update),
+      selectedColorVal: BaseCore<Color>(null, update),
+      disabledColorVal: BaseCore<Color>(null, update),
+      fillColorVal: BaseCore<Color>(null, update),
+      focusColorVal: BaseCore<Color>(null, update),
+      highlightColorVal: BaseCore<Color>(null, update),
+      splashColorVal: BaseCore<Color>(null, update),
+      hoverColorVal: BaseCore<Color>(null, update),
+      focusNodesVal: BaseCore<List<FocusNode>>(null, update),
+      renderBorderVal: BaseCore<bool>(null, update),
+      borderColorVal: BaseCore<Color>(null, update),
+      selectedBorderColorVal: BaseCore<Color>(null, update),
+      disabledBorderColorVal: BaseCore<Color>(null, update),
+      borderWidthVal: BaseCore<double>(null, update),
+      borderRadiusVal: BaseCore<BorderRadius>(null, update),
     );
   }
 
@@ -55,7 +54,6 @@ class ToggleButtonsRender<T> extends StatelessWidget {
     @required this.disabledBorderColorVal,
     @required this.borderWidthVal,
     @required this.borderRadiusVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -334,19 +332,6 @@ class ToggleButtonsRender<T> extends StatelessWidget {
     borderRadiusVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -376,7 +361,6 @@ class ToggleButtonsRender<T> extends StatelessWidget {
     this.disabledBorderColorVal,
     this.borderWidthVal,
     this.borderRadiusVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -470,7 +454,6 @@ class ToggleButtonsRender<T> extends StatelessWidget {
         'disabledBorderColor': this.disabledBorderColorVal.toJson(),
         'borderWidth': this.borderWidthVal.toJson(),
         'borderRadius': this.borderRadiusVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -546,7 +529,6 @@ class ToggleButtonsRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('disabledBorderColor', this.disabledBorderColor));
       properties.add(DiagnosticsProperty('borderWidth', this.borderWidth));
       properties.add(DiagnosticsProperty('borderRadius', this.borderRadius));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

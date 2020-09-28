@@ -8,15 +8,14 @@ class AppBarThemeRender<T> extends StatelessWidget {
 
   factory AppBarThemeRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return AppBarThemeRender(update,
-      brightnessVal: null,
-      colorVal: null,
-      elevationVal: null,
-      shadowColorVal: null,
-      iconThemeVal: null,
-      actionsIconThemeVal: null,
-      textThemeVal: null,
-      centerTitleVal: null,
-      widgetKeyVal: null,
+      brightnessVal: BaseCore<Brightness>(null, update),
+      colorVal: BaseCore<Color>(null, update),
+      elevationVal: BaseCore<double>(null, update),
+      shadowColorVal: BaseCore<Color>(null, update),
+      iconThemeVal: BaseCore<IconThemeData>(null, update),
+      actionsIconThemeVal: BaseCore<IconThemeData>(null, update),
+      textThemeVal: BaseCore<TextTheme>(null, update),
+      centerTitleVal: BaseCore<bool>(null, update),
     );
   }
 
@@ -29,7 +28,6 @@ class AppBarThemeRender<T> extends StatelessWidget {
     @required this.actionsIconThemeVal,
     @required this.textThemeVal,
     @required this.centerTitleVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -139,19 +137,6 @@ class AppBarThemeRender<T> extends StatelessWidget {
     centerTitleVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -167,7 +152,6 @@ class AppBarThemeRender<T> extends StatelessWidget {
     this.actionsIconThemeVal,
     this.textThemeVal,
     this.centerTitleVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -222,7 +206,6 @@ class AppBarThemeRender<T> extends StatelessWidget {
         'actionsIconTheme': this.actionsIconThemeVal.toJson(),
         'textTheme': this.textThemeVal.toJson(),
         'centerTitle': this.centerTitleVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -272,7 +255,6 @@ class AppBarThemeRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('actionsIconTheme', this.actionsIconTheme));
       properties.add(DiagnosticsProperty('textTheme', this.textTheme));
       properties.add(DiagnosticsProperty('centerTitle', this.centerTitle));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

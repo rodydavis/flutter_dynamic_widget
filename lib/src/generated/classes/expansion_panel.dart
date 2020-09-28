@@ -8,14 +8,13 @@ class ExpansionPanelListRender<T> extends StatelessWidget {
 
   factory ExpansionPanelListRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return ExpansionPanelListRender(update,
-      childrenVal: null,
-      expansionCallbackVal: null,
-      animationDurationVal: null,
-      initialOpenPanelValueVal: null,
-      expandedHeaderPaddingVal: null,
-      dividerColorVal: null,
-      elevationVal: null,
-      widgetKeyVal: null,
+      childrenVal: BaseCore<List<ExpansionPanel>>(null, update),
+      expansionCallbackVal: BaseCore<ExpansionPanelCallback>(null, update),
+      animationDurationVal: BaseCore<Duration>(null, update),
+      initialOpenPanelValueVal: BaseCore<Object>(null, update),
+      expandedHeaderPaddingVal: BaseCore<EdgeInsets>(null, update),
+      dividerColorVal: BaseCore<Color>(null, update),
+      elevationVal: BaseCore<int>(null, update),
     );
   }
 
@@ -27,7 +26,6 @@ class ExpansionPanelListRender<T> extends StatelessWidget {
     @required this.expandedHeaderPaddingVal,
     @required this.dividerColorVal,
     @required this.elevationVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -124,19 +122,6 @@ class ExpansionPanelListRender<T> extends StatelessWidget {
     elevationVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -151,7 +136,6 @@ class ExpansionPanelListRender<T> extends StatelessWidget {
     this.expandedHeaderPaddingVal,
     this.dividerColorVal,
     this.elevationVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -219,7 +203,6 @@ class ExpansionPanelListRender<T> extends StatelessWidget {
         'expandedHeaderPadding': this.expandedHeaderPaddingVal.toJson(),
         'dividerColor': this.dividerColorVal.toJson(),
         'elevation': this.elevationVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -275,7 +258,6 @@ class ExpansionPanelListRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('expandedHeaderPadding', this.expandedHeaderPadding));
       properties.add(DiagnosticsProperty('dividerColor', this.dividerColor));
       properties.add(DiagnosticsProperty('elevation', this.elevation));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

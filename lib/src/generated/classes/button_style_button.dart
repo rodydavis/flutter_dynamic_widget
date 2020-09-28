@@ -8,14 +8,13 @@ class ButtonStyleButtonRender<T> extends StatelessWidget {
 
   factory ButtonStyleButtonRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return ButtonStyleButtonRender(update,
-      onPressedVal: null,
-      onLongPressVal: null,
-      styleVal: null,
-      clipBehaviorVal: null,
-      focusNodeVal: null,
-      autofocusVal: null,
-      childVal: null,
-      widgetKeyVal: null,
+      onPressedVal: BaseCore<VoidCallback>(null, update),
+      onLongPressVal: BaseCore<VoidCallback>(null, update),
+      styleVal: BaseCore<ButtonStyle>(null, update),
+      clipBehaviorVal: BaseCore<Clip>(null, update),
+      focusNodeVal: BaseCore<FocusNode>(null, update),
+      autofocusVal: BaseCore<bool>(null, update),
+      childVal: BaseCore<Widget>(null, update),
     );
   }
 
@@ -27,7 +26,6 @@ class ButtonStyleButtonRender<T> extends StatelessWidget {
     @required this.focusNodeVal,
     @required this.autofocusVal,
     @required this.childVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -124,19 +122,6 @@ class ButtonStyleButtonRender<T> extends StatelessWidget {
     childVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -151,7 +136,6 @@ class ButtonStyleButtonRender<T> extends StatelessWidget {
     this.focusNodeVal,
     this.autofocusVal,
     this.childVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -203,7 +187,6 @@ class ButtonStyleButtonRender<T> extends StatelessWidget {
         'focusNode': this.focusNodeVal.toJson(),
         'autofocus': this.autofocusVal.toJson(),
         'child': this.childVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -251,7 +234,6 @@ class ButtonStyleButtonRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('focusNode', this.focusNode));
       properties.add(DiagnosticsProperty('autofocus', this.autofocus));
       properties.add(DiagnosticsProperty('child', this.child));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

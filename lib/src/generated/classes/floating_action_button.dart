@@ -8,31 +8,30 @@ class FloatingActionButtonRender<T> extends StatelessWidget {
 
   factory FloatingActionButtonRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return FloatingActionButtonRender(update,
-      childVal: null,
-      tooltipVal: null,
-      foregroundColorVal: null,
-      backgroundColorVal: null,
-      focusColorVal: null,
-      hoverColorVal: null,
-      splashColorVal: null,
-      heroTagVal: null,
-      onPressedVal: null,
-      mouseCursorVal: null,
-      elevationVal: null,
-      focusElevationVal: null,
-      hoverElevationVal: null,
-      highlightElevationVal: null,
-      disabledElevationVal: null,
-      miniVal: null,
-      shapeVal: null,
-      clipBehaviorVal: null,
-      isExtendedVal: null,
-      focusNodeVal: null,
-      autofocusVal: null,
-      materialTapTargetSizeVal: null,
-      iconVal: null,
-      labelVal: null,
-      widgetKeyVal: null,
+      childVal: BaseCore<Widget>(null, update),
+      tooltipVal: BaseCore<String>(null, update),
+      foregroundColorVal: BaseCore<Color>(null, update),
+      backgroundColorVal: BaseCore<Color>(null, update),
+      focusColorVal: BaseCore<Color>(null, update),
+      hoverColorVal: BaseCore<Color>(null, update),
+      splashColorVal: BaseCore<Color>(null, update),
+      heroTagVal: BaseCore<Object>(null, update),
+      onPressedVal: BaseCore<VoidCallback>(null, update),
+      mouseCursorVal: BaseCore<MouseCursor>(null, update),
+      elevationVal: BaseCore<double>(null, update),
+      focusElevationVal: BaseCore<double>(null, update),
+      hoverElevationVal: BaseCore<double>(null, update),
+      highlightElevationVal: BaseCore<double>(null, update),
+      disabledElevationVal: BaseCore<double>(null, update),
+      miniVal: BaseCore<bool>(null, update),
+      shapeVal: BaseCore<ShapeBorder>(null, update),
+      clipBehaviorVal: BaseCore<Clip>(null, update),
+      isExtendedVal: BaseCore<bool>(null, update),
+      focusNodeVal: BaseCore<FocusNode>(null, update),
+      autofocusVal: BaseCore<bool>(null, update),
+      materialTapTargetSizeVal: BaseCore<MaterialTapTargetSize>(null, update),
+      iconVal: BaseCore<Widget>(null, update),
+      labelVal: BaseCore<Widget>(null, update),
     );
   }
 
@@ -61,7 +60,6 @@ class FloatingActionButtonRender<T> extends StatelessWidget {
     @required this.materialTapTargetSizeVal,
     @required this.iconVal,
     @required this.labelVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -379,19 +377,6 @@ class FloatingActionButtonRender<T> extends StatelessWidget {
     labelVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -429,7 +414,6 @@ class FloatingActionButtonRender<T> extends StatelessWidget {
     this.materialTapTargetSizeVal,
     this.iconVal,
     this.labelVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -576,7 +560,6 @@ class FloatingActionButtonRender<T> extends StatelessWidget {
         'materialTapTargetSize': this.materialTapTargetSizeVal.toJson(),
         'icon': this.iconVal.toJson(),
         'label': this.labelVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -680,7 +663,6 @@ class FloatingActionButtonRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('materialTapTargetSize', this.materialTapTargetSize));
       properties.add(DiagnosticsProperty('icon', this.icon));
       properties.add(DiagnosticsProperty('label', this.label));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

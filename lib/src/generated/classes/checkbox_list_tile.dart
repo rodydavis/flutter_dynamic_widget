@@ -8,21 +8,20 @@ class CheckboxListTileRender<T> extends StatelessWidget {
 
   factory CheckboxListTileRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return CheckboxListTileRender(update,
-      valueVal: null,
-      onChangedVal: null,
-      activeColorVal: null,
-      checkColorVal: null,
-      titleVal: null,
-      subtitleVal: null,
-      secondaryVal: null,
-      isThreeLineVal: null,
-      denseVal: null,
-      selectedVal: null,
-      controlAffinityVal: null,
-      autofocusVal: null,
-      contentPaddingVal: null,
-      tristateVal: null,
-      widgetKeyVal: null,
+      valueVal: BaseCore<bool>(null, update),
+      onChangedVal: BaseCore<ValueChanged<bool>>(null, update),
+      activeColorVal: BaseCore<Color>(null, update),
+      checkColorVal: BaseCore<Color>(null, update),
+      titleVal: BaseCore<Widget>(null, update),
+      subtitleVal: BaseCore<Widget>(null, update),
+      secondaryVal: BaseCore<Widget>(null, update),
+      isThreeLineVal: BaseCore<bool>(null, update),
+      denseVal: BaseCore<bool>(null, update),
+      selectedVal: BaseCore<bool>(null, update),
+      controlAffinityVal: BaseCore<ListTileControlAffinity>(null, update),
+      autofocusVal: BaseCore<bool>(null, update),
+      contentPaddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      tristateVal: BaseCore<bool>(null, update),
     );
   }
 
@@ -41,7 +40,6 @@ class CheckboxListTileRender<T> extends StatelessWidget {
     @required this.autofocusVal,
     @required this.contentPaddingVal,
     @required this.tristateVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -229,19 +227,6 @@ class CheckboxListTileRender<T> extends StatelessWidget {
     tristateVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -263,7 +248,6 @@ class CheckboxListTileRender<T> extends StatelessWidget {
     this.autofocusVal,
     this.contentPaddingVal,
     this.tristateVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -336,7 +320,6 @@ class CheckboxListTileRender<T> extends StatelessWidget {
         'autofocus': this.autofocusVal.toJson(),
         'contentPadding': this.contentPaddingVal.toJson(),
         'tristate': this.tristateVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -398,7 +381,6 @@ class CheckboxListTileRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('autofocus', this.autofocus));
       properties.add(DiagnosticsProperty('contentPadding', this.contentPadding));
       properties.add(DiagnosticsProperty('tristate', this.tristate));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

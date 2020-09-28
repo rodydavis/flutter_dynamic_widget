@@ -8,15 +8,14 @@ class CalendarDatePickerRender<T> extends StatelessWidget {
 
   factory CalendarDatePickerRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return CalendarDatePickerRender(update,
-      initialDateVal: null,
-      firstDateVal: null,
-      lastDateVal: null,
-      currentDateVal: null,
-      onDateChangedVal: null,
-      onDisplayedMonthChangedVal: null,
-      initialCalendarModeVal: null,
-      selectableDayPredicateVal: null,
-      widgetKeyVal: null,
+      initialDateVal: BaseCore<DateTime>(null, update),
+      firstDateVal: BaseCore<DateTime>(null, update),
+      lastDateVal: BaseCore<DateTime>(null, update),
+      currentDateVal: BaseCore<DateTime>(null, update),
+      onDateChangedVal: BaseCore<ValueChanged<DateTime>>(null, update),
+      onDisplayedMonthChangedVal: BaseCore<ValueChanged<DateTime>>(null, update),
+      initialCalendarModeVal: BaseCore<DatePickerMode>(null, update),
+      selectableDayPredicateVal: BaseCore<SelectableDayPredicate>(null, update),
     );
   }
 
@@ -29,7 +28,6 @@ class CalendarDatePickerRender<T> extends StatelessWidget {
     @required this.onDisplayedMonthChangedVal,
     @required this.initialCalendarModeVal,
     @required this.selectableDayPredicateVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -139,19 +137,6 @@ class CalendarDatePickerRender<T> extends StatelessWidget {
     selectableDayPredicateVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -167,7 +152,6 @@ class CalendarDatePickerRender<T> extends StatelessWidget {
     this.onDisplayedMonthChangedVal,
     this.initialCalendarModeVal,
     this.selectableDayPredicateVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -222,7 +206,6 @@ class CalendarDatePickerRender<T> extends StatelessWidget {
         'onDisplayedMonthChanged': this.onDisplayedMonthChangedVal.toJson(),
         'initialCalendarMode': this.initialCalendarModeVal.toJson(),
         'selectableDayPredicate': this.selectableDayPredicateVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -272,7 +255,6 @@ class CalendarDatePickerRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('onDisplayedMonthChanged', this.onDisplayedMonthChanged));
       properties.add(DiagnosticsProperty('initialCalendarMode', this.initialCalendarMode));
       properties.add(DiagnosticsProperty('selectableDayPredicate', this.selectableDayPredicate));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

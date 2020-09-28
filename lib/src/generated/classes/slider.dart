@@ -8,21 +8,20 @@ class SliderRender<T> extends StatelessWidget {
 
   factory SliderRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return SliderRender(update,
-      valueVal: null,
-      onChangedVal: null,
-      onChangeStartVal: null,
-      onChangeEndVal: null,
-      minVal: null,
-      maxVal: null,
-      divisionsVal: null,
-      labelVal: null,
-      activeColorVal: null,
-      inactiveColorVal: null,
-      mouseCursorVal: null,
-      semanticFormatterCallbackVal: null,
-      focusNodeVal: null,
-      autofocusVal: null,
-      widgetKeyVal: null,
+      valueVal: BaseCore<double>(null, update),
+      onChangedVal: BaseCore<ValueChanged<double>>(null, update),
+      onChangeStartVal: BaseCore<ValueChanged<double>>(null, update),
+      onChangeEndVal: BaseCore<ValueChanged<double>>(null, update),
+      minVal: BaseCore<double>(null, update),
+      maxVal: BaseCore<double>(null, update),
+      divisionsVal: BaseCore<int>(null, update),
+      labelVal: BaseCore<String>(null, update),
+      activeColorVal: BaseCore<Color>(null, update),
+      inactiveColorVal: BaseCore<Color>(null, update),
+      mouseCursorVal: BaseCore<MouseCursor>(null, update),
+      semanticFormatterCallbackVal: BaseCore<SemanticFormatterCallback>(null, update),
+      focusNodeVal: BaseCore<FocusNode>(null, update),
+      autofocusVal: BaseCore<bool>(null, update),
     );
   }
 
@@ -41,7 +40,6 @@ class SliderRender<T> extends StatelessWidget {
     @required this.semanticFormatterCallbackVal,
     @required this.focusNodeVal,
     @required this.autofocusVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -229,19 +227,6 @@ class SliderRender<T> extends StatelessWidget {
     autofocusVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -263,7 +248,6 @@ class SliderRender<T> extends StatelessWidget {
     this.semanticFormatterCallbackVal,
     this.focusNodeVal,
     this.autofocusVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -368,7 +352,6 @@ class SliderRender<T> extends StatelessWidget {
         'semanticFormatterCallback': this.semanticFormatterCallbackVal.toJson(),
         'focusNode': this.focusNodeVal.toJson(),
         'autofocus': this.autofocusVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -446,7 +429,6 @@ class SliderRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('semanticFormatterCallback', this.semanticFormatterCallback));
       properties.add(DiagnosticsProperty('focusNode', this.focusNode));
       properties.add(DiagnosticsProperty('autofocus', this.autofocus));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

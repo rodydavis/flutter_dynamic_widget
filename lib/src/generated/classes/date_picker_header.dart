@@ -8,16 +8,15 @@ class DatePickerHeaderRender<T> extends StatelessWidget {
 
   factory DatePickerHeaderRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return DatePickerHeaderRender(update,
-      helpTextVal: null,
-      titleTextVal: null,
-      titleSemanticsLabelVal: null,
-      titleStyleVal: null,
-      orientationVal: null,
-      isShortVal: null,
-      iconVal: null,
-      iconTooltipVal: null,
-      onIconPressedVal: null,
-      widgetKeyVal: null,
+      helpTextVal: BaseCore<String>(null, update),
+      titleTextVal: BaseCore<String>(null, update),
+      titleSemanticsLabelVal: BaseCore<String>(null, update),
+      titleStyleVal: BaseCore<TextStyle>(null, update),
+      orientationVal: BaseCore<Orientation>(null, update),
+      isShortVal: BaseCore<bool>(null, update),
+      iconVal: BaseCore<IconData>(null, update),
+      iconTooltipVal: BaseCore<String>(null, update),
+      onIconPressedVal: BaseCore<VoidCallback>(null, update),
     );
   }
 
@@ -31,7 +30,6 @@ class DatePickerHeaderRender<T> extends StatelessWidget {
     @required this.iconVal,
     @required this.iconTooltipVal,
     @required this.onIconPressedVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -154,19 +152,6 @@ class DatePickerHeaderRender<T> extends StatelessWidget {
     onIconPressedVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -183,7 +168,6 @@ class DatePickerHeaderRender<T> extends StatelessWidget {
     this.iconVal,
     this.iconTooltipVal,
     this.onIconPressedVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -241,7 +225,6 @@ class DatePickerHeaderRender<T> extends StatelessWidget {
         'icon': this.iconVal.toJson(),
         'iconTooltip': this.iconTooltipVal.toJson(),
         'onIconPressed': this.onIconPressedVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -293,7 +276,6 @@ class DatePickerHeaderRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('icon', this.icon));
       properties.add(DiagnosticsProperty('iconTooltip', this.iconTooltip));
       properties.add(DiagnosticsProperty('onIconPressed', this.onIconPressed));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

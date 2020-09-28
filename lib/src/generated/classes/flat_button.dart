@@ -8,33 +8,32 @@ class FlatButtonRender<T> extends StatelessWidget {
 
   factory FlatButtonRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return FlatButtonRender(update,
-      onPressedVal: null,
-      onLongPressVal: null,
-      onHighlightChangedVal: null,
-      mouseCursorVal: null,
-      textThemeVal: null,
-      textColorVal: null,
-      disabledTextColorVal: null,
-      colorVal: null,
-      disabledColorVal: null,
-      focusColorVal: null,
-      hoverColorVal: null,
-      highlightColorVal: null,
-      splashColorVal: null,
-      colorBrightnessVal: null,
-      paddingVal: null,
-      visualDensityVal: null,
-      shapeVal: null,
-      clipBehaviorVal: null,
-      focusNodeVal: null,
-      autofocusVal: null,
-      materialTapTargetSizeVal: null,
-      childVal: null,
-      heightVal: null,
-      minWidthVal: null,
-      iconVal: null,
-      labelVal: null,
-      widgetKeyVal: null,
+      onPressedVal: BaseCore<VoidCallback>(null, update),
+      onLongPressVal: BaseCore<VoidCallback>(null, update),
+      onHighlightChangedVal: BaseCore<ValueChanged<bool>>(null, update),
+      mouseCursorVal: BaseCore<MouseCursor>(null, update),
+      textThemeVal: BaseCore<ButtonTextTheme>(null, update),
+      textColorVal: BaseCore<Color>(null, update),
+      disabledTextColorVal: BaseCore<Color>(null, update),
+      colorVal: BaseCore<Color>(null, update),
+      disabledColorVal: BaseCore<Color>(null, update),
+      focusColorVal: BaseCore<Color>(null, update),
+      hoverColorVal: BaseCore<Color>(null, update),
+      highlightColorVal: BaseCore<Color>(null, update),
+      splashColorVal: BaseCore<Color>(null, update),
+      colorBrightnessVal: BaseCore<Brightness>(null, update),
+      paddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      visualDensityVal: BaseCore<VisualDensity>(null, update),
+      shapeVal: BaseCore<ShapeBorder>(null, update),
+      clipBehaviorVal: BaseCore<Clip>(null, update),
+      focusNodeVal: BaseCore<FocusNode>(null, update),
+      autofocusVal: BaseCore<bool>(null, update),
+      materialTapTargetSizeVal: BaseCore<MaterialTapTargetSize>(null, update),
+      childVal: BaseCore<Widget>(null, update),
+      heightVal: BaseCore<double>(null, update),
+      minWidthVal: BaseCore<double>(null, update),
+      iconVal: BaseCore<Widget>(null, update),
+      labelVal: BaseCore<Widget>(null, update),
     );
   }
 
@@ -65,7 +64,6 @@ class FlatButtonRender<T> extends StatelessWidget {
     @required this.minWidthVal,
     @required this.iconVal,
     @required this.labelVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -409,19 +407,6 @@ class FlatButtonRender<T> extends StatelessWidget {
     labelVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -455,7 +440,6 @@ class FlatButtonRender<T> extends StatelessWidget {
     this.minWidthVal,
     this.iconVal,
     this.labelVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -612,7 +596,6 @@ class FlatButtonRender<T> extends StatelessWidget {
         'minWidth': this.minWidthVal.toJson(),
         'icon': this.iconVal.toJson(),
         'label': this.labelVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -722,7 +705,6 @@ class FlatButtonRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('minWidth', this.minWidth));
       properties.add(DiagnosticsProperty('icon', this.icon));
       properties.add(DiagnosticsProperty('label', this.label));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

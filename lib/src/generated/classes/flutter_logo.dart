@@ -8,12 +8,11 @@ class FlutterLogoRender<T> extends StatelessWidget {
 
   factory FlutterLogoRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return FlutterLogoRender(update,
-      sizeVal: null,
-      textColorVal: null,
-      styleVal: null,
-      durationVal: null,
-      curveVal: null,
-      widgetKeyVal: null,
+      sizeVal: BaseCore<double>(null, update),
+      textColorVal: BaseCore<Color>(null, update),
+      styleVal: BaseCore<FlutterLogoStyle>(null, update),
+      durationVal: BaseCore<Duration>(null, update),
+      curveVal: BaseCore<Curve>(null, update),
     );
   }
 
@@ -23,7 +22,6 @@ class FlutterLogoRender<T> extends StatelessWidget {
     @required this.styleVal,
     @required this.durationVal,
     @required this.curveVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -94,19 +92,6 @@ class FlutterLogoRender<T> extends StatelessWidget {
     curveVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -119,7 +104,6 @@ class FlutterLogoRender<T> extends StatelessWidget {
     this.styleVal,
     this.durationVal,
     this.curveVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -165,7 +149,6 @@ class FlutterLogoRender<T> extends StatelessWidget {
         'style': this.styleVal.toJson(),
         'duration': this.durationVal.toJson(),
         'curve': this.curveVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -209,7 +192,6 @@ class FlutterLogoRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('style', this.style));
       properties.add(DiagnosticsProperty('duration', this.duration));
       properties.add(DiagnosticsProperty('curve', this.curve));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

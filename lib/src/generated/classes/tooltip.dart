@@ -8,19 +8,18 @@ class TooltipRender<T> extends StatelessWidget {
 
   factory TooltipRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return TooltipRender(update,
-      messageVal: null,
-      heightVal: null,
-      paddingVal: null,
-      marginVal: null,
-      verticalOffsetVal: null,
-      preferBelowVal: null,
-      excludeFromSemanticsVal: null,
-      childVal: null,
-      decorationVal: null,
-      textStyleVal: null,
-      waitDurationVal: null,
-      showDurationVal: null,
-      widgetKeyVal: null,
+      messageVal: BaseCore<String>(null, update),
+      heightVal: BaseCore<double>(null, update),
+      paddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      marginVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      verticalOffsetVal: BaseCore<double>(null, update),
+      preferBelowVal: BaseCore<bool>(null, update),
+      excludeFromSemanticsVal: BaseCore<bool>(null, update),
+      childVal: BaseCore<Widget>(null, update),
+      decorationVal: BaseCore<Decoration>(null, update),
+      textStyleVal: BaseCore<TextStyle>(null, update),
+      waitDurationVal: BaseCore<Duration>(null, update),
+      showDurationVal: BaseCore<Duration>(null, update),
     );
   }
 
@@ -37,7 +36,6 @@ class TooltipRender<T> extends StatelessWidget {
     @required this.textStyleVal,
     @required this.waitDurationVal,
     @required this.showDurationVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -199,19 +197,6 @@ class TooltipRender<T> extends StatelessWidget {
     showDurationVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -231,7 +216,6 @@ class TooltipRender<T> extends StatelessWidget {
     this.textStyleVal,
     this.waitDurationVal,
     this.showDurationVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -298,7 +282,6 @@ class TooltipRender<T> extends StatelessWidget {
         'textStyle': this.textStyleVal.toJson(),
         'waitDuration': this.waitDurationVal.toJson(),
         'showDuration': this.showDurationVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -356,7 +339,6 @@ class TooltipRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('textStyle', this.textStyle));
       properties.add(DiagnosticsProperty('waitDuration', this.waitDuration));
       properties.add(DiagnosticsProperty('showDuration', this.showDuration));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

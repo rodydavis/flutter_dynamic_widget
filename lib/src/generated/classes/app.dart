@@ -8,41 +8,40 @@ class MaterialAppRender<T> extends StatelessWidget {
 
   factory MaterialAppRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return MaterialAppRender(update,
-      navigatorKeyVal: null,
-      homeVal: null,
-      routesVal: null,
-      initialRouteVal: null,
-      onGenerateRouteVal: null,
-      onGenerateInitialRoutesVal: null,
-      onUnknownRouteVal: null,
-      navigatorObserversVal: null,
-      routeInformationProviderVal: null,
-      routeInformationParserVal: null,
-      routerDelegateVal: null,
-      backButtonDispatcherVal: null,
-      builderVal: null,
-      titleVal: null,
-      onGenerateTitleVal: null,
-      themeVal: null,
-      darkThemeVal: null,
-      highContrastThemeVal: null,
-      highContrastDarkThemeVal: null,
-      themeModeVal: null,
-      colorVal: null,
-      localeVal: null,
-      localizationsDelegatesVal: null,
-      localeListResolutionCallbackVal: null,
-      localeResolutionCallbackVal: null,
-      supportedLocalesVal: null,
-      showPerformanceOverlayVal: null,
-      checkerboardRasterCacheImagesVal: null,
-      checkerboardOffscreenLayersVal: null,
-      showSemanticsDebuggerVal: null,
-      debugShowCheckedModeBannerVal: null,
-      shortcutsVal: null,
-      actionsVal: null,
-      debugShowMaterialGridVal: null,
-      widgetKeyVal: null,
+      navigatorKeyVal: BaseCore<GlobalKey<NavigatorState>>(null, update),
+      homeVal: BaseCore<Widget>(null, update),
+      routesVal: BaseCore<Map<String, WidgetBuilder>>(null, update),
+      initialRouteVal: BaseCore<String>(null, update),
+      onGenerateRouteVal: BaseCore<RouteFactory>(null, update),
+      onGenerateInitialRoutesVal: BaseCore<InitialRouteListFactory>(null, update),
+      onUnknownRouteVal: BaseCore<RouteFactory>(null, update),
+      navigatorObserversVal: BaseCore<List<NavigatorObserver>>(null, update),
+      routeInformationProviderVal: BaseCore<RouteInformationProvider>(null, update),
+      routeInformationParserVal: BaseCore<RouteInformationParser<Object>>(null, update),
+      routerDelegateVal: BaseCore<RouterDelegate<Object>>(null, update),
+      backButtonDispatcherVal: BaseCore<BackButtonDispatcher>(null, update),
+      builderVal: BaseCore<TransitionBuilder>(null, update),
+      titleVal: BaseCore<String>(null, update),
+      onGenerateTitleVal: BaseCore<GenerateAppTitle>(null, update),
+      themeVal: BaseCore<ThemeData>(null, update),
+      darkThemeVal: BaseCore<ThemeData>(null, update),
+      highContrastThemeVal: BaseCore<ThemeData>(null, update),
+      highContrastDarkThemeVal: BaseCore<ThemeData>(null, update),
+      themeModeVal: BaseCore<ThemeMode>(null, update),
+      colorVal: BaseCore<Color>(null, update),
+      localeVal: BaseCore<Locale>(null, update),
+      localizationsDelegatesVal: BaseCore<Iterable<LocalizationsDelegate<dynamic>>>(null, update),
+      localeListResolutionCallbackVal: BaseCore<LocaleListResolutionCallback>(null, update),
+      localeResolutionCallbackVal: BaseCore<LocaleResolutionCallback>(null, update),
+      supportedLocalesVal: BaseCore<Iterable<Locale>>(null, update),
+      showPerformanceOverlayVal: BaseCore<bool>(null, update),
+      checkerboardRasterCacheImagesVal: BaseCore<bool>(null, update),
+      checkerboardOffscreenLayersVal: BaseCore<bool>(null, update),
+      showSemanticsDebuggerVal: BaseCore<bool>(null, update),
+      debugShowCheckedModeBannerVal: BaseCore<bool>(null, update),
+      shortcutsVal: BaseCore<Map<LogicalKeySet, Intent>>(null, update),
+      actionsVal: BaseCore<Map<Type, Action<Intent>>>(null, update),
+      debugShowMaterialGridVal: BaseCore<bool>(null, update),
     );
   }
 
@@ -81,7 +80,6 @@ class MaterialAppRender<T> extends StatelessWidget {
     @required this.shortcutsVal,
     @required this.actionsVal,
     @required this.debugShowMaterialGridVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -529,19 +527,6 @@ class MaterialAppRender<T> extends StatelessWidget {
     debugShowMaterialGridVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -583,7 +568,6 @@ class MaterialAppRender<T> extends StatelessWidget {
     this.shortcutsVal,
     this.actionsVal,
     this.debugShowMaterialGridVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -764,7 +748,6 @@ class MaterialAppRender<T> extends StatelessWidget {
         'shortcuts': this.shortcutsVal.toJson(),
         'actions': this.actionsVal.toJson(),
         'debugShowMaterialGrid': this.debugShowMaterialGridVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -890,7 +873,6 @@ class MaterialAppRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('shortcuts', this.shortcuts));
       properties.add(DiagnosticsProperty('actions', this.actions));
       properties.add(DiagnosticsProperty('debugShowMaterialGrid', this.debugShowMaterialGrid));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

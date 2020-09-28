@@ -8,18 +8,17 @@ class InkSplashRender<T> extends StatelessWidget {
 
   factory InkSplashRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return InkSplashRender(update,
-      controllerVal: null,
-      referenceBoxVal: null,
-      textDirectionVal: null,
-      positionVal: null,
-      colorVal: null,
-      containedInkWellVal: null,
-      rectCallbackVal: null,
-      borderRadiusVal: null,
-      customBorderVal: null,
-      radiusVal: null,
-      onRemovedVal: null,
-      widgetKeyVal: null,
+      controllerVal: BaseCore<MaterialInkController>(null, update),
+      referenceBoxVal: BaseCore<RenderBox>(null, update),
+      textDirectionVal: BaseCore<TextDirection>(null, update),
+      positionVal: BaseCore<Offset>(null, update),
+      colorVal: BaseCore<Color>(null, update),
+      containedInkWellVal: BaseCore<bool>(null, update),
+      rectCallbackVal: BaseCore<RectCallback>(null, update),
+      borderRadiusVal: BaseCore<BorderRadius>(null, update),
+      customBorderVal: BaseCore<ShapeBorder>(null, update),
+      radiusVal: BaseCore<double>(null, update),
+      onRemovedVal: BaseCore<VoidCallback>(null, update),
     );
   }
 
@@ -35,7 +34,6 @@ class InkSplashRender<T> extends StatelessWidget {
     @required this.customBorderVal,
     @required this.radiusVal,
     @required this.onRemovedVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -184,19 +182,6 @@ class InkSplashRender<T> extends StatelessWidget {
     onRemovedVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -220,7 +205,6 @@ class InkSplashRender<T> extends StatelessWidget {
     this.customBorderVal,
     this.radiusVal,
     this.onRemovedVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -284,7 +268,6 @@ class InkSplashRender<T> extends StatelessWidget {
         'customBorder': this.customBorderVal.toJson(),
         'radius': this.radiusVal.toJson(),
         'onRemoved': this.onRemovedVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -340,7 +323,6 @@ class InkSplashRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('customBorder', this.customBorder));
       properties.add(DiagnosticsProperty('radius', this.radius));
       properties.add(DiagnosticsProperty('onRemoved', this.onRemoved));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

@@ -8,13 +8,12 @@ class TypographyRender<T> extends StatelessWidget {
 
   factory TypographyRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return TypographyRender(update,
-      blackVal: null,
-      whiteVal: null,
-      englishLikeVal: null,
-      denseVal: null,
-      tallVal: null,
-      platformVal: null,
-      widgetKeyVal: null,
+      blackVal: BaseCore<TextTheme>(null, update),
+      whiteVal: BaseCore<TextTheme>(null, update),
+      englishLikeVal: BaseCore<TextTheme>(null, update),
+      denseVal: BaseCore<TextTheme>(null, update),
+      tallVal: BaseCore<TextTheme>(null, update),
+      platformVal: BaseCore<TargetPlatform>(null, update),
     );
   }
 
@@ -25,7 +24,6 @@ class TypographyRender<T> extends StatelessWidget {
     @required this.denseVal,
     @required this.tallVal,
     @required this.platformVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -109,19 +107,6 @@ class TypographyRender<T> extends StatelessWidget {
     platformVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -150,7 +135,6 @@ class TypographyRender<T> extends StatelessWidget {
     this.denseVal,
     this.tallVal,
     this.platformVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -231,7 +215,6 @@ class TypographyRender<T> extends StatelessWidget {
         'dense': this.denseVal.toJson(),
         'tall': this.tallVal.toJson(),
         'platform': this.platformVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -293,7 +276,6 @@ class TypographyRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('dense', this.dense));
       properties.add(DiagnosticsProperty('tall', this.tall));
       properties.add(DiagnosticsProperty('platform', this.platform));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

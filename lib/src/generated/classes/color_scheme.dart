@@ -8,26 +8,25 @@ class ColorSchemeRender<T> extends StatelessWidget {
 
   factory ColorSchemeRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return ColorSchemeRender(update,
-      primaryVal: null,
-      primaryVariantVal: null,
-      secondaryVal: null,
-      secondaryVariantVal: null,
-      surfaceVal: null,
-      backgroundVal: null,
-      errorVal: null,
-      onPrimaryVal: null,
-      onSecondaryVal: null,
-      onSurfaceVal: null,
-      onBackgroundVal: null,
-      onErrorVal: null,
-      brightnessVal: null,
-      primarySwatchVal: null,
-      primaryColorDarkVal: null,
-      accentColorVal: null,
-      cardColorVal: null,
-      backgroundColorVal: null,
-      errorColorVal: null,
-      widgetKeyVal: null,
+      primaryVal: BaseCore<Color>(null, update),
+      primaryVariantVal: BaseCore<Color>(null, update),
+      secondaryVal: BaseCore<Color>(null, update),
+      secondaryVariantVal: BaseCore<Color>(null, update),
+      surfaceVal: BaseCore<Color>(null, update),
+      backgroundVal: BaseCore<Color>(null, update),
+      errorVal: BaseCore<Color>(null, update),
+      onPrimaryVal: BaseCore<Color>(null, update),
+      onSecondaryVal: BaseCore<Color>(null, update),
+      onSurfaceVal: BaseCore<Color>(null, update),
+      onBackgroundVal: BaseCore<Color>(null, update),
+      onErrorVal: BaseCore<Color>(null, update),
+      brightnessVal: BaseCore<Brightness>(null, update),
+      primarySwatchVal: BaseCore<MaterialColor>(null, update),
+      primaryColorDarkVal: BaseCore<Color>(null, update),
+      accentColorVal: BaseCore<Color>(null, update),
+      cardColorVal: BaseCore<Color>(null, update),
+      backgroundColorVal: BaseCore<Color>(null, update),
+      errorColorVal: BaseCore<Color>(null, update),
     );
   }
 
@@ -51,7 +50,6 @@ class ColorSchemeRender<T> extends StatelessWidget {
     @required this.cardColorVal,
     @required this.backgroundColorVal,
     @required this.errorColorVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -304,19 +302,6 @@ class ColorSchemeRender<T> extends StatelessWidget {
     errorColorVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -343,7 +328,6 @@ class ColorSchemeRender<T> extends StatelessWidget {
     this.cardColorVal,
     this.backgroundColorVal,
     this.errorColorVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -557,7 +541,6 @@ class ColorSchemeRender<T> extends StatelessWidget {
         'cardColor': this.cardColorVal.toJson(),
         'backgroundColor': this.backgroundColorVal.toJson(),
         'errorColor': this.errorColorVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -692,7 +675,6 @@ class ColorSchemeRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('cardColor', this.cardColor));
       properties.add(DiagnosticsProperty('backgroundColor', this.backgroundColor));
       properties.add(DiagnosticsProperty('errorColor', this.errorColor));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

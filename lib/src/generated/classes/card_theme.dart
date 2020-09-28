@@ -8,13 +8,12 @@ class CardThemeRender<T> extends StatelessWidget {
 
   factory CardThemeRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return CardThemeRender(update,
-      clipBehaviorVal: null,
-      colorVal: null,
-      shadowColorVal: null,
-      elevationVal: null,
-      marginVal: null,
-      shapeVal: null,
-      widgetKeyVal: null,
+      clipBehaviorVal: BaseCore<Clip>(null, update),
+      colorVal: BaseCore<Color>(null, update),
+      shadowColorVal: BaseCore<Color>(null, update),
+      elevationVal: BaseCore<double>(null, update),
+      marginVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      shapeVal: BaseCore<ShapeBorder>(null, update),
     );
   }
 
@@ -25,7 +24,6 @@ class CardThemeRender<T> extends StatelessWidget {
     @required this.elevationVal,
     @required this.marginVal,
     @required this.shapeVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -109,19 +107,6 @@ class CardThemeRender<T> extends StatelessWidget {
     shapeVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -135,7 +120,6 @@ class CardThemeRender<T> extends StatelessWidget {
     this.elevationVal,
     this.marginVal,
     this.shapeVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -184,7 +168,6 @@ class CardThemeRender<T> extends StatelessWidget {
         'elevation': this.elevationVal.toJson(),
         'margin': this.marginVal.toJson(),
         'shape': this.shapeVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -230,7 +213,6 @@ class CardThemeRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('elevation', this.elevation));
       properties.add(DiagnosticsProperty('margin', this.margin));
       properties.add(DiagnosticsProperty('shape', this.shape));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

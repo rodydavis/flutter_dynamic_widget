@@ -8,13 +8,12 @@ class MaterialPageRender<T> extends StatelessWidget {
 
   factory MaterialPageRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return MaterialPageRender(update,
-      builderVal: null,
-      maintainStateVal: null,
-      fullscreenDialogVal: null,
-      keyVal: null,
-      nameVal: null,
-      argumentsVal: null,
-      widgetKeyVal: null,
+      builderVal: BaseCore<WidgetBuilder>(null, update),
+      maintainStateVal: BaseCore<bool>(null, update),
+      fullscreenDialogVal: BaseCore<bool>(null, update),
+      keyVal: BaseCore<LocalKey>(null, update),
+      nameVal: BaseCore<String>(null, update),
+      argumentsVal: BaseCore<Object>(null, update),
     );
   }
 
@@ -25,7 +24,6 @@ class MaterialPageRender<T> extends StatelessWidget {
     @required this.keyVal,
     @required this.nameVal,
     @required this.argumentsVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -109,19 +107,6 @@ class MaterialPageRender<T> extends StatelessWidget {
     argumentsVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -135,7 +120,6 @@ class MaterialPageRender<T> extends StatelessWidget {
     this.keyVal,
     this.nameVal,
     this.argumentsVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -184,7 +168,6 @@ class MaterialPageRender<T> extends StatelessWidget {
         'key': this.keyVal.toJson(),
         'name': this.nameVal.toJson(),
         'arguments': this.argumentsVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -230,7 +213,6 @@ class MaterialPageRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('key', this.key));
       properties.add(DiagnosticsProperty('name', this.name));
       properties.add(DiagnosticsProperty('arguments', this.arguments));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

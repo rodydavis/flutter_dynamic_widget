@@ -8,10 +8,9 @@ class OutlineInputBorderRender<T> extends StatelessWidget {
 
   factory OutlineInputBorderRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return OutlineInputBorderRender(update,
-      gapPaddingVal: null,
-      borderRadiusVal: null,
-      borderSideVal: null,
-      widgetKeyVal: null,
+      gapPaddingVal: BaseCore<double>(null, update),
+      borderRadiusVal: BaseCore<BorderRadius>(null, update),
+      borderSideVal: BaseCore<BorderSide>(null, update),
     );
   }
 
@@ -19,7 +18,6 @@ class OutlineInputBorderRender<T> extends StatelessWidget {
     @required this.gapPaddingVal,
     @required this.borderRadiusVal,
     @required this.borderSideVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -64,19 +62,6 @@ class OutlineInputBorderRender<T> extends StatelessWidget {
     borderSideVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -87,7 +72,6 @@ class OutlineInputBorderRender<T> extends StatelessWidget {
     this.gapPaddingVal,
     this.borderRadiusVal,
     this.borderSideVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -127,7 +111,6 @@ class OutlineInputBorderRender<T> extends StatelessWidget {
         'gapPadding': this.gapPaddingVal.toJson(),
         'borderRadius': this.borderRadiusVal.toJson(),
         'borderSide': this.borderSideVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -167,7 +150,6 @@ class OutlineInputBorderRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('gapPadding', this.gapPadding));
       properties.add(DiagnosticsProperty('borderRadius', this.borderRadius));
       properties.add(DiagnosticsProperty('borderSide', this.borderSide));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

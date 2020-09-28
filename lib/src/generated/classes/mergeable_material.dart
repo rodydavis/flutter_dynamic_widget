@@ -8,12 +8,11 @@ class MergeableMaterialRender<T> extends StatelessWidget {
 
   factory MergeableMaterialRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return MergeableMaterialRender(update,
-      childrenVal: null,
-      mainAxisVal: null,
-      elevationVal: null,
-      hasDividersVal: null,
-      dividerColorVal: null,
-      widgetKeyVal: null,
+      childrenVal: BaseCore<List<MergeableMaterialItem>>(null, update),
+      mainAxisVal: BaseCore<Axis>(null, update),
+      elevationVal: BaseCore<int>(null, update),
+      hasDividersVal: BaseCore<bool>(null, update),
+      dividerColorVal: BaseCore<Color>(null, update),
     );
   }
 
@@ -23,7 +22,6 @@ class MergeableMaterialRender<T> extends StatelessWidget {
     @required this.elevationVal,
     @required this.hasDividersVal,
     @required this.dividerColorVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -94,19 +92,6 @@ class MergeableMaterialRender<T> extends StatelessWidget {
     dividerColorVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -119,7 +104,6 @@ class MergeableMaterialRender<T> extends StatelessWidget {
     this.elevationVal,
     this.hasDividersVal,
     this.dividerColorVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -165,7 +149,6 @@ class MergeableMaterialRender<T> extends StatelessWidget {
         'elevation': this.elevationVal.toJson(),
         'hasDividers': this.hasDividersVal.toJson(),
         'dividerColor': this.dividerColorVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -209,7 +192,6 @@ class MergeableMaterialRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('elevation', this.elevation));
       properties.add(DiagnosticsProperty('hasDividers', this.hasDividers));
       properties.add(DiagnosticsProperty('dividerColor', this.dividerColor));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

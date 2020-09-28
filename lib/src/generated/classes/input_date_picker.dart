@@ -8,18 +8,17 @@ class InputDatePickerFormFieldRender<T> extends StatelessWidget {
 
   factory InputDatePickerFormFieldRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return InputDatePickerFormFieldRender(update,
-      initialDateVal: null,
-      firstDateVal: null,
-      lastDateVal: null,
-      onDateSubmittedVal: null,
-      onDateSavedVal: null,
-      selectableDayPredicateVal: null,
-      errorFormatTextVal: null,
-      errorInvalidTextVal: null,
-      fieldHintTextVal: null,
-      fieldLabelTextVal: null,
-      autofocusVal: null,
-      widgetKeyVal: null,
+      initialDateVal: BaseCore<DateTime>(null, update),
+      firstDateVal: BaseCore<DateTime>(null, update),
+      lastDateVal: BaseCore<DateTime>(null, update),
+      onDateSubmittedVal: BaseCore<ValueChanged<DateTime>>(null, update),
+      onDateSavedVal: BaseCore<ValueChanged<DateTime>>(null, update),
+      selectableDayPredicateVal: BaseCore<SelectableDayPredicate>(null, update),
+      errorFormatTextVal: BaseCore<String>(null, update),
+      errorInvalidTextVal: BaseCore<String>(null, update),
+      fieldHintTextVal: BaseCore<String>(null, update),
+      fieldLabelTextVal: BaseCore<String>(null, update),
+      autofocusVal: BaseCore<bool>(null, update),
     );
   }
 
@@ -35,7 +34,6 @@ class InputDatePickerFormFieldRender<T> extends StatelessWidget {
     @required this.fieldHintTextVal,
     @required this.fieldLabelTextVal,
     @required this.autofocusVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -184,19 +182,6 @@ class InputDatePickerFormFieldRender<T> extends StatelessWidget {
     autofocusVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -215,7 +200,6 @@ class InputDatePickerFormFieldRender<T> extends StatelessWidget {
     this.fieldHintTextVal,
     this.fieldLabelTextVal,
     this.autofocusVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -279,7 +263,6 @@ class InputDatePickerFormFieldRender<T> extends StatelessWidget {
         'fieldHintText': this.fieldHintTextVal.toJson(),
         'fieldLabelText': this.fieldLabelTextVal.toJson(),
         'autofocus': this.autofocusVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -335,7 +318,6 @@ class InputDatePickerFormFieldRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('fieldHintText', this.fieldHintText));
       properties.add(DiagnosticsProperty('fieldLabelText', this.fieldLabelText));
       properties.add(DiagnosticsProperty('autofocus', this.autofocus));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

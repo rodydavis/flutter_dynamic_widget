@@ -8,24 +8,23 @@ class SwitchListTileRender<T> extends StatelessWidget {
 
   factory SwitchListTileRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return SwitchListTileRender(update,
-      valueVal: null,
-      onChangedVal: null,
-      activeColorVal: null,
-      activeTrackColorVal: null,
-      inactiveThumbColorVal: null,
-      inactiveTrackColorVal: null,
-      activeThumbImageVal: null,
-      inactiveThumbImageVal: null,
-      titleVal: null,
-      subtitleVal: null,
-      secondaryVal: null,
-      isThreeLineVal: null,
-      denseVal: null,
-      contentPaddingVal: null,
-      selectedVal: null,
-      autofocusVal: null,
-      controlAffinityVal: null,
-      widgetKeyVal: null,
+      valueVal: BaseCore<bool>(null, update),
+      onChangedVal: BaseCore<ValueChanged<bool>>(null, update),
+      activeColorVal: BaseCore<Color>(null, update),
+      activeTrackColorVal: BaseCore<Color>(null, update),
+      inactiveThumbColorVal: BaseCore<Color>(null, update),
+      inactiveTrackColorVal: BaseCore<Color>(null, update),
+      activeThumbImageVal: BaseCore<ImageProvider>(null, update),
+      inactiveThumbImageVal: BaseCore<ImageProvider>(null, update),
+      titleVal: BaseCore<Widget>(null, update),
+      subtitleVal: BaseCore<Widget>(null, update),
+      secondaryVal: BaseCore<Widget>(null, update),
+      isThreeLineVal: BaseCore<bool>(null, update),
+      denseVal: BaseCore<bool>(null, update),
+      contentPaddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      selectedVal: BaseCore<bool>(null, update),
+      autofocusVal: BaseCore<bool>(null, update),
+      controlAffinityVal: BaseCore<ListTileControlAffinity>(null, update),
     );
   }
 
@@ -47,7 +46,6 @@ class SwitchListTileRender<T> extends StatelessWidget {
     @required this.selectedVal,
     @required this.autofocusVal,
     @required this.controlAffinityVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -274,19 +272,6 @@ class SwitchListTileRender<T> extends StatelessWidget {
     controlAffinityVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -311,7 +296,6 @@ class SwitchListTileRender<T> extends StatelessWidget {
     this.selectedVal,
     this.autofocusVal,
     this.controlAffinityVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -431,7 +415,6 @@ class SwitchListTileRender<T> extends StatelessWidget {
         'selected': this.selectedVal.toJson(),
         'autofocus': this.autofocusVal.toJson(),
         'controlAffinity': this.controlAffinityVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -518,7 +501,6 @@ class SwitchListTileRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('selected', this.selected));
       properties.add(DiagnosticsProperty('autofocus', this.autofocus));
       properties.add(DiagnosticsProperty('controlAffinity', this.controlAffinity));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

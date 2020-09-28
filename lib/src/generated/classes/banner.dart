@@ -8,15 +8,14 @@ class MaterialBannerRender<T> extends StatelessWidget {
 
   factory MaterialBannerRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return MaterialBannerRender(update,
-      contentVal: null,
-      contentTextStyleVal: null,
-      actionsVal: null,
-      leadingVal: null,
-      backgroundColorVal: null,
-      paddingVal: null,
-      leadingPaddingVal: null,
-      forceActionsBelowVal: null,
-      widgetKeyVal: null,
+      contentVal: BaseCore<Widget>(null, update),
+      contentTextStyleVal: BaseCore<TextStyle>(null, update),
+      actionsVal: BaseCore<List<Widget>>(null, update),
+      leadingVal: BaseCore<Widget>(null, update),
+      backgroundColorVal: BaseCore<Color>(null, update),
+      paddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      leadingPaddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      forceActionsBelowVal: BaseCore<bool>(null, update),
     );
   }
 
@@ -29,7 +28,6 @@ class MaterialBannerRender<T> extends StatelessWidget {
     @required this.paddingVal,
     @required this.leadingPaddingVal,
     @required this.forceActionsBelowVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -139,19 +137,6 @@ class MaterialBannerRender<T> extends StatelessWidget {
     forceActionsBelowVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -167,7 +152,6 @@ class MaterialBannerRender<T> extends StatelessWidget {
     this.paddingVal,
     this.leadingPaddingVal,
     this.forceActionsBelowVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -222,7 +206,6 @@ class MaterialBannerRender<T> extends StatelessWidget {
         'padding': this.paddingVal.toJson(),
         'leadingPadding': this.leadingPaddingVal.toJson(),
         'forceActionsBelow': this.forceActionsBelowVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -272,7 +255,6 @@ class MaterialBannerRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('padding', this.padding));
       properties.add(DiagnosticsProperty('leadingPadding', this.leadingPadding));
       properties.add(DiagnosticsProperty('forceActionsBelow', this.forceActionsBelow));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

@@ -8,16 +8,14 @@ class CloseButtonRender<T> extends StatelessWidget {
 
   factory CloseButtonRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return CloseButtonRender(update,
-      colorVal: null,
-      onPressedVal: null,
-      widgetKeyVal: null,
+      colorVal: BaseCore<Color>(null, update),
+      onPressedVal: BaseCore<VoidCallback>(null, update),
     );
   }
 
   CloseButtonRender(this._update, {
     @required this.colorVal,
     @required this.onPressedVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -49,19 +47,6 @@ class CloseButtonRender<T> extends StatelessWidget {
     onPressedVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -71,7 +56,6 @@ class CloseButtonRender<T> extends StatelessWidget {
   List<Core> get props => [
     this.colorVal,
     this.onPressedVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -108,7 +92,6 @@ class CloseButtonRender<T> extends StatelessWidget {
       'props': {
         'color': this.colorVal.toJson(),
         'onPressed': this.onPressedVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -146,7 +129,6 @@ class CloseButtonRender<T> extends StatelessWidget {
     super.debugFillProperties(properties);
       properties.add(DiagnosticsProperty('color', this.color));
       properties.add(DiagnosticsProperty('onPressed', this.onPressed));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

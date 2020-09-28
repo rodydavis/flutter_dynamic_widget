@@ -8,12 +8,11 @@ class YearPickerRender<T> extends StatelessWidget {
 
   factory YearPickerRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return YearPickerRender(update,
-      selectedDateVal: null,
-      onChangedVal: null,
-      firstDateVal: null,
-      lastDateVal: null,
-      dragStartBehaviorVal: null,
-      widgetKeyVal: null,
+      selectedDateVal: BaseCore<DateTime>(null, update),
+      onChangedVal: BaseCore<ValueChanged<DateTime>>(null, update),
+      firstDateVal: BaseCore<DateTime>(null, update),
+      lastDateVal: BaseCore<DateTime>(null, update),
+      dragStartBehaviorVal: BaseCore<DragStartBehavior>(null, update),
     );
   }
 
@@ -23,7 +22,6 @@ class YearPickerRender<T> extends StatelessWidget {
     @required this.firstDateVal,
     @required this.lastDateVal,
     @required this.dragStartBehaviorVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -94,19 +92,6 @@ class YearPickerRender<T> extends StatelessWidget {
     dragStartBehaviorVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -119,7 +104,6 @@ class YearPickerRender<T> extends StatelessWidget {
     this.firstDateVal,
     this.lastDateVal,
     this.dragStartBehaviorVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -165,7 +149,6 @@ class YearPickerRender<T> extends StatelessWidget {
         'firstDate': this.firstDateVal.toJson(),
         'lastDate': this.lastDateVal.toJson(),
         'dragStartBehavior': this.dragStartBehaviorVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -209,7 +192,6 @@ class YearPickerRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('firstDate', this.firstDate));
       properties.add(DiagnosticsProperty('lastDate', this.lastDate));
       properties.add(DiagnosticsProperty('dragStartBehavior', this.dragStartBehavior));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

@@ -8,11 +8,10 @@ class TabPageSelectorRender<T> extends StatelessWidget {
 
   factory TabPageSelectorRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return TabPageSelectorRender(update,
-      controllerVal: null,
-      indicatorSizeVal: null,
-      colorVal: null,
-      selectedColorVal: null,
-      widgetKeyVal: null,
+      controllerVal: BaseCore<TabController>(null, update),
+      indicatorSizeVal: BaseCore<double>(null, update),
+      colorVal: BaseCore<Color>(null, update),
+      selectedColorVal: BaseCore<Color>(null, update),
     );
   }
 
@@ -21,7 +20,6 @@ class TabPageSelectorRender<T> extends StatelessWidget {
     @required this.indicatorSizeVal,
     @required this.colorVal,
     @required this.selectedColorVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -79,19 +77,6 @@ class TabPageSelectorRender<T> extends StatelessWidget {
     selectedColorVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -103,7 +88,6 @@ class TabPageSelectorRender<T> extends StatelessWidget {
     this.indicatorSizeVal,
     this.colorVal,
     this.selectedColorVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -146,7 +130,6 @@ class TabPageSelectorRender<T> extends StatelessWidget {
         'indicatorSize': this.indicatorSizeVal.toJson(),
         'color': this.colorVal.toJson(),
         'selectedColor': this.selectedColorVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -188,7 +171,6 @@ class TabPageSelectorRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('indicatorSize', this.indicatorSize));
       properties.add(DiagnosticsProperty('color', this.color));
       properties.add(DiagnosticsProperty('selectedColor', this.selectedColor));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

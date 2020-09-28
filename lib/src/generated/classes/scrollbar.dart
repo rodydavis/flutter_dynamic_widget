@@ -8,12 +8,11 @@ class ScrollbarRender<T> extends StatelessWidget {
 
   factory ScrollbarRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return ScrollbarRender(update,
-      childVal: null,
-      controllerVal: null,
-      isAlwaysShownVal: null,
-      thicknessVal: null,
-      radiusVal: null,
-      widgetKeyVal: null,
+      childVal: BaseCore<Widget>(null, update),
+      controllerVal: BaseCore<ScrollController>(null, update),
+      isAlwaysShownVal: BaseCore<bool>(null, update),
+      thicknessVal: BaseCore<double>(null, update),
+      radiusVal: BaseCore<Radius>(null, update),
     );
   }
 
@@ -23,7 +22,6 @@ class ScrollbarRender<T> extends StatelessWidget {
     @required this.isAlwaysShownVal,
     @required this.thicknessVal,
     @required this.radiusVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -94,19 +92,6 @@ class ScrollbarRender<T> extends StatelessWidget {
     radiusVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -119,7 +104,6 @@ class ScrollbarRender<T> extends StatelessWidget {
     this.isAlwaysShownVal,
     this.thicknessVal,
     this.radiusVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -165,7 +149,6 @@ class ScrollbarRender<T> extends StatelessWidget {
         'isAlwaysShown': this.isAlwaysShownVal.toJson(),
         'thickness': this.thicknessVal.toJson(),
         'radius': this.radiusVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -209,7 +192,6 @@ class ScrollbarRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('isAlwaysShown', this.isAlwaysShown));
       properties.add(DiagnosticsProperty('thickness', this.thickness));
       properties.add(DiagnosticsProperty('radius', this.radius));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

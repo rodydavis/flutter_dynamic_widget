@@ -8,13 +8,12 @@ class BottomAppBarRender<T> extends StatelessWidget {
 
   factory BottomAppBarRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return BottomAppBarRender(update,
-      childVal: null,
-      colorVal: null,
-      elevationVal: null,
-      shapeVal: null,
-      clipBehaviorVal: null,
-      notchMarginVal: null,
-      widgetKeyVal: null,
+      childVal: BaseCore<Widget>(null, update),
+      colorVal: BaseCore<Color>(null, update),
+      elevationVal: BaseCore<double>(null, update),
+      shapeVal: BaseCore<NotchedShape>(null, update),
+      clipBehaviorVal: BaseCore<Clip>(null, update),
+      notchMarginVal: BaseCore<double>(null, update),
     );
   }
 
@@ -25,7 +24,6 @@ class BottomAppBarRender<T> extends StatelessWidget {
     @required this.shapeVal,
     @required this.clipBehaviorVal,
     @required this.notchMarginVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -109,19 +107,6 @@ class BottomAppBarRender<T> extends StatelessWidget {
     notchMarginVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -135,7 +120,6 @@ class BottomAppBarRender<T> extends StatelessWidget {
     this.shapeVal,
     this.clipBehaviorVal,
     this.notchMarginVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -184,7 +168,6 @@ class BottomAppBarRender<T> extends StatelessWidget {
         'shape': this.shapeVal.toJson(),
         'clipBehavior': this.clipBehaviorVal.toJson(),
         'notchMargin': this.notchMarginVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -230,7 +213,6 @@ class BottomAppBarRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('shape', this.shape));
       properties.add(DiagnosticsProperty('clipBehavior', this.clipBehavior));
       properties.add(DiagnosticsProperty('notchMargin', this.notchMargin));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

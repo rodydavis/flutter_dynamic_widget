@@ -8,17 +8,16 @@ class BottomSheetRender<T> extends StatelessWidget {
 
   factory BottomSheetRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return BottomSheetRender(update,
-      animationControllerVal: null,
-      onClosingVal: null,
-      builderVal: null,
-      enableDragVal: null,
-      onDragStartVal: null,
-      onDragEndVal: null,
-      backgroundColorVal: null,
-      elevationVal: null,
-      shapeVal: null,
-      clipBehaviorVal: null,
-      widgetKeyVal: null,
+      animationControllerVal: BaseCore<AnimationController>(null, update),
+      onClosingVal: BaseCore<VoidCallback>(null, update),
+      builderVal: BaseCore<WidgetBuilder>(null, update),
+      enableDragVal: BaseCore<bool>(null, update),
+      onDragStartVal: BaseCore<BottomSheetDragStartHandler>(null, update),
+      onDragEndVal: BaseCore<BottomSheetDragEndHandler>(null, update),
+      backgroundColorVal: BaseCore<Color>(null, update),
+      elevationVal: BaseCore<double>(null, update),
+      shapeVal: BaseCore<ShapeBorder>(null, update),
+      clipBehaviorVal: BaseCore<Clip>(null, update),
     );
   }
 
@@ -33,7 +32,6 @@ class BottomSheetRender<T> extends StatelessWidget {
     @required this.elevationVal,
     @required this.shapeVal,
     @required this.clipBehaviorVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -169,19 +167,6 @@ class BottomSheetRender<T> extends StatelessWidget {
     clipBehaviorVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -199,7 +184,6 @@ class BottomSheetRender<T> extends StatelessWidget {
     this.elevationVal,
     this.shapeVal,
     this.clipBehaviorVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -260,7 +244,6 @@ class BottomSheetRender<T> extends StatelessWidget {
         'elevation': this.elevationVal.toJson(),
         'shape': this.shapeVal.toJson(),
         'clipBehavior': this.clipBehaviorVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -314,7 +297,6 @@ class BottomSheetRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('elevation', this.elevation));
       properties.add(DiagnosticsProperty('shape', this.shape));
       properties.add(DiagnosticsProperty('clipBehavior', this.clipBehavior));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

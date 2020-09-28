@@ -8,26 +8,25 @@ class BottomNavigationBarRender<T> extends StatelessWidget {
 
   factory BottomNavigationBarRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return BottomNavigationBarRender(update,
-      itemsVal: null,
-      onTapVal: null,
-      currentIndexVal: null,
-      elevationVal: null,
-      typeVal: null,
-      backgroundColorVal: null,
-      iconSizeVal: null,
-      selectedItemColorVal: null,
-      unselectedItemColorVal: null,
-      selectedIconThemeVal: null,
-      unselectedIconThemeVal: null,
-      selectedLabelStyleVal: null,
-      unselectedLabelStyleVal: null,
-      selectedFontSizeVal: null,
-      unselectedFontSizeVal: null,
-      showUnselectedLabelsVal: null,
-      showSelectedLabelsVal: null,
-      mouseCursorVal: null,
-      fixedColorVal: null,
-      widgetKeyVal: null,
+      itemsVal: BaseCore<List<BottomNavigationBarItem>>(null, update),
+      onTapVal: BaseCore<ValueChanged<int>>(null, update),
+      currentIndexVal: BaseCore<int>(null, update),
+      elevationVal: BaseCore<double>(null, update),
+      typeVal: BaseCore<BottomNavigationBarType>(null, update),
+      backgroundColorVal: BaseCore<Color>(null, update),
+      iconSizeVal: BaseCore<double>(null, update),
+      selectedItemColorVal: BaseCore<Color>(null, update),
+      unselectedItemColorVal: BaseCore<Color>(null, update),
+      selectedIconThemeVal: BaseCore<IconThemeData>(null, update),
+      unselectedIconThemeVal: BaseCore<IconThemeData>(null, update),
+      selectedLabelStyleVal: BaseCore<TextStyle>(null, update),
+      unselectedLabelStyleVal: BaseCore<TextStyle>(null, update),
+      selectedFontSizeVal: BaseCore<double>(null, update),
+      unselectedFontSizeVal: BaseCore<double>(null, update),
+      showUnselectedLabelsVal: BaseCore<bool>(null, update),
+      showSelectedLabelsVal: BaseCore<bool>(null, update),
+      mouseCursorVal: BaseCore<MouseCursor>(null, update),
+      fixedColorVal: BaseCore<Color>(null, update),
     );
   }
 
@@ -51,7 +50,6 @@ class BottomNavigationBarRender<T> extends StatelessWidget {
     @required this.showSelectedLabelsVal,
     @required this.mouseCursorVal,
     @required this.fixedColorVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -304,19 +302,6 @@ class BottomNavigationBarRender<T> extends StatelessWidget {
     fixedColorVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -343,7 +328,6 @@ class BottomNavigationBarRender<T> extends StatelessWidget {
     this.showSelectedLabelsVal,
     this.mouseCursorVal,
     this.fixedColorVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -431,7 +415,6 @@ class BottomNavigationBarRender<T> extends StatelessWidget {
         'showSelectedLabels': this.showSelectedLabelsVal.toJson(),
         'mouseCursor': this.mouseCursorVal.toJson(),
         'fixedColor': this.fixedColorVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -503,7 +486,6 @@ class BottomNavigationBarRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('showSelectedLabels', this.showSelectedLabels));
       properties.add(DiagnosticsProperty('mouseCursor', this.mouseCursor));
       properties.add(DiagnosticsProperty('fixedColor', this.fixedColor));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

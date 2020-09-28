@@ -8,14 +8,12 @@ class PageTransitionsThemeRender<T> extends StatelessWidget {
 
   factory PageTransitionsThemeRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return PageTransitionsThemeRender(update,
-      buildersVal: null,
-      widgetKeyVal: null,
+      buildersVal: BaseCore<Map<TargetPlatform, PageTransitionsBuilder>>(null, update),
     );
   }
 
   PageTransitionsThemeRender(this._update, {
     @required this.buildersVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -34,19 +32,6 @@ class PageTransitionsThemeRender<T> extends StatelessWidget {
     buildersVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -56,7 +41,6 @@ class PageTransitionsThemeRender<T> extends StatelessWidget {
   @override
   List<Core> get props => [
     this.buildersVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -90,7 +74,6 @@ class PageTransitionsThemeRender<T> extends StatelessWidget {
       'name': 'PageTransitionsTheme',
       'props': {
         'builders': this.buildersVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -126,7 +109,6 @@ class PageTransitionsThemeRender<T> extends StatelessWidget {
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
       properties.add(DiagnosticsProperty('builders', this.builders));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

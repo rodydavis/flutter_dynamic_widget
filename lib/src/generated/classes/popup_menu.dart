@@ -8,29 +8,14 @@ class PopupMenuButtonStateRender<T> extends StatelessWidget {
 
   factory PopupMenuButtonStateRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return PopupMenuButtonStateRender(update,
-      widgetKeyVal: null,
     );
   }
 
   PopupMenuButtonStateRender(this._update, {
-    @required this.widgetKeyVal,
   });
 
   @override
   final VoidCallback _update;
-
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
 
 
   @override
@@ -39,7 +24,6 @@ class PopupMenuButtonStateRender<T> extends StatelessWidget {
 
   @override
   List<Core> get props => [
-    this.widgetKeyVal,
   ];
 
   @override
@@ -66,7 +50,6 @@ class PopupMenuButtonStateRender<T> extends StatelessWidget {
     return {
       'name': 'PopupMenuButtonState',
       'props': {
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -98,7 +81,6 @@ class PopupMenuButtonStateRender<T> extends StatelessWidget {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

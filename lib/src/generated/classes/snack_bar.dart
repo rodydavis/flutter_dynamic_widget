@@ -8,19 +8,18 @@ class SnackBarRender<T> extends StatelessWidget {
 
   factory SnackBarRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return SnackBarRender(update,
-      contentVal: null,
-      backgroundColorVal: null,
-      elevationVal: null,
-      marginVal: null,
-      paddingVal: null,
-      widthVal: null,
-      shapeVal: null,
-      behaviorVal: null,
-      actionVal: null,
-      durationVal: null,
-      animationVal: null,
-      onVisibleVal: null,
-      widgetKeyVal: null,
+      contentVal: BaseCore<Widget>(null, update),
+      backgroundColorVal: BaseCore<Color>(null, update),
+      elevationVal: BaseCore<double>(null, update),
+      marginVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      paddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      widthVal: BaseCore<double>(null, update),
+      shapeVal: BaseCore<ShapeBorder>(null, update),
+      behaviorVal: BaseCore<SnackBarBehavior>(null, update),
+      actionVal: BaseCore<SnackBarAction>(null, update),
+      durationVal: BaseCore<Duration>(null, update),
+      animationVal: BaseCore<Animation<double>>(null, update),
+      onVisibleVal: BaseCore<VoidCallback>(null, update),
     );
   }
 
@@ -37,7 +36,6 @@ class SnackBarRender<T> extends StatelessWidget {
     @required this.durationVal,
     @required this.animationVal,
     @required this.onVisibleVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -199,19 +197,6 @@ class SnackBarRender<T> extends StatelessWidget {
     onVisibleVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -231,7 +216,6 @@ class SnackBarRender<T> extends StatelessWidget {
     this.durationVal,
     this.animationVal,
     this.onVisibleVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -298,7 +282,6 @@ class SnackBarRender<T> extends StatelessWidget {
         'duration': this.durationVal.toJson(),
         'animation': this.animationVal.toJson(),
         'onVisible': this.onVisibleVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -356,7 +339,6 @@ class SnackBarRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('duration', this.duration));
       properties.add(DiagnosticsProperty('animation', this.animation));
       properties.add(DiagnosticsProperty('onVisible', this.onVisible));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

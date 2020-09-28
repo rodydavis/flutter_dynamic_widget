@@ -8,16 +8,14 @@ class VisualDensityRender<T> extends StatelessWidget {
 
   factory VisualDensityRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return VisualDensityRender(update,
-      horizontalVal: null,
-      verticalVal: null,
-      widgetKeyVal: null,
+      horizontalVal: BaseCore<double>(null, update),
+      verticalVal: BaseCore<double>(null, update),
     );
   }
 
   VisualDensityRender(this._update, {
     @required this.horizontalVal,
     @required this.verticalVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -49,19 +47,6 @@ class VisualDensityRender<T> extends StatelessWidget {
     verticalVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -76,7 +61,6 @@ class VisualDensityRender<T> extends StatelessWidget {
   List<Core> get props => [
     this.horizontalVal,
     this.verticalVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -113,7 +97,6 @@ class VisualDensityRender<T> extends StatelessWidget {
       'props': {
         'horizontal': this.horizontalVal.toJson(),
         'vertical': this.verticalVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -151,7 +134,6 @@ class VisualDensityRender<T> extends StatelessWidget {
     super.debugFillProperties(properties);
       properties.add(DiagnosticsProperty('horizontal', this.horizontal));
       properties.add(DiagnosticsProperty('vertical', this.vertical));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

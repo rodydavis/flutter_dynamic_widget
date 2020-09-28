@@ -8,12 +8,11 @@ class FlexibleSpaceBarSettingsRender<T> extends StatelessWidget {
 
   factory FlexibleSpaceBarSettingsRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return FlexibleSpaceBarSettingsRender(update,
-      toolbarOpacityVal: null,
-      minExtentVal: null,
-      maxExtentVal: null,
-      currentExtentVal: null,
-      childVal: null,
-      widgetKeyVal: null,
+      toolbarOpacityVal: BaseCore<double>(null, update),
+      minExtentVal: BaseCore<double>(null, update),
+      maxExtentVal: BaseCore<double>(null, update),
+      currentExtentVal: BaseCore<double>(null, update),
+      childVal: BaseCore<Widget>(null, update),
     );
   }
 
@@ -23,7 +22,6 @@ class FlexibleSpaceBarSettingsRender<T> extends StatelessWidget {
     @required this.maxExtentVal,
     @required this.currentExtentVal,
     @required this.childVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -94,19 +92,6 @@ class FlexibleSpaceBarSettingsRender<T> extends StatelessWidget {
     childVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -119,7 +104,6 @@ class FlexibleSpaceBarSettingsRender<T> extends StatelessWidget {
     this.maxExtentVal,
     this.currentExtentVal,
     this.childVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -165,7 +149,6 @@ class FlexibleSpaceBarSettingsRender<T> extends StatelessWidget {
         'maxExtent': this.maxExtentVal.toJson(),
         'currentExtent': this.currentExtentVal.toJson(),
         'child': this.childVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -209,7 +192,6 @@ class FlexibleSpaceBarSettingsRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('maxExtent', this.maxExtent));
       properties.add(DiagnosticsProperty('currentExtent', this.currentExtent));
       properties.add(DiagnosticsProperty('child', this.child));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

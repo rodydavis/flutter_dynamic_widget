@@ -8,13 +8,12 @@ class TableRowInkWellRender<T> extends StatelessWidget {
 
   factory TableRowInkWellRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return TableRowInkWellRender(update,
-      childVal: null,
-      onTapVal: null,
-      onDoubleTapVal: null,
-      onLongPressVal: null,
-      onHighlightChangedVal: null,
-      overlayColorVal: null,
-      widgetKeyVal: null,
+      childVal: BaseCore<Widget>(null, update),
+      onTapVal: BaseCore<GestureTapCallback>(null, update),
+      onDoubleTapVal: BaseCore<GestureTapCallback>(null, update),
+      onLongPressVal: BaseCore<GestureLongPressCallback>(null, update),
+      onHighlightChangedVal: BaseCore<ValueChanged<bool>>(null, update),
+      overlayColorVal: BaseCore<MaterialStateProperty<Color>>(null, update),
     );
   }
 
@@ -25,7 +24,6 @@ class TableRowInkWellRender<T> extends StatelessWidget {
     @required this.onLongPressVal,
     @required this.onHighlightChangedVal,
     @required this.overlayColorVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -109,19 +107,6 @@ class TableRowInkWellRender<T> extends StatelessWidget {
     overlayColorVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -135,7 +120,6 @@ class TableRowInkWellRender<T> extends StatelessWidget {
     this.onLongPressVal,
     this.onHighlightChangedVal,
     this.overlayColorVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -184,7 +168,6 @@ class TableRowInkWellRender<T> extends StatelessWidget {
         'onLongPress': this.onLongPressVal.toJson(),
         'onHighlightChanged': this.onHighlightChangedVal.toJson(),
         'overlayColor': this.overlayColorVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -230,7 +213,6 @@ class TableRowInkWellRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('onLongPress', this.onLongPress));
       properties.add(DiagnosticsProperty('onHighlightChanged', this.onHighlightChanged));
       properties.add(DiagnosticsProperty('overlayColor', this.overlayColor));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

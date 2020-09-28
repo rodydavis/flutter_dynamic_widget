@@ -8,18 +8,17 @@ class ButtonBarRender<T> extends StatelessWidget {
 
   factory ButtonBarRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return ButtonBarRender(update,
-      alignmentVal: null,
-      mainAxisSizeVal: null,
-      buttonTextThemeVal: null,
-      buttonMinWidthVal: null,
-      buttonHeightVal: null,
-      buttonPaddingVal: null,
-      buttonAlignedDropdownVal: null,
-      layoutBehaviorVal: null,
-      overflowDirectionVal: null,
-      overflowButtonSpacingVal: null,
-      childrenVal: null,
-      widgetKeyVal: null,
+      alignmentVal: BaseCore<MainAxisAlignment>(null, update),
+      mainAxisSizeVal: BaseCore<MainAxisSize>(null, update),
+      buttonTextThemeVal: BaseCore<ButtonTextTheme>(null, update),
+      buttonMinWidthVal: BaseCore<double>(null, update),
+      buttonHeightVal: BaseCore<double>(null, update),
+      buttonPaddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      buttonAlignedDropdownVal: BaseCore<bool>(null, update),
+      layoutBehaviorVal: BaseCore<ButtonBarLayoutBehavior>(null, update),
+      overflowDirectionVal: BaseCore<VerticalDirection>(null, update),
+      overflowButtonSpacingVal: BaseCore<double>(null, update),
+      childrenVal: BaseCore<List<Widget>>(null, update),
     );
   }
 
@@ -35,7 +34,6 @@ class ButtonBarRender<T> extends StatelessWidget {
     @required this.overflowDirectionVal,
     @required this.overflowButtonSpacingVal,
     @required this.childrenVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -184,19 +182,6 @@ class ButtonBarRender<T> extends StatelessWidget {
     childrenVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -215,7 +200,6 @@ class ButtonBarRender<T> extends StatelessWidget {
     this.overflowDirectionVal,
     this.overflowButtonSpacingVal,
     this.childrenVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -279,7 +263,6 @@ class ButtonBarRender<T> extends StatelessWidget {
         'overflowDirection': this.overflowDirectionVal.toJson(),
         'overflowButtonSpacing': this.overflowButtonSpacingVal.toJson(),
         'children': this.childrenVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -335,7 +318,6 @@ class ButtonBarRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('overflowDirection', this.overflowDirection));
       properties.add(DiagnosticsProperty('overflowButtonSpacing', this.overflowButtonSpacing));
       properties.add(DiagnosticsProperty('children', this.children));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

@@ -8,20 +8,19 @@ class RadioListTileRender<T> extends StatelessWidget {
 
   factory RadioListTileRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return RadioListTileRender(update,
-      valueVal: null,
-      groupValueVal: null,
-      onChangedVal: null,
-      toggleableVal: null,
-      activeColorVal: null,
-      titleVal: null,
-      subtitleVal: null,
-      secondaryVal: null,
-      isThreeLineVal: null,
-      denseVal: null,
-      selectedVal: null,
-      controlAffinityVal: null,
-      autofocusVal: null,
-      widgetKeyVal: null,
+      valueVal: BaseCore<T>(null, update),
+      groupValueVal: BaseCore<T>(null, update),
+      onChangedVal: BaseCore<ValueChanged<T>>(null, update),
+      toggleableVal: BaseCore<bool>(null, update),
+      activeColorVal: BaseCore<Color>(null, update),
+      titleVal: BaseCore<Widget>(null, update),
+      subtitleVal: BaseCore<Widget>(null, update),
+      secondaryVal: BaseCore<Widget>(null, update),
+      isThreeLineVal: BaseCore<bool>(null, update),
+      denseVal: BaseCore<bool>(null, update),
+      selectedVal: BaseCore<bool>(null, update),
+      controlAffinityVal: BaseCore<ListTileControlAffinity>(null, update),
+      autofocusVal: BaseCore<bool>(null, update),
     );
   }
 
@@ -39,7 +38,6 @@ class RadioListTileRender<T> extends StatelessWidget {
     @required this.selectedVal,
     @required this.controlAffinityVal,
     @required this.autofocusVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -214,19 +212,6 @@ class RadioListTileRender<T> extends StatelessWidget {
     autofocusVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -247,7 +232,6 @@ class RadioListTileRender<T> extends StatelessWidget {
     this.selectedVal,
     this.controlAffinityVal,
     this.autofocusVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -317,7 +301,6 @@ class RadioListTileRender<T> extends StatelessWidget {
         'selected': this.selectedVal.toJson(),
         'controlAffinity': this.controlAffinityVal.toJson(),
         'autofocus': this.autofocusVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -377,7 +360,6 @@ class RadioListTileRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('selected', this.selected));
       properties.add(DiagnosticsProperty('controlAffinity', this.controlAffinity));
       properties.add(DiagnosticsProperty('autofocus', this.autofocus));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

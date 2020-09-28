@@ -8,16 +8,15 @@ class CardRender<T> extends StatelessWidget {
 
   factory CardRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return CardRender(update,
-      colorVal: null,
-      shadowColorVal: null,
-      elevationVal: null,
-      shapeVal: null,
-      borderOnForegroundVal: null,
-      clipBehaviorVal: null,
-      marginVal: null,
-      semanticContainerVal: null,
-      childVal: null,
-      widgetKeyVal: null,
+      colorVal: BaseCore<Color>(null, update),
+      shadowColorVal: BaseCore<Color>(null, update),
+      elevationVal: BaseCore<double>(null, update),
+      shapeVal: BaseCore<ShapeBorder>(null, update),
+      borderOnForegroundVal: BaseCore<bool>(null, update),
+      clipBehaviorVal: BaseCore<Clip>(null, update),
+      marginVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      semanticContainerVal: BaseCore<bool>(null, update),
+      childVal: BaseCore<Widget>(null, update),
     );
   }
 
@@ -31,7 +30,6 @@ class CardRender<T> extends StatelessWidget {
     @required this.marginVal,
     @required this.semanticContainerVal,
     @required this.childVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -154,19 +152,6 @@ class CardRender<T> extends StatelessWidget {
     childVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -184,7 +169,6 @@ class CardRender<T> extends StatelessWidget {
     this.marginVal,
     this.semanticContainerVal,
     this.childVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -242,7 +226,6 @@ class CardRender<T> extends StatelessWidget {
         'margin': this.marginVal.toJson(),
         'semanticContainer': this.semanticContainerVal.toJson(),
         'child': this.childVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -294,7 +277,6 @@ class CardRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('margin', this.margin));
       properties.add(DiagnosticsProperty('semanticContainer', this.semanticContainer));
       properties.add(DiagnosticsProperty('child', this.child));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

@@ -8,37 +8,36 @@ class RaisedButtonRender<T> extends StatelessWidget {
 
   factory RaisedButtonRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return RaisedButtonRender(update,
-      onPressedVal: null,
-      onLongPressVal: null,
-      onHighlightChangedVal: null,
-      mouseCursorVal: null,
-      textThemeVal: null,
-      textColorVal: null,
-      disabledTextColorVal: null,
-      colorVal: null,
-      disabledColorVal: null,
-      focusColorVal: null,
-      hoverColorVal: null,
-      highlightColorVal: null,
-      splashColorVal: null,
-      colorBrightnessVal: null,
-      elevationVal: null,
-      focusElevationVal: null,
-      hoverElevationVal: null,
-      highlightElevationVal: null,
-      disabledElevationVal: null,
-      paddingVal: null,
-      visualDensityVal: null,
-      shapeVal: null,
-      clipBehaviorVal: null,
-      focusNodeVal: null,
-      autofocusVal: null,
-      materialTapTargetSizeVal: null,
-      animationDurationVal: null,
-      childVal: null,
-      iconVal: null,
-      labelVal: null,
-      widgetKeyVal: null,
+      onPressedVal: BaseCore<VoidCallback>(null, update),
+      onLongPressVal: BaseCore<VoidCallback>(null, update),
+      onHighlightChangedVal: BaseCore<ValueChanged<bool>>(null, update),
+      mouseCursorVal: BaseCore<MouseCursor>(null, update),
+      textThemeVal: BaseCore<ButtonTextTheme>(null, update),
+      textColorVal: BaseCore<Color>(null, update),
+      disabledTextColorVal: BaseCore<Color>(null, update),
+      colorVal: BaseCore<Color>(null, update),
+      disabledColorVal: BaseCore<Color>(null, update),
+      focusColorVal: BaseCore<Color>(null, update),
+      hoverColorVal: BaseCore<Color>(null, update),
+      highlightColorVal: BaseCore<Color>(null, update),
+      splashColorVal: BaseCore<Color>(null, update),
+      colorBrightnessVal: BaseCore<Brightness>(null, update),
+      elevationVal: BaseCore<double>(null, update),
+      focusElevationVal: BaseCore<double>(null, update),
+      hoverElevationVal: BaseCore<double>(null, update),
+      highlightElevationVal: BaseCore<double>(null, update),
+      disabledElevationVal: BaseCore<double>(null, update),
+      paddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      visualDensityVal: BaseCore<VisualDensity>(null, update),
+      shapeVal: BaseCore<ShapeBorder>(null, update),
+      clipBehaviorVal: BaseCore<Clip>(null, update),
+      focusNodeVal: BaseCore<FocusNode>(null, update),
+      autofocusVal: BaseCore<bool>(null, update),
+      materialTapTargetSizeVal: BaseCore<MaterialTapTargetSize>(null, update),
+      animationDurationVal: BaseCore<Duration>(null, update),
+      childVal: BaseCore<Widget>(null, update),
+      iconVal: BaseCore<Widget>(null, update),
+      labelVal: BaseCore<Widget>(null, update),
     );
   }
 
@@ -73,7 +72,6 @@ class RaisedButtonRender<T> extends StatelessWidget {
     @required this.childVal,
     @required this.iconVal,
     @required this.labelVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -469,19 +467,6 @@ class RaisedButtonRender<T> extends StatelessWidget {
     labelVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -519,7 +504,6 @@ class RaisedButtonRender<T> extends StatelessWidget {
     this.childVal,
     this.iconVal,
     this.labelVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -692,7 +676,6 @@ class RaisedButtonRender<T> extends StatelessWidget {
         'child': this.childVal.toJson(),
         'icon': this.iconVal.toJson(),
         'label': this.labelVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -812,7 +795,6 @@ class RaisedButtonRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('child', this.child));
       properties.add(DiagnosticsProperty('icon', this.icon));
       properties.add(DiagnosticsProperty('label', this.label));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

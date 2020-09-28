@@ -8,16 +8,15 @@ class ElevatedButtonRender<T> extends StatelessWidget {
 
   factory ElevatedButtonRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return ElevatedButtonRender(update,
-      onPressedVal: null,
-      onLongPressVal: null,
-      styleVal: null,
-      focusNodeVal: null,
-      autofocusVal: null,
-      clipBehaviorVal: null,
-      childVal: null,
-      iconVal: null,
-      labelVal: null,
-      widgetKeyVal: null,
+      onPressedVal: BaseCore<VoidCallback>(null, update),
+      onLongPressVal: BaseCore<VoidCallback>(null, update),
+      styleVal: BaseCore<ButtonStyle>(null, update),
+      focusNodeVal: BaseCore<FocusNode>(null, update),
+      autofocusVal: BaseCore<bool>(null, update),
+      clipBehaviorVal: BaseCore<Clip>(null, update),
+      childVal: BaseCore<Widget>(null, update),
+      iconVal: BaseCore<Widget>(null, update),
+      labelVal: BaseCore<Widget>(null, update),
     );
   }
 
@@ -31,7 +30,6 @@ class ElevatedButtonRender<T> extends StatelessWidget {
     @required this.childVal,
     @required this.iconVal,
     @required this.labelVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -154,19 +152,6 @@ class ElevatedButtonRender<T> extends StatelessWidget {
     labelVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -183,7 +168,6 @@ class ElevatedButtonRender<T> extends StatelessWidget {
     this.childVal,
     this.iconVal,
     this.labelVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -257,7 +241,6 @@ class ElevatedButtonRender<T> extends StatelessWidget {
         'child': this.childVal.toJson(),
         'icon': this.iconVal.toJson(),
         'label': this.labelVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -317,7 +300,6 @@ class ElevatedButtonRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('child', this.child));
       properties.add(DiagnosticsProperty('icon', this.icon));
       properties.add(DiagnosticsProperty('label', this.label));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

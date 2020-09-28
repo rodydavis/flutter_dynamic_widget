@@ -8,32 +8,31 @@ class InputDecorationThemeRender<T> extends StatelessWidget {
 
   factory InputDecorationThemeRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return InputDecorationThemeRender(update,
-      labelStyleVal: null,
-      helperStyleVal: null,
-      helperMaxLinesVal: null,
-      hintStyleVal: null,
-      errorStyleVal: null,
-      errorMaxLinesVal: null,
-      hasFloatingPlaceholderVal: null,
-      floatingLabelBehaviorVal: null,
-      isDenseVal: null,
-      contentPaddingVal: null,
-      isCollapsedVal: null,
-      prefixStyleVal: null,
-      suffixStyleVal: null,
-      counterStyleVal: null,
-      filledVal: null,
-      fillColorVal: null,
-      focusColorVal: null,
-      hoverColorVal: null,
-      errorBorderVal: null,
-      focusedBorderVal: null,
-      focusedErrorBorderVal: null,
-      disabledBorderVal: null,
-      enabledBorderVal: null,
-      borderVal: null,
-      alignLabelWithHintVal: null,
-      widgetKeyVal: null,
+      labelStyleVal: BaseCore<TextStyle>(null, update),
+      helperStyleVal: BaseCore<TextStyle>(null, update),
+      helperMaxLinesVal: BaseCore<int>(null, update),
+      hintStyleVal: BaseCore<TextStyle>(null, update),
+      errorStyleVal: BaseCore<TextStyle>(null, update),
+      errorMaxLinesVal: BaseCore<int>(null, update),
+      hasFloatingPlaceholderVal: BaseCore<bool>(null, update),
+      floatingLabelBehaviorVal: BaseCore<FloatingLabelBehavior>(null, update),
+      isDenseVal: BaseCore<bool>(null, update),
+      contentPaddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      isCollapsedVal: BaseCore<bool>(null, update),
+      prefixStyleVal: BaseCore<TextStyle>(null, update),
+      suffixStyleVal: BaseCore<TextStyle>(null, update),
+      counterStyleVal: BaseCore<TextStyle>(null, update),
+      filledVal: BaseCore<bool>(null, update),
+      fillColorVal: BaseCore<Color>(null, update),
+      focusColorVal: BaseCore<Color>(null, update),
+      hoverColorVal: BaseCore<Color>(null, update),
+      errorBorderVal: BaseCore<InputBorder>(null, update),
+      focusedBorderVal: BaseCore<InputBorder>(null, update),
+      focusedErrorBorderVal: BaseCore<InputBorder>(null, update),
+      disabledBorderVal: BaseCore<InputBorder>(null, update),
+      enabledBorderVal: BaseCore<InputBorder>(null, update),
+      borderVal: BaseCore<InputBorder>(null, update),
+      alignLabelWithHintVal: BaseCore<bool>(null, update),
     );
   }
 
@@ -63,7 +62,6 @@ class InputDecorationThemeRender<T> extends StatelessWidget {
     @required this.enabledBorderVal,
     @required this.borderVal,
     @required this.alignLabelWithHintVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -394,19 +392,6 @@ class InputDecorationThemeRender<T> extends StatelessWidget {
     alignLabelWithHintVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -439,7 +424,6 @@ class InputDecorationThemeRender<T> extends StatelessWidget {
     this.enabledBorderVal,
     this.borderVal,
     this.alignLabelWithHintVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -545,7 +529,6 @@ class InputDecorationThemeRender<T> extends StatelessWidget {
         'enabledBorder': this.enabledBorderVal.toJson(),
         'border': this.borderVal.toJson(),
         'alignLabelWithHint': this.alignLabelWithHintVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -629,7 +612,6 @@ class InputDecorationThemeRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('enabledBorder', this.enabledBorder));
       properties.add(DiagnosticsProperty('border', this.border));
       properties.add(DiagnosticsProperty('alignLabelWithHint', this.alignLabelWithHint));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

@@ -8,13 +8,12 @@ class DrawerHeaderRender<T> extends StatelessWidget {
 
   factory DrawerHeaderRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return DrawerHeaderRender(update,
-      decorationVal: null,
-      paddingVal: null,
-      marginVal: null,
-      durationVal: null,
-      curveVal: null,
-      childVal: null,
-      widgetKeyVal: null,
+      decorationVal: BaseCore<Decoration>(null, update),
+      paddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      marginVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      durationVal: BaseCore<Duration>(null, update),
+      curveVal: BaseCore<Curve>(null, update),
+      childVal: BaseCore<Widget>(null, update),
     );
   }
 
@@ -25,7 +24,6 @@ class DrawerHeaderRender<T> extends StatelessWidget {
     @required this.durationVal,
     @required this.curveVal,
     @required this.childVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -109,19 +107,6 @@ class DrawerHeaderRender<T> extends StatelessWidget {
     childVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -135,7 +120,6 @@ class DrawerHeaderRender<T> extends StatelessWidget {
     this.durationVal,
     this.curveVal,
     this.childVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -184,7 +168,6 @@ class DrawerHeaderRender<T> extends StatelessWidget {
         'duration': this.durationVal.toJson(),
         'curve': this.curveVal.toJson(),
         'child': this.childVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -230,7 +213,6 @@ class DrawerHeaderRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('duration', this.duration));
       properties.add(DiagnosticsProperty('curve', this.curve));
       properties.add(DiagnosticsProperty('child', this.child));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

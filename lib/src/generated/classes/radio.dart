@@ -8,19 +8,18 @@ class RadioRender<T> extends StatelessWidget {
 
   factory RadioRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return RadioRender(update,
-      valueVal: null,
-      groupValueVal: null,
-      onChangedVal: null,
-      mouseCursorVal: null,
-      toggleableVal: null,
-      activeColorVal: null,
-      materialTapTargetSizeVal: null,
-      visualDensityVal: null,
-      focusColorVal: null,
-      hoverColorVal: null,
-      focusNodeVal: null,
-      autofocusVal: null,
-      widgetKeyVal: null,
+      valueVal: BaseCore<T>(null, update),
+      groupValueVal: BaseCore<T>(null, update),
+      onChangedVal: BaseCore<ValueChanged<T>>(null, update),
+      mouseCursorVal: BaseCore<MouseCursor>(null, update),
+      toggleableVal: BaseCore<bool>(null, update),
+      activeColorVal: BaseCore<Color>(null, update),
+      materialTapTargetSizeVal: BaseCore<MaterialTapTargetSize>(null, update),
+      visualDensityVal: BaseCore<VisualDensity>(null, update),
+      focusColorVal: BaseCore<Color>(null, update),
+      hoverColorVal: BaseCore<Color>(null, update),
+      focusNodeVal: BaseCore<FocusNode>(null, update),
+      autofocusVal: BaseCore<bool>(null, update),
     );
   }
 
@@ -37,7 +36,6 @@ class RadioRender<T> extends StatelessWidget {
     @required this.hoverColorVal,
     @required this.focusNodeVal,
     @required this.autofocusVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -199,19 +197,6 @@ class RadioRender<T> extends StatelessWidget {
     autofocusVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -231,7 +216,6 @@ class RadioRender<T> extends StatelessWidget {
     this.hoverColorVal,
     this.focusNodeVal,
     this.autofocusVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -298,7 +282,6 @@ class RadioRender<T> extends StatelessWidget {
         'hoverColor': this.hoverColorVal.toJson(),
         'focusNode': this.focusNodeVal.toJson(),
         'autofocus': this.autofocusVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -356,7 +339,6 @@ class RadioRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('hoverColor', this.hoverColor));
       properties.add(DiagnosticsProperty('focusNode', this.focusNode));
       properties.add(DiagnosticsProperty('autofocus', this.autofocus));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

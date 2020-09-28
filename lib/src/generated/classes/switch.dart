@@ -8,24 +8,23 @@ class SwitchRender<T> extends StatelessWidget {
 
   factory SwitchRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return SwitchRender(update,
-      valueVal: null,
-      onChangedVal: null,
-      activeColorVal: null,
-      activeTrackColorVal: null,
-      inactiveThumbColorVal: null,
-      inactiveTrackColorVal: null,
-      activeThumbImageVal: null,
-      onActiveThumbImageErrorVal: null,
-      inactiveThumbImageVal: null,
-      onInactiveThumbImageErrorVal: null,
-      materialTapTargetSizeVal: null,
-      dragStartBehaviorVal: null,
-      mouseCursorVal: null,
-      focusColorVal: null,
-      hoverColorVal: null,
-      focusNodeVal: null,
-      autofocusVal: null,
-      widgetKeyVal: null,
+      valueVal: BaseCore<bool>(null, update),
+      onChangedVal: BaseCore<ValueChanged<bool>>(null, update),
+      activeColorVal: BaseCore<Color>(null, update),
+      activeTrackColorVal: BaseCore<Color>(null, update),
+      inactiveThumbColorVal: BaseCore<Color>(null, update),
+      inactiveTrackColorVal: BaseCore<Color>(null, update),
+      activeThumbImageVal: BaseCore<ImageProvider>(null, update),
+      onActiveThumbImageErrorVal: BaseCore<ImageErrorListener>(null, update),
+      inactiveThumbImageVal: BaseCore<ImageProvider>(null, update),
+      onInactiveThumbImageErrorVal: BaseCore<ImageErrorListener>(null, update),
+      materialTapTargetSizeVal: BaseCore<MaterialTapTargetSize>(null, update),
+      dragStartBehaviorVal: BaseCore<DragStartBehavior>(null, update),
+      mouseCursorVal: BaseCore<MouseCursor>(null, update),
+      focusColorVal: BaseCore<Color>(null, update),
+      hoverColorVal: BaseCore<Color>(null, update),
+      focusNodeVal: BaseCore<FocusNode>(null, update),
+      autofocusVal: BaseCore<bool>(null, update),
     );
   }
 
@@ -47,7 +46,6 @@ class SwitchRender<T> extends StatelessWidget {
     @required this.hoverColorVal,
     @required this.focusNodeVal,
     @required this.autofocusVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -274,19 +272,6 @@ class SwitchRender<T> extends StatelessWidget {
     autofocusVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -311,7 +296,6 @@ class SwitchRender<T> extends StatelessWidget {
     this.hoverColorVal,
     this.focusNodeVal,
     this.autofocusVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -431,7 +415,6 @@ class SwitchRender<T> extends StatelessWidget {
         'hoverColor': this.hoverColorVal.toJson(),
         'focusNode': this.focusNodeVal.toJson(),
         'autofocus': this.autofocusVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -518,7 +501,6 @@ class SwitchRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('hoverColor', this.hoverColor));
       properties.add(DiagnosticsProperty('focusNode', this.focusNode));
       properties.add(DiagnosticsProperty('autofocus', this.autofocus));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

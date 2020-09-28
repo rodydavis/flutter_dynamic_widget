@@ -8,10 +8,9 @@ class BottomAppBarThemeRender<T> extends StatelessWidget {
 
   factory BottomAppBarThemeRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return BottomAppBarThemeRender(update,
-      colorVal: null,
-      elevationVal: null,
-      shapeVal: null,
-      widgetKeyVal: null,
+      colorVal: BaseCore<Color>(null, update),
+      elevationVal: BaseCore<double>(null, update),
+      shapeVal: BaseCore<NotchedShape>(null, update),
     );
   }
 
@@ -19,7 +18,6 @@ class BottomAppBarThemeRender<T> extends StatelessWidget {
     @required this.colorVal,
     @required this.elevationVal,
     @required this.shapeVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -64,19 +62,6 @@ class BottomAppBarThemeRender<T> extends StatelessWidget {
     shapeVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -87,7 +72,6 @@ class BottomAppBarThemeRender<T> extends StatelessWidget {
     this.colorVal,
     this.elevationVal,
     this.shapeVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -127,7 +111,6 @@ class BottomAppBarThemeRender<T> extends StatelessWidget {
         'color': this.colorVal.toJson(),
         'elevation': this.elevationVal.toJson(),
         'shape': this.shapeVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -167,7 +150,6 @@ class BottomAppBarThemeRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('color', this.color));
       properties.add(DiagnosticsProperty('elevation', this.elevation));
       properties.add(DiagnosticsProperty('shape', this.shape));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

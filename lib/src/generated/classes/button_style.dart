@@ -8,22 +8,21 @@ class ButtonStyleRender<T> extends StatelessWidget {
 
   factory ButtonStyleRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return ButtonStyleRender(update,
-      textStyleVal: null,
-      backgroundColorVal: null,
-      foregroundColorVal: null,
-      overlayColorVal: null,
-      shadowColorVal: null,
-      elevationVal: null,
-      paddingVal: null,
-      minimumSizeVal: null,
-      sideVal: null,
-      shapeVal: null,
-      mouseCursorVal: null,
-      visualDensityVal: null,
-      tapTargetSizeVal: null,
-      animationDurationVal: null,
-      enableFeedbackVal: null,
-      widgetKeyVal: null,
+      textStyleVal: BaseCore<MaterialStateProperty<TextStyle>>(null, update),
+      backgroundColorVal: BaseCore<MaterialStateProperty<Color>>(null, update),
+      foregroundColorVal: BaseCore<MaterialStateProperty<Color>>(null, update),
+      overlayColorVal: BaseCore<MaterialStateProperty<Color>>(null, update),
+      shadowColorVal: BaseCore<MaterialStateProperty<Color>>(null, update),
+      elevationVal: BaseCore<MaterialStateProperty<double>>(null, update),
+      paddingVal: BaseCore<MaterialStateProperty<EdgeInsetsGeometry>>(null, update),
+      minimumSizeVal: BaseCore<MaterialStateProperty<Size>>(null, update),
+      sideVal: BaseCore<MaterialStateProperty<BorderSide>>(null, update),
+      shapeVal: BaseCore<MaterialStateProperty<OutlinedBorder>>(null, update),
+      mouseCursorVal: BaseCore<MaterialStateProperty<MouseCursor>>(null, update),
+      visualDensityVal: BaseCore<VisualDensity>(null, update),
+      tapTargetSizeVal: BaseCore<MaterialTapTargetSize>(null, update),
+      animationDurationVal: BaseCore<Duration>(null, update),
+      enableFeedbackVal: BaseCore<bool>(null, update),
     );
   }
 
@@ -43,7 +42,6 @@ class ButtonStyleRender<T> extends StatelessWidget {
     @required this.tapTargetSizeVal,
     @required this.animationDurationVal,
     @required this.enableFeedbackVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -244,19 +242,6 @@ class ButtonStyleRender<T> extends StatelessWidget {
     enableFeedbackVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -279,7 +264,6 @@ class ButtonStyleRender<T> extends StatelessWidget {
     this.tapTargetSizeVal,
     this.animationDurationVal,
     this.enableFeedbackVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -355,7 +339,6 @@ class ButtonStyleRender<T> extends StatelessWidget {
         'tapTargetSize': this.tapTargetSizeVal.toJson(),
         'animationDuration': this.animationDurationVal.toJson(),
         'enableFeedback': this.enableFeedbackVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -419,7 +402,6 @@ class ButtonStyleRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('tapTargetSize', this.tapTargetSize));
       properties.add(DiagnosticsProperty('animationDuration', this.animationDuration));
       properties.add(DiagnosticsProperty('enableFeedback', this.enableFeedback));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

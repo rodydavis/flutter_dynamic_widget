@@ -8,19 +8,18 @@ class CheckboxRender<T> extends StatelessWidget {
 
   factory CheckboxRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return CheckboxRender(update,
-      valueVal: null,
-      onChangedVal: null,
-      mouseCursorVal: null,
-      activeColorVal: null,
-      checkColorVal: null,
-      tristateVal: null,
-      materialTapTargetSizeVal: null,
-      visualDensityVal: null,
-      focusColorVal: null,
-      hoverColorVal: null,
-      focusNodeVal: null,
-      autofocusVal: null,
-      widgetKeyVal: null,
+      valueVal: BaseCore<bool>(null, update),
+      onChangedVal: BaseCore<ValueChanged<bool>>(null, update),
+      mouseCursorVal: BaseCore<MouseCursor>(null, update),
+      activeColorVal: BaseCore<Color>(null, update),
+      checkColorVal: BaseCore<Color>(null, update),
+      tristateVal: BaseCore<bool>(null, update),
+      materialTapTargetSizeVal: BaseCore<MaterialTapTargetSize>(null, update),
+      visualDensityVal: BaseCore<VisualDensity>(null, update),
+      focusColorVal: BaseCore<Color>(null, update),
+      hoverColorVal: BaseCore<Color>(null, update),
+      focusNodeVal: BaseCore<FocusNode>(null, update),
+      autofocusVal: BaseCore<bool>(null, update),
     );
   }
 
@@ -37,7 +36,6 @@ class CheckboxRender<T> extends StatelessWidget {
     @required this.hoverColorVal,
     @required this.focusNodeVal,
     @required this.autofocusVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -199,19 +197,6 @@ class CheckboxRender<T> extends StatelessWidget {
     autofocusVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -232,7 +217,6 @@ class CheckboxRender<T> extends StatelessWidget {
     this.hoverColorVal,
     this.focusNodeVal,
     this.autofocusVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -299,7 +283,6 @@ class CheckboxRender<T> extends StatelessWidget {
         'hoverColor': this.hoverColorVal.toJson(),
         'focusNode': this.focusNodeVal.toJson(),
         'autofocus': this.autofocusVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -357,7 +340,6 @@ class CheckboxRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('hoverColor', this.hoverColor));
       properties.add(DiagnosticsProperty('focusNode', this.focusNode));
       properties.add(DiagnosticsProperty('autofocus', this.autofocus));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

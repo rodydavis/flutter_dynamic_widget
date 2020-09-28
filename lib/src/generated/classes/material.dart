@@ -8,16 +8,14 @@ class ShapeBorderTweenRender<T> extends StatelessWidget {
 
   factory ShapeBorderTweenRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return ShapeBorderTweenRender(update,
-      beginVal: null,
-      endVal: null,
-      widgetKeyVal: null,
+      beginVal: BaseCore<ShapeBorder>(null, update),
+      endVal: BaseCore<ShapeBorder>(null, update),
     );
   }
 
   ShapeBorderTweenRender(this._update, {
     @required this.beginVal,
     @required this.endVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -49,19 +47,6 @@ class ShapeBorderTweenRender<T> extends StatelessWidget {
     endVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -71,7 +56,6 @@ class ShapeBorderTweenRender<T> extends StatelessWidget {
   List<Core> get props => [
     this.beginVal,
     this.endVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -108,7 +92,6 @@ class ShapeBorderTweenRender<T> extends StatelessWidget {
       'props': {
         'begin': this.beginVal.toJson(),
         'end': this.endVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -146,7 +129,6 @@ class ShapeBorderTweenRender<T> extends StatelessWidget {
     super.debugFillProperties(properties);
       properties.add(DiagnosticsProperty('begin', this.begin));
       properties.add(DiagnosticsProperty('end', this.end));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

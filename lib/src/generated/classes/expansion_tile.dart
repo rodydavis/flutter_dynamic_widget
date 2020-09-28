@@ -8,20 +8,19 @@ class ExpansionTileRender<T> extends StatelessWidget {
 
   factory ExpansionTileRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return ExpansionTileRender(update,
-      leadingVal: null,
-      titleVal: null,
-      subtitleVal: null,
-      onExpansionChangedVal: null,
-      childrenVal: null,
-      backgroundColorVal: null,
-      trailingVal: null,
-      initiallyExpandedVal: null,
-      maintainStateVal: null,
-      tilePaddingVal: null,
-      expandedAlignmentVal: null,
-      expandedCrossAxisAlignmentVal: null,
-      childrenPaddingVal: null,
-      widgetKeyVal: null,
+      leadingVal: BaseCore<Widget>(null, update),
+      titleVal: BaseCore<Widget>(null, update),
+      subtitleVal: BaseCore<Widget>(null, update),
+      onExpansionChangedVal: BaseCore<ValueChanged<bool>>(null, update),
+      childrenVal: BaseCore<List<Widget>>(null, update),
+      backgroundColorVal: BaseCore<Color>(null, update),
+      trailingVal: BaseCore<Widget>(null, update),
+      initiallyExpandedVal: BaseCore<bool>(null, update),
+      maintainStateVal: BaseCore<bool>(null, update),
+      tilePaddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      expandedAlignmentVal: BaseCore<Alignment>(null, update),
+      expandedCrossAxisAlignmentVal: BaseCore<CrossAxisAlignment>(null, update),
+      childrenPaddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
     );
   }
 
@@ -39,7 +38,6 @@ class ExpansionTileRender<T> extends StatelessWidget {
     @required this.expandedAlignmentVal,
     @required this.expandedCrossAxisAlignmentVal,
     @required this.childrenPaddingVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -214,19 +212,6 @@ class ExpansionTileRender<T> extends StatelessWidget {
     childrenPaddingVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -247,7 +232,6 @@ class ExpansionTileRender<T> extends StatelessWidget {
     this.expandedAlignmentVal,
     this.expandedCrossAxisAlignmentVal,
     this.childrenPaddingVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -317,7 +301,6 @@ class ExpansionTileRender<T> extends StatelessWidget {
         'expandedAlignment': this.expandedAlignmentVal.toJson(),
         'expandedCrossAxisAlignment': this.expandedCrossAxisAlignmentVal.toJson(),
         'childrenPadding': this.childrenPaddingVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -377,7 +360,6 @@ class ExpansionTileRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('expandedAlignment', this.expandedAlignment));
       properties.add(DiagnosticsProperty('expandedCrossAxisAlignment', this.expandedCrossAxisAlignment));
       properties.add(DiagnosticsProperty('childrenPadding', this.childrenPadding));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

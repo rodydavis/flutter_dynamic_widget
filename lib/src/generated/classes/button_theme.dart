@@ -8,22 +8,21 @@ class ButtonThemeDataRender<T> extends StatelessWidget {
 
   factory ButtonThemeDataRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return ButtonThemeDataRender(update,
-      minWidthVal: null,
-      heightVal: null,
-      textThemeVal: null,
-      layoutBehaviorVal: null,
-      alignedDropdownVal: null,
-      colorSchemeVal: null,
-      paddingVal: null,
-      shapeVal: null,
-      buttonColorVal: null,
-      disabledColorVal: null,
-      focusColorVal: null,
-      hoverColorVal: null,
-      highlightColorVal: null,
-      splashColorVal: null,
-      materialTapTargetSizeVal: null,
-      widgetKeyVal: null,
+      minWidthVal: BaseCore<double>(null, update),
+      heightVal: BaseCore<double>(null, update),
+      textThemeVal: BaseCore<ButtonTextTheme>(null, update),
+      layoutBehaviorVal: BaseCore<ButtonBarLayoutBehavior>(null, update),
+      alignedDropdownVal: BaseCore<bool>(null, update),
+      colorSchemeVal: BaseCore<ColorScheme>(null, update),
+      paddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      shapeVal: BaseCore<ShapeBorder>(null, update),
+      buttonColorVal: BaseCore<Color>(null, update),
+      disabledColorVal: BaseCore<Color>(null, update),
+      focusColorVal: BaseCore<Color>(null, update),
+      hoverColorVal: BaseCore<Color>(null, update),
+      highlightColorVal: BaseCore<Color>(null, update),
+      splashColorVal: BaseCore<Color>(null, update),
+      materialTapTargetSizeVal: BaseCore<MaterialTapTargetSize>(null, update),
     );
   }
 
@@ -43,7 +42,6 @@ class ButtonThemeDataRender<T> extends StatelessWidget {
     @required this.highlightColorVal,
     @required this.splashColorVal,
     @required this.materialTapTargetSizeVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -244,19 +242,6 @@ class ButtonThemeDataRender<T> extends StatelessWidget {
     materialTapTargetSizeVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -279,7 +264,6 @@ class ButtonThemeDataRender<T> extends StatelessWidget {
     this.highlightColorVal,
     this.splashColorVal,
     this.materialTapTargetSizeVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -355,7 +339,6 @@ class ButtonThemeDataRender<T> extends StatelessWidget {
         'highlightColor': this.highlightColorVal.toJson(),
         'splashColor': this.splashColorVal.toJson(),
         'materialTapTargetSize': this.materialTapTargetSizeVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -419,7 +402,6 @@ class ButtonThemeDataRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('highlightColor', this.highlightColor));
       properties.add(DiagnosticsProperty('splashColor', this.splashColor));
       properties.add(DiagnosticsProperty('materialTapTargetSize', this.materialTapTargetSize));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

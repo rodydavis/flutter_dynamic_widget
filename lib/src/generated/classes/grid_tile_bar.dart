@@ -8,12 +8,11 @@ class GridTileBarRender<T> extends StatelessWidget {
 
   factory GridTileBarRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return GridTileBarRender(update,
-      backgroundColorVal: null,
-      leadingVal: null,
-      titleVal: null,
-      subtitleVal: null,
-      trailingVal: null,
-      widgetKeyVal: null,
+      backgroundColorVal: BaseCore<Color>(null, update),
+      leadingVal: BaseCore<Widget>(null, update),
+      titleVal: BaseCore<Widget>(null, update),
+      subtitleVal: BaseCore<Widget>(null, update),
+      trailingVal: BaseCore<Widget>(null, update),
     );
   }
 
@@ -23,7 +22,6 @@ class GridTileBarRender<T> extends StatelessWidget {
     @required this.titleVal,
     @required this.subtitleVal,
     @required this.trailingVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -94,19 +92,6 @@ class GridTileBarRender<T> extends StatelessWidget {
     trailingVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -119,7 +104,6 @@ class GridTileBarRender<T> extends StatelessWidget {
     this.titleVal,
     this.subtitleVal,
     this.trailingVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -165,7 +149,6 @@ class GridTileBarRender<T> extends StatelessWidget {
         'title': this.titleVal.toJson(),
         'subtitle': this.subtitleVal.toJson(),
         'trailing': this.trailingVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -209,7 +192,6 @@ class GridTileBarRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('title', this.title));
       properties.add(DiagnosticsProperty('subtitle', this.subtitle));
       properties.add(DiagnosticsProperty('trailing', this.trailing));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

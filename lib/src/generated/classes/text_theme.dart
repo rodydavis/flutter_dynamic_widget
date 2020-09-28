@@ -8,30 +8,29 @@ class TextThemeRender<T> extends StatelessWidget {
 
   factory TextThemeRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return TextThemeRender(update,
-      headline1Val: null,
-      headline2Val: null,
-      headline3Val: null,
-      headline4Val: null,
-      headline5Val: null,
-      headline6Val: null,
-      subtitle1Val: null,
-      subtitle2Val: null,
-      bodyText1Val: null,
-      bodyText2Val: null,
-      captionVal: null,
-      buttonVal: null,
-      overlineVal: null,
-      display4Val: null,
-      display3Val: null,
-      display2Val: null,
-      display1Val: null,
-      headlineVal: null,
-      titleVal: null,
-      subheadVal: null,
-      subtitleVal: null,
-      body2Val: null,
-      body1Val: null,
-      widgetKeyVal: null,
+      headline1Val: BaseCore<TextStyle>(null, update),
+      headline2Val: BaseCore<TextStyle>(null, update),
+      headline3Val: BaseCore<TextStyle>(null, update),
+      headline4Val: BaseCore<TextStyle>(null, update),
+      headline5Val: BaseCore<TextStyle>(null, update),
+      headline6Val: BaseCore<TextStyle>(null, update),
+      subtitle1Val: BaseCore<TextStyle>(null, update),
+      subtitle2Val: BaseCore<TextStyle>(null, update),
+      bodyText1Val: BaseCore<TextStyle>(null, update),
+      bodyText2Val: BaseCore<TextStyle>(null, update),
+      captionVal: BaseCore<TextStyle>(null, update),
+      buttonVal: BaseCore<TextStyle>(null, update),
+      overlineVal: BaseCore<TextStyle>(null, update),
+      display4Val: BaseCore<TextStyle>(null, update),
+      display3Val: BaseCore<TextStyle>(null, update),
+      display2Val: BaseCore<TextStyle>(null, update),
+      display1Val: BaseCore<TextStyle>(null, update),
+      headlineVal: BaseCore<TextStyle>(null, update),
+      titleVal: BaseCore<TextStyle>(null, update),
+      subheadVal: BaseCore<TextStyle>(null, update),
+      subtitleVal: BaseCore<TextStyle>(null, update),
+      body2Val: BaseCore<TextStyle>(null, update),
+      body1Val: BaseCore<TextStyle>(null, update),
     );
   }
 
@@ -59,7 +58,6 @@ class TextThemeRender<T> extends StatelessWidget {
     @required this.subtitleVal,
     @required this.body2Val,
     @required this.body1Val,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -364,19 +362,6 @@ class TextThemeRender<T> extends StatelessWidget {
     body1Val.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -407,7 +392,6 @@ class TextThemeRender<T> extends StatelessWidget {
     this.subtitleVal,
     this.body2Val,
     this.body1Val,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -507,7 +491,6 @@ class TextThemeRender<T> extends StatelessWidget {
         'subtitle': this.subtitleVal.toJson(),
         'body2': this.body2Val.toJson(),
         'body1': this.body1Val.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -587,7 +570,6 @@ class TextThemeRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('subtitle', this.subtitle));
       properties.add(DiagnosticsProperty('body2', this.body2));
       properties.add(DiagnosticsProperty('body1', this.body1));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

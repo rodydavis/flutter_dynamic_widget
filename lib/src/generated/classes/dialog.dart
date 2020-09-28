@@ -8,16 +8,15 @@ class SimpleDialogRender<T> extends StatelessWidget {
 
   factory SimpleDialogRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return SimpleDialogRender(update,
-      titleVal: null,
-      titlePaddingVal: null,
-      titleTextStyleVal: null,
-      childrenVal: null,
-      contentPaddingVal: null,
-      backgroundColorVal: null,
-      elevationVal: null,
-      semanticLabelVal: null,
-      shapeVal: null,
-      widgetKeyVal: null,
+      titleVal: BaseCore<Widget>(null, update),
+      titlePaddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      titleTextStyleVal: BaseCore<TextStyle>(null, update),
+      childrenVal: BaseCore<List<Widget>>(null, update),
+      contentPaddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      backgroundColorVal: BaseCore<Color>(null, update),
+      elevationVal: BaseCore<double>(null, update),
+      semanticLabelVal: BaseCore<String>(null, update),
+      shapeVal: BaseCore<ShapeBorder>(null, update),
     );
   }
 
@@ -31,7 +30,6 @@ class SimpleDialogRender<T> extends StatelessWidget {
     @required this.elevationVal,
     @required this.semanticLabelVal,
     @required this.shapeVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -154,19 +152,6 @@ class SimpleDialogRender<T> extends StatelessWidget {
     shapeVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -183,7 +168,6 @@ class SimpleDialogRender<T> extends StatelessWidget {
     this.elevationVal,
     this.semanticLabelVal,
     this.shapeVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -241,7 +225,6 @@ class SimpleDialogRender<T> extends StatelessWidget {
         'elevation': this.elevationVal.toJson(),
         'semanticLabel': this.semanticLabelVal.toJson(),
         'shape': this.shapeVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -293,7 +276,6 @@ class SimpleDialogRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('elevation', this.elevation));
       properties.add(DiagnosticsProperty('semanticLabel', this.semanticLabel));
       properties.add(DiagnosticsProperty('shape', this.shape));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

@@ -8,33 +8,32 @@ class RawMaterialButtonRender<T> extends StatelessWidget {
 
   factory RawMaterialButtonRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return RawMaterialButtonRender(update,
-      onPressedVal: null,
-      onLongPressVal: null,
-      onHighlightChangedVal: null,
-      mouseCursorVal: null,
-      textStyleVal: null,
-      fillColorVal: null,
-      focusColorVal: null,
-      hoverColorVal: null,
-      highlightColorVal: null,
-      splashColorVal: null,
-      elevationVal: null,
-      hoverElevationVal: null,
-      focusElevationVal: null,
-      highlightElevationVal: null,
-      disabledElevationVal: null,
-      paddingVal: null,
-      visualDensityVal: null,
-      constraintsVal: null,
-      shapeVal: null,
-      animationDurationVal: null,
-      childVal: null,
-      materialTapTargetSizeVal: null,
-      focusNodeVal: null,
-      autofocusVal: null,
-      clipBehaviorVal: null,
-      enableFeedbackVal: null,
-      widgetKeyVal: null,
+      onPressedVal: BaseCore<VoidCallback>(null, update),
+      onLongPressVal: BaseCore<VoidCallback>(null, update),
+      onHighlightChangedVal: BaseCore<ValueChanged<bool>>(null, update),
+      mouseCursorVal: BaseCore<MouseCursor>(null, update),
+      textStyleVal: BaseCore<TextStyle>(null, update),
+      fillColorVal: BaseCore<Color>(null, update),
+      focusColorVal: BaseCore<Color>(null, update),
+      hoverColorVal: BaseCore<Color>(null, update),
+      highlightColorVal: BaseCore<Color>(null, update),
+      splashColorVal: BaseCore<Color>(null, update),
+      elevationVal: BaseCore<double>(null, update),
+      hoverElevationVal: BaseCore<double>(null, update),
+      focusElevationVal: BaseCore<double>(null, update),
+      highlightElevationVal: BaseCore<double>(null, update),
+      disabledElevationVal: BaseCore<double>(null, update),
+      paddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      visualDensityVal: BaseCore<VisualDensity>(null, update),
+      constraintsVal: BaseCore<BoxConstraints>(null, update),
+      shapeVal: BaseCore<ShapeBorder>(null, update),
+      animationDurationVal: BaseCore<Duration>(null, update),
+      childVal: BaseCore<Widget>(null, update),
+      materialTapTargetSizeVal: BaseCore<MaterialTapTargetSize>(null, update),
+      focusNodeVal: BaseCore<FocusNode>(null, update),
+      autofocusVal: BaseCore<bool>(null, update),
+      clipBehaviorVal: BaseCore<Clip>(null, update),
+      enableFeedbackVal: BaseCore<bool>(null, update),
     );
   }
 
@@ -65,7 +64,6 @@ class RawMaterialButtonRender<T> extends StatelessWidget {
     @required this.autofocusVal,
     @required this.clipBehaviorVal,
     @required this.enableFeedbackVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -409,19 +407,6 @@ class RawMaterialButtonRender<T> extends StatelessWidget {
     enableFeedbackVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -455,7 +440,6 @@ class RawMaterialButtonRender<T> extends StatelessWidget {
     this.autofocusVal,
     this.clipBehaviorVal,
     this.enableFeedbackVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -564,7 +548,6 @@ class RawMaterialButtonRender<T> extends StatelessWidget {
         'autofocus': this.autofocusVal.toJson(),
         'clipBehavior': this.clipBehaviorVal.toJson(),
         'enableFeedback': this.enableFeedbackVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -650,7 +633,6 @@ class RawMaterialButtonRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('autofocus', this.autofocus));
       properties.add(DiagnosticsProperty('clipBehavior', this.clipBehavior));
       properties.add(DiagnosticsProperty('enableFeedback', this.enableFeedback));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

@@ -8,16 +8,14 @@ class UnderlineTabIndicatorRender<T> extends StatelessWidget {
 
   factory UnderlineTabIndicatorRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return UnderlineTabIndicatorRender(update,
-      borderSideVal: null,
-      insetsVal: null,
-      widgetKeyVal: null,
+      borderSideVal: BaseCore<BorderSide>(null, update),
+      insetsVal: BaseCore<EdgeInsetsGeometry>(null, update),
     );
   }
 
   UnderlineTabIndicatorRender(this._update, {
     @required this.borderSideVal,
     @required this.insetsVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -49,19 +47,6 @@ class UnderlineTabIndicatorRender<T> extends StatelessWidget {
     insetsVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -71,7 +56,6 @@ class UnderlineTabIndicatorRender<T> extends StatelessWidget {
   List<Core> get props => [
     this.borderSideVal,
     this.insetsVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -108,7 +92,6 @@ class UnderlineTabIndicatorRender<T> extends StatelessWidget {
       'props': {
         'borderSide': this.borderSideVal.toJson(),
         'insets': this.insetsVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -146,7 +129,6 @@ class UnderlineTabIndicatorRender<T> extends StatelessWidget {
     super.debugFillProperties(properties);
       properties.add(DiagnosticsProperty('borderSide', this.borderSide));
       properties.add(DiagnosticsProperty('insets', this.insets));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

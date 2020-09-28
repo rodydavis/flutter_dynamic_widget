@@ -8,12 +8,11 @@ class VerticalDividerRender<T> extends StatelessWidget {
 
   factory VerticalDividerRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return VerticalDividerRender(update,
-      widthVal: null,
-      thicknessVal: null,
-      indentVal: null,
-      endIndentVal: null,
-      colorVal: null,
-      widgetKeyVal: null,
+      widthVal: BaseCore<double>(null, update),
+      thicknessVal: BaseCore<double>(null, update),
+      indentVal: BaseCore<double>(null, update),
+      endIndentVal: BaseCore<double>(null, update),
+      colorVal: BaseCore<Color>(null, update),
     );
   }
 
@@ -23,7 +22,6 @@ class VerticalDividerRender<T> extends StatelessWidget {
     @required this.indentVal,
     @required this.endIndentVal,
     @required this.colorVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -94,19 +92,6 @@ class VerticalDividerRender<T> extends StatelessWidget {
     colorVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -119,7 +104,6 @@ class VerticalDividerRender<T> extends StatelessWidget {
     this.indentVal,
     this.endIndentVal,
     this.colorVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -165,7 +149,6 @@ class VerticalDividerRender<T> extends StatelessWidget {
         'indent': this.indentVal.toJson(),
         'endIndent': this.endIndentVal.toJson(),
         'color': this.colorVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -209,7 +192,6 @@ class VerticalDividerRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('indent', this.indent));
       properties.add(DiagnosticsProperty('endIndent', this.endIndent));
       properties.add(DiagnosticsProperty('color', this.color));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

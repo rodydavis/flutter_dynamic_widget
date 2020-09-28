@@ -8,16 +8,14 @@ class TooltipThemeRender<T> extends StatelessWidget {
 
   factory TooltipThemeRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return TooltipThemeRender(update,
-      dataVal: null,
-      childVal: null,
-      widgetKeyVal: null,
+      dataVal: BaseCore<TooltipThemeData>(null, update),
+      childVal: BaseCore<Widget>(null, update),
     );
   }
 
   TooltipThemeRender(this._update, {
     @required this.dataVal,
     @required this.childVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -49,19 +47,6 @@ class TooltipThemeRender<T> extends StatelessWidget {
     childVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -71,7 +56,6 @@ class TooltipThemeRender<T> extends StatelessWidget {
   List<Core> get props => [
     this.dataVal,
     this.childVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -108,7 +92,6 @@ class TooltipThemeRender<T> extends StatelessWidget {
       'props': {
         'data': this.dataVal.toJson(),
         'child': this.childVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -146,7 +129,6 @@ class TooltipThemeRender<T> extends StatelessWidget {
     super.debugFillProperties(properties);
       properties.add(DiagnosticsProperty('data', this.data));
       properties.add(DiagnosticsProperty('child', this.child));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

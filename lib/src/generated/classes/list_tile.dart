@@ -8,27 +8,26 @@ class ListTileRender<T> extends StatelessWidget {
 
   factory ListTileRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return ListTileRender(update,
-      leadingVal: null,
-      titleVal: null,
-      subtitleVal: null,
-      trailingVal: null,
-      isThreeLineVal: null,
-      denseVal: null,
-      visualDensityVal: null,
-      shapeVal: null,
-      contentPaddingVal: null,
-      enabledVal: null,
-      onTapVal: null,
-      onLongPressVal: null,
-      mouseCursorVal: null,
-      selectedVal: null,
-      focusColorVal: null,
-      hoverColorVal: null,
-      focusNodeVal: null,
-      autofocusVal: null,
-      tileColorVal: null,
-      selectedTileColorVal: null,
-      widgetKeyVal: null,
+      leadingVal: BaseCore<Widget>(null, update),
+      titleVal: BaseCore<Widget>(null, update),
+      subtitleVal: BaseCore<Widget>(null, update),
+      trailingVal: BaseCore<Widget>(null, update),
+      isThreeLineVal: BaseCore<bool>(null, update),
+      denseVal: BaseCore<bool>(null, update),
+      visualDensityVal: BaseCore<VisualDensity>(null, update),
+      shapeVal: BaseCore<ShapeBorder>(null, update),
+      contentPaddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      enabledVal: BaseCore<bool>(null, update),
+      onTapVal: BaseCore<GestureTapCallback>(null, update),
+      onLongPressVal: BaseCore<GestureLongPressCallback>(null, update),
+      mouseCursorVal: BaseCore<MouseCursor>(null, update),
+      selectedVal: BaseCore<bool>(null, update),
+      focusColorVal: BaseCore<Color>(null, update),
+      hoverColorVal: BaseCore<Color>(null, update),
+      focusNodeVal: BaseCore<FocusNode>(null, update),
+      autofocusVal: BaseCore<bool>(null, update),
+      tileColorVal: BaseCore<Color>(null, update),
+      selectedTileColorVal: BaseCore<Color>(null, update),
     );
   }
 
@@ -53,7 +52,6 @@ class ListTileRender<T> extends StatelessWidget {
     @required this.autofocusVal,
     @required this.tileColorVal,
     @required this.selectedTileColorVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -319,19 +317,6 @@ class ListTileRender<T> extends StatelessWidget {
     selectedTileColorVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -359,7 +344,6 @@ class ListTileRender<T> extends StatelessWidget {
     this.autofocusVal,
     this.tileColorVal,
     this.selectedTileColorVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -450,7 +434,6 @@ class ListTileRender<T> extends StatelessWidget {
         'autofocus': this.autofocusVal.toJson(),
         'tileColor': this.tileColorVal.toJson(),
         'selectedTileColor': this.selectedTileColorVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -524,7 +507,6 @@ class ListTileRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('autofocus', this.autofocus));
       properties.add(DiagnosticsProperty('tileColor', this.tileColor));
       properties.add(DiagnosticsProperty('selectedTileColor', this.selectedTileColor));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

@@ -8,32 +8,31 @@ class DropdownButtonFormFieldRender<T> extends StatelessWidget {
 
   factory DropdownButtonFormFieldRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return DropdownButtonFormFieldRender(update,
-      onChangedVal: null,
-      decorationVal: null,
-      itemsVal: null,
-      selectedItemBuilderVal: null,
-      valueVal: null,
-      hintVal: null,
-      disabledHintVal: null,
-      onTapVal: null,
-      elevationVal: null,
-      styleVal: null,
-      iconVal: null,
-      iconDisabledColorVal: null,
-      iconEnabledColorVal: null,
-      iconSizeVal: null,
-      isDenseVal: null,
-      isExpandedVal: null,
-      itemHeightVal: null,
-      focusColorVal: null,
-      focusNodeVal: null,
-      autofocusVal: null,
-      dropdownColorVal: null,
-      onSavedVal: null,
-      validatorVal: null,
-      autovalidateVal: null,
-      autovalidateModeVal: null,
-      widgetKeyVal: null,
+      onChangedVal: BaseCore<ValueChanged<T>>(null, update),
+      decorationVal: BaseCore<InputDecoration>(null, update),
+      itemsVal: BaseCore<List<DropdownMenuItem<T>>>(null, update),
+      selectedItemBuilderVal: BaseCore<DropdownButtonBuilder>(null, update),
+      valueVal: BaseCore<T>(null, update),
+      hintVal: BaseCore<Widget>(null, update),
+      disabledHintVal: BaseCore<Widget>(null, update),
+      onTapVal: BaseCore<VoidCallback>(null, update),
+      elevationVal: BaseCore<int>(null, update),
+      styleVal: BaseCore<TextStyle>(null, update),
+      iconVal: BaseCore<Widget>(null, update),
+      iconDisabledColorVal: BaseCore<Color>(null, update),
+      iconEnabledColorVal: BaseCore<Color>(null, update),
+      iconSizeVal: BaseCore<double>(null, update),
+      isDenseVal: BaseCore<bool>(null, update),
+      isExpandedVal: BaseCore<bool>(null, update),
+      itemHeightVal: BaseCore<double>(null, update),
+      focusColorVal: BaseCore<Color>(null, update),
+      focusNodeVal: BaseCore<FocusNode>(null, update),
+      autofocusVal: BaseCore<bool>(null, update),
+      dropdownColorVal: BaseCore<Color>(null, update),
+      onSavedVal: BaseCore<FormFieldSetter<T>>(null, update),
+      validatorVal: BaseCore<FormFieldValidator<T>>(null, update),
+      autovalidateVal: BaseCore<bool>(null, update),
+      autovalidateModeVal: BaseCore<AutovalidateMode>(null, update),
     );
   }
 
@@ -63,7 +62,6 @@ class DropdownButtonFormFieldRender<T> extends StatelessWidget {
     @required this.validatorVal,
     @required this.autovalidateVal,
     @required this.autovalidateModeVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -394,19 +392,6 @@ class DropdownButtonFormFieldRender<T> extends StatelessWidget {
     autovalidateModeVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -439,7 +424,6 @@ class DropdownButtonFormFieldRender<T> extends StatelessWidget {
     this.validatorVal,
     this.autovalidateVal,
     this.autovalidateModeVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -545,7 +529,6 @@ class DropdownButtonFormFieldRender<T> extends StatelessWidget {
         'validator': this.validatorVal.toJson(),
         'autovalidate': this.autovalidateVal.toJson(),
         'autovalidateMode': this.autovalidateModeVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -629,7 +612,6 @@ class DropdownButtonFormFieldRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('validator', this.validator));
       properties.add(DiagnosticsProperty('autovalidate', this.autovalidate));
       properties.add(DiagnosticsProperty('autovalidateMode', this.autovalidateMode));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

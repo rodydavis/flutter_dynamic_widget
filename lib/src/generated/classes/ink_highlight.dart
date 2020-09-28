@@ -8,18 +8,17 @@ class InkHighlightRender<T> extends StatelessWidget {
 
   factory InkHighlightRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return InkHighlightRender(update,
-      controllerVal: null,
-      referenceBoxVal: null,
-      colorVal: null,
-      textDirectionVal: null,
-      shapeVal: null,
-      radiusVal: null,
-      borderRadiusVal: null,
-      customBorderVal: null,
-      rectCallbackVal: null,
-      onRemovedVal: null,
-      fadeDurationVal: null,
-      widgetKeyVal: null,
+      controllerVal: BaseCore<MaterialInkController>(null, update),
+      referenceBoxVal: BaseCore<RenderBox>(null, update),
+      colorVal: BaseCore<Color>(null, update),
+      textDirectionVal: BaseCore<TextDirection>(null, update),
+      shapeVal: BaseCore<BoxShape>(null, update),
+      radiusVal: BaseCore<double>(null, update),
+      borderRadiusVal: BaseCore<BorderRadius>(null, update),
+      customBorderVal: BaseCore<ShapeBorder>(null, update),
+      rectCallbackVal: BaseCore<RectCallback>(null, update),
+      onRemovedVal: BaseCore<VoidCallback>(null, update),
+      fadeDurationVal: BaseCore<Duration>(null, update),
     );
   }
 
@@ -35,7 +34,6 @@ class InkHighlightRender<T> extends StatelessWidget {
     @required this.rectCallbackVal,
     @required this.onRemovedVal,
     @required this.fadeDurationVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -184,19 +182,6 @@ class InkHighlightRender<T> extends StatelessWidget {
     fadeDurationVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -218,7 +203,6 @@ class InkHighlightRender<T> extends StatelessWidget {
     this.rectCallbackVal,
     this.onRemovedVal,
     this.fadeDurationVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -282,7 +266,6 @@ class InkHighlightRender<T> extends StatelessWidget {
         'rectCallback': this.rectCallbackVal.toJson(),
         'onRemoved': this.onRemovedVal.toJson(),
         'fadeDuration': this.fadeDurationVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -338,7 +321,6 @@ class InkHighlightRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('rectCallback', this.rectCallback));
       properties.add(DiagnosticsProperty('onRemoved', this.onRemoved));
       properties.add(DiagnosticsProperty('fadeDuration', this.fadeDuration));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

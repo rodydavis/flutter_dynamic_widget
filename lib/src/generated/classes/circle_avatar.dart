@@ -8,15 +8,14 @@ class CircleAvatarRender<T> extends StatelessWidget {
 
   factory CircleAvatarRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return CircleAvatarRender(update,
-      childVal: null,
-      backgroundColorVal: null,
-      foregroundColorVal: null,
-      backgroundImageVal: null,
-      onBackgroundImageErrorVal: null,
-      radiusVal: null,
-      minRadiusVal: null,
-      maxRadiusVal: null,
-      widgetKeyVal: null,
+      childVal: BaseCore<Widget>(null, update),
+      backgroundColorVal: BaseCore<Color>(null, update),
+      foregroundColorVal: BaseCore<Color>(null, update),
+      backgroundImageVal: BaseCore<ImageProvider>(null, update),
+      onBackgroundImageErrorVal: BaseCore<ImageErrorListener>(null, update),
+      radiusVal: BaseCore<double>(null, update),
+      minRadiusVal: BaseCore<double>(null, update),
+      maxRadiusVal: BaseCore<double>(null, update),
     );
   }
 
@@ -29,7 +28,6 @@ class CircleAvatarRender<T> extends StatelessWidget {
     @required this.radiusVal,
     @required this.minRadiusVal,
     @required this.maxRadiusVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -139,19 +137,6 @@ class CircleAvatarRender<T> extends StatelessWidget {
     maxRadiusVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -170,7 +155,6 @@ class CircleAvatarRender<T> extends StatelessWidget {
     this.radiusVal,
     this.minRadiusVal,
     this.maxRadiusVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -225,7 +209,6 @@ class CircleAvatarRender<T> extends StatelessWidget {
         'radius': this.radiusVal.toJson(),
         'minRadius': this.minRadiusVal.toJson(),
         'maxRadius': this.maxRadiusVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -275,7 +258,6 @@ class CircleAvatarRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('radius', this.radius));
       properties.add(DiagnosticsProperty('minRadius', this.minRadius));
       properties.add(DiagnosticsProperty('maxRadius', this.maxRadius));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

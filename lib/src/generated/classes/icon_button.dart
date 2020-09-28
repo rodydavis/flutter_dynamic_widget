@@ -8,26 +8,25 @@ class IconButtonRender<T> extends StatelessWidget {
 
   factory IconButtonRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return IconButtonRender(update,
-      iconSizeVal: null,
-      visualDensityVal: null,
-      paddingVal: null,
-      alignmentVal: null,
-      splashRadiusVal: null,
-      iconVal: null,
-      focusColorVal: null,
-      hoverColorVal: null,
-      colorVal: null,
-      splashColorVal: null,
-      highlightColorVal: null,
-      disabledColorVal: null,
-      onPressedVal: null,
-      mouseCursorVal: null,
-      focusNodeVal: null,
-      autofocusVal: null,
-      tooltipVal: null,
-      enableFeedbackVal: null,
-      constraintsVal: null,
-      widgetKeyVal: null,
+      iconSizeVal: BaseCore<double>(null, update),
+      visualDensityVal: BaseCore<VisualDensity>(null, update),
+      paddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      alignmentVal: BaseCore<AlignmentGeometry>(null, update),
+      splashRadiusVal: BaseCore<double>(null, update),
+      iconVal: BaseCore<Widget>(null, update),
+      focusColorVal: BaseCore<Color>(null, update),
+      hoverColorVal: BaseCore<Color>(null, update),
+      colorVal: BaseCore<Color>(null, update),
+      splashColorVal: BaseCore<Color>(null, update),
+      highlightColorVal: BaseCore<Color>(null, update),
+      disabledColorVal: BaseCore<Color>(null, update),
+      onPressedVal: BaseCore<VoidCallback>(null, update),
+      mouseCursorVal: BaseCore<MouseCursor>(null, update),
+      focusNodeVal: BaseCore<FocusNode>(null, update),
+      autofocusVal: BaseCore<bool>(null, update),
+      tooltipVal: BaseCore<String>(null, update),
+      enableFeedbackVal: BaseCore<bool>(null, update),
+      constraintsVal: BaseCore<BoxConstraints>(null, update),
     );
   }
 
@@ -51,7 +50,6 @@ class IconButtonRender<T> extends StatelessWidget {
     @required this.tooltipVal,
     @required this.enableFeedbackVal,
     @required this.constraintsVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -304,19 +302,6 @@ class IconButtonRender<T> extends StatelessWidget {
     constraintsVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -343,7 +328,6 @@ class IconButtonRender<T> extends StatelessWidget {
     this.tooltipVal,
     this.enableFeedbackVal,
     this.constraintsVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -431,7 +415,6 @@ class IconButtonRender<T> extends StatelessWidget {
         'tooltip': this.tooltipVal.toJson(),
         'enableFeedback': this.enableFeedbackVal.toJson(),
         'constraints': this.constraintsVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -503,7 +486,6 @@ class IconButtonRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('tooltip', this.tooltip));
       properties.add(DiagnosticsProperty('enableFeedback', this.enableFeedback));
       properties.add(DiagnosticsProperty('constraints', this.constraints));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

@@ -8,15 +8,14 @@ class UserAccountsDrawerHeaderRender<T> extends StatelessWidget {
 
   factory UserAccountsDrawerHeaderRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return UserAccountsDrawerHeaderRender(update,
-      decorationVal: null,
-      marginVal: null,
-      currentAccountPictureVal: null,
-      otherAccountsPicturesVal: null,
-      accountNameVal: null,
-      accountEmailVal: null,
-      onDetailsPressedVal: null,
-      arrowColorVal: null,
-      widgetKeyVal: null,
+      decorationVal: BaseCore<Decoration>(null, update),
+      marginVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      currentAccountPictureVal: BaseCore<Widget>(null, update),
+      otherAccountsPicturesVal: BaseCore<List<Widget>>(null, update),
+      accountNameVal: BaseCore<Widget>(null, update),
+      accountEmailVal: BaseCore<Widget>(null, update),
+      onDetailsPressedVal: BaseCore<VoidCallback>(null, update),
+      arrowColorVal: BaseCore<Color>(null, update),
     );
   }
 
@@ -29,7 +28,6 @@ class UserAccountsDrawerHeaderRender<T> extends StatelessWidget {
     @required this.accountEmailVal,
     @required this.onDetailsPressedVal,
     @required this.arrowColorVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -139,19 +137,6 @@ class UserAccountsDrawerHeaderRender<T> extends StatelessWidget {
     arrowColorVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -167,7 +152,6 @@ class UserAccountsDrawerHeaderRender<T> extends StatelessWidget {
     this.accountEmailVal,
     this.onDetailsPressedVal,
     this.arrowColorVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -222,7 +206,6 @@ class UserAccountsDrawerHeaderRender<T> extends StatelessWidget {
         'accountEmail': this.accountEmailVal.toJson(),
         'onDetailsPressed': this.onDetailsPressedVal.toJson(),
         'arrowColor': this.arrowColorVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -272,7 +255,6 @@ class UserAccountsDrawerHeaderRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('accountEmail', this.accountEmail));
       properties.add(DiagnosticsProperty('onDetailsPressed', this.onDetailsPressed));
       properties.add(DiagnosticsProperty('arrowColor', this.arrowColor));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

@@ -10,56 +10,55 @@ class TextFieldRender<T> extends StatelessWidget {
 
   factory TextFieldRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return TextFieldRender(update,
-      controllerVal: null,
-      focusNodeVal: null,
-      decorationVal: null,
-      keyboardTypeVal: null,
-      textInputActionVal: null,
-      textCapitalizationVal: null,
-      styleVal: null,
-      strutStyleVal: null,
-      textAlignVal: null,
-      textAlignVerticalVal: null,
-      textDirectionVal: null,
-      autofocusVal: null,
-      obscuringCharacterVal: null,
-      obscureTextVal: null,
-      autocorrectVal: null,
-      smartDashesTypeVal: null,
-      smartQuotesTypeVal: null,
-      enableSuggestionsVal: null,
-      maxLinesVal: null,
-      minLinesVal: null,
-      expandsVal: null,
-      readOnlyVal: null,
-      toolbarOptionsVal: null,
-      showCursorVal: null,
-      maxLengthVal: null,
-      maxLengthEnforcedVal: null,
-      onChangedVal: null,
-      onEditingCompleteVal: null,
-      onSubmittedVal: null,
-      onAppPrivateCommandVal: null,
-      inputFormattersVal: null,
-      enabledVal: null,
-      cursorWidthVal: null,
-      cursorHeightVal: null,
-      cursorRadiusVal: null,
-      cursorColorVal: null,
-      selectionHeightStyleVal: null,
-      selectionWidthStyleVal: null,
-      keyboardAppearanceVal: null,
-      scrollPaddingVal: null,
-      enableInteractiveSelectionVal: null,
-      dragStartBehaviorVal: null,
-      onTapVal: null,
-      mouseCursorVal: null,
-      buildCounterVal: null,
-      scrollPhysicsVal: null,
-      scrollControllerVal: null,
-      autofillHintsVal: null,
-      restorationIdVal: null,
-      widgetKeyVal: null,
+      controllerVal: BaseCore<TextEditingController>(null, update),
+      focusNodeVal: BaseCore<FocusNode>(null, update),
+      decorationVal: BaseCore<InputDecoration>(null, update),
+      keyboardTypeVal: BaseCore<TextInputType>(null, update),
+      textInputActionVal: BaseCore<TextInputAction>(null, update),
+      textCapitalizationVal: BaseCore<TextCapitalization>(null, update),
+      styleVal: BaseCore<TextStyle>(null, update),
+      strutStyleVal: BaseCore<StrutStyle>(null, update),
+      textAlignVal: BaseCore<TextAlign>(null, update),
+      textAlignVerticalVal: BaseCore<TextAlignVertical>(null, update),
+      textDirectionVal: BaseCore<TextDirection>(null, update),
+      autofocusVal: BaseCore<bool>(null, update),
+      obscuringCharacterVal: BaseCore<String>(null, update),
+      obscureTextVal: BaseCore<bool>(null, update),
+      autocorrectVal: BaseCore<bool>(null, update),
+      smartDashesTypeVal: BaseCore<SmartDashesType>(null, update),
+      smartQuotesTypeVal: BaseCore<SmartQuotesType>(null, update),
+      enableSuggestionsVal: BaseCore<bool>(null, update),
+      maxLinesVal: BaseCore<int>(null, update),
+      minLinesVal: BaseCore<int>(null, update),
+      expandsVal: BaseCore<bool>(null, update),
+      readOnlyVal: BaseCore<bool>(null, update),
+      toolbarOptionsVal: BaseCore<ToolbarOptions>(null, update),
+      showCursorVal: BaseCore<bool>(null, update),
+      maxLengthVal: BaseCore<int>(null, update),
+      maxLengthEnforcedVal: BaseCore<bool>(null, update),
+      onChangedVal: BaseCore<ValueChanged<String>>(null, update),
+      onEditingCompleteVal: BaseCore<VoidCallback>(null, update),
+      onSubmittedVal: BaseCore<ValueChanged<String>>(null, update),
+      onAppPrivateCommandVal: BaseCore<AppPrivateCommandCallback>(null, update),
+      inputFormattersVal: BaseCore<List<TextInputFormatter>>(null, update),
+      enabledVal: BaseCore<bool>(null, update),
+      cursorWidthVal: BaseCore<double>(null, update),
+      cursorHeightVal: BaseCore<double>(null, update),
+      cursorRadiusVal: BaseCore<Radius>(null, update),
+      cursorColorVal: BaseCore<Color>(null, update),
+      selectionHeightStyleVal: BaseCore<ui.BoxHeightStyle>(null, update),
+      selectionWidthStyleVal: BaseCore<ui.BoxWidthStyle>(null, update),
+      keyboardAppearanceVal: BaseCore<Brightness>(null, update),
+      scrollPaddingVal: BaseCore<EdgeInsets>(null, update),
+      enableInteractiveSelectionVal: BaseCore<bool>(null, update),
+      dragStartBehaviorVal: BaseCore<DragStartBehavior>(null, update),
+      onTapVal: BaseCore<GestureTapCallback>(null, update),
+      mouseCursorVal: BaseCore<MouseCursor>(null, update),
+      buildCounterVal: BaseCore<InputCounterWidgetBuilder>(null, update),
+      scrollPhysicsVal: BaseCore<ScrollPhysics>(null, update),
+      scrollControllerVal: BaseCore<ScrollController>(null, update),
+      autofillHintsVal: BaseCore<Iterable<String>>(null, update),
+      restorationIdVal: BaseCore<String>(null, update),
     );
   }
 
@@ -113,7 +112,6 @@ class TextFieldRender<T> extends StatelessWidget {
     @required this.scrollControllerVal,
     @required this.autofillHintsVal,
     @required this.restorationIdVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -756,19 +754,6 @@ class TextFieldRender<T> extends StatelessWidget {
     restorationIdVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -826,7 +811,6 @@ class TextFieldRender<T> extends StatelessWidget {
     this.scrollControllerVal,
     this.autofillHintsVal,
     this.restorationIdVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -1004,7 +988,6 @@ class TextFieldRender<T> extends StatelessWidget {
         'scrollController': this.scrollControllerVal.toJson(),
         'autofillHints': this.autofillHintsVal.toJson(),
         'restorationId': this.restorationIdVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -1136,7 +1119,6 @@ class TextFieldRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('scrollController', this.scrollController));
       properties.add(DiagnosticsProperty('autofillHints', this.autofillHints));
       properties.add(DiagnosticsProperty('restorationId', this.restorationId));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

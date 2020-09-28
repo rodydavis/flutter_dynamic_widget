@@ -8,38 +8,37 @@ class MaterialButtonRender<T> extends StatelessWidget {
 
   factory MaterialButtonRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return MaterialButtonRender(update,
-      onPressedVal: null,
-      onLongPressVal: null,
-      onHighlightChangedVal: null,
-      mouseCursorVal: null,
-      textThemeVal: null,
-      textColorVal: null,
-      disabledTextColorVal: null,
-      colorVal: null,
-      disabledColorVal: null,
-      splashColorVal: null,
-      focusColorVal: null,
-      hoverColorVal: null,
-      highlightColorVal: null,
-      elevationVal: null,
-      hoverElevationVal: null,
-      focusElevationVal: null,
-      highlightElevationVal: null,
-      disabledElevationVal: null,
-      colorBrightnessVal: null,
-      childVal: null,
-      paddingVal: null,
-      visualDensityVal: null,
-      shapeVal: null,
-      clipBehaviorVal: null,
-      focusNodeVal: null,
-      autofocusVal: null,
-      animationDurationVal: null,
-      materialTapTargetSizeVal: null,
-      minWidthVal: null,
-      heightVal: null,
-      enableFeedbackVal: null,
-      widgetKeyVal: null,
+      onPressedVal: BaseCore<VoidCallback>(null, update),
+      onLongPressVal: BaseCore<VoidCallback>(null, update),
+      onHighlightChangedVal: BaseCore<ValueChanged<bool>>(null, update),
+      mouseCursorVal: BaseCore<MouseCursor>(null, update),
+      textThemeVal: BaseCore<ButtonTextTheme>(null, update),
+      textColorVal: BaseCore<Color>(null, update),
+      disabledTextColorVal: BaseCore<Color>(null, update),
+      colorVal: BaseCore<Color>(null, update),
+      disabledColorVal: BaseCore<Color>(null, update),
+      splashColorVal: BaseCore<Color>(null, update),
+      focusColorVal: BaseCore<Color>(null, update),
+      hoverColorVal: BaseCore<Color>(null, update),
+      highlightColorVal: BaseCore<Color>(null, update),
+      elevationVal: BaseCore<double>(null, update),
+      hoverElevationVal: BaseCore<double>(null, update),
+      focusElevationVal: BaseCore<double>(null, update),
+      highlightElevationVal: BaseCore<double>(null, update),
+      disabledElevationVal: BaseCore<double>(null, update),
+      colorBrightnessVal: BaseCore<Brightness>(null, update),
+      childVal: BaseCore<Widget>(null, update),
+      paddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      visualDensityVal: BaseCore<VisualDensity>(null, update),
+      shapeVal: BaseCore<ShapeBorder>(null, update),
+      clipBehaviorVal: BaseCore<Clip>(null, update),
+      focusNodeVal: BaseCore<FocusNode>(null, update),
+      autofocusVal: BaseCore<bool>(null, update),
+      animationDurationVal: BaseCore<Duration>(null, update),
+      materialTapTargetSizeVal: BaseCore<MaterialTapTargetSize>(null, update),
+      minWidthVal: BaseCore<double>(null, update),
+      heightVal: BaseCore<double>(null, update),
+      enableFeedbackVal: BaseCore<bool>(null, update),
     );
   }
 
@@ -75,7 +74,6 @@ class MaterialButtonRender<T> extends StatelessWidget {
     @required this.minWidthVal,
     @required this.heightVal,
     @required this.enableFeedbackVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -484,19 +482,6 @@ class MaterialButtonRender<T> extends StatelessWidget {
     enableFeedbackVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -535,7 +520,6 @@ class MaterialButtonRender<T> extends StatelessWidget {
     this.minWidthVal,
     this.heightVal,
     this.enableFeedbackVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -659,7 +643,6 @@ class MaterialButtonRender<T> extends StatelessWidget {
         'minWidth': this.minWidthVal.toJson(),
         'height': this.heightVal.toJson(),
         'enableFeedback': this.enableFeedbackVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -755,7 +738,6 @@ class MaterialButtonRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('minWidth', this.minWidth));
       properties.add(DiagnosticsProperty('height', this.height));
       properties.add(DiagnosticsProperty('enableFeedback', this.enableFeedback));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

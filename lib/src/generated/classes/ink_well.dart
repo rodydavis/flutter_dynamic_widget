@@ -8,31 +8,30 @@ class InkWellRender<T> extends StatelessWidget {
 
   factory InkWellRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return InkWellRender(update,
-      childVal: null,
-      onTapVal: null,
-      onDoubleTapVal: null,
-      onLongPressVal: null,
-      onTapDownVal: null,
-      onTapCancelVal: null,
-      onHighlightChangedVal: null,
-      onHoverVal: null,
-      mouseCursorVal: null,
-      focusColorVal: null,
-      hoverColorVal: null,
-      highlightColorVal: null,
-      overlayColorVal: null,
-      splashColorVal: null,
-      splashFactoryVal: null,
-      radiusVal: null,
-      borderRadiusVal: null,
-      customBorderVal: null,
-      enableFeedbackVal: null,
-      excludeFromSemanticsVal: null,
-      focusNodeVal: null,
-      canRequestFocusVal: null,
-      onFocusChangeVal: null,
-      autofocusVal: null,
-      widgetKeyVal: null,
+      childVal: BaseCore<Widget>(null, update),
+      onTapVal: BaseCore<GestureTapCallback>(null, update),
+      onDoubleTapVal: BaseCore<GestureTapCallback>(null, update),
+      onLongPressVal: BaseCore<GestureLongPressCallback>(null, update),
+      onTapDownVal: BaseCore<GestureTapDownCallback>(null, update),
+      onTapCancelVal: BaseCore<GestureTapCancelCallback>(null, update),
+      onHighlightChangedVal: BaseCore<ValueChanged<bool>>(null, update),
+      onHoverVal: BaseCore<ValueChanged<bool>>(null, update),
+      mouseCursorVal: BaseCore<MouseCursor>(null, update),
+      focusColorVal: BaseCore<Color>(null, update),
+      hoverColorVal: BaseCore<Color>(null, update),
+      highlightColorVal: BaseCore<Color>(null, update),
+      overlayColorVal: BaseCore<MaterialStateProperty<Color>>(null, update),
+      splashColorVal: BaseCore<Color>(null, update),
+      splashFactoryVal: BaseCore<InteractiveInkFeatureFactory>(null, update),
+      radiusVal: BaseCore<double>(null, update),
+      borderRadiusVal: BaseCore<BorderRadius>(null, update),
+      customBorderVal: BaseCore<ShapeBorder>(null, update),
+      enableFeedbackVal: BaseCore<bool>(null, update),
+      excludeFromSemanticsVal: BaseCore<bool>(null, update),
+      focusNodeVal: BaseCore<FocusNode>(null, update),
+      canRequestFocusVal: BaseCore<bool>(null, update),
+      onFocusChangeVal: BaseCore<ValueChanged<bool>>(null, update),
+      autofocusVal: BaseCore<bool>(null, update),
     );
   }
 
@@ -61,7 +60,6 @@ class InkWellRender<T> extends StatelessWidget {
     @required this.canRequestFocusVal,
     @required this.onFocusChangeVal,
     @required this.autofocusVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -379,19 +377,6 @@ class InkWellRender<T> extends StatelessWidget {
     autofocusVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -423,7 +408,6 @@ class InkWellRender<T> extends StatelessWidget {
     this.canRequestFocusVal,
     this.onFocusChangeVal,
     this.autofocusVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -526,7 +510,6 @@ class InkWellRender<T> extends StatelessWidget {
         'canRequestFocus': this.canRequestFocusVal.toJson(),
         'onFocusChange': this.onFocusChangeVal.toJson(),
         'autofocus': this.autofocusVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -608,7 +591,6 @@ class InkWellRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('canRequestFocus', this.canRequestFocus));
       properties.add(DiagnosticsProperty('onFocusChange', this.onFocusChange));
       properties.add(DiagnosticsProperty('autofocus', this.autofocus));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

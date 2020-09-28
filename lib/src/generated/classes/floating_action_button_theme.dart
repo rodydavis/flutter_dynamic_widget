@@ -8,18 +8,17 @@ class FloatingActionButtonThemeDataRender<T> extends StatelessWidget {
 
   factory FloatingActionButtonThemeDataRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return FloatingActionButtonThemeDataRender(update,
-      foregroundColorVal: null,
-      backgroundColorVal: null,
-      focusColorVal: null,
-      hoverColorVal: null,
-      splashColorVal: null,
-      elevationVal: null,
-      focusElevationVal: null,
-      hoverElevationVal: null,
-      disabledElevationVal: null,
-      highlightElevationVal: null,
-      shapeVal: null,
-      widgetKeyVal: null,
+      foregroundColorVal: BaseCore<Color>(null, update),
+      backgroundColorVal: BaseCore<Color>(null, update),
+      focusColorVal: BaseCore<Color>(null, update),
+      hoverColorVal: BaseCore<Color>(null, update),
+      splashColorVal: BaseCore<Color>(null, update),
+      elevationVal: BaseCore<double>(null, update),
+      focusElevationVal: BaseCore<double>(null, update),
+      hoverElevationVal: BaseCore<double>(null, update),
+      disabledElevationVal: BaseCore<double>(null, update),
+      highlightElevationVal: BaseCore<double>(null, update),
+      shapeVal: BaseCore<ShapeBorder>(null, update),
     );
   }
 
@@ -35,7 +34,6 @@ class FloatingActionButtonThemeDataRender<T> extends StatelessWidget {
     @required this.disabledElevationVal,
     @required this.highlightElevationVal,
     @required this.shapeVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -184,19 +182,6 @@ class FloatingActionButtonThemeDataRender<T> extends StatelessWidget {
     shapeVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -215,7 +200,6 @@ class FloatingActionButtonThemeDataRender<T> extends StatelessWidget {
     this.disabledElevationVal,
     this.highlightElevationVal,
     this.shapeVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -279,7 +263,6 @@ class FloatingActionButtonThemeDataRender<T> extends StatelessWidget {
         'disabledElevation': this.disabledElevationVal.toJson(),
         'highlightElevation': this.highlightElevationVal.toJson(),
         'shape': this.shapeVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -335,7 +318,6 @@ class FloatingActionButtonThemeDataRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('disabledElevation', this.disabledElevation));
       properties.add(DiagnosticsProperty('highlightElevation', this.highlightElevation));
       properties.add(DiagnosticsProperty('shape', this.shape));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

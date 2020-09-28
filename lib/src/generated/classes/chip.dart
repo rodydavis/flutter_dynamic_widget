@@ -8,38 +8,37 @@ class RawChipRender<T> extends StatelessWidget {
 
   factory RawChipRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return RawChipRender(update,
-      avatarVal: null,
-      labelVal: null,
-      labelStyleVal: null,
-      labelPaddingVal: null,
-      deleteIconVal: null,
-      onDeletedVal: null,
-      deleteIconColorVal: null,
-      deleteButtonTooltipMessageVal: null,
-      onSelectedVal: null,
-      onPressedVal: null,
-      pressElevationVal: null,
-      selectedVal: null,
-      isEnabledVal: null,
-      disabledColorVal: null,
-      selectedColorVal: null,
-      tooltipVal: null,
-      shapeVal: null,
-      clipBehaviorVal: null,
-      focusNodeVal: null,
-      autofocusVal: null,
-      backgroundColorVal: null,
-      paddingVal: null,
-      visualDensityVal: null,
-      materialTapTargetSizeVal: null,
-      elevationVal: null,
-      shadowColorVal: null,
-      selectedShadowColorVal: null,
-      showCheckmarkVal: null,
-      checkmarkColorVal: null,
-      avatarBorderVal: null,
-      tapEnabledVal: null,
-      widgetKeyVal: null,
+      avatarVal: BaseCore<Widget>(null, update),
+      labelVal: BaseCore<Widget>(null, update),
+      labelStyleVal: BaseCore<TextStyle>(null, update),
+      labelPaddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      deleteIconVal: BaseCore<Widget>(null, update),
+      onDeletedVal: BaseCore<VoidCallback>(null, update),
+      deleteIconColorVal: BaseCore<Color>(null, update),
+      deleteButtonTooltipMessageVal: BaseCore<String>(null, update),
+      onSelectedVal: BaseCore<ValueChanged<bool>>(null, update),
+      onPressedVal: BaseCore<VoidCallback>(null, update),
+      pressElevationVal: BaseCore<double>(null, update),
+      selectedVal: BaseCore<bool>(null, update),
+      isEnabledVal: BaseCore<bool>(null, update),
+      disabledColorVal: BaseCore<Color>(null, update),
+      selectedColorVal: BaseCore<Color>(null, update),
+      tooltipVal: BaseCore<String>(null, update),
+      shapeVal: BaseCore<ShapeBorder>(null, update),
+      clipBehaviorVal: BaseCore<Clip>(null, update),
+      focusNodeVal: BaseCore<FocusNode>(null, update),
+      autofocusVal: BaseCore<bool>(null, update),
+      backgroundColorVal: BaseCore<Color>(null, update),
+      paddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      visualDensityVal: BaseCore<VisualDensity>(null, update),
+      materialTapTargetSizeVal: BaseCore<MaterialTapTargetSize>(null, update),
+      elevationVal: BaseCore<double>(null, update),
+      shadowColorVal: BaseCore<Color>(null, update),
+      selectedShadowColorVal: BaseCore<Color>(null, update),
+      showCheckmarkVal: BaseCore<bool>(null, update),
+      checkmarkColorVal: BaseCore<Color>(null, update),
+      avatarBorderVal: BaseCore<ShapeBorder>(null, update),
+      tapEnabledVal: BaseCore<bool>(null, update),
     );
   }
 
@@ -75,7 +74,6 @@ class RawChipRender<T> extends StatelessWidget {
     @required this.checkmarkColorVal,
     @required this.avatarBorderVal,
     @required this.tapEnabledVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -484,19 +482,6 @@ class RawChipRender<T> extends StatelessWidget {
     tapEnabledVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -535,7 +520,6 @@ class RawChipRender<T> extends StatelessWidget {
     this.checkmarkColorVal,
     this.avatarBorderVal,
     this.tapEnabledVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -659,7 +643,6 @@ class RawChipRender<T> extends StatelessWidget {
         'checkmarkColor': this.checkmarkColorVal.toJson(),
         'avatarBorder': this.avatarBorderVal.toJson(),
         'tapEnabled': this.tapEnabledVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -755,7 +738,6 @@ class RawChipRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('checkmarkColor', this.checkmarkColor));
       properties.add(DiagnosticsProperty('avatarBorder', this.avatarBorder));
       properties.add(DiagnosticsProperty('tapEnabled', this.tapEnabled));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

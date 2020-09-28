@@ -8,29 +8,14 @@ class ColorsRender<T> extends StatelessWidget {
 
   factory ColorsRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return ColorsRender(update,
-      widgetKeyVal: null,
     );
   }
 
   ColorsRender(this._update, {
-    @required this.widgetKeyVal,
   });
 
   @override
   final VoidCallback _update;
-
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
 
 
   @override
@@ -128,7 +113,6 @@ class ColorsRender<T> extends StatelessWidget {
 
   @override
   List<Core> get props => [
-    this.widgetKeyVal,
   ];
 
   @override
@@ -155,7 +139,6 @@ class ColorsRender<T> extends StatelessWidget {
     return {
       'name': 'Colors',
       'props': {
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -187,7 +170,6 @@ class ColorsRender<T> extends StatelessWidget {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

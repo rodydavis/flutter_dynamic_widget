@@ -8,12 +8,11 @@ class InkDecorationRender<T> extends StatelessWidget {
 
   factory InkDecorationRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return InkDecorationRender(update,
-      decorationVal: null,
-      configurationVal: null,
-      controllerVal: null,
-      referenceBoxVal: null,
-      onRemovedVal: null,
-      widgetKeyVal: null,
+      decorationVal: BaseCore<Decoration>(null, update),
+      configurationVal: BaseCore<ImageConfiguration>(null, update),
+      controllerVal: BaseCore<MaterialInkController>(null, update),
+      referenceBoxVal: BaseCore<RenderBox>(null, update),
+      onRemovedVal: BaseCore<VoidCallback>(null, update),
     );
   }
 
@@ -23,7 +22,6 @@ class InkDecorationRender<T> extends StatelessWidget {
     @required this.controllerVal,
     @required this.referenceBoxVal,
     @required this.onRemovedVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -94,19 +92,6 @@ class InkDecorationRender<T> extends StatelessWidget {
     onRemovedVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -122,7 +107,6 @@ class InkDecorationRender<T> extends StatelessWidget {
     this.controllerVal,
     this.referenceBoxVal,
     this.onRemovedVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -168,7 +152,6 @@ class InkDecorationRender<T> extends StatelessWidget {
         'controller': this.controllerVal.toJson(),
         'referenceBox': this.referenceBoxVal.toJson(),
         'onRemoved': this.onRemovedVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -212,7 +195,6 @@ class InkDecorationRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('controller', this.controller));
       properties.add(DiagnosticsProperty('referenceBox', this.referenceBox));
       properties.add(DiagnosticsProperty('onRemoved', this.onRemoved));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

@@ -8,29 +8,14 @@ class ElevationOverlayRender<T> extends StatelessWidget {
 
   factory ElevationOverlayRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return ElevationOverlayRender(update,
-      widgetKeyVal: null,
     );
   }
 
   ElevationOverlayRender(this._update, {
-    @required this.widgetKeyVal,
   });
 
   @override
   final VoidCallback _update;
-
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
 
 
   @override
@@ -39,7 +24,6 @@ class ElevationOverlayRender<T> extends StatelessWidget {
 
   @override
   List<Core> get props => [
-    this.widgetKeyVal,
   ];
 
   @override
@@ -66,7 +50,6 @@ class ElevationOverlayRender<T> extends StatelessWidget {
     return {
       'name': 'ElevationOverlay',
       'props': {
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -98,7 +81,6 @@ class ElevationOverlayRender<T> extends StatelessWidget {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

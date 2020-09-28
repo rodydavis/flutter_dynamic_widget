@@ -8,14 +8,13 @@ class TabBarThemeRender<T> extends StatelessWidget {
 
   factory TabBarThemeRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return TabBarThemeRender(update,
-      indicatorVal: null,
-      indicatorSizeVal: null,
-      labelColorVal: null,
-      labelPaddingVal: null,
-      labelStyleVal: null,
-      unselectedLabelColorVal: null,
-      unselectedLabelStyleVal: null,
-      widgetKeyVal: null,
+      indicatorVal: BaseCore<Decoration>(null, update),
+      indicatorSizeVal: BaseCore<TabBarIndicatorSize>(null, update),
+      labelColorVal: BaseCore<Color>(null, update),
+      labelPaddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      labelStyleVal: BaseCore<TextStyle>(null, update),
+      unselectedLabelColorVal: BaseCore<Color>(null, update),
+      unselectedLabelStyleVal: BaseCore<TextStyle>(null, update),
     );
   }
 
@@ -27,7 +26,6 @@ class TabBarThemeRender<T> extends StatelessWidget {
     @required this.labelStyleVal,
     @required this.unselectedLabelColorVal,
     @required this.unselectedLabelStyleVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -124,19 +122,6 @@ class TabBarThemeRender<T> extends StatelessWidget {
     unselectedLabelStyleVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -151,7 +136,6 @@ class TabBarThemeRender<T> extends StatelessWidget {
     this.labelStyleVal,
     this.unselectedLabelColorVal,
     this.unselectedLabelStyleVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -203,7 +187,6 @@ class TabBarThemeRender<T> extends StatelessWidget {
         'labelStyle': this.labelStyleVal.toJson(),
         'unselectedLabelColor': this.unselectedLabelColorVal.toJson(),
         'unselectedLabelStyle': this.unselectedLabelStyleVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -251,7 +234,6 @@ class TabBarThemeRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('labelStyle', this.labelStyle));
       properties.add(DiagnosticsProperty('unselectedLabelColor', this.unselectedLabelColor));
       properties.add(DiagnosticsProperty('unselectedLabelStyle', this.unselectedLabelStyle));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

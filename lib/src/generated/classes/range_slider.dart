@@ -8,18 +8,17 @@ class RangeSliderRender<T> extends StatelessWidget {
 
   factory RangeSliderRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return RangeSliderRender(update,
-      valuesVal: null,
-      onChangedVal: null,
-      onChangeStartVal: null,
-      onChangeEndVal: null,
-      minVal: null,
-      maxVal: null,
-      divisionsVal: null,
-      labelsVal: null,
-      activeColorVal: null,
-      inactiveColorVal: null,
-      semanticFormatterCallbackVal: null,
-      widgetKeyVal: null,
+      valuesVal: BaseCore<RangeValues>(null, update),
+      onChangedVal: BaseCore<ValueChanged<RangeValues>>(null, update),
+      onChangeStartVal: BaseCore<ValueChanged<RangeValues>>(null, update),
+      onChangeEndVal: BaseCore<ValueChanged<RangeValues>>(null, update),
+      minVal: BaseCore<double>(null, update),
+      maxVal: BaseCore<double>(null, update),
+      divisionsVal: BaseCore<int>(null, update),
+      labelsVal: BaseCore<RangeLabels>(null, update),
+      activeColorVal: BaseCore<Color>(null, update),
+      inactiveColorVal: BaseCore<Color>(null, update),
+      semanticFormatterCallbackVal: BaseCore<SemanticFormatterCallback>(null, update),
     );
   }
 
@@ -35,7 +34,6 @@ class RangeSliderRender<T> extends StatelessWidget {
     @required this.activeColorVal,
     @required this.inactiveColorVal,
     @required this.semanticFormatterCallbackVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -184,19 +182,6 @@ class RangeSliderRender<T> extends StatelessWidget {
     semanticFormatterCallbackVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -216,7 +201,6 @@ class RangeSliderRender<T> extends StatelessWidget {
     this.activeColorVal,
     this.inactiveColorVal,
     this.semanticFormatterCallbackVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -280,7 +264,6 @@ class RangeSliderRender<T> extends StatelessWidget {
         'activeColor': this.activeColorVal.toJson(),
         'inactiveColor': this.inactiveColorVal.toJson(),
         'semanticFormatterCallback': this.semanticFormatterCallbackVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -336,7 +319,6 @@ class RangeSliderRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('activeColor', this.activeColor));
       properties.add(DiagnosticsProperty('inactiveColor', this.inactiveColor));
       properties.add(DiagnosticsProperty('semanticFormatterCallback', this.semanticFormatterCallback));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

@@ -8,13 +8,12 @@ class RefreshProgressIndicatorRender<T> extends StatelessWidget {
 
   factory RefreshProgressIndicatorRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return RefreshProgressIndicatorRender(update,
-      valueVal: null,
-      backgroundColorVal: null,
-      valueColorVal: null,
-      strokeWidthVal: null,
-      semanticsLabelVal: null,
-      semanticsValueVal: null,
-      widgetKeyVal: null,
+      valueVal: BaseCore<double>(null, update),
+      backgroundColorVal: BaseCore<Color>(null, update),
+      valueColorVal: BaseCore<Animation<Color>>(null, update),
+      strokeWidthVal: BaseCore<double>(null, update),
+      semanticsLabelVal: BaseCore<String>(null, update),
+      semanticsValueVal: BaseCore<String>(null, update),
     );
   }
 
@@ -25,7 +24,6 @@ class RefreshProgressIndicatorRender<T> extends StatelessWidget {
     @required this.strokeWidthVal,
     @required this.semanticsLabelVal,
     @required this.semanticsValueVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -109,19 +107,6 @@ class RefreshProgressIndicatorRender<T> extends StatelessWidget {
     semanticsValueVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -135,7 +120,6 @@ class RefreshProgressIndicatorRender<T> extends StatelessWidget {
     this.strokeWidthVal,
     this.semanticsLabelVal,
     this.semanticsValueVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -184,7 +168,6 @@ class RefreshProgressIndicatorRender<T> extends StatelessWidget {
         'strokeWidth': this.strokeWidthVal.toJson(),
         'semanticsLabel': this.semanticsLabelVal.toJson(),
         'semanticsValue': this.semanticsValueVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -230,7 +213,6 @@ class RefreshProgressIndicatorRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('strokeWidth', this.strokeWidth));
       properties.add(DiagnosticsProperty('semanticsLabel', this.semanticsLabel));
       properties.add(DiagnosticsProperty('semanticsValue', this.semanticsValue));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

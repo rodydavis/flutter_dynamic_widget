@@ -8,12 +8,11 @@ class DialogThemeRender<T> extends StatelessWidget {
 
   factory DialogThemeRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return DialogThemeRender(update,
-      backgroundColorVal: null,
-      elevationVal: null,
-      shapeVal: null,
-      titleTextStyleVal: null,
-      contentTextStyleVal: null,
-      widgetKeyVal: null,
+      backgroundColorVal: BaseCore<Color>(null, update),
+      elevationVal: BaseCore<double>(null, update),
+      shapeVal: BaseCore<ShapeBorder>(null, update),
+      titleTextStyleVal: BaseCore<TextStyle>(null, update),
+      contentTextStyleVal: BaseCore<TextStyle>(null, update),
     );
   }
 
@@ -23,7 +22,6 @@ class DialogThemeRender<T> extends StatelessWidget {
     @required this.shapeVal,
     @required this.titleTextStyleVal,
     @required this.contentTextStyleVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -94,19 +92,6 @@ class DialogThemeRender<T> extends StatelessWidget {
     contentTextStyleVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -119,7 +104,6 @@ class DialogThemeRender<T> extends StatelessWidget {
     this.shapeVal,
     this.titleTextStyleVal,
     this.contentTextStyleVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -165,7 +149,6 @@ class DialogThemeRender<T> extends StatelessWidget {
         'shape': this.shapeVal.toJson(),
         'titleTextStyle': this.titleTextStyleVal.toJson(),
         'contentTextStyle': this.contentTextStyleVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -209,7 +192,6 @@ class DialogThemeRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('shape', this.shape));
       properties.add(DiagnosticsProperty('titleTextStyle', this.titleTextStyle));
       properties.add(DiagnosticsProperty('contentTextStyle', this.contentTextStyle));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

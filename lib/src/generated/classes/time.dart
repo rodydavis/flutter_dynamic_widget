@@ -8,16 +8,14 @@ class TimeOfDayRender<T> extends StatelessWidget {
 
   factory TimeOfDayRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return TimeOfDayRender(update,
-      hourVal: null,
-      minuteVal: null,
-      widgetKeyVal: null,
+      hourVal: BaseCore<int>(null, update),
+      minuteVal: BaseCore<int>(null, update),
     );
   }
 
   TimeOfDayRender(this._update, {
     @required this.hourVal,
     @required this.minuteVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -49,19 +47,6 @@ class TimeOfDayRender<T> extends StatelessWidget {
     minuteVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -74,7 +59,6 @@ class TimeOfDayRender<T> extends StatelessWidget {
   List<Core> get props => [
     this.hourVal,
     this.minuteVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -119,7 +103,6 @@ class TimeOfDayRender<T> extends StatelessWidget {
       'props': {
         'hour': this.hourVal.toJson(),
         'minute': this.minuteVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -161,7 +144,6 @@ class TimeOfDayRender<T> extends StatelessWidget {
     super.debugFillProperties(properties);
       properties.add(DiagnosticsProperty('hour', this.hour));
       properties.add(DiagnosticsProperty('minute', this.minute));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

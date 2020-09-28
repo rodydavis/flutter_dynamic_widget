@@ -8,13 +8,12 @@ class BottomSheetThemeDataRender<T> extends StatelessWidget {
 
   factory BottomSheetThemeDataRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return BottomSheetThemeDataRender(update,
-      backgroundColorVal: null,
-      elevationVal: null,
-      modalBackgroundColorVal: null,
-      modalElevationVal: null,
-      shapeVal: null,
-      clipBehaviorVal: null,
-      widgetKeyVal: null,
+      backgroundColorVal: BaseCore<Color>(null, update),
+      elevationVal: BaseCore<double>(null, update),
+      modalBackgroundColorVal: BaseCore<Color>(null, update),
+      modalElevationVal: BaseCore<double>(null, update),
+      shapeVal: BaseCore<ShapeBorder>(null, update),
+      clipBehaviorVal: BaseCore<Clip>(null, update),
     );
   }
 
@@ -25,7 +24,6 @@ class BottomSheetThemeDataRender<T> extends StatelessWidget {
     @required this.modalElevationVal,
     @required this.shapeVal,
     @required this.clipBehaviorVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -109,19 +107,6 @@ class BottomSheetThemeDataRender<T> extends StatelessWidget {
     clipBehaviorVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -135,7 +120,6 @@ class BottomSheetThemeDataRender<T> extends StatelessWidget {
     this.modalElevationVal,
     this.shapeVal,
     this.clipBehaviorVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -184,7 +168,6 @@ class BottomSheetThemeDataRender<T> extends StatelessWidget {
         'modalElevation': this.modalElevationVal.toJson(),
         'shape': this.shapeVal.toJson(),
         'clipBehavior': this.clipBehaviorVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -230,7 +213,6 @@ class BottomSheetThemeDataRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('modalElevation', this.modalElevation));
       properties.add(DiagnosticsProperty('shape', this.shape));
       properties.add(DiagnosticsProperty('clipBehavior', this.clipBehavior));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

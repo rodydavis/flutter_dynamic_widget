@@ -8,14 +8,13 @@ class CalendarDateRangePickerRender<T> extends StatelessWidget {
 
   factory CalendarDateRangePickerRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return CalendarDateRangePickerRender(update,
-      initialStartDateVal: null,
-      initialEndDateVal: null,
-      firstDateVal: null,
-      lastDateVal: null,
-      currentDateVal: null,
-      onStartDateChangedVal: null,
-      onEndDateChangedVal: null,
-      widgetKeyVal: null,
+      initialStartDateVal: BaseCore<DateTime>(null, update),
+      initialEndDateVal: BaseCore<DateTime>(null, update),
+      firstDateVal: BaseCore<DateTime>(null, update),
+      lastDateVal: BaseCore<DateTime>(null, update),
+      currentDateVal: BaseCore<DateTime>(null, update),
+      onStartDateChangedVal: BaseCore<ValueChanged<DateTime>>(null, update),
+      onEndDateChangedVal: BaseCore<ValueChanged<DateTime>>(null, update),
     );
   }
 
@@ -27,7 +26,6 @@ class CalendarDateRangePickerRender<T> extends StatelessWidget {
     @required this.currentDateVal,
     @required this.onStartDateChangedVal,
     @required this.onEndDateChangedVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -124,19 +122,6 @@ class CalendarDateRangePickerRender<T> extends StatelessWidget {
     onEndDateChangedVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -151,7 +136,6 @@ class CalendarDateRangePickerRender<T> extends StatelessWidget {
     this.currentDateVal,
     this.onStartDateChangedVal,
     this.onEndDateChangedVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -203,7 +187,6 @@ class CalendarDateRangePickerRender<T> extends StatelessWidget {
         'currentDate': this.currentDateVal.toJson(),
         'onStartDateChanged': this.onStartDateChangedVal.toJson(),
         'onEndDateChanged': this.onEndDateChangedVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -251,7 +234,6 @@ class CalendarDateRangePickerRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('currentDate', this.currentDate));
       properties.add(DiagnosticsProperty('onStartDateChanged', this.onStartDateChanged));
       properties.add(DiagnosticsProperty('onEndDateChanged', this.onEndDateChanged));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

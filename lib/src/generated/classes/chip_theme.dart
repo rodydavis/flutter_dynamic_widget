@@ -8,26 +8,25 @@ class ChipThemeDataRender<T> extends StatelessWidget {
 
   factory ChipThemeDataRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return ChipThemeDataRender(update,
-      backgroundColorVal: null,
-      deleteIconColorVal: null,
-      disabledColorVal: null,
-      selectedColorVal: null,
-      secondarySelectedColorVal: null,
-      shadowColorVal: null,
-      selectedShadowColorVal: null,
-      showCheckmarkVal: null,
-      checkmarkColorVal: null,
-      labelPaddingVal: null,
-      paddingVal: null,
-      shapeVal: null,
-      labelStyleVal: null,
-      secondaryLabelStyleVal: null,
-      brightnessVal: null,
-      elevationVal: null,
-      pressElevationVal: null,
-      primaryColorVal: null,
-      secondaryColorVal: null,
-      widgetKeyVal: null,
+      backgroundColorVal: BaseCore<Color>(null, update),
+      deleteIconColorVal: BaseCore<Color>(null, update),
+      disabledColorVal: BaseCore<Color>(null, update),
+      selectedColorVal: BaseCore<Color>(null, update),
+      secondarySelectedColorVal: BaseCore<Color>(null, update),
+      shadowColorVal: BaseCore<Color>(null, update),
+      selectedShadowColorVal: BaseCore<Color>(null, update),
+      showCheckmarkVal: BaseCore<bool>(null, update),
+      checkmarkColorVal: BaseCore<Color>(null, update),
+      labelPaddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      paddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      shapeVal: BaseCore<ShapeBorder>(null, update),
+      labelStyleVal: BaseCore<TextStyle>(null, update),
+      secondaryLabelStyleVal: BaseCore<TextStyle>(null, update),
+      brightnessVal: BaseCore<Brightness>(null, update),
+      elevationVal: BaseCore<double>(null, update),
+      pressElevationVal: BaseCore<double>(null, update),
+      primaryColorVal: BaseCore<Color>(null, update),
+      secondaryColorVal: BaseCore<Color>(null, update),
     );
   }
 
@@ -51,7 +50,6 @@ class ChipThemeDataRender<T> extends StatelessWidget {
     @required this.pressElevationVal,
     @required this.primaryColorVal,
     @required this.secondaryColorVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -304,19 +302,6 @@ class ChipThemeDataRender<T> extends StatelessWidget {
     secondaryColorVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -343,7 +328,6 @@ class ChipThemeDataRender<T> extends StatelessWidget {
     this.pressElevationVal,
     this.primaryColorVal,
     this.secondaryColorVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -439,7 +423,6 @@ class ChipThemeDataRender<T> extends StatelessWidget {
         'pressElevation': this.pressElevationVal.toJson(),
         'primaryColor': this.primaryColorVal.toJson(),
         'secondaryColor': this.secondaryColorVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -515,7 +498,6 @@ class ChipThemeDataRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('pressElevation', this.pressElevation));
       properties.add(DiagnosticsProperty('primaryColor', this.primaryColor));
       properties.add(DiagnosticsProperty('secondaryColor', this.secondaryColor));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

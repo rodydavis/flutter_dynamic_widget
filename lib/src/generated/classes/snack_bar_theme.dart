@@ -8,14 +8,13 @@ class SnackBarThemeDataRender<T> extends StatelessWidget {
 
   factory SnackBarThemeDataRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return SnackBarThemeDataRender(update,
-      backgroundColorVal: null,
-      actionTextColorVal: null,
-      disabledActionTextColorVal: null,
-      contentTextStyleVal: null,
-      elevationVal: null,
-      shapeVal: null,
-      behaviorVal: null,
-      widgetKeyVal: null,
+      backgroundColorVal: BaseCore<Color>(null, update),
+      actionTextColorVal: BaseCore<Color>(null, update),
+      disabledActionTextColorVal: BaseCore<Color>(null, update),
+      contentTextStyleVal: BaseCore<TextStyle>(null, update),
+      elevationVal: BaseCore<double>(null, update),
+      shapeVal: BaseCore<ShapeBorder>(null, update),
+      behaviorVal: BaseCore<SnackBarBehavior>(null, update),
     );
   }
 
@@ -27,7 +26,6 @@ class SnackBarThemeDataRender<T> extends StatelessWidget {
     @required this.elevationVal,
     @required this.shapeVal,
     @required this.behaviorVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -124,19 +122,6 @@ class SnackBarThemeDataRender<T> extends StatelessWidget {
     behaviorVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -151,7 +136,6 @@ class SnackBarThemeDataRender<T> extends StatelessWidget {
     this.elevationVal,
     this.shapeVal,
     this.behaviorVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -203,7 +187,6 @@ class SnackBarThemeDataRender<T> extends StatelessWidget {
         'elevation': this.elevationVal.toJson(),
         'shape': this.shapeVal.toJson(),
         'behavior': this.behaviorVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -251,7 +234,6 @@ class SnackBarThemeDataRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('elevation', this.elevation));
       properties.add(DiagnosticsProperty('shape', this.shape));
       properties.add(DiagnosticsProperty('behavior', this.behavior));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

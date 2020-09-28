@@ -8,11 +8,10 @@ class LicensePageRender<T> extends StatelessWidget {
 
   factory LicensePageRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return LicensePageRender(update,
-      applicationNameVal: null,
-      applicationVersionVal: null,
-      applicationIconVal: null,
-      applicationLegaleseVal: null,
-      widgetKeyVal: null,
+      applicationNameVal: BaseCore<String>(null, update),
+      applicationVersionVal: BaseCore<String>(null, update),
+      applicationIconVal: BaseCore<Widget>(null, update),
+      applicationLegaleseVal: BaseCore<String>(null, update),
     );
   }
 
@@ -21,7 +20,6 @@ class LicensePageRender<T> extends StatelessWidget {
     @required this.applicationVersionVal,
     @required this.applicationIconVal,
     @required this.applicationLegaleseVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -79,19 +77,6 @@ class LicensePageRender<T> extends StatelessWidget {
     applicationLegaleseVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -103,7 +88,6 @@ class LicensePageRender<T> extends StatelessWidget {
     this.applicationVersionVal,
     this.applicationIconVal,
     this.applicationLegaleseVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -146,7 +130,6 @@ class LicensePageRender<T> extends StatelessWidget {
         'applicationVersion': this.applicationVersionVal.toJson(),
         'applicationIcon': this.applicationIconVal.toJson(),
         'applicationLegalese': this.applicationLegaleseVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -188,7 +171,6 @@ class LicensePageRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('applicationVersion', this.applicationVersion));
       properties.add(DiagnosticsProperty('applicationIcon', this.applicationIcon));
       properties.add(DiagnosticsProperty('applicationLegalese', this.applicationLegalese));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

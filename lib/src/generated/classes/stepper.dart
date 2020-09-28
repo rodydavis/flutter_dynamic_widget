@@ -8,15 +8,14 @@ class StepperRender<T> extends StatelessWidget {
 
   factory StepperRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return StepperRender(update,
-      stepsVal: null,
-      physicsVal: null,
-      typeVal: null,
-      currentStepVal: null,
-      onStepTappedVal: null,
-      onStepContinueVal: null,
-      onStepCancelVal: null,
-      controlsBuilderVal: null,
-      widgetKeyVal: null,
+      stepsVal: BaseCore<List<Step>>(null, update),
+      physicsVal: BaseCore<ScrollPhysics>(null, update),
+      typeVal: BaseCore<StepperType>(null, update),
+      currentStepVal: BaseCore<int>(null, update),
+      onStepTappedVal: BaseCore<ValueChanged<int>>(null, update),
+      onStepContinueVal: BaseCore<VoidCallback>(null, update),
+      onStepCancelVal: BaseCore<VoidCallback>(null, update),
+      controlsBuilderVal: BaseCore<ControlsWidgetBuilder>(null, update),
     );
   }
 
@@ -29,7 +28,6 @@ class StepperRender<T> extends StatelessWidget {
     @required this.onStepContinueVal,
     @required this.onStepCancelVal,
     @required this.controlsBuilderVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -139,19 +137,6 @@ class StepperRender<T> extends StatelessWidget {
     controlsBuilderVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -167,7 +152,6 @@ class StepperRender<T> extends StatelessWidget {
     this.onStepContinueVal,
     this.onStepCancelVal,
     this.controlsBuilderVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -222,7 +206,6 @@ class StepperRender<T> extends StatelessWidget {
         'onStepContinue': this.onStepContinueVal.toJson(),
         'onStepCancel': this.onStepCancelVal.toJson(),
         'controlsBuilder': this.controlsBuilderVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -272,7 +255,6 @@ class StepperRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('onStepContinue', this.onStepContinue));
       properties.add(DiagnosticsProperty('onStepCancel', this.onStepCancel));
       properties.add(DiagnosticsProperty('controlsBuilder', this.controlsBuilder));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

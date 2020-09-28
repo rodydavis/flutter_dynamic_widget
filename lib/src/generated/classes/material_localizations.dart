@@ -8,29 +8,14 @@ class DefaultMaterialLocalizationsRender<T> extends StatelessWidget {
 
   factory DefaultMaterialLocalizationsRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return DefaultMaterialLocalizationsRender(update,
-      widgetKeyVal: null,
     );
   }
 
   DefaultMaterialLocalizationsRender(this._update, {
-    @required this.widgetKeyVal,
   });
 
   @override
   final VoidCallback _update;
-
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
 
 
   @override
@@ -45,7 +30,6 @@ class DefaultMaterialLocalizationsRender<T> extends StatelessWidget {
 
   @override
   List<Core> get props => [
-    this.widgetKeyVal,
   ];
 
   @override
@@ -76,7 +60,6 @@ class DefaultMaterialLocalizationsRender<T> extends StatelessWidget {
     return {
       'name': 'DefaultMaterialLocalizations',
       'props': {
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -110,7 +93,6 @@ class DefaultMaterialLocalizationsRender<T> extends StatelessWidget {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

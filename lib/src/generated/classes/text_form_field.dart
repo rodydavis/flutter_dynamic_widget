@@ -8,54 +8,53 @@ class TextFormFieldRender<T> extends StatelessWidget {
 
   factory TextFormFieldRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return TextFormFieldRender(update,
-      controllerVal: null,
-      initialValueVal: null,
-      focusNodeVal: null,
-      decorationVal: null,
-      keyboardTypeVal: null,
-      textCapitalizationVal: null,
-      textInputActionVal: null,
-      styleVal: null,
-      strutStyleVal: null,
-      textDirectionVal: null,
-      textAlignVal: null,
-      textAlignVerticalVal: null,
-      autofocusVal: null,
-      readOnlyVal: null,
-      toolbarOptionsVal: null,
-      showCursorVal: null,
-      obscuringCharacterVal: null,
-      obscureTextVal: null,
-      autocorrectVal: null,
-      smartDashesTypeVal: null,
-      smartQuotesTypeVal: null,
-      enableSuggestionsVal: null,
-      autovalidateVal: null,
-      maxLengthEnforcedVal: null,
-      maxLinesVal: null,
-      minLinesVal: null,
-      expandsVal: null,
-      maxLengthVal: null,
-      onChangedVal: null,
-      onTapVal: null,
-      onEditingCompleteVal: null,
-      onFieldSubmittedVal: null,
-      onSavedVal: null,
-      validatorVal: null,
-      inputFormattersVal: null,
-      enabledVal: null,
-      cursorWidthVal: null,
-      cursorHeightVal: null,
-      cursorRadiusVal: null,
-      cursorColorVal: null,
-      keyboardAppearanceVal: null,
-      scrollPaddingVal: null,
-      enableInteractiveSelectionVal: null,
-      buildCounterVal: null,
-      scrollPhysicsVal: null,
-      autofillHintsVal: null,
-      autovalidateModeVal: null,
-      widgetKeyVal: null,
+      controllerVal: BaseCore<TextEditingController>(null, update),
+      initialValueVal: BaseCore<String>(null, update),
+      focusNodeVal: BaseCore<FocusNode>(null, update),
+      decorationVal: BaseCore<InputDecoration>(null, update),
+      keyboardTypeVal: BaseCore<TextInputType>(null, update),
+      textCapitalizationVal: BaseCore<TextCapitalization>(null, update),
+      textInputActionVal: BaseCore<TextInputAction>(null, update),
+      styleVal: BaseCore<TextStyle>(null, update),
+      strutStyleVal: BaseCore<StrutStyle>(null, update),
+      textDirectionVal: BaseCore<TextDirection>(null, update),
+      textAlignVal: BaseCore<TextAlign>(null, update),
+      textAlignVerticalVal: BaseCore<TextAlignVertical>(null, update),
+      autofocusVal: BaseCore<bool>(null, update),
+      readOnlyVal: BaseCore<bool>(null, update),
+      toolbarOptionsVal: BaseCore<ToolbarOptions>(null, update),
+      showCursorVal: BaseCore<bool>(null, update),
+      obscuringCharacterVal: BaseCore<String>(null, update),
+      obscureTextVal: BaseCore<bool>(null, update),
+      autocorrectVal: BaseCore<bool>(null, update),
+      smartDashesTypeVal: BaseCore<SmartDashesType>(null, update),
+      smartQuotesTypeVal: BaseCore<SmartQuotesType>(null, update),
+      enableSuggestionsVal: BaseCore<bool>(null, update),
+      autovalidateVal: BaseCore<bool>(null, update),
+      maxLengthEnforcedVal: BaseCore<bool>(null, update),
+      maxLinesVal: BaseCore<int>(null, update),
+      minLinesVal: BaseCore<int>(null, update),
+      expandsVal: BaseCore<bool>(null, update),
+      maxLengthVal: BaseCore<int>(null, update),
+      onChangedVal: BaseCore<ValueChanged<String>>(null, update),
+      onTapVal: BaseCore<GestureTapCallback>(null, update),
+      onEditingCompleteVal: BaseCore<VoidCallback>(null, update),
+      onFieldSubmittedVal: BaseCore<ValueChanged<String>>(null, update),
+      onSavedVal: BaseCore<FormFieldSetter<String>>(null, update),
+      validatorVal: BaseCore<FormFieldValidator<String>>(null, update),
+      inputFormattersVal: BaseCore<List<TextInputFormatter>>(null, update),
+      enabledVal: BaseCore<bool>(null, update),
+      cursorWidthVal: BaseCore<double>(null, update),
+      cursorHeightVal: BaseCore<double>(null, update),
+      cursorRadiusVal: BaseCore<Radius>(null, update),
+      cursorColorVal: BaseCore<Color>(null, update),
+      keyboardAppearanceVal: BaseCore<Brightness>(null, update),
+      scrollPaddingVal: BaseCore<EdgeInsets>(null, update),
+      enableInteractiveSelectionVal: BaseCore<bool>(null, update),
+      buildCounterVal: BaseCore<InputCounterWidgetBuilder>(null, update),
+      scrollPhysicsVal: BaseCore<ScrollPhysics>(null, update),
+      autofillHintsVal: BaseCore<Iterable<String>>(null, update),
+      autovalidateModeVal: BaseCore<AutovalidateMode>(null, update),
     );
   }
 
@@ -107,7 +106,6 @@ class TextFormFieldRender<T> extends StatelessWidget {
     @required this.scrollPhysicsVal,
     @required this.autofillHintsVal,
     @required this.autovalidateModeVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -724,19 +722,6 @@ class TextFormFieldRender<T> extends StatelessWidget {
     autovalidateModeVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -791,7 +776,6 @@ class TextFormFieldRender<T> extends StatelessWidget {
     this.scrollPhysicsVal,
     this.autofillHintsVal,
     this.autovalidateModeVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -963,7 +947,6 @@ class TextFormFieldRender<T> extends StatelessWidget {
         'scrollPhysics': this.scrollPhysicsVal.toJson(),
         'autofillHints': this.autofillHintsVal.toJson(),
         'autovalidateMode': this.autovalidateModeVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -1091,7 +1074,6 @@ class TextFormFieldRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('scrollPhysics', this.scrollPhysics));
       properties.add(DiagnosticsProperty('autofillHints', this.autofillHints));
       properties.add(DiagnosticsProperty('autovalidateMode', this.autovalidateMode));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

@@ -8,14 +8,13 @@ class ReorderableListViewRender<T> extends StatelessWidget {
 
   factory ReorderableListViewRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return ReorderableListViewRender(update,
-      headerVal: null,
-      childrenVal: null,
-      scrollDirectionVal: null,
-      scrollControllerVal: null,
-      paddingVal: null,
-      reverseVal: null,
-      onReorderVal: null,
-      widgetKeyVal: null,
+      headerVal: BaseCore<Widget>(null, update),
+      childrenVal: BaseCore<List<Widget>>(null, update),
+      scrollDirectionVal: BaseCore<Axis>(null, update),
+      scrollControllerVal: BaseCore<ScrollController>(null, update),
+      paddingVal: BaseCore<EdgeInsets>(null, update),
+      reverseVal: BaseCore<bool>(null, update),
+      onReorderVal: BaseCore<ReorderCallback>(null, update),
     );
   }
 
@@ -27,7 +26,6 @@ class ReorderableListViewRender<T> extends StatelessWidget {
     @required this.paddingVal,
     @required this.reverseVal,
     @required this.onReorderVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -124,19 +122,6 @@ class ReorderableListViewRender<T> extends StatelessWidget {
     onReorderVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -151,7 +136,6 @@ class ReorderableListViewRender<T> extends StatelessWidget {
     this.paddingVal,
     this.reverseVal,
     this.onReorderVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -203,7 +187,6 @@ class ReorderableListViewRender<T> extends StatelessWidget {
         'padding': this.paddingVal.toJson(),
         'reverse': this.reverseVal.toJson(),
         'onReorder': this.onReorderVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -251,7 +234,6 @@ class ReorderableListViewRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('padding', this.padding));
       properties.add(DiagnosticsProperty('reverse', this.reverse));
       properties.add(DiagnosticsProperty('onReorder', this.onReorder));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

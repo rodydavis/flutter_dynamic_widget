@@ -8,10 +8,9 @@ class NavigationRailDestinationRender<T> extends StatelessWidget {
 
   factory NavigationRailDestinationRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return NavigationRailDestinationRender(update,
-      iconVal: null,
-      selectedIconVal: null,
-      labelVal: null,
-      widgetKeyVal: null,
+      iconVal: BaseCore<Widget>(null, update),
+      selectedIconVal: BaseCore<Widget>(null, update),
+      labelVal: BaseCore<Widget>(null, update),
     );
   }
 
@@ -19,7 +18,6 @@ class NavigationRailDestinationRender<T> extends StatelessWidget {
     @required this.iconVal,
     @required this.selectedIconVal,
     @required this.labelVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -64,19 +62,6 @@ class NavigationRailDestinationRender<T> extends StatelessWidget {
     labelVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -87,7 +72,6 @@ class NavigationRailDestinationRender<T> extends StatelessWidget {
     this.iconVal,
     this.selectedIconVal,
     this.labelVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -127,7 +111,6 @@ class NavigationRailDestinationRender<T> extends StatelessWidget {
         'icon': this.iconVal.toJson(),
         'selectedIcon': this.selectedIconVal.toJson(),
         'label': this.labelVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -167,7 +150,6 @@ class NavigationRailDestinationRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('icon', this.icon));
       properties.add(DiagnosticsProperty('selectedIcon', this.selectedIcon));
       properties.add(DiagnosticsProperty('label', this.label));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

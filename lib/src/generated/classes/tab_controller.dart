@@ -8,10 +8,9 @@ class DefaultTabControllerRender<T> extends StatelessWidget {
 
   factory DefaultTabControllerRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return DefaultTabControllerRender(update,
-      lengthVal: null,
-      initialIndexVal: null,
-      childVal: null,
-      widgetKeyVal: null,
+      lengthVal: BaseCore<int>(null, update),
+      initialIndexVal: BaseCore<int>(null, update),
+      childVal: BaseCore<Widget>(null, update),
     );
   }
 
@@ -19,7 +18,6 @@ class DefaultTabControllerRender<T> extends StatelessWidget {
     @required this.lengthVal,
     @required this.initialIndexVal,
     @required this.childVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -64,19 +62,6 @@ class DefaultTabControllerRender<T> extends StatelessWidget {
     childVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -87,7 +72,6 @@ class DefaultTabControllerRender<T> extends StatelessWidget {
     this.lengthVal,
     this.initialIndexVal,
     this.childVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -127,7 +111,6 @@ class DefaultTabControllerRender<T> extends StatelessWidget {
         'length': this.lengthVal.toJson(),
         'initialIndex': this.initialIndexVal.toJson(),
         'child': this.childVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -167,7 +150,6 @@ class DefaultTabControllerRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('length', this.length));
       properties.add(DiagnosticsProperty('initialIndex', this.initialIndex));
       properties.add(DiagnosticsProperty('child', this.child));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

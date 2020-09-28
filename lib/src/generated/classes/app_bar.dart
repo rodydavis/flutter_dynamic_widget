@@ -8,36 +8,35 @@ class SliverAppBarRender<T> extends StatelessWidget {
 
   factory SliverAppBarRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return SliverAppBarRender(update,
-      leadingVal: null,
-      automaticallyImplyLeadingVal: null,
-      titleVal: null,
-      actionsVal: null,
-      flexibleSpaceVal: null,
-      bottomVal: null,
-      elevationVal: null,
-      shadowColorVal: null,
-      forceElevatedVal: null,
-      backgroundColorVal: null,
-      brightnessVal: null,
-      iconThemeVal: null,
-      actionsIconThemeVal: null,
-      textThemeVal: null,
-      primaryVal: null,
-      centerTitleVal: null,
-      excludeHeaderSemanticsVal: null,
-      titleSpacingVal: null,
-      collapsedHeightVal: null,
-      expandedHeightVal: null,
-      floatingVal: null,
-      pinnedVal: null,
-      shapeVal: null,
-      snapVal: null,
-      stretchVal: null,
-      stretchTriggerOffsetVal: null,
-      onStretchTriggerVal: null,
-      toolbarHeightVal: null,
-      leadingWidthVal: null,
-      widgetKeyVal: null,
+      leadingVal: BaseCore<Widget>(null, update),
+      automaticallyImplyLeadingVal: BaseCore<bool>(null, update),
+      titleVal: BaseCore<Widget>(null, update),
+      actionsVal: BaseCore<List<Widget>>(null, update),
+      flexibleSpaceVal: BaseCore<Widget>(null, update),
+      bottomVal: BaseCore<PreferredSizeWidget>(null, update),
+      elevationVal: BaseCore<double>(null, update),
+      shadowColorVal: BaseCore<Color>(null, update),
+      forceElevatedVal: BaseCore<bool>(null, update),
+      backgroundColorVal: BaseCore<Color>(null, update),
+      brightnessVal: BaseCore<Brightness>(null, update),
+      iconThemeVal: BaseCore<IconThemeData>(null, update),
+      actionsIconThemeVal: BaseCore<IconThemeData>(null, update),
+      textThemeVal: BaseCore<TextTheme>(null, update),
+      primaryVal: BaseCore<bool>(null, update),
+      centerTitleVal: BaseCore<bool>(null, update),
+      excludeHeaderSemanticsVal: BaseCore<bool>(null, update),
+      titleSpacingVal: BaseCore<double>(null, update),
+      collapsedHeightVal: BaseCore<double>(null, update),
+      expandedHeightVal: BaseCore<double>(null, update),
+      floatingVal: BaseCore<bool>(null, update),
+      pinnedVal: BaseCore<bool>(null, update),
+      shapeVal: BaseCore<ShapeBorder>(null, update),
+      snapVal: BaseCore<bool>(null, update),
+      stretchVal: BaseCore<bool>(null, update),
+      stretchTriggerOffsetVal: BaseCore<double>(null, update),
+      onStretchTriggerVal: BaseCore<AsyncCallback>(null, update),
+      toolbarHeightVal: BaseCore<double>(null, update),
+      leadingWidthVal: BaseCore<double>(null, update),
     );
   }
 
@@ -71,7 +70,6 @@ class SliverAppBarRender<T> extends StatelessWidget {
     @required this.onStretchTriggerVal,
     @required this.toolbarHeightVal,
     @required this.leadingWidthVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -454,19 +452,6 @@ class SliverAppBarRender<T> extends StatelessWidget {
     leadingWidthVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -503,7 +488,6 @@ class SliverAppBarRender<T> extends StatelessWidget {
     this.onStretchTriggerVal,
     this.toolbarHeightVal,
     this.leadingWidthVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -621,7 +605,6 @@ class SliverAppBarRender<T> extends StatelessWidget {
         'onStretchTrigger': this.onStretchTriggerVal.toJson(),
         'toolbarHeight': this.toolbarHeightVal.toJson(),
         'leadingWidth': this.leadingWidthVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -713,7 +696,6 @@ class SliverAppBarRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('onStretchTrigger', this.onStretchTrigger));
       properties.add(DiagnosticsProperty('toolbarHeight', this.toolbarHeight));
       properties.add(DiagnosticsProperty('leadingWidth', this.leadingWidth));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

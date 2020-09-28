@@ -8,31 +8,30 @@ class SelectableTextRender<T> extends StatelessWidget {
 
   factory SelectableTextRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return SelectableTextRender(update,
-      dataVal: null,
-      textSpanVal: null,
-      focusNodeVal: null,
-      styleVal: null,
-      strutStyleVal: null,
-      textAlignVal: null,
-      textDirectionVal: null,
-      textScaleFactorVal: null,
-      autofocusVal: null,
-      minLinesVal: null,
-      maxLinesVal: null,
-      showCursorVal: null,
-      cursorWidthVal: null,
-      cursorHeightVal: null,
-      cursorRadiusVal: null,
-      cursorColorVal: null,
-      enableInteractiveSelectionVal: null,
-      dragStartBehaviorVal: null,
-      toolbarOptionsVal: null,
-      onTapVal: null,
-      scrollPhysicsVal: null,
-      textHeightBehaviorVal: null,
-      textWidthBasisVal: null,
-      onSelectionChangedVal: null,
-      widgetKeyVal: null,
+      dataVal: BaseCore<String>(null, update),
+      textSpanVal: BaseCore<TextSpan>(null, update),
+      focusNodeVal: BaseCore<FocusNode>(null, update),
+      styleVal: BaseCore<TextStyle>(null, update),
+      strutStyleVal: BaseCore<StrutStyle>(null, update),
+      textAlignVal: BaseCore<TextAlign>(null, update),
+      textDirectionVal: BaseCore<TextDirection>(null, update),
+      textScaleFactorVal: BaseCore<double>(null, update),
+      autofocusVal: BaseCore<bool>(null, update),
+      minLinesVal: BaseCore<int>(null, update),
+      maxLinesVal: BaseCore<int>(null, update),
+      showCursorVal: BaseCore<bool>(null, update),
+      cursorWidthVal: BaseCore<double>(null, update),
+      cursorHeightVal: BaseCore<double>(null, update),
+      cursorRadiusVal: BaseCore<Radius>(null, update),
+      cursorColorVal: BaseCore<Color>(null, update),
+      enableInteractiveSelectionVal: BaseCore<bool>(null, update),
+      dragStartBehaviorVal: BaseCore<DragStartBehavior>(null, update),
+      toolbarOptionsVal: BaseCore<ToolbarOptions>(null, update),
+      onTapVal: BaseCore<GestureTapCallback>(null, update),
+      scrollPhysicsVal: BaseCore<ScrollPhysics>(null, update),
+      textHeightBehaviorVal: BaseCore<TextHeightBehavior>(null, update),
+      textWidthBasisVal: BaseCore<TextWidthBasis>(null, update),
+      onSelectionChangedVal: BaseCore<SelectionChangedCallback>(null, update),
     );
   }
 
@@ -61,7 +60,6 @@ class SelectableTextRender<T> extends StatelessWidget {
     @required this.textHeightBehaviorVal,
     @required this.textWidthBasisVal,
     @required this.onSelectionChangedVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -379,19 +377,6 @@ class SelectableTextRender<T> extends StatelessWidget {
     onSelectionChangedVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -423,7 +408,6 @@ class SelectableTextRender<T> extends StatelessWidget {
     this.textHeightBehaviorVal,
     this.textWidthBasisVal,
     this.onSelectionChangedVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -570,7 +554,6 @@ class SelectableTextRender<T> extends StatelessWidget {
         'textHeightBehavior': this.textHeightBehaviorVal.toJson(),
         'textWidthBasis': this.textWidthBasisVal.toJson(),
         'onSelectionChanged': this.onSelectionChangedVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -674,7 +657,6 @@ class SelectableTextRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('textHeightBehavior', this.textHeightBehavior));
       properties.add(DiagnosticsProperty('textWidthBasis', this.textWidthBasis));
       properties.add(DiagnosticsProperty('onSelectionChanged', this.onSelectionChanged));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

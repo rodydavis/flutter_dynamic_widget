@@ -8,16 +8,14 @@ class DateTimeRangeRender<T> extends StatelessWidget {
 
   factory DateTimeRangeRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return DateTimeRangeRender(update,
-      startVal: null,
-      endVal: null,
-      widgetKeyVal: null,
+      startVal: BaseCore<DateTime>(null, update),
+      endVal: BaseCore<DateTime>(null, update),
     );
   }
 
   DateTimeRangeRender(this._update, {
     @required this.startVal,
     @required this.endVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -49,19 +47,6 @@ class DateTimeRangeRender<T> extends StatelessWidget {
     endVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -71,7 +56,6 @@ class DateTimeRangeRender<T> extends StatelessWidget {
   List<Core> get props => [
     this.startVal,
     this.endVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -108,7 +92,6 @@ class DateTimeRangeRender<T> extends StatelessWidget {
       'props': {
         'start': this.startVal.toJson(),
         'end': this.endVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -146,7 +129,6 @@ class DateTimeRangeRender<T> extends StatelessWidget {
     super.debugFillProperties(properties);
       properties.add(DiagnosticsProperty('start', this.start));
       properties.add(DiagnosticsProperty('end', this.end));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

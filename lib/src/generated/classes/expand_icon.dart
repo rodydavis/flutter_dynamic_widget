@@ -8,14 +8,13 @@ class ExpandIconRender<T> extends StatelessWidget {
 
   factory ExpandIconRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return ExpandIconRender(update,
-      isExpandedVal: null,
-      sizeVal: null,
-      onPressedVal: null,
-      paddingVal: null,
-      colorVal: null,
-      disabledColorVal: null,
-      expandedColorVal: null,
-      widgetKeyVal: null,
+      isExpandedVal: BaseCore<bool>(null, update),
+      sizeVal: BaseCore<double>(null, update),
+      onPressedVal: BaseCore<ValueChanged<bool>>(null, update),
+      paddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
+      colorVal: BaseCore<Color>(null, update),
+      disabledColorVal: BaseCore<Color>(null, update),
+      expandedColorVal: BaseCore<Color>(null, update),
     );
   }
 
@@ -27,7 +26,6 @@ class ExpandIconRender<T> extends StatelessWidget {
     @required this.colorVal,
     @required this.disabledColorVal,
     @required this.expandedColorVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -124,19 +122,6 @@ class ExpandIconRender<T> extends StatelessWidget {
     expandedColorVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -151,7 +136,6 @@ class ExpandIconRender<T> extends StatelessWidget {
     this.colorVal,
     this.disabledColorVal,
     this.expandedColorVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -203,7 +187,6 @@ class ExpandIconRender<T> extends StatelessWidget {
         'color': this.colorVal.toJson(),
         'disabledColor': this.disabledColorVal.toJson(),
         'expandedColor': this.expandedColorVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -251,7 +234,6 @@ class ExpandIconRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('color', this.color));
       properties.add(DiagnosticsProperty('disabledColor', this.disabledColor));
       properties.add(DiagnosticsProperty('expandedColor', this.expandedColor));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

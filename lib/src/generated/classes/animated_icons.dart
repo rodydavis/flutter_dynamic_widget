@@ -8,13 +8,12 @@ class AnimatedIconRender<T> extends StatelessWidget {
 
   factory AnimatedIconRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return AnimatedIconRender(update,
-      progressVal: null,
-      colorVal: null,
-      sizeVal: null,
-      iconVal: null,
-      semanticLabelVal: null,
-      textDirectionVal: null,
-      widgetKeyVal: null,
+      progressVal: BaseCore<Animation<double>>(null, update),
+      colorVal: BaseCore<Color>(null, update),
+      sizeVal: BaseCore<double>(null, update),
+      iconVal: BaseCore<AnimatedIconData>(null, update),
+      semanticLabelVal: BaseCore<String>(null, update),
+      textDirectionVal: BaseCore<TextDirection>(null, update),
     );
   }
 
@@ -25,7 +24,6 @@ class AnimatedIconRender<T> extends StatelessWidget {
     @required this.iconVal,
     @required this.semanticLabelVal,
     @required this.textDirectionVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -109,19 +107,6 @@ class AnimatedIconRender<T> extends StatelessWidget {
     textDirectionVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -135,7 +120,6 @@ class AnimatedIconRender<T> extends StatelessWidget {
     this.iconVal,
     this.semanticLabelVal,
     this.textDirectionVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -184,7 +168,6 @@ class AnimatedIconRender<T> extends StatelessWidget {
         'icon': this.iconVal.toJson(),
         'semanticLabel': this.semanticLabelVal.toJson(),
         'textDirection': this.textDirectionVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -230,7 +213,6 @@ class AnimatedIconRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('icon', this.icon));
       properties.add(DiagnosticsProperty('semanticLabel', this.semanticLabel));
       properties.add(DiagnosticsProperty('textDirection', this.textDirection));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

@@ -8,10 +8,9 @@ class GridTileRender<T> extends StatelessWidget {
 
   factory GridTileRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return GridTileRender(update,
-      headerVal: null,
-      footerVal: null,
-      childVal: null,
-      widgetKeyVal: null,
+      headerVal: BaseCore<Widget>(null, update),
+      footerVal: BaseCore<Widget>(null, update),
+      childVal: BaseCore<Widget>(null, update),
     );
   }
 
@@ -19,7 +18,6 @@ class GridTileRender<T> extends StatelessWidget {
     @required this.headerVal,
     @required this.footerVal,
     @required this.childVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -64,19 +62,6 @@ class GridTileRender<T> extends StatelessWidget {
     childVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -87,7 +72,6 @@ class GridTileRender<T> extends StatelessWidget {
     this.headerVal,
     this.footerVal,
     this.childVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -127,7 +111,6 @@ class GridTileRender<T> extends StatelessWidget {
         'header': this.headerVal.toJson(),
         'footer': this.footerVal.toJson(),
         'child': this.childVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -167,7 +150,6 @@ class GridTileRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('header', this.header));
       properties.add(DiagnosticsProperty('footer', this.footer));
       properties.add(DiagnosticsProperty('child', this.child));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 

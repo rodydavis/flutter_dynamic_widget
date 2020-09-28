@@ -8,13 +8,12 @@ class AnimatedThemeRender<T> extends StatelessWidget {
 
   factory AnimatedThemeRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
     return AnimatedThemeRender(update,
-      dataVal: null,
-      isMaterialAppThemeVal: null,
-      childVal: null,
-      curveVal: null,
-      durationVal: null,
-      onEndVal: null,
-      widgetKeyVal: null,
+      dataVal: BaseCore<ThemeData>(null, update),
+      isMaterialAppThemeVal: BaseCore<bool>(null, update),
+      childVal: BaseCore<Widget>(null, update),
+      curveVal: BaseCore<Curve>(null, update),
+      durationVal: BaseCore<Duration>(null, update),
+      onEndVal: BaseCore<VoidCallback>(null, update),
     );
   }
 
@@ -25,7 +24,6 @@ class AnimatedThemeRender<T> extends StatelessWidget {
     @required this.curveVal,
     @required this.durationVal,
     @required this.onEndVal,
-    @required this.widgetKeyVal,
   });
 
   @override
@@ -109,19 +107,6 @@ class AnimatedThemeRender<T> extends StatelessWidget {
     onEndVal.value = val;
   }
 
-  Core<Key> widgetKeyVal;
-
-  Key get widgetKey {
-    return widgetKeyVal.value;
-  }
-
-  set widgetKey(Key val) {
-    if (val == this.widgetKey) {
-      return;
-    }
-    widgetKeyVal.value = val;
-  }
-
 
   @override
   Map<String, dynamic> get staticFields => {
@@ -135,7 +120,6 @@ class AnimatedThemeRender<T> extends StatelessWidget {
     this.curveVal,
     this.durationVal,
     this.onEndVal,
-    this.widgetKeyVal,
   ];
 
   @override
@@ -184,7 +168,6 @@ class AnimatedThemeRender<T> extends StatelessWidget {
         'curve': this.curveVal.toJson(),
         'duration': this.durationVal.toJson(),
         'onEnd': this.onEndVal.toJson(),
-        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -230,7 +213,6 @@ class AnimatedThemeRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('curve', this.curve));
       properties.add(DiagnosticsProperty('duration', this.duration));
       properties.add(DiagnosticsProperty('onEnd', this.onEnd));
-      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
   }
 }
 
