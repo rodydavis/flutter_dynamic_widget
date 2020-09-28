@@ -1,0 +1,365 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/gestures.dart';
+import '../core.dart';
+
+class SnackBarRender<T> extends StatelessWidget {
+
+  factory SnackBarRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
+    return SnackBarRender(update,
+      contentVal: null,
+      backgroundColorVal: null,
+      elevationVal: null,
+      marginVal: null,
+      paddingVal: null,
+      widthVal: null,
+      shapeVal: null,
+      behaviorVal: null,
+      actionVal: null,
+      durationVal: null,
+      animationVal: null,
+      onVisibleVal: null,
+      widgetKeyVal: null,
+    );
+  }
+
+  SnackBarRender(this._update, {
+    @required this.contentVal,
+    @required this.backgroundColorVal,
+    @required this.elevationVal,
+    @required this.marginVal,
+    @required this.paddingVal,
+    @required this.widthVal,
+    @required this.shapeVal,
+    @required this.behaviorVal,
+    @required this.actionVal,
+    @required this.durationVal,
+    @required this.animationVal,
+    @required this.onVisibleVal,
+    @required this.widgetKeyVal,
+  });
+
+  @override
+  final VoidCallback _update;
+
+  Core<Widget> contentVal;
+
+  Widget get content {
+    return contentVal.value;
+  }
+
+  set content(Widget val) {
+    if (val == this.content) {
+      return;
+    }
+    contentVal.value = val;
+  }
+
+  Core<Color> backgroundColorVal;
+
+  Color get backgroundColor {
+    return backgroundColorVal.value;
+  }
+
+  set backgroundColor(Color val) {
+    if (val == this.backgroundColor) {
+      return;
+    }
+    backgroundColorVal.value = val;
+  }
+
+  Core<double> elevationVal;
+
+  double get elevation {
+    return elevationVal.value;
+  }
+
+  set elevation(double val) {
+    if (val == this.elevation) {
+      return;
+    }
+    elevationVal.value = val;
+  }
+
+  Core<EdgeInsetsGeometry> marginVal;
+
+  EdgeInsetsGeometry get margin {
+    return marginVal.value;
+  }
+
+  set margin(EdgeInsetsGeometry val) {
+    if (val == this.margin) {
+      return;
+    }
+    marginVal.value = val;
+  }
+
+  Core<EdgeInsetsGeometry> paddingVal;
+
+  EdgeInsetsGeometry get padding {
+    return paddingVal.value;
+  }
+
+  set padding(EdgeInsetsGeometry val) {
+    if (val == this.padding) {
+      return;
+    }
+    paddingVal.value = val;
+  }
+
+  Core<double> widthVal;
+
+  double get width {
+    return widthVal.value;
+  }
+
+  set width(double val) {
+    if (val == this.width) {
+      return;
+    }
+    widthVal.value = val;
+  }
+
+  Core<ShapeBorder> shapeVal;
+
+  ShapeBorder get shape {
+    return shapeVal.value;
+  }
+
+  set shape(ShapeBorder val) {
+    if (val == this.shape) {
+      return;
+    }
+    shapeVal.value = val;
+  }
+
+  Core<SnackBarBehavior> behaviorVal;
+
+  SnackBarBehavior get behavior {
+    return behaviorVal.value;
+  }
+
+  set behavior(SnackBarBehavior val) {
+    if (val == this.behavior) {
+      return;
+    }
+    behaviorVal.value = val;
+  }
+
+  Core<SnackBarAction> actionVal;
+
+  SnackBarAction get action {
+    return actionVal.value;
+  }
+
+  set action(SnackBarAction val) {
+    if (val == this.action) {
+      return;
+    }
+    actionVal.value = val;
+  }
+
+  Core<Duration> durationVal;
+
+  Duration get duration {
+    return durationVal.value;
+  }
+
+  set duration(Duration val) {
+    if (val == this.duration) {
+      return;
+    }
+    durationVal.value = val;
+  }
+
+  Core<Animation<double>> animationVal;
+
+  Animation<double> get animation {
+    return animationVal.value;
+  }
+
+  set animation(Animation<double> val) {
+    if (val == this.animation) {
+      return;
+    }
+    animationVal.value = val;
+  }
+
+  Core<VoidCallback> onVisibleVal;
+
+  VoidCallback get onVisible {
+    return onVisibleVal.value;
+  }
+
+  set onVisible(VoidCallback val) {
+    if (val == this.onVisible) {
+      return;
+    }
+    onVisibleVal.value = val;
+  }
+
+  Core<Key> widgetKeyVal;
+
+  Key get widgetKey {
+    return widgetKeyVal.value;
+  }
+
+  set widgetKey(Key val) {
+    if (val == this.widgetKey) {
+      return;
+    }
+    widgetKeyVal.value = val;
+  }
+
+
+  @override
+  Map<String, dynamic> get staticFields => {
+  };
+
+  @override
+  List<Core> get props => [
+    this.contentVal,
+    this.backgroundColorVal,
+    this.elevationVal,
+    this.marginVal,
+    this.paddingVal,
+    this.widthVal,
+    this.shapeVal,
+    this.behaviorVal,
+    this.actionVal,
+    this.durationVal,
+    this.animationVal,
+    this.onVisibleVal,
+    this.widgetKeyVal,
+  ];
+
+  @override
+  String get description {
+    final sb = StringBuffer();
+    sb.writeln("[ * <https://material.io/design/components/snackbars.html>]");
+    return sb.toString();
+  }
+
+  @override
+  Map<String, Object> get constructors {
+     return {
+      'default': SnackBar(
+        key: this.key,
+        content: this.content,
+        backgroundColor: this.backgroundColor,
+        elevation: this.elevation,
+        margin: this.margin,
+        padding: this.padding,
+        width: this.width,
+        shape: this.shape,
+        behavior: this.behavior,
+        action: this.action,
+        duration: this.duration,
+        animation: this.animation,
+        onVisible: this.onVisible,
+      ),
+    };
+  }
+
+  @override
+  Map<String, Map<String, dynamic>> get properties {
+     return {
+      'default': {
+        'key': this.key,
+        'content': this.content,
+        'backgroundColor': this.backgroundColor,
+        'elevation': this.elevation,
+        'margin': this.margin,
+        'padding': this.padding,
+        'width': this.width,
+        'shape': this.shape,
+        'behavior': this.behavior,
+        'action': this.action,
+        'duration': this.duration,
+        'animation': this.animation,
+        'onVisible': this.onVisible,
+      },
+    };
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return {
+      'name': 'SnackBar',
+      'props': {
+        'content': this.content,
+        'backgroundColor': this.backgroundColor,
+        'elevation': this.elevation,
+        'margin': this.margin,
+        'padding': this.padding,
+        'width': this.width,
+        'shape': this.shape,
+        'behavior': this.behavior,
+        'action': this.action,
+        'duration': this.duration,
+        'animation': this.animation,
+        'onVisible': this.onVisible,
+        'widgetKey': this.widgetKey,
+      }
+    };
+  }
+
+  @override
+  Map<String, String> toCode() {
+    return {
+    'default': """SnackBar(
+       key: ${this.key?.toCode()},
+       content: ${this.content?.toCode()},
+       backgroundColor: ${this.backgroundColor?.toCode()},
+       elevation: ${this.elevation?.toCode()},
+       margin: ${this.margin?.toCode()},
+       padding: ${this.padding?.toCode()},
+       width: ${this.width?.toCode()},
+       shape: ${this.shape?.toCode()},
+       behavior: ${this.behavior?.toCode()},
+       action: ${this.action?.toCode()},
+       duration: ${this.duration?.toCode()},
+       animation: ${this.animation?.toCode()},
+       onVisible: ${this.onVisible?.toCode()},
+    )""",
+    };
+  }
+
+  final _controller = ValueNotifier<WidgetRect>(null);
+  ValueListenable<WidgetRect> get stats => _controller;
+
+  @override
+  Widget build(BuildContext context) {
+    if (isWidget) return TrackedWidget(
+      controller: _controller,
+      child: defaultBase,
+    );
+    return Container();
+  }
+
+  @override
+  bool get isWidget => defaultBase is Widget;
+  
+  @override
+  Object get defaultBase => constructors['default'];
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+      properties.add(DiagnosticsProperty('content', this.content));
+      properties.add(DiagnosticsProperty('backgroundColor', this.backgroundColor));
+      properties.add(DiagnosticsProperty('elevation', this.elevation));
+      properties.add(DiagnosticsProperty('margin', this.margin));
+      properties.add(DiagnosticsProperty('padding', this.padding));
+      properties.add(DiagnosticsProperty('width', this.width));
+      properties.add(DiagnosticsProperty('shape', this.shape));
+      properties.add(DiagnosticsProperty('behavior', this.behavior));
+      properties.add(DiagnosticsProperty('action', this.action));
+      properties.add(DiagnosticsProperty('duration', this.duration));
+      properties.add(DiagnosticsProperty('animation', this.animation));
+      properties.add(DiagnosticsProperty('onVisible', this.onVisible));
+      properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));
+  }
+}
+
