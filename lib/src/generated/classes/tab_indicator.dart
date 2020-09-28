@@ -106,9 +106,9 @@ class UnderlineTabIndicatorRender<T> extends StatelessWidget {
     return {
       'name': 'UnderlineTabIndicator',
       'props': {
-        'borderSide': this.borderSide,
-        'insets': this.insets,
-        'widgetKey': this.widgetKey,
+        'borderSide': this.borderSideVal.toJson(),
+        'insets': this.insetsVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -117,8 +117,8 @@ class UnderlineTabIndicatorRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """UnderlineTabIndicator(
-       borderSide: ${this.borderSide?.toCode()},
-       insets: ${this.insets?.toCode()},
+       borderSide: ${this.borderSideVal.toCode()},
+       insets: ${this.insetsVal.toCode()},
     )""",
     };
   }

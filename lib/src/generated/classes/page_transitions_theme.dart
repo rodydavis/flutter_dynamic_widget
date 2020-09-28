@@ -89,8 +89,8 @@ class PageTransitionsThemeRender<T> extends StatelessWidget {
     return {
       'name': 'PageTransitionsTheme',
       'props': {
-        'builders': this.builders,
-        'widgetKey': this.widgetKey,
+        'builders': this.buildersVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -99,7 +99,7 @@ class PageTransitionsThemeRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """PageTransitionsTheme(
-       builders: ${this.builders?.toCode()},
+       builders: ${this.buildersVal.toCode()},
     )""",
     };
   }

@@ -245,7 +245,6 @@ class TooltipRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': Tooltip(
-        key: this.key,
         message: this.message,
         height: this.height,
         padding: this.padding,
@@ -266,7 +265,6 @@ class TooltipRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'message': this.message,
         'height': this.height,
         'padding': this.padding,
@@ -288,19 +286,19 @@ class TooltipRender<T> extends StatelessWidget {
     return {
       'name': 'Tooltip',
       'props': {
-        'message': this.message,
-        'height': this.height,
-        'padding': this.padding,
-        'margin': this.margin,
-        'verticalOffset': this.verticalOffset,
-        'preferBelow': this.preferBelow,
-        'excludeFromSemantics': this.excludeFromSemantics,
-        'child': this.child,
-        'decoration': this.decoration,
-        'textStyle': this.textStyle,
-        'waitDuration': this.waitDuration,
-        'showDuration': this.showDuration,
-        'widgetKey': this.widgetKey,
+        'message': this.messageVal.toJson(),
+        'height': this.heightVal.toJson(),
+        'padding': this.paddingVal.toJson(),
+        'margin': this.marginVal.toJson(),
+        'verticalOffset': this.verticalOffsetVal.toJson(),
+        'preferBelow': this.preferBelowVal.toJson(),
+        'excludeFromSemantics': this.excludeFromSemanticsVal.toJson(),
+        'child': this.childVal.toJson(),
+        'decoration': this.decorationVal.toJson(),
+        'textStyle': this.textStyleVal.toJson(),
+        'waitDuration': this.waitDurationVal.toJson(),
+        'showDuration': this.showDurationVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -309,19 +307,18 @@ class TooltipRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """Tooltip(
-       key: ${this.key?.toCode()},
-       message: ${this.message?.toCode()},
-       height: ${this.height?.toCode()},
-       padding: ${this.padding?.toCode()},
-       margin: ${this.margin?.toCode()},
-       verticalOffset: ${this.verticalOffset?.toCode()},
-       preferBelow: ${this.preferBelow?.toCode()},
-       excludeFromSemantics: ${this.excludeFromSemantics?.toCode()},
-       decoration: ${this.decoration?.toCode()},
-       textStyle: ${this.textStyle?.toCode()},
-       waitDuration: ${this.waitDuration?.toCode()},
-       showDuration: ${this.showDuration?.toCode()},
-       child: ${this.child?.toCode()},
+       message: ${this.messageVal.toCode()},
+       height: ${this.heightVal.toCode()},
+       padding: ${this.paddingVal.toCode()},
+       margin: ${this.marginVal.toCode()},
+       verticalOffset: ${this.verticalOffsetVal.toCode()},
+       preferBelow: ${this.preferBelowVal.toCode()},
+       excludeFromSemantics: ${this.excludeFromSemanticsVal.toCode()},
+       decoration: ${this.decorationVal.toCode()},
+       textStyle: ${this.textStyleVal.toCode()},
+       waitDuration: ${this.waitDurationVal.toCode()},
+       showDuration: ${this.showDurationVal.toCode()},
+       child: ${this.childVal.toCode()},
     )""",
     };
   }

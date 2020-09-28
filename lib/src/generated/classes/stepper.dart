@@ -181,7 +181,6 @@ class StepperRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': Stepper(
-        key: this.key,
         steps: this.steps,
         physics: this.physics,
         type: this.type,
@@ -198,7 +197,6 @@ class StepperRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'steps': this.steps,
         'physics': this.physics,
         'type': this.type,
@@ -216,15 +214,15 @@ class StepperRender<T> extends StatelessWidget {
     return {
       'name': 'Stepper',
       'props': {
-        'steps': this.steps,
-        'physics': this.physics,
-        'type': this.type,
-        'currentStep': this.currentStep,
-        'onStepTapped': this.onStepTapped,
-        'onStepContinue': this.onStepContinue,
-        'onStepCancel': this.onStepCancel,
-        'controlsBuilder': this.controlsBuilder,
-        'widgetKey': this.widgetKey,
+        'steps': this.stepsVal.toJson(),
+        'physics': this.physicsVal.toJson(),
+        'type': this.typeVal.toJson(),
+        'currentStep': this.currentStepVal.toJson(),
+        'onStepTapped': this.onStepTappedVal.toJson(),
+        'onStepContinue': this.onStepContinueVal.toJson(),
+        'onStepCancel': this.onStepCancelVal.toJson(),
+        'controlsBuilder': this.controlsBuilderVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -233,15 +231,14 @@ class StepperRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """Stepper(
-       key: ${this.key?.toCode()},
-       steps: ${this.steps?.toCode()},
-       physics: ${this.physics?.toCode()},
-       type: ${this.type?.toCode()},
-       currentStep: ${this.currentStep?.toCode()},
-       onStepTapped: ${this.onStepTapped?.toCode()},
-       onStepContinue: ${this.onStepContinue?.toCode()},
-       onStepCancel: ${this.onStepCancel?.toCode()},
-       controlsBuilder: ${this.controlsBuilder?.toCode()},
+       steps: ${this.stepsVal.toCode()},
+       physics: ${this.physicsVal.toCode()},
+       type: ${this.typeVal.toCode()},
+       currentStep: ${this.currentStepVal.toCode()},
+       onStepTapped: ${this.onStepTappedVal.toCode()},
+       onStepContinue: ${this.onStepContinueVal.toCode()},
+       onStepCancel: ${this.onStepCancelVal.toCode()},
+       controlsBuilder: ${this.controlsBuilderVal.toCode()},
     )""",
     };
   }

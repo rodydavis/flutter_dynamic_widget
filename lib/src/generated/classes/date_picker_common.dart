@@ -106,9 +106,9 @@ class DateTimeRangeRender<T> extends StatelessWidget {
     return {
       'name': 'DateTimeRange',
       'props': {
-        'start': this.start,
-        'end': this.end,
-        'widgetKey': this.widgetKey,
+        'start': this.startVal.toJson(),
+        'end': this.endVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -117,8 +117,8 @@ class DateTimeRangeRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """DateTimeRange(
-       start: ${this.start?.toCode()},
-       end: ${this.end?.toCode()},
+       start: ${this.startVal.toCode()},
+       end: ${this.endVal.toCode()},
     )""",
     };
   }

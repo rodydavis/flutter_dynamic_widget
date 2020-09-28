@@ -261,7 +261,6 @@ class ExpansionTileRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': ExpansionTile(
-        key: this.key,
         leading: this.leading,
         title: this.title,
         subtitle: this.subtitle,
@@ -283,7 +282,6 @@ class ExpansionTileRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'leading': this.leading,
         'title': this.title,
         'subtitle': this.subtitle,
@@ -306,20 +304,20 @@ class ExpansionTileRender<T> extends StatelessWidget {
     return {
       'name': 'ExpansionTile',
       'props': {
-        'leading': this.leading,
-        'title': this.title,
-        'subtitle': this.subtitle,
-        'onExpansionChanged': this.onExpansionChanged,
-        'children': this.children,
-        'backgroundColor': this.backgroundColor,
-        'trailing': this.trailing,
-        'initiallyExpanded': this.initiallyExpanded,
-        'maintainState': this.maintainState,
-        'tilePadding': this.tilePadding,
-        'expandedAlignment': this.expandedAlignment,
-        'expandedCrossAxisAlignment': this.expandedCrossAxisAlignment,
-        'childrenPadding': this.childrenPadding,
-        'widgetKey': this.widgetKey,
+        'leading': this.leadingVal.toJson(),
+        'title': this.titleVal.toJson(),
+        'subtitle': this.subtitleVal.toJson(),
+        'onExpansionChanged': this.onExpansionChangedVal.toJson(),
+        'children': this.childrenVal.toJson(),
+        'backgroundColor': this.backgroundColorVal.toJson(),
+        'trailing': this.trailingVal.toJson(),
+        'initiallyExpanded': this.initiallyExpandedVal.toJson(),
+        'maintainState': this.maintainStateVal.toJson(),
+        'tilePadding': this.tilePaddingVal.toJson(),
+        'expandedAlignment': this.expandedAlignmentVal.toJson(),
+        'expandedCrossAxisAlignment': this.expandedCrossAxisAlignmentVal.toJson(),
+        'childrenPadding': this.childrenPaddingVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -328,20 +326,19 @@ class ExpansionTileRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """ExpansionTile(
-       key: ${this.key?.toCode()},
-       leading: ${this.leading?.toCode()},
-       title: ${this.title?.toCode()},
-       subtitle: ${this.subtitle?.toCode()},
-       backgroundColor: ${this.backgroundColor?.toCode()},
-       onExpansionChanged: ${this.onExpansionChanged?.toCode()},
-       children: ${this.children?.toCode()},
-       trailing: ${this.trailing?.toCode()},
-       initiallyExpanded: ${this.initiallyExpanded?.toCode()},
-       maintainState: ${this.maintainState?.toCode()},
-       tilePadding: ${this.tilePadding?.toCode()},
-       expandedCrossAxisAlignment: ${this.expandedCrossAxisAlignment?.toCode()},
-       expandedAlignment: ${this.expandedAlignment?.toCode()},
-       childrenPadding: ${this.childrenPadding?.toCode()},
+       leading: ${this.leadingVal.toCode()},
+       title: ${this.titleVal.toCode()},
+       subtitle: ${this.subtitleVal.toCode()},
+       backgroundColor: ${this.backgroundColorVal.toCode()},
+       onExpansionChanged: ${this.onExpansionChangedVal.toCode()},
+       children: ${this.childrenVal.toCode()},
+       trailing: ${this.trailingVal.toCode()},
+       initiallyExpanded: ${this.initiallyExpandedVal.toCode()},
+       maintainState: ${this.maintainStateVal.toCode()},
+       tilePadding: ${this.tilePaddingVal.toCode()},
+       expandedCrossAxisAlignment: ${this.expandedCrossAxisAlignmentVal.toCode()},
+       expandedAlignment: ${this.expandedAlignmentVal.toCode()},
+       childrenPadding: ${this.childrenPaddingVal.toCode()},
     )""",
     };
   }

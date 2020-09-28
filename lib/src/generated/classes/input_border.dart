@@ -124,10 +124,10 @@ class OutlineInputBorderRender<T> extends StatelessWidget {
     return {
       'name': 'OutlineInputBorder',
       'props': {
-        'gapPadding': this.gapPadding,
-        'borderRadius': this.borderRadius,
-        'borderSide': this.borderSide,
-        'widgetKey': this.widgetKey,
+        'gapPadding': this.gapPaddingVal.toJson(),
+        'borderRadius': this.borderRadiusVal.toJson(),
+        'borderSide': this.borderSideVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -136,9 +136,9 @@ class OutlineInputBorderRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """OutlineInputBorder(
-       borderSide: ${this.borderSide?.toCode()},
-       borderRadius: ${this.borderRadius?.toCode()},
-       gapPadding: ${this.gapPadding?.toCode()},
+       borderSide: ${this.borderSideVal.toCode()},
+       borderRadius: ${this.borderRadiusVal.toCode()},
+       gapPadding: ${this.gapPaddingVal.toCode()},
     )""",
     };
   }

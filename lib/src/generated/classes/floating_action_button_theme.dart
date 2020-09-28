@@ -268,18 +268,18 @@ class FloatingActionButtonThemeDataRender<T> extends StatelessWidget {
     return {
       'name': 'FloatingActionButtonThemeData',
       'props': {
-        'foregroundColor': this.foregroundColor,
-        'backgroundColor': this.backgroundColor,
-        'focusColor': this.focusColor,
-        'hoverColor': this.hoverColor,
-        'splashColor': this.splashColor,
-        'elevation': this.elevation,
-        'focusElevation': this.focusElevation,
-        'hoverElevation': this.hoverElevation,
-        'disabledElevation': this.disabledElevation,
-        'highlightElevation': this.highlightElevation,
-        'shape': this.shape,
-        'widgetKey': this.widgetKey,
+        'foregroundColor': this.foregroundColorVal.toJson(),
+        'backgroundColor': this.backgroundColorVal.toJson(),
+        'focusColor': this.focusColorVal.toJson(),
+        'hoverColor': this.hoverColorVal.toJson(),
+        'splashColor': this.splashColorVal.toJson(),
+        'elevation': this.elevationVal.toJson(),
+        'focusElevation': this.focusElevationVal.toJson(),
+        'hoverElevation': this.hoverElevationVal.toJson(),
+        'disabledElevation': this.disabledElevationVal.toJson(),
+        'highlightElevation': this.highlightElevationVal.toJson(),
+        'shape': this.shapeVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -288,17 +288,17 @@ class FloatingActionButtonThemeDataRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """FloatingActionButtonThemeData(
-       foregroundColor: ${this.foregroundColor?.toCode()},
-       backgroundColor: ${this.backgroundColor?.toCode()},
-       focusColor: ${this.focusColor?.toCode()},
-       hoverColor: ${this.hoverColor?.toCode()},
-       splashColor: ${this.splashColor?.toCode()},
-       elevation: ${this.elevation?.toCode()},
-       focusElevation: ${this.focusElevation?.toCode()},
-       hoverElevation: ${this.hoverElevation?.toCode()},
-       disabledElevation: ${this.disabledElevation?.toCode()},
-       highlightElevation: ${this.highlightElevation?.toCode()},
-       shape: ${this.shape?.toCode()},
+       foregroundColor: ${this.foregroundColorVal.toCode()},
+       backgroundColor: ${this.backgroundColorVal.toCode()},
+       focusColor: ${this.focusColorVal.toCode()},
+       hoverColor: ${this.hoverColorVal.toCode()},
+       splashColor: ${this.splashColorVal.toCode()},
+       elevation: ${this.elevationVal.toCode()},
+       focusElevation: ${this.focusElevationVal.toCode()},
+       hoverElevation: ${this.hoverElevationVal.toCode()},
+       disabledElevation: ${this.disabledElevationVal.toCode()},
+       highlightElevation: ${this.highlightElevationVal.toCode()},
+       shape: ${this.shapeVal.toCode()},
     )""",
     };
   }

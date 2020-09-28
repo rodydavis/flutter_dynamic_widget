@@ -178,13 +178,13 @@ class CardThemeRender<T> extends StatelessWidget {
     return {
       'name': 'CardTheme',
       'props': {
-        'clipBehavior': this.clipBehavior,
-        'color': this.color,
-        'shadowColor': this.shadowColor,
-        'elevation': this.elevation,
-        'margin': this.margin,
-        'shape': this.shape,
-        'widgetKey': this.widgetKey,
+        'clipBehavior': this.clipBehaviorVal.toJson(),
+        'color': this.colorVal.toJson(),
+        'shadowColor': this.shadowColorVal.toJson(),
+        'elevation': this.elevationVal.toJson(),
+        'margin': this.marginVal.toJson(),
+        'shape': this.shapeVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -193,12 +193,12 @@ class CardThemeRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """CardTheme(
-       clipBehavior: ${this.clipBehavior?.toCode()},
-       color: ${this.color?.toCode()},
-       shadowColor: ${this.shadowColor?.toCode()},
-       elevation: ${this.elevation?.toCode()},
-       margin: ${this.margin?.toCode()},
-       shape: ${this.shape?.toCode()},
+       clipBehavior: ${this.clipBehaviorVal.toCode()},
+       color: ${this.colorVal.toCode()},
+       shadowColor: ${this.shadowColorVal.toCode()},
+       elevation: ${this.elevationVal.toCode()},
+       margin: ${this.marginVal.toCode()},
+       shape: ${this.shapeVal.toCode()},
     )""",
     };
   }

@@ -66,7 +66,7 @@ class PersistentBottomSheetControllerRender<T> extends StatelessWidget {
     return {
       'name': 'PersistentBottomSheetController',
       'props': {
-        'widgetKey': this.widgetKey,
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }

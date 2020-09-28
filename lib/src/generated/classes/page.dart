@@ -11,6 +11,7 @@ class MaterialPageRender<T> extends StatelessWidget {
       builderVal: null,
       maintainStateVal: null,
       fullscreenDialogVal: null,
+      keyVal: null,
       nameVal: null,
       argumentsVal: null,
       widgetKeyVal: null,
@@ -21,6 +22,7 @@ class MaterialPageRender<T> extends StatelessWidget {
     @required this.builderVal,
     @required this.maintainStateVal,
     @required this.fullscreenDialogVal,
+    @required this.keyVal,
     @required this.nameVal,
     @required this.argumentsVal,
     @required this.widgetKeyVal,
@@ -66,6 +68,19 @@ class MaterialPageRender<T> extends StatelessWidget {
       return;
     }
     fullscreenDialogVal.value = val;
+  }
+
+  Core<LocalKey> keyVal;
+
+  LocalKey get key {
+    return keyVal.value;
+  }
+
+  set key(LocalKey val) {
+    if (val == this.key) {
+      return;
+    }
+    keyVal.value = val;
   }
 
   Core<String> nameVal;
@@ -117,6 +132,7 @@ class MaterialPageRender<T> extends StatelessWidget {
     this.builderVal,
     this.maintainStateVal,
     this.fullscreenDialogVal,
+    this.keyVal,
     this.nameVal,
     this.argumentsVal,
     this.widgetKeyVal,
@@ -162,12 +178,13 @@ class MaterialPageRender<T> extends StatelessWidget {
     return {
       'name': 'MaterialPage',
       'props': {
-        'builder': this.builder,
-        'maintainState': this.maintainState,
-        'fullscreenDialog': this.fullscreenDialog,
-        'name': this.name,
-        'arguments': this.arguments,
-        'widgetKey': this.widgetKey,
+        'builder': this.builderVal.toJson(),
+        'maintainState': this.maintainStateVal.toJson(),
+        'fullscreenDialog': this.fullscreenDialogVal.toJson(),
+        'key': this.keyVal.toJson(),
+        'name': this.nameVal.toJson(),
+        'arguments': this.argumentsVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -176,12 +193,12 @@ class MaterialPageRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """MaterialPage(
-       builder: ${this.builder?.toCode()},
-       maintainState: ${this.maintainState?.toCode()},
-       fullscreenDialog: ${this.fullscreenDialog?.toCode()},
-       key: ${this.key?.toCode()},
-       name: ${this.name?.toCode()},
-       arguments: ${this.arguments?.toCode()},
+       builder: ${this.builderVal.toCode()},
+       maintainState: ${this.maintainStateVal.toCode()},
+       fullscreenDialog: ${this.fullscreenDialogVal.toCode()},
+       key: ${this.keyVal.toCode()},
+       name: ${this.nameVal.toCode()},
+       arguments: ${this.argumentsVal.toCode()},
     )""",
     };
   }
@@ -210,6 +227,7 @@ class MaterialPageRender<T> extends StatelessWidget {
       properties.add(DiagnosticsProperty('builder', this.builder));
       properties.add(DiagnosticsProperty('maintainState', this.maintainState));
       properties.add(DiagnosticsProperty('fullscreenDialog', this.fullscreenDialog));
+      properties.add(DiagnosticsProperty('key', this.key));
       properties.add(DiagnosticsProperty('name', this.name));
       properties.add(DiagnosticsProperty('arguments', this.arguments));
       properties.add(DiagnosticsProperty('widgetKey', this.widgetKey));

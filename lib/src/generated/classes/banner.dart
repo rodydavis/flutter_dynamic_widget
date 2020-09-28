@@ -181,7 +181,6 @@ class MaterialBannerRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': MaterialBanner(
-        key: this.key,
         content: this.content,
         contentTextStyle: this.contentTextStyle,
         actions: this.actions,
@@ -198,7 +197,6 @@ class MaterialBannerRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'content': this.content,
         'contentTextStyle': this.contentTextStyle,
         'actions': this.actions,
@@ -216,15 +214,15 @@ class MaterialBannerRender<T> extends StatelessWidget {
     return {
       'name': 'MaterialBanner',
       'props': {
-        'content': this.content,
-        'contentTextStyle': this.contentTextStyle,
-        'actions': this.actions,
-        'leading': this.leading,
-        'backgroundColor': this.backgroundColor,
-        'padding': this.padding,
-        'leadingPadding': this.leadingPadding,
-        'forceActionsBelow': this.forceActionsBelow,
-        'widgetKey': this.widgetKey,
+        'content': this.contentVal.toJson(),
+        'contentTextStyle': this.contentTextStyleVal.toJson(),
+        'actions': this.actionsVal.toJson(),
+        'leading': this.leadingVal.toJson(),
+        'backgroundColor': this.backgroundColorVal.toJson(),
+        'padding': this.paddingVal.toJson(),
+        'leadingPadding': this.leadingPaddingVal.toJson(),
+        'forceActionsBelow': this.forceActionsBelowVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -233,15 +231,14 @@ class MaterialBannerRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """MaterialBanner(
-       key: ${this.key?.toCode()},
-       content: ${this.content?.toCode()},
-       contentTextStyle: ${this.contentTextStyle?.toCode()},
-       actions: ${this.actions?.toCode()},
-       leading: ${this.leading?.toCode()},
-       backgroundColor: ${this.backgroundColor?.toCode()},
-       padding: ${this.padding?.toCode()},
-       leadingPadding: ${this.leadingPadding?.toCode()},
-       forceActionsBelow: ${this.forceActionsBelow?.toCode()},
+       content: ${this.contentVal.toCode()},
+       contentTextStyle: ${this.contentTextStyleVal.toCode()},
+       actions: ${this.actionsVal.toCode()},
+       leading: ${this.leadingVal.toCode()},
+       backgroundColor: ${this.backgroundColorVal.toCode()},
+       padding: ${this.paddingVal.toCode()},
+       leadingPadding: ${this.leadingPaddingVal.toCode()},
+       forceActionsBelow: ${this.forceActionsBelowVal.toCode()},
     )""",
     };
   }

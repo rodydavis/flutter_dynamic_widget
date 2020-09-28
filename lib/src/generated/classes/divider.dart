@@ -133,7 +133,6 @@ class VerticalDividerRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': VerticalDivider(
-        key: this.key,
         width: this.width,
         thickness: this.thickness,
         indent: this.indent,
@@ -147,7 +146,6 @@ class VerticalDividerRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'width': this.width,
         'thickness': this.thickness,
         'indent': this.indent,
@@ -162,12 +160,12 @@ class VerticalDividerRender<T> extends StatelessWidget {
     return {
       'name': 'VerticalDivider',
       'props': {
-        'width': this.width,
-        'thickness': this.thickness,
-        'indent': this.indent,
-        'endIndent': this.endIndent,
-        'color': this.color,
-        'widgetKey': this.widgetKey,
+        'width': this.widthVal.toJson(),
+        'thickness': this.thicknessVal.toJson(),
+        'indent': this.indentVal.toJson(),
+        'endIndent': this.endIndentVal.toJson(),
+        'color': this.colorVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -176,12 +174,11 @@ class VerticalDividerRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """VerticalDivider(
-       key: ${this.key?.toCode()},
-       width: ${this.width?.toCode()},
-       thickness: ${this.thickness?.toCode()},
-       indent: ${this.indent?.toCode()},
-       endIndent: ${this.endIndent?.toCode()},
-       color: ${this.color?.toCode()},
+       width: ${this.widthVal.toCode()},
+       thickness: ${this.thicknessVal.toCode()},
+       indent: ${this.indentVal.toCode()},
+       endIndent: ${this.endIndentVal.toCode()},
+       color: ${this.colorVal.toCode()},
     )""",
     };
   }

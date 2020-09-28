@@ -102,9 +102,9 @@ class RangeLabelsRender<T> extends StatelessWidget {
     return {
       'name': 'RangeLabels',
       'props': {
-        'start': this.start,
-        'end': this.end,
-        'widgetKey': this.widgetKey,
+        'start': this.startVal.toJson(),
+        'end': this.endVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }

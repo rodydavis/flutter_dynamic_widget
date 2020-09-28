@@ -196,14 +196,14 @@ class TabBarThemeRender<T> extends StatelessWidget {
     return {
       'name': 'TabBarTheme',
       'props': {
-        'indicator': this.indicator,
-        'indicatorSize': this.indicatorSize,
-        'labelColor': this.labelColor,
-        'labelPadding': this.labelPadding,
-        'labelStyle': this.labelStyle,
-        'unselectedLabelColor': this.unselectedLabelColor,
-        'unselectedLabelStyle': this.unselectedLabelStyle,
-        'widgetKey': this.widgetKey,
+        'indicator': this.indicatorVal.toJson(),
+        'indicatorSize': this.indicatorSizeVal.toJson(),
+        'labelColor': this.labelColorVal.toJson(),
+        'labelPadding': this.labelPaddingVal.toJson(),
+        'labelStyle': this.labelStyleVal.toJson(),
+        'unselectedLabelColor': this.unselectedLabelColorVal.toJson(),
+        'unselectedLabelStyle': this.unselectedLabelStyleVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -212,13 +212,13 @@ class TabBarThemeRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """TabBarTheme(
-       indicator: ${this.indicator?.toCode()},
-       indicatorSize: ${this.indicatorSize?.toCode()},
-       labelColor: ${this.labelColor?.toCode()},
-       labelPadding: ${this.labelPadding?.toCode()},
-       labelStyle: ${this.labelStyle?.toCode()},
-       unselectedLabelColor: ${this.unselectedLabelColor?.toCode()},
-       unselectedLabelStyle: ${this.unselectedLabelStyle?.toCode()},
+       indicator: ${this.indicatorVal.toCode()},
+       indicatorSize: ${this.indicatorSizeVal.toCode()},
+       labelColor: ${this.labelColorVal.toCode()},
+       labelPadding: ${this.labelPaddingVal.toCode()},
+       labelStyle: ${this.labelStyleVal.toCode()},
+       unselectedLabelColor: ${this.unselectedLabelColorVal.toCode()},
+       unselectedLabelStyle: ${this.unselectedLabelStyleVal.toCode()},
     )""",
     };
   }

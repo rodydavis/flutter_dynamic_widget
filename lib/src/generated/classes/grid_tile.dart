@@ -101,7 +101,6 @@ class GridTileRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': GridTile(
-        key: this.key,
         header: this.header,
         footer: this.footer,
         child: this.child,
@@ -113,7 +112,6 @@ class GridTileRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'header': this.header,
         'footer': this.footer,
         'child': this.child,
@@ -126,10 +124,10 @@ class GridTileRender<T> extends StatelessWidget {
     return {
       'name': 'GridTile',
       'props': {
-        'header': this.header,
-        'footer': this.footer,
-        'child': this.child,
-        'widgetKey': this.widgetKey,
+        'header': this.headerVal.toJson(),
+        'footer': this.footerVal.toJson(),
+        'child': this.childVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -138,10 +136,9 @@ class GridTileRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """GridTile(
-       key: ${this.key?.toCode()},
-       header: ${this.header?.toCode()},
-       footer: ${this.footer?.toCode()},
-       child: ${this.child?.toCode()},
+       header: ${this.headerVal.toCode()},
+       footer: ${this.footerVal.toCode()},
+       child: ${this.childVal.toCode()},
     )""",
     };
   }

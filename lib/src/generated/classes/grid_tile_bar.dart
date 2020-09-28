@@ -133,7 +133,6 @@ class GridTileBarRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': GridTileBar(
-        key: this.key,
         backgroundColor: this.backgroundColor,
         leading: this.leading,
         title: this.title,
@@ -147,7 +146,6 @@ class GridTileBarRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'backgroundColor': this.backgroundColor,
         'leading': this.leading,
         'title': this.title,
@@ -162,12 +160,12 @@ class GridTileBarRender<T> extends StatelessWidget {
     return {
       'name': 'GridTileBar',
       'props': {
-        'backgroundColor': this.backgroundColor,
-        'leading': this.leading,
-        'title': this.title,
-        'subtitle': this.subtitle,
-        'trailing': this.trailing,
-        'widgetKey': this.widgetKey,
+        'backgroundColor': this.backgroundColorVal.toJson(),
+        'leading': this.leadingVal.toJson(),
+        'title': this.titleVal.toJson(),
+        'subtitle': this.subtitleVal.toJson(),
+        'trailing': this.trailingVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -176,12 +174,11 @@ class GridTileBarRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """GridTileBar(
-       key: ${this.key?.toCode()},
-       backgroundColor: ${this.backgroundColor?.toCode()},
-       leading: ${this.leading?.toCode()},
-       title: ${this.title?.toCode()},
-       subtitle: ${this.subtitle?.toCode()},
-       trailing: ${this.trailing?.toCode()},
+       backgroundColor: ${this.backgroundColorVal.toCode()},
+       leading: ${this.leadingVal.toCode()},
+       title: ${this.titleVal.toCode()},
+       subtitle: ${this.subtitleVal.toCode()},
+       trailing: ${this.trailingVal.toCode()},
     )""",
     };
   }

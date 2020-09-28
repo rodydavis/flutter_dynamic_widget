@@ -149,7 +149,6 @@ class AnimatedIconRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': AnimatedIcon(
-        key: this.key,
         icon: this.icon,
         progress: this.progress,
         color: this.color,
@@ -164,7 +163,6 @@ class AnimatedIconRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'icon': this.icon,
         'progress': this.progress,
         'color': this.color,
@@ -180,13 +178,13 @@ class AnimatedIconRender<T> extends StatelessWidget {
     return {
       'name': 'AnimatedIcon',
       'props': {
-        'progress': this.progress,
-        'color': this.color,
-        'size': this.size,
-        'icon': this.icon,
-        'semanticLabel': this.semanticLabel,
-        'textDirection': this.textDirection,
-        'widgetKey': this.widgetKey,
+        'progress': this.progressVal.toJson(),
+        'color': this.colorVal.toJson(),
+        'size': this.sizeVal.toJson(),
+        'icon': this.iconVal.toJson(),
+        'semanticLabel': this.semanticLabelVal.toJson(),
+        'textDirection': this.textDirectionVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -195,13 +193,12 @@ class AnimatedIconRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """AnimatedIcon(
-       key: ${this.key?.toCode()},
-       icon: ${this.icon?.toCode()},
-       progress: ${this.progress?.toCode()},
-       color: ${this.color?.toCode()},
-       size: ${this.size?.toCode()},
-       semanticLabel: ${this.semanticLabel?.toCode()},
-       textDirection: ${this.textDirection?.toCode()},
+       icon: ${this.iconVal.toCode()},
+       progress: ${this.progressVal.toCode()},
+       color: ${this.colorVal.toCode()},
+       size: ${this.sizeVal.toCode()},
+       semanticLabel: ${this.semanticLabelVal.toCode()},
+       textDirection: ${this.textDirectionVal.toCode()},
     )""",
     };
   }

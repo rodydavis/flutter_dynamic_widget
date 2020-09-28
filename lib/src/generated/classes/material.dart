@@ -106,9 +106,9 @@ class ShapeBorderTweenRender<T> extends StatelessWidget {
     return {
       'name': 'ShapeBorderTween',
       'props': {
-        'begin': this.begin,
-        'end': this.end,
-        'widgetKey': this.widgetKey,
+        'begin': this.beginVal.toJson(),
+        'end': this.endVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -117,8 +117,8 @@ class ShapeBorderTweenRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """ShapeBorderTween(
-       begin: ${this.begin?.toCode()},
-       end: ${this.end?.toCode()},
+       begin: ${this.beginVal.toCode()},
+       end: ${this.endVal.toCode()},
     )""",
     };
   }

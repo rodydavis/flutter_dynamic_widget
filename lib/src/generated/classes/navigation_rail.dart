@@ -124,10 +124,10 @@ class NavigationRailDestinationRender<T> extends StatelessWidget {
     return {
       'name': 'NavigationRailDestination',
       'props': {
-        'icon': this.icon,
-        'selectedIcon': this.selectedIcon,
-        'label': this.label,
-        'widgetKey': this.widgetKey,
+        'icon': this.iconVal.toJson(),
+        'selectedIcon': this.selectedIconVal.toJson(),
+        'label': this.labelVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -136,9 +136,9 @@ class NavigationRailDestinationRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """NavigationRailDestination(
-       icon: ${this.icon?.toCode()},
-       selectedIcon: ${this.selectedIcon?.toCode()},
-       label: ${this.label?.toCode()},
+       icon: ${this.iconVal.toCode()},
+       selectedIcon: ${this.selectedIconVal.toCode()},
+       label: ${this.labelVal.toCode()},
     )""",
     };
   }

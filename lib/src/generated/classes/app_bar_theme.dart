@@ -214,15 +214,15 @@ class AppBarThemeRender<T> extends StatelessWidget {
     return {
       'name': 'AppBarTheme',
       'props': {
-        'brightness': this.brightness,
-        'color': this.color,
-        'elevation': this.elevation,
-        'shadowColor': this.shadowColor,
-        'iconTheme': this.iconTheme,
-        'actionsIconTheme': this.actionsIconTheme,
-        'textTheme': this.textTheme,
-        'centerTitle': this.centerTitle,
-        'widgetKey': this.widgetKey,
+        'brightness': this.brightnessVal.toJson(),
+        'color': this.colorVal.toJson(),
+        'elevation': this.elevationVal.toJson(),
+        'shadowColor': this.shadowColorVal.toJson(),
+        'iconTheme': this.iconThemeVal.toJson(),
+        'actionsIconTheme': this.actionsIconThemeVal.toJson(),
+        'textTheme': this.textThemeVal.toJson(),
+        'centerTitle': this.centerTitleVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -231,14 +231,14 @@ class AppBarThemeRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """AppBarTheme(
-       brightness: ${this.brightness?.toCode()},
-       color: ${this.color?.toCode()},
-       elevation: ${this.elevation?.toCode()},
-       shadowColor: ${this.shadowColor?.toCode()},
-       iconTheme: ${this.iconTheme?.toCode()},
-       actionsIconTheme: ${this.actionsIconTheme?.toCode()},
-       textTheme: ${this.textTheme?.toCode()},
-       centerTitle: ${this.centerTitle?.toCode()},
+       brightness: ${this.brightnessVal.toCode()},
+       color: ${this.colorVal.toCode()},
+       elevation: ${this.elevationVal.toCode()},
+       shadowColor: ${this.shadowColorVal.toCode()},
+       iconTheme: ${this.iconThemeVal.toCode()},
+       actionsIconTheme: ${this.actionsIconThemeVal.toCode()},
+       textTheme: ${this.textThemeVal.toCode()},
+       centerTitle: ${this.centerTitleVal.toCode()},
     )""",
     };
   }

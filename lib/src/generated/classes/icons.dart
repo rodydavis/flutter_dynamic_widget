@@ -5720,7 +5720,7 @@ class IconsRender<T> extends StatelessWidget {
     return {
       'name': 'Icons',
       'props': {
-        'widgetKey': this.widgetKey,
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }

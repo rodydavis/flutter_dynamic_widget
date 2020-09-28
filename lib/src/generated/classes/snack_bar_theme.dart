@@ -196,14 +196,14 @@ class SnackBarThemeDataRender<T> extends StatelessWidget {
     return {
       'name': 'SnackBarThemeData',
       'props': {
-        'backgroundColor': this.backgroundColor,
-        'actionTextColor': this.actionTextColor,
-        'disabledActionTextColor': this.disabledActionTextColor,
-        'contentTextStyle': this.contentTextStyle,
-        'elevation': this.elevation,
-        'shape': this.shape,
-        'behavior': this.behavior,
-        'widgetKey': this.widgetKey,
+        'backgroundColor': this.backgroundColorVal.toJson(),
+        'actionTextColor': this.actionTextColorVal.toJson(),
+        'disabledActionTextColor': this.disabledActionTextColorVal.toJson(),
+        'contentTextStyle': this.contentTextStyleVal.toJson(),
+        'elevation': this.elevationVal.toJson(),
+        'shape': this.shapeVal.toJson(),
+        'behavior': this.behaviorVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -212,13 +212,13 @@ class SnackBarThemeDataRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """SnackBarThemeData(
-       backgroundColor: ${this.backgroundColor?.toCode()},
-       actionTextColor: ${this.actionTextColor?.toCode()},
-       disabledActionTextColor: ${this.disabledActionTextColor?.toCode()},
-       contentTextStyle: ${this.contentTextStyle?.toCode()},
-       elevation: ${this.elevation?.toCode()},
-       shape: ${this.shape?.toCode()},
-       behavior: ${this.behavior?.toCode()},
+       backgroundColor: ${this.backgroundColorVal.toCode()},
+       actionTextColor: ${this.actionTextColorVal.toCode()},
+       disabledActionTextColor: ${this.disabledActionTextColorVal.toCode()},
+       contentTextStyle: ${this.contentTextStyleVal.toCode()},
+       elevation: ${this.elevationVal.toCode()},
+       shape: ${this.shapeVal.toCode()},
+       behavior: ${this.behaviorVal.toCode()},
     )""",
     };
   }

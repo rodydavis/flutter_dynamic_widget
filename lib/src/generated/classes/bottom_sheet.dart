@@ -213,7 +213,6 @@ class BottomSheetRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': BottomSheet(
-        key: this.key,
         animationController: this.animationController,
         enableDrag: this.enableDrag,
         onDragStart: this.onDragStart,
@@ -232,7 +231,6 @@ class BottomSheetRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'animationController': this.animationController,
         'enableDrag': this.enableDrag,
         'onDragStart': this.onDragStart,
@@ -252,17 +250,17 @@ class BottomSheetRender<T> extends StatelessWidget {
     return {
       'name': 'BottomSheet',
       'props': {
-        'animationController': this.animationController,
-        'onClosing': this.onClosing,
-        'builder': this.builder,
-        'enableDrag': this.enableDrag,
-        'onDragStart': this.onDragStart,
-        'onDragEnd': this.onDragEnd,
-        'backgroundColor': this.backgroundColor,
-        'elevation': this.elevation,
-        'shape': this.shape,
-        'clipBehavior': this.clipBehavior,
-        'widgetKey': this.widgetKey,
+        'animationController': this.animationControllerVal.toJson(),
+        'onClosing': this.onClosingVal.toJson(),
+        'builder': this.builderVal.toJson(),
+        'enableDrag': this.enableDragVal.toJson(),
+        'onDragStart': this.onDragStartVal.toJson(),
+        'onDragEnd': this.onDragEndVal.toJson(),
+        'backgroundColor': this.backgroundColorVal.toJson(),
+        'elevation': this.elevationVal.toJson(),
+        'shape': this.shapeVal.toJson(),
+        'clipBehavior': this.clipBehaviorVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -271,17 +269,16 @@ class BottomSheetRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """BottomSheet(
-       key: ${this.key?.toCode()},
-       animationController: ${this.animationController?.toCode()},
-       enableDrag: ${this.enableDrag?.toCode()},
-       onDragStart: ${this.onDragStart?.toCode()},
-       onDragEnd: ${this.onDragEnd?.toCode()},
-       backgroundColor: ${this.backgroundColor?.toCode()},
-       elevation: ${this.elevation?.toCode()},
-       shape: ${this.shape?.toCode()},
-       clipBehavior: ${this.clipBehavior?.toCode()},
-       onClosing: ${this.onClosing?.toCode()},
-       builder: ${this.builder?.toCode()},
+       animationController: ${this.animationControllerVal.toCode()},
+       enableDrag: ${this.enableDragVal.toCode()},
+       onDragStart: ${this.onDragStartVal.toCode()},
+       onDragEnd: ${this.onDragEndVal.toCode()},
+       backgroundColor: ${this.backgroundColorVal.toCode()},
+       elevation: ${this.elevationVal.toCode()},
+       shape: ${this.shapeVal.toCode()},
+       clipBehavior: ${this.clipBehaviorVal.toCode()},
+       onClosing: ${this.onClosingVal.toCode()},
+       builder: ${this.builderVal.toCode()},
     )""",
     };
   }

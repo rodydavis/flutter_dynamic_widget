@@ -184,7 +184,6 @@ class CircleAvatarRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': CircleAvatar(
-        key: this.key,
         child: this.child,
         backgroundColor: this.backgroundColor,
         backgroundImage: this.backgroundImage,
@@ -201,7 +200,6 @@ class CircleAvatarRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'child': this.child,
         'backgroundColor': this.backgroundColor,
         'backgroundImage': this.backgroundImage,
@@ -219,15 +217,15 @@ class CircleAvatarRender<T> extends StatelessWidget {
     return {
       'name': 'CircleAvatar',
       'props': {
-        'child': this.child,
-        'backgroundColor': this.backgroundColor,
-        'foregroundColor': this.foregroundColor,
-        'backgroundImage': this.backgroundImage,
-        'onBackgroundImageError': this.onBackgroundImageError,
-        'radius': this.radius,
-        'minRadius': this.minRadius,
-        'maxRadius': this.maxRadius,
-        'widgetKey': this.widgetKey,
+        'child': this.childVal.toJson(),
+        'backgroundColor': this.backgroundColorVal.toJson(),
+        'foregroundColor': this.foregroundColorVal.toJson(),
+        'backgroundImage': this.backgroundImageVal.toJson(),
+        'onBackgroundImageError': this.onBackgroundImageErrorVal.toJson(),
+        'radius': this.radiusVal.toJson(),
+        'minRadius': this.minRadiusVal.toJson(),
+        'maxRadius': this.maxRadiusVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -236,15 +234,14 @@ class CircleAvatarRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """CircleAvatar(
-       key: ${this.key?.toCode()},
-       child: ${this.child?.toCode()},
-       backgroundColor: ${this.backgroundColor?.toCode()},
-       backgroundImage: ${this.backgroundImage?.toCode()},
-       onBackgroundImageError: ${this.onBackgroundImageError?.toCode()},
-       foregroundColor: ${this.foregroundColor?.toCode()},
-       radius: ${this.radius?.toCode()},
-       minRadius: ${this.minRadius?.toCode()},
-       maxRadius: ${this.maxRadius?.toCode()},
+       child: ${this.childVal.toCode()},
+       backgroundColor: ${this.backgroundColorVal.toCode()},
+       backgroundImage: ${this.backgroundImageVal.toCode()},
+       onBackgroundImageError: ${this.onBackgroundImageErrorVal.toCode()},
+       foregroundColor: ${this.foregroundColorVal.toCode()},
+       radius: ${this.radiusVal.toCode()},
+       minRadius: ${this.minRadiusVal.toCode()},
+       maxRadius: ${this.maxRadiusVal.toCode()},
     )""",
     };
   }

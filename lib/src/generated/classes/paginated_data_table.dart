@@ -70,7 +70,7 @@ class PaginatedDataTableStateRender<T> extends StatelessWidget {
     return {
       'name': 'PaginatedDataTableState',
       'props': {
-        'widgetKey': this.widgetKey,
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }

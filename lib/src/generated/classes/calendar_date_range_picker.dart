@@ -165,7 +165,6 @@ class CalendarDateRangePickerRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': CalendarDateRangePicker(
-        key: this.key,
         initialStartDate: this.initialStartDate,
         initialEndDate: this.initialEndDate,
         firstDate: this.firstDate,
@@ -181,7 +180,6 @@ class CalendarDateRangePickerRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'initialStartDate': this.initialStartDate,
         'initialEndDate': this.initialEndDate,
         'firstDate': this.firstDate,
@@ -198,14 +196,14 @@ class CalendarDateRangePickerRender<T> extends StatelessWidget {
     return {
       'name': 'CalendarDateRangePicker',
       'props': {
-        'initialStartDate': this.initialStartDate,
-        'initialEndDate': this.initialEndDate,
-        'firstDate': this.firstDate,
-        'lastDate': this.lastDate,
-        'currentDate': this.currentDate,
-        'onStartDateChanged': this.onStartDateChanged,
-        'onEndDateChanged': this.onEndDateChanged,
-        'widgetKey': this.widgetKey,
+        'initialStartDate': this.initialStartDateVal.toJson(),
+        'initialEndDate': this.initialEndDateVal.toJson(),
+        'firstDate': this.firstDateVal.toJson(),
+        'lastDate': this.lastDateVal.toJson(),
+        'currentDate': this.currentDateVal.toJson(),
+        'onStartDateChanged': this.onStartDateChangedVal.toJson(),
+        'onEndDateChanged': this.onEndDateChangedVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -214,14 +212,13 @@ class CalendarDateRangePickerRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """CalendarDateRangePicker(
-       key: ${this.key?.toCode()},
-       initialStartDate: ${this.initialStartDate?.toCode()},
-       initialEndDate: ${this.initialEndDate?.toCode()},
-       firstDate: ${this.firstDate?.toCode()},
-       lastDate: ${this.lastDate?.toCode()},
-       currentDate: ${this.currentDate?.toCode()},
-       onStartDateChanged: ${this.onStartDateChanged?.toCode()},
-       onEndDateChanged: ${this.onEndDateChanged?.toCode()},
+       initialStartDate: ${this.initialStartDateVal.toCode()},
+       initialEndDate: ${this.initialEndDateVal.toCode()},
+       firstDate: ${this.firstDateVal.toCode()},
+       lastDate: ${this.lastDateVal.toCode()},
+       currentDate: ${this.currentDateVal.toCode()},
+       onStartDateChanged: ${this.onStartDateChangedVal.toCode()},
+       onEndDateChanged: ${this.onEndDateChangedVal.toCode()},
     )""",
     };
   }

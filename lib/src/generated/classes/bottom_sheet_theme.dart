@@ -178,13 +178,13 @@ class BottomSheetThemeDataRender<T> extends StatelessWidget {
     return {
       'name': 'BottomSheetThemeData',
       'props': {
-        'backgroundColor': this.backgroundColor,
-        'elevation': this.elevation,
-        'modalBackgroundColor': this.modalBackgroundColor,
-        'modalElevation': this.modalElevation,
-        'shape': this.shape,
-        'clipBehavior': this.clipBehavior,
-        'widgetKey': this.widgetKey,
+        'backgroundColor': this.backgroundColorVal.toJson(),
+        'elevation': this.elevationVal.toJson(),
+        'modalBackgroundColor': this.modalBackgroundColorVal.toJson(),
+        'modalElevation': this.modalElevationVal.toJson(),
+        'shape': this.shapeVal.toJson(),
+        'clipBehavior': this.clipBehaviorVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -193,12 +193,12 @@ class BottomSheetThemeDataRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """BottomSheetThemeData(
-       backgroundColor: ${this.backgroundColor?.toCode()},
-       elevation: ${this.elevation?.toCode()},
-       modalBackgroundColor: ${this.modalBackgroundColor?.toCode()},
-       modalElevation: ${this.modalElevation?.toCode()},
-       shape: ${this.shape?.toCode()},
-       clipBehavior: ${this.clipBehavior?.toCode()},
+       backgroundColor: ${this.backgroundColorVal.toCode()},
+       elevation: ${this.elevationVal.toCode()},
+       modalBackgroundColor: ${this.modalBackgroundColorVal.toCode()},
+       modalElevation: ${this.modalElevationVal.toCode()},
+       shape: ${this.shapeVal.toCode()},
+       clipBehavior: ${this.clipBehaviorVal.toCode()},
     )""",
     };
   }

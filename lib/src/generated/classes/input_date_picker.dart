@@ -229,7 +229,6 @@ class InputDatePickerFormFieldRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': InputDatePickerFormField(
-        key: this.key,
         initialDate: this.initialDate,
         firstDate: this.firstDate,
         lastDate: this.lastDate,
@@ -249,7 +248,6 @@ class InputDatePickerFormFieldRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'initialDate': this.initialDate,
         'firstDate': this.firstDate,
         'lastDate': this.lastDate,
@@ -270,18 +268,18 @@ class InputDatePickerFormFieldRender<T> extends StatelessWidget {
     return {
       'name': 'InputDatePickerFormField',
       'props': {
-        'initialDate': this.initialDate,
-        'firstDate': this.firstDate,
-        'lastDate': this.lastDate,
-        'onDateSubmitted': this.onDateSubmitted,
-        'onDateSaved': this.onDateSaved,
-        'selectableDayPredicate': this.selectableDayPredicate,
-        'errorFormatText': this.errorFormatText,
-        'errorInvalidText': this.errorInvalidText,
-        'fieldHintText': this.fieldHintText,
-        'fieldLabelText': this.fieldLabelText,
-        'autofocus': this.autofocus,
-        'widgetKey': this.widgetKey,
+        'initialDate': this.initialDateVal.toJson(),
+        'firstDate': this.firstDateVal.toJson(),
+        'lastDate': this.lastDateVal.toJson(),
+        'onDateSubmitted': this.onDateSubmittedVal.toJson(),
+        'onDateSaved': this.onDateSavedVal.toJson(),
+        'selectableDayPredicate': this.selectableDayPredicateVal.toJson(),
+        'errorFormatText': this.errorFormatTextVal.toJson(),
+        'errorInvalidText': this.errorInvalidTextVal.toJson(),
+        'fieldHintText': this.fieldHintTextVal.toJson(),
+        'fieldLabelText': this.fieldLabelTextVal.toJson(),
+        'autofocus': this.autofocusVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -290,18 +288,17 @@ class InputDatePickerFormFieldRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """InputDatePickerFormField(
-       key: ${this.key?.toCode()},
-       initialDate: ${this.initialDate?.toCode()},
-       firstDate: ${this.firstDate?.toCode()},
-       lastDate: ${this.lastDate?.toCode()},
-       onDateSubmitted: ${this.onDateSubmitted?.toCode()},
-       onDateSaved: ${this.onDateSaved?.toCode()},
-       selectableDayPredicate: ${this.selectableDayPredicate?.toCode()},
-       errorFormatText: ${this.errorFormatText?.toCode()},
-       errorInvalidText: ${this.errorInvalidText?.toCode()},
-       fieldHintText: ${this.fieldHintText?.toCode()},
-       fieldLabelText: ${this.fieldLabelText?.toCode()},
-       autofocus: ${this.autofocus?.toCode()},
+       initialDate: ${this.initialDateVal.toCode()},
+       firstDate: ${this.firstDateVal.toCode()},
+       lastDate: ${this.lastDateVal.toCode()},
+       onDateSubmitted: ${this.onDateSubmittedVal.toCode()},
+       onDateSaved: ${this.onDateSavedVal.toCode()},
+       selectableDayPredicate: ${this.selectableDayPredicateVal.toCode()},
+       errorFormatText: ${this.errorFormatTextVal.toCode()},
+       errorInvalidText: ${this.errorInvalidTextVal.toCode()},
+       fieldHintText: ${this.fieldHintTextVal.toCode()},
+       fieldLabelText: ${this.fieldLabelTextVal.toCode()},
+       autofocus: ${this.autofocusVal.toCode()},
     )""",
     };
   }

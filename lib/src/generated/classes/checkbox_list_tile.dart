@@ -277,7 +277,6 @@ class CheckboxListTileRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': CheckboxListTile(
-        key: this.key,
         value: this.value,
         onChanged: this.onChanged,
         activeColor: this.activeColor,
@@ -300,7 +299,6 @@ class CheckboxListTileRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'value': this.value,
         'onChanged': this.onChanged,
         'activeColor': this.activeColor,
@@ -324,21 +322,21 @@ class CheckboxListTileRender<T> extends StatelessWidget {
     return {
       'name': 'CheckboxListTile',
       'props': {
-        'value': this.value,
-        'onChanged': this.onChanged,
-        'activeColor': this.activeColor,
-        'checkColor': this.checkColor,
-        'title': this.title,
-        'subtitle': this.subtitle,
-        'secondary': this.secondary,
-        'isThreeLine': this.isThreeLine,
-        'dense': this.dense,
-        'selected': this.selected,
-        'controlAffinity': this.controlAffinity,
-        'autofocus': this.autofocus,
-        'contentPadding': this.contentPadding,
-        'tristate': this.tristate,
-        'widgetKey': this.widgetKey,
+        'value': this.valueVal.toJson(),
+        'onChanged': this.onChangedVal.toJson(),
+        'activeColor': this.activeColorVal.toJson(),
+        'checkColor': this.checkColorVal.toJson(),
+        'title': this.titleVal.toJson(),
+        'subtitle': this.subtitleVal.toJson(),
+        'secondary': this.secondaryVal.toJson(),
+        'isThreeLine': this.isThreeLineVal.toJson(),
+        'dense': this.denseVal.toJson(),
+        'selected': this.selectedVal.toJson(),
+        'controlAffinity': this.controlAffinityVal.toJson(),
+        'autofocus': this.autofocusVal.toJson(),
+        'contentPadding': this.contentPaddingVal.toJson(),
+        'tristate': this.tristateVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -347,21 +345,20 @@ class CheckboxListTileRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """CheckboxListTile(
-       key: ${this.key?.toCode()},
-       value: ${this.value?.toCode()},
-       onChanged: ${this.onChanged?.toCode()},
-       activeColor: ${this.activeColor?.toCode()},
-       checkColor: ${this.checkColor?.toCode()},
-       title: ${this.title?.toCode()},
-       subtitle: ${this.subtitle?.toCode()},
-       isThreeLine: ${this.isThreeLine?.toCode()},
-       dense: ${this.dense?.toCode()},
-       secondary: ${this.secondary?.toCode()},
-       selected: ${this.selected?.toCode()},
-       controlAffinity: ${this.controlAffinity?.toCode()},
-       autofocus: ${this.autofocus?.toCode()},
-       contentPadding: ${this.contentPadding?.toCode()},
-       tristate: ${this.tristate?.toCode()},
+       value: ${this.valueVal.toCode()},
+       onChanged: ${this.onChangedVal.toCode()},
+       activeColor: ${this.activeColorVal.toCode()},
+       checkColor: ${this.checkColorVal.toCode()},
+       title: ${this.titleVal.toCode()},
+       subtitle: ${this.subtitleVal.toCode()},
+       isThreeLine: ${this.isThreeLineVal.toCode()},
+       dense: ${this.denseVal.toCode()},
+       secondary: ${this.secondaryVal.toCode()},
+       selected: ${this.selectedVal.toCode()},
+       controlAffinity: ${this.controlAffinityVal.toCode()},
+       autofocus: ${this.autofocusVal.toCode()},
+       contentPadding: ${this.contentPaddingVal.toCode()},
+       tristate: ${this.tristateVal.toCode()},
     )""",
     };
   }

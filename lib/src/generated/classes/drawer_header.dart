@@ -149,7 +149,6 @@ class DrawerHeaderRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': DrawerHeader(
-        key: this.key,
         decoration: this.decoration,
         margin: this.margin,
         padding: this.padding,
@@ -164,7 +163,6 @@ class DrawerHeaderRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'decoration': this.decoration,
         'margin': this.margin,
         'padding': this.padding,
@@ -180,13 +178,13 @@ class DrawerHeaderRender<T> extends StatelessWidget {
     return {
       'name': 'DrawerHeader',
       'props': {
-        'decoration': this.decoration,
-        'padding': this.padding,
-        'margin': this.margin,
-        'duration': this.duration,
-        'curve': this.curve,
-        'child': this.child,
-        'widgetKey': this.widgetKey,
+        'decoration': this.decorationVal.toJson(),
+        'padding': this.paddingVal.toJson(),
+        'margin': this.marginVal.toJson(),
+        'duration': this.durationVal.toJson(),
+        'curve': this.curveVal.toJson(),
+        'child': this.childVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -195,13 +193,12 @@ class DrawerHeaderRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """DrawerHeader(
-       key: ${this.key?.toCode()},
-       decoration: ${this.decoration?.toCode()},
-       margin: ${this.margin?.toCode()},
-       padding: ${this.padding?.toCode()},
-       duration: ${this.duration?.toCode()},
-       curve: ${this.curve?.toCode()},
-       child: ${this.child?.toCode()},
+       decoration: ${this.decorationVal.toCode()},
+       margin: ${this.marginVal.toCode()},
+       padding: ${this.paddingVal.toCode()},
+       duration: ${this.durationVal.toCode()},
+       curve: ${this.curveVal.toCode()},
+       child: ${this.childVal.toCode()},
     )""",
     };
   }

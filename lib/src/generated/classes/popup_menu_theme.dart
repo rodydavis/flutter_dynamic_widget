@@ -85,7 +85,6 @@ class PopupMenuThemeRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': PopupMenuTheme(
-        key: this.key,
         data: this.data,
         child: this.child,
       ),
@@ -96,7 +95,6 @@ class PopupMenuThemeRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'data': this.data,
         'child': this.child,
       },
@@ -108,9 +106,9 @@ class PopupMenuThemeRender<T> extends StatelessWidget {
     return {
       'name': 'PopupMenuTheme',
       'props': {
-        'data': this.data,
-        'child': this.child,
-        'widgetKey': this.widgetKey,
+        'data': this.dataVal.toJson(),
+        'child': this.childVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -119,9 +117,8 @@ class PopupMenuThemeRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """PopupMenuTheme(
-       key: ${this.key?.toCode()},
-       data: ${this.data?.toCode()},
-       child: ${this.child?.toCode()},
+       data: ${this.dataVal.toCode()},
+       child: ${this.childVal.toCode()},
     )""",
     };
   }

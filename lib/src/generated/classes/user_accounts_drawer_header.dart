@@ -181,7 +181,6 @@ class UserAccountsDrawerHeaderRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': UserAccountsDrawerHeader(
-        key: this.key,
         decoration: this.decoration,
         margin: this.margin,
         currentAccountPicture: this.currentAccountPicture,
@@ -198,7 +197,6 @@ class UserAccountsDrawerHeaderRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'decoration': this.decoration,
         'margin': this.margin,
         'currentAccountPicture': this.currentAccountPicture,
@@ -216,15 +214,15 @@ class UserAccountsDrawerHeaderRender<T> extends StatelessWidget {
     return {
       'name': 'UserAccountsDrawerHeader',
       'props': {
-        'decoration': this.decoration,
-        'margin': this.margin,
-        'currentAccountPicture': this.currentAccountPicture,
-        'otherAccountsPictures': this.otherAccountsPictures,
-        'accountName': this.accountName,
-        'accountEmail': this.accountEmail,
-        'onDetailsPressed': this.onDetailsPressed,
-        'arrowColor': this.arrowColor,
-        'widgetKey': this.widgetKey,
+        'decoration': this.decorationVal.toJson(),
+        'margin': this.marginVal.toJson(),
+        'currentAccountPicture': this.currentAccountPictureVal.toJson(),
+        'otherAccountsPictures': this.otherAccountsPicturesVal.toJson(),
+        'accountName': this.accountNameVal.toJson(),
+        'accountEmail': this.accountEmailVal.toJson(),
+        'onDetailsPressed': this.onDetailsPressedVal.toJson(),
+        'arrowColor': this.arrowColorVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -233,15 +231,14 @@ class UserAccountsDrawerHeaderRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """UserAccountsDrawerHeader(
-       key: ${this.key?.toCode()},
-       decoration: ${this.decoration?.toCode()},
-       margin: ${this.margin?.toCode()},
-       currentAccountPicture: ${this.currentAccountPicture?.toCode()},
-       otherAccountsPictures: ${this.otherAccountsPictures?.toCode()},
-       accountName: ${this.accountName?.toCode()},
-       accountEmail: ${this.accountEmail?.toCode()},
-       onDetailsPressed: ${this.onDetailsPressed?.toCode()},
-       arrowColor: ${this.arrowColor?.toCode()},
+       decoration: ${this.decorationVal.toCode()},
+       margin: ${this.marginVal.toCode()},
+       currentAccountPicture: ${this.currentAccountPictureVal.toCode()},
+       otherAccountsPictures: ${this.otherAccountsPicturesVal.toCode()},
+       accountName: ${this.accountNameVal.toCode()},
+       accountEmail: ${this.accountEmailVal.toCode()},
+       onDetailsPressed: ${this.onDetailsPressedVal.toCode()},
+       arrowColor: ${this.arrowColorVal.toCode()},
     )""",
     };
   }

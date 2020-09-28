@@ -76,7 +76,7 @@ class DefaultMaterialLocalizationsRender<T> extends StatelessWidget {
     return {
       'name': 'DefaultMaterialLocalizations',
       'props': {
-        'widgetKey': this.widgetKey,
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }

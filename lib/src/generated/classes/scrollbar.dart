@@ -133,7 +133,6 @@ class ScrollbarRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': Scrollbar(
-        key: this.key,
         child: this.child,
         controller: this.controller,
         isAlwaysShown: this.isAlwaysShown,
@@ -147,7 +146,6 @@ class ScrollbarRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'child': this.child,
         'controller': this.controller,
         'isAlwaysShown': this.isAlwaysShown,
@@ -162,12 +160,12 @@ class ScrollbarRender<T> extends StatelessWidget {
     return {
       'name': 'Scrollbar',
       'props': {
-        'child': this.child,
-        'controller': this.controller,
-        'isAlwaysShown': this.isAlwaysShown,
-        'thickness': this.thickness,
-        'radius': this.radius,
-        'widgetKey': this.widgetKey,
+        'child': this.childVal.toJson(),
+        'controller': this.controllerVal.toJson(),
+        'isAlwaysShown': this.isAlwaysShownVal.toJson(),
+        'thickness': this.thicknessVal.toJson(),
+        'radius': this.radiusVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -176,12 +174,11 @@ class ScrollbarRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """Scrollbar(
-       key: ${this.key?.toCode()},
-       child: ${this.child?.toCode()},
-       controller: ${this.controller?.toCode()},
-       isAlwaysShown: ${this.isAlwaysShown?.toCode()},
-       thickness: ${this.thickness?.toCode()},
-       radius: ${this.radius?.toCode()},
+       child: ${this.childVal.toCode()},
+       controller: ${this.controllerVal.toCode()},
+       isAlwaysShown: ${this.isAlwaysShownVal.toCode()},
+       thickness: ${this.thicknessVal.toCode()},
+       radius: ${this.radiusVal.toCode()},
     )""",
     };
   }

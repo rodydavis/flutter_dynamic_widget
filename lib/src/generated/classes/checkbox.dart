@@ -246,7 +246,6 @@ class CheckboxRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': Checkbox(
-        key: this.key,
         value: this.value,
         tristate: this.tristate,
         onChanged: this.onChanged,
@@ -267,7 +266,6 @@ class CheckboxRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'value': this.value,
         'tristate': this.tristate,
         'onChanged': this.onChanged,
@@ -289,19 +287,19 @@ class CheckboxRender<T> extends StatelessWidget {
     return {
       'name': 'Checkbox',
       'props': {
-        'value': this.value,
-        'onChanged': this.onChanged,
-        'mouseCursor': this.mouseCursor,
-        'activeColor': this.activeColor,
-        'checkColor': this.checkColor,
-        'tristate': this.tristate,
-        'materialTapTargetSize': this.materialTapTargetSize,
-        'visualDensity': this.visualDensity,
-        'focusColor': this.focusColor,
-        'hoverColor': this.hoverColor,
-        'focusNode': this.focusNode,
-        'autofocus': this.autofocus,
-        'widgetKey': this.widgetKey,
+        'value': this.valueVal.toJson(),
+        'onChanged': this.onChangedVal.toJson(),
+        'mouseCursor': this.mouseCursorVal.toJson(),
+        'activeColor': this.activeColorVal.toJson(),
+        'checkColor': this.checkColorVal.toJson(),
+        'tristate': this.tristateVal.toJson(),
+        'materialTapTargetSize': this.materialTapTargetSizeVal.toJson(),
+        'visualDensity': this.visualDensityVal.toJson(),
+        'focusColor': this.focusColorVal.toJson(),
+        'hoverColor': this.hoverColorVal.toJson(),
+        'focusNode': this.focusNodeVal.toJson(),
+        'autofocus': this.autofocusVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -310,19 +308,18 @@ class CheckboxRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """Checkbox(
-       key: ${this.key?.toCode()},
-       value: ${this.value?.toCode()},
-       tristate: ${this.tristate?.toCode()},
-       onChanged: ${this.onChanged?.toCode()},
-       mouseCursor: ${this.mouseCursor?.toCode()},
-       activeColor: ${this.activeColor?.toCode()},
-       checkColor: ${this.checkColor?.toCode()},
-       focusColor: ${this.focusColor?.toCode()},
-       hoverColor: ${this.hoverColor?.toCode()},
-       materialTapTargetSize: ${this.materialTapTargetSize?.toCode()},
-       visualDensity: ${this.visualDensity?.toCode()},
-       focusNode: ${this.focusNode?.toCode()},
-       autofocus: ${this.autofocus?.toCode()},
+       value: ${this.valueVal.toCode()},
+       tristate: ${this.tristateVal.toCode()},
+       onChanged: ${this.onChangedVal.toCode()},
+       mouseCursor: ${this.mouseCursorVal.toCode()},
+       activeColor: ${this.activeColorVal.toCode()},
+       checkColor: ${this.checkColorVal.toCode()},
+       focusColor: ${this.focusColorVal.toCode()},
+       hoverColor: ${this.hoverColorVal.toCode()},
+       materialTapTargetSize: ${this.materialTapTargetSizeVal.toCode()},
+       visualDensity: ${this.visualDensityVal.toCode()},
+       focusNode: ${this.focusNodeVal.toCode()},
+       autofocus: ${this.autofocusVal.toCode()},
     )""",
     };
   }

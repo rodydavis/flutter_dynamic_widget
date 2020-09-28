@@ -124,10 +124,10 @@ class BottomAppBarThemeRender<T> extends StatelessWidget {
     return {
       'name': 'BottomAppBarTheme',
       'props': {
-        'color': this.color,
-        'elevation': this.elevation,
-        'shape': this.shape,
-        'widgetKey': this.widgetKey,
+        'color': this.colorVal.toJson(),
+        'elevation': this.elevationVal.toJson(),
+        'shape': this.shapeVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -136,9 +136,9 @@ class BottomAppBarThemeRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """BottomAppBarTheme(
-       color: ${this.color?.toCode()},
-       elevation: ${this.elevation?.toCode()},
-       shape: ${this.shape?.toCode()},
+       color: ${this.colorVal.toCode()},
+       elevation: ${this.elevationVal.toCode()},
+       shape: ${this.shapeVal.toCode()},
     )""",
     };
   }

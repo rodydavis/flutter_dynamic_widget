@@ -225,13 +225,13 @@ class TypographyRender<T> extends StatelessWidget {
     return {
       'name': 'Typography',
       'props': {
-        'black': this.black,
-        'white': this.white,
-        'englishLike': this.englishLike,
-        'dense': this.dense,
-        'tall': this.tall,
-        'platform': this.platform,
-        'widgetKey': this.widgetKey,
+        'black': this.blackVal.toJson(),
+        'white': this.whiteVal.toJson(),
+        'englishLike': this.englishLikeVal.toJson(),
+        'dense': this.denseVal.toJson(),
+        'tall': this.tallVal.toJson(),
+        'platform': this.platformVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -240,28 +240,28 @@ class TypographyRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """Typography(
-       platform: ${this.platform?.toCode()},
-       black: ${this.black?.toCode()},
-       white: ${this.white?.toCode()},
-       englishLike: ${this.englishLike?.toCode()},
-       dense: ${this.dense?.toCode()},
-       tall: ${this.tall?.toCode()},
+       platform: ${this.platformVal.toCode()},
+       black: ${this.blackVal.toCode()},
+       white: ${this.whiteVal.toCode()},
+       englishLike: ${this.englishLikeVal.toCode()},
+       dense: ${this.denseVal.toCode()},
+       tall: ${this.tallVal.toCode()},
     )""",
     'material2014': """Typography.material2014(
-       platform: ${this.platform?.toCode()},
-       black: ${this.black?.toCode()},
-       white: ${this.white?.toCode()},
-       englishLike: ${this.englishLike?.toCode()},
-       dense: ${this.dense?.toCode()},
-       tall: ${this.tall?.toCode()},
+       platform: ${this.platformVal.toCode()},
+       black: ${this.blackVal.toCode()},
+       white: ${this.whiteVal.toCode()},
+       englishLike: ${this.englishLikeVal.toCode()},
+       dense: ${this.denseVal.toCode()},
+       tall: ${this.tallVal.toCode()},
     )""",
     'material2018': """Typography.material2018(
-       platform: ${this.platform?.toCode()},
-       black: ${this.black?.toCode()},
-       white: ${this.white?.toCode()},
-       englishLike: ${this.englishLike?.toCode()},
-       dense: ${this.dense?.toCode()},
-       tall: ${this.tall?.toCode()},
+       platform: ${this.platformVal.toCode()},
+       black: ${this.blackVal.toCode()},
+       white: ${this.whiteVal.toCode()},
+       englishLike: ${this.englishLikeVal.toCode()},
+       dense: ${this.denseVal.toCode()},
+       tall: ${this.tallVal.toCode()},
     )""",
     };
   }

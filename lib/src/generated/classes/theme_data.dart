@@ -111,9 +111,9 @@ class VisualDensityRender<T> extends StatelessWidget {
     return {
       'name': 'VisualDensity',
       'props': {
-        'horizontal': this.horizontal,
-        'vertical': this.vertical,
-        'widgetKey': this.widgetKey,
+        'horizontal': this.horizontalVal.toJson(),
+        'vertical': this.verticalVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -122,8 +122,8 @@ class VisualDensityRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """VisualDensity(
-       horizontal: ${this.horizontal?.toCode()},
-       vertical: ${this.vertical?.toCode()},
+       horizontal: ${this.horizontalVal.toCode()},
+       vertical: ${this.verticalVal.toCode()},
     )""",
     };
   }

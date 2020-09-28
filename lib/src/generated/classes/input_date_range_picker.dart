@@ -75,7 +75,7 @@ class InputDateRangePickerStateRender<T> extends StatelessWidget {
     return {
       'name': 'InputDateRangePickerState',
       'props': {
-        'widgetKey': this.widgetKey,
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }

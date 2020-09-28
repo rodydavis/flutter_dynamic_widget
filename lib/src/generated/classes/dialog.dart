@@ -197,7 +197,6 @@ class SimpleDialogRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': SimpleDialog(
-        key: this.key,
         title: this.title,
         titlePadding: this.titlePadding,
         titleTextStyle: this.titleTextStyle,
@@ -215,7 +214,6 @@ class SimpleDialogRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'title': this.title,
         'titlePadding': this.titlePadding,
         'titleTextStyle': this.titleTextStyle,
@@ -234,16 +232,16 @@ class SimpleDialogRender<T> extends StatelessWidget {
     return {
       'name': 'SimpleDialog',
       'props': {
-        'title': this.title,
-        'titlePadding': this.titlePadding,
-        'titleTextStyle': this.titleTextStyle,
-        'children': this.children,
-        'contentPadding': this.contentPadding,
-        'backgroundColor': this.backgroundColor,
-        'elevation': this.elevation,
-        'semanticLabel': this.semanticLabel,
-        'shape': this.shape,
-        'widgetKey': this.widgetKey,
+        'title': this.titleVal.toJson(),
+        'titlePadding': this.titlePaddingVal.toJson(),
+        'titleTextStyle': this.titleTextStyleVal.toJson(),
+        'children': this.childrenVal.toJson(),
+        'contentPadding': this.contentPaddingVal.toJson(),
+        'backgroundColor': this.backgroundColorVal.toJson(),
+        'elevation': this.elevationVal.toJson(),
+        'semanticLabel': this.semanticLabelVal.toJson(),
+        'shape': this.shapeVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -252,16 +250,15 @@ class SimpleDialogRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """SimpleDialog(
-       key: ${this.key?.toCode()},
-       title: ${this.title?.toCode()},
-       titlePadding: ${this.titlePadding?.toCode()},
-       titleTextStyle: ${this.titleTextStyle?.toCode()},
-       children: ${this.children?.toCode()},
-       contentPadding: ${this.contentPadding?.toCode()},
-       backgroundColor: ${this.backgroundColor?.toCode()},
-       elevation: ${this.elevation?.toCode()},
-       semanticLabel: ${this.semanticLabel?.toCode()},
-       shape: ${this.shape?.toCode()},
+       title: ${this.titleVal.toCode()},
+       titlePadding: ${this.titlePaddingVal.toCode()},
+       titleTextStyle: ${this.titleTextStyleVal.toCode()},
+       children: ${this.childrenVal.toCode()},
+       contentPadding: ${this.contentPaddingVal.toCode()},
+       backgroundColor: ${this.backgroundColorVal.toCode()},
+       elevation: ${this.elevationVal.toCode()},
+       semanticLabel: ${this.semanticLabelVal.toCode()},
+       shape: ${this.shapeVal.toCode()},
     )""",
     };
   }

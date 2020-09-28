@@ -165,7 +165,6 @@ class ReorderableListViewRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': ReorderableListView(
-        key: this.key,
         header: this.header,
         children: this.children,
         onReorder: this.onReorder,
@@ -181,7 +180,6 @@ class ReorderableListViewRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'header': this.header,
         'children': this.children,
         'onReorder': this.onReorder,
@@ -198,14 +196,14 @@ class ReorderableListViewRender<T> extends StatelessWidget {
     return {
       'name': 'ReorderableListView',
       'props': {
-        'header': this.header,
-        'children': this.children,
-        'scrollDirection': this.scrollDirection,
-        'scrollController': this.scrollController,
-        'padding': this.padding,
-        'reverse': this.reverse,
-        'onReorder': this.onReorder,
-        'widgetKey': this.widgetKey,
+        'header': this.headerVal.toJson(),
+        'children': this.childrenVal.toJson(),
+        'scrollDirection': this.scrollDirectionVal.toJson(),
+        'scrollController': this.scrollControllerVal.toJson(),
+        'padding': this.paddingVal.toJson(),
+        'reverse': this.reverseVal.toJson(),
+        'onReorder': this.onReorderVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -214,14 +212,13 @@ class ReorderableListViewRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """ReorderableListView(
-       key: ${this.key?.toCode()},
-       header: ${this.header?.toCode()},
-       children: ${this.children?.toCode()},
-       onReorder: ${this.onReorder?.toCode()},
-       scrollController: ${this.scrollController?.toCode()},
-       scrollDirection: ${this.scrollDirection?.toCode()},
-       padding: ${this.padding?.toCode()},
-       reverse: ${this.reverse?.toCode()},
+       header: ${this.headerVal.toCode()},
+       children: ${this.childrenVal.toCode()},
+       onReorder: ${this.onReorderVal.toCode()},
+       scrollController: ${this.scrollControllerVal.toCode()},
+       scrollDirection: ${this.scrollDirectionVal.toCode()},
+       padding: ${this.paddingVal.toCode()},
+       reverse: ${this.reverseVal.toCode()},
     )""",
     };
   }

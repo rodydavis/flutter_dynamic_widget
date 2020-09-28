@@ -149,7 +149,6 @@ class AnimatedThemeRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': AnimatedTheme(
-        key: this.key,
         data: this.data,
         isMaterialAppTheme: this.isMaterialAppTheme,
         curve: this.curve,
@@ -164,7 +163,6 @@ class AnimatedThemeRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'data': this.data,
         'isMaterialAppTheme': this.isMaterialAppTheme,
         'curve': this.curve,
@@ -180,13 +178,13 @@ class AnimatedThemeRender<T> extends StatelessWidget {
     return {
       'name': 'AnimatedTheme',
       'props': {
-        'data': this.data,
-        'isMaterialAppTheme': this.isMaterialAppTheme,
-        'child': this.child,
-        'curve': this.curve,
-        'duration': this.duration,
-        'onEnd': this.onEnd,
-        'widgetKey': this.widgetKey,
+        'data': this.dataVal.toJson(),
+        'isMaterialAppTheme': this.isMaterialAppThemeVal.toJson(),
+        'child': this.childVal.toJson(),
+        'curve': this.curveVal.toJson(),
+        'duration': this.durationVal.toJson(),
+        'onEnd': this.onEndVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -195,13 +193,12 @@ class AnimatedThemeRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """AnimatedTheme(
-       key: ${this.key?.toCode()},
-       data: ${this.data?.toCode()},
-       isMaterialAppTheme: ${this.isMaterialAppTheme?.toCode()},
-       curve: ${this.curve?.toCode()},
-       duration: ${this.duration?.toCode()},
-       onEnd: ${this.onEnd?.toCode()},
-       child: ${this.child?.toCode()},
+       data: ${this.dataVal.toCode()},
+       isMaterialAppTheme: ${this.isMaterialAppThemeVal.toCode()},
+       curve: ${this.curveVal.toCode()},
+       duration: ${this.durationVal.toCode()},
+       onEnd: ${this.onEndVal.toCode()},
+       child: ${this.childVal.toCode()},
     )""",
     };
   }

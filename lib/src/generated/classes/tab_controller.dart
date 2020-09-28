@@ -101,7 +101,6 @@ class DefaultTabControllerRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': DefaultTabController(
-        key: this.key,
         length: this.length,
         initialIndex: this.initialIndex,
         child: this.child,
@@ -113,7 +112,6 @@ class DefaultTabControllerRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'length': this.length,
         'initialIndex': this.initialIndex,
         'child': this.child,
@@ -126,10 +124,10 @@ class DefaultTabControllerRender<T> extends StatelessWidget {
     return {
       'name': 'DefaultTabController',
       'props': {
-        'length': this.length,
-        'initialIndex': this.initialIndex,
-        'child': this.child,
-        'widgetKey': this.widgetKey,
+        'length': this.lengthVal.toJson(),
+        'initialIndex': this.initialIndexVal.toJson(),
+        'child': this.childVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -138,10 +136,9 @@ class DefaultTabControllerRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """DefaultTabController(
-       key: ${this.key?.toCode()},
-       length: ${this.length?.toCode()},
-       initialIndex: ${this.initialIndex?.toCode()},
-       child: ${this.child?.toCode()},
+       length: ${this.lengthVal.toCode()},
+       initialIndex: ${this.initialIndexVal.toCode()},
+       child: ${this.childVal.toCode()},
     )""",
     };
   }

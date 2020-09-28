@@ -149,7 +149,6 @@ class TableRowInkWellRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': TableRowInkWell(
-        key: this.key,
         child: this.child,
         onTap: this.onTap,
         onDoubleTap: this.onDoubleTap,
@@ -164,7 +163,6 @@ class TableRowInkWellRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'child': this.child,
         'onTap': this.onTap,
         'onDoubleTap': this.onDoubleTap,
@@ -180,13 +178,13 @@ class TableRowInkWellRender<T> extends StatelessWidget {
     return {
       'name': 'TableRowInkWell',
       'props': {
-        'child': this.child,
-        'onTap': this.onTap,
-        'onDoubleTap': this.onDoubleTap,
-        'onLongPress': this.onLongPress,
-        'onHighlightChanged': this.onHighlightChanged,
-        'overlayColor': this.overlayColor,
-        'widgetKey': this.widgetKey,
+        'child': this.childVal.toJson(),
+        'onTap': this.onTapVal.toJson(),
+        'onDoubleTap': this.onDoubleTapVal.toJson(),
+        'onLongPress': this.onLongPressVal.toJson(),
+        'onHighlightChanged': this.onHighlightChangedVal.toJson(),
+        'overlayColor': this.overlayColorVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -195,13 +193,12 @@ class TableRowInkWellRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """TableRowInkWell(
-       key: ${this.key?.toCode()},
-       child: ${this.child?.toCode()},
-       onTap: ${this.onTap?.toCode()},
-       onDoubleTap: ${this.onDoubleTap?.toCode()},
-       onLongPress: ${this.onLongPress?.toCode()},
-       onHighlightChanged: ${this.onHighlightChanged?.toCode()},
-       overlayColor: ${this.overlayColor?.toCode()},
+       child: ${this.childVal.toCode()},
+       onTap: ${this.onTapVal.toCode()},
+       onDoubleTap: ${this.onDoubleTapVal.toCode()},
+       onLongPress: ${this.onLongPressVal.toCode()},
+       onHighlightChanged: ${this.onHighlightChangedVal.toCode()},
+       overlayColor: ${this.overlayColorVal.toCode()},
     )""",
     };
   }

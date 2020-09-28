@@ -163,12 +163,12 @@ class InkDecorationRender<T> extends StatelessWidget {
     return {
       'name': 'InkDecoration',
       'props': {
-        'decoration': this.decoration,
-        'configuration': this.configuration,
-        'controller': this.controller,
-        'referenceBox': this.referenceBox,
-        'onRemoved': this.onRemoved,
-        'widgetKey': this.widgetKey,
+        'decoration': this.decorationVal.toJson(),
+        'configuration': this.configurationVal.toJson(),
+        'controller': this.controllerVal.toJson(),
+        'referenceBox': this.referenceBoxVal.toJson(),
+        'onRemoved': this.onRemovedVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -177,11 +177,11 @@ class InkDecorationRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """InkDecoration(
-       decoration: ${this.decoration?.toCode()},
-       configuration: ${this.configuration?.toCode()},
-       controller: ${this.controller?.toCode()},
-       referenceBox: ${this.referenceBox?.toCode()},
-       onRemoved: ${this.onRemoved?.toCode()},
+       decoration: ${this.decorationVal.toCode()},
+       configuration: ${this.configurationVal.toCode()},
+       controller: ${this.controllerVal.toCode()},
+       referenceBox: ${this.referenceBoxVal.toCode()},
+       onRemoved: ${this.onRemovedVal.toCode()},
     )""",
     };
   }

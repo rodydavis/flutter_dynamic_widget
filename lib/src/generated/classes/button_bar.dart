@@ -229,7 +229,6 @@ class ButtonBarRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': ButtonBar(
-        key: this.key,
         alignment: this.alignment,
         mainAxisSize: this.mainAxisSize,
         buttonTextTheme: this.buttonTextTheme,
@@ -249,7 +248,6 @@ class ButtonBarRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'alignment': this.alignment,
         'mainAxisSize': this.mainAxisSize,
         'buttonTextTheme': this.buttonTextTheme,
@@ -270,18 +268,18 @@ class ButtonBarRender<T> extends StatelessWidget {
     return {
       'name': 'ButtonBar',
       'props': {
-        'alignment': this.alignment,
-        'mainAxisSize': this.mainAxisSize,
-        'buttonTextTheme': this.buttonTextTheme,
-        'buttonMinWidth': this.buttonMinWidth,
-        'buttonHeight': this.buttonHeight,
-        'buttonPadding': this.buttonPadding,
-        'buttonAlignedDropdown': this.buttonAlignedDropdown,
-        'layoutBehavior': this.layoutBehavior,
-        'overflowDirection': this.overflowDirection,
-        'overflowButtonSpacing': this.overflowButtonSpacing,
-        'children': this.children,
-        'widgetKey': this.widgetKey,
+        'alignment': this.alignmentVal.toJson(),
+        'mainAxisSize': this.mainAxisSizeVal.toJson(),
+        'buttonTextTheme': this.buttonTextThemeVal.toJson(),
+        'buttonMinWidth': this.buttonMinWidthVal.toJson(),
+        'buttonHeight': this.buttonHeightVal.toJson(),
+        'buttonPadding': this.buttonPaddingVal.toJson(),
+        'buttonAlignedDropdown': this.buttonAlignedDropdownVal.toJson(),
+        'layoutBehavior': this.layoutBehaviorVal.toJson(),
+        'overflowDirection': this.overflowDirectionVal.toJson(),
+        'overflowButtonSpacing': this.overflowButtonSpacingVal.toJson(),
+        'children': this.childrenVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -290,18 +288,17 @@ class ButtonBarRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """ButtonBar(
-       key: ${this.key?.toCode()},
-       alignment: ${this.alignment?.toCode()},
-       mainAxisSize: ${this.mainAxisSize?.toCode()},
-       buttonTextTheme: ${this.buttonTextTheme?.toCode()},
-       buttonMinWidth: ${this.buttonMinWidth?.toCode()},
-       buttonHeight: ${this.buttonHeight?.toCode()},
-       buttonPadding: ${this.buttonPadding?.toCode()},
-       buttonAlignedDropdown: ${this.buttonAlignedDropdown?.toCode()},
-       layoutBehavior: ${this.layoutBehavior?.toCode()},
-       overflowDirection: ${this.overflowDirection?.toCode()},
-       overflowButtonSpacing: ${this.overflowButtonSpacing?.toCode()},
-       children: ${this.children?.toCode()},
+       alignment: ${this.alignmentVal.toCode()},
+       mainAxisSize: ${this.mainAxisSizeVal.toCode()},
+       buttonTextTheme: ${this.buttonTextThemeVal.toCode()},
+       buttonMinWidth: ${this.buttonMinWidthVal.toCode()},
+       buttonHeight: ${this.buttonHeightVal.toCode()},
+       buttonPadding: ${this.buttonPaddingVal.toCode()},
+       buttonAlignedDropdown: ${this.buttonAlignedDropdownVal.toCode()},
+       layoutBehavior: ${this.layoutBehaviorVal.toCode()},
+       overflowDirection: ${this.overflowDirectionVal.toCode()},
+       overflowButtonSpacing: ${this.overflowButtonSpacingVal.toCode()},
+       children: ${this.childrenVal.toCode()},
     )""",
     };
   }

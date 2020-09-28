@@ -149,7 +149,6 @@ class BottomAppBarRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': BottomAppBar(
-        key: this.key,
         color: this.color,
         elevation: this.elevation,
         shape: this.shape,
@@ -164,7 +163,6 @@ class BottomAppBarRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'color': this.color,
         'elevation': this.elevation,
         'shape': this.shape,
@@ -180,13 +178,13 @@ class BottomAppBarRender<T> extends StatelessWidget {
     return {
       'name': 'BottomAppBar',
       'props': {
-        'child': this.child,
-        'color': this.color,
-        'elevation': this.elevation,
-        'shape': this.shape,
-        'clipBehavior': this.clipBehavior,
-        'notchMargin': this.notchMargin,
-        'widgetKey': this.widgetKey,
+        'child': this.childVal.toJson(),
+        'color': this.colorVal.toJson(),
+        'elevation': this.elevationVal.toJson(),
+        'shape': this.shapeVal.toJson(),
+        'clipBehavior': this.clipBehaviorVal.toJson(),
+        'notchMargin': this.notchMarginVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -195,13 +193,12 @@ class BottomAppBarRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """BottomAppBar(
-       key: ${this.key?.toCode()},
-       color: ${this.color?.toCode()},
-       elevation: ${this.elevation?.toCode()},
-       shape: ${this.shape?.toCode()},
-       clipBehavior: ${this.clipBehavior?.toCode()},
-       notchMargin: ${this.notchMargin?.toCode()},
-       child: ${this.child?.toCode()},
+       color: ${this.colorVal.toCode()},
+       elevation: ${this.elevationVal.toCode()},
+       shape: ${this.shapeVal.toCode()},
+       clipBehavior: ${this.clipBehaviorVal.toCode()},
+       notchMargin: ${this.notchMarginVal.toCode()},
+       child: ${this.childVal.toCode()},
     )""",
     };
   }

@@ -133,7 +133,6 @@ class YearPickerRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': YearPicker(
-        key: this.key,
         selectedDate: this.selectedDate,
         onChanged: this.onChanged,
         firstDate: this.firstDate,
@@ -147,7 +146,6 @@ class YearPickerRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'selectedDate': this.selectedDate,
         'onChanged': this.onChanged,
         'firstDate': this.firstDate,
@@ -162,12 +160,12 @@ class YearPickerRender<T> extends StatelessWidget {
     return {
       'name': 'YearPicker',
       'props': {
-        'selectedDate': this.selectedDate,
-        'onChanged': this.onChanged,
-        'firstDate': this.firstDate,
-        'lastDate': this.lastDate,
-        'dragStartBehavior': this.dragStartBehavior,
-        'widgetKey': this.widgetKey,
+        'selectedDate': this.selectedDateVal.toJson(),
+        'onChanged': this.onChangedVal.toJson(),
+        'firstDate': this.firstDateVal.toJson(),
+        'lastDate': this.lastDateVal.toJson(),
+        'dragStartBehavior': this.dragStartBehaviorVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -176,12 +174,11 @@ class YearPickerRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """YearPicker(
-       key: ${this.key?.toCode()},
-       selectedDate: ${this.selectedDate?.toCode()},
-       onChanged: ${this.onChanged?.toCode()},
-       firstDate: ${this.firstDate?.toCode()},
-       lastDate: ${this.lastDate?.toCode()},
-       dragStartBehavior: ${this.dragStartBehavior?.toCode()},
+       selectedDate: ${this.selectedDateVal.toCode()},
+       onChanged: ${this.onChangedVal.toCode()},
+       firstDate: ${this.firstDateVal.toCode()},
+       lastDate: ${this.lastDateVal.toCode()},
+       dragStartBehavior: ${this.dragStartBehaviorVal.toCode()},
     )""",
     };
   }

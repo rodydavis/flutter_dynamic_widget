@@ -261,7 +261,6 @@ class RadioListTileRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': RadioListTile(
-        key: this.key,
         value: this.value,
         groupValue: this.groupValue,
         onChanged: this.onChanged,
@@ -283,7 +282,6 @@ class RadioListTileRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'value': this.value,
         'groupValue': this.groupValue,
         'onChanged': this.onChanged,
@@ -306,20 +304,20 @@ class RadioListTileRender<T> extends StatelessWidget {
     return {
       'name': 'RadioListTile',
       'props': {
-        'value': this.value,
-        'groupValue': this.groupValue,
-        'onChanged': this.onChanged,
-        'toggleable': this.toggleable,
-        'activeColor': this.activeColor,
-        'title': this.title,
-        'subtitle': this.subtitle,
-        'secondary': this.secondary,
-        'isThreeLine': this.isThreeLine,
-        'dense': this.dense,
-        'selected': this.selected,
-        'controlAffinity': this.controlAffinity,
-        'autofocus': this.autofocus,
-        'widgetKey': this.widgetKey,
+        'value': this.valueVal.toJson(),
+        'groupValue': this.groupValueVal.toJson(),
+        'onChanged': this.onChangedVal.toJson(),
+        'toggleable': this.toggleableVal.toJson(),
+        'activeColor': this.activeColorVal.toJson(),
+        'title': this.titleVal.toJson(),
+        'subtitle': this.subtitleVal.toJson(),
+        'secondary': this.secondaryVal.toJson(),
+        'isThreeLine': this.isThreeLineVal.toJson(),
+        'dense': this.denseVal.toJson(),
+        'selected': this.selectedVal.toJson(),
+        'controlAffinity': this.controlAffinityVal.toJson(),
+        'autofocus': this.autofocusVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -328,20 +326,19 @@ class RadioListTileRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """RadioListTile(
-       key: ${this.key?.toCode()},
-       value: ${this.value?.toCode()},
-       groupValue: ${this.groupValue?.toCode()},
-       onChanged: ${this.onChanged?.toCode()},
-       toggleable: ${this.toggleable?.toCode()},
-       activeColor: ${this.activeColor?.toCode()},
-       title: ${this.title?.toCode()},
-       subtitle: ${this.subtitle?.toCode()},
-       isThreeLine: ${this.isThreeLine?.toCode()},
-       dense: ${this.dense?.toCode()},
-       secondary: ${this.secondary?.toCode()},
-       selected: ${this.selected?.toCode()},
-       controlAffinity: ${this.controlAffinity?.toCode()},
-       autofocus: ${this.autofocus?.toCode()},
+       value: ${this.valueVal.toCode()},
+       groupValue: ${this.groupValueVal.toCode()},
+       onChanged: ${this.onChangedVal.toCode()},
+       toggleable: ${this.toggleableVal.toCode()},
+       activeColor: ${this.activeColorVal.toCode()},
+       title: ${this.titleVal.toCode()},
+       subtitle: ${this.subtitleVal.toCode()},
+       isThreeLine: ${this.isThreeLineVal.toCode()},
+       dense: ${this.denseVal.toCode()},
+       secondary: ${this.secondaryVal.toCode()},
+       selected: ${this.selectedVal.toCode()},
+       controlAffinity: ${this.controlAffinityVal.toCode()},
+       autofocus: ${this.autofocusVal.toCode()},
     )""",
     };
   }

@@ -165,7 +165,6 @@ class ButtonStyleButtonRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': ButtonStyleButton(
-        key: this.key,
         onPressed: this.onPressed,
         onLongPress: this.onLongPress,
         style: this.style,
@@ -181,7 +180,6 @@ class ButtonStyleButtonRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'onPressed': this.onPressed,
         'onLongPress': this.onLongPress,
         'style': this.style,
@@ -198,14 +196,14 @@ class ButtonStyleButtonRender<T> extends StatelessWidget {
     return {
       'name': 'ButtonStyleButton',
       'props': {
-        'onPressed': this.onPressed,
-        'onLongPress': this.onLongPress,
-        'style': this.style,
-        'clipBehavior': this.clipBehavior,
-        'focusNode': this.focusNode,
-        'autofocus': this.autofocus,
-        'child': this.child,
-        'widgetKey': this.widgetKey,
+        'onPressed': this.onPressedVal.toJson(),
+        'onLongPress': this.onLongPressVal.toJson(),
+        'style': this.styleVal.toJson(),
+        'clipBehavior': this.clipBehaviorVal.toJson(),
+        'focusNode': this.focusNodeVal.toJson(),
+        'autofocus': this.autofocusVal.toJson(),
+        'child': this.childVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -214,14 +212,13 @@ class ButtonStyleButtonRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """ButtonStyleButton(
-       key: ${this.key?.toCode()},
-       onPressed: ${this.onPressed?.toCode()},
-       onLongPress: ${this.onLongPress?.toCode()},
-       style: ${this.style?.toCode()},
-       focusNode: ${this.focusNode?.toCode()},
-       autofocus: ${this.autofocus?.toCode()},
-       clipBehavior: ${this.clipBehavior?.toCode()},
-       child: ${this.child?.toCode()},
+       onPressed: ${this.onPressedVal.toCode()},
+       onLongPress: ${this.onLongPressVal.toCode()},
+       style: ${this.styleVal.toCode()},
+       focusNode: ${this.focusNodeVal.toCode()},
+       autofocus: ${this.autofocusVal.toCode()},
+       clipBehavior: ${this.clipBehaviorVal.toCode()},
+       child: ${this.childVal.toCode()},
     )""",
     };
   }

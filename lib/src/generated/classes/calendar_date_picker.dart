@@ -181,7 +181,6 @@ class CalendarDatePickerRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': CalendarDatePicker(
-        key: this.key,
         initialDate: this.initialDate,
         firstDate: this.firstDate,
         lastDate: this.lastDate,
@@ -198,7 +197,6 @@ class CalendarDatePickerRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'initialDate': this.initialDate,
         'firstDate': this.firstDate,
         'lastDate': this.lastDate,
@@ -216,15 +214,15 @@ class CalendarDatePickerRender<T> extends StatelessWidget {
     return {
       'name': 'CalendarDatePicker',
       'props': {
-        'initialDate': this.initialDate,
-        'firstDate': this.firstDate,
-        'lastDate': this.lastDate,
-        'currentDate': this.currentDate,
-        'onDateChanged': this.onDateChanged,
-        'onDisplayedMonthChanged': this.onDisplayedMonthChanged,
-        'initialCalendarMode': this.initialCalendarMode,
-        'selectableDayPredicate': this.selectableDayPredicate,
-        'widgetKey': this.widgetKey,
+        'initialDate': this.initialDateVal.toJson(),
+        'firstDate': this.firstDateVal.toJson(),
+        'lastDate': this.lastDateVal.toJson(),
+        'currentDate': this.currentDateVal.toJson(),
+        'onDateChanged': this.onDateChangedVal.toJson(),
+        'onDisplayedMonthChanged': this.onDisplayedMonthChangedVal.toJson(),
+        'initialCalendarMode': this.initialCalendarModeVal.toJson(),
+        'selectableDayPredicate': this.selectableDayPredicateVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -233,15 +231,14 @@ class CalendarDatePickerRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """CalendarDatePicker(
-       key: ${this.key?.toCode()},
-       initialDate: ${this.initialDate?.toCode()},
-       firstDate: ${this.firstDate?.toCode()},
-       lastDate: ${this.lastDate?.toCode()},
-       currentDate: ${this.currentDate?.toCode()},
-       onDateChanged: ${this.onDateChanged?.toCode()},
-       onDisplayedMonthChanged: ${this.onDisplayedMonthChanged?.toCode()},
-       initialCalendarMode: ${this.initialCalendarMode?.toCode()},
-       selectableDayPredicate: ${this.selectableDayPredicate?.toCode()},
+       initialDate: ${this.initialDateVal.toCode()},
+       firstDate: ${this.firstDateVal.toCode()},
+       lastDate: ${this.lastDateVal.toCode()},
+       currentDate: ${this.currentDateVal.toCode()},
+       onDateChanged: ${this.onDateChangedVal.toCode()},
+       onDisplayedMonthChanged: ${this.onDisplayedMonthChangedVal.toCode()},
+       initialCalendarMode: ${this.initialCalendarModeVal.toCode()},
+       selectableDayPredicate: ${this.selectableDayPredicateVal.toCode()},
     )""",
     };
   }

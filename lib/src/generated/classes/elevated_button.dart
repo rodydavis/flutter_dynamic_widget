@@ -197,7 +197,6 @@ class ElevatedButtonRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': ElevatedButton(
-        key: this.key,
         onPressed: this.onPressed,
         onLongPress: this.onLongPress,
         style: this.style,
@@ -207,7 +206,6 @@ class ElevatedButtonRender<T> extends StatelessWidget {
         child: this.child,
       ),
       'icon': ElevatedButton.icon(
-        key: this.key,
         onPressed: this.onPressed,
         onLongPress: this.onLongPress,
         style: this.style,
@@ -224,7 +222,6 @@ class ElevatedButtonRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'onPressed': this.onPressed,
         'onLongPress': this.onLongPress,
         'style': this.style,
@@ -234,7 +231,6 @@ class ElevatedButtonRender<T> extends StatelessWidget {
         'child': this.child,
       },
       'icon': {
-        'key': this.key,
         'onPressed': this.onPressed,
         'onLongPress': this.onLongPress,
         'style': this.style,
@@ -252,16 +248,16 @@ class ElevatedButtonRender<T> extends StatelessWidget {
     return {
       'name': 'ElevatedButton',
       'props': {
-        'onPressed': this.onPressed,
-        'onLongPress': this.onLongPress,
-        'style': this.style,
-        'focusNode': this.focusNode,
-        'autofocus': this.autofocus,
-        'clipBehavior': this.clipBehavior,
-        'child': this.child,
-        'icon': this.icon,
-        'label': this.label,
-        'widgetKey': this.widgetKey,
+        'onPressed': this.onPressedVal.toJson(),
+        'onLongPress': this.onLongPressVal.toJson(),
+        'style': this.styleVal.toJson(),
+        'focusNode': this.focusNodeVal.toJson(),
+        'autofocus': this.autofocusVal.toJson(),
+        'clipBehavior': this.clipBehaviorVal.toJson(),
+        'child': this.childVal.toJson(),
+        'icon': this.iconVal.toJson(),
+        'label': this.labelVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -270,25 +266,23 @@ class ElevatedButtonRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """ElevatedButton(
-       key: ${this.key?.toCode()},
-       onPressed: ${this.onPressed?.toCode()},
-       onLongPress: ${this.onLongPress?.toCode()},
-       style: ${this.style?.toCode()},
-       focusNode: ${this.focusNode?.toCode()},
-       autofocus: ${this.autofocus?.toCode()},
-       clipBehavior: ${this.clipBehavior?.toCode()},
-       child: ${this.child?.toCode()},
+       onPressed: ${this.onPressedVal.toCode()},
+       onLongPress: ${this.onLongPressVal.toCode()},
+       style: ${this.styleVal.toCode()},
+       focusNode: ${this.focusNodeVal.toCode()},
+       autofocus: ${this.autofocusVal.toCode()},
+       clipBehavior: ${this.clipBehaviorVal.toCode()},
+       child: ${this.childVal.toCode()},
     )""",
     'icon': """ElevatedButton.icon(
-       key: ${this.key?.toCode()},
-       onPressed: ${this.onPressed?.toCode()},
-       onLongPress: ${this.onLongPress?.toCode()},
-       style: ${this.style?.toCode()},
-       focusNode: ${this.focusNode?.toCode()},
-       autofocus: ${this.autofocus?.toCode()},
-       clipBehavior: ${this.clipBehavior?.toCode()},
-       icon: ${this.icon?.toCode()},
-       label: ${this.label?.toCode()},
+       onPressed: ${this.onPressedVal.toCode()},
+       onLongPress: ${this.onLongPressVal.toCode()},
+       style: ${this.styleVal.toCode()},
+       focusNode: ${this.focusNodeVal.toCode()},
+       autofocus: ${this.autofocusVal.toCode()},
+       clipBehavior: ${this.clipBehaviorVal.toCode()},
+       icon: ${this.iconVal.toCode()},
+       label: ${this.labelVal.toCode()},
     )""",
     };
   }

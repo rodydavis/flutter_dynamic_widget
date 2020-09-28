@@ -108,9 +108,9 @@ class MaterialRectCenterArcTweenRender<T> extends StatelessWidget {
     return {
       'name': 'MaterialRectCenterArcTween',
       'props': {
-        'begin': this.begin,
-        'end': this.end,
-        'widgetKey': this.widgetKey,
+        'begin': this.beginVal.toJson(),
+        'end': this.endVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -119,8 +119,8 @@ class MaterialRectCenterArcTweenRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """MaterialRectCenterArcTween(
-       begin: ${this.begin?.toCode()},
-       end: ${this.end?.toCode()},
+       begin: ${this.beginVal.toCode()},
+       end: ${this.endVal.toCode()},
     )""",
     };
   }

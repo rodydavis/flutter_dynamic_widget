@@ -160,12 +160,12 @@ class DialogThemeRender<T> extends StatelessWidget {
     return {
       'name': 'DialogTheme',
       'props': {
-        'backgroundColor': this.backgroundColor,
-        'elevation': this.elevation,
-        'shape': this.shape,
-        'titleTextStyle': this.titleTextStyle,
-        'contentTextStyle': this.contentTextStyle,
-        'widgetKey': this.widgetKey,
+        'backgroundColor': this.backgroundColorVal.toJson(),
+        'elevation': this.elevationVal.toJson(),
+        'shape': this.shapeVal.toJson(),
+        'titleTextStyle': this.titleTextStyleVal.toJson(),
+        'contentTextStyle': this.contentTextStyleVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -174,11 +174,11 @@ class DialogThemeRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """DialogTheme(
-       backgroundColor: ${this.backgroundColor?.toCode()},
-       elevation: ${this.elevation?.toCode()},
-       shape: ${this.shape?.toCode()},
-       titleTextStyle: ${this.titleTextStyle?.toCode()},
-       contentTextStyle: ${this.contentTextStyle?.toCode()},
+       backgroundColor: ${this.backgroundColorVal.toCode()},
+       elevation: ${this.elevationVal.toCode()},
+       shape: ${this.shapeVal.toCode()},
+       titleTextStyle: ${this.titleTextStyleVal.toCode()},
+       contentTextStyle: ${this.contentTextStyleVal.toCode()},
     )""",
     };
   }

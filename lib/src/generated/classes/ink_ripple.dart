@@ -275,18 +275,18 @@ class InkRippleRender<T> extends StatelessWidget {
     return {
       'name': 'InkRipple',
       'props': {
-        'controller': this.controller,
-        'referenceBox': this.referenceBox,
-        'position': this.position,
-        'color': this.color,
-        'textDirection': this.textDirection,
-        'containedInkWell': this.containedInkWell,
-        'rectCallback': this.rectCallback,
-        'borderRadius': this.borderRadius,
-        'customBorder': this.customBorder,
-        'radius': this.radius,
-        'onRemoved': this.onRemoved,
-        'widgetKey': this.widgetKey,
+        'controller': this.controllerVal.toJson(),
+        'referenceBox': this.referenceBoxVal.toJson(),
+        'position': this.positionVal.toJson(),
+        'color': this.colorVal.toJson(),
+        'textDirection': this.textDirectionVal.toJson(),
+        'containedInkWell': this.containedInkWellVal.toJson(),
+        'rectCallback': this.rectCallbackVal.toJson(),
+        'borderRadius': this.borderRadiusVal.toJson(),
+        'customBorder': this.customBorderVal.toJson(),
+        'radius': this.radiusVal.toJson(),
+        'onRemoved': this.onRemovedVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -295,17 +295,17 @@ class InkRippleRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """InkRipple(
-       controller: ${this.controller?.toCode()},
-       referenceBox: ${this.referenceBox?.toCode()},
-       position: ${this.position?.toCode()},
-       color: ${this.color?.toCode()},
-       textDirection: ${this.textDirection?.toCode()},
-       containedInkWell: ${this.containedInkWell?.toCode()},
-       rectCallback: ${this.rectCallback?.toCode()},
-       borderRadius: ${this.borderRadius?.toCode()},
-       customBorder: ${this.customBorder?.toCode()},
-       radius: ${this.radius?.toCode()},
-       onRemoved: ${this.onRemoved?.toCode()},
+       controller: ${this.controllerVal.toCode()},
+       referenceBox: ${this.referenceBoxVal.toCode()},
+       position: ${this.positionVal.toCode()},
+       color: ${this.colorVal.toCode()},
+       textDirection: ${this.textDirectionVal.toCode()},
+       containedInkWell: ${this.containedInkWellVal.toCode()},
+       rectCallback: ${this.rectCallbackVal.toCode()},
+       borderRadius: ${this.borderRadiusVal.toCode()},
+       customBorder: ${this.customBorderVal.toCode()},
+       radius: ${this.radiusVal.toCode()},
+       onRemoved: ${this.onRemovedVal.toCode()},
     )""",
     };
   }

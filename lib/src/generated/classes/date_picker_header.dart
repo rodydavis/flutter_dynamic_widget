@@ -197,7 +197,6 @@ class DatePickerHeaderRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': DatePickerHeader(
-        key: this.key,
         helpText: this.helpText,
         titleText: this.titleText,
         titleSemanticsLabel: this.titleSemanticsLabel,
@@ -215,7 +214,6 @@ class DatePickerHeaderRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'helpText': this.helpText,
         'titleText': this.titleText,
         'titleSemanticsLabel': this.titleSemanticsLabel,
@@ -234,16 +232,16 @@ class DatePickerHeaderRender<T> extends StatelessWidget {
     return {
       'name': 'DatePickerHeader',
       'props': {
-        'helpText': this.helpText,
-        'titleText': this.titleText,
-        'titleSemanticsLabel': this.titleSemanticsLabel,
-        'titleStyle': this.titleStyle,
-        'orientation': this.orientation,
-        'isShort': this.isShort,
-        'icon': this.icon,
-        'iconTooltip': this.iconTooltip,
-        'onIconPressed': this.onIconPressed,
-        'widgetKey': this.widgetKey,
+        'helpText': this.helpTextVal.toJson(),
+        'titleText': this.titleTextVal.toJson(),
+        'titleSemanticsLabel': this.titleSemanticsLabelVal.toJson(),
+        'titleStyle': this.titleStyleVal.toJson(),
+        'orientation': this.orientationVal.toJson(),
+        'isShort': this.isShortVal.toJson(),
+        'icon': this.iconVal.toJson(),
+        'iconTooltip': this.iconTooltipVal.toJson(),
+        'onIconPressed': this.onIconPressedVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -252,16 +250,15 @@ class DatePickerHeaderRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """DatePickerHeader(
-       key: ${this.key?.toCode()},
-       helpText: ${this.helpText?.toCode()},
-       titleText: ${this.titleText?.toCode()},
-       titleSemanticsLabel: ${this.titleSemanticsLabel?.toCode()},
-       titleStyle: ${this.titleStyle?.toCode()},
-       orientation: ${this.orientation?.toCode()},
-       isShort: ${this.isShort?.toCode()},
-       icon: ${this.icon?.toCode()},
-       iconTooltip: ${this.iconTooltip?.toCode()},
-       onIconPressed: ${this.onIconPressed?.toCode()},
+       helpText: ${this.helpTextVal.toCode()},
+       titleText: ${this.titleTextVal.toCode()},
+       titleSemanticsLabel: ${this.titleSemanticsLabelVal.toCode()},
+       titleStyle: ${this.titleStyleVal.toCode()},
+       orientation: ${this.orientationVal.toCode()},
+       isShort: ${this.isShortVal.toCode()},
+       icon: ${this.iconVal.toCode()},
+       iconTooltip: ${this.iconTooltipVal.toCode()},
+       onIconPressed: ${this.onIconPressedVal.toCode()},
     )""",
     };
   }

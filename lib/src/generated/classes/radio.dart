@@ -245,7 +245,6 @@ class RadioRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': Radio(
-        key: this.key,
         value: this.value,
         groupValue: this.groupValue,
         onChanged: this.onChanged,
@@ -266,7 +265,6 @@ class RadioRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'value': this.value,
         'groupValue': this.groupValue,
         'onChanged': this.onChanged,
@@ -288,19 +286,19 @@ class RadioRender<T> extends StatelessWidget {
     return {
       'name': 'Radio',
       'props': {
-        'value': this.value,
-        'groupValue': this.groupValue,
-        'onChanged': this.onChanged,
-        'mouseCursor': this.mouseCursor,
-        'toggleable': this.toggleable,
-        'activeColor': this.activeColor,
-        'materialTapTargetSize': this.materialTapTargetSize,
-        'visualDensity': this.visualDensity,
-        'focusColor': this.focusColor,
-        'hoverColor': this.hoverColor,
-        'focusNode': this.focusNode,
-        'autofocus': this.autofocus,
-        'widgetKey': this.widgetKey,
+        'value': this.valueVal.toJson(),
+        'groupValue': this.groupValueVal.toJson(),
+        'onChanged': this.onChangedVal.toJson(),
+        'mouseCursor': this.mouseCursorVal.toJson(),
+        'toggleable': this.toggleableVal.toJson(),
+        'activeColor': this.activeColorVal.toJson(),
+        'materialTapTargetSize': this.materialTapTargetSizeVal.toJson(),
+        'visualDensity': this.visualDensityVal.toJson(),
+        'focusColor': this.focusColorVal.toJson(),
+        'hoverColor': this.hoverColorVal.toJson(),
+        'focusNode': this.focusNodeVal.toJson(),
+        'autofocus': this.autofocusVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -309,19 +307,18 @@ class RadioRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """Radio(
-       key: ${this.key?.toCode()},
-       value: ${this.value?.toCode()},
-       groupValue: ${this.groupValue?.toCode()},
-       onChanged: ${this.onChanged?.toCode()},
-       mouseCursor: ${this.mouseCursor?.toCode()},
-       toggleable: ${this.toggleable?.toCode()},
-       activeColor: ${this.activeColor?.toCode()},
-       focusColor: ${this.focusColor?.toCode()},
-       hoverColor: ${this.hoverColor?.toCode()},
-       materialTapTargetSize: ${this.materialTapTargetSize?.toCode()},
-       visualDensity: ${this.visualDensity?.toCode()},
-       focusNode: ${this.focusNode?.toCode()},
-       autofocus: ${this.autofocus?.toCode()},
+       value: ${this.valueVal.toCode()},
+       groupValue: ${this.groupValueVal.toCode()},
+       onChanged: ${this.onChangedVal.toCode()},
+       mouseCursor: ${this.mouseCursorVal.toCode()},
+       toggleable: ${this.toggleableVal.toCode()},
+       activeColor: ${this.activeColorVal.toCode()},
+       focusColor: ${this.focusColorVal.toCode()},
+       hoverColor: ${this.hoverColorVal.toCode()},
+       materialTapTargetSize: ${this.materialTapTargetSizeVal.toCode()},
+       visualDensity: ${this.visualDensityVal.toCode()},
+       focusNode: ${this.focusNodeVal.toCode()},
+       autofocus: ${this.autofocusVal.toCode()},
     )""",
     };
   }

@@ -76,7 +76,7 @@ class RefreshIndicatorStateRender<T> extends StatelessWidget {
     return {
       'name': 'RefreshIndicatorState',
       'props': {
-        'widgetKey': this.widgetKey,
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }

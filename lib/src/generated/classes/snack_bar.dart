@@ -245,7 +245,6 @@ class SnackBarRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': SnackBar(
-        key: this.key,
         content: this.content,
         backgroundColor: this.backgroundColor,
         elevation: this.elevation,
@@ -266,7 +265,6 @@ class SnackBarRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'content': this.content,
         'backgroundColor': this.backgroundColor,
         'elevation': this.elevation,
@@ -288,19 +286,19 @@ class SnackBarRender<T> extends StatelessWidget {
     return {
       'name': 'SnackBar',
       'props': {
-        'content': this.content,
-        'backgroundColor': this.backgroundColor,
-        'elevation': this.elevation,
-        'margin': this.margin,
-        'padding': this.padding,
-        'width': this.width,
-        'shape': this.shape,
-        'behavior': this.behavior,
-        'action': this.action,
-        'duration': this.duration,
-        'animation': this.animation,
-        'onVisible': this.onVisible,
-        'widgetKey': this.widgetKey,
+        'content': this.contentVal.toJson(),
+        'backgroundColor': this.backgroundColorVal.toJson(),
+        'elevation': this.elevationVal.toJson(),
+        'margin': this.marginVal.toJson(),
+        'padding': this.paddingVal.toJson(),
+        'width': this.widthVal.toJson(),
+        'shape': this.shapeVal.toJson(),
+        'behavior': this.behaviorVal.toJson(),
+        'action': this.actionVal.toJson(),
+        'duration': this.durationVal.toJson(),
+        'animation': this.animationVal.toJson(),
+        'onVisible': this.onVisibleVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -309,19 +307,18 @@ class SnackBarRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """SnackBar(
-       key: ${this.key?.toCode()},
-       content: ${this.content?.toCode()},
-       backgroundColor: ${this.backgroundColor?.toCode()},
-       elevation: ${this.elevation?.toCode()},
-       margin: ${this.margin?.toCode()},
-       padding: ${this.padding?.toCode()},
-       width: ${this.width?.toCode()},
-       shape: ${this.shape?.toCode()},
-       behavior: ${this.behavior?.toCode()},
-       action: ${this.action?.toCode()},
-       duration: ${this.duration?.toCode()},
-       animation: ${this.animation?.toCode()},
-       onVisible: ${this.onVisible?.toCode()},
+       content: ${this.contentVal.toCode()},
+       backgroundColor: ${this.backgroundColorVal.toCode()},
+       elevation: ${this.elevationVal.toCode()},
+       margin: ${this.marginVal.toCode()},
+       padding: ${this.paddingVal.toCode()},
+       width: ${this.widthVal.toCode()},
+       shape: ${this.shapeVal.toCode()},
+       behavior: ${this.behaviorVal.toCode()},
+       action: ${this.actionVal.toCode()},
+       duration: ${this.durationVal.toCode()},
+       animation: ${this.animationVal.toCode()},
+       onVisible: ${this.onVisibleVal.toCode()},
     )""",
     };
   }

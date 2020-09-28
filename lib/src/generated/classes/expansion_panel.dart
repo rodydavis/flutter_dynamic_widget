@@ -165,7 +165,6 @@ class ExpansionPanelListRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': ExpansionPanelList(
-        key: this.key,
         children: this.children,
         expansionCallback: this.expansionCallback,
         animationDuration: this.animationDuration,
@@ -174,7 +173,6 @@ class ExpansionPanelListRender<T> extends StatelessWidget {
         elevation: this.elevation,
       ),
       'radio': ExpansionPanelList.radio(
-        key: this.key,
         children: this.children,
         expansionCallback: this.expansionCallback,
         animationDuration: this.animationDuration,
@@ -190,7 +188,6 @@ class ExpansionPanelListRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'children': this.children,
         'expansionCallback': this.expansionCallback,
         'animationDuration': this.animationDuration,
@@ -199,7 +196,6 @@ class ExpansionPanelListRender<T> extends StatelessWidget {
         'elevation': this.elevation,
       },
       'radio': {
-        'key': this.key,
         'children': this.children,
         'expansionCallback': this.expansionCallback,
         'animationDuration': this.animationDuration,
@@ -216,14 +212,14 @@ class ExpansionPanelListRender<T> extends StatelessWidget {
     return {
       'name': 'ExpansionPanelList',
       'props': {
-        'children': this.children,
-        'expansionCallback': this.expansionCallback,
-        'animationDuration': this.animationDuration,
-        'initialOpenPanelValue': this.initialOpenPanelValue,
-        'expandedHeaderPadding': this.expandedHeaderPadding,
-        'dividerColor': this.dividerColor,
-        'elevation': this.elevation,
-        'widgetKey': this.widgetKey,
+        'children': this.childrenVal.toJson(),
+        'expansionCallback': this.expansionCallbackVal.toJson(),
+        'animationDuration': this.animationDurationVal.toJson(),
+        'initialOpenPanelValue': this.initialOpenPanelValueVal.toJson(),
+        'expandedHeaderPadding': this.expandedHeaderPaddingVal.toJson(),
+        'dividerColor': this.dividerColorVal.toJson(),
+        'elevation': this.elevationVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -232,23 +228,21 @@ class ExpansionPanelListRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """ExpansionPanelList(
-       key: ${this.key?.toCode()},
-       children: ${this.children?.toCode()},
-       expansionCallback: ${this.expansionCallback?.toCode()},
-       animationDuration: ${this.animationDuration?.toCode()},
-       expandedHeaderPadding: ${this.expandedHeaderPadding?.toCode()},
-       dividerColor: ${this.dividerColor?.toCode()},
-       elevation: ${this.elevation?.toCode()},
+       children: ${this.childrenVal.toCode()},
+       expansionCallback: ${this.expansionCallbackVal.toCode()},
+       animationDuration: ${this.animationDurationVal.toCode()},
+       expandedHeaderPadding: ${this.expandedHeaderPaddingVal.toCode()},
+       dividerColor: ${this.dividerColorVal.toCode()},
+       elevation: ${this.elevationVal.toCode()},
     )""",
     'radio': """ExpansionPanelList.radio(
-       key: ${this.key?.toCode()},
-       children: ${this.children?.toCode()},
-       expansionCallback: ${this.expansionCallback?.toCode()},
-       animationDuration: ${this.animationDuration?.toCode()},
-       initialOpenPanelValue: ${this.initialOpenPanelValue?.toCode()},
-       expandedHeaderPadding: ${this.expandedHeaderPadding?.toCode()},
-       dividerColor: ${this.dividerColor?.toCode()},
-       elevation: ${this.elevation?.toCode()},
+       children: ${this.childrenVal.toCode()},
+       expansionCallback: ${this.expansionCallbackVal.toCode()},
+       animationDuration: ${this.animationDurationVal.toCode()},
+       initialOpenPanelValue: ${this.initialOpenPanelValueVal.toCode()},
+       expandedHeaderPadding: ${this.expandedHeaderPaddingVal.toCode()},
+       dividerColor: ${this.dividerColorVal.toCode()},
+       elevation: ${this.elevationVal.toCode()},
     )""",
     };
   }

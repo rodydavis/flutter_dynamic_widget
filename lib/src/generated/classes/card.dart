@@ -198,7 +198,6 @@ class CardRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': Card(
-        key: this.key,
         color: this.color,
         shadowColor: this.shadowColor,
         elevation: this.elevation,
@@ -216,7 +215,6 @@ class CardRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'color': this.color,
         'shadowColor': this.shadowColor,
         'elevation': this.elevation,
@@ -235,16 +233,16 @@ class CardRender<T> extends StatelessWidget {
     return {
       'name': 'Card',
       'props': {
-        'color': this.color,
-        'shadowColor': this.shadowColor,
-        'elevation': this.elevation,
-        'shape': this.shape,
-        'borderOnForeground': this.borderOnForeground,
-        'clipBehavior': this.clipBehavior,
-        'margin': this.margin,
-        'semanticContainer': this.semanticContainer,
-        'child': this.child,
-        'widgetKey': this.widgetKey,
+        'color': this.colorVal.toJson(),
+        'shadowColor': this.shadowColorVal.toJson(),
+        'elevation': this.elevationVal.toJson(),
+        'shape': this.shapeVal.toJson(),
+        'borderOnForeground': this.borderOnForegroundVal.toJson(),
+        'clipBehavior': this.clipBehaviorVal.toJson(),
+        'margin': this.marginVal.toJson(),
+        'semanticContainer': this.semanticContainerVal.toJson(),
+        'child': this.childVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -253,16 +251,15 @@ class CardRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """Card(
-       key: ${this.key?.toCode()},
-       color: ${this.color?.toCode()},
-       shadowColor: ${this.shadowColor?.toCode()},
-       elevation: ${this.elevation?.toCode()},
-       shape: ${this.shape?.toCode()},
-       borderOnForeground: ${this.borderOnForeground?.toCode()},
-       margin: ${this.margin?.toCode()},
-       clipBehavior: ${this.clipBehavior?.toCode()},
-       child: ${this.child?.toCode()},
-       semanticContainer: ${this.semanticContainer?.toCode()},
+       color: ${this.colorVal.toCode()},
+       shadowColor: ${this.shadowColorVal.toCode()},
+       elevation: ${this.elevationVal.toCode()},
+       shape: ${this.shapeVal.toCode()},
+       borderOnForeground: ${this.borderOnForegroundVal.toCode()},
+       margin: ${this.marginVal.toCode()},
+       clipBehavior: ${this.clipBehaviorVal.toCode()},
+       child: ${this.childVal.toCode()},
+       semanticContainer: ${this.semanticContainerVal.toCode()},
     )""",
     };
   }

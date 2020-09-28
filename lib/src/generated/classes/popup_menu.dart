@@ -66,7 +66,7 @@ class PopupMenuButtonStateRender<T> extends StatelessWidget {
     return {
       'name': 'PopupMenuButtonState',
       'props': {
-        'widgetKey': this.widgetKey,
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }

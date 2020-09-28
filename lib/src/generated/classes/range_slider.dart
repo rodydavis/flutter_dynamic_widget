@@ -230,7 +230,6 @@ class RangeSliderRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': RangeSlider(
-        key: this.key,
         values: this.values,
         onChanged: this.onChanged,
         onChangeStart: this.onChangeStart,
@@ -250,7 +249,6 @@ class RangeSliderRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'values': this.values,
         'onChanged': this.onChanged,
         'onChangeStart': this.onChangeStart,
@@ -271,18 +269,18 @@ class RangeSliderRender<T> extends StatelessWidget {
     return {
       'name': 'RangeSlider',
       'props': {
-        'values': this.values,
-        'onChanged': this.onChanged,
-        'onChangeStart': this.onChangeStart,
-        'onChangeEnd': this.onChangeEnd,
-        'min': this.min,
-        'max': this.max,
-        'divisions': this.divisions,
-        'labels': this.labels,
-        'activeColor': this.activeColor,
-        'inactiveColor': this.inactiveColor,
-        'semanticFormatterCallback': this.semanticFormatterCallback,
-        'widgetKey': this.widgetKey,
+        'values': this.valuesVal.toJson(),
+        'onChanged': this.onChangedVal.toJson(),
+        'onChangeStart': this.onChangeStartVal.toJson(),
+        'onChangeEnd': this.onChangeEndVal.toJson(),
+        'min': this.minVal.toJson(),
+        'max': this.maxVal.toJson(),
+        'divisions': this.divisionsVal.toJson(),
+        'labels': this.labelsVal.toJson(),
+        'activeColor': this.activeColorVal.toJson(),
+        'inactiveColor': this.inactiveColorVal.toJson(),
+        'semanticFormatterCallback': this.semanticFormatterCallbackVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -291,18 +289,17 @@ class RangeSliderRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """RangeSlider(
-       key: ${this.key?.toCode()},
-       values: ${this.values?.toCode()},
-       onChanged: ${this.onChanged?.toCode()},
-       onChangeStart: ${this.onChangeStart?.toCode()},
-       onChangeEnd: ${this.onChangeEnd?.toCode()},
-       min: ${this.min?.toCode()},
-       max: ${this.max?.toCode()},
-       divisions: ${this.divisions?.toCode()},
-       labels: ${this.labels?.toCode()},
-       activeColor: ${this.activeColor?.toCode()},
-       inactiveColor: ${this.inactiveColor?.toCode()},
-       semanticFormatterCallback: ${this.semanticFormatterCallback?.toCode()},
+       values: ${this.valuesVal.toCode()},
+       onChanged: ${this.onChangedVal.toCode()},
+       onChangeStart: ${this.onChangeStartVal.toCode()},
+       onChangeEnd: ${this.onChangeEndVal.toCode()},
+       min: ${this.minVal.toCode()},
+       max: ${this.maxVal.toCode()},
+       divisions: ${this.divisionsVal.toCode()},
+       labels: ${this.labelsVal.toCode()},
+       activeColor: ${this.activeColorVal.toCode()},
+       inactiveColor: ${this.inactiveColorVal.toCode()},
+       semanticFormatterCallback: ${this.semanticFormatterCallbackVal.toCode()},
     )""",
     };
   }

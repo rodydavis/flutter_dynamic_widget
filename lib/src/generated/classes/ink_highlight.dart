@@ -271,18 +271,18 @@ class InkHighlightRender<T> extends StatelessWidget {
     return {
       'name': 'InkHighlight',
       'props': {
-        'controller': this.controller,
-        'referenceBox': this.referenceBox,
-        'color': this.color,
-        'textDirection': this.textDirection,
-        'shape': this.shape,
-        'radius': this.radius,
-        'borderRadius': this.borderRadius,
-        'customBorder': this.customBorder,
-        'rectCallback': this.rectCallback,
-        'onRemoved': this.onRemoved,
-        'fadeDuration': this.fadeDuration,
-        'widgetKey': this.widgetKey,
+        'controller': this.controllerVal.toJson(),
+        'referenceBox': this.referenceBoxVal.toJson(),
+        'color': this.colorVal.toJson(),
+        'textDirection': this.textDirectionVal.toJson(),
+        'shape': this.shapeVal.toJson(),
+        'radius': this.radiusVal.toJson(),
+        'borderRadius': this.borderRadiusVal.toJson(),
+        'customBorder': this.customBorderVal.toJson(),
+        'rectCallback': this.rectCallbackVal.toJson(),
+        'onRemoved': this.onRemovedVal.toJson(),
+        'fadeDuration': this.fadeDurationVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -291,17 +291,17 @@ class InkHighlightRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """InkHighlight(
-       controller: ${this.controller?.toCode()},
-       referenceBox: ${this.referenceBox?.toCode()},
-       color: ${this.color?.toCode()},
-       textDirection: ${this.textDirection?.toCode()},
-       shape: ${this.shape?.toCode()},
-       radius: ${this.radius?.toCode()},
-       borderRadius: ${this.borderRadius?.toCode()},
-       customBorder: ${this.customBorder?.toCode()},
-       rectCallback: ${this.rectCallback?.toCode()},
-       onRemoved: ${this.onRemoved?.toCode()},
-       fadeDuration: ${this.fadeDuration?.toCode()},
+       controller: ${this.controllerVal.toCode()},
+       referenceBox: ${this.referenceBoxVal.toCode()},
+       color: ${this.colorVal.toCode()},
+       textDirection: ${this.textDirectionVal.toCode()},
+       shape: ${this.shapeVal.toCode()},
+       radius: ${this.radiusVal.toCode()},
+       borderRadius: ${this.borderRadiusVal.toCode()},
+       customBorder: ${this.customBorderVal.toCode()},
+       rectCallback: ${this.rectCallbackVal.toCode()},
+       onRemoved: ${this.onRemovedVal.toCode()},
+       fadeDuration: ${this.fadeDurationVal.toCode()},
     )""",
     };
   }

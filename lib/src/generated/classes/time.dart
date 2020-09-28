@@ -117,9 +117,9 @@ class TimeOfDayRender<T> extends StatelessWidget {
     return {
       'name': 'TimeOfDay',
       'props': {
-        'hour': this.hour,
-        'minute': this.minute,
-        'widgetKey': this.widgetKey,
+        'hour': this.hourVal.toJson(),
+        'minute': this.minuteVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -128,8 +128,8 @@ class TimeOfDayRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """TimeOfDay(
-       hour: ${this.hour?.toCode()},
-       minute: ${this.minute?.toCode()},
+       hour: ${this.hourVal.toCode()},
+       minute: ${this.minuteVal.toCode()},
     )""",
     'fromDateTime': """TimeOfDay.fromDateTime(
     )""",

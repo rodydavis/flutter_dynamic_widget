@@ -66,7 +66,7 @@ class FeedbackRender<T> extends StatelessWidget {
     return {
       'name': 'Feedback',
       'props': {
-        'widgetKey': this.widgetKey,
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }

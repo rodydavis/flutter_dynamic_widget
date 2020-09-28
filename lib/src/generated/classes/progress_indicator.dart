@@ -149,7 +149,6 @@ class RefreshProgressIndicatorRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': RefreshProgressIndicator(
-        key: this.key,
         value: this.value,
         backgroundColor: this.backgroundColor,
         valueColor: this.valueColor,
@@ -164,7 +163,6 @@ class RefreshProgressIndicatorRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'value': this.value,
         'backgroundColor': this.backgroundColor,
         'valueColor': this.valueColor,
@@ -180,13 +178,13 @@ class RefreshProgressIndicatorRender<T> extends StatelessWidget {
     return {
       'name': 'RefreshProgressIndicator',
       'props': {
-        'value': this.value,
-        'backgroundColor': this.backgroundColor,
-        'valueColor': this.valueColor,
-        'strokeWidth': this.strokeWidth,
-        'semanticsLabel': this.semanticsLabel,
-        'semanticsValue': this.semanticsValue,
-        'widgetKey': this.widgetKey,
+        'value': this.valueVal.toJson(),
+        'backgroundColor': this.backgroundColorVal.toJson(),
+        'valueColor': this.valueColorVal.toJson(),
+        'strokeWidth': this.strokeWidthVal.toJson(),
+        'semanticsLabel': this.semanticsLabelVal.toJson(),
+        'semanticsValue': this.semanticsValueVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -195,13 +193,12 @@ class RefreshProgressIndicatorRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """RefreshProgressIndicator(
-       key: ${this.key?.toCode()},
-       value: ${this.value?.toCode()},
-       backgroundColor: ${this.backgroundColor?.toCode()},
-       valueColor: ${this.valueColor?.toCode()},
-       strokeWidth: ${this.strokeWidth?.toCode()},
-       semanticsLabel: ${this.semanticsLabel?.toCode()},
-       semanticsValue: ${this.semanticsValue?.toCode()},
+       value: ${this.valueVal.toCode()},
+       backgroundColor: ${this.backgroundColorVal.toCode()},
+       valueColor: ${this.valueColorVal.toCode()},
+       strokeWidth: ${this.strokeWidthVal.toCode()},
+       semanticsLabel: ${this.semanticsLabelVal.toCode()},
+       semanticsValue: ${this.semanticsValueVal.toCode()},
     )""",
     };
   }

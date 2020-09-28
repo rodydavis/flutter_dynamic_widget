@@ -165,7 +165,6 @@ class ExpandIconRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': ExpandIcon(
-        key: this.key,
         isExpanded: this.isExpanded,
         size: this.size,
         onPressed: this.onPressed,
@@ -181,7 +180,6 @@ class ExpandIconRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'isExpanded': this.isExpanded,
         'size': this.size,
         'onPressed': this.onPressed,
@@ -198,14 +196,14 @@ class ExpandIconRender<T> extends StatelessWidget {
     return {
       'name': 'ExpandIcon',
       'props': {
-        'isExpanded': this.isExpanded,
-        'size': this.size,
-        'onPressed': this.onPressed,
-        'padding': this.padding,
-        'color': this.color,
-        'disabledColor': this.disabledColor,
-        'expandedColor': this.expandedColor,
-        'widgetKey': this.widgetKey,
+        'isExpanded': this.isExpandedVal.toJson(),
+        'size': this.sizeVal.toJson(),
+        'onPressed': this.onPressedVal.toJson(),
+        'padding': this.paddingVal.toJson(),
+        'color': this.colorVal.toJson(),
+        'disabledColor': this.disabledColorVal.toJson(),
+        'expandedColor': this.expandedColorVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -214,14 +212,13 @@ class ExpandIconRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """ExpandIcon(
-       key: ${this.key?.toCode()},
-       isExpanded: ${this.isExpanded?.toCode()},
-       size: ${this.size?.toCode()},
-       onPressed: ${this.onPressed?.toCode()},
-       padding: ${this.padding?.toCode()},
-       color: ${this.color?.toCode()},
-       disabledColor: ${this.disabledColor?.toCode()},
-       expandedColor: ${this.expandedColor?.toCode()},
+       isExpanded: ${this.isExpandedVal.toCode()},
+       size: ${this.sizeVal.toCode()},
+       onPressed: ${this.onPressedVal.toCode()},
+       padding: ${this.paddingVal.toCode()},
+       color: ${this.colorVal.toCode()},
+       disabledColor: ${this.disabledColorVal.toCode()},
+       expandedColor: ${this.expandedColorVal.toCode()},
     )""",
     };
   }

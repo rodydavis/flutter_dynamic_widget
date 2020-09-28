@@ -133,7 +133,6 @@ class FlexibleSpaceBarSettingsRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': FlexibleSpaceBarSettings(
-        key: this.key,
         toolbarOpacity: this.toolbarOpacity,
         minExtent: this.minExtent,
         maxExtent: this.maxExtent,
@@ -147,7 +146,6 @@ class FlexibleSpaceBarSettingsRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'toolbarOpacity': this.toolbarOpacity,
         'minExtent': this.minExtent,
         'maxExtent': this.maxExtent,
@@ -162,12 +160,12 @@ class FlexibleSpaceBarSettingsRender<T> extends StatelessWidget {
     return {
       'name': 'FlexibleSpaceBarSettings',
       'props': {
-        'toolbarOpacity': this.toolbarOpacity,
-        'minExtent': this.minExtent,
-        'maxExtent': this.maxExtent,
-        'currentExtent': this.currentExtent,
-        'child': this.child,
-        'widgetKey': this.widgetKey,
+        'toolbarOpacity': this.toolbarOpacityVal.toJson(),
+        'minExtent': this.minExtentVal.toJson(),
+        'maxExtent': this.maxExtentVal.toJson(),
+        'currentExtent': this.currentExtentVal.toJson(),
+        'child': this.childVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -176,12 +174,11 @@ class FlexibleSpaceBarSettingsRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """FlexibleSpaceBarSettings(
-       key: ${this.key?.toCode()},
-       toolbarOpacity: ${this.toolbarOpacity?.toCode()},
-       minExtent: ${this.minExtent?.toCode()},
-       maxExtent: ${this.maxExtent?.toCode()},
-       currentExtent: ${this.currentExtent?.toCode()},
-       child: ${this.child?.toCode()},
+       toolbarOpacity: ${this.toolbarOpacityVal.toCode()},
+       minExtent: ${this.minExtentVal.toCode()},
+       maxExtent: ${this.maxExtentVal.toCode()},
+       currentExtent: ${this.currentExtentVal.toCode()},
+       child: ${this.childVal.toCode()},
     )""",
     };
   }

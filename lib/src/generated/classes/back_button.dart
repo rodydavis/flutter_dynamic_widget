@@ -85,7 +85,6 @@ class CloseButtonRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': CloseButton(
-        key: this.key,
         color: this.color,
         onPressed: this.onPressed,
       ),
@@ -96,7 +95,6 @@ class CloseButtonRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'color': this.color,
         'onPressed': this.onPressed,
       },
@@ -108,9 +106,9 @@ class CloseButtonRender<T> extends StatelessWidget {
     return {
       'name': 'CloseButton',
       'props': {
-        'color': this.color,
-        'onPressed': this.onPressed,
-        'widgetKey': this.widgetKey,
+        'color': this.colorVal.toJson(),
+        'onPressed': this.onPressedVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -119,9 +117,8 @@ class CloseButtonRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """CloseButton(
-       key: ${this.key?.toCode()},
-       color: ${this.color?.toCode()},
-       onPressed: ${this.onPressed?.toCode()},
+       color: ${this.colorVal.toCode()},
+       onPressed: ${this.onPressedVal.toCode()},
     )""",
     };
   }

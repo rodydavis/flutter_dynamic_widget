@@ -117,7 +117,6 @@ class LicensePageRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': LicensePage(
-        key: this.key,
         applicationName: this.applicationName,
         applicationVersion: this.applicationVersion,
         applicationIcon: this.applicationIcon,
@@ -130,7 +129,6 @@ class LicensePageRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'applicationName': this.applicationName,
         'applicationVersion': this.applicationVersion,
         'applicationIcon': this.applicationIcon,
@@ -144,11 +142,11 @@ class LicensePageRender<T> extends StatelessWidget {
     return {
       'name': 'LicensePage',
       'props': {
-        'applicationName': this.applicationName,
-        'applicationVersion': this.applicationVersion,
-        'applicationIcon': this.applicationIcon,
-        'applicationLegalese': this.applicationLegalese,
-        'widgetKey': this.widgetKey,
+        'applicationName': this.applicationNameVal.toJson(),
+        'applicationVersion': this.applicationVersionVal.toJson(),
+        'applicationIcon': this.applicationIconVal.toJson(),
+        'applicationLegalese': this.applicationLegaleseVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -157,11 +155,10 @@ class LicensePageRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """LicensePage(
-       key: ${this.key?.toCode()},
-       applicationName: ${this.applicationName?.toCode()},
-       applicationVersion: ${this.applicationVersion?.toCode()},
-       applicationIcon: ${this.applicationIcon?.toCode()},
-       applicationLegalese: ${this.applicationLegalese?.toCode()},
+       applicationName: ${this.applicationNameVal.toCode()},
+       applicationVersion: ${this.applicationVersionVal.toCode()},
+       applicationIcon: ${this.applicationIconVal.toCode()},
+       applicationLegalese: ${this.applicationLegaleseVal.toCode()},
     )""",
     };
   }

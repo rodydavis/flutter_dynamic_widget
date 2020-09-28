@@ -155,7 +155,7 @@ class ColorsRender<T> extends StatelessWidget {
     return {
       'name': 'Colors',
       'props': {
-        'widgetKey': this.widgetKey,
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }

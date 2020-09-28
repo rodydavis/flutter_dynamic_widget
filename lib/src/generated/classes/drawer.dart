@@ -70,7 +70,7 @@ class DrawerControllerStateRender<T> extends StatelessWidget {
     return {
       'name': 'DrawerControllerState',
       'props': {
-        'widgetKey': this.widgetKey,
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }

@@ -66,7 +66,7 @@ class ElevationOverlayRender<T> extends StatelessWidget {
     return {
       'name': 'ElevationOverlay',
       'props': {
-        'widgetKey': this.widgetKey,
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }

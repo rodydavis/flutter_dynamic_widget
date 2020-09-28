@@ -133,7 +133,6 @@ class FlutterLogoRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': FlutterLogo(
-        key: this.key,
         size: this.size,
         textColor: this.textColor,
         style: this.style,
@@ -147,7 +146,6 @@ class FlutterLogoRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'size': this.size,
         'textColor': this.textColor,
         'style': this.style,
@@ -162,12 +160,12 @@ class FlutterLogoRender<T> extends StatelessWidget {
     return {
       'name': 'FlutterLogo',
       'props': {
-        'size': this.size,
-        'textColor': this.textColor,
-        'style': this.style,
-        'duration': this.duration,
-        'curve': this.curve,
-        'widgetKey': this.widgetKey,
+        'size': this.sizeVal.toJson(),
+        'textColor': this.textColorVal.toJson(),
+        'style': this.styleVal.toJson(),
+        'duration': this.durationVal.toJson(),
+        'curve': this.curveVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -176,12 +174,11 @@ class FlutterLogoRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """FlutterLogo(
-       key: ${this.key?.toCode()},
-       size: ${this.size?.toCode()},
-       textColor: ${this.textColor?.toCode()},
-       style: ${this.style?.toCode()},
-       duration: ${this.duration?.toCode()},
-       curve: ${this.curve?.toCode()},
+       size: ${this.sizeVal.toCode()},
+       textColor: ${this.textColorVal.toCode()},
+       style: ${this.styleVal.toCode()},
+       duration: ${this.durationVal.toCode()},
+       curve: ${this.curveVal.toCode()},
     )""",
     };
   }

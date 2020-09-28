@@ -117,7 +117,6 @@ class TabPageSelectorRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': TabPageSelector(
-        key: this.key,
         controller: this.controller,
         indicatorSize: this.indicatorSize,
         color: this.color,
@@ -130,7 +129,6 @@ class TabPageSelectorRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'controller': this.controller,
         'indicatorSize': this.indicatorSize,
         'color': this.color,
@@ -144,11 +142,11 @@ class TabPageSelectorRender<T> extends StatelessWidget {
     return {
       'name': 'TabPageSelector',
       'props': {
-        'controller': this.controller,
-        'indicatorSize': this.indicatorSize,
-        'color': this.color,
-        'selectedColor': this.selectedColor,
-        'widgetKey': this.widgetKey,
+        'controller': this.controllerVal.toJson(),
+        'indicatorSize': this.indicatorSizeVal.toJson(),
+        'color': this.colorVal.toJson(),
+        'selectedColor': this.selectedColorVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -157,11 +155,10 @@ class TabPageSelectorRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """TabPageSelector(
-       key: ${this.key?.toCode()},
-       controller: ${this.controller?.toCode()},
-       indicatorSize: ${this.indicatorSize?.toCode()},
-       color: ${this.color?.toCode()},
-       selectedColor: ${this.selectedColor?.toCode()},
+       controller: ${this.controllerVal.toCode()},
+       indicatorSize: ${this.indicatorSizeVal.toCode()},
+       color: ${this.colorVal.toCode()},
+       selectedColor: ${this.selectedColorVal.toCode()},
     )""",
     };
   }

@@ -133,7 +133,6 @@ class MergeableMaterialRender<T> extends StatelessWidget {
   Map<String, Object> get constructors {
      return {
       'default': MergeableMaterial(
-        key: this.key,
         mainAxis: this.mainAxis,
         elevation: this.elevation,
         hasDividers: this.hasDividers,
@@ -147,7 +146,6 @@ class MergeableMaterialRender<T> extends StatelessWidget {
   Map<String, Map<String, dynamic>> get properties {
      return {
       'default': {
-        'key': this.key,
         'mainAxis': this.mainAxis,
         'elevation': this.elevation,
         'hasDividers': this.hasDividers,
@@ -162,12 +160,12 @@ class MergeableMaterialRender<T> extends StatelessWidget {
     return {
       'name': 'MergeableMaterial',
       'props': {
-        'children': this.children,
-        'mainAxis': this.mainAxis,
-        'elevation': this.elevation,
-        'hasDividers': this.hasDividers,
-        'dividerColor': this.dividerColor,
-        'widgetKey': this.widgetKey,
+        'children': this.childrenVal.toJson(),
+        'mainAxis': this.mainAxisVal.toJson(),
+        'elevation': this.elevationVal.toJson(),
+        'hasDividers': this.hasDividersVal.toJson(),
+        'dividerColor': this.dividerColorVal.toJson(),
+        'widgetKey': this.widgetKeyVal.toJson(),
       }
     };
   }
@@ -176,12 +174,11 @@ class MergeableMaterialRender<T> extends StatelessWidget {
   Map<String, String> toCode() {
     return {
     'default': """MergeableMaterial(
-       key: ${this.key?.toCode()},
-       mainAxis: ${this.mainAxis?.toCode()},
-       elevation: ${this.elevation?.toCode()},
-       hasDividers: ${this.hasDividers?.toCode()},
-       children: ${this.children?.toCode()},
-       dividerColor: ${this.dividerColor?.toCode()},
+       mainAxis: ${this.mainAxisVal.toCode()},
+       elevation: ${this.elevationVal.toCode()},
+       hasDividers: ${this.hasDividersVal.toCode()},
+       children: ${this.childrenVal.toCode()},
+       dividerColor: ${this.dividerColorVal.toCode()},
     )""",
     };
   }
