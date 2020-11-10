@@ -1,263 +1,66 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/gestures.dart';
-import '../core.dart';
+import '../base.dart';
 
-class CircleAvatarRender<T> extends StatelessWidget {
+class CircleAvatarBase extends BaseWidget {
+    CircleAvatarBase();
 
-  factory CircleAvatarRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
-    return CircleAvatarRender(update,
-      childVal: BaseCore<Widget>(null, update),
-      backgroundColorVal: BaseCore<Color>(null, update),
-      foregroundColorVal: BaseCore<Color>(null, update),
-      backgroundImageVal: BaseCore<ImageProvider>(null, update),
-      onBackgroundImageErrorVal: BaseCore<ImageErrorListener>(null, update),
-      radiusVal: BaseCore<double>(null, update),
-      minRadiusVal: BaseCore<double>(null, update),
-      maxRadiusVal: BaseCore<double>(null, update),
-    );
-  }
-
-  CircleAvatarRender(this._update, {
-    @required this.childVal,
-    @required this.backgroundColorVal,
-    @required this.foregroundColorVal,
-    @required this.backgroundImageVal,
-    @required this.onBackgroundImageErrorVal,
-    @required this.radiusVal,
-    @required this.minRadiusVal,
-    @required this.maxRadiusVal,
-  });
-
-  @override
-  final VoidCallback _update;
-
-  Core<Widget> childVal;
-
-  Widget get child {
-    return childVal.value;
-  }
-
-  set child(Widget val) {
-    if (val == this.child) {
-      return;
+    factory CircleAvatarBase.fromJson(Map<String, dynamic> data) {
+        return CircleAvatarBase();
     }
-    childVal.value = val;
-  }
 
-  Core<Color> backgroundColorVal;
+    @override
+    String get description => r'''
+A circle that represents a user.
 
-  Color get backgroundColor {
-    return backgroundColorVal.value;
-  }
+Typically used with a user's profile image, or, in the absence of
+such an image, the user's initials. A given user's initials should
+always be paired with the same background color, for consistency.
 
-  set backgroundColor(Color val) {
-    if (val == this.backgroundColor) {
-      return;
+The [onBackgroundImageError] parameter must be null if the [backgroundImage]
+is null.
+
+{@tool snippet}
+
+If the avatar is to have an image, the image should be specified in the
+[backgroundImage] property:
+
+```dart
+CircleAvatar(
+backgroundImage: NetworkImage(userAvatarUrl),
+)
+```
+{@end-tool}
+
+The image will be cropped to have a circle shape.
+
+{@tool snippet}
+
+If the avatar is to just have the user's initials, they are typically
+provided using a [Text] widget as the [child] and a [backgroundColor]:
+
+```dart
+CircleAvatar(
+backgroundColor: Colors.brown.shade800,
+child: Text('AH'),
+)
+```
+{@end-tool}
+
+See also:
+
+* [Chip], for representing users or concepts in long form.
+* [ListTile], which can combine an icon (such as a [CircleAvatar]) with
+some text for a fixed height list entry.
+* <https://material.io/design/components/chips.html#input-chips>
+''';
+
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
     }
-    backgroundColorVal.value = val;
-  }
 
-  Core<Color> foregroundColorVal;
-
-  Color get foregroundColor {
-    return foregroundColorVal.value;
-  }
-
-  set foregroundColor(Color val) {
-    if (val == this.foregroundColor) {
-      return;
+    @override
+    Widget render(BuildContext context) {
+        return Container();
     }
-    foregroundColorVal.value = val;
-  }
-
-  Core<ImageProvider> backgroundImageVal;
-
-  ImageProvider get backgroundImage {
-    return backgroundImageVal.value;
-  }
-
-  set backgroundImage(ImageProvider val) {
-    if (val == this.backgroundImage) {
-      return;
-    }
-    backgroundImageVal.value = val;
-  }
-
-  Core<ImageErrorListener> onBackgroundImageErrorVal;
-
-  ImageErrorListener get onBackgroundImageError {
-    return onBackgroundImageErrorVal.value;
-  }
-
-  set onBackgroundImageError(ImageErrorListener val) {
-    if (val == this.onBackgroundImageError) {
-      return;
-    }
-    onBackgroundImageErrorVal.value = val;
-  }
-
-  Core<double> radiusVal;
-
-  double get radius {
-    return radiusVal.value;
-  }
-
-  set radius(double val) {
-    if (val == this.radius) {
-      return;
-    }
-    radiusVal.value = val;
-  }
-
-  Core<double> minRadiusVal;
-
-  double get minRadius {
-    return minRadiusVal.value;
-  }
-
-  set minRadius(double val) {
-    if (val == this.minRadius) {
-      return;
-    }
-    minRadiusVal.value = val;
-  }
-
-  Core<double> maxRadiusVal;
-
-  double get maxRadius {
-    return maxRadiusVal.value;
-  }
-
-  set maxRadius(double val) {
-    if (val == this.maxRadius) {
-      return;
-    }
-    maxRadiusVal.value = val;
-  }
-
-
-  @override
-  Map<String, dynamic> get staticFields => {
-  '_defaultRadius': null,
-  '_defaultMinRadius': null,
-  '_defaultMaxRadius': null,
-  };
-
-  @override
-  List<Core> get props => [
-    this.childVal,
-    this.backgroundColorVal,
-    this.foregroundColorVal,
-    this.backgroundImageVal,
-    this.onBackgroundImageErrorVal,
-    this.radiusVal,
-    this.minRadiusVal,
-    this.maxRadiusVal,
-  ];
-
-  @override
-  String get description {
-    final sb = StringBuffer();
-    sb.writeln("[ * <https://material.io/design/components/chips.html#input-chips>]");
-    return sb.toString();
-  }
-
-  @override
-  Map<String, Object> get constructors {
-     return {
-      'default': CircleAvatar(
-        child: this.child,
-        backgroundColor: this.backgroundColor,
-        backgroundImage: this.backgroundImage,
-        onBackgroundImageError: this.onBackgroundImageError,
-        foregroundColor: this.foregroundColor,
-        radius: this.radius,
-        minRadius: this.minRadius,
-        maxRadius: this.maxRadius,
-      ),
-    };
-  }
-
-  @override
-  Map<String, Map<String, dynamic>> get properties {
-     return {
-      'default': {
-        'child': this.child,
-        'backgroundColor': this.backgroundColor,
-        'backgroundImage': this.backgroundImage,
-        'onBackgroundImageError': this.onBackgroundImageError,
-        'foregroundColor': this.foregroundColor,
-        'radius': this.radius,
-        'minRadius': this.minRadius,
-        'maxRadius': this.maxRadius,
-      },
-    };
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      'name': 'CircleAvatar',
-      'props': {
-        'child': this.childVal.toJson(),
-        'backgroundColor': this.backgroundColorVal.toJson(),
-        'foregroundColor': this.foregroundColorVal.toJson(),
-        'backgroundImage': this.backgroundImageVal.toJson(),
-        'onBackgroundImageError': this.onBackgroundImageErrorVal.toJson(),
-        'radius': this.radiusVal.toJson(),
-        'minRadius': this.minRadiusVal.toJson(),
-        'maxRadius': this.maxRadiusVal.toJson(),
-      }
-    };
-  }
-
-  @override
-  Map<String, String> toCode() {
-    return {
-    'default': """CircleAvatar(
-       child: ${this.childVal.toCode()},
-       backgroundColor: ${this.backgroundColorVal.toCode()},
-       backgroundImage: ${this.backgroundImageVal.toCode()},
-       onBackgroundImageError: ${this.onBackgroundImageErrorVal.toCode()},
-       foregroundColor: ${this.foregroundColorVal.toCode()},
-       radius: ${this.radiusVal.toCode()},
-       minRadius: ${this.minRadiusVal.toCode()},
-       maxRadius: ${this.maxRadiusVal.toCode()},
-    )""",
-    };
-  }
-
-  final _controller = ValueNotifier<WidgetRect>(null);
-  ValueListenable<WidgetRect> get stats => _controller;
-
-  @override
-  Widget build(BuildContext context) {
-    if (isWidget) return TrackedWidget(
-      controller: _controller,
-      child: defaultBase,
-    );
-    return Container();
-  }
-
-  @override
-  bool get isWidget => defaultBase is Widget;
-  
-  @override
-  Object get defaultBase => constructors['default'];
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-      properties.add(DiagnosticsProperty('child', this.child));
-      properties.add(DiagnosticsProperty('backgroundColor', this.backgroundColor));
-      properties.add(DiagnosticsProperty('foregroundColor', this.foregroundColor));
-      properties.add(DiagnosticsProperty('backgroundImage', this.backgroundImage));
-      properties.add(DiagnosticsProperty('onBackgroundImageError', this.onBackgroundImageError));
-      properties.add(DiagnosticsProperty('radius', this.radius));
-      properties.add(DiagnosticsProperty('minRadius', this.minRadius));
-      properties.add(DiagnosticsProperty('maxRadius', this.maxRadius));
-  }
 }
 

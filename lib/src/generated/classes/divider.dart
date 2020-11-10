@@ -1,197 +1,120 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/gestures.dart';
-import '../core.dart';
+import '../base.dart';
 
-class VerticalDividerRender<T> extends StatelessWidget {
+class DividerBase extends BaseWidget {
+    DividerBase();
 
-  factory VerticalDividerRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
-    return VerticalDividerRender(update,
-      widthVal: BaseCore<double>(null, update),
-      thicknessVal: BaseCore<double>(null, update),
-      indentVal: BaseCore<double>(null, update),
-      endIndentVal: BaseCore<double>(null, update),
-      colorVal: BaseCore<Color>(null, update),
-    );
-  }
-
-  VerticalDividerRender(this._update, {
-    @required this.widthVal,
-    @required this.thicknessVal,
-    @required this.indentVal,
-    @required this.endIndentVal,
-    @required this.colorVal,
-  });
-
-  @override
-  final VoidCallback _update;
-
-  Core<double> widthVal;
-
-  double get width {
-    return widthVal.value;
-  }
-
-  set width(double val) {
-    if (val == this.width) {
-      return;
+    factory DividerBase.fromJson(Map<String, dynamic> data) {
+        return DividerBase();
     }
-    widthVal.value = val;
-  }
 
-  Core<double> thicknessVal;
+    @override
+    String get description => r'''
+A thin horizontal line, with padding on either side.
 
-  double get thickness {
-    return thicknessVal.value;
-  }
+In the material design language, this represents a divider. Dividers can be
+used in lists, [Drawer]s, and elsewhere to separate content.
 
-  set thickness(double val) {
-    if (val == this.thickness) {
-      return;
+To create a divider between [ListTile] items, consider using
+[ListTile.divideTiles], which is optimized for this case.
+
+{@youtube 560 315 https://www.youtube.com/watch?v=_liUC641Nmk}
+
+The box's total height is controlled by [height]. The appropriate
+padding is automatically computed from the height.
+
+{@tool dartpad --template=stateless_widget_scaffold}
+
+This sample shows how to display a Divider between an orange and blue box
+inside a column. The Divider is 20 logical pixels in height and contains a
+vertically centered black line that is 5 logical pixels thick. The black
+line is indented by 20 logical pixels.
+
+![](https://flutter.github.io/assets-for-api-docs/assets/material/divider.png)
+
+```dart
+Widget build(BuildContext context) {
+return Center(
+child: Column(
+children: <Widget>[
+Expanded(
+child: Container(
+color: Colors.amber,
+child: const Center(
+child: Text('Above'),
+),
+),
+),
+const Divider(
+color: Colors.black,
+height: 20,
+thickness: 5,
+indent: 20,
+endIndent: 0,
+),
+Expanded(
+child: Container(
+color: Colors.blue,
+child: const Center(
+child: Text('Below'),
+),
+),
+),
+],
+),
+);
+}
+```
+{@end-tool}
+See also:
+
+* [PopupMenuDivider], which is the equivalent but for popup menus.
+* [ListTile.divideTiles], another approach to dividing widgets in a list.
+* <https://material.io/design/components/dividers.html>
+''';
+
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
     }
-    thicknessVal.value = val;
-  }
 
-  Core<double> indentVal;
-
-  double get indent {
-    return indentVal.value;
-  }
-
-  set indent(double val) {
-    if (val == this.indent) {
-      return;
+    @override
+    Widget render(BuildContext context) {
+        return Container();
     }
-    indentVal.value = val;
-  }
+}
 
-  Core<double> endIndentVal;
+class VerticalDividerBase extends BaseWidget {
+    VerticalDividerBase();
 
-  double get endIndent {
-    return endIndentVal.value;
-  }
-
-  set endIndent(double val) {
-    if (val == this.endIndent) {
-      return;
+    factory VerticalDividerBase.fromJson(Map<String, dynamic> data) {
+        return VerticalDividerBase();
     }
-    endIndentVal.value = val;
-  }
 
-  Core<Color> colorVal;
+    @override
+    String get description => r'''
+A thin vertical line, with padding on either side.
 
-  Color get color {
-    return colorVal.value;
-  }
+In the material design language, this represents a divider. Vertical
+dividers can be used in horizontally scrolling lists, such as a
+[ListView] with [ListView.scrollDirection] set to [Axis.horizontal].
 
-  set color(Color val) {
-    if (val == this.color) {
-      return;
+The box's total width is controlled by [width]. The appropriate
+padding is automatically computed from the width.
+
+See also:
+
+* [ListView.separated], which can be used to generate vertical dividers.
+* <https://material.io/design/components/dividers.html>
+''';
+
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
     }
-    colorVal.value = val;
-  }
 
-
-  @override
-  Map<String, dynamic> get staticFields => {
-  };
-
-  @override
-  List<Core> get props => [
-    this.widthVal,
-    this.thicknessVal,
-    this.indentVal,
-    this.endIndentVal,
-    this.colorVal,
-  ];
-
-  @override
-  String get description {
-    final sb = StringBuffer();
-    sb.writeln("[ * <https://material.io/design/components/dividers.html>]");
-    return sb.toString();
-  }
-
-  @override
-  Map<String, Object> get constructors {
-     return {
-      'default': VerticalDivider(
-        width: this.width,
-        thickness: this.thickness,
-        indent: this.indent,
-        endIndent: this.endIndent,
-        color: this.color,
-      ),
-    };
-  }
-
-  @override
-  Map<String, Map<String, dynamic>> get properties {
-     return {
-      'default': {
-        'width': this.width,
-        'thickness': this.thickness,
-        'indent': this.indent,
-        'endIndent': this.endIndent,
-        'color': this.color,
-      },
-    };
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      'name': 'VerticalDivider',
-      'props': {
-        'width': this.widthVal.toJson(),
-        'thickness': this.thicknessVal.toJson(),
-        'indent': this.indentVal.toJson(),
-        'endIndent': this.endIndentVal.toJson(),
-        'color': this.colorVal.toJson(),
-      }
-    };
-  }
-
-  @override
-  Map<String, String> toCode() {
-    return {
-    'default': """VerticalDivider(
-       width: ${this.widthVal.toCode()},
-       thickness: ${this.thicknessVal.toCode()},
-       indent: ${this.indentVal.toCode()},
-       endIndent: ${this.endIndentVal.toCode()},
-       color: ${this.colorVal.toCode()},
-    )""",
-    };
-  }
-
-  final _controller = ValueNotifier<WidgetRect>(null);
-  ValueListenable<WidgetRect> get stats => _controller;
-
-  @override
-  Widget build(BuildContext context) {
-    if (isWidget) return TrackedWidget(
-      controller: _controller,
-      child: defaultBase,
-    );
-    return Container();
-  }
-
-  @override
-  bool get isWidget => defaultBase is Widget;
-  
-  @override
-  Object get defaultBase => constructors['default'];
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-      properties.add(DiagnosticsProperty('width', this.width));
-      properties.add(DiagnosticsProperty('thickness', this.thickness));
-      properties.add(DiagnosticsProperty('indent', this.indent));
-      properties.add(DiagnosticsProperty('endIndent', this.endIndent));
-      properties.add(DiagnosticsProperty('color', this.color));
-  }
+    @override
+    Widget render(BuildContext context) {
+        return Container();
+    }
 }
 

@@ -1,197 +1,112 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/gestures.dart';
-import '../core.dart';
+import '../base.dart';
 
-class YearPickerRender<T> extends StatelessWidget {
+class DayPickerBase extends BaseWidget {
+    DayPickerBase();
 
-  factory YearPickerRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
-    return YearPickerRender(update,
-      selectedDateVal: BaseCore<DateTime>(null, update),
-      onChangedVal: BaseCore<ValueChanged<DateTime>>(null, update),
-      firstDateVal: BaseCore<DateTime>(null, update),
-      lastDateVal: BaseCore<DateTime>(null, update),
-      dragStartBehaviorVal: BaseCore<DragStartBehavior>(null, update),
-    );
-  }
-
-  YearPickerRender(this._update, {
-    @required this.selectedDateVal,
-    @required this.onChangedVal,
-    @required this.firstDateVal,
-    @required this.lastDateVal,
-    @required this.dragStartBehaviorVal,
-  });
-
-  @override
-  final VoidCallback _update;
-
-  Core<DateTime> selectedDateVal;
-
-  DateTime get selectedDate {
-    return selectedDateVal.value;
-  }
-
-  set selectedDate(DateTime val) {
-    if (val == this.selectedDate) {
-      return;
+    factory DayPickerBase.fromJson(Map<String, dynamic> data) {
+        return DayPickerBase();
     }
-    selectedDateVal.value = val;
-  }
 
-  Core<ValueChanged<DateTime>> onChangedVal;
+    @override
+    String get description => r'''
+Displays the days of a given month and allows choosing a day.
 
-  ValueChanged<DateTime> get onChanged {
-    return onChangedVal.value;
-  }
+The days are arranged in a rectangular grid with one column for each day of
+the week.
 
-  set onChanged(ValueChanged<DateTime> val) {
-    if (val == this.onChanged) {
-      return;
+The day picker widget is rarely used directly. Instead, consider using
+[showDatePicker], which creates a date picker dialog.
+
+See also:
+
+* [showDatePicker], which shows a dialog that contains a material design
+date picker.
+* [showTimePicker], which shows a dialog that contains a material design
+time picker.
+
+''';
+
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
     }
-    onChangedVal.value = val;
-  }
 
-  Core<DateTime> firstDateVal;
-
-  DateTime get firstDate {
-    return firstDateVal.value;
-  }
-
-  set firstDate(DateTime val) {
-    if (val == this.firstDate) {
-      return;
+    @override
+    Widget render(BuildContext context) {
+        return Container();
     }
-    firstDateVal.value = val;
-  }
+}
 
-  Core<DateTime> lastDateVal;
+class MonthPickerBase extends BaseWidget {
+    MonthPickerBase();
 
-  DateTime get lastDate {
-    return lastDateVal.value;
-  }
-
-  set lastDate(DateTime val) {
-    if (val == this.lastDate) {
-      return;
+    factory MonthPickerBase.fromJson(Map<String, dynamic> data) {
+        return MonthPickerBase();
     }
-    lastDateVal.value = val;
-  }
 
-  Core<DragStartBehavior> dragStartBehaviorVal;
+    @override
+    String get description => r'''
+A scrollable list of months to allow picking a month.
 
-  DragStartBehavior get dragStartBehavior {
-    return dragStartBehaviorVal.value;
-  }
+Shows the days of each month in a rectangular grid with one column for each
+day of the week.
 
-  set dragStartBehavior(DragStartBehavior val) {
-    if (val == this.dragStartBehavior) {
-      return;
+The month picker widget is rarely used directly. Instead, consider using
+[showDatePicker], which creates a date picker dialog.
+
+See also:
+
+* [showDatePicker], which shows a dialog that contains a material design
+date picker.
+* [showTimePicker], which shows a dialog that contains a material design
+time picker.
+
+''';
+
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
     }
-    dragStartBehaviorVal.value = val;
-  }
 
+    @override
+    Widget render(BuildContext context) {
+        return Container();
+    }
+}
 
-  @override
-  Map<String, dynamic> get staticFields => {
-  };
+class YearPickerBase extends BaseWidget {
+    YearPickerBase();
 
-  @override
-  List<Core> get props => [
-    this.selectedDateVal,
-    this.onChangedVal,
-    this.firstDateVal,
-    this.lastDateVal,
-    this.dragStartBehaviorVal,
-  ];
+    factory YearPickerBase.fromJson(Map<String, dynamic> data) {
+        return YearPickerBase();
+    }
 
-  @override
-  String get description {
-    final sb = StringBuffer();
-    sb.writeln("[///]");
-    return sb.toString();
-  }
+    @override
+    String get description => r'''
+A scrollable list of years to allow picking a year.
 
-  @override
-  Map<String, Object> get constructors {
-     return {
-      'default': YearPicker(
-        selectedDate: this.selectedDate,
-        onChanged: this.onChanged,
-        firstDate: this.firstDate,
-        lastDate: this.lastDate,
-        dragStartBehavior: this.dragStartBehavior,
-      ),
-    };
-  }
+The year picker widget is rarely used directly. Instead, consider using
+[showDatePicker], which creates a date picker dialog.
 
-  @override
-  Map<String, Map<String, dynamic>> get properties {
-     return {
-      'default': {
-        'selectedDate': this.selectedDate,
-        'onChanged': this.onChanged,
-        'firstDate': this.firstDate,
-        'lastDate': this.lastDate,
-        'dragStartBehavior': this.dragStartBehavior,
-      },
-    };
-  }
+Requires one of its ancestors to be a [Material] widget.
 
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      'name': 'YearPicker',
-      'props': {
-        'selectedDate': this.selectedDateVal.toJson(),
-        'onChanged': this.onChangedVal.toJson(),
-        'firstDate': this.firstDateVal.toJson(),
-        'lastDate': this.lastDateVal.toJson(),
-        'dragStartBehavior': this.dragStartBehaviorVal.toJson(),
-      }
-    };
-  }
+See also:
 
-  @override
-  Map<String, String> toCode() {
-    return {
-    'default': """YearPicker(
-       selectedDate: ${this.selectedDateVal.toCode()},
-       onChanged: ${this.onChangedVal.toCode()},
-       firstDate: ${this.firstDateVal.toCode()},
-       lastDate: ${this.lastDateVal.toCode()},
-       dragStartBehavior: ${this.dragStartBehaviorVal.toCode()},
-    )""",
-    };
-  }
+* [showDatePicker], which shows a dialog that contains a material design
+date picker.
+* [showTimePicker], which shows a dialog that contains a material design
+time picker.
 
-  final _controller = ValueNotifier<WidgetRect>(null);
-  ValueListenable<WidgetRect> get stats => _controller;
+''';
 
-  @override
-  Widget build(BuildContext context) {
-    if (isWidget) return TrackedWidget(
-      controller: _controller,
-      child: defaultBase,
-    );
-    return Container();
-  }
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
+    }
 
-  @override
-  bool get isWidget => defaultBase is Widget;
-  
-  @override
-  Object get defaultBase => constructors['default'];
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-      properties.add(DiagnosticsProperty('selectedDate', this.selectedDate));
-      properties.add(DiagnosticsProperty('onChanged', this.onChanged));
-      properties.add(DiagnosticsProperty('firstDate', this.firstDate));
-      properties.add(DiagnosticsProperty('lastDate', this.lastDate));
-      properties.add(DiagnosticsProperty('dragStartBehavior', this.dragStartBehavior));
-  }
+    @override
+    Widget render(BuildContext context) {
+        return Container();
+    }
 }
 

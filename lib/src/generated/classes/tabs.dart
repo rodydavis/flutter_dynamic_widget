@@ -1,176 +1,168 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/gestures.dart';
-import '../core.dart';
+import '../base.dart';
 
-class TabPageSelectorRender<T> extends StatelessWidget {
+class TabBase extends BaseWidget {
+    TabBase();
 
-  factory TabPageSelectorRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
-    return TabPageSelectorRender(update,
-      controllerVal: BaseCore<TabController>(null, update),
-      indicatorSizeVal: BaseCore<double>(null, update),
-      colorVal: BaseCore<Color>(null, update),
-      selectedColorVal: BaseCore<Color>(null, update),
-    );
-  }
-
-  TabPageSelectorRender(this._update, {
-    @required this.controllerVal,
-    @required this.indicatorSizeVal,
-    @required this.colorVal,
-    @required this.selectedColorVal,
-  });
-
-  @override
-  final VoidCallback _update;
-
-  Core<TabController> controllerVal;
-
-  TabController get controller {
-    return controllerVal.value;
-  }
-
-  set controller(TabController val) {
-    if (val == this.controller) {
-      return;
+    factory TabBase.fromJson(Map<String, dynamic> data) {
+        return TabBase();
     }
-    controllerVal.value = val;
-  }
 
-  Core<double> indicatorSizeVal;
+    @override
+    String get description => r'''
+A material design [TabBar] tab.
 
-  double get indicatorSize {
-    return indicatorSizeVal.value;
-  }
+If both [icon] and [text] are provided, the text is displayed below
+the icon.
 
-  set indicatorSize(double val) {
-    if (val == this.indicatorSize) {
-      return;
+See also:
+
+* [TabBar], which displays a row of tabs.
+* [TabBarView], which displays a widget for the currently selected tab.
+* [TabController], which coordinates tab selection between a [TabBar] and a [TabBarView].
+* <https://material.io/design/components/tabs.html>
+''';
+
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
     }
-    indicatorSizeVal.value = val;
-  }
 
-  Core<Color> colorVal;
-
-  Color get color {
-    return colorVal.value;
-  }
-
-  set color(Color val) {
-    if (val == this.color) {
-      return;
+    @override
+    Widget render(BuildContext context) {
+        return Container();
     }
-    colorVal.value = val;
-  }
+}
 
-  Core<Color> selectedColorVal;
+class TabBarBase extends BaseWidget {
+    TabBarBase();
 
-  Color get selectedColor {
-    return selectedColorVal.value;
-  }
-
-  set selectedColor(Color val) {
-    if (val == this.selectedColor) {
-      return;
+    factory TabBarBase.fromJson(Map<String, dynamic> data) {
+        return TabBarBase();
     }
-    selectedColorVal.value = val;
-  }
 
+    @override
+    String get description => r'''
+A material design widget that displays a horizontal row of tabs.
 
-  @override
-  Map<String, dynamic> get staticFields => {
-  };
+Typically created as the [AppBar.bottom] part of an [AppBar] and in
+conjunction with a [TabBarView].
 
-  @override
-  List<Core> get props => [
-    this.controllerVal,
-    this.indicatorSizeVal,
-    this.colorVal,
-    this.selectedColorVal,
-  ];
+{@youtube 560 315 https://www.youtube.com/watch?v=POtoEH-5l40}
 
-  @override
-  String get description {
-    final sb = StringBuffer();
-    sb.writeln("[[DefaultTabController] ancestor.]");
-    return sb.toString();
-  }
+If a [TabController] is not provided, then a [DefaultTabController] ancestor
+must be provided instead. The tab controller's [TabController.length] must
+equal the length of the [tabs] list and the length of the
+[TabBarView.children] list.
 
-  @override
-  Map<String, Object> get constructors {
-     return {
-      'default': TabPageSelector(
-        controller: this.controller,
-        indicatorSize: this.indicatorSize,
-        color: this.color,
-        selectedColor: this.selectedColor,
-      ),
-    };
-  }
+Requires one of its ancestors to be a [Material] widget.
 
-  @override
-  Map<String, Map<String, dynamic>> get properties {
-     return {
-      'default': {
-        'controller': this.controller,
-        'indicatorSize': this.indicatorSize,
-        'color': this.color,
-        'selectedColor': this.selectedColor,
-      },
-    };
-  }
+Uses values from [TabBarTheme] if it is set in the current context.
 
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      'name': 'TabPageSelector',
-      'props': {
-        'controller': this.controllerVal.toJson(),
-        'indicatorSize': this.indicatorSizeVal.toJson(),
-        'color': this.colorVal.toJson(),
-        'selectedColor': this.selectedColorVal.toJson(),
-      }
-    };
-  }
+To see a sample implementation, visit the [TabController] documentation.
 
-  @override
-  Map<String, String> toCode() {
-    return {
-    'default': """TabPageSelector(
-       controller: ${this.controllerVal.toCode()},
-       indicatorSize: ${this.indicatorSizeVal.toCode()},
-       color: ${this.colorVal.toCode()},
-       selectedColor: ${this.selectedColorVal.toCode()},
-    )""",
-    };
-  }
+See also:
 
-  final _controller = ValueNotifier<WidgetRect>(null);
-  ValueListenable<WidgetRect> get stats => _controller;
+* [TabBarView], which displays page views that correspond to each tab.
+''';
 
-  @override
-  Widget build(BuildContext context) {
-    if (isWidget) return TrackedWidget(
-      controller: _controller,
-      child: defaultBase,
-    );
-    return Container();
-  }
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
+    }
 
-  @override
-  bool get isWidget => defaultBase is Widget;
-  
-  @override
-  Object get defaultBase => constructors['default'];
+    @override
+    Widget render(BuildContext context) {
+        return Container();
+    }
+}
 
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-      properties.add(DiagnosticsProperty('controller', this.controller));
-      properties.add(DiagnosticsProperty('indicatorSize', this.indicatorSize));
-      properties.add(DiagnosticsProperty('color', this.color));
-      properties.add(DiagnosticsProperty('selectedColor', this.selectedColor));
-  }
+class TabBarViewBase extends BaseWidget {
+    TabBarViewBase();
+
+    factory TabBarViewBase.fromJson(Map<String, dynamic> data) {
+        return TabBarViewBase();
+    }
+
+    @override
+    String get description => r'''
+A page view that displays the widget which corresponds to the currently
+selected tab.
+
+This widget is typically used in conjunction with a [TabBar].
+
+{@youtube 560 315 https://www.youtube.com/watch?v=POtoEH-5l40}
+
+If a [TabController] is not provided, then there must be a [DefaultTabController]
+ancestor.
+
+The tab controller's [TabController.length] must equal the length of the
+[children] list and the length of the [TabBar.tabs] list.
+
+To see a sample implementation, visit the [TabController] documentation.
+''';
+
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
+    }
+
+    @override
+    Widget render(BuildContext context) {
+        return Container();
+    }
+}
+
+class TabPageSelectorIndicatorBase extends BaseWidget {
+    TabPageSelectorIndicatorBase();
+
+    factory TabPageSelectorIndicatorBase.fromJson(Map<String, dynamic> data) {
+        return TabPageSelectorIndicatorBase();
+    }
+
+    @override
+    String get description => r'''
+Displays a single circle with the specified border and background colors.
+
+Used by [TabPageSelector] to indicate the selected page.
+''';
+
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
+    }
+
+    @override
+    Widget render(BuildContext context) {
+        return Container();
+    }
+}
+
+class TabPageSelectorBase extends BaseWidget {
+    TabPageSelectorBase();
+
+    factory TabPageSelectorBase.fromJson(Map<String, dynamic> data) {
+        return TabPageSelectorBase();
+    }
+
+    @override
+    String get description => r'''
+Displays a row of small circular indicators, one per tab.
+
+The selected tab's indicator is highlighted. Often used in conjunction with
+a [TabBarView].
+
+If a [TabController] is not provided, then there must be a
+[DefaultTabController] ancestor.
+''';
+
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
+    }
+
+    @override
+    Widget render(BuildContext context) {
+        return Container();
+    }
 }
 

@@ -1,596 +1,105 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/gestures.dart';
-import '../core.dart';
+import '../base.dart';
 
-class InkWellRender<T> extends StatelessWidget {
+class InkResponseBase extends BaseWidget {
+    InkResponseBase();
 
-  factory InkWellRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
-    return InkWellRender(update,
-      childVal: BaseCore<Widget>(null, update),
-      onTapVal: BaseCore<GestureTapCallback>(null, update),
-      onDoubleTapVal: BaseCore<GestureTapCallback>(null, update),
-      onLongPressVal: BaseCore<GestureLongPressCallback>(null, update),
-      onTapDownVal: BaseCore<GestureTapDownCallback>(null, update),
-      onTapCancelVal: BaseCore<GestureTapCancelCallback>(null, update),
-      onHighlightChangedVal: BaseCore<ValueChanged<bool>>(null, update),
-      onHoverVal: BaseCore<ValueChanged<bool>>(null, update),
-      mouseCursorVal: BaseCore<MouseCursor>(null, update),
-      focusColorVal: BaseCore<Color>(null, update),
-      hoverColorVal: BaseCore<Color>(null, update),
-      highlightColorVal: BaseCore<Color>(null, update),
-      overlayColorVal: BaseCore<MaterialStateProperty<Color>>(null, update),
-      splashColorVal: BaseCore<Color>(null, update),
-      splashFactoryVal: BaseCore<InteractiveInkFeatureFactory>(null, update),
-      radiusVal: BaseCore<double>(null, update),
-      borderRadiusVal: BaseCore<BorderRadius>(null, update),
-      customBorderVal: BaseCore<ShapeBorder>(null, update),
-      enableFeedbackVal: BaseCore<bool>(null, update),
-      excludeFromSemanticsVal: BaseCore<bool>(null, update),
-      focusNodeVal: BaseCore<FocusNode>(null, update),
-      canRequestFocusVal: BaseCore<bool>(null, update),
-      onFocusChangeVal: BaseCore<ValueChanged<bool>>(null, update),
-      autofocusVal: BaseCore<bool>(null, update),
-    );
-  }
-
-  InkWellRender(this._update, {
-    @required this.childVal,
-    @required this.onTapVal,
-    @required this.onDoubleTapVal,
-    @required this.onLongPressVal,
-    @required this.onTapDownVal,
-    @required this.onTapCancelVal,
-    @required this.onHighlightChangedVal,
-    @required this.onHoverVal,
-    @required this.mouseCursorVal,
-    @required this.focusColorVal,
-    @required this.hoverColorVal,
-    @required this.highlightColorVal,
-    @required this.overlayColorVal,
-    @required this.splashColorVal,
-    @required this.splashFactoryVal,
-    @required this.radiusVal,
-    @required this.borderRadiusVal,
-    @required this.customBorderVal,
-    @required this.enableFeedbackVal,
-    @required this.excludeFromSemanticsVal,
-    @required this.focusNodeVal,
-    @required this.canRequestFocusVal,
-    @required this.onFocusChangeVal,
-    @required this.autofocusVal,
-  });
-
-  @override
-  final VoidCallback _update;
-
-  Core<Widget> childVal;
-
-  Widget get child {
-    return childVal.value;
-  }
-
-  set child(Widget val) {
-    if (val == this.child) {
-      return;
+    factory InkResponseBase.fromJson(Map<String, dynamic> data) {
+        return InkResponseBase();
     }
-    childVal.value = val;
-  }
 
-  Core<GestureTapCallback> onTapVal;
+    @override
+    String get description => r'''
+An area of a [Material] that responds to touch. Has a configurable shape and
+can be configured to clip splashes that extend outside its bounds or not.
 
-  GestureTapCallback get onTap {
-    return onTapVal.value;
-  }
+For a variant of this widget that is specialized for rectangular areas that
+always clip splashes, see [InkWell].
 
-  set onTap(GestureTapCallback val) {
-    if (val == this.onTap) {
-      return;
+An [InkResponse] widget does two things when responding to a tap:
+
+* It starts to animate a _highlight_. The shape of the highlight is
+determined by [highlightShape]. If it is a [BoxShape.circle], the
+default, then the highlight is a circle of fixed size centered in the
+[InkResponse]. If it is [BoxShape.rectangle], then the highlight is a box
+the size of the [InkResponse] itself, unless [getRectCallback] is
+provided, in which case that callback defines the rectangle. The color of
+the highlight is set by [highlightColor].
+
+* Simultaneously, it starts to animate a _splash_. This is a growing circle
+initially centered on the tap location. If this is a [containedInkWell],
+the splash grows to the [radius] while remaining centered at the tap
+location. Otherwise, the splash migrates to the center of the box as it
+grows.
+
+The following two diagrams show how [InkResponse] looks when tapped if the
+[highlightShape] is [BoxShape.circle] (the default) and [containedInkWell]
+is false (also the default).
+
+The first diagram shows how it looks if the [InkResponse] is relatively
+large:
+
+![The highlight is a disc centered in the box, smaller than the child widget.](https://flutter.github.io/assets-for-api-docs/assets/material/ink_response_large.png)
+
+The second diagram shows how it looks if the [InkResponse] is small:
+
+![The highlight is a disc overflowing the box, centered on the child.](https://flutter.github.io/assets-for-api-docs/assets/material/ink_response_small.png)
+
+The main thing to notice from these diagrams is that the splashes happily
+exceed the bounds of the widget (because [containedInkWell] is false).
+
+The following diagram shows the effect when the [InkResponse] has a
+[highlightShape] of [BoxShape.rectangle] with [containedInkWell] set to
+true. These are the values used by [InkWell].
+
+![The highlight is a rectangle the size of the box.](https://flutter.github.io/assets-for-api-docs/assets/material/ink_well.png)
+
+The [InkResponse] widget must have a [Material] widget as an ancestor. The
+[Material] widget is where the ink reactions are actually painted. This
+matches the material design premise wherein the [Material] is what is
+actually reacting to touches by spreading ink.
+
+If a Widget uses this class directly, it should include the following line
+at the top of its build function to call [debugCheckHasMaterial]:
+
+```dart
+assert(debugCheckHasMaterial(context));
+```
+
+## Troubleshooting
+
+### The ink splashes aren't visible!
+
+If there is an opaque graphic, e.g. painted using a [Container], [Image], or
+[DecoratedBox], between the [Material] widget and the [InkResponse] widget,
+then the splash won't be visible because it will be under the opaque graphic.
+This is because ink splashes draw on the underlying [Material] itself, as
+if the ink was spreading inside the material.
+
+The [Ink] widget can be used as a replacement for [Image], [Container], or
+[DecoratedBox] to ensure that the image or decoration also paints in the
+[Material] itself, below the ink.
+
+If this is not possible for some reason, e.g. because you are using an
+opaque [CustomPaint] widget, alternatively consider using a second
+[Material] above the opaque widget but below the [InkResponse] (as an
+ancestor to the ink response). The [MaterialType.transparency] material
+kind can be used for this purpose.
+
+See also:
+
+* [GestureDetector], for listening for gestures without ink splashes.
+* [ElevatedButton] and [TextButton], two kinds of buttons in material design.
+* [IconButton], which combines [InkResponse] with an [Icon].
+''';
+
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
     }
-    onTapVal.value = val;
-  }
 
-  Core<GestureTapCallback> onDoubleTapVal;
-
-  GestureTapCallback get onDoubleTap {
-    return onDoubleTapVal.value;
-  }
-
-  set onDoubleTap(GestureTapCallback val) {
-    if (val == this.onDoubleTap) {
-      return;
+    @override
+    Widget render(BuildContext context) {
+        return Container();
     }
-    onDoubleTapVal.value = val;
-  }
-
-  Core<GestureLongPressCallback> onLongPressVal;
-
-  GestureLongPressCallback get onLongPress {
-    return onLongPressVal.value;
-  }
-
-  set onLongPress(GestureLongPressCallback val) {
-    if (val == this.onLongPress) {
-      return;
-    }
-    onLongPressVal.value = val;
-  }
-
-  Core<GestureTapDownCallback> onTapDownVal;
-
-  GestureTapDownCallback get onTapDown {
-    return onTapDownVal.value;
-  }
-
-  set onTapDown(GestureTapDownCallback val) {
-    if (val == this.onTapDown) {
-      return;
-    }
-    onTapDownVal.value = val;
-  }
-
-  Core<GestureTapCancelCallback> onTapCancelVal;
-
-  GestureTapCancelCallback get onTapCancel {
-    return onTapCancelVal.value;
-  }
-
-  set onTapCancel(GestureTapCancelCallback val) {
-    if (val == this.onTapCancel) {
-      return;
-    }
-    onTapCancelVal.value = val;
-  }
-
-  Core<ValueChanged<bool>> onHighlightChangedVal;
-
-  ValueChanged<bool> get onHighlightChanged {
-    return onHighlightChangedVal.value;
-  }
-
-  set onHighlightChanged(ValueChanged<bool> val) {
-    if (val == this.onHighlightChanged) {
-      return;
-    }
-    onHighlightChangedVal.value = val;
-  }
-
-  Core<ValueChanged<bool>> onHoverVal;
-
-  ValueChanged<bool> get onHover {
-    return onHoverVal.value;
-  }
-
-  set onHover(ValueChanged<bool> val) {
-    if (val == this.onHover) {
-      return;
-    }
-    onHoverVal.value = val;
-  }
-
-  Core<MouseCursor> mouseCursorVal;
-
-  MouseCursor get mouseCursor {
-    return mouseCursorVal.value;
-  }
-
-  set mouseCursor(MouseCursor val) {
-    if (val == this.mouseCursor) {
-      return;
-    }
-    mouseCursorVal.value = val;
-  }
-
-  Core<Color> focusColorVal;
-
-  Color get focusColor {
-    return focusColorVal.value;
-  }
-
-  set focusColor(Color val) {
-    if (val == this.focusColor) {
-      return;
-    }
-    focusColorVal.value = val;
-  }
-
-  Core<Color> hoverColorVal;
-
-  Color get hoverColor {
-    return hoverColorVal.value;
-  }
-
-  set hoverColor(Color val) {
-    if (val == this.hoverColor) {
-      return;
-    }
-    hoverColorVal.value = val;
-  }
-
-  Core<Color> highlightColorVal;
-
-  Color get highlightColor {
-    return highlightColorVal.value;
-  }
-
-  set highlightColor(Color val) {
-    if (val == this.highlightColor) {
-      return;
-    }
-    highlightColorVal.value = val;
-  }
-
-  Core<MaterialStateProperty<Color>> overlayColorVal;
-
-  MaterialStateProperty<Color> get overlayColor {
-    return overlayColorVal.value;
-  }
-
-  set overlayColor(MaterialStateProperty<Color> val) {
-    if (val == this.overlayColor) {
-      return;
-    }
-    overlayColorVal.value = val;
-  }
-
-  Core<Color> splashColorVal;
-
-  Color get splashColor {
-    return splashColorVal.value;
-  }
-
-  set splashColor(Color val) {
-    if (val == this.splashColor) {
-      return;
-    }
-    splashColorVal.value = val;
-  }
-
-  Core<InteractiveInkFeatureFactory> splashFactoryVal;
-
-  InteractiveInkFeatureFactory get splashFactory {
-    return splashFactoryVal.value;
-  }
-
-  set splashFactory(InteractiveInkFeatureFactory val) {
-    if (val == this.splashFactory) {
-      return;
-    }
-    splashFactoryVal.value = val;
-  }
-
-  Core<double> radiusVal;
-
-  double get radius {
-    return radiusVal.value;
-  }
-
-  set radius(double val) {
-    if (val == this.radius) {
-      return;
-    }
-    radiusVal.value = val;
-  }
-
-  Core<BorderRadius> borderRadiusVal;
-
-  BorderRadius get borderRadius {
-    return borderRadiusVal.value;
-  }
-
-  set borderRadius(BorderRadius val) {
-    if (val == this.borderRadius) {
-      return;
-    }
-    borderRadiusVal.value = val;
-  }
-
-  Core<ShapeBorder> customBorderVal;
-
-  ShapeBorder get customBorder {
-    return customBorderVal.value;
-  }
-
-  set customBorder(ShapeBorder val) {
-    if (val == this.customBorder) {
-      return;
-    }
-    customBorderVal.value = val;
-  }
-
-  Core<bool> enableFeedbackVal;
-
-  bool get enableFeedback {
-    return enableFeedbackVal.value;
-  }
-
-  set enableFeedback(bool val) {
-    if (val == this.enableFeedback) {
-      return;
-    }
-    enableFeedbackVal.value = val;
-  }
-
-  Core<bool> excludeFromSemanticsVal;
-
-  bool get excludeFromSemantics {
-    return excludeFromSemanticsVal.value;
-  }
-
-  set excludeFromSemantics(bool val) {
-    if (val == this.excludeFromSemantics) {
-      return;
-    }
-    excludeFromSemanticsVal.value = val;
-  }
-
-  Core<FocusNode> focusNodeVal;
-
-  FocusNode get focusNode {
-    return focusNodeVal.value;
-  }
-
-  set focusNode(FocusNode val) {
-    if (val == this.focusNode) {
-      return;
-    }
-    focusNodeVal.value = val;
-  }
-
-  Core<bool> canRequestFocusVal;
-
-  bool get canRequestFocus {
-    return canRequestFocusVal.value;
-  }
-
-  set canRequestFocus(bool val) {
-    if (val == this.canRequestFocus) {
-      return;
-    }
-    canRequestFocusVal.value = val;
-  }
-
-  Core<ValueChanged<bool>> onFocusChangeVal;
-
-  ValueChanged<bool> get onFocusChange {
-    return onFocusChangeVal.value;
-  }
-
-  set onFocusChange(ValueChanged<bool> val) {
-    if (val == this.onFocusChange) {
-      return;
-    }
-    onFocusChangeVal.value = val;
-  }
-
-  Core<bool> autofocusVal;
-
-  bool get autofocus {
-    return autofocusVal.value;
-  }
-
-  set autofocus(bool val) {
-    if (val == this.autofocus) {
-      return;
-    }
-    autofocusVal.value = val;
-  }
-
-
-  @override
-  Map<String, dynamic> get staticFields => {
-  };
-
-  @override
-  List<Core> get props => [
-    this.childVal,
-    this.onTapVal,
-    this.onDoubleTapVal,
-    this.onLongPressVal,
-    this.onTapDownVal,
-    this.onTapCancelVal,
-    this.onHighlightChangedVal,
-    this.onHoverVal,
-    this.mouseCursorVal,
-    this.focusColorVal,
-    this.hoverColorVal,
-    this.highlightColorVal,
-    this.overlayColorVal,
-    this.splashColorVal,
-    this.splashFactoryVal,
-    this.radiusVal,
-    this.borderRadiusVal,
-    this.customBorderVal,
-    this.enableFeedbackVal,
-    this.excludeFromSemanticsVal,
-    this.focusNodeVal,
-    this.canRequestFocusVal,
-    this.onFocusChangeVal,
-    this.autofocusVal,
-  ];
-
-  @override
-  String get description {
-    final sb = StringBuffer();
-    sb.writeln("[   shape on the ink reaction.]");
-    return sb.toString();
-  }
-
-  @override
-  Map<String, Object> get constructors {
-     return {
-      'default': InkWell(
-        child: this.child,
-        onTap: this.onTap,
-        onDoubleTap: this.onDoubleTap,
-        onLongPress: this.onLongPress,
-        onTapDown: this.onTapDown,
-        onTapCancel: this.onTapCancel,
-        onHighlightChanged: this.onHighlightChanged,
-        onHover: this.onHover,
-        mouseCursor: this.mouseCursor,
-        focusColor: this.focusColor,
-        hoverColor: this.hoverColor,
-        highlightColor: this.highlightColor,
-        overlayColor: this.overlayColor,
-        splashColor: this.splashColor,
-        splashFactory: this.splashFactory,
-        radius: this.radius,
-        borderRadius: this.borderRadius,
-        customBorder: this.customBorder,
-        enableFeedback: this.enableFeedback,
-        excludeFromSemantics: this.excludeFromSemantics,
-        focusNode: this.focusNode,
-        canRequestFocus: this.canRequestFocus,
-        onFocusChange: this.onFocusChange,
-        autofocus: this.autofocus,
-      ),
-    };
-  }
-
-  @override
-  Map<String, Map<String, dynamic>> get properties {
-     return {
-      'default': {
-        'child': this.child,
-        'onTap': this.onTap,
-        'onDoubleTap': this.onDoubleTap,
-        'onLongPress': this.onLongPress,
-        'onTapDown': this.onTapDown,
-        'onTapCancel': this.onTapCancel,
-        'onHighlightChanged': this.onHighlightChanged,
-        'onHover': this.onHover,
-        'mouseCursor': this.mouseCursor,
-        'focusColor': this.focusColor,
-        'hoverColor': this.hoverColor,
-        'highlightColor': this.highlightColor,
-        'overlayColor': this.overlayColor,
-        'splashColor': this.splashColor,
-        'splashFactory': this.splashFactory,
-        'radius': this.radius,
-        'borderRadius': this.borderRadius,
-        'customBorder': this.customBorder,
-        'enableFeedback': this.enableFeedback,
-        'excludeFromSemantics': this.excludeFromSemantics,
-        'focusNode': this.focusNode,
-        'canRequestFocus': this.canRequestFocus,
-        'onFocusChange': this.onFocusChange,
-        'autofocus': this.autofocus,
-      },
-    };
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      'name': 'InkWell',
-      'props': {
-        'child': this.childVal.toJson(),
-        'onTap': this.onTapVal.toJson(),
-        'onDoubleTap': this.onDoubleTapVal.toJson(),
-        'onLongPress': this.onLongPressVal.toJson(),
-        'onTapDown': this.onTapDownVal.toJson(),
-        'onTapCancel': this.onTapCancelVal.toJson(),
-        'onHighlightChanged': this.onHighlightChangedVal.toJson(),
-        'onHover': this.onHoverVal.toJson(),
-        'mouseCursor': this.mouseCursorVal.toJson(),
-        'focusColor': this.focusColorVal.toJson(),
-        'hoverColor': this.hoverColorVal.toJson(),
-        'highlightColor': this.highlightColorVal.toJson(),
-        'overlayColor': this.overlayColorVal.toJson(),
-        'splashColor': this.splashColorVal.toJson(),
-        'splashFactory': this.splashFactoryVal.toJson(),
-        'radius': this.radiusVal.toJson(),
-        'borderRadius': this.borderRadiusVal.toJson(),
-        'customBorder': this.customBorderVal.toJson(),
-        'enableFeedback': this.enableFeedbackVal.toJson(),
-        'excludeFromSemantics': this.excludeFromSemanticsVal.toJson(),
-        'focusNode': this.focusNodeVal.toJson(),
-        'canRequestFocus': this.canRequestFocusVal.toJson(),
-        'onFocusChange': this.onFocusChangeVal.toJson(),
-        'autofocus': this.autofocusVal.toJson(),
-      }
-    };
-  }
-
-  @override
-  Map<String, String> toCode() {
-    return {
-    'default': """InkWell(
-       child: ${this.childVal.toCode()},
-       onTap: ${this.onTapVal.toCode()},
-       onDoubleTap: ${this.onDoubleTapVal.toCode()},
-       onLongPress: ${this.onLongPressVal.toCode()},
-       onTapDown: ${this.onTapDownVal.toCode()},
-       onTapCancel: ${this.onTapCancelVal.toCode()},
-       onHighlightChanged: ${this.onHighlightChangedVal.toCode()},
-       onHover: ${this.onHoverVal.toCode()},
-       mouseCursor: ${this.mouseCursorVal.toCode()},
-       focusColor: ${this.focusColorVal.toCode()},
-       hoverColor: ${this.hoverColorVal.toCode()},
-       highlightColor: ${this.highlightColorVal.toCode()},
-       overlayColor: ${this.overlayColorVal.toCode()},
-       splashColor: ${this.splashColorVal.toCode()},
-       splashFactory: ${this.splashFactoryVal.toCode()},
-       radius: ${this.radiusVal.toCode()},
-       borderRadius: ${this.borderRadiusVal.toCode()},
-       customBorder: ${this.customBorderVal.toCode()},
-       enableFeedback: ${this.enableFeedbackVal.toCode()},
-       excludeFromSemantics: ${this.excludeFromSemanticsVal.toCode()},
-       focusNode: ${this.focusNodeVal.toCode()},
-       canRequestFocus: ${this.canRequestFocusVal.toCode()},
-       onFocusChange: ${this.onFocusChangeVal.toCode()},
-       autofocus: ${this.autofocusVal.toCode()},
-    )""",
-    };
-  }
-
-  final _controller = ValueNotifier<WidgetRect>(null);
-  ValueListenable<WidgetRect> get stats => _controller;
-
-  @override
-  Widget build(BuildContext context) {
-    if (isWidget) return TrackedWidget(
-      controller: _controller,
-      child: defaultBase,
-    );
-    return Container();
-  }
-
-  @override
-  bool get isWidget => defaultBase is Widget;
-  
-  @override
-  Object get defaultBase => constructors['default'];
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-      properties.add(DiagnosticsProperty('child', this.child));
-      properties.add(DiagnosticsProperty('onTap', this.onTap));
-      properties.add(DiagnosticsProperty('onDoubleTap', this.onDoubleTap));
-      properties.add(DiagnosticsProperty('onLongPress', this.onLongPress));
-      properties.add(DiagnosticsProperty('onTapDown', this.onTapDown));
-      properties.add(DiagnosticsProperty('onTapCancel', this.onTapCancel));
-      properties.add(DiagnosticsProperty('onHighlightChanged', this.onHighlightChanged));
-      properties.add(DiagnosticsProperty('onHover', this.onHover));
-      properties.add(DiagnosticsProperty('mouseCursor', this.mouseCursor));
-      properties.add(DiagnosticsProperty('focusColor', this.focusColor));
-      properties.add(DiagnosticsProperty('hoverColor', this.hoverColor));
-      properties.add(DiagnosticsProperty('highlightColor', this.highlightColor));
-      properties.add(DiagnosticsProperty('overlayColor', this.overlayColor));
-      properties.add(DiagnosticsProperty('splashColor', this.splashColor));
-      properties.add(DiagnosticsProperty('splashFactory', this.splashFactory));
-      properties.add(DiagnosticsProperty('radius', this.radius));
-      properties.add(DiagnosticsProperty('borderRadius', this.borderRadius));
-      properties.add(DiagnosticsProperty('customBorder', this.customBorder));
-      properties.add(DiagnosticsProperty('enableFeedback', this.enableFeedback));
-      properties.add(DiagnosticsProperty('excludeFromSemantics', this.excludeFromSemantics));
-      properties.add(DiagnosticsProperty('focusNode', this.focusNode));
-      properties.add(DiagnosticsProperty('canRequestFocus', this.canRequestFocus));
-      properties.add(DiagnosticsProperty('onFocusChange', this.onFocusChange));
-      properties.add(DiagnosticsProperty('autofocus', this.autofocus));
-  }
 }
 

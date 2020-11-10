@@ -1,344 +1,97 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/gestures.dart';
-import '../core.dart';
+import '../base.dart';
 
-class RadioRender<T> extends StatelessWidget {
+class RadioBase extends BaseWidget {
+    RadioBase();
 
-  factory RadioRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
-    return RadioRender(update,
-      valueVal: BaseCore<T>(null, update),
-      groupValueVal: BaseCore<T>(null, update),
-      onChangedVal: BaseCore<ValueChanged<T>>(null, update),
-      mouseCursorVal: BaseCore<MouseCursor>(null, update),
-      toggleableVal: BaseCore<bool>(null, update),
-      activeColorVal: BaseCore<Color>(null, update),
-      materialTapTargetSizeVal: BaseCore<MaterialTapTargetSize>(null, update),
-      visualDensityVal: BaseCore<VisualDensity>(null, update),
-      focusColorVal: BaseCore<Color>(null, update),
-      hoverColorVal: BaseCore<Color>(null, update),
-      focusNodeVal: BaseCore<FocusNode>(null, update),
-      autofocusVal: BaseCore<bool>(null, update),
-    );
-  }
-
-  RadioRender(this._update, {
-    @required this.valueVal,
-    @required this.groupValueVal,
-    @required this.onChangedVal,
-    @required this.mouseCursorVal,
-    @required this.toggleableVal,
-    @required this.activeColorVal,
-    @required this.materialTapTargetSizeVal,
-    @required this.visualDensityVal,
-    @required this.focusColorVal,
-    @required this.hoverColorVal,
-    @required this.focusNodeVal,
-    @required this.autofocusVal,
-  });
-
-  @override
-  final VoidCallback _update;
-
-  Core<T> valueVal;
-
-  T get value {
-    return valueVal.value;
-  }
-
-  set value(T val) {
-    if (val == this.value) {
-      return;
+    factory RadioBase.fromJson(Map<String, dynamic> data) {
+        return RadioBase();
     }
-    valueVal.value = val;
-  }
 
-  Core<T> groupValueVal;
+    @override
+    String get description => r'''
+A material design radio button.
 
-  T get groupValue {
-    return groupValueVal.value;
-  }
+Used to select between a number of mutually exclusive values. When one radio
+button in a group is selected, the other radio buttons in the group cease to
+be selected. The values are of type `T`, the type parameter of the [Radio]
+class. Enums are commonly used for this purpose.
 
-  set groupValue(T val) {
-    if (val == this.groupValue) {
-      return;
+The radio button itself does not maintain any state. Instead, selecting the
+radio invokes the [onChanged] callback, passing [value] as a parameter. If
+[groupValue] and [value] match, this radio will be selected. Most widgets
+will respond to [onChanged] by calling [State.setState] to update the
+radio button's [groupValue].
+
+{@tool dartpad --template=stateful_widget_scaffold_center}
+
+Here is an example of Radio widgets wrapped in ListTiles, which is similar
+to what you could get with the RadioListTile widget.
+
+The currently selected character is passed into `groupValue`, which is
+maintained by the example's `State`. In this case, the first `Radio`
+will start off selected because `_character` is initialized to
+`SingingCharacter.lafayette`.
+
+If the second radio button is pressed, the example's state is updated
+with `setState`, updating `_character` to `SingingCharacter.jefferson`.
+This causes the buttons to rebuild with the updated `groupValue`, and
+therefore the selection of the second button.
+
+Requires one of its ancestors to be a [Material] widget.
+
+```dart preamble
+enum SingingCharacter { lafayette, jefferson }
+```
+
+```dart
+SingingCharacter _character = SingingCharacter.lafayette;
+
+Widget build(BuildContext context) {
+return Column(
+children: <Widget>[
+ListTile(
+title: const Text('Lafayette'),
+leading: Radio(
+value: SingingCharacter.lafayette,
+groupValue: _character,
+onChanged: (SingingCharacter value) {
+setState(() { _character = value; });
+},
+),
+),
+ListTile(
+title: const Text('Thomas Jefferson'),
+leading: Radio(
+value: SingingCharacter.jefferson,
+groupValue: _character,
+onChanged: (SingingCharacter value) {
+setState(() { _character = value; });
+},
+),
+),
+],
+);
+}
+```
+{@end-tool}
+
+See also:
+
+* [RadioListTile], which combines this widget with a [ListTile] so that
+you can give the radio button a label.
+* [Slider], for selecting a value in a range.
+* [Checkbox] and [Switch], for toggling a particular value on or off.
+* <https://material.io/design/components/selection-controls.html#radio-buttons>
+''';
+
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
     }
-    groupValueVal.value = val;
-  }
 
-  Core<ValueChanged<T>> onChangedVal;
-
-  ValueChanged<T> get onChanged {
-    return onChangedVal.value;
-  }
-
-  set onChanged(ValueChanged<T> val) {
-    if (val == this.onChanged) {
-      return;
+    @override
+    Widget render(BuildContext context) {
+        return Container();
     }
-    onChangedVal.value = val;
-  }
-
-  Core<MouseCursor> mouseCursorVal;
-
-  MouseCursor get mouseCursor {
-    return mouseCursorVal.value;
-  }
-
-  set mouseCursor(MouseCursor val) {
-    if (val == this.mouseCursor) {
-      return;
-    }
-    mouseCursorVal.value = val;
-  }
-
-  Core<bool> toggleableVal;
-
-  bool get toggleable {
-    return toggleableVal.value;
-  }
-
-  set toggleable(bool val) {
-    if (val == this.toggleable) {
-      return;
-    }
-    toggleableVal.value = val;
-  }
-
-  Core<Color> activeColorVal;
-
-  Color get activeColor {
-    return activeColorVal.value;
-  }
-
-  set activeColor(Color val) {
-    if (val == this.activeColor) {
-      return;
-    }
-    activeColorVal.value = val;
-  }
-
-  Core<MaterialTapTargetSize> materialTapTargetSizeVal;
-
-  MaterialTapTargetSize get materialTapTargetSize {
-    return materialTapTargetSizeVal.value;
-  }
-
-  set materialTapTargetSize(MaterialTapTargetSize val) {
-    if (val == this.materialTapTargetSize) {
-      return;
-    }
-    materialTapTargetSizeVal.value = val;
-  }
-
-  Core<VisualDensity> visualDensityVal;
-
-  VisualDensity get visualDensity {
-    return visualDensityVal.value;
-  }
-
-  set visualDensity(VisualDensity val) {
-    if (val == this.visualDensity) {
-      return;
-    }
-    visualDensityVal.value = val;
-  }
-
-  Core<Color> focusColorVal;
-
-  Color get focusColor {
-    return focusColorVal.value;
-  }
-
-  set focusColor(Color val) {
-    if (val == this.focusColor) {
-      return;
-    }
-    focusColorVal.value = val;
-  }
-
-  Core<Color> hoverColorVal;
-
-  Color get hoverColor {
-    return hoverColorVal.value;
-  }
-
-  set hoverColor(Color val) {
-    if (val == this.hoverColor) {
-      return;
-    }
-    hoverColorVal.value = val;
-  }
-
-  Core<FocusNode> focusNodeVal;
-
-  FocusNode get focusNode {
-    return focusNodeVal.value;
-  }
-
-  set focusNode(FocusNode val) {
-    if (val == this.focusNode) {
-      return;
-    }
-    focusNodeVal.value = val;
-  }
-
-  Core<bool> autofocusVal;
-
-  bool get autofocus {
-    return autofocusVal.value;
-  }
-
-  set autofocus(bool val) {
-    if (val == this.autofocus) {
-      return;
-    }
-    autofocusVal.value = val;
-  }
-
-
-  @override
-  Map<String, dynamic> get staticFields => {
-  };
-
-  @override
-  List<Core> get props => [
-    this.valueVal,
-    this.groupValueVal,
-    this.onChangedVal,
-    this.mouseCursorVal,
-    this.toggleableVal,
-    this.activeColorVal,
-    this.materialTapTargetSizeVal,
-    this.visualDensityVal,
-    this.focusColorVal,
-    this.hoverColorVal,
-    this.focusNodeVal,
-    this.autofocusVal,
-  ];
-
-  @override
-  String get description {
-    final sb = StringBuffer();
-    sb.writeln("[ * <https://material.io/design/components/selection-controls.html#radio-buttons>]");
-    return sb.toString();
-  }
-
-  @override
-  Map<String, Object> get constructors {
-     return {
-      'default': Radio(
-        value: this.value,
-        groupValue: this.groupValue,
-        onChanged: this.onChanged,
-        mouseCursor: this.mouseCursor,
-        toggleable: this.toggleable,
-        activeColor: this.activeColor,
-        focusColor: this.focusColor,
-        hoverColor: this.hoverColor,
-        materialTapTargetSize: this.materialTapTargetSize,
-        visualDensity: this.visualDensity,
-        focusNode: this.focusNode,
-        autofocus: this.autofocus,
-      ),
-    };
-  }
-
-  @override
-  Map<String, Map<String, dynamic>> get properties {
-     return {
-      'default': {
-        'value': this.value,
-        'groupValue': this.groupValue,
-        'onChanged': this.onChanged,
-        'mouseCursor': this.mouseCursor,
-        'toggleable': this.toggleable,
-        'activeColor': this.activeColor,
-        'focusColor': this.focusColor,
-        'hoverColor': this.hoverColor,
-        'materialTapTargetSize': this.materialTapTargetSize,
-        'visualDensity': this.visualDensity,
-        'focusNode': this.focusNode,
-        'autofocus': this.autofocus,
-      },
-    };
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      'name': 'Radio',
-      'props': {
-        'value': this.valueVal.toJson(),
-        'groupValue': this.groupValueVal.toJson(),
-        'onChanged': this.onChangedVal.toJson(),
-        'mouseCursor': this.mouseCursorVal.toJson(),
-        'toggleable': this.toggleableVal.toJson(),
-        'activeColor': this.activeColorVal.toJson(),
-        'materialTapTargetSize': this.materialTapTargetSizeVal.toJson(),
-        'visualDensity': this.visualDensityVal.toJson(),
-        'focusColor': this.focusColorVal.toJson(),
-        'hoverColor': this.hoverColorVal.toJson(),
-        'focusNode': this.focusNodeVal.toJson(),
-        'autofocus': this.autofocusVal.toJson(),
-      }
-    };
-  }
-
-  @override
-  Map<String, String> toCode() {
-    return {
-    'default': """Radio(
-       value: ${this.valueVal.toCode()},
-       groupValue: ${this.groupValueVal.toCode()},
-       onChanged: ${this.onChangedVal.toCode()},
-       mouseCursor: ${this.mouseCursorVal.toCode()},
-       toggleable: ${this.toggleableVal.toCode()},
-       activeColor: ${this.activeColorVal.toCode()},
-       focusColor: ${this.focusColorVal.toCode()},
-       hoverColor: ${this.hoverColorVal.toCode()},
-       materialTapTargetSize: ${this.materialTapTargetSizeVal.toCode()},
-       visualDensity: ${this.visualDensityVal.toCode()},
-       focusNode: ${this.focusNodeVal.toCode()},
-       autofocus: ${this.autofocusVal.toCode()},
-    )""",
-    };
-  }
-
-  final _controller = ValueNotifier<WidgetRect>(null);
-  ValueListenable<WidgetRect> get stats => _controller;
-
-  @override
-  Widget build(BuildContext context) {
-    if (isWidget) return TrackedWidget(
-      controller: _controller,
-      child: defaultBase,
-    );
-    return Container();
-  }
-
-  @override
-  bool get isWidget => defaultBase is Widget;
-  
-  @override
-  Object get defaultBase => constructors['default'];
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-      properties.add(DiagnosticsProperty('value', this.value));
-      properties.add(DiagnosticsProperty('groupValue', this.groupValue));
-      properties.add(DiagnosticsProperty('onChanged', this.onChanged));
-      properties.add(DiagnosticsProperty('mouseCursor', this.mouseCursor));
-      properties.add(DiagnosticsProperty('toggleable', this.toggleable));
-      properties.add(DiagnosticsProperty('activeColor', this.activeColor));
-      properties.add(DiagnosticsProperty('materialTapTargetSize', this.materialTapTargetSize));
-      properties.add(DiagnosticsProperty('visualDensity', this.visualDensity));
-      properties.add(DiagnosticsProperty('focusColor', this.focusColor));
-      properties.add(DiagnosticsProperty('hoverColor', this.hoverColor));
-      properties.add(DiagnosticsProperty('focusNode', this.focusNode));
-      properties.add(DiagnosticsProperty('autofocus', this.autofocus));
-  }
 }
 

@@ -1,386 +1,251 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/rendering.dart';
+import '../base.dart';
+
+class CheckboxListTileBase extends BaseWidget {
+    CheckboxListTileBase();
+
+    factory CheckboxListTileBase.fromJson(Map<String, dynamic> data) {
+        return CheckboxListTileBase();
+    }
+
+    @override
+    String get description => r'''
+A [ListTile] with a [Checkbox]. In other words, a checkbox with a label.
+
+The entire list tile is interactive: tapping anywhere in the tile toggles
+the checkbox.
+
+{@youtube 560 315 https://www.youtube.com/watch?v=RkSqPAn9szs}
+
+The [value], [onChanged], [activeColor] and [checkColor] properties of this widget are
+identical to the similarly-named properties on the [Checkbox] widget.
+
+The [title], [subtitle], [isThreeLine], [dense], and [contentPadding] properties are like
+those of the same name on [ListTile].
+
+The [selected] property on this widget is similar to the [ListTile.selected]
+property, but the color used is that described by [activeColor], if any,
+defaulting to the accent color of the current [Theme]. No effort is made to
+coordinate the [selected] state and the [value] state; to have the list tile
+appear selected when the checkbox is checked, pass the same value to both.
+
+The checkbox is shown on the right by default in left-to-right languages
+(i.e. the trailing edge). This can be changed using [controlAffinity]. The
+[secondary] widget is placed on the opposite side. This maps to the
+[ListTile.leading] and [ListTile.trailing] properties of [ListTile].
+
+To show the [CheckboxListTile] as disabled, pass null as the [onChanged]
+callback.
+
+{@tool dartpad --template=stateful_widget_scaffold_center}
+
+![CheckboxListTile sample](https://flutter.github.io/assets-for-api-docs/assets/material/checkbox_list_tile.png)
+
+This widget shows a checkbox that, when checked, slows down all animations
+(including the animation of the checkbox itself getting checked!).
+
+This sample requires that you also import 'package:flutter/scheduler.dart',
+so that you can reference [timeDilation].
+
+```dart imports
+import 'package:flutter/scheduler.dart' show timeDilation;
+```
+```dart
+@override
+Widget build(BuildContext context) {
+return CheckboxListTile(
+title: const Text('Animate Slowly'),
+value: timeDilation != 1.0,
+onChanged: (bool value) {
+setState(() { timeDilation = value ? 10.0 : 1.0; });
+},
+secondary: const Icon(Icons.hourglass_empty),
+);
+}
+```
+{@end-tool}
+
+## Semantics in CheckboxListTile
+
+Since the entirety of the CheckboxListTile is interactive, it should represent
+itself as a single interactive entity.
+
+To do so, a CheckboxListTile widget wraps its children with a [MergeSemantics]
+widget. [MergeSemantics] will attempt to merge its descendant [Semantics]
+nodes into one node in the semantics tree. Therefore, CheckboxListTile will
+throw an error if any of its children requires its own [Semantics] node.
+
+For example, you cannot nest a [RichText] widget as a descendant of
+CheckboxListTile. [RichText] has an embedded gesture recognizer that
+requires its own [Semantics] node, which directly conflicts with
+CheckboxListTile's desire to merge all its descendants' semantic nodes
+into one. Therefore, it may be necessary to create a custom radio tile
+widget to accommodate similar use cases.
+
+{@tool sample --template=stateful_widget_scaffold_center}
+
+![Checkbox list tile semantics sample](https://flutter.github.io/assets-for-api-docs/assets/material/checkbox_list_tile_semantics.png)
+
+Here is an example of a custom labeled checkbox widget, called
+LinkedLabelCheckbox, that includes an interactive [RichText] widget that
+handles tap gestures.
+
+```dart imports
 import 'package:flutter/gestures.dart';
-import '../core.dart';
+```
+```dart preamble
+class LinkedLabelCheckbox extends StatelessWidget {
+const LinkedLabelCheckbox({
+this.label,
+this.padding,
+this.value,
+this.onChanged,
+});
 
-class CheckboxListTileRender<T> extends StatelessWidget {
+final String label;
+final EdgeInsets padding;
+final bool value;
+final Function onChanged;
 
-  factory CheckboxListTileRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
-    return CheckboxListTileRender(update,
-      valueVal: BaseCore<bool>(null, update),
-      onChangedVal: BaseCore<ValueChanged<bool>>(null, update),
-      activeColorVal: BaseCore<Color>(null, update),
-      checkColorVal: BaseCore<Color>(null, update),
-      titleVal: BaseCore<Widget>(null, update),
-      subtitleVal: BaseCore<Widget>(null, update),
-      secondaryVal: BaseCore<Widget>(null, update),
-      isThreeLineVal: BaseCore<bool>(null, update),
-      denseVal: BaseCore<bool>(null, update),
-      selectedVal: BaseCore<bool>(null, update),
-      controlAffinityVal: BaseCore<ListTileControlAffinity>(null, update),
-      autofocusVal: BaseCore<bool>(null, update),
-      contentPaddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
-      tristateVal: BaseCore<bool>(null, update),
-    );
-  }
+@override
+Widget build(BuildContext context) {
+return Padding(
+padding: padding,
+child: Row(
+children: <Widget>[
+Expanded(
+child: RichText(
+text: TextSpan(
+text: label,
+style: TextStyle(
+color: Colors.blueAccent,
+decoration: TextDecoration.underline,
+),
+recognizer: TapGestureRecognizer()
+..onTap = () {
+print('Label has been tapped.');
+},
+),
+),
+),
+Checkbox(
+value: value,
+onChanged: (bool newValue) {
+onChanged(newValue);
+},
+),
+],
+),
+);
+}
+}
+```
+```dart
+bool _isSelected = false;
 
-  CheckboxListTileRender(this._update, {
-    @required this.valueVal,
-    @required this.onChangedVal,
-    @required this.activeColorVal,
-    @required this.checkColorVal,
-    @required this.titleVal,
-    @required this.subtitleVal,
-    @required this.secondaryVal,
-    @required this.isThreeLineVal,
-    @required this.denseVal,
-    @required this.selectedVal,
-    @required this.controlAffinityVal,
-    @required this.autofocusVal,
-    @required this.contentPaddingVal,
-    @required this.tristateVal,
-  });
+@override
+Widget build(BuildContext context) {
+return LinkedLabelCheckbox(
+label: 'Linked, tappable label text',
+padding: const EdgeInsets.symmetric(horizontal: 20.0),
+value: _isSelected,
+onChanged: (bool newValue) {
+setState(() {
+_isSelected = newValue;
+});
+},
+);
+}
+```
+{@end-tool}
 
-  @override
-  final VoidCallback _update;
+## CheckboxListTile isn't exactly what I want
 
-  Core<bool> valueVal;
+If the way CheckboxListTile pads and positions its elements isn't quite
+what you're looking for, you can create custom labeled checkbox widgets by
+combining [Checkbox] with other widgets, such as [Text], [Padding] and
+[InkWell].
 
-  bool get value {
-    return valueVal.value;
-  }
+{@tool dartpad --template=stateful_widget_scaffold_center}
 
-  set value(bool val) {
-    if (val == this.value) {
-      return;
+![Custom checkbox list tile sample](https://flutter.github.io/assets-for-api-docs/assets/material/checkbox_list_tile_custom.png)
+
+Here is an example of a custom LabeledCheckbox widget, but you can easily
+make your own configurable widget.
+
+```dart preamble
+class LabeledCheckbox extends StatelessWidget {
+const LabeledCheckbox({
+this.label,
+this.padding,
+this.value,
+this.onChanged,
+});
+
+final String label;
+final EdgeInsets padding;
+final bool value;
+final Function onChanged;
+
+@override
+Widget build(BuildContext context) {
+return InkWell(
+onTap: () {
+onChanged(!value);
+},
+child: Padding(
+padding: padding,
+child: Row(
+children: <Widget>[
+Expanded(child: Text(label)),
+Checkbox(
+value: value,
+onChanged: (bool newValue) {
+onChanged(newValue);
+},
+),
+],
+),
+),
+);
+}
+}
+```
+```dart
+bool _isSelected = false;
+
+@override
+Widget build(BuildContext context) {
+return LabeledCheckbox(
+label: 'This is the label text',
+padding: const EdgeInsets.symmetric(horizontal: 20.0),
+value: _isSelected,
+onChanged: (bool newValue) {
+setState(() {
+_isSelected = newValue;
+});
+},
+);
+}
+```
+{@end-tool}
+
+See also:
+
+* [ListTileTheme], which can be used to affect the style of list tiles,
+including checkbox list tiles.
+* [RadioListTile], a similar widget for radio buttons.
+* [SwitchListTile], a similar widget for switches.
+* [ListTile] and [Checkbox], the widgets from which this widget is made.
+''';
+
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
     }
-    valueVal.value = val;
-  }
 
-  Core<ValueChanged<bool>> onChangedVal;
-
-  ValueChanged<bool> get onChanged {
-    return onChangedVal.value;
-  }
-
-  set onChanged(ValueChanged<bool> val) {
-    if (val == this.onChanged) {
-      return;
+    @override
+    Widget render(BuildContext context) {
+        return Container();
     }
-    onChangedVal.value = val;
-  }
-
-  Core<Color> activeColorVal;
-
-  Color get activeColor {
-    return activeColorVal.value;
-  }
-
-  set activeColor(Color val) {
-    if (val == this.activeColor) {
-      return;
-    }
-    activeColorVal.value = val;
-  }
-
-  Core<Color> checkColorVal;
-
-  Color get checkColor {
-    return checkColorVal.value;
-  }
-
-  set checkColor(Color val) {
-    if (val == this.checkColor) {
-      return;
-    }
-    checkColorVal.value = val;
-  }
-
-  Core<Widget> titleVal;
-
-  Widget get title {
-    return titleVal.value;
-  }
-
-  set title(Widget val) {
-    if (val == this.title) {
-      return;
-    }
-    titleVal.value = val;
-  }
-
-  Core<Widget> subtitleVal;
-
-  Widget get subtitle {
-    return subtitleVal.value;
-  }
-
-  set subtitle(Widget val) {
-    if (val == this.subtitle) {
-      return;
-    }
-    subtitleVal.value = val;
-  }
-
-  Core<Widget> secondaryVal;
-
-  Widget get secondary {
-    return secondaryVal.value;
-  }
-
-  set secondary(Widget val) {
-    if (val == this.secondary) {
-      return;
-    }
-    secondaryVal.value = val;
-  }
-
-  Core<bool> isThreeLineVal;
-
-  bool get isThreeLine {
-    return isThreeLineVal.value;
-  }
-
-  set isThreeLine(bool val) {
-    if (val == this.isThreeLine) {
-      return;
-    }
-    isThreeLineVal.value = val;
-  }
-
-  Core<bool> denseVal;
-
-  bool get dense {
-    return denseVal.value;
-  }
-
-  set dense(bool val) {
-    if (val == this.dense) {
-      return;
-    }
-    denseVal.value = val;
-  }
-
-  Core<bool> selectedVal;
-
-  bool get selected {
-    return selectedVal.value;
-  }
-
-  set selected(bool val) {
-    if (val == this.selected) {
-      return;
-    }
-    selectedVal.value = val;
-  }
-
-  Core<ListTileControlAffinity> controlAffinityVal;
-
-  ListTileControlAffinity get controlAffinity {
-    return controlAffinityVal.value;
-  }
-
-  set controlAffinity(ListTileControlAffinity val) {
-    if (val == this.controlAffinity) {
-      return;
-    }
-    controlAffinityVal.value = val;
-  }
-
-  Core<bool> autofocusVal;
-
-  bool get autofocus {
-    return autofocusVal.value;
-  }
-
-  set autofocus(bool val) {
-    if (val == this.autofocus) {
-      return;
-    }
-    autofocusVal.value = val;
-  }
-
-  Core<EdgeInsetsGeometry> contentPaddingVal;
-
-  EdgeInsetsGeometry get contentPadding {
-    return contentPaddingVal.value;
-  }
-
-  set contentPadding(EdgeInsetsGeometry val) {
-    if (val == this.contentPadding) {
-      return;
-    }
-    contentPaddingVal.value = val;
-  }
-
-  Core<bool> tristateVal;
-
-  bool get tristate {
-    return tristateVal.value;
-  }
-
-  set tristate(bool val) {
-    if (val == this.tristate) {
-      return;
-    }
-    tristateVal.value = val;
-  }
-
-
-  @override
-  Map<String, dynamic> get staticFields => {
-  };
-
-  @override
-  List<Core> get props => [
-    this.valueVal,
-    this.onChangedVal,
-    this.activeColorVal,
-    this.checkColorVal,
-    this.titleVal,
-    this.subtitleVal,
-    this.secondaryVal,
-    this.isThreeLineVal,
-    this.denseVal,
-    this.selectedVal,
-    this.controlAffinityVal,
-    this.autofocusVal,
-    this.contentPaddingVal,
-    this.tristateVal,
-  ];
-
-  @override
-  String get description {
-    final sb = StringBuffer();
-    sb.writeln("[ * [ListTile] and [Checkbox], the widgets from which this widget is made.]");
-    return sb.toString();
-  }
-
-  @override
-  Map<String, Object> get constructors {
-     return {
-      'default': CheckboxListTile(
-        value: this.value,
-        onChanged: this.onChanged,
-        activeColor: this.activeColor,
-        checkColor: this.checkColor,
-        title: this.title,
-        subtitle: this.subtitle,
-        isThreeLine: this.isThreeLine,
-        dense: this.dense,
-        secondary: this.secondary,
-        selected: this.selected,
-        controlAffinity: this.controlAffinity,
-        autofocus: this.autofocus,
-        contentPadding: this.contentPadding,
-        tristate: this.tristate,
-      ),
-    };
-  }
-
-  @override
-  Map<String, Map<String, dynamic>> get properties {
-     return {
-      'default': {
-        'value': this.value,
-        'onChanged': this.onChanged,
-        'activeColor': this.activeColor,
-        'checkColor': this.checkColor,
-        'title': this.title,
-        'subtitle': this.subtitle,
-        'isThreeLine': this.isThreeLine,
-        'dense': this.dense,
-        'secondary': this.secondary,
-        'selected': this.selected,
-        'controlAffinity': this.controlAffinity,
-        'autofocus': this.autofocus,
-        'contentPadding': this.contentPadding,
-        'tristate': this.tristate,
-      },
-    };
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      'name': 'CheckboxListTile',
-      'props': {
-        'value': this.valueVal.toJson(),
-        'onChanged': this.onChangedVal.toJson(),
-        'activeColor': this.activeColorVal.toJson(),
-        'checkColor': this.checkColorVal.toJson(),
-        'title': this.titleVal.toJson(),
-        'subtitle': this.subtitleVal.toJson(),
-        'secondary': this.secondaryVal.toJson(),
-        'isThreeLine': this.isThreeLineVal.toJson(),
-        'dense': this.denseVal.toJson(),
-        'selected': this.selectedVal.toJson(),
-        'controlAffinity': this.controlAffinityVal.toJson(),
-        'autofocus': this.autofocusVal.toJson(),
-        'contentPadding': this.contentPaddingVal.toJson(),
-        'tristate': this.tristateVal.toJson(),
-      }
-    };
-  }
-
-  @override
-  Map<String, String> toCode() {
-    return {
-    'default': """CheckboxListTile(
-       value: ${this.valueVal.toCode()},
-       onChanged: ${this.onChangedVal.toCode()},
-       activeColor: ${this.activeColorVal.toCode()},
-       checkColor: ${this.checkColorVal.toCode()},
-       title: ${this.titleVal.toCode()},
-       subtitle: ${this.subtitleVal.toCode()},
-       isThreeLine: ${this.isThreeLineVal.toCode()},
-       dense: ${this.denseVal.toCode()},
-       secondary: ${this.secondaryVal.toCode()},
-       selected: ${this.selectedVal.toCode()},
-       controlAffinity: ${this.controlAffinityVal.toCode()},
-       autofocus: ${this.autofocusVal.toCode()},
-       contentPadding: ${this.contentPaddingVal.toCode()},
-       tristate: ${this.tristateVal.toCode()},
-    )""",
-    };
-  }
-
-  final _controller = ValueNotifier<WidgetRect>(null);
-  ValueListenable<WidgetRect> get stats => _controller;
-
-  @override
-  Widget build(BuildContext context) {
-    if (isWidget) return TrackedWidget(
-      controller: _controller,
-      child: defaultBase,
-    );
-    return Container();
-  }
-
-  @override
-  bool get isWidget => defaultBase is Widget;
-  
-  @override
-  Object get defaultBase => constructors['default'];
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-      properties.add(DiagnosticsProperty('value', this.value));
-      properties.add(DiagnosticsProperty('onChanged', this.onChanged));
-      properties.add(DiagnosticsProperty('activeColor', this.activeColor));
-      properties.add(DiagnosticsProperty('checkColor', this.checkColor));
-      properties.add(DiagnosticsProperty('title', this.title));
-      properties.add(DiagnosticsProperty('subtitle', this.subtitle));
-      properties.add(DiagnosticsProperty('secondary', this.secondary));
-      properties.add(DiagnosticsProperty('isThreeLine', this.isThreeLine));
-      properties.add(DiagnosticsProperty('dense', this.dense));
-      properties.add(DiagnosticsProperty('selected', this.selected));
-      properties.add(DiagnosticsProperty('controlAffinity', this.controlAffinity));
-      properties.add(DiagnosticsProperty('autofocus', this.autofocus));
-      properties.add(DiagnosticsProperty('contentPadding', this.contentPadding));
-      properties.add(DiagnosticsProperty('tristate', this.tristate));
-  }
 }
 

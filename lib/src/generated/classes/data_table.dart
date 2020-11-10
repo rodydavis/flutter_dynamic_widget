@@ -1,218 +1,160 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/gestures.dart';
-import '../core.dart';
+import '../base.dart';
 
-class TableRowInkWellRender<T> extends StatelessWidget {
+class DataTableBase extends BaseWidget {
+    DataTableBase();
 
-  factory TableRowInkWellRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
-    return TableRowInkWellRender(update,
-      childVal: BaseCore<Widget>(null, update),
-      onTapVal: BaseCore<GestureTapCallback>(null, update),
-      onDoubleTapVal: BaseCore<GestureTapCallback>(null, update),
-      onLongPressVal: BaseCore<GestureLongPressCallback>(null, update),
-      onHighlightChangedVal: BaseCore<ValueChanged<bool>>(null, update),
-      overlayColorVal: BaseCore<MaterialStateProperty<Color>>(null, update),
-    );
-  }
-
-  TableRowInkWellRender(this._update, {
-    @required this.childVal,
-    @required this.onTapVal,
-    @required this.onDoubleTapVal,
-    @required this.onLongPressVal,
-    @required this.onHighlightChangedVal,
-    @required this.overlayColorVal,
-  });
-
-  @override
-  final VoidCallback _update;
-
-  Core<Widget> childVal;
-
-  Widget get child {
-    return childVal.value;
-  }
-
-  set child(Widget val) {
-    if (val == this.child) {
-      return;
+    factory DataTableBase.fromJson(Map<String, dynamic> data) {
+        return DataTableBase();
     }
-    childVal.value = val;
-  }
 
-  Core<GestureTapCallback> onTapVal;
+    @override
+    String get description => r'''
+A material design data table.
 
-  GestureTapCallback get onTap {
-    return onTapVal.value;
-  }
+{@youtube 560 315 https://www.youtube.com/watch?v=ktTajqbhIcY}
 
-  set onTap(GestureTapCallback val) {
-    if (val == this.onTap) {
-      return;
+Displaying data in a table is expensive, because to lay out the
+table all the data must be measured twice, once to negotiate the
+dimensions to use for each column, and once to actually lay out
+the table given the results of the negotiation.
+
+For this reason, if you have a lot of data (say, more than a dozen
+rows with a dozen columns, though the precise limits depend on the
+target device), it is suggested that you use a
+[PaginatedDataTable] which automatically splits the data into
+multiple pages.
+
+{@tool dartpad --template=stateless_widget_scaffold}
+
+This sample shows how to display a [DataTable] with three columns: name, age, and
+role. The columns are defined by three [DataColumn] objects. The table
+contains three rows of data for three example users, the data for which
+is defined by three [DataRow] objects.
+
+![](https://flutter.github.io/assets-for-api-docs/assets/material/data_table.png)
+
+```dart
+Widget build(BuildContext context) {
+return DataTable(
+columns: const <DataColumn>[
+DataColumn(
+label: Text(
+'Name',
+style: TextStyle(fontStyle: FontStyle.italic),
+),
+),
+DataColumn(
+label: Text(
+'Age',
+style: TextStyle(fontStyle: FontStyle.italic),
+),
+),
+DataColumn(
+label: Text(
+'Role',
+style: TextStyle(fontStyle: FontStyle.italic),
+),
+),
+],
+rows: const <DataRow>[
+DataRow(
+cells: <DataCell>[
+DataCell(Text('Sarah')),
+DataCell(Text('19')),
+DataCell(Text('Student')),
+],
+),
+DataRow(
+cells: <DataCell>[
+DataCell(Text('Janine')),
+DataCell(Text('43')),
+DataCell(Text('Professor')),
+],
+),
+DataRow(
+cells: <DataCell>[
+DataCell(Text('William')),
+DataCell(Text('27')),
+DataCell(Text('Associate Professor')),
+],
+),
+],
+);
+}
+```
+
+{@end-tool}
+
+
+{@tool dartpad --template=stateful_widget_scaffold}
+
+This sample shows how to display a [DataTable] with alternate colors per
+row, and a custom color for when the row is selected.
+
+```dart
+static const int numItems = 10;
+List<bool> selected = List<bool>.generate(numItems, (index) => false);
+
+@override
+Widget build(BuildContext context) {
+return SizedBox(
+width: double.infinity,
+child: DataTable(
+columns: const <DataColumn>[
+DataColumn(
+label: const Text('Number'),
+),
+],
+rows: List<DataRow>.generate(
+numItems,
+(index) => DataRow(
+color: MaterialStateProperty.resolveWith<Color>((Set<MaterialState> states) {
+// All rows will have the same selected color.
+if (states.contains(MaterialState.selected))
+return Theme.of(context).colorScheme.primary.withOpacity(0.08);
+// Even rows will have a grey color.
+if (index % 2 == 0)
+return Colors.grey.withOpacity(0.3);
+return null;  // Use default value for other states and odd rows.
+}),
+cells: [DataCell(Text('Row $index'))],
+selected: selected[index],
+onSelectChanged: (bool value) {
+setState(() {
+selected[index] = value;
+});
+},
+),
+),
+),
+);
+}
+```
+{@end-tool}
+
+[DataTable] can be sorted on the basis of any column in [columns] in
+ascending or descending order. If [sortColumnIndex] is non-null, then the
+table will be sorted by the values in the specified column. The boolean
+[sortAscending] flag controls the sort order.
+
+See also:
+
+* [DataColumn], which describes a column in the data table.
+* [DataRow], which contains the data for a row in the data table.
+* [DataCell], which contains the data for a single cell in the data table.
+* [PaginatedDataTable], which shows part of the data in a data table and
+provides controls for paging through the remainder of the data.
+* <https://material.io/design/components/data-tables.html>
+''';
+
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
     }
-    onTapVal.value = val;
-  }
 
-  Core<GestureTapCallback> onDoubleTapVal;
-
-  GestureTapCallback get onDoubleTap {
-    return onDoubleTapVal.value;
-  }
-
-  set onDoubleTap(GestureTapCallback val) {
-    if (val == this.onDoubleTap) {
-      return;
+    @override
+    Widget render(BuildContext context) {
+        return Container();
     }
-    onDoubleTapVal.value = val;
-  }
-
-  Core<GestureLongPressCallback> onLongPressVal;
-
-  GestureLongPressCallback get onLongPress {
-    return onLongPressVal.value;
-  }
-
-  set onLongPress(GestureLongPressCallback val) {
-    if (val == this.onLongPress) {
-      return;
-    }
-    onLongPressVal.value = val;
-  }
-
-  Core<ValueChanged<bool>> onHighlightChangedVal;
-
-  ValueChanged<bool> get onHighlightChanged {
-    return onHighlightChangedVal.value;
-  }
-
-  set onHighlightChanged(ValueChanged<bool> val) {
-    if (val == this.onHighlightChanged) {
-      return;
-    }
-    onHighlightChangedVal.value = val;
-  }
-
-  Core<MaterialStateProperty<Color>> overlayColorVal;
-
-  MaterialStateProperty<Color> get overlayColor {
-    return overlayColorVal.value;
-  }
-
-  set overlayColor(MaterialStateProperty<Color> val) {
-    if (val == this.overlayColor) {
-      return;
-    }
-    overlayColorVal.value = val;
-  }
-
-
-  @override
-  Map<String, dynamic> get staticFields => {
-  };
-
-  @override
-  List<Core> get props => [
-    this.childVal,
-    this.onTapVal,
-    this.onDoubleTapVal,
-    this.onLongPressVal,
-    this.onHighlightChangedVal,
-    this.overlayColorVal,
-  ];
-
-  @override
-  String get description {
-    final sb = StringBuffer();
-    sb.writeln("[[Table], and put the other contents of the cell inside it.)]");
-    return sb.toString();
-  }
-
-  @override
-  Map<String, Object> get constructors {
-     return {
-      'default': TableRowInkWell(
-        child: this.child,
-        onTap: this.onTap,
-        onDoubleTap: this.onDoubleTap,
-        onLongPress: this.onLongPress,
-        onHighlightChanged: this.onHighlightChanged,
-        overlayColor: this.overlayColor,
-      ),
-    };
-  }
-
-  @override
-  Map<String, Map<String, dynamic>> get properties {
-     return {
-      'default': {
-        'child': this.child,
-        'onTap': this.onTap,
-        'onDoubleTap': this.onDoubleTap,
-        'onLongPress': this.onLongPress,
-        'onHighlightChanged': this.onHighlightChanged,
-        'overlayColor': this.overlayColor,
-      },
-    };
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      'name': 'TableRowInkWell',
-      'props': {
-        'child': this.childVal.toJson(),
-        'onTap': this.onTapVal.toJson(),
-        'onDoubleTap': this.onDoubleTapVal.toJson(),
-        'onLongPress': this.onLongPressVal.toJson(),
-        'onHighlightChanged': this.onHighlightChangedVal.toJson(),
-        'overlayColor': this.overlayColorVal.toJson(),
-      }
-    };
-  }
-
-  @override
-  Map<String, String> toCode() {
-    return {
-    'default': """TableRowInkWell(
-       child: ${this.childVal.toCode()},
-       onTap: ${this.onTapVal.toCode()},
-       onDoubleTap: ${this.onDoubleTapVal.toCode()},
-       onLongPress: ${this.onLongPressVal.toCode()},
-       onHighlightChanged: ${this.onHighlightChangedVal.toCode()},
-       overlayColor: ${this.overlayColorVal.toCode()},
-    )""",
-    };
-  }
-
-  final _controller = ValueNotifier<WidgetRect>(null);
-  ValueListenable<WidgetRect> get stats => _controller;
-
-  @override
-  Widget build(BuildContext context) {
-    if (isWidget) return TrackedWidget(
-      controller: _controller,
-      child: defaultBase,
-    );
-    return Container();
-  }
-
-  @override
-  bool get isWidget => defaultBase is Widget;
-  
-  @override
-  Object get defaultBase => constructors['default'];
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-      properties.add(DiagnosticsProperty('child', this.child));
-      properties.add(DiagnosticsProperty('onTap', this.onTap));
-      properties.add(DiagnosticsProperty('onDoubleTap', this.onDoubleTap));
-      properties.add(DiagnosticsProperty('onLongPress', this.onLongPress));
-      properties.add(DiagnosticsProperty('onHighlightChanged', this.onHighlightChanged));
-      properties.add(DiagnosticsProperty('overlayColor', this.overlayColor));
-  }
 }
 

@@ -1,506 +1,250 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/rendering.dart';
+import '../base.dart';
+
+class SwitchListTileBase extends BaseWidget {
+    SwitchListTileBase();
+
+    factory SwitchListTileBase.fromJson(Map<String, dynamic> data) {
+        return SwitchListTileBase();
+    }
+
+    @override
+    String get description => r'''
+A [ListTile] with a [Switch]. In other words, a switch with a label.
+
+The entire list tile is interactive: tapping anywhere in the tile toggles
+the switch. Tapping and dragging the [Switch] also triggers the [onChanged]
+callback.
+
+To ensure that [onChanged] correctly triggers, the state passed
+into [value] must be properly managed. This is typically done by invoking
+[State.setState] in [onChanged] to toggle the state value.
+
+The [value], [onChanged], [activeColor], [activeThumbImage], and
+[inactiveThumbImage] properties of this widget are identical to the
+similarly-named properties on the [Switch] widget.
+
+The [title], [subtitle], [isThreeLine], and [dense] properties are like
+those of the same name on [ListTile].
+
+The [selected] property on this widget is similar to the [ListTile.selected]
+property, but the color used is that described by [activeColor], if any,
+defaulting to the accent color of the current [Theme]. No effort is made to
+coordinate the [selected] state and the [value] state; to have the list tile
+appear selected when the switch is on, pass the same value to both.
+
+The switch is shown on the right by default in left-to-right languages (i.e.
+in the [ListTile.trailing] slot) which can be changed using [controlAffinity].
+The [secondary] widget is placed in the [ListTile.leading] slot.
+
+To show the [SwitchListTile] as disabled, pass null as the [onChanged]
+callback.
+
+{@tool dartpad --template=stateful_widget_scaffold_center}
+
+![SwitchListTile sample](https://flutter.github.io/assets-for-api-docs/assets/material/switch_list_tile.png)
+
+This widget shows a switch that, when toggled, changes the state of a [bool]
+member field called `_lights`.
+
+```dart
+bool _lights = false;
+
+@override
+Widget build(BuildContext context) {
+return SwitchListTile(
+title: const Text('Lights'),
+value: _lights,
+onChanged: (bool value) { setState(() { _lights = value; }); },
+secondary: const Icon(Icons.lightbulb_outline),
+);
+}
+```
+{@end-tool}
+
+## Semantics in SwitchListTile
+
+Since the entirety of the SwitchListTile is interactive, it should represent
+itself as a single interactive entity.
+
+To do so, a SwitchListTile widget wraps its children with a [MergeSemantics]
+widget. [MergeSemantics] will attempt to merge its descendant [Semantics]
+nodes into one node in the semantics tree. Therefore, SwitchListTile will
+throw an error if any of its children requires its own [Semantics] node.
+
+For example, you cannot nest a [RichText] widget as a descendant of
+SwitchListTile. [RichText] has an embedded gesture recognizer that
+requires its own [Semantics] node, which directly conflicts with
+SwitchListTile's desire to merge all its descendants' semantic nodes
+into one. Therefore, it may be necessary to create a custom radio tile
+widget to accommodate similar use cases.
+
+{@tool dartpad --template=stateful_widget_scaffold_center}
+
+![Switch list tile semantics sample](https://flutter.github.io/assets-for-api-docs/assets/material/switch_list_tile_semantics.png)
+
+Here is an example of a custom labeled radio widget, called
+LinkedLabelRadio, that includes an interactive [RichText] widget that
+handles tap gestures.
+
+```dart imports
 import 'package:flutter/gestures.dart';
-import '../core.dart';
+```
+```dart preamble
+class LinkedLabelSwitch extends StatelessWidget {
+const LinkedLabelSwitch({
+this.label,
+this.padding,
+this.value,
+this.onChanged,
+});
 
-class SwitchListTileRender<T> extends StatelessWidget {
+final String label;
+final EdgeInsets padding;
+final bool value;
+final Function onChanged;
 
-  factory SwitchListTileRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
-    return SwitchListTileRender(update,
-      valueVal: BaseCore<bool>(null, update),
-      onChangedVal: BaseCore<ValueChanged<bool>>(null, update),
-      activeColorVal: BaseCore<Color>(null, update),
-      activeTrackColorVal: BaseCore<Color>(null, update),
-      inactiveThumbColorVal: BaseCore<Color>(null, update),
-      inactiveTrackColorVal: BaseCore<Color>(null, update),
-      activeThumbImageVal: BaseCore<ImageProvider>(null, update),
-      inactiveThumbImageVal: BaseCore<ImageProvider>(null, update),
-      titleVal: BaseCore<Widget>(null, update),
-      subtitleVal: BaseCore<Widget>(null, update),
-      secondaryVal: BaseCore<Widget>(null, update),
-      isThreeLineVal: BaseCore<bool>(null, update),
-      denseVal: BaseCore<bool>(null, update),
-      contentPaddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
-      selectedVal: BaseCore<bool>(null, update),
-      autofocusVal: BaseCore<bool>(null, update),
-      controlAffinityVal: BaseCore<ListTileControlAffinity>(null, update),
-    );
-  }
+@override
+Widget build(BuildContext context) {
+return Padding(
+padding: padding,
+child: Row(
+children: <Widget>[
+Expanded(
+child: RichText(
+text: TextSpan(
+text: label,
+style: TextStyle(
+color: Colors.blueAccent,
+decoration: TextDecoration.underline,
+),
+recognizer: TapGestureRecognizer()
+..onTap = () {
+print('Label has been tapped.');
+},
+),
+),
+),
+Switch(
+value: value,
+onChanged: (bool newValue) {
+onChanged(newValue);
+},
+),
+],
+),
+);
+}
+}
+```
+```dart
+bool _isSelected = false;
 
-  SwitchListTileRender(this._update, {
-    @required this.valueVal,
-    @required this.onChangedVal,
-    @required this.activeColorVal,
-    @required this.activeTrackColorVal,
-    @required this.inactiveThumbColorVal,
-    @required this.inactiveTrackColorVal,
-    @required this.activeThumbImageVal,
-    @required this.inactiveThumbImageVal,
-    @required this.titleVal,
-    @required this.subtitleVal,
-    @required this.secondaryVal,
-    @required this.isThreeLineVal,
-    @required this.denseVal,
-    @required this.contentPaddingVal,
-    @required this.selectedVal,
-    @required this.autofocusVal,
-    @required this.controlAffinityVal,
-  });
+@override
+Widget build(BuildContext context) {
+return LinkedLabelSwitch(
+label: 'Linked, tappable label text',
+padding: const EdgeInsets.symmetric(horizontal: 20.0),
+value: _isSelected,
+onChanged: (bool newValue) {
+setState(() {
+_isSelected = newValue;
+});
+},
+);
+}
+```
+{@end-tool}
 
-  @override
-  final VoidCallback _update;
+## SwitchListTile isn't exactly what I want
 
-  Core<bool> valueVal;
+If the way SwitchListTile pads and positions its elements isn't quite what
+you're looking for, you can create custom labeled switch widgets by
+combining [Switch] with other widgets, such as [Text], [Padding] and
+[InkWell].
 
-  bool get value {
-    return valueVal.value;
-  }
+{@tool dartpad --template=stateful_widget_scaffold_center}
 
-  set value(bool val) {
-    if (val == this.value) {
-      return;
+![Custom switch list tile sample](https://flutter.github.io/assets-for-api-docs/assets/material/switch_list_tile_custom.png)
+
+Here is an example of a custom LabeledSwitch widget, but you can easily
+make your own configurable widget.
+
+```dart preamble
+class LabeledSwitch extends StatelessWidget {
+const LabeledSwitch({
+this.label,
+this.padding,
+this.groupValue,
+this.value,
+this.onChanged,
+});
+
+final String label;
+final EdgeInsets padding;
+final bool groupValue;
+final bool value;
+final Function onChanged;
+
+@override
+Widget build(BuildContext context) {
+return InkWell(
+onTap: () {
+onChanged(!value);
+},
+child: Padding(
+padding: padding,
+child: Row(
+children: <Widget>[
+Expanded(child: Text(label)),
+Switch(
+value: value,
+onChanged: (bool newValue) {
+onChanged(newValue);
+},
+),
+],
+),
+),
+);
+}
+}
+```
+```dart
+bool _isSelected = false;
+
+@override
+Widget build(BuildContext context) {
+return LabeledSwitch(
+label: 'This is the label text',
+padding: const EdgeInsets.symmetric(horizontal: 20.0),
+value: _isSelected,
+onChanged: (bool newValue) {
+setState(() {
+_isSelected = newValue;
+});
+},
+);
+}
+```
+{@end-tool}
+
+See also:
+
+* [ListTileTheme], which can be used to affect the style of list tiles,
+including switch list tiles.
+* [CheckboxListTile], a similar widget for checkboxes.
+* [RadioListTile], a similar widget for radio buttons.
+* [ListTile] and [Switch], the widgets from which this widget is made.
+''';
+
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
     }
-    valueVal.value = val;
-  }
 
-  Core<ValueChanged<bool>> onChangedVal;
-
-  ValueChanged<bool> get onChanged {
-    return onChangedVal.value;
-  }
-
-  set onChanged(ValueChanged<bool> val) {
-    if (val == this.onChanged) {
-      return;
+    @override
+    Widget render(BuildContext context) {
+        return Container();
     }
-    onChangedVal.value = val;
-  }
-
-  Core<Color> activeColorVal;
-
-  Color get activeColor {
-    return activeColorVal.value;
-  }
-
-  set activeColor(Color val) {
-    if (val == this.activeColor) {
-      return;
-    }
-    activeColorVal.value = val;
-  }
-
-  Core<Color> activeTrackColorVal;
-
-  Color get activeTrackColor {
-    return activeTrackColorVal.value;
-  }
-
-  set activeTrackColor(Color val) {
-    if (val == this.activeTrackColor) {
-      return;
-    }
-    activeTrackColorVal.value = val;
-  }
-
-  Core<Color> inactiveThumbColorVal;
-
-  Color get inactiveThumbColor {
-    return inactiveThumbColorVal.value;
-  }
-
-  set inactiveThumbColor(Color val) {
-    if (val == this.inactiveThumbColor) {
-      return;
-    }
-    inactiveThumbColorVal.value = val;
-  }
-
-  Core<Color> inactiveTrackColorVal;
-
-  Color get inactiveTrackColor {
-    return inactiveTrackColorVal.value;
-  }
-
-  set inactiveTrackColor(Color val) {
-    if (val == this.inactiveTrackColor) {
-      return;
-    }
-    inactiveTrackColorVal.value = val;
-  }
-
-  Core<ImageProvider> activeThumbImageVal;
-
-  ImageProvider get activeThumbImage {
-    return activeThumbImageVal.value;
-  }
-
-  set activeThumbImage(ImageProvider val) {
-    if (val == this.activeThumbImage) {
-      return;
-    }
-    activeThumbImageVal.value = val;
-  }
-
-  Core<ImageProvider> inactiveThumbImageVal;
-
-  ImageProvider get inactiveThumbImage {
-    return inactiveThumbImageVal.value;
-  }
-
-  set inactiveThumbImage(ImageProvider val) {
-    if (val == this.inactiveThumbImage) {
-      return;
-    }
-    inactiveThumbImageVal.value = val;
-  }
-
-  Core<Widget> titleVal;
-
-  Widget get title {
-    return titleVal.value;
-  }
-
-  set title(Widget val) {
-    if (val == this.title) {
-      return;
-    }
-    titleVal.value = val;
-  }
-
-  Core<Widget> subtitleVal;
-
-  Widget get subtitle {
-    return subtitleVal.value;
-  }
-
-  set subtitle(Widget val) {
-    if (val == this.subtitle) {
-      return;
-    }
-    subtitleVal.value = val;
-  }
-
-  Core<Widget> secondaryVal;
-
-  Widget get secondary {
-    return secondaryVal.value;
-  }
-
-  set secondary(Widget val) {
-    if (val == this.secondary) {
-      return;
-    }
-    secondaryVal.value = val;
-  }
-
-  Core<bool> isThreeLineVal;
-
-  bool get isThreeLine {
-    return isThreeLineVal.value;
-  }
-
-  set isThreeLine(bool val) {
-    if (val == this.isThreeLine) {
-      return;
-    }
-    isThreeLineVal.value = val;
-  }
-
-  Core<bool> denseVal;
-
-  bool get dense {
-    return denseVal.value;
-  }
-
-  set dense(bool val) {
-    if (val == this.dense) {
-      return;
-    }
-    denseVal.value = val;
-  }
-
-  Core<EdgeInsetsGeometry> contentPaddingVal;
-
-  EdgeInsetsGeometry get contentPadding {
-    return contentPaddingVal.value;
-  }
-
-  set contentPadding(EdgeInsetsGeometry val) {
-    if (val == this.contentPadding) {
-      return;
-    }
-    contentPaddingVal.value = val;
-  }
-
-  Core<bool> selectedVal;
-
-  bool get selected {
-    return selectedVal.value;
-  }
-
-  set selected(bool val) {
-    if (val == this.selected) {
-      return;
-    }
-    selectedVal.value = val;
-  }
-
-  Core<bool> autofocusVal;
-
-  bool get autofocus {
-    return autofocusVal.value;
-  }
-
-  set autofocus(bool val) {
-    if (val == this.autofocus) {
-      return;
-    }
-    autofocusVal.value = val;
-  }
-
-  Core<ListTileControlAffinity> controlAffinityVal;
-
-  ListTileControlAffinity get controlAffinity {
-    return controlAffinityVal.value;
-  }
-
-  set controlAffinity(ListTileControlAffinity val) {
-    if (val == this.controlAffinity) {
-      return;
-    }
-    controlAffinityVal.value = val;
-  }
-
-
-  @override
-  Map<String, dynamic> get staticFields => {
-  };
-
-  @override
-  List<Core> get props => [
-    this.valueVal,
-    this.onChangedVal,
-    this.activeColorVal,
-    this.activeTrackColorVal,
-    this.inactiveThumbColorVal,
-    this.inactiveTrackColorVal,
-    this.activeThumbImageVal,
-    this.inactiveThumbImageVal,
-    this.titleVal,
-    this.subtitleVal,
-    this.secondaryVal,
-    this.isThreeLineVal,
-    this.denseVal,
-    this.contentPaddingVal,
-    this.selectedVal,
-    this.autofocusVal,
-    this.controlAffinityVal,
-  ];
-
-  @override
-  String get description {
-    final sb = StringBuffer();
-    sb.writeln("[ * [ListTile] and [Switch], the widgets from which this widget is made.]");
-    return sb.toString();
-  }
-
-  @override
-  Map<String, Object> get constructors {
-     return {
-      'default': SwitchListTile(
-        value: this.value,
-        onChanged: this.onChanged,
-        activeColor: this.activeColor,
-        activeTrackColor: this.activeTrackColor,
-        inactiveThumbColor: this.inactiveThumbColor,
-        inactiveTrackColor: this.inactiveTrackColor,
-        activeThumbImage: this.activeThumbImage,
-        inactiveThumbImage: this.inactiveThumbImage,
-        title: this.title,
-        subtitle: this.subtitle,
-        isThreeLine: this.isThreeLine,
-        dense: this.dense,
-        contentPadding: this.contentPadding,
-        secondary: this.secondary,
-        selected: this.selected,
-        autofocus: this.autofocus,
-        controlAffinity: this.controlAffinity,
-      ),
-      'adaptive': SwitchListTile.adaptive(
-        value: this.value,
-        onChanged: this.onChanged,
-        activeColor: this.activeColor,
-        activeTrackColor: this.activeTrackColor,
-        inactiveThumbColor: this.inactiveThumbColor,
-        inactiveTrackColor: this.inactiveTrackColor,
-        activeThumbImage: this.activeThumbImage,
-        inactiveThumbImage: this.inactiveThumbImage,
-        title: this.title,
-        subtitle: this.subtitle,
-        isThreeLine: this.isThreeLine,
-        dense: this.dense,
-        contentPadding: this.contentPadding,
-        secondary: this.secondary,
-        selected: this.selected,
-        autofocus: this.autofocus,
-        controlAffinity: this.controlAffinity,
-      ),
-    };
-  }
-
-  @override
-  Map<String, Map<String, dynamic>> get properties {
-     return {
-      'default': {
-        'value': this.value,
-        'onChanged': this.onChanged,
-        'activeColor': this.activeColor,
-        'activeTrackColor': this.activeTrackColor,
-        'inactiveThumbColor': this.inactiveThumbColor,
-        'inactiveTrackColor': this.inactiveTrackColor,
-        'activeThumbImage': this.activeThumbImage,
-        'inactiveThumbImage': this.inactiveThumbImage,
-        'title': this.title,
-        'subtitle': this.subtitle,
-        'isThreeLine': this.isThreeLine,
-        'dense': this.dense,
-        'contentPadding': this.contentPadding,
-        'secondary': this.secondary,
-        'selected': this.selected,
-        'autofocus': this.autofocus,
-        'controlAffinity': this.controlAffinity,
-      },
-      'adaptive': {
-        'value': this.value,
-        'onChanged': this.onChanged,
-        'activeColor': this.activeColor,
-        'activeTrackColor': this.activeTrackColor,
-        'inactiveThumbColor': this.inactiveThumbColor,
-        'inactiveTrackColor': this.inactiveTrackColor,
-        'activeThumbImage': this.activeThumbImage,
-        'inactiveThumbImage': this.inactiveThumbImage,
-        'title': this.title,
-        'subtitle': this.subtitle,
-        'isThreeLine': this.isThreeLine,
-        'dense': this.dense,
-        'contentPadding': this.contentPadding,
-        'secondary': this.secondary,
-        'selected': this.selected,
-        'autofocus': this.autofocus,
-        'controlAffinity': this.controlAffinity,
-      },
-    };
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      'name': 'SwitchListTile',
-      'props': {
-        'value': this.valueVal.toJson(),
-        'onChanged': this.onChangedVal.toJson(),
-        'activeColor': this.activeColorVal.toJson(),
-        'activeTrackColor': this.activeTrackColorVal.toJson(),
-        'inactiveThumbColor': this.inactiveThumbColorVal.toJson(),
-        'inactiveTrackColor': this.inactiveTrackColorVal.toJson(),
-        'activeThumbImage': this.activeThumbImageVal.toJson(),
-        'inactiveThumbImage': this.inactiveThumbImageVal.toJson(),
-        'title': this.titleVal.toJson(),
-        'subtitle': this.subtitleVal.toJson(),
-        'secondary': this.secondaryVal.toJson(),
-        'isThreeLine': this.isThreeLineVal.toJson(),
-        'dense': this.denseVal.toJson(),
-        'contentPadding': this.contentPaddingVal.toJson(),
-        'selected': this.selectedVal.toJson(),
-        'autofocus': this.autofocusVal.toJson(),
-        'controlAffinity': this.controlAffinityVal.toJson(),
-      }
-    };
-  }
-
-  @override
-  Map<String, String> toCode() {
-    return {
-    'default': """SwitchListTile(
-       value: ${this.valueVal.toCode()},
-       onChanged: ${this.onChangedVal.toCode()},
-       activeColor: ${this.activeColorVal.toCode()},
-       activeTrackColor: ${this.activeTrackColorVal.toCode()},
-       inactiveThumbColor: ${this.inactiveThumbColorVal.toCode()},
-       inactiveTrackColor: ${this.inactiveTrackColorVal.toCode()},
-       activeThumbImage: ${this.activeThumbImageVal.toCode()},
-       inactiveThumbImage: ${this.inactiveThumbImageVal.toCode()},
-       title: ${this.titleVal.toCode()},
-       subtitle: ${this.subtitleVal.toCode()},
-       isThreeLine: ${this.isThreeLineVal.toCode()},
-       dense: ${this.denseVal.toCode()},
-       contentPadding: ${this.contentPaddingVal.toCode()},
-       secondary: ${this.secondaryVal.toCode()},
-       selected: ${this.selectedVal.toCode()},
-       autofocus: ${this.autofocusVal.toCode()},
-       controlAffinity: ${this.controlAffinityVal.toCode()},
-    )""",
-    'adaptive': """SwitchListTile.adaptive(
-       value: ${this.valueVal.toCode()},
-       onChanged: ${this.onChangedVal.toCode()},
-       activeColor: ${this.activeColorVal.toCode()},
-       activeTrackColor: ${this.activeTrackColorVal.toCode()},
-       inactiveThumbColor: ${this.inactiveThumbColorVal.toCode()},
-       inactiveTrackColor: ${this.inactiveTrackColorVal.toCode()},
-       activeThumbImage: ${this.activeThumbImageVal.toCode()},
-       inactiveThumbImage: ${this.inactiveThumbImageVal.toCode()},
-       title: ${this.titleVal.toCode()},
-       subtitle: ${this.subtitleVal.toCode()},
-       isThreeLine: ${this.isThreeLineVal.toCode()},
-       dense: ${this.denseVal.toCode()},
-       contentPadding: ${this.contentPaddingVal.toCode()},
-       secondary: ${this.secondaryVal.toCode()},
-       selected: ${this.selectedVal.toCode()},
-       autofocus: ${this.autofocusVal.toCode()},
-       controlAffinity: ${this.controlAffinityVal.toCode()},
-    )""",
-    };
-  }
-
-  final _controller = ValueNotifier<WidgetRect>(null);
-  ValueListenable<WidgetRect> get stats => _controller;
-
-  @override
-  Widget build(BuildContext context) {
-    if (isWidget) return TrackedWidget(
-      controller: _controller,
-      child: defaultBase,
-    );
-    return Container();
-  }
-
-  @override
-  bool get isWidget => defaultBase is Widget;
-  
-  @override
-  Object get defaultBase => constructors['default'];
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-      properties.add(DiagnosticsProperty('value', this.value));
-      properties.add(DiagnosticsProperty('onChanged', this.onChanged));
-      properties.add(DiagnosticsProperty('activeColor', this.activeColor));
-      properties.add(DiagnosticsProperty('activeTrackColor', this.activeTrackColor));
-      properties.add(DiagnosticsProperty('inactiveThumbColor', this.inactiveThumbColor));
-      properties.add(DiagnosticsProperty('inactiveTrackColor', this.inactiveTrackColor));
-      properties.add(DiagnosticsProperty('activeThumbImage', this.activeThumbImage));
-      properties.add(DiagnosticsProperty('inactiveThumbImage', this.inactiveThumbImage));
-      properties.add(DiagnosticsProperty('title', this.title));
-      properties.add(DiagnosticsProperty('subtitle', this.subtitle));
-      properties.add(DiagnosticsProperty('secondary', this.secondary));
-      properties.add(DiagnosticsProperty('isThreeLine', this.isThreeLine));
-      properties.add(DiagnosticsProperty('dense', this.dense));
-      properties.add(DiagnosticsProperty('contentPadding', this.contentPadding));
-      properties.add(DiagnosticsProperty('selected', this.selected));
-      properties.add(DiagnosticsProperty('autofocus', this.autofocus));
-      properties.add(DiagnosticsProperty('controlAffinity', this.controlAffinity));
-  }
 }
 

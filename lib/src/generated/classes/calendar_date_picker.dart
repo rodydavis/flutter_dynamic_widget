@@ -1,260 +1,42 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/gestures.dart';
-import '../core.dart';
+import '../base.dart';
 
-class CalendarDatePickerRender<T> extends StatelessWidget {
+class CalendarDatePickerBase extends BaseWidget {
+    CalendarDatePickerBase();
 
-  factory CalendarDatePickerRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
-    return CalendarDatePickerRender(update,
-      initialDateVal: BaseCore<DateTime>(null, update),
-      firstDateVal: BaseCore<DateTime>(null, update),
-      lastDateVal: BaseCore<DateTime>(null, update),
-      currentDateVal: BaseCore<DateTime>(null, update),
-      onDateChangedVal: BaseCore<ValueChanged<DateTime>>(null, update),
-      onDisplayedMonthChangedVal: BaseCore<ValueChanged<DateTime>>(null, update),
-      initialCalendarModeVal: BaseCore<DatePickerMode>(null, update),
-      selectableDayPredicateVal: BaseCore<SelectableDayPredicate>(null, update),
-    );
-  }
-
-  CalendarDatePickerRender(this._update, {
-    @required this.initialDateVal,
-    @required this.firstDateVal,
-    @required this.lastDateVal,
-    @required this.currentDateVal,
-    @required this.onDateChangedVal,
-    @required this.onDisplayedMonthChangedVal,
-    @required this.initialCalendarModeVal,
-    @required this.selectableDayPredicateVal,
-  });
-
-  @override
-  final VoidCallback _update;
-
-  Core<DateTime> initialDateVal;
-
-  DateTime get initialDate {
-    return initialDateVal.value;
-  }
-
-  set initialDate(DateTime val) {
-    if (val == this.initialDate) {
-      return;
+    factory CalendarDatePickerBase.fromJson(Map<String, dynamic> data) {
+        return CalendarDatePickerBase();
     }
-    initialDateVal.value = val;
-  }
 
-  Core<DateTime> firstDateVal;
+    @override
+    String get description => r'''
+Displays a grid of days for a given month and allows the user to select a date.
 
-  DateTime get firstDate {
-    return firstDateVal.value;
-  }
+Days are arranged in a rectangular grid with one column for each day of the
+week. Controls are provided to change the year and month that the grid is
+showing.
 
-  set firstDate(DateTime val) {
-    if (val == this.firstDate) {
-      return;
+The calendar picker widget is rarely used directly. Instead, consider using
+[showDatePicker], which will create a dialog that uses this as well as provides
+a text entry option.
+
+See also:
+
+* [showDatePicker], which creates a Dialog that contains a [CalendarDatePicker]
+and provides an optional compact view where the user can enter a date as
+a line of text.
+* [showTimePicker], which shows a dialog that contains a material design
+time picker.
+
+''';
+
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
     }
-    firstDateVal.value = val;
-  }
 
-  Core<DateTime> lastDateVal;
-
-  DateTime get lastDate {
-    return lastDateVal.value;
-  }
-
-  set lastDate(DateTime val) {
-    if (val == this.lastDate) {
-      return;
+    @override
+    Widget render(BuildContext context) {
+        return Container();
     }
-    lastDateVal.value = val;
-  }
-
-  Core<DateTime> currentDateVal;
-
-  DateTime get currentDate {
-    return currentDateVal.value;
-  }
-
-  set currentDate(DateTime val) {
-    if (val == this.currentDate) {
-      return;
-    }
-    currentDateVal.value = val;
-  }
-
-  Core<ValueChanged<DateTime>> onDateChangedVal;
-
-  ValueChanged<DateTime> get onDateChanged {
-    return onDateChangedVal.value;
-  }
-
-  set onDateChanged(ValueChanged<DateTime> val) {
-    if (val == this.onDateChanged) {
-      return;
-    }
-    onDateChangedVal.value = val;
-  }
-
-  Core<ValueChanged<DateTime>> onDisplayedMonthChangedVal;
-
-  ValueChanged<DateTime> get onDisplayedMonthChanged {
-    return onDisplayedMonthChangedVal.value;
-  }
-
-  set onDisplayedMonthChanged(ValueChanged<DateTime> val) {
-    if (val == this.onDisplayedMonthChanged) {
-      return;
-    }
-    onDisplayedMonthChangedVal.value = val;
-  }
-
-  Core<DatePickerMode> initialCalendarModeVal;
-
-  DatePickerMode get initialCalendarMode {
-    return initialCalendarModeVal.value;
-  }
-
-  set initialCalendarMode(DatePickerMode val) {
-    if (val == this.initialCalendarMode) {
-      return;
-    }
-    initialCalendarModeVal.value = val;
-  }
-
-  Core<SelectableDayPredicate> selectableDayPredicateVal;
-
-  SelectableDayPredicate get selectableDayPredicate {
-    return selectableDayPredicateVal.value;
-  }
-
-  set selectableDayPredicate(SelectableDayPredicate val) {
-    if (val == this.selectableDayPredicate) {
-      return;
-    }
-    selectableDayPredicateVal.value = val;
-  }
-
-
-  @override
-  Map<String, dynamic> get staticFields => {
-  };
-
-  @override
-  List<Core> get props => [
-    this.initialDateVal,
-    this.firstDateVal,
-    this.lastDateVal,
-    this.currentDateVal,
-    this.onDateChangedVal,
-    this.onDisplayedMonthChangedVal,
-    this.initialCalendarModeVal,
-    this.selectableDayPredicateVal,
-  ];
-
-  @override
-  String get description {
-    final sb = StringBuffer();
-    sb.writeln("[///]");
-    return sb.toString();
-  }
-
-  @override
-  Map<String, Object> get constructors {
-     return {
-      'default': CalendarDatePicker(
-        initialDate: this.initialDate,
-        firstDate: this.firstDate,
-        lastDate: this.lastDate,
-        currentDate: this.currentDate,
-        onDateChanged: this.onDateChanged,
-        onDisplayedMonthChanged: this.onDisplayedMonthChanged,
-        initialCalendarMode: this.initialCalendarMode,
-        selectableDayPredicate: this.selectableDayPredicate,
-      ),
-    };
-  }
-
-  @override
-  Map<String, Map<String, dynamic>> get properties {
-     return {
-      'default': {
-        'initialDate': this.initialDate,
-        'firstDate': this.firstDate,
-        'lastDate': this.lastDate,
-        'currentDate': this.currentDate,
-        'onDateChanged': this.onDateChanged,
-        'onDisplayedMonthChanged': this.onDisplayedMonthChanged,
-        'initialCalendarMode': this.initialCalendarMode,
-        'selectableDayPredicate': this.selectableDayPredicate,
-      },
-    };
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      'name': 'CalendarDatePicker',
-      'props': {
-        'initialDate': this.initialDateVal.toJson(),
-        'firstDate': this.firstDateVal.toJson(),
-        'lastDate': this.lastDateVal.toJson(),
-        'currentDate': this.currentDateVal.toJson(),
-        'onDateChanged': this.onDateChangedVal.toJson(),
-        'onDisplayedMonthChanged': this.onDisplayedMonthChangedVal.toJson(),
-        'initialCalendarMode': this.initialCalendarModeVal.toJson(),
-        'selectableDayPredicate': this.selectableDayPredicateVal.toJson(),
-      }
-    };
-  }
-
-  @override
-  Map<String, String> toCode() {
-    return {
-    'default': """CalendarDatePicker(
-       initialDate: ${this.initialDateVal.toCode()},
-       firstDate: ${this.firstDateVal.toCode()},
-       lastDate: ${this.lastDateVal.toCode()},
-       currentDate: ${this.currentDateVal.toCode()},
-       onDateChanged: ${this.onDateChangedVal.toCode()},
-       onDisplayedMonthChanged: ${this.onDisplayedMonthChangedVal.toCode()},
-       initialCalendarMode: ${this.initialCalendarModeVal.toCode()},
-       selectableDayPredicate: ${this.selectableDayPredicateVal.toCode()},
-    )""",
-    };
-  }
-
-  final _controller = ValueNotifier<WidgetRect>(null);
-  ValueListenable<WidgetRect> get stats => _controller;
-
-  @override
-  Widget build(BuildContext context) {
-    if (isWidget) return TrackedWidget(
-      controller: _controller,
-      child: defaultBase,
-    );
-    return Container();
-  }
-
-  @override
-  bool get isWidget => defaultBase is Widget;
-  
-  @override
-  Object get defaultBase => constructors['default'];
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-      properties.add(DiagnosticsProperty('initialDate', this.initialDate));
-      properties.add(DiagnosticsProperty('firstDate', this.firstDate));
-      properties.add(DiagnosticsProperty('lastDate', this.lastDate));
-      properties.add(DiagnosticsProperty('currentDate', this.currentDate));
-      properties.add(DiagnosticsProperty('onDateChanged', this.onDateChanged));
-      properties.add(DiagnosticsProperty('onDisplayedMonthChanged', this.onDisplayedMonthChanged));
-      properties.add(DiagnosticsProperty('initialCalendarMode', this.initialCalendarMode));
-      properties.add(DiagnosticsProperty('selectableDayPredicate', this.selectableDayPredicate));
-  }
 }
 

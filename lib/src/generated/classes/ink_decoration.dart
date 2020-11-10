@@ -1,200 +1,121 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/gestures.dart';
-import '../core.dart';
+import '../base.dart';
 
-class InkDecorationRender<T> extends StatelessWidget {
+class InkBase extends BaseWidget {
+    InkBase();
 
-  factory InkDecorationRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
-    return InkDecorationRender(update,
-      decorationVal: BaseCore<Decoration>(null, update),
-      configurationVal: BaseCore<ImageConfiguration>(null, update),
-      controllerVal: BaseCore<MaterialInkController>(null, update),
-      referenceBoxVal: BaseCore<RenderBox>(null, update),
-      onRemovedVal: BaseCore<VoidCallback>(null, update),
-    );
-  }
-
-  InkDecorationRender(this._update, {
-    @required this.decorationVal,
-    @required this.configurationVal,
-    @required this.controllerVal,
-    @required this.referenceBoxVal,
-    @required this.onRemovedVal,
-  });
-
-  @override
-  final VoidCallback _update;
-
-  Core<Decoration> decorationVal;
-
-  Decoration get decoration {
-    return decorationVal.value;
-  }
-
-  set decoration(Decoration val) {
-    if (val == this.decoration) {
-      return;
+    factory InkBase.fromJson(Map<String, dynamic> data) {
+        return InkBase();
     }
-    decorationVal.value = val;
-  }
 
-  Core<ImageConfiguration> configurationVal;
+    @override
+    String get description => r'''
+A convenience widget for drawing images and other decorations on [Material]
+widgets, so that [InkWell] and [InkResponse] splashes will render over them.
 
-  ImageConfiguration get configuration {
-    return configurationVal.value;
-  }
+Ink splashes and highlights, as rendered by [InkWell] and [InkResponse],
+draw on the actual underlying [Material], under whatever widgets are drawn
+over the material (such as [Text] and [Icon]s). If an opaque image is drawn
+over the [Material] (maybe using a [Container] or [DecoratedBox]), these ink
+effects will not be visible, as they will be entirely obscured by the opaque
+graphics drawn above the [Material].
 
-  set configuration(ImageConfiguration val) {
-    if (val == this.configuration) {
-      return;
+This widget draws the given [Decoration] directly on the [Material], in the
+same way that [InkWell] and [InkResponse] draw there. This allows the
+splashes to be drawn above the otherwise opaque graphics.
+
+An alternative solution is to use a [MaterialType.transparency] material
+above the opaque graphics, so that the ink responses from [InkWell]s and
+[InkResponse]s will be drawn on the transparent material on top of the
+opaque graphics, rather than under the opaque graphics on the underlying
+[Material].
+
+## Limitations
+
+This widget is subject to the same limitations as other ink effects, as
+described in the documentation for [Material]. Most notably, the position of
+an [Ink] widget must not change during the lifetime of the [Material] object
+unless a [LayoutChangedNotification] is dispatched each frame that the
+position changes. This is done automatically for [ListView] and other
+scrolling widgets, but is not done for animated transitions such as
+[SlideTransition].
+
+Additionally, if multiple [Ink] widgets paint on the same [Material] in the
+same location, their relative order is not guaranteed. The decorations will
+be painted in the order that they were added to the material, which
+generally speaking will match the order they are given in the widget tree,
+but this order may appear to be somewhat random in more dynamic situations.
+
+{@tool snippet}
+
+This example shows how a [Material] widget can have a yellow rectangle drawn
+on it using [Ink], while still having ink effects over the yellow rectangle:
+
+```dart
+Material(
+color: Colors.teal[900],
+child: Center(
+child: Ink(
+color: Colors.yellow,
+width: 200.0,
+height: 100.0,
+child: InkWell(
+onTap: () { /* ... */ },
+child: Center(
+child: Text('YELLOW'),
+)
+),
+),
+),
+)
+```
+{@end-tool}
+{@tool snippet}
+
+The following example shows how an image can be printed on a [Material]
+widget with an [InkWell] above it:
+
+```dart
+Material(
+color: Colors.grey[800],
+child: Center(
+child: Ink.image(
+image: AssetImage('cat.jpeg'),
+fit: BoxFit.cover,
+width: 300.0,
+height: 200.0,
+child: InkWell(
+onTap: () { /* ... */ },
+child: Align(
+alignment: Alignment.topLeft,
+child: Padding(
+padding: const EdgeInsets.all(10.0),
+child: Text('KITTEN', style: TextStyle(fontWeight: FontWeight.w900, color: Colors.white)),
+),
+)
+),
+),
+),
+)
+```
+{@end-tool}
+
+See also:
+
+* [Container], a more generic form of this widget which paints itself,
+rather that deferring to the nearest [Material] widget.
+* [InkDecoration], the [InkFeature] subclass used by this widget to paint
+on [Material] widgets.
+* [InkWell] and [InkResponse], which also draw on [Material] widgets.
+''';
+
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
     }
-    configurationVal.value = val;
-  }
 
-  Core<MaterialInkController> controllerVal;
-
-  MaterialInkController get controller {
-    return controllerVal.value;
-  }
-
-  set controller(MaterialInkController val) {
-    if (val == this.controller) {
-      return;
+    @override
+    Widget render(BuildContext context) {
+        return Container();
     }
-    controllerVal.value = val;
-  }
-
-  Core<RenderBox> referenceBoxVal;
-
-  RenderBox get referenceBox {
-    return referenceBoxVal.value;
-  }
-
-  set referenceBox(RenderBox val) {
-    if (val == this.referenceBox) {
-      return;
-    }
-    referenceBoxVal.value = val;
-  }
-
-  Core<VoidCallback> onRemovedVal;
-
-  VoidCallback get onRemoved {
-    return onRemovedVal.value;
-  }
-
-  set onRemoved(VoidCallback val) {
-    if (val == this.onRemoved) {
-      return;
-    }
-    onRemovedVal.value = val;
-  }
-
-
-  @override
-  Map<String, dynamic> get staticFields => {
-  '_painter': null,
-  '_decoration': null,
-  '_configuration': null,
-  };
-
-  @override
-  List<Core> get props => [
-    this.decorationVal,
-    this.configurationVal,
-    this.controllerVal,
-    this.referenceBoxVal,
-    this.onRemovedVal,
-  ];
-
-  @override
-  String get description {
-    final sb = StringBuffer();
-    sb.writeln("[ * [Material], which is the widget on which the ink is painted.]");
-    return sb.toString();
-  }
-
-  @override
-  Map<String, Object> get constructors {
-     return {
-      'default': InkDecoration(
-        decoration: this.decoration,
-        configuration: this.configuration,
-        controller: this.controller,
-        referenceBox: this.referenceBox,
-        onRemoved: this.onRemoved,
-      ),
-    };
-  }
-
-  @override
-  Map<String, Map<String, dynamic>> get properties {
-     return {
-      'default': {
-        'decoration': this.decoration,
-        'configuration': this.configuration,
-        'controller': this.controller,
-        'referenceBox': this.referenceBox,
-        'onRemoved': this.onRemoved,
-      },
-    };
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      'name': 'InkDecoration',
-      'props': {
-        'decoration': this.decorationVal.toJson(),
-        'configuration': this.configurationVal.toJson(),
-        'controller': this.controllerVal.toJson(),
-        'referenceBox': this.referenceBoxVal.toJson(),
-        'onRemoved': this.onRemovedVal.toJson(),
-      }
-    };
-  }
-
-  @override
-  Map<String, String> toCode() {
-    return {
-    'default': """InkDecoration(
-       decoration: ${this.decorationVal.toCode()},
-       configuration: ${this.configurationVal.toCode()},
-       controller: ${this.controllerVal.toCode()},
-       referenceBox: ${this.referenceBoxVal.toCode()},
-       onRemoved: ${this.onRemovedVal.toCode()},
-    )""",
-    };
-  }
-
-  final _controller = ValueNotifier<WidgetRect>(null);
-  ValueListenable<WidgetRect> get stats => _controller;
-
-  @override
-  Widget build(BuildContext context) {
-    if (isWidget) return TrackedWidget(
-      controller: _controller,
-      child: defaultBase,
-    );
-    return Container();
-  }
-
-  @override
-  bool get isWidget => defaultBase is Widget;
-  
-  @override
-  Object get defaultBase => constructors['default'];
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-      properties.add(DiagnosticsProperty('decoration', this.decoration));
-      properties.add(DiagnosticsProperty('configuration', this.configuration));
-      properties.add(DiagnosticsProperty('controller', this.controller));
-      properties.add(DiagnosticsProperty('referenceBox', this.referenceBox));
-      properties.add(DiagnosticsProperty('onRemoved', this.onRemoved));
-  }
 }
 

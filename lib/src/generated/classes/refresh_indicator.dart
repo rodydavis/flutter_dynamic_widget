@@ -1,96 +1,62 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/gestures.dart';
-import '../core.dart';
+import '../base.dart';
 
-class RefreshIndicatorStateRender<T> extends StatelessWidget {
+class RefreshIndicatorBase extends BaseWidget {
+    RefreshIndicatorBase();
 
-  factory RefreshIndicatorStateRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
-    return RefreshIndicatorStateRender(update,
-    );
-  }
+    factory RefreshIndicatorBase.fromJson(Map<String, dynamic> data) {
+        return RefreshIndicatorBase();
+    }
 
-  RefreshIndicatorStateRender(this._update, {
-  });
+    @override
+    String get description => r'''
+A widget that supports the Material "swipe to refresh" idiom.
 
-  @override
-  final VoidCallback _update;
+When the child's [Scrollable] descendant overscrolls, an animated circular
+progress indicator is faded into view. When the scroll ends, if the
+indicator has been dragged far enough for it to become completely opaque,
+the [onRefresh] callback is called. The callback is expected to update the
+scrollable's contents and then complete the [Future] it returns. The refresh
+indicator disappears after the callback's [Future] has completed.
 
+## Troubleshooting
 
-  @override
-  Map<String, dynamic> get staticFields => {
-  '_positionController': null,
-  '_scaleController': null,
-  '_positionFactor': null,
-  '_scaleFactor': null,
-  '_value': null,
-  '_valueColor': null,
-  '_mode': null,
-  '_pendingRefreshFuture': null,
-  '_isIndicatorAtTop': null,
-  '_dragOffset': null,
-  };
+### Refresh indicator does not show up
 
-  @override
-  List<Core> get props => [
-  ];
+The [RefreshIndicator] will appear if its scrollable descendant can be
+overscrolled, i.e. if the scrollable's content is bigger than its viewport.
+To ensure that the [RefreshIndicator] will always appear, even if the
+scrollable's content fits within its viewport, set the scrollable's
+[Scrollable.physics] property to [AlwaysScrollableScrollPhysics]:
 
-  @override
-  String get description {
-    final sb = StringBuffer();
-    sb.writeln("[programmatically show the refresh indicator, see the [show] method.]");
-    return sb.toString();
-  }
+```dart
+ListView(
+physics: const AlwaysScrollableScrollPhysics(),
+children: ...
+)
+```
 
-  @override
-  Map<String, Object> get constructors {
-     return {
-    };
-  }
+A [RefreshIndicator] can only be used with a vertical scroll view.
 
-  @override
-  Map<String, Map<String, dynamic>> get properties {
-     return {
-    };
-  }
+See also:
 
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      'name': 'RefreshIndicatorState',
-      'props': {
-      }
-    };
-  }
+* <https://material.io/design/platform-guidance/android-swipe-to-refresh.html>
+* [RefreshIndicatorState], can be used to programmatically show the refresh indicator.
+* [RefreshProgressIndicator], widget used by [RefreshIndicator] to show
+the inner circular progress spinner during refreshes.
+* [CupertinoSliverRefreshControl], an iOS equivalent of the pull-to-refresh pattern.
+Must be used as a sliver inside a [CustomScrollView] instead of wrapping
+around a [ScrollView] because it's a part of the scrollable instead of
+being overlaid on top of it.
+''';
 
-  @override
-  Map<String, String> toCode() {
-    return {
-    };
-  }
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
+    }
 
-  final _controller = ValueNotifier<WidgetRect>(null);
-  ValueListenable<WidgetRect> get stats => _controller;
-
-  @override
-  Widget build(BuildContext context) {
-    if (isWidget) return TrackedWidget(
-      controller: _controller,
-      child: defaultBase,
-    );
-    return Container();
-  }
-
-  @override
-  bool get isWidget => defaultBase is Widget;
-  
-  @override
-  Object get defaultBase => constructors['default'];
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-  }
+    @override
+    Widget render(BuildContext context) {
+        return Container();
+    }
 }
 

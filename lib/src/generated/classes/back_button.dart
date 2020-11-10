@@ -1,134 +1,122 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/gestures.dart';
-import '../core.dart';
+import '../base.dart';
 
-class CloseButtonRender<T> extends StatelessWidget {
+class BackButtonIconBase extends BaseWidget {
+    BackButtonIconBase();
 
-  factory CloseButtonRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
-    return CloseButtonRender(update,
-      colorVal: BaseCore<Color>(null, update),
-      onPressedVal: BaseCore<VoidCallback>(null, update),
-    );
-  }
-
-  CloseButtonRender(this._update, {
-    @required this.colorVal,
-    @required this.onPressedVal,
-  });
-
-  @override
-  final VoidCallback _update;
-
-  Core<Color> colorVal;
-
-  Color get color {
-    return colorVal.value;
-  }
-
-  set color(Color val) {
-    if (val == this.color) {
-      return;
+    factory BackButtonIconBase.fromJson(Map<String, dynamic> data) {
+        return BackButtonIconBase();
     }
-    colorVal.value = val;
-  }
 
-  Core<VoidCallback> onPressedVal;
+    @override
+    String get description => r'''
+A "back" icon that's appropriate for the current [TargetPlatform].
 
-  VoidCallback get onPressed {
-    return onPressedVal.value;
-  }
+The current platform is determined by querying for the ambient [Theme].
 
-  set onPressed(VoidCallback val) {
-    if (val == this.onPressed) {
-      return;
+See also:
+
+* [BackButton], an [IconButton] with a [BackButtonIcon] that calls
+[Navigator.maybePop] to return to the previous route.
+* [IconButton], which is a more general widget for creating buttons
+with icons.
+* [Icon], a material design icon.
+* [ThemeData.platform], which specifies the current platform.
+''';
+
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
     }
-    onPressedVal.value = val;
-  }
 
+    @override
+    Widget render(BuildContext context) {
+        return Container();
+    }
+}
 
-  @override
-  Map<String, dynamic> get staticFields => {
-  };
+class BackButtonBase extends BaseWidget {
+    BackButtonBase();
 
-  @override
-  List<Core> get props => [
-    this.colorVal,
-    this.onPressedVal,
-  ];
+    factory BackButtonBase.fromJson(Map<String, dynamic> data) {
+        return BackButtonBase();
+    }
 
-  @override
-  String get description {
-    final sb = StringBuffer();
-    sb.writeln("[ * [IconButton], to create other material design icon buttons.]");
-    return sb.toString();
-  }
+    @override
+    String get description => r'''
+A material design back button.
 
-  @override
-  Map<String, Object> get constructors {
-     return {
-      'default': CloseButton(
-        color: this.color,
-        onPressed: this.onPressed,
-      ),
-    };
-  }
+A [BackButton] is an [IconButton] with a "back" icon appropriate for the
+current [TargetPlatform]. When pressed, the back button calls
+[Navigator.maybePop] to return to the previous route unless a custom
+[onPressed] callback is provided.
 
-  @override
-  Map<String, Map<String, dynamic>> get properties {
-     return {
-      'default': {
-        'color': this.color,
-        'onPressed': this.onPressed,
-      },
-    };
-  }
+When deciding to display a [BackButton], consider using
+`ModalRoute.of(context)?.canPop` to check whether the current route can be
+popped. If that value is false (e.g., because the current route is the
+initial route), the [BackButton] will not have any effect when pressed,
+which could frustrate the user.
 
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      'name': 'CloseButton',
-      'props': {
-        'color': this.colorVal.toJson(),
-        'onPressed': this.onPressedVal.toJson(),
-      }
-    };
-  }
+Requires one of its ancestors to be a [Material] widget.
 
-  @override
-  Map<String, String> toCode() {
-    return {
-    'default': """CloseButton(
-       color: ${this.colorVal.toCode()},
-       onPressed: ${this.onPressedVal.toCode()},
-    )""",
-    };
-  }
+See also:
 
-  final _controller = ValueNotifier<WidgetRect>(null);
-  ValueListenable<WidgetRect> get stats => _controller;
+* [AppBar], which automatically uses a [BackButton] in its
+[AppBar.leading] slot when the [Scaffold] has no [Drawer] and the
+current [Route] is not the [Navigator]'s first route.
+* [BackButtonIcon], which is useful if you need to create a back button
+that responds differently to being pressed.
+* [IconButton], which is a more general widget for creating buttons with
+icons.
+* [CloseButton], an alternative which may be more appropriate for leaf
+node pages in the navigation tree.
+''';
 
-  @override
-  Widget build(BuildContext context) {
-    if (isWidget) return TrackedWidget(
-      controller: _controller,
-      child: defaultBase,
-    );
-    return Container();
-  }
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
+    }
 
-  @override
-  bool get isWidget => defaultBase is Widget;
-  
-  @override
-  Object get defaultBase => constructors['default'];
+    @override
+    Widget render(BuildContext context) {
+        return Container();
+    }
+}
 
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-      properties.add(DiagnosticsProperty('color', this.color));
-      properties.add(DiagnosticsProperty('onPressed', this.onPressed));
-  }
+class CloseButtonBase extends BaseWidget {
+    CloseButtonBase();
+
+    factory CloseButtonBase.fromJson(Map<String, dynamic> data) {
+        return CloseButtonBase();
+    }
+
+    @override
+    String get description => r'''
+A material design close button.
+
+A [CloseButton] is an [IconButton] with a "close" icon. When pressed, the
+close button calls [Navigator.maybePop] to return to the previous route.
+
+Use a [CloseButton] instead of a [BackButton] on fullscreen dialogs or
+pages that may solicit additional actions to close.
+
+See also:
+
+* [AppBar], which automatically uses a [CloseButton] in its
+[AppBar.leading] slot when appropriate.
+* [BackButton], which is more appropriate for middle nodes in the
+navigation tree or where pages can be popped instantaneously with
+no user data consequence.
+* [IconButton], to create other material design icon buttons.
+''';
+
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
+    }
+
+    @override
+    Widget render(BuildContext context) {
+        return Container();
+    }
 }
 

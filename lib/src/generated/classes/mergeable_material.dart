@@ -1,197 +1,45 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/gestures.dart';
-import '../core.dart';
+import '../base.dart';
 
-class MergeableMaterialRender<T> extends StatelessWidget {
+class MergeableMaterialBase extends BaseWidget {
+    MergeableMaterialBase();
 
-  factory MergeableMaterialRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
-    return MergeableMaterialRender(update,
-      childrenVal: BaseCore<List<MergeableMaterialItem>>(null, update),
-      mainAxisVal: BaseCore<Axis>(null, update),
-      elevationVal: BaseCore<int>(null, update),
-      hasDividersVal: BaseCore<bool>(null, update),
-      dividerColorVal: BaseCore<Color>(null, update),
-    );
-  }
-
-  MergeableMaterialRender(this._update, {
-    @required this.childrenVal,
-    @required this.mainAxisVal,
-    @required this.elevationVal,
-    @required this.hasDividersVal,
-    @required this.dividerColorVal,
-  });
-
-  @override
-  final VoidCallback _update;
-
-  Core<List<MergeableMaterialItem>> childrenVal;
-
-  List<MergeableMaterialItem> get children {
-    return childrenVal.value;
-  }
-
-  set children(List<MergeableMaterialItem> val) {
-    if (val == this.children) {
-      return;
+    factory MergeableMaterialBase.fromJson(Map<String, dynamic> data) {
+        return MergeableMaterialBase();
     }
-    childrenVal.value = val;
-  }
 
-  Core<Axis> mainAxisVal;
+    @override
+    String get description => r'''
+Displays a list of [MergeableMaterialItem] children. The list contains
+[MaterialSlice] items whose boundaries are either "merged" with adjacent
+items or separated by a [MaterialGap]. The [children] are distributed along
+the given [mainAxis] in the same way as the children of a [ListBody]. When
+the list of children changes, gaps are automatically animated open or closed
+as needed.
 
-  Axis get mainAxis {
-    return mainAxisVal.value;
-  }
+To enable this widget to correlate its list of children with the previous
+one, each child must specify a key.
 
-  set mainAxis(Axis val) {
-    if (val == this.mainAxis) {
-      return;
+When a new gap is added to the list of children the adjacent items are
+animated apart. Similarly when a gap is removed the adjacent items are
+brought back together.
+
+When a new slice is added or removed, the app is responsible for animating
+the transition of the slices, while the gaps will be animated automatically.
+
+See also:
+
+* [Card], a piece of material that does not support splitting and merging
+but otherwise looks the same.
+''';
+
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
     }
-    mainAxisVal.value = val;
-  }
 
-  Core<int> elevationVal;
-
-  int get elevation {
-    return elevationVal.value;
-  }
-
-  set elevation(int val) {
-    if (val == this.elevation) {
-      return;
+    @override
+    Widget render(BuildContext context) {
+        return Container();
     }
-    elevationVal.value = val;
-  }
-
-  Core<bool> hasDividersVal;
-
-  bool get hasDividers {
-    return hasDividersVal.value;
-  }
-
-  set hasDividers(bool val) {
-    if (val == this.hasDividers) {
-      return;
-    }
-    hasDividersVal.value = val;
-  }
-
-  Core<Color> dividerColorVal;
-
-  Color get dividerColor {
-    return dividerColorVal.value;
-  }
-
-  set dividerColor(Color val) {
-    if (val == this.dividerColor) {
-      return;
-    }
-    dividerColorVal.value = val;
-  }
-
-
-  @override
-  Map<String, dynamic> get staticFields => {
-  };
-
-  @override
-  List<Core> get props => [
-    this.childrenVal,
-    this.mainAxisVal,
-    this.elevationVal,
-    this.hasDividersVal,
-    this.dividerColorVal,
-  ];
-
-  @override
-  String get description {
-    final sb = StringBuffer();
-    sb.writeln("[   but otherwise looks the same.]");
-    return sb.toString();
-  }
-
-  @override
-  Map<String, Object> get constructors {
-     return {
-      'default': MergeableMaterial(
-        mainAxis: this.mainAxis,
-        elevation: this.elevation,
-        hasDividers: this.hasDividers,
-        children: this.children,
-        dividerColor: this.dividerColor,
-      ),
-    };
-  }
-
-  @override
-  Map<String, Map<String, dynamic>> get properties {
-     return {
-      'default': {
-        'mainAxis': this.mainAxis,
-        'elevation': this.elevation,
-        'hasDividers': this.hasDividers,
-        'children': this.children,
-        'dividerColor': this.dividerColor,
-      },
-    };
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      'name': 'MergeableMaterial',
-      'props': {
-        'children': this.childrenVal.toJson(),
-        'mainAxis': this.mainAxisVal.toJson(),
-        'elevation': this.elevationVal.toJson(),
-        'hasDividers': this.hasDividersVal.toJson(),
-        'dividerColor': this.dividerColorVal.toJson(),
-      }
-    };
-  }
-
-  @override
-  Map<String, String> toCode() {
-    return {
-    'default': """MergeableMaterial(
-       mainAxis: ${this.mainAxisVal.toCode()},
-       elevation: ${this.elevationVal.toCode()},
-       hasDividers: ${this.hasDividersVal.toCode()},
-       children: ${this.childrenVal.toCode()},
-       dividerColor: ${this.dividerColorVal.toCode()},
-    )""",
-    };
-  }
-
-  final _controller = ValueNotifier<WidgetRect>(null);
-  ValueListenable<WidgetRect> get stats => _controller;
-
-  @override
-  Widget build(BuildContext context) {
-    if (isWidget) return TrackedWidget(
-      controller: _controller,
-      child: defaultBase,
-    );
-    return Container();
-  }
-
-  @override
-  bool get isWidget => defaultBase is Widget;
-  
-  @override
-  Object get defaultBase => constructors['default'];
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-      properties.add(DiagnosticsProperty('children', this.children));
-      properties.add(DiagnosticsProperty('mainAxis', this.mainAxis));
-      properties.add(DiagnosticsProperty('elevation', this.elevation));
-      properties.add(DiagnosticsProperty('hasDividers', this.hasDividers));
-      properties.add(DiagnosticsProperty('dividerColor', this.dividerColor));
-  }
 }
 

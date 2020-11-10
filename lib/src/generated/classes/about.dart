@@ -1,176 +1,175 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/gestures.dart';
-import '../core.dart';
+import '../base.dart';
 
-class LicensePageRender<T> extends StatelessWidget {
+class AboutListTileBase extends BaseWidget {
+    AboutListTileBase();
 
-  factory LicensePageRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
-    return LicensePageRender(update,
-      applicationNameVal: BaseCore<String>(null, update),
-      applicationVersionVal: BaseCore<String>(null, update),
-      applicationIconVal: BaseCore<Widget>(null, update),
-      applicationLegaleseVal: BaseCore<String>(null, update),
-    );
-  }
-
-  LicensePageRender(this._update, {
-    @required this.applicationNameVal,
-    @required this.applicationVersionVal,
-    @required this.applicationIconVal,
-    @required this.applicationLegaleseVal,
-  });
-
-  @override
-  final VoidCallback _update;
-
-  Core<String> applicationNameVal;
-
-  String get applicationName {
-    return applicationNameVal.value;
-  }
-
-  set applicationName(String val) {
-    if (val == this.applicationName) {
-      return;
+    factory AboutListTileBase.fromJson(Map<String, dynamic> data) {
+        return AboutListTileBase();
     }
-    applicationNameVal.value = val;
-  }
 
-  Core<String> applicationVersionVal;
+    @override
+    String get description => r'''
+A [ListTile] that shows an about box.
 
-  String get applicationVersion {
-    return applicationVersionVal.value;
-  }
+This widget is often added to an app's [Drawer]. When tapped it shows
+an about box dialog with [showAboutDialog].
 
-  set applicationVersion(String val) {
-    if (val == this.applicationVersion) {
-      return;
+The about box will include a button that shows licenses for software used by
+the application. The licenses shown are those returned by the
+[LicenseRegistry] API, which can be used to add more licenses to the list.
+
+If your application does not have a [Drawer], you should provide an
+affordance to call [showAboutDialog] or (at least) [showLicensePage].
+{@tool dartpad --template=stateless_widget_material}
+
+This sample shows two ways to open [AboutDialog]. The first one
+uses an [AboutListTile], and the second uses the [showAboutDialog] function.
+
+```dart
+
+Widget build(BuildContext context) {
+final TextStyle textStyle = Theme.of(context).textTheme.bodyText2;
+final List<Widget> aboutBoxChildren = <Widget>[
+SizedBox(height: 24),
+RichText(
+text: TextSpan(
+children: <TextSpan>[
+TextSpan(
+style: textStyle,
+text: "Flutter is Google's UI toolkit for building beautiful, "
+'natively compiled applications for mobile, web, and desktop '
+'from a single codebase. Learn more about Flutter at '
+),
+TextSpan(
+style: textStyle.copyWith(color: Theme.of(context).accentColor),
+text: 'https://flutter.dev'
+),
+TextSpan(
+style: textStyle,
+text: '.'
+),
+],
+),
+),
+];
+
+return Scaffold(
+appBar: AppBar(
+title: Text('Show About Example'),
+),
+drawer: Drawer(
+child: SingleChildScrollView(
+child: SafeArea(
+child: AboutListTile(
+icon: Icon(Icons.info),
+applicationIcon: FlutterLogo(),
+applicationName: 'Show About Example',
+applicationVersion: 'August 2019',
+applicationLegalese: '\u{a9} 2014 The Flutter Authors',
+aboutBoxChildren: aboutBoxChildren,
+),
+),
+),
+),
+body: Center(
+child: ElevatedButton(
+child: Text('Show About Example'),
+onPressed: () {
+showAboutDialog(
+context: context,
+applicationIcon: FlutterLogo(),
+applicationName: 'Show About Example',
+applicationVersion: 'August 2019',
+applicationLegalese: '\u{a9} 2014 The Flutter Authors',
+children: aboutBoxChildren,
+);
+},
+),
+),
+);
+}
+```
+{@end-tool}
+
+''';
+
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
     }
-    applicationVersionVal.value = val;
-  }
 
-  Core<Widget> applicationIconVal;
-
-  Widget get applicationIcon {
-    return applicationIconVal.value;
-  }
-
-  set applicationIcon(Widget val) {
-    if (val == this.applicationIcon) {
-      return;
+    @override
+    Widget render(BuildContext context) {
+        return Container();
     }
-    applicationIconVal.value = val;
-  }
+}
 
-  Core<String> applicationLegaleseVal;
+class AboutDialogBase extends BaseWidget {
+    AboutDialogBase();
 
-  String get applicationLegalese {
-    return applicationLegaleseVal.value;
-  }
-
-  set applicationLegalese(String val) {
-    if (val == this.applicationLegalese) {
-      return;
+    factory AboutDialogBase.fromJson(Map<String, dynamic> data) {
+        return AboutDialogBase();
     }
-    applicationLegaleseVal.value = val;
-  }
 
+    @override
+    String get description => r'''
+An about box. This is a dialog box with the application's icon, name,
+version number, and copyright, plus a button to show licenses for software
+used by the application.
 
-  @override
-  Map<String, dynamic> get staticFields => {
-  };
+To show an [AboutDialog], use [showAboutDialog].
 
-  @override
-  List<Core> get props => [
-    this.applicationNameVal,
-    this.applicationVersionVal,
-    this.applicationIconVal,
-    this.applicationLegaleseVal,
-  ];
+{@youtube 560 315 https://www.youtube.com/watch?v=YFCSODyFxbE}
 
-  @override
-  String get description {
-    final sb = StringBuffer();
-    sb.writeln("[[LicenseRegistry] API, which can be used to add more licenses to the list.]");
-    return sb.toString();
-  }
+If the application has a [Drawer], the [AboutListTile] widget can make the
+process of showing an about dialog simpler.
 
-  @override
-  Map<String, Object> get constructors {
-     return {
-      'default': LicensePage(
-        applicationName: this.applicationName,
-        applicationVersion: this.applicationVersion,
-        applicationIcon: this.applicationIcon,
-        applicationLegalese: this.applicationLegalese,
-      ),
-    };
-  }
+The [AboutDialog] shown by [showAboutDialog] includes a button that calls
+[showLicensePage].
 
-  @override
-  Map<String, Map<String, dynamic>> get properties {
-     return {
-      'default': {
-        'applicationName': this.applicationName,
-        'applicationVersion': this.applicationVersion,
-        'applicationIcon': this.applicationIcon,
-        'applicationLegalese': this.applicationLegalese,
-      },
-    };
-  }
+The licenses shown on the [LicensePage] are those returned by the
+[LicenseRegistry] API, which can be used to add more licenses to the list.
+''';
 
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      'name': 'LicensePage',
-      'props': {
-        'applicationName': this.applicationNameVal.toJson(),
-        'applicationVersion': this.applicationVersionVal.toJson(),
-        'applicationIcon': this.applicationIconVal.toJson(),
-        'applicationLegalese': this.applicationLegaleseVal.toJson(),
-      }
-    };
-  }
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
+    }
 
-  @override
-  Map<String, String> toCode() {
-    return {
-    'default': """LicensePage(
-       applicationName: ${this.applicationNameVal.toCode()},
-       applicationVersion: ${this.applicationVersionVal.toCode()},
-       applicationIcon: ${this.applicationIconVal.toCode()},
-       applicationLegalese: ${this.applicationLegaleseVal.toCode()},
-    )""",
-    };
-  }
+    @override
+    Widget render(BuildContext context) {
+        return Container();
+    }
+}
 
-  final _controller = ValueNotifier<WidgetRect>(null);
-  ValueListenable<WidgetRect> get stats => _controller;
+class LicensePageBase extends BaseWidget {
+    LicensePageBase();
 
-  @override
-  Widget build(BuildContext context) {
-    if (isWidget) return TrackedWidget(
-      controller: _controller,
-      child: defaultBase,
-    );
-    return Container();
-  }
+    factory LicensePageBase.fromJson(Map<String, dynamic> data) {
+        return LicensePageBase();
+    }
 
-  @override
-  bool get isWidget => defaultBase is Widget;
-  
-  @override
-  Object get defaultBase => constructors['default'];
+    @override
+    String get description => r'''
+A page that shows licenses for software used by the application.
 
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-      properties.add(DiagnosticsProperty('applicationName', this.applicationName));
-      properties.add(DiagnosticsProperty('applicationVersion', this.applicationVersion));
-      properties.add(DiagnosticsProperty('applicationIcon', this.applicationIcon));
-      properties.add(DiagnosticsProperty('applicationLegalese', this.applicationLegalese));
-  }
+To show a [LicensePage], use [showLicensePage].
+
+The [AboutDialog] shown by [showAboutDialog] and [AboutListTile] includes
+a button that calls [showLicensePage].
+
+The licenses shown on the [LicensePage] are those returned by the
+[LicenseRegistry] API, which can be used to add more licenses to the list.
+''';
+
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
+    }
+
+    @override
+    Widget render(BuildContext context) {
+        return Container();
+    }
 }
 

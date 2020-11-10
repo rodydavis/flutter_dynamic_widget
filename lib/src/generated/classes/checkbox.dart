@@ -1,345 +1,47 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/gestures.dart';
-import '../core.dart';
+import '../base.dart';
 
-class CheckboxRender<T> extends StatelessWidget {
+class CheckboxBase extends BaseWidget {
+    CheckboxBase();
 
-  factory CheckboxRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
-    return CheckboxRender(update,
-      valueVal: BaseCore<bool>(null, update),
-      onChangedVal: BaseCore<ValueChanged<bool>>(null, update),
-      mouseCursorVal: BaseCore<MouseCursor>(null, update),
-      activeColorVal: BaseCore<Color>(null, update),
-      checkColorVal: BaseCore<Color>(null, update),
-      tristateVal: BaseCore<bool>(null, update),
-      materialTapTargetSizeVal: BaseCore<MaterialTapTargetSize>(null, update),
-      visualDensityVal: BaseCore<VisualDensity>(null, update),
-      focusColorVal: BaseCore<Color>(null, update),
-      hoverColorVal: BaseCore<Color>(null, update),
-      focusNodeVal: BaseCore<FocusNode>(null, update),
-      autofocusVal: BaseCore<bool>(null, update),
-    );
-  }
-
-  CheckboxRender(this._update, {
-    @required this.valueVal,
-    @required this.onChangedVal,
-    @required this.mouseCursorVal,
-    @required this.activeColorVal,
-    @required this.checkColorVal,
-    @required this.tristateVal,
-    @required this.materialTapTargetSizeVal,
-    @required this.visualDensityVal,
-    @required this.focusColorVal,
-    @required this.hoverColorVal,
-    @required this.focusNodeVal,
-    @required this.autofocusVal,
-  });
-
-  @override
-  final VoidCallback _update;
-
-  Core<bool> valueVal;
-
-  bool get value {
-    return valueVal.value;
-  }
-
-  set value(bool val) {
-    if (val == this.value) {
-      return;
+    factory CheckboxBase.fromJson(Map<String, dynamic> data) {
+        return CheckboxBase();
     }
-    valueVal.value = val;
-  }
 
-  Core<ValueChanged<bool>> onChangedVal;
+    @override
+    String get description => r'''
+A material design checkbox.
 
-  ValueChanged<bool> get onChanged {
-    return onChangedVal.value;
-  }
+The checkbox itself does not maintain any state. Instead, when the state of
+the checkbox changes, the widget calls the [onChanged] callback. Most
+widgets that use a checkbox will listen for the [onChanged] callback and
+rebuild the checkbox with a new [value] to update the visual appearance of
+the checkbox.
 
-  set onChanged(ValueChanged<bool> val) {
-    if (val == this.onChanged) {
-      return;
+The checkbox can optionally display three values - true, false, and null -
+if [tristate] is true. When [value] is null a dash is displayed. By default
+[tristate] is false and the checkbox's [value] must be true or false.
+
+Requires one of its ancestors to be a [Material] widget.
+
+See also:
+
+* [CheckboxListTile], which combines this widget with a [ListTile] so that
+you can give the checkbox a label.
+* [Switch], a widget with semantics similar to [Checkbox].
+* [Radio], for selecting among a set of explicit values.
+* [Slider], for selecting a value in a range.
+* <https://material.io/design/components/selection-controls.html#checkboxes>
+* <https://material.io/design/components/lists.html#types>
+''';
+
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
     }
-    onChangedVal.value = val;
-  }
 
-  Core<MouseCursor> mouseCursorVal;
-
-  MouseCursor get mouseCursor {
-    return mouseCursorVal.value;
-  }
-
-  set mouseCursor(MouseCursor val) {
-    if (val == this.mouseCursor) {
-      return;
+    @override
+    Widget render(BuildContext context) {
+        return Container();
     }
-    mouseCursorVal.value = val;
-  }
-
-  Core<Color> activeColorVal;
-
-  Color get activeColor {
-    return activeColorVal.value;
-  }
-
-  set activeColor(Color val) {
-    if (val == this.activeColor) {
-      return;
-    }
-    activeColorVal.value = val;
-  }
-
-  Core<Color> checkColorVal;
-
-  Color get checkColor {
-    return checkColorVal.value;
-  }
-
-  set checkColor(Color val) {
-    if (val == this.checkColor) {
-      return;
-    }
-    checkColorVal.value = val;
-  }
-
-  Core<bool> tristateVal;
-
-  bool get tristate {
-    return tristateVal.value;
-  }
-
-  set tristate(bool val) {
-    if (val == this.tristate) {
-      return;
-    }
-    tristateVal.value = val;
-  }
-
-  Core<MaterialTapTargetSize> materialTapTargetSizeVal;
-
-  MaterialTapTargetSize get materialTapTargetSize {
-    return materialTapTargetSizeVal.value;
-  }
-
-  set materialTapTargetSize(MaterialTapTargetSize val) {
-    if (val == this.materialTapTargetSize) {
-      return;
-    }
-    materialTapTargetSizeVal.value = val;
-  }
-
-  Core<VisualDensity> visualDensityVal;
-
-  VisualDensity get visualDensity {
-    return visualDensityVal.value;
-  }
-
-  set visualDensity(VisualDensity val) {
-    if (val == this.visualDensity) {
-      return;
-    }
-    visualDensityVal.value = val;
-  }
-
-  Core<Color> focusColorVal;
-
-  Color get focusColor {
-    return focusColorVal.value;
-  }
-
-  set focusColor(Color val) {
-    if (val == this.focusColor) {
-      return;
-    }
-    focusColorVal.value = val;
-  }
-
-  Core<Color> hoverColorVal;
-
-  Color get hoverColor {
-    return hoverColorVal.value;
-  }
-
-  set hoverColor(Color val) {
-    if (val == this.hoverColor) {
-      return;
-    }
-    hoverColorVal.value = val;
-  }
-
-  Core<FocusNode> focusNodeVal;
-
-  FocusNode get focusNode {
-    return focusNodeVal.value;
-  }
-
-  set focusNode(FocusNode val) {
-    if (val == this.focusNode) {
-      return;
-    }
-    focusNodeVal.value = val;
-  }
-
-  Core<bool> autofocusVal;
-
-  bool get autofocus {
-    return autofocusVal.value;
-  }
-
-  set autofocus(bool val) {
-    if (val == this.autofocus) {
-      return;
-    }
-    autofocusVal.value = val;
-  }
-
-
-  @override
-  Map<String, dynamic> get staticFields => {
-  'width': null,
-  };
-
-  @override
-  List<Core> get props => [
-    this.valueVal,
-    this.onChangedVal,
-    this.mouseCursorVal,
-    this.activeColorVal,
-    this.checkColorVal,
-    this.tristateVal,
-    this.materialTapTargetSizeVal,
-    this.visualDensityVal,
-    this.focusColorVal,
-    this.hoverColorVal,
-    this.focusNodeVal,
-    this.autofocusVal,
-  ];
-
-  @override
-  String get description {
-    final sb = StringBuffer();
-    sb.writeln("[ * <https://material.io/design/components/lists.html#types>]");
-    return sb.toString();
-  }
-
-  @override
-  Map<String, Object> get constructors {
-     return {
-      'default': Checkbox(
-        value: this.value,
-        tristate: this.tristate,
-        onChanged: this.onChanged,
-        mouseCursor: this.mouseCursor,
-        activeColor: this.activeColor,
-        checkColor: this.checkColor,
-        focusColor: this.focusColor,
-        hoverColor: this.hoverColor,
-        materialTapTargetSize: this.materialTapTargetSize,
-        visualDensity: this.visualDensity,
-        focusNode: this.focusNode,
-        autofocus: this.autofocus,
-      ),
-    };
-  }
-
-  @override
-  Map<String, Map<String, dynamic>> get properties {
-     return {
-      'default': {
-        'value': this.value,
-        'tristate': this.tristate,
-        'onChanged': this.onChanged,
-        'mouseCursor': this.mouseCursor,
-        'activeColor': this.activeColor,
-        'checkColor': this.checkColor,
-        'focusColor': this.focusColor,
-        'hoverColor': this.hoverColor,
-        'materialTapTargetSize': this.materialTapTargetSize,
-        'visualDensity': this.visualDensity,
-        'focusNode': this.focusNode,
-        'autofocus': this.autofocus,
-      },
-    };
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      'name': 'Checkbox',
-      'props': {
-        'value': this.valueVal.toJson(),
-        'onChanged': this.onChangedVal.toJson(),
-        'mouseCursor': this.mouseCursorVal.toJson(),
-        'activeColor': this.activeColorVal.toJson(),
-        'checkColor': this.checkColorVal.toJson(),
-        'tristate': this.tristateVal.toJson(),
-        'materialTapTargetSize': this.materialTapTargetSizeVal.toJson(),
-        'visualDensity': this.visualDensityVal.toJson(),
-        'focusColor': this.focusColorVal.toJson(),
-        'hoverColor': this.hoverColorVal.toJson(),
-        'focusNode': this.focusNodeVal.toJson(),
-        'autofocus': this.autofocusVal.toJson(),
-      }
-    };
-  }
-
-  @override
-  Map<String, String> toCode() {
-    return {
-    'default': """Checkbox(
-       value: ${this.valueVal.toCode()},
-       tristate: ${this.tristateVal.toCode()},
-       onChanged: ${this.onChangedVal.toCode()},
-       mouseCursor: ${this.mouseCursorVal.toCode()},
-       activeColor: ${this.activeColorVal.toCode()},
-       checkColor: ${this.checkColorVal.toCode()},
-       focusColor: ${this.focusColorVal.toCode()},
-       hoverColor: ${this.hoverColorVal.toCode()},
-       materialTapTargetSize: ${this.materialTapTargetSizeVal.toCode()},
-       visualDensity: ${this.visualDensityVal.toCode()},
-       focusNode: ${this.focusNodeVal.toCode()},
-       autofocus: ${this.autofocusVal.toCode()},
-    )""",
-    };
-  }
-
-  final _controller = ValueNotifier<WidgetRect>(null);
-  ValueListenable<WidgetRect> get stats => _controller;
-
-  @override
-  Widget build(BuildContext context) {
-    if (isWidget) return TrackedWidget(
-      controller: _controller,
-      child: defaultBase,
-    );
-    return Container();
-  }
-
-  @override
-  bool get isWidget => defaultBase is Widget;
-  
-  @override
-  Object get defaultBase => constructors['default'];
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-      properties.add(DiagnosticsProperty('value', this.value));
-      properties.add(DiagnosticsProperty('onChanged', this.onChanged));
-      properties.add(DiagnosticsProperty('mouseCursor', this.mouseCursor));
-      properties.add(DiagnosticsProperty('activeColor', this.activeColor));
-      properties.add(DiagnosticsProperty('checkColor', this.checkColor));
-      properties.add(DiagnosticsProperty('tristate', this.tristate));
-      properties.add(DiagnosticsProperty('materialTapTargetSize', this.materialTapTargetSize));
-      properties.add(DiagnosticsProperty('visualDensity', this.visualDensity));
-      properties.add(DiagnosticsProperty('focusColor', this.focusColor));
-      properties.add(DiagnosticsProperty('hoverColor', this.hoverColor));
-      properties.add(DiagnosticsProperty('focusNode', this.focusNode));
-      properties.add(DiagnosticsProperty('autofocus', this.autofocus));
-  }
 }
 

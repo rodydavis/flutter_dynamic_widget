@@ -1,86 +1,75 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/gestures.dart';
-import '../core.dart';
+import '../base.dart';
 
-class PopupMenuButtonStateRender<T> extends StatelessWidget {
+class PopupMenuButtonBase extends BaseWidget {
+    PopupMenuButtonBase();
 
-  factory PopupMenuButtonStateRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
-    return PopupMenuButtonStateRender(update,
-    );
-  }
+    factory PopupMenuButtonBase.fromJson(Map<String, dynamic> data) {
+        return PopupMenuButtonBase();
+    }
 
-  PopupMenuButtonStateRender(this._update, {
-  });
+    @override
+    String get description => r'''
+Displays a menu when pressed and calls [onSelected] when the menu is dismissed
+because an item was selected. The value passed to [onSelected] is the value of
+the selected menu item.
 
-  @override
-  final VoidCallback _update;
+One of [child] or [icon] may be provided, but not both. If [icon] is provided,
+then [PopupMenuButton] behaves like an [IconButton].
 
+If both are null, then a standard overflow icon is created (depending on the
+platform).
 
-  @override
-  Map<String, dynamic> get staticFields => {
-  };
+{@tool snippet}
 
-  @override
-  List<Core> get props => [
-  ];
+This example shows a menu with four items, selecting between an enum's
+values and setting a `_selection` field based on the selection.
 
-  @override
-  String get description {
-    final sb = StringBuffer();
-    sb.writeln("[of your button state.]");
-    return sb.toString();
-  }
+```dart
+// This is the type used by the popup menu below.
+enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
 
-  @override
-  Map<String, Object> get constructors {
-     return {
-    };
-  }
+// This menu button widget updates a _selection field (of type WhyFarther,
+// not shown here).
+PopupMenuButton<WhyFarther>(
+onSelected: (WhyFarther result) { setState(() { _selection = result; }); },
+itemBuilder: (BuildContext context) => <PopupMenuEntry<WhyFarther>>[
+const PopupMenuItem<WhyFarther>(
+value: WhyFarther.harder,
+child: Text('Working a lot harder'),
+),
+const PopupMenuItem<WhyFarther>(
+value: WhyFarther.smarter,
+child: Text('Being a lot smarter'),
+),
+const PopupMenuItem<WhyFarther>(
+value: WhyFarther.selfStarter,
+child: Text('Being a self-starter'),
+),
+const PopupMenuItem<WhyFarther>(
+value: WhyFarther.tradingCharter,
+child: Text('Placed in charge of trading charter'),
+),
+],
+)
+```
+{@end-tool}
 
-  @override
-  Map<String, Map<String, dynamic>> get properties {
-     return {
-    };
-  }
+See also:
 
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      'name': 'PopupMenuButtonState',
-      'props': {
-      }
-    };
-  }
+* [PopupMenuItem], a popup menu entry for a single value.
+* [PopupMenuDivider], a popup menu entry that is just a horizontal line.
+* [CheckedPopupMenuItem], a popup menu item with a checkmark.
+* [showMenu], a method to dynamically show a popup menu at a given location.
+''';
 
-  @override
-  Map<String, String> toCode() {
-    return {
-    };
-  }
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
+    }
 
-  final _controller = ValueNotifier<WidgetRect>(null);
-  ValueListenable<WidgetRect> get stats => _controller;
-
-  @override
-  Widget build(BuildContext context) {
-    if (isWidget) return TrackedWidget(
-      controller: _controller,
-      child: defaultBase,
-    );
-    return Container();
-  }
-
-  @override
-  bool get isWidget => defaultBase is Widget;
-  
-  @override
-  Object get defaultBase => constructors['default'];
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-  }
+    @override
+    Widget render(BuildContext context) {
+        return Container();
+    }
 }
 

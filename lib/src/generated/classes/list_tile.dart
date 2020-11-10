@@ -1,512 +1,508 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/gestures.dart';
-import '../core.dart';
+import '../base.dart';
 
-class ListTileRender<T> extends StatelessWidget {
+class ListTileBase extends BaseWidget {
+    ListTileBase();
 
-  factory ListTileRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
-    return ListTileRender(update,
-      leadingVal: BaseCore<Widget>(null, update),
-      titleVal: BaseCore<Widget>(null, update),
-      subtitleVal: BaseCore<Widget>(null, update),
-      trailingVal: BaseCore<Widget>(null, update),
-      isThreeLineVal: BaseCore<bool>(null, update),
-      denseVal: BaseCore<bool>(null, update),
-      visualDensityVal: BaseCore<VisualDensity>(null, update),
-      shapeVal: BaseCore<ShapeBorder>(null, update),
-      contentPaddingVal: BaseCore<EdgeInsetsGeometry>(null, update),
-      enabledVal: BaseCore<bool>(null, update),
-      onTapVal: BaseCore<GestureTapCallback>(null, update),
-      onLongPressVal: BaseCore<GestureLongPressCallback>(null, update),
-      mouseCursorVal: BaseCore<MouseCursor>(null, update),
-      selectedVal: BaseCore<bool>(null, update),
-      focusColorVal: BaseCore<Color>(null, update),
-      hoverColorVal: BaseCore<Color>(null, update),
-      focusNodeVal: BaseCore<FocusNode>(null, update),
-      autofocusVal: BaseCore<bool>(null, update),
-      tileColorVal: BaseCore<Color>(null, update),
-      selectedTileColorVal: BaseCore<Color>(null, update),
-    );
-  }
-
-  ListTileRender(this._update, {
-    @required this.leadingVal,
-    @required this.titleVal,
-    @required this.subtitleVal,
-    @required this.trailingVal,
-    @required this.isThreeLineVal,
-    @required this.denseVal,
-    @required this.visualDensityVal,
-    @required this.shapeVal,
-    @required this.contentPaddingVal,
-    @required this.enabledVal,
-    @required this.onTapVal,
-    @required this.onLongPressVal,
-    @required this.mouseCursorVal,
-    @required this.selectedVal,
-    @required this.focusColorVal,
-    @required this.hoverColorVal,
-    @required this.focusNodeVal,
-    @required this.autofocusVal,
-    @required this.tileColorVal,
-    @required this.selectedTileColorVal,
-  });
-
-  @override
-  final VoidCallback _update;
-
-  Core<Widget> leadingVal;
-
-  Widget get leading {
-    return leadingVal.value;
-  }
-
-  set leading(Widget val) {
-    if (val == this.leading) {
-      return;
+    factory ListTileBase.fromJson(Map<String, dynamic> data) {
+        return ListTileBase();
     }
-    leadingVal.value = val;
-  }
 
-  Core<Widget> titleVal;
+    @override
+    String get description => r'''
+A single fixed-height row that typically contains some text as well as
+a leading or trailing icon.
 
-  Widget get title {
-    return titleVal.value;
-  }
+{@youtube 560 315 https://www.youtube.com/watch?v=l8dj0yPBvgQ}
 
-  set title(Widget val) {
-    if (val == this.title) {
-      return;
+A list tile contains one to three lines of text optionally flanked by icons or
+other widgets, such as check boxes. The icons (or other widgets) for the
+tile are defined with the [leading] and [trailing] parameters. The first
+line of text is not optional and is specified with [title]. The value of
+[subtitle], which _is_ optional, will occupy the space allocated for an
+additional line of text, or two lines if [isThreeLine] is true. If [dense]
+is true then the overall height of this tile and the size of the
+[DefaultTextStyle]s that wrap the [title] and [subtitle] widget are reduced.
+
+It is the responsibility of the caller to ensure that [title] does not wrap,
+and to ensure that [subtitle] doesn't wrap (if [isThreeLine] is false) or
+wraps to two lines (if it is true).
+
+The heights of the [leading] and [trailing] widgets are constrained
+according to the
+[Material spec](https://material.io/design/components/lists.html).
+An exception is made for one-line ListTiles for accessibility. Please
+see the example below to see how to adhere to both Material spec and
+accessibility requirements.
+
+Note that [leading] and [trailing] widgets can expand as far as they wish
+horizontally, so ensure that they are properly constrained.
+
+List tiles are typically used in [ListView]s, or arranged in [Column]s in
+[Drawer]s and [Card]s.
+
+Requires one of its ancestors to be a [Material] widget.
+
+{@tool snippet}
+
+This example uses a [ListView] to demonstrate different configurations of
+[ListTile]s in [Card]s.
+
+![Different variations of ListTile](https://flutter.github.io/assets-for-api-docs/assets/material/list_tile.png)
+
+```dart
+ListView(
+children: const <Widget>[
+Card(child: ListTile(title: Text('One-line ListTile'))),
+Card(
+child: ListTile(
+leading: FlutterLogo(),
+title: Text('One-line with leading widget'),
+),
+),
+Card(
+child: ListTile(
+title: Text('One-line with trailing widget'),
+trailing: Icon(Icons.more_vert),
+),
+),
+Card(
+child: ListTile(
+leading: FlutterLogo(),
+title: Text('One-line with both widgets'),
+trailing: Icon(Icons.more_vert),
+),
+),
+Card(
+child: ListTile(
+title: Text('One-line dense ListTile'),
+dense: true,
+),
+),
+Card(
+child: ListTile(
+leading: FlutterLogo(size: 56.0),
+title: Text('Two-line ListTile'),
+subtitle: Text('Here is a second line'),
+trailing: Icon(Icons.more_vert),
+),
+),
+Card(
+child: ListTile(
+leading: FlutterLogo(size: 72.0),
+title: Text('Three-line ListTile'),
+subtitle: Text(
+'A sufficiently long subtitle warrants three lines.'
+),
+trailing: Icon(Icons.more_vert),
+isThreeLine: true,
+),
+),
+],
+)
+```
+{@end-tool}
+{@tool snippet}
+
+To use a [ListTile] within a [Row], it needs to be wrapped in an
+[Expanded] widget. [ListTile] requires fixed width constraints,
+whereas a [Row] does not constrain its children.
+
+```dart
+Row(
+children: const <Widget>[
+Expanded(
+child: ListTile(
+leading: FlutterLogo(),
+title: Text('These ListTiles are expanded '),
+),
+),
+Expanded(
+child: ListTile(
+trailing: FlutterLogo(),
+title: Text('to fill the available space.'),
+),
+),
+],
+)
+```
+{@end-tool}
+{@tool snippet}
+
+Tiles can be much more elaborate. Here is a tile which can be tapped, but
+which is disabled when the `_act` variable is not 2. When the tile is
+tapped, the whole row has an ink splash effect (see [InkWell]).
+
+```dart
+int _act = 1;
+// ...
+ListTile(
+leading: const Icon(Icons.flight_land),
+title: const Text("Trix's airplane"),
+subtitle: _act != 2 ? const Text('The airplane is only in Act II.') : null,
+enabled: _act == 2,
+onTap: () { /* react to the tile being tapped */ }
+)
+```
+{@end-tool}
+
+To be accessible, tappable [leading] and [trailing] widgets have to
+be at least 48x48 in size. However, to adhere to the Material spec,
+[trailing] and [leading] widgets in one-line ListTiles should visually be
+at most 32 ([dense]: true) or 40 ([dense]: false) in height, which may
+conflict with the accessibility requirement.
+
+For this reason, a one-line ListTile allows the height of [leading]
+and [trailing] widgets to be constrained by the height of the ListTile.
+This allows for the creation of tappable [leading] and [trailing] widgets
+that are large enough, but it is up to the developer to ensure that
+their widgets follow the Material spec.
+
+{@tool snippet}
+
+Here is an example of a one-line, non-[dense] ListTile with a
+tappable leading widget that adheres to accessibility requirements and
+the Material spec. To adjust the use case below for a one-line, [dense]
+ListTile, adjust the vertical padding to 8.0.
+
+```dart
+ListTile(
+leading: GestureDetector(
+behavior: HitTestBehavior.translucent,
+onTap: () {},
+child: Container(
+width: 48,
+height: 48,
+padding: EdgeInsets.symmetric(vertical: 4.0),
+alignment: Alignment.center,
+child: CircleAvatar(),
+),
+),
+title: Text('title'),
+dense: false,
+),
+```
+{@end-tool}
+
+## The ListTile layout isn't exactly what I want
+
+If the way ListTile pads and positions its elements isn't quite what
+you're looking for, it's easy to create custom list items with a
+combination of other widgets, such as [Row]s and [Column]s.
+
+{@tool dartpad --template=stateless_widget_scaffold}
+
+Here is an example of a custom list item that resembles a Youtube related
+video list item created with [Expanded] and [Container] widgets.
+
+![Custom list item a](https://flutter.github.io/assets-for-api-docs/assets/widgets/custom_list_item_a.png)
+
+```dart preamble
+class CustomListItem extends StatelessWidget {
+const CustomListItem({
+this.thumbnail,
+this.title,
+this.user,
+this.viewCount,
+});
+
+final Widget thumbnail;
+final String title;
+final String user;
+final int viewCount;
+
+@override
+Widget build(BuildContext context) {
+return Padding(
+padding: const EdgeInsets.symmetric(vertical: 5.0),
+child: Row(
+crossAxisAlignment: CrossAxisAlignment.start,
+children: <Widget>[
+Expanded(
+flex: 2,
+child: thumbnail,
+),
+Expanded(
+flex: 3,
+child: _VideoDescription(
+title: title,
+user: user,
+viewCount: viewCount,
+),
+),
+const Icon(
+Icons.more_vert,
+size: 16.0,
+),
+],
+),
+);
+}
+}
+
+class _VideoDescription extends StatelessWidget {
+const _VideoDescription({
+Key key,
+this.title,
+this.user,
+this.viewCount,
+}) : super(key: key);
+
+final String title;
+final String user;
+final int viewCount;
+
+@override
+Widget build(BuildContext context) {
+return Padding(
+padding: const EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
+child: Column(
+crossAxisAlignment: CrossAxisAlignment.start,
+children: <Widget>[
+Text(
+title,
+style: const TextStyle(
+fontWeight: FontWeight.w500,
+fontSize: 14.0,
+),
+),
+const Padding(padding: EdgeInsets.symmetric(vertical: 2.0)),
+Text(
+user,
+style: const TextStyle(fontSize: 10.0),
+),
+const Padding(padding: EdgeInsets.symmetric(vertical: 1.0)),
+Text(
+'$viewCount views',
+style: const TextStyle(fontSize: 10.0),
+),
+],
+),
+);
+}
+}
+```
+
+```dart
+Widget build(BuildContext context) {
+return ListView(
+padding: const EdgeInsets.all(8.0),
+itemExtent: 106.0,
+children: <CustomListItem>[
+CustomListItem(
+user: 'Flutter',
+viewCount: 999000,
+thumbnail: Container(
+decoration: const BoxDecoration(color: Colors.blue),
+),
+title: 'The Flutter YouTube Channel',
+),
+CustomListItem(
+user: 'Dash',
+viewCount: 884000,
+thumbnail: Container(
+decoration: const BoxDecoration(color: Colors.yellow),
+),
+title: 'Announcing Flutter 1.0',
+),
+],
+);
+}
+```
+{@end-tool}
+
+{@tool dartpad --template=stateless_widget_scaffold}
+
+Here is an example of an article list item with multiline titles and
+subtitles. It utilizes [Row]s and [Column]s, as well as [Expanded] and
+[AspectRatio] widgets to organize its layout.
+
+![Custom list item b](https://flutter.github.io/assets-for-api-docs/assets/widgets/custom_list_item_b.png)
+
+```dart preamble
+class _ArticleDescription extends StatelessWidget {
+_ArticleDescription({
+Key key,
+this.title,
+this.subtitle,
+this.author,
+this.publishDate,
+this.readDuration,
+}) : super(key: key);
+
+final String title;
+final String subtitle;
+final String author;
+final String publishDate;
+final String readDuration;
+
+@override
+Widget build(BuildContext context) {
+return Column(
+crossAxisAlignment: CrossAxisAlignment.start,
+children: <Widget>[
+Expanded(
+flex: 1,
+child: Column(
+crossAxisAlignment: CrossAxisAlignment.start,
+children: <Widget>[
+Text(
+'$title',
+maxLines: 2,
+overflow: TextOverflow.ellipsis,
+style: const TextStyle(
+fontWeight: FontWeight.bold,
+),
+),
+const Padding(padding: EdgeInsets.only(bottom: 2.0)),
+Text(
+'$subtitle',
+maxLines: 2,
+overflow: TextOverflow.ellipsis,
+style: const TextStyle(
+fontSize: 12.0,
+color: Colors.black54,
+),
+),
+],
+),
+),
+Expanded(
+flex: 1,
+child: Column(
+crossAxisAlignment: CrossAxisAlignment.start,
+mainAxisAlignment: MainAxisAlignment.end,
+children: <Widget>[
+Text(
+'$author',
+style: const TextStyle(
+fontSize: 12.0,
+color: Colors.black87,
+),
+),
+Text(
+'$publishDate - $readDuration',
+style: const TextStyle(
+fontSize: 12.0,
+color: Colors.black54,
+),
+),
+],
+),
+),
+],
+);
+}
+}
+
+class CustomListItemTwo extends StatelessWidget {
+CustomListItemTwo({
+Key key,
+this.thumbnail,
+this.title,
+this.subtitle,
+this.author,
+this.publishDate,
+this.readDuration,
+}) : super(key: key);
+
+final Widget thumbnail;
+final String title;
+final String subtitle;
+final String author;
+final String publishDate;
+final String readDuration;
+
+@override
+Widget build(BuildContext context) {
+return Padding(
+padding: const EdgeInsets.symmetric(vertical: 10.0),
+child: SizedBox(
+height: 100,
+child: Row(
+crossAxisAlignment: CrossAxisAlignment.start,
+children: <Widget>[
+AspectRatio(
+aspectRatio: 1.0,
+child: thumbnail,
+),
+Expanded(
+child: Padding(
+padding: const EdgeInsets.fromLTRB(20.0, 0.0, 2.0, 0.0),
+child: _ArticleDescription(
+title: title,
+subtitle: subtitle,
+author: author,
+publishDate: publishDate,
+readDuration: readDuration,
+),
+),
+)
+],
+),
+),
+);
+}
+}
+```
+
+```dart
+Widget build(BuildContext context) {
+return ListView(
+padding: const EdgeInsets.all(10.0),
+children: <Widget>[
+CustomListItemTwo(
+thumbnail: Container(
+decoration: const BoxDecoration(color: Colors.pink),
+),
+title: 'Flutter 1.0 Launch',
+subtitle:
+'Flutter continues to improve and expand its horizons.'
+'This text should max out at two lines and clip',
+author: 'Dash',
+publishDate: 'Dec 28',
+readDuration: '5 mins',
+),
+CustomListItemTwo(
+thumbnail: Container(
+decoration: const BoxDecoration(color: Colors.blue),
+),
+title: 'Flutter 1.2 Release - Continual updates to the framework',
+subtitle: 'Flutter once again improves and makes updates.',
+author: 'Flutter',
+publishDate: 'Feb 26',
+readDuration: '12 mins',
+),
+],
+);
+}
+```
+{@end-tool}
+
+See also:
+
+* [ListTileTheme], which defines visual properties for [ListTile]s.
+* [ListView], which can display an arbitrary number of [ListTile]s
+in a scrolling list.
+* [CircleAvatar], which shows an icon representing a person and is often
+used as the [leading] element of a ListTile.
+* [Card], which can be used with [Column] to show a few [ListTile]s.
+* [Divider], which can be used to separate [ListTile]s.
+* [ListTile.divideTiles], a utility for inserting [Divider]s in between [ListTile]s.
+* [CheckboxListTile], [RadioListTile], and [SwitchListTile], widgets
+that combine [ListTile] with other controls.
+* <https://material.io/design/components/lists.html>
+* Cookbook: [Use lists](https://flutter.dev/docs/cookbook/lists/basic-list)
+* Cookbook: [Implement swipe to dismiss](https://flutter.dev/docs/cookbook/gestures/dismissible)
+''';
+
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
     }
-    titleVal.value = val;
-  }
 
-  Core<Widget> subtitleVal;
-
-  Widget get subtitle {
-    return subtitleVal.value;
-  }
-
-  set subtitle(Widget val) {
-    if (val == this.subtitle) {
-      return;
+    @override
+    Widget render(BuildContext context) {
+        return Container();
     }
-    subtitleVal.value = val;
-  }
-
-  Core<Widget> trailingVal;
-
-  Widget get trailing {
-    return trailingVal.value;
-  }
-
-  set trailing(Widget val) {
-    if (val == this.trailing) {
-      return;
-    }
-    trailingVal.value = val;
-  }
-
-  Core<bool> isThreeLineVal;
-
-  bool get isThreeLine {
-    return isThreeLineVal.value;
-  }
-
-  set isThreeLine(bool val) {
-    if (val == this.isThreeLine) {
-      return;
-    }
-    isThreeLineVal.value = val;
-  }
-
-  Core<bool> denseVal;
-
-  bool get dense {
-    return denseVal.value;
-  }
-
-  set dense(bool val) {
-    if (val == this.dense) {
-      return;
-    }
-    denseVal.value = val;
-  }
-
-  Core<VisualDensity> visualDensityVal;
-
-  VisualDensity get visualDensity {
-    return visualDensityVal.value;
-  }
-
-  set visualDensity(VisualDensity val) {
-    if (val == this.visualDensity) {
-      return;
-    }
-    visualDensityVal.value = val;
-  }
-
-  Core<ShapeBorder> shapeVal;
-
-  ShapeBorder get shape {
-    return shapeVal.value;
-  }
-
-  set shape(ShapeBorder val) {
-    if (val == this.shape) {
-      return;
-    }
-    shapeVal.value = val;
-  }
-
-  Core<EdgeInsetsGeometry> contentPaddingVal;
-
-  EdgeInsetsGeometry get contentPadding {
-    return contentPaddingVal.value;
-  }
-
-  set contentPadding(EdgeInsetsGeometry val) {
-    if (val == this.contentPadding) {
-      return;
-    }
-    contentPaddingVal.value = val;
-  }
-
-  Core<bool> enabledVal;
-
-  bool get enabled {
-    return enabledVal.value;
-  }
-
-  set enabled(bool val) {
-    if (val == this.enabled) {
-      return;
-    }
-    enabledVal.value = val;
-  }
-
-  Core<GestureTapCallback> onTapVal;
-
-  GestureTapCallback get onTap {
-    return onTapVal.value;
-  }
-
-  set onTap(GestureTapCallback val) {
-    if (val == this.onTap) {
-      return;
-    }
-    onTapVal.value = val;
-  }
-
-  Core<GestureLongPressCallback> onLongPressVal;
-
-  GestureLongPressCallback get onLongPress {
-    return onLongPressVal.value;
-  }
-
-  set onLongPress(GestureLongPressCallback val) {
-    if (val == this.onLongPress) {
-      return;
-    }
-    onLongPressVal.value = val;
-  }
-
-  Core<MouseCursor> mouseCursorVal;
-
-  MouseCursor get mouseCursor {
-    return mouseCursorVal.value;
-  }
-
-  set mouseCursor(MouseCursor val) {
-    if (val == this.mouseCursor) {
-      return;
-    }
-    mouseCursorVal.value = val;
-  }
-
-  Core<bool> selectedVal;
-
-  bool get selected {
-    return selectedVal.value;
-  }
-
-  set selected(bool val) {
-    if (val == this.selected) {
-      return;
-    }
-    selectedVal.value = val;
-  }
-
-  Core<Color> focusColorVal;
-
-  Color get focusColor {
-    return focusColorVal.value;
-  }
-
-  set focusColor(Color val) {
-    if (val == this.focusColor) {
-      return;
-    }
-    focusColorVal.value = val;
-  }
-
-  Core<Color> hoverColorVal;
-
-  Color get hoverColor {
-    return hoverColorVal.value;
-  }
-
-  set hoverColor(Color val) {
-    if (val == this.hoverColor) {
-      return;
-    }
-    hoverColorVal.value = val;
-  }
-
-  Core<FocusNode> focusNodeVal;
-
-  FocusNode get focusNode {
-    return focusNodeVal.value;
-  }
-
-  set focusNode(FocusNode val) {
-    if (val == this.focusNode) {
-      return;
-    }
-    focusNodeVal.value = val;
-  }
-
-  Core<bool> autofocusVal;
-
-  bool get autofocus {
-    return autofocusVal.value;
-  }
-
-  set autofocus(bool val) {
-    if (val == this.autofocus) {
-      return;
-    }
-    autofocusVal.value = val;
-  }
-
-  Core<Color> tileColorVal;
-
-  Color get tileColor {
-    return tileColorVal.value;
-  }
-
-  set tileColor(Color val) {
-    if (val == this.tileColor) {
-      return;
-    }
-    tileColorVal.value = val;
-  }
-
-  Core<Color> selectedTileColorVal;
-
-  Color get selectedTileColor {
-    return selectedTileColorVal.value;
-  }
-
-  set selectedTileColor(Color val) {
-    if (val == this.selectedTileColor) {
-      return;
-    }
-    selectedTileColorVal.value = val;
-  }
-
-
-  @override
-  Map<String, dynamic> get staticFields => {
-  };
-
-  @override
-  List<Core> get props => [
-    this.leadingVal,
-    this.titleVal,
-    this.subtitleVal,
-    this.trailingVal,
-    this.isThreeLineVal,
-    this.denseVal,
-    this.visualDensityVal,
-    this.shapeVal,
-    this.contentPaddingVal,
-    this.enabledVal,
-    this.onTapVal,
-    this.onLongPressVal,
-    this.mouseCursorVal,
-    this.selectedVal,
-    this.focusColorVal,
-    this.hoverColorVal,
-    this.focusNodeVal,
-    this.autofocusVal,
-    this.tileColorVal,
-    this.selectedTileColorVal,
-  ];
-
-  @override
-  String get description {
-    final sb = StringBuffer();
-    sb.writeln("[ * Cookbook: [Implement swipe to dismiss](https://flutter.dev/docs/cookbook/gestures/dismissible)]");
-    return sb.toString();
-  }
-
-  @override
-  Map<String, Object> get constructors {
-     return {
-      'default': ListTile(
-        leading: this.leading,
-        title: this.title,
-        subtitle: this.subtitle,
-        trailing: this.trailing,
-        isThreeLine: this.isThreeLine,
-        dense: this.dense,
-        visualDensity: this.visualDensity,
-        shape: this.shape,
-        contentPadding: this.contentPadding,
-        enabled: this.enabled,
-        onTap: this.onTap,
-        onLongPress: this.onLongPress,
-        mouseCursor: this.mouseCursor,
-        selected: this.selected,
-        focusColor: this.focusColor,
-        hoverColor: this.hoverColor,
-        focusNode: this.focusNode,
-        autofocus: this.autofocus,
-        tileColor: this.tileColor,
-        selectedTileColor: this.selectedTileColor,
-      ),
-    };
-  }
-
-  @override
-  Map<String, Map<String, dynamic>> get properties {
-     return {
-      'default': {
-        'leading': this.leading,
-        'title': this.title,
-        'subtitle': this.subtitle,
-        'trailing': this.trailing,
-        'isThreeLine': this.isThreeLine,
-        'dense': this.dense,
-        'visualDensity': this.visualDensity,
-        'shape': this.shape,
-        'contentPadding': this.contentPadding,
-        'enabled': this.enabled,
-        'onTap': this.onTap,
-        'onLongPress': this.onLongPress,
-        'mouseCursor': this.mouseCursor,
-        'selected': this.selected,
-        'focusColor': this.focusColor,
-        'hoverColor': this.hoverColor,
-        'focusNode': this.focusNode,
-        'autofocus': this.autofocus,
-        'tileColor': this.tileColor,
-        'selectedTileColor': this.selectedTileColor,
-      },
-    };
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      'name': 'ListTile',
-      'props': {
-        'leading': this.leadingVal.toJson(),
-        'title': this.titleVal.toJson(),
-        'subtitle': this.subtitleVal.toJson(),
-        'trailing': this.trailingVal.toJson(),
-        'isThreeLine': this.isThreeLineVal.toJson(),
-        'dense': this.denseVal.toJson(),
-        'visualDensity': this.visualDensityVal.toJson(),
-        'shape': this.shapeVal.toJson(),
-        'contentPadding': this.contentPaddingVal.toJson(),
-        'enabled': this.enabledVal.toJson(),
-        'onTap': this.onTapVal.toJson(),
-        'onLongPress': this.onLongPressVal.toJson(),
-        'mouseCursor': this.mouseCursorVal.toJson(),
-        'selected': this.selectedVal.toJson(),
-        'focusColor': this.focusColorVal.toJson(),
-        'hoverColor': this.hoverColorVal.toJson(),
-        'focusNode': this.focusNodeVal.toJson(),
-        'autofocus': this.autofocusVal.toJson(),
-        'tileColor': this.tileColorVal.toJson(),
-        'selectedTileColor': this.selectedTileColorVal.toJson(),
-      }
-    };
-  }
-
-  @override
-  Map<String, String> toCode() {
-    return {
-    'default': """ListTile(
-       leading: ${this.leadingVal.toCode()},
-       title: ${this.titleVal.toCode()},
-       subtitle: ${this.subtitleVal.toCode()},
-       trailing: ${this.trailingVal.toCode()},
-       isThreeLine: ${this.isThreeLineVal.toCode()},
-       dense: ${this.denseVal.toCode()},
-       visualDensity: ${this.visualDensityVal.toCode()},
-       shape: ${this.shapeVal.toCode()},
-       contentPadding: ${this.contentPaddingVal.toCode()},
-       enabled: ${this.enabledVal.toCode()},
-       onTap: ${this.onTapVal.toCode()},
-       onLongPress: ${this.onLongPressVal.toCode()},
-       mouseCursor: ${this.mouseCursorVal.toCode()},
-       selected: ${this.selectedVal.toCode()},
-       focusColor: ${this.focusColorVal.toCode()},
-       hoverColor: ${this.hoverColorVal.toCode()},
-       focusNode: ${this.focusNodeVal.toCode()},
-       autofocus: ${this.autofocusVal.toCode()},
-       tileColor: ${this.tileColorVal.toCode()},
-       selectedTileColor: ${this.selectedTileColorVal.toCode()},
-    )""",
-    };
-  }
-
-  final _controller = ValueNotifier<WidgetRect>(null);
-  ValueListenable<WidgetRect> get stats => _controller;
-
-  @override
-  Widget build(BuildContext context) {
-    if (isWidget) return TrackedWidget(
-      controller: _controller,
-      child: defaultBase,
-    );
-    return Container();
-  }
-
-  @override
-  bool get isWidget => defaultBase is Widget;
-  
-  @override
-  Object get defaultBase => constructors['default'];
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-      properties.add(DiagnosticsProperty('leading', this.leading));
-      properties.add(DiagnosticsProperty('title', this.title));
-      properties.add(DiagnosticsProperty('subtitle', this.subtitle));
-      properties.add(DiagnosticsProperty('trailing', this.trailing));
-      properties.add(DiagnosticsProperty('isThreeLine', this.isThreeLine));
-      properties.add(DiagnosticsProperty('dense', this.dense));
-      properties.add(DiagnosticsProperty('visualDensity', this.visualDensity));
-      properties.add(DiagnosticsProperty('shape', this.shape));
-      properties.add(DiagnosticsProperty('contentPadding', this.contentPadding));
-      properties.add(DiagnosticsProperty('enabled', this.enabled));
-      properties.add(DiagnosticsProperty('onTap', this.onTap));
-      properties.add(DiagnosticsProperty('onLongPress', this.onLongPress));
-      properties.add(DiagnosticsProperty('mouseCursor', this.mouseCursor));
-      properties.add(DiagnosticsProperty('selected', this.selected));
-      properties.add(DiagnosticsProperty('focusColor', this.focusColor));
-      properties.add(DiagnosticsProperty('hoverColor', this.hoverColor));
-      properties.add(DiagnosticsProperty('focusNode', this.focusNode));
-      properties.add(DiagnosticsProperty('autofocus', this.autofocus));
-      properties.add(DiagnosticsProperty('tileColor', this.tileColor));
-      properties.add(DiagnosticsProperty('selectedTileColor', this.selectedTileColor));
-  }
 }
 

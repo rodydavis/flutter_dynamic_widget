@@ -1,701 +1,242 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/gestures.dart';
-import '../core.dart';
+import '../base.dart';
 
-class SliverAppBarRender<T> extends StatelessWidget {
+class AppBarBase extends BaseWidget {
+    AppBarBase();
 
-  factory SliverAppBarRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
-    return SliverAppBarRender(update,
-      leadingVal: BaseCore<Widget>(null, update),
-      automaticallyImplyLeadingVal: BaseCore<bool>(null, update),
-      titleVal: BaseCore<Widget>(null, update),
-      actionsVal: BaseCore<List<Widget>>(null, update),
-      flexibleSpaceVal: BaseCore<Widget>(null, update),
-      bottomVal: BaseCore<PreferredSizeWidget>(null, update),
-      elevationVal: BaseCore<double>(null, update),
-      shadowColorVal: BaseCore<Color>(null, update),
-      forceElevatedVal: BaseCore<bool>(null, update),
-      backgroundColorVal: BaseCore<Color>(null, update),
-      brightnessVal: BaseCore<Brightness>(null, update),
-      iconThemeVal: BaseCore<IconThemeData>(null, update),
-      actionsIconThemeVal: BaseCore<IconThemeData>(null, update),
-      textThemeVal: BaseCore<TextTheme>(null, update),
-      primaryVal: BaseCore<bool>(null, update),
-      centerTitleVal: BaseCore<bool>(null, update),
-      excludeHeaderSemanticsVal: BaseCore<bool>(null, update),
-      titleSpacingVal: BaseCore<double>(null, update),
-      collapsedHeightVal: BaseCore<double>(null, update),
-      expandedHeightVal: BaseCore<double>(null, update),
-      floatingVal: BaseCore<bool>(null, update),
-      pinnedVal: BaseCore<bool>(null, update),
-      shapeVal: BaseCore<ShapeBorder>(null, update),
-      snapVal: BaseCore<bool>(null, update),
-      stretchVal: BaseCore<bool>(null, update),
-      stretchTriggerOffsetVal: BaseCore<double>(null, update),
-      onStretchTriggerVal: BaseCore<AsyncCallback>(null, update),
-      toolbarHeightVal: BaseCore<double>(null, update),
-      leadingWidthVal: BaseCore<double>(null, update),
-    );
-  }
-
-  SliverAppBarRender(this._update, {
-    @required this.leadingVal,
-    @required this.automaticallyImplyLeadingVal,
-    @required this.titleVal,
-    @required this.actionsVal,
-    @required this.flexibleSpaceVal,
-    @required this.bottomVal,
-    @required this.elevationVal,
-    @required this.shadowColorVal,
-    @required this.forceElevatedVal,
-    @required this.backgroundColorVal,
-    @required this.brightnessVal,
-    @required this.iconThemeVal,
-    @required this.actionsIconThemeVal,
-    @required this.textThemeVal,
-    @required this.primaryVal,
-    @required this.centerTitleVal,
-    @required this.excludeHeaderSemanticsVal,
-    @required this.titleSpacingVal,
-    @required this.collapsedHeightVal,
-    @required this.expandedHeightVal,
-    @required this.floatingVal,
-    @required this.pinnedVal,
-    @required this.shapeVal,
-    @required this.snapVal,
-    @required this.stretchVal,
-    @required this.stretchTriggerOffsetVal,
-    @required this.onStretchTriggerVal,
-    @required this.toolbarHeightVal,
-    @required this.leadingWidthVal,
-  });
-
-  @override
-  final VoidCallback _update;
-
-  Core<Widget> leadingVal;
-
-  Widget get leading {
-    return leadingVal.value;
-  }
-
-  set leading(Widget val) {
-    if (val == this.leading) {
-      return;
+    factory AppBarBase.fromJson(Map<String, dynamic> data) {
+        return AppBarBase();
     }
-    leadingVal.value = val;
-  }
 
-  Core<bool> automaticallyImplyLeadingVal;
+    @override
+    String get description => r'''
+A material design app bar.
 
-  bool get automaticallyImplyLeading {
-    return automaticallyImplyLeadingVal.value;
-  }
+An app bar consists of a toolbar and potentially other widgets, such as a
+[TabBar] and a [FlexibleSpaceBar]. App bars typically expose one or more
+common [actions] with [IconButton]s which are optionally followed by a
+[PopupMenuButton] for less common operations (sometimes called the "overflow
+menu").
 
-  set automaticallyImplyLeading(bool val) {
-    if (val == this.automaticallyImplyLeading) {
-      return;
+App bars are typically used in the [Scaffold.appBar] property, which places
+the app bar as a fixed-height widget at the top of the screen. For a scrollable
+app bar, see [SliverAppBar], which embeds an [AppBar] in a sliver for use in
+a [CustomScrollView].
+
+The AppBar displays the toolbar widgets, [leading], [title], and [actions],
+above the [bottom] (if any). The [bottom] is usually used for a [TabBar]. If
+a [flexibleSpace] widget is specified then it is stacked behind the toolbar
+and the bottom widget. The following diagram shows where each of these slots
+appears in the toolbar when the writing language is left-to-right (e.g.
+English):
+
+The [AppBar] insets its content based on the ambient [MediaQuery]'s padding,
+to avoid system UI intrusions. It's taken care of by [Scaffold] when used in
+the [Scaffold.appBar] property. When animating an [AppBar], unexpected
+[MediaQuery] changes (as is common in [Hero] animations) may cause the content
+to suddenly jump. Wrap the [AppBar] in a [MediaQuery] widget, and adjust its
+padding such that the animation is smooth.
+
+![The leading widget is in the top left, the actions are in the top right,
+the title is between them. The bottom is, naturally, at the bottom, and the
+flexibleSpace is behind all of them.](https://flutter.github.io/assets-for-api-docs/assets/material/app_bar.png)
+
+If the [leading] widget is omitted, but the [AppBar] is in a [Scaffold] with
+a [Drawer], then a button will be inserted to open the drawer. Otherwise, if
+the nearest [Navigator] has any previous routes, a [BackButton] is inserted
+instead. This behavior can be turned off by setting the [automaticallyImplyLeading]
+to false. In that case a null leading widget will result in the middle/title widget
+stretching to start.
+
+{@tool dartpad --template=stateless_widget_material}
+
+This sample shows an [AppBar] with two simple actions. The first action
+opens a [SnackBar], while the second action navigates to a new page.
+
+```dart preamble
+final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+final SnackBar snackBar = const SnackBar(content: Text('Showing Snackbar'));
+
+void openPage(BuildContext context) {
+Navigator.push(context, MaterialPageRoute(
+builder: (BuildContext context) {
+return Scaffold(
+appBar: AppBar(
+title: const Text('Next page'),
+),
+body: const Center(
+child: Text(
+'This is the next page',
+style: TextStyle(fontSize: 24),
+),
+),
+);
+},
+));
+}
+```
+
+```dart
+Widget build(BuildContext context) {
+return Scaffold(
+key: scaffoldKey,
+appBar: AppBar(
+title: const Text('AppBar Demo'),
+actions: <Widget>[
+IconButton(
+icon: const Icon(Icons.add_alert),
+tooltip: 'Show Snackbar',
+onPressed: () {
+scaffoldKey.currentState.showSnackBar(snackBar);
+},
+),
+IconButton(
+icon: const Icon(Icons.navigate_next),
+tooltip: 'Next page',
+onPressed: () {
+openPage(context);
+},
+),
+],
+),
+body: const Center(
+child: Text(
+'This is the home page',
+style: TextStyle(fontSize: 24),
+),
+),
+);
+}
+```
+{@end-tool}
+
+See also:
+
+* [Scaffold], which displays the [AppBar] in its [Scaffold.appBar] slot.
+* [SliverAppBar], which uses [AppBar] to provide a flexible app bar that
+can be used in a [CustomScrollView].
+* [TabBar], which is typically placed in the [bottom] slot of the [AppBar]
+if the screen has multiple pages arranged in tabs.
+* [IconButton], which is used with [actions] to show buttons on the app bar.
+* [PopupMenuButton], to show a popup menu on the app bar, via [actions].
+* [FlexibleSpaceBar], which is used with [flexibleSpace] when the app bar
+can expand and collapse.
+* <https://material.io/design/components/app-bars-top.html>
+* Cookbook: [Place a floating app bar above a list](https://flutter.dev/docs/cookbook/lists/floating-app-bar)
+* See our
+[AppBar Basics sample](https://flutter.dev/docs/catalog/samples/basic-app-bar)
+and our advanced samples with app bars with
+[tabs](https://flutter.dev/docs/catalog/samples/tabbed-app-bar) or
+[custom bottom widgets](https://flutter.dev/docs/catalog/samples/app-bar-bottom).
+''';
+
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
     }
-    automaticallyImplyLeadingVal.value = val;
-  }
 
-  Core<Widget> titleVal;
-
-  Widget get title {
-    return titleVal.value;
-  }
-
-  set title(Widget val) {
-    if (val == this.title) {
-      return;
+    @override
+    Widget render(BuildContext context) {
+        return Container();
     }
-    titleVal.value = val;
-  }
+}
 
-  Core<List<Widget>> actionsVal;
+class SliverAppBarBase extends BaseWidget {
+    SliverAppBarBase();
 
-  List<Widget> get actions {
-    return actionsVal.value;
-  }
-
-  set actions(List<Widget> val) {
-    if (val == this.actions) {
-      return;
+    factory SliverAppBarBase.fromJson(Map<String, dynamic> data) {
+        return SliverAppBarBase();
     }
-    actionsVal.value = val;
-  }
 
-  Core<Widget> flexibleSpaceVal;
+    @override
+    String get description => r'''
+A material design app bar that integrates with a [CustomScrollView].
 
-  Widget get flexibleSpace {
-    return flexibleSpaceVal.value;
-  }
+An app bar consists of a toolbar and potentially other widgets, such as a
+[TabBar] and a [FlexibleSpaceBar]. App bars typically expose one or more
+common actions with [IconButton]s which are optionally followed by a
+[PopupMenuButton] for less common operations.
 
-  set flexibleSpace(Widget val) {
-    if (val == this.flexibleSpace) {
-      return;
+{@youtube 560 315 https://www.youtube.com/watch?v=R9C5KMJKluE}
+
+Sliver app bars are typically used as the first child of a
+[CustomScrollView], which lets the app bar integrate with the scroll view so
+that it can vary in height according to the scroll offset or float above the
+other content in the scroll view. For a fixed-height app bar at the top of
+the screen see [AppBar], which is used in the [Scaffold.appBar] slot.
+
+The AppBar displays the toolbar widgets, [leading], [title], and
+[actions], above the [bottom] (if any). If a [flexibleSpace] widget is
+specified then it is stacked behind the toolbar and the bottom widget.
+
+{@tool snippet}
+
+This is an example that could be included in a [CustomScrollView]'s
+[CustomScrollView.slivers] list:
+
+```dart
+SliverAppBar(
+expandedHeight: 150.0,
+flexibleSpace: const FlexibleSpaceBar(
+title: Text('Available seats'),
+),
+actions: <Widget>[
+IconButton(
+icon: const Icon(Icons.add_circle),
+tooltip: 'Add new entry',
+onPressed: () { /* ... */ },
+),
+]
+)
+```
+{@end-tool}
+
+## Animated Examples
+
+The following animations show how app bars with different configurations
+behave when a user scrolls up and then down again.
+
+* App bar with [floating]: false, [pinned]: false, [snap]: false:
+{@animation 476 400 https://flutter.github.io/assets-for-api-docs/assets/material/app_bar.mp4}
+
+* App bar with [floating]: true, [pinned]: false, [snap]: false:
+{@animation 476 400 https://flutter.github.io/assets-for-api-docs/assets/material/app_bar_floating.mp4}
+
+* App bar with [floating]: true, [pinned]: false, [snap]: true:
+{@animation 476 400 https://flutter.github.io/assets-for-api-docs/assets/material/app_bar_floating_snap.mp4}
+
+* App bar with [floating]: true, [pinned]: true, [snap]: false:
+{@animation 476 400 https://flutter.github.io/assets-for-api-docs/assets/material/app_bar_pinned_floating.mp4}
+
+* App bar with [floating]: true, [pinned]: true, [snap]: true:
+{@animation 476 400 https://flutter.github.io/assets-for-api-docs/assets/material/app_bar_pinned_floating_snap.mp4}
+
+* App bar with [floating]: false, [pinned]: true, [snap]: false:
+{@animation 476 400 https://flutter.github.io/assets-for-api-docs/assets/material/app_bar_pinned.mp4}
+
+The property [snap] can only be set to true if [floating] is also true.
+
+See also:
+
+* [CustomScrollView], which integrates the [SliverAppBar] into its
+scrolling.
+* [AppBar], which is a fixed-height app bar for use in [Scaffold.appBar].
+* [TabBar], which is typically placed in the [bottom] slot of the [AppBar]
+if the screen has multiple pages arranged in tabs.
+* [IconButton], which is used with [actions] to show buttons on the app bar.
+* [PopupMenuButton], to show a popup menu on the app bar, via [actions].
+* [FlexibleSpaceBar], which is used with [flexibleSpace] when the app bar
+can expand and collapse.
+* <https://material.io/design/components/app-bars-top.html>
+''';
+
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
     }
-    flexibleSpaceVal.value = val;
-  }
 
-  Core<PreferredSizeWidget> bottomVal;
-
-  PreferredSizeWidget get bottom {
-    return bottomVal.value;
-  }
-
-  set bottom(PreferredSizeWidget val) {
-    if (val == this.bottom) {
-      return;
+    @override
+    Widget render(BuildContext context) {
+        return Container();
     }
-    bottomVal.value = val;
-  }
-
-  Core<double> elevationVal;
-
-  double get elevation {
-    return elevationVal.value;
-  }
-
-  set elevation(double val) {
-    if (val == this.elevation) {
-      return;
-    }
-    elevationVal.value = val;
-  }
-
-  Core<Color> shadowColorVal;
-
-  Color get shadowColor {
-    return shadowColorVal.value;
-  }
-
-  set shadowColor(Color val) {
-    if (val == this.shadowColor) {
-      return;
-    }
-    shadowColorVal.value = val;
-  }
-
-  Core<bool> forceElevatedVal;
-
-  bool get forceElevated {
-    return forceElevatedVal.value;
-  }
-
-  set forceElevated(bool val) {
-    if (val == this.forceElevated) {
-      return;
-    }
-    forceElevatedVal.value = val;
-  }
-
-  Core<Color> backgroundColorVal;
-
-  Color get backgroundColor {
-    return backgroundColorVal.value;
-  }
-
-  set backgroundColor(Color val) {
-    if (val == this.backgroundColor) {
-      return;
-    }
-    backgroundColorVal.value = val;
-  }
-
-  Core<Brightness> brightnessVal;
-
-  Brightness get brightness {
-    return brightnessVal.value;
-  }
-
-  set brightness(Brightness val) {
-    if (val == this.brightness) {
-      return;
-    }
-    brightnessVal.value = val;
-  }
-
-  Core<IconThemeData> iconThemeVal;
-
-  IconThemeData get iconTheme {
-    return iconThemeVal.value;
-  }
-
-  set iconTheme(IconThemeData val) {
-    if (val == this.iconTheme) {
-      return;
-    }
-    iconThemeVal.value = val;
-  }
-
-  Core<IconThemeData> actionsIconThemeVal;
-
-  IconThemeData get actionsIconTheme {
-    return actionsIconThemeVal.value;
-  }
-
-  set actionsIconTheme(IconThemeData val) {
-    if (val == this.actionsIconTheme) {
-      return;
-    }
-    actionsIconThemeVal.value = val;
-  }
-
-  Core<TextTheme> textThemeVal;
-
-  TextTheme get textTheme {
-    return textThemeVal.value;
-  }
-
-  set textTheme(TextTheme val) {
-    if (val == this.textTheme) {
-      return;
-    }
-    textThemeVal.value = val;
-  }
-
-  Core<bool> primaryVal;
-
-  bool get primary {
-    return primaryVal.value;
-  }
-
-  set primary(bool val) {
-    if (val == this.primary) {
-      return;
-    }
-    primaryVal.value = val;
-  }
-
-  Core<bool> centerTitleVal;
-
-  bool get centerTitle {
-    return centerTitleVal.value;
-  }
-
-  set centerTitle(bool val) {
-    if (val == this.centerTitle) {
-      return;
-    }
-    centerTitleVal.value = val;
-  }
-
-  Core<bool> excludeHeaderSemanticsVal;
-
-  bool get excludeHeaderSemantics {
-    return excludeHeaderSemanticsVal.value;
-  }
-
-  set excludeHeaderSemantics(bool val) {
-    if (val == this.excludeHeaderSemantics) {
-      return;
-    }
-    excludeHeaderSemanticsVal.value = val;
-  }
-
-  Core<double> titleSpacingVal;
-
-  double get titleSpacing {
-    return titleSpacingVal.value;
-  }
-
-  set titleSpacing(double val) {
-    if (val == this.titleSpacing) {
-      return;
-    }
-    titleSpacingVal.value = val;
-  }
-
-  Core<double> collapsedHeightVal;
-
-  double get collapsedHeight {
-    return collapsedHeightVal.value;
-  }
-
-  set collapsedHeight(double val) {
-    if (val == this.collapsedHeight) {
-      return;
-    }
-    collapsedHeightVal.value = val;
-  }
-
-  Core<double> expandedHeightVal;
-
-  double get expandedHeight {
-    return expandedHeightVal.value;
-  }
-
-  set expandedHeight(double val) {
-    if (val == this.expandedHeight) {
-      return;
-    }
-    expandedHeightVal.value = val;
-  }
-
-  Core<bool> floatingVal;
-
-  bool get floating {
-    return floatingVal.value;
-  }
-
-  set floating(bool val) {
-    if (val == this.floating) {
-      return;
-    }
-    floatingVal.value = val;
-  }
-
-  Core<bool> pinnedVal;
-
-  bool get pinned {
-    return pinnedVal.value;
-  }
-
-  set pinned(bool val) {
-    if (val == this.pinned) {
-      return;
-    }
-    pinnedVal.value = val;
-  }
-
-  Core<ShapeBorder> shapeVal;
-
-  ShapeBorder get shape {
-    return shapeVal.value;
-  }
-
-  set shape(ShapeBorder val) {
-    if (val == this.shape) {
-      return;
-    }
-    shapeVal.value = val;
-  }
-
-  Core<bool> snapVal;
-
-  bool get snap {
-    return snapVal.value;
-  }
-
-  set snap(bool val) {
-    if (val == this.snap) {
-      return;
-    }
-    snapVal.value = val;
-  }
-
-  Core<bool> stretchVal;
-
-  bool get stretch {
-    return stretchVal.value;
-  }
-
-  set stretch(bool val) {
-    if (val == this.stretch) {
-      return;
-    }
-    stretchVal.value = val;
-  }
-
-  Core<double> stretchTriggerOffsetVal;
-
-  double get stretchTriggerOffset {
-    return stretchTriggerOffsetVal.value;
-  }
-
-  set stretchTriggerOffset(double val) {
-    if (val == this.stretchTriggerOffset) {
-      return;
-    }
-    stretchTriggerOffsetVal.value = val;
-  }
-
-  Core<AsyncCallback> onStretchTriggerVal;
-
-  AsyncCallback get onStretchTrigger {
-    return onStretchTriggerVal.value;
-  }
-
-  set onStretchTrigger(AsyncCallback val) {
-    if (val == this.onStretchTrigger) {
-      return;
-    }
-    onStretchTriggerVal.value = val;
-  }
-
-  Core<double> toolbarHeightVal;
-
-  double get toolbarHeight {
-    return toolbarHeightVal.value;
-  }
-
-  set toolbarHeight(double val) {
-    if (val == this.toolbarHeight) {
-      return;
-    }
-    toolbarHeightVal.value = val;
-  }
-
-  Core<double> leadingWidthVal;
-
-  double get leadingWidth {
-    return leadingWidthVal.value;
-  }
-
-  set leadingWidth(double val) {
-    if (val == this.leadingWidth) {
-      return;
-    }
-    leadingWidthVal.value = val;
-  }
-
-
-  @override
-  Map<String, dynamic> get staticFields => {
-  };
-
-  @override
-  List<Core> get props => [
-    this.leadingVal,
-    this.automaticallyImplyLeadingVal,
-    this.titleVal,
-    this.actionsVal,
-    this.flexibleSpaceVal,
-    this.bottomVal,
-    this.elevationVal,
-    this.shadowColorVal,
-    this.forceElevatedVal,
-    this.backgroundColorVal,
-    this.brightnessVal,
-    this.iconThemeVal,
-    this.actionsIconThemeVal,
-    this.textThemeVal,
-    this.primaryVal,
-    this.centerTitleVal,
-    this.excludeHeaderSemanticsVal,
-    this.titleSpacingVal,
-    this.collapsedHeightVal,
-    this.expandedHeightVal,
-    this.floatingVal,
-    this.pinnedVal,
-    this.shapeVal,
-    this.snapVal,
-    this.stretchVal,
-    this.stretchTriggerOffsetVal,
-    this.onStretchTriggerVal,
-    this.toolbarHeightVal,
-    this.leadingWidthVal,
-  ];
-
-  @override
-  String get description {
-    final sb = StringBuffer();
-    sb.writeln("[ * <https://material.io/design/components/app-bars-top.html>]");
-    return sb.toString();
-  }
-
-  @override
-  Map<String, Object> get constructors {
-     return {
-      'default': SliverAppBar(
-        leading: this.leading,
-        automaticallyImplyLeading: this.automaticallyImplyLeading,
-        title: this.title,
-        actions: this.actions,
-        flexibleSpace: this.flexibleSpace,
-        bottom: this.bottom,
-        elevation: this.elevation,
-        shadowColor: this.shadowColor,
-        forceElevated: this.forceElevated,
-        backgroundColor: this.backgroundColor,
-        brightness: this.brightness,
-        iconTheme: this.iconTheme,
-        actionsIconTheme: this.actionsIconTheme,
-        textTheme: this.textTheme,
-        primary: this.primary,
-        centerTitle: this.centerTitle,
-        excludeHeaderSemantics: this.excludeHeaderSemantics,
-        titleSpacing: this.titleSpacing,
-        collapsedHeight: this.collapsedHeight,
-        expandedHeight: this.expandedHeight,
-        floating: this.floating,
-        pinned: this.pinned,
-        snap: this.snap,
-        stretch: this.stretch,
-        stretchTriggerOffset: this.stretchTriggerOffset,
-        onStretchTrigger: this.onStretchTrigger,
-        shape: this.shape,
-        toolbarHeight: this.toolbarHeight,
-        leadingWidth: this.leadingWidth,
-      ),
-    };
-  }
-
-  @override
-  Map<String, Map<String, dynamic>> get properties {
-     return {
-      'default': {
-        'leading': this.leading,
-        'automaticallyImplyLeading': this.automaticallyImplyLeading,
-        'title': this.title,
-        'actions': this.actions,
-        'flexibleSpace': this.flexibleSpace,
-        'bottom': this.bottom,
-        'elevation': this.elevation,
-        'shadowColor': this.shadowColor,
-        'forceElevated': this.forceElevated,
-        'backgroundColor': this.backgroundColor,
-        'brightness': this.brightness,
-        'iconTheme': this.iconTheme,
-        'actionsIconTheme': this.actionsIconTheme,
-        'textTheme': this.textTheme,
-        'primary': this.primary,
-        'centerTitle': this.centerTitle,
-        'excludeHeaderSemantics': this.excludeHeaderSemantics,
-        'titleSpacing': this.titleSpacing,
-        'collapsedHeight': this.collapsedHeight,
-        'expandedHeight': this.expandedHeight,
-        'floating': this.floating,
-        'pinned': this.pinned,
-        'snap': this.snap,
-        'stretch': this.stretch,
-        'stretchTriggerOffset': this.stretchTriggerOffset,
-        'onStretchTrigger': this.onStretchTrigger,
-        'shape': this.shape,
-        'toolbarHeight': this.toolbarHeight,
-        'leadingWidth': this.leadingWidth,
-      },
-    };
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      'name': 'SliverAppBar',
-      'props': {
-        'leading': this.leadingVal.toJson(),
-        'automaticallyImplyLeading': this.automaticallyImplyLeadingVal.toJson(),
-        'title': this.titleVal.toJson(),
-        'actions': this.actionsVal.toJson(),
-        'flexibleSpace': this.flexibleSpaceVal.toJson(),
-        'bottom': this.bottomVal.toJson(),
-        'elevation': this.elevationVal.toJson(),
-        'shadowColor': this.shadowColorVal.toJson(),
-        'forceElevated': this.forceElevatedVal.toJson(),
-        'backgroundColor': this.backgroundColorVal.toJson(),
-        'brightness': this.brightnessVal.toJson(),
-        'iconTheme': this.iconThemeVal.toJson(),
-        'actionsIconTheme': this.actionsIconThemeVal.toJson(),
-        'textTheme': this.textThemeVal.toJson(),
-        'primary': this.primaryVal.toJson(),
-        'centerTitle': this.centerTitleVal.toJson(),
-        'excludeHeaderSemantics': this.excludeHeaderSemanticsVal.toJson(),
-        'titleSpacing': this.titleSpacingVal.toJson(),
-        'collapsedHeight': this.collapsedHeightVal.toJson(),
-        'expandedHeight': this.expandedHeightVal.toJson(),
-        'floating': this.floatingVal.toJson(),
-        'pinned': this.pinnedVal.toJson(),
-        'shape': this.shapeVal.toJson(),
-        'snap': this.snapVal.toJson(),
-        'stretch': this.stretchVal.toJson(),
-        'stretchTriggerOffset': this.stretchTriggerOffsetVal.toJson(),
-        'onStretchTrigger': this.onStretchTriggerVal.toJson(),
-        'toolbarHeight': this.toolbarHeightVal.toJson(),
-        'leadingWidth': this.leadingWidthVal.toJson(),
-      }
-    };
-  }
-
-  @override
-  Map<String, String> toCode() {
-    return {
-    'default': """SliverAppBar(
-       leading: ${this.leadingVal.toCode()},
-       automaticallyImplyLeading: ${this.automaticallyImplyLeadingVal.toCode()},
-       title: ${this.titleVal.toCode()},
-       actions: ${this.actionsVal.toCode()},
-       flexibleSpace: ${this.flexibleSpaceVal.toCode()},
-       bottom: ${this.bottomVal.toCode()},
-       elevation: ${this.elevationVal.toCode()},
-       shadowColor: ${this.shadowColorVal.toCode()},
-       forceElevated: ${this.forceElevatedVal.toCode()},
-       backgroundColor: ${this.backgroundColorVal.toCode()},
-       brightness: ${this.brightnessVal.toCode()},
-       iconTheme: ${this.iconThemeVal.toCode()},
-       actionsIconTheme: ${this.actionsIconThemeVal.toCode()},
-       textTheme: ${this.textThemeVal.toCode()},
-       primary: ${this.primaryVal.toCode()},
-       centerTitle: ${this.centerTitleVal.toCode()},
-       excludeHeaderSemantics: ${this.excludeHeaderSemanticsVal.toCode()},
-       titleSpacing: ${this.titleSpacingVal.toCode()},
-       collapsedHeight: ${this.collapsedHeightVal.toCode()},
-       expandedHeight: ${this.expandedHeightVal.toCode()},
-       floating: ${this.floatingVal.toCode()},
-       pinned: ${this.pinnedVal.toCode()},
-       snap: ${this.snapVal.toCode()},
-       stretch: ${this.stretchVal.toCode()},
-       stretchTriggerOffset: ${this.stretchTriggerOffsetVal.toCode()},
-       onStretchTrigger: ${this.onStretchTriggerVal.toCode()},
-       shape: ${this.shapeVal.toCode()},
-       toolbarHeight: ${this.toolbarHeightVal.toCode()},
-       leadingWidth: ${this.leadingWidthVal.toCode()},
-    )""",
-    };
-  }
-
-  final _controller = ValueNotifier<WidgetRect>(null);
-  ValueListenable<WidgetRect> get stats => _controller;
-
-  @override
-  Widget build(BuildContext context) {
-    if (isWidget) return TrackedWidget(
-      controller: _controller,
-      child: defaultBase,
-    );
-    return Container();
-  }
-
-  @override
-  bool get isWidget => defaultBase is Widget;
-  
-  @override
-  Object get defaultBase => constructors['default'];
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-      properties.add(DiagnosticsProperty('leading', this.leading));
-      properties.add(DiagnosticsProperty('automaticallyImplyLeading', this.automaticallyImplyLeading));
-      properties.add(DiagnosticsProperty('title', this.title));
-      properties.add(DiagnosticsProperty('actions', this.actions));
-      properties.add(DiagnosticsProperty('flexibleSpace', this.flexibleSpace));
-      properties.add(DiagnosticsProperty('bottom', this.bottom));
-      properties.add(DiagnosticsProperty('elevation', this.elevation));
-      properties.add(DiagnosticsProperty('shadowColor', this.shadowColor));
-      properties.add(DiagnosticsProperty('forceElevated', this.forceElevated));
-      properties.add(DiagnosticsProperty('backgroundColor', this.backgroundColor));
-      properties.add(DiagnosticsProperty('brightness', this.brightness));
-      properties.add(DiagnosticsProperty('iconTheme', this.iconTheme));
-      properties.add(DiagnosticsProperty('actionsIconTheme', this.actionsIconTheme));
-      properties.add(DiagnosticsProperty('textTheme', this.textTheme));
-      properties.add(DiagnosticsProperty('primary', this.primary));
-      properties.add(DiagnosticsProperty('centerTitle', this.centerTitle));
-      properties.add(DiagnosticsProperty('excludeHeaderSemantics', this.excludeHeaderSemantics));
-      properties.add(DiagnosticsProperty('titleSpacing', this.titleSpacing));
-      properties.add(DiagnosticsProperty('collapsedHeight', this.collapsedHeight));
-      properties.add(DiagnosticsProperty('expandedHeight', this.expandedHeight));
-      properties.add(DiagnosticsProperty('floating', this.floating));
-      properties.add(DiagnosticsProperty('pinned', this.pinned));
-      properties.add(DiagnosticsProperty('shape', this.shape));
-      properties.add(DiagnosticsProperty('snap', this.snap));
-      properties.add(DiagnosticsProperty('stretch', this.stretch));
-      properties.add(DiagnosticsProperty('stretchTriggerOffset', this.stretchTriggerOffset));
-      properties.add(DiagnosticsProperty('onStretchTrigger', this.onStretchTrigger));
-      properties.add(DiagnosticsProperty('toolbarHeight', this.toolbarHeight));
-      properties.add(DiagnosticsProperty('leadingWidth', this.leadingWidth));
-  }
 }
 

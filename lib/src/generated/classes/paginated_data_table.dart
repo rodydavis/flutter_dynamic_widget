@@ -1,90 +1,36 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/gestures.dart';
-import '../core.dart';
+import '../base.dart';
 
-class PaginatedDataTableStateRender<T> extends StatelessWidget {
+class PaginatedDataTableBase extends BaseWidget {
+    PaginatedDataTableBase();
 
-  factory PaginatedDataTableStateRender.fromJson(Map<String, dynamic> data, VoidCallback update) {
-    return PaginatedDataTableStateRender(update,
-    );
-  }
+    factory PaginatedDataTableBase.fromJson(Map<String, dynamic> data) {
+        return PaginatedDataTableBase();
+    }
 
-  PaginatedDataTableStateRender(this._update, {
-  });
+    @override
+    String get description => r'''
+A material design data table that shows data using multiple pages.
 
-  @override
-  final VoidCallback _update;
+A paginated data table shows [rowsPerPage] rows of data per page and
+provides controls for showing other pages.
 
+Data is read lazily from from a [DataTableSource]. The widget is presented
+as a [Card].
 
-  @override
-  Map<String, dynamic> get staticFields => {
-  '_firstRowIndex': null,
-  '_rowCount': null,
-  '_rowCountApproximate': null,
-  '_selectedRowCount': null,
-  };
+See also:
 
-  @override
-  List<Core> get props => [
-  ];
+* [DataTable], which is not paginated.
+* <https://material.io/go/design-data-tables#data-tables-tables-within-cards>
+''';
 
-  @override
-  String get description {
-    final sb = StringBuffer();
-    sb.writeln("[The table can be programmatically paged using the [pageTo] method.]");
-    return sb.toString();
-  }
+    @override
+    Map<String, dynamic> toJson() {
+        return {};
+    }
 
-  @override
-  Map<String, Object> get constructors {
-     return {
-    };
-  }
-
-  @override
-  Map<String, Map<String, dynamic>> get properties {
-     return {
-    };
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      'name': 'PaginatedDataTableState',
-      'props': {
-      }
-    };
-  }
-
-  @override
-  Map<String, String> toCode() {
-    return {
-    };
-  }
-
-  final _controller = ValueNotifier<WidgetRect>(null);
-  ValueListenable<WidgetRect> get stats => _controller;
-
-  @override
-  Widget build(BuildContext context) {
-    if (isWidget) return TrackedWidget(
-      controller: _controller,
-      child: defaultBase,
-    );
-    return Container();
-  }
-
-  @override
-  bool get isWidget => defaultBase is Widget;
-  
-  @override
-  Object get defaultBase => constructors['default'];
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-  }
+    @override
+    Widget render(BuildContext context) {
+        return Container();
+    }
 }
 
