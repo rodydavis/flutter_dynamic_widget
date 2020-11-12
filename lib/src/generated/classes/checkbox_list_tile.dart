@@ -8,7 +8,7 @@ class CheckboxListTileBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A [ListTile] with a [Checkbox]. In other words, a checkbox with a label.
 
 The entire list tile is interactive: tapping anywhere in the tile toggles
@@ -52,14 +52,14 @@ import 'package:flutter/scheduler.dart' show timeDilation;
 ```dart
 @override
 Widget build(BuildContext context) {
-return CheckboxListTile(
-title: const Text('Animate Slowly'),
-value: timeDilation != 1.0,
-onChanged: (bool value) {
-setState(() { timeDilation = value ? 10.0 : 1.0; });
-},
-secondary: const Icon(Icons.hourglass_empty),
-);
+  return CheckboxListTile(
+    title: const Text('Animate Slowly'),
+    value: timeDilation != 1.0,
+    onChanged: (bool value) {
+      setState(() { timeDilation = value ? 10.0 : 1.0; });
+    },
+    secondary: const Icon(Icons.hourglass_empty),
+  );
 }
 ```
 {@end-tool}
@@ -94,49 +94,49 @@ import 'package:flutter/gestures.dart';
 ```
 ```dart preamble
 class LinkedLabelCheckbox extends StatelessWidget {
-const LinkedLabelCheckbox({
-this.label,
-this.padding,
-this.value,
-this.onChanged,
-});
+  const LinkedLabelCheckbox({
+    this.label,
+    this.padding,
+    this.value,
+    this.onChanged,
+  });
 
-final String label;
-final EdgeInsets padding;
-final bool value;
-final Function onChanged;
+  final String label;
+  final EdgeInsets padding;
+  final bool value;
+  final Function onChanged;
 
-@override
-Widget build(BuildContext context) {
-return Padding(
-padding: padding,
-child: Row(
-children: <Widget>[
-Expanded(
-child: RichText(
-text: TextSpan(
-text: label,
-style: TextStyle(
-color: Colors.blueAccent,
-decoration: TextDecoration.underline,
-),
-recognizer: TapGestureRecognizer()
-..onTap = () {
-print('Label has been tapped.');
-},
-),
-),
-),
-Checkbox(
-value: value,
-onChanged: (bool newValue) {
-onChanged(newValue);
-},
-),
-],
-),
-);
-}
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: padding,
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: RichText(
+              text: TextSpan(
+                text: label,
+                style: TextStyle(
+                  color: Colors.blueAccent,
+                  decoration: TextDecoration.underline,
+                ),
+                recognizer: TapGestureRecognizer()
+                  ..onTap = () {
+                  print('Label has been tapped.');
+                },
+              ),
+            ),
+          ),
+          Checkbox(
+            value: value,
+            onChanged: (bool newValue) {
+              onChanged(newValue);
+            },
+          ),
+        ],
+      ),
+    );
+  }
 }
 ```
 ```dart
@@ -144,16 +144,16 @@ bool _isSelected = false;
 
 @override
 Widget build(BuildContext context) {
-return LinkedLabelCheckbox(
-label: 'Linked, tappable label text',
-padding: const EdgeInsets.symmetric(horizontal: 20.0),
-value: _isSelected,
-onChanged: (bool newValue) {
-setState(() {
-_isSelected = newValue;
-});
-},
-);
+  return LinkedLabelCheckbox(
+    label: 'Linked, tappable label text',
+    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+    value: _isSelected,
+    onChanged: (bool newValue) {
+      setState(() {
+        _isSelected = newValue;
+      });
+    },
+  );
 }
 ```
 {@end-tool}
@@ -174,40 +174,40 @@ make your own configurable widget.
 
 ```dart preamble
 class LabeledCheckbox extends StatelessWidget {
-const LabeledCheckbox({
-this.label,
-this.padding,
-this.value,
-this.onChanged,
-});
+  const LabeledCheckbox({
+    this.label,
+    this.padding,
+    this.value,
+    this.onChanged,
+  });
 
-final String label;
-final EdgeInsets padding;
-final bool value;
-final Function onChanged;
+  final String label;
+  final EdgeInsets padding;
+  final bool value;
+  final Function onChanged;
 
-@override
-Widget build(BuildContext context) {
-return InkWell(
-onTap: () {
-onChanged(!value);
-},
-child: Padding(
-padding: padding,
-child: Row(
-children: <Widget>[
-Expanded(child: Text(label)),
-Checkbox(
-value: value,
-onChanged: (bool newValue) {
-onChanged(newValue);
-},
-),
-],
-),
-),
-);
-}
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        onChanged(!value);
+      },
+      child: Padding(
+        padding: padding,
+        child: Row(
+          children: <Widget>[
+            Expanded(child: Text(label)),
+            Checkbox(
+              value: value,
+              onChanged: (bool newValue) {
+                onChanged(newValue);
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
 ```
 ```dart
@@ -215,28 +215,28 @@ bool _isSelected = false;
 
 @override
 Widget build(BuildContext context) {
-return LabeledCheckbox(
-label: 'This is the label text',
-padding: const EdgeInsets.symmetric(horizontal: 20.0),
-value: _isSelected,
-onChanged: (bool newValue) {
-setState(() {
-_isSelected = newValue;
-});
-},
-);
+  return LabeledCheckbox(
+    label: 'This is the label text',
+    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+    value: _isSelected,
+    onChanged: (bool newValue) {
+      setState(() {
+        _isSelected = newValue;
+      });
+    },
+  );
 }
 ```
 {@end-tool}
 
 See also:
 
-* [ListTileTheme], which can be used to affect the style of list tiles,
-including checkbox list tiles.
-* [RadioListTile], a similar widget for radio buttons.
-* [SwitchListTile], a similar widget for switches.
-* [ListTile] and [Checkbox], the widgets from which this widget is made.
-''';
+ * [ListTileTheme], which can be used to affect the style of list tiles,
+   including checkbox list tiles.
+ * [RadioListTile], a similar widget for radio buttons.
+ * [SwitchListTile], a similar widget for switches.
+ * [ListTile] and [Checkbox], the widgets from which this widget is made.
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -248,4 +248,3 @@ including checkbox list tiles.
         return Container();
     }
 }
-

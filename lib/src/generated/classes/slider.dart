@@ -8,7 +8,7 @@ class SliderBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A Material Design slider.
 
 Used to select from a range of values.
@@ -28,18 +28,18 @@ double _currentSliderValue = 20;
 
 @override
 Widget build(BuildContext context) {
-return Slider(
-value: _currentSliderValue,
-min: 0,
-max: 100,
-divisions: 5,
-label: _currentSliderValue.round().toString(),
-onChanged: (double value) {
-setState(() {
-_currentSliderValue = value;
-});
-},
-);
+  return Slider(
+    value: _currentSliderValue,
+    min: 0,
+    max: 100,
+    divisions: 5,
+    label: _currentSliderValue.round().toString(),
+    onChanged: (double value) {
+      setState(() {
+        _currentSliderValue = value;
+      });
+    },
+  );
 }
 ```
 {@end-tool}
@@ -53,15 +53,15 @@ discrete values 0.0, 10.0, 20.0, 30.0, 40.0, and 50.0.
 
 The terms for the parts of a slider are:
 
-* The "thumb", which is a shape that slides horizontally when the user
-drags it.
-* The "track", which is the line that the slider thumb slides along.
-* The "value indicator", which is a shape that pops up when the user
-is dragging the thumb to indicate the value being selected.
-* The "active" side of the slider is the side between the thumb and the
-minimum value.
-* The "inactive" side of the slider is the side between the thumb and the
-maximum value.
+ * The "thumb", which is a shape that slides horizontally when the user
+   drags it.
+ * The "track", which is the line that the slider thumb slides along.
+ * The "value indicator", which is a shape that pops up when the user
+   is dragging the thumb to indicate the value being selected.
+ * The "active" side of the slider is the side between the thumb and the
+   minimum value.
+ * The "inactive" side of the slider is the side between the thumb and the
+   maximum value.
 
 The slider will be disabled if [onChanged] is null or if the range given by
 [min]..[max] is empty (i.e. if [min] is equal to [max]).
@@ -92,13 +92,13 @@ look is achieved using a [SliderThemeData].
 
 See also:
 
-* [SliderTheme] and [SliderThemeData] for information about controlling
-the visual appearance of the slider.
-* [Radio], for selecting among a set of explicit values.
-* [Checkbox] and [Switch], for toggling a particular value on or off.
-* <https://material.io/design/components/sliders.html>
-* [MediaQuery], from which the text scale factor is obtained.
-''';
+ * [SliderTheme] and [SliderThemeData] for information about controlling
+   the visual appearance of the slider.
+ * [Radio], for selecting among a set of explicit values.
+ * [Checkbox] and [Switch], for toggling a particular value on or off.
+ * <https://material.io/design/components/sliders.html>
+ * [MediaQuery], from which the text scale factor is obtained.
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -110,4 +110,3 @@ the visual appearance of the slider.
         return Container();
     }
 }
-

@@ -8,10 +8,10 @@ class CalendarDateRangePickerBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 Displays a scrollable calendar grid that allows a user to select a range
 of dates.
-''';
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -23,4 +23,3 @@ of dates.
         return Container();
     }
 }
-

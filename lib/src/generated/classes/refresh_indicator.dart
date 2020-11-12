@@ -8,7 +8,7 @@ class RefreshIndicatorBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A widget that supports the Material "swipe to refresh" idiom.
 
 When the child's [Scrollable] descendant overscrolls, an animated circular
@@ -30,8 +30,8 @@ scrollable's content fits within its viewport, set the scrollable's
 
 ```dart
 ListView(
-physics: const AlwaysScrollableScrollPhysics(),
-children: ...
+  physics: const AlwaysScrollableScrollPhysics(),
+  children: ...
 )
 ```
 
@@ -39,15 +39,15 @@ A [RefreshIndicator] can only be used with a vertical scroll view.
 
 See also:
 
-* <https://material.io/design/platform-guidance/android-swipe-to-refresh.html>
-* [RefreshIndicatorState], can be used to programmatically show the refresh indicator.
-* [RefreshProgressIndicator], widget used by [RefreshIndicator] to show
-the inner circular progress spinner during refreshes.
-* [CupertinoSliverRefreshControl], an iOS equivalent of the pull-to-refresh pattern.
-Must be used as a sliver inside a [CustomScrollView] instead of wrapping
-around a [ScrollView] because it's a part of the scrollable instead of
-being overlaid on top of it.
-''';
+ * <https://material.io/design/platform-guidance/android-swipe-to-refresh.html>
+ * [RefreshIndicatorState], can be used to programmatically show the refresh indicator.
+ * [RefreshProgressIndicator], widget used by [RefreshIndicator] to show
+   the inner circular progress spinner during refreshes.
+ * [CupertinoSliverRefreshControl], an iOS equivalent of the pull-to-refresh pattern.
+   Must be used as a sliver inside a [CustomScrollView] instead of wrapping
+   around a [ScrollView] because it's a part of the scrollable instead of
+   being overlaid on top of it.
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -59,4 +59,3 @@ being overlaid on top of it.
         return Container();
     }
 }
-

@@ -8,7 +8,7 @@ class StepperBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A material stepper widget that displays progress through a sequence of
 steps. Steppers are particularly useful in the case of forms where one step
 requires the completion of another one, or where multiple steps need to be
@@ -20,9 +20,9 @@ provides.
 
 See also:
 
-* [Step]
-* <https://material.io/archive/guidelines/components/steppers.html>
-''';
+ * [Step]
+ * <https://material.io/archive/guidelines/components/steppers.html>
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -34,4 +34,3 @@ See also:
         return Container();
     }
 }
-

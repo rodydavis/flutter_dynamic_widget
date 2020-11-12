@@ -8,7 +8,7 @@ class CardBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A material design card: a panel with slightly rounded corners and an
 elevation shadow.
 
@@ -28,35 +28,35 @@ and two actions.
 
 ```dart
 Widget build(BuildContext context) {
-return Center(
-child: Card(
-child: Column(
-mainAxisSize: MainAxisSize.min,
-children: <Widget>[
-const ListTile(
-leading: Icon(Icons.album),
-title: Text('The Enchanted Nightingale'),
-subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
-),
-Row(
-mainAxisAlignment: MainAxisAlignment.end,
-children: <Widget>[
-TextButton(
-child: const Text('BUY TICKETS'),
-onPressed: () { /* ... */ },
-),
-const SizedBox(width: 8),
-TextButton(
-child: const Text('LISTEN'),
-onPressed: () { /* ... */ },
-),
-const SizedBox(width: 8),
-],
-),
-],
-),
-),
-);
+  return Center(
+    child: Card(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          const ListTile(
+            leading: Icon(Icons.album),
+            title: Text('The Enchanted Nightingale'),
+            subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              TextButton(
+                child: const Text('BUY TICKETS'),
+                onPressed: () { /* ... */ },
+              ),
+              const SizedBox(width: 8),
+              TextButton(
+                child: const Text('LISTEN'),
+                onPressed: () { /* ... */ },
+              ),
+              const SizedBox(width: 8),
+            ],
+          ),
+        ],
+      ),
+    ),
+  );
 }
 ```
 {@end-tool}
@@ -72,21 +72,21 @@ entire card.
 
 ```dart
 Widget build(BuildContext context) {
-return Center(
-child: Card(
-child: InkWell(
-splashColor: Colors.blue.withAlpha(30),
-onTap: () {
-print('Card tapped.');
-},
-child: Container(
-width: 300,
-height: 100,
-child: Text('A card that can be tapped'),
-),
-),
-),
-);
+  return Center(
+    child: Card(
+      child: InkWell(
+        splashColor: Colors.blue.withAlpha(30),
+        onTap: () {
+          print('Card tapped.');
+        },
+        child: Container(
+          width: 300,
+          height: 100,
+          child: Text('A card that can be tapped'),
+        ),
+      ),
+    ),
+  );
 }
 ```
 
@@ -94,10 +94,10 @@ child: Text('A card that can be tapped'),
 
 See also:
 
-* [ListTile], to display icons and text in a card.
-* [showDialog], to display a modal card.
-* <https://material.io/design/components/cards.html>
-''';
+ * [ListTile], to display icons and text in a card.
+ * [showDialog], to display a modal card.
+ * <https://material.io/design/components/cards.html>
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -109,4 +109,3 @@ See also:
         return Container();
     }
 }
-

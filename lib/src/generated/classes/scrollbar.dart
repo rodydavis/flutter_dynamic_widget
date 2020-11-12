@@ -8,7 +8,7 @@ class ScrollbarBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A material design scrollbar.
 
 A scrollbar indicates which portion of a [Scrollable] widget is actually
@@ -22,9 +22,9 @@ a [Scrollbar] widget.
 
 See also:
 
-* [ListView], which display a linear, scrollable list of children.
-* [GridView], which display a 2 dimensional, scrollable array of children.
-''';
+ * [ListView], which display a linear, scrollable list of children.
+ * [GridView], which display a 2 dimensional, scrollable array of children.
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -36,4 +36,3 @@ See also:
         return Container();
     }
 }
-

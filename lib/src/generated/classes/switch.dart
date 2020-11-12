@@ -8,7 +8,7 @@ class SwitchBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A material design switch.
 
 Used to toggle the on/off state of a single setting.
@@ -27,13 +27,13 @@ Requires one of its ancestors to be a [Material] widget.
 
 See also:
 
-* [SwitchListTile], which combines this widget with a [ListTile] so that
-you can give the switch a label.
-* [Checkbox], another widget with similar semantics.
-* [Radio], for selecting among a set of explicit values.
-* [Slider], for selecting a value in a range.
-* <https://material.io/design/components/selection-controls.html#switches>
-''';
+ * [SwitchListTile], which combines this widget with a [ListTile] so that
+   you can give the switch a label.
+ * [Checkbox], another widget with similar semantics.
+ * [Radio], for selecting among a set of explicit values.
+ * [Slider], for selecting a value in a range.
+ * <https://material.io/design/components/selection-controls.html#switches>
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -45,4 +45,3 @@ you can give the switch a label.
         return Container();
     }
 }
-

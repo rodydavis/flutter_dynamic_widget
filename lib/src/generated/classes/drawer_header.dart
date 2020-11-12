@@ -8,7 +8,7 @@ class DrawerHeaderBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 The top-most region of a material design drawer. The header's [child]
 widget, if any, is placed inside a [Container] whose [decoration] can be
 passed as an argument, inset by the given [padding].
@@ -20,10 +20,10 @@ satisfied by putting the [DrawerHeader] in a [Drawer].
 
 See also:
 
-* [UserAccountsDrawerHeader], a variant of [DrawerHeader] that is
-specialized for showing user accounts.
-* <https://material.io/design/components/navigation-drawer.html>
-''';
+ * [UserAccountsDrawerHeader], a variant of [DrawerHeader] that is
+   specialized for showing user accounts.
+ * <https://material.io/design/components/navigation-drawer.html>
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -35,4 +35,3 @@ specialized for showing user accounts.
         return Container();
     }
 }
-

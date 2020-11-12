@@ -8,7 +8,7 @@ class ExpandIconBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A widget representing a rotating expand/collapse button. The icon rotates
 180 degrees when pressed, then reverts the animation on a second press.
 The underlying icon is [Icons.expand_more].
@@ -22,8 +22,8 @@ with an icon.
 
 See also:
 
-* https://material.io/design/iconography/system-icons.html
-''';
+ * https://material.io/design/iconography/system-icons.html
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -35,4 +35,3 @@ See also:
         return Container();
     }
 }
-

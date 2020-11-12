@@ -8,7 +8,7 @@ class MaterialButtonBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A utility class for building Material buttons that depend on the
 ambient [ButtonTheme] and [Theme].
 
@@ -43,8 +43,8 @@ consider using [InkWell] directly.
 
 See also:
 
-* [IconButton], to create buttons that contain icons rather than text.
-''';
+ * [IconButton], to create buttons that contain icons rather than text.
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -56,4 +56,3 @@ See also:
         return Container();
     }
 }
-

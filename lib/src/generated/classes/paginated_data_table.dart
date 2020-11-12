@@ -8,7 +8,7 @@ class PaginatedDataTableBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A material design data table that shows data using multiple pages.
 
 A paginated data table shows [rowsPerPage] rows of data per page and
@@ -19,9 +19,9 @@ as a [Card].
 
 See also:
 
-* [DataTable], which is not paginated.
-* <https://material.io/go/design-data-tables#data-tables-tables-within-cards>
-''';
+ * [DataTable], which is not paginated.
+ * <https://material.io/go/design-data-tables#data-tables-tables-within-cards>
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -33,4 +33,3 @@ See also:
         return Container();
     }
 }
-

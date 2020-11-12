@@ -8,7 +8,7 @@ class TextFieldBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A material design text field.
 
 A text field lets the user enter text, either with hardware keyboard or with
@@ -50,11 +50,11 @@ and adds a label.
 
 ```dart
 TextField(
-obscureText: true,
-decoration: InputDecoration(
-border: OutlineInputBorder(),
-labelText: 'Password',
-),
+  obscureText: true,
+  decoration: InputDecoration(
+    border: OutlineInputBorder(),
+    labelText: 'Password',
+  ),
 )
 ```
 {@end-tool}
@@ -74,40 +74,40 @@ callback.
 TextEditingController _controller;
 
 void initState() {
-super.initState();
-_controller = TextEditingController();
+  super.initState();
+  _controller = TextEditingController();
 }
 
 void dispose() {
-_controller.dispose();
-super.dispose();
+  _controller.dispose();
+  super.dispose();
 }
 
 Widget build(BuildContext context) {
-return Scaffold(
-body: Center(
-child: TextField(
-controller: _controller,
-onSubmitted: (String value) async {
-await showDialog<void>(
-context: context,
-builder: (BuildContext context) {
-return AlertDialog(
-title: const Text('Thanks!'),
-content: Text ('You typed "$value".'),
-actions: <Widget>[
-TextButton(
-onPressed: () { Navigator.pop(context); },
-child: const Text('OK'),
-),
-],
-);
-},
-);
-},
-),
-),
-);
+  return Scaffold(
+    body: Center(
+      child: TextField(
+        controller: _controller,
+        onSubmitted: (String value) async {
+          await showDialog<void>(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: const Text('Thanks!'),
+                content: Text ('You typed "$value".'),
+                actions: <Widget>[
+                  TextButton(
+                    onPressed: () { Navigator.pop(context); },
+                    child: const Text('OK'),
+                  ),
+                ],
+              );
+            },
+          );
+        },
+      ),
+    ),
+  );
 }
 ```
 {@end-tool}
@@ -126,19 +126,19 @@ Keep in mind you can also always read the current string from a TextField's
 
 See also:
 
-* [TextFormField], which integrates with the [Form] widget.
-* [InputDecorator], which shows the labels and other visual elements that
-surround the actual text editing widget.
-* [EditableText], which is the raw text editing control at the heart of a
-[TextField]. The [EditableText] widget is rarely used directly unless
-you are implementing an entirely different design language, such as
-Cupertino.
-* <https://material.io/design/components/text-fields.html>
-* Cookbook: [Create and style a text field](https://flutter.dev/docs/cookbook/forms/text-input)
-* Cookbook: [Handle changes to a text field](https://flutter.dev/docs/cookbook/forms/text-field-changes)
-* Cookbook: [Retrieve the value of a text field](https://flutter.dev/docs/cookbook/forms/retrieve-input)
-* Cookbook: [Focus and text fields](https://flutter.dev/docs/cookbook/forms/focus)
-''';
+ * [TextFormField], which integrates with the [Form] widget.
+ * [InputDecorator], which shows the labels and other visual elements that
+   surround the actual text editing widget.
+ * [EditableText], which is the raw text editing control at the heart of a
+   [TextField]. The [EditableText] widget is rarely used directly unless
+   you are implementing an entirely different design language, such as
+   Cupertino.
+ * <https://material.io/design/components/text-fields.html>
+ * Cookbook: [Create and style a text field](https://flutter.dev/docs/cookbook/forms/text-input)
+ * Cookbook: [Handle changes to a text field](https://flutter.dev/docs/cookbook/forms/text-field-changes)
+ * Cookbook: [Retrieve the value of a text field](https://flutter.dev/docs/cookbook/forms/retrieve-input)
+ * Cookbook: [Focus and text fields](https://flutter.dev/docs/cookbook/forms/focus)
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -150,4 +150,3 @@ Cupertino.
         return Container();
     }
 }
-

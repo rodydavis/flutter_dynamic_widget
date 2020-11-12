@@ -8,7 +8,7 @@ class SelectableTextBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A run of selectable text with a single style.
 
 The [SelectableText] widget displays a string of text with a single style.
@@ -28,9 +28,9 @@ default font family and size.
 
 ```dart
 SelectableText(
-'Hello! How are you?',
-textAlign: TextAlign.center,
-style: TextStyle(fontWeight: FontWeight.bold),
+  'Hello! How are you?',
+  textAlign: TextAlign.center,
+  style: TextStyle(fontWeight: FontWeight.bold),
 )
 ```
 {@end-tool}
@@ -44,13 +44,13 @@ for each word.
 
 ```dart
 const SelectableText.rich(
-TextSpan(
-text: 'Hello', // default text style
-children: <TextSpan>[
-TextSpan(text: ' beautiful ', style: TextStyle(fontStyle: FontStyle.italic)),
-TextSpan(text: 'world', style: TextStyle(fontWeight: FontWeight.bold)),
-],
-),
+  TextSpan(
+    text: 'Hello', // default text style
+    children: <TextSpan>[
+      TextSpan(text: ' beautiful ', style: TextStyle(fontStyle: FontStyle.italic)),
+      TextSpan(text: 'world', style: TextStyle(fontWeight: FontWeight.bold)),
+    ],
+  ),
 )
 ```
 {@end-tool}
@@ -62,9 +62,9 @@ the desired behavior.
 
 See also:
 
-* [Text], which is the non selectable version of this widget.
-* [TextField], which is the editable version of this widget.
-''';
+ * [Text], which is the non selectable version of this widget.
+ * [TextField], which is the editable version of this widget.
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -76,4 +76,3 @@ See also:
         return Container();
     }
 }
-

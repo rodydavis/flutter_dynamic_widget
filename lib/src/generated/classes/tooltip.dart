@@ -8,7 +8,7 @@ class TooltipBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A material design tooltip.
 
 Tooltips provide text labels which help explain the function of a button or
@@ -28,9 +28,9 @@ screen reader.
 
 See also:
 
-* <https://material.io/design/components/tooltips.html>
-* [TooltipTheme] or [ThemeData.tooltipTheme]
-''';
+ * <https://material.io/design/components/tooltips.html>
+ * [TooltipTheme] or [ThemeData.tooltipTheme]
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -42,4 +42,3 @@ See also:
         return Container();
     }
 }
-

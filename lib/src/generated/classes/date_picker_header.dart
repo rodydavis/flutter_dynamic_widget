@@ -8,7 +8,7 @@ class DatePickerHeaderBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 Re-usable widget that displays the selected date (in large font) and the
 help text above it.
 
@@ -20,7 +20,7 @@ These types include:
 
 [helpText], [orientation], [icon], [onIconPressed] are required and must be
 non-null.
-''';
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -32,4 +32,3 @@ non-null.
         return Container();
     }
 }
-

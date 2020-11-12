@@ -8,7 +8,7 @@ class NavigationRailBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A material widget that is meant to be displayed at the left or right of an
 app to navigate between a small number of views, typically between three and
 five.
@@ -41,61 +41,61 @@ This example shows a [NavigationRail] used within a Scaffold with 3
 ```dart
 int _selectedIndex = 0;
 
-@override
-Widget build(BuildContext context) {
-return Scaffold(
-body: Row(
-children: <Widget>[
-NavigationRail(
-selectedIndex: _selectedIndex,
-onDestinationSelected: (int index) {
-setState(() {
-_selectedIndex = index;
-});
-},
-labelType: NavigationRailLabelType.selected,
-destinations: [
-NavigationRailDestination(
-icon: Icon(Icons.favorite_border),
-selectedIcon: Icon(Icons.favorite),
-label: Text('First'),
-),
-NavigationRailDestination(
-icon: Icon(Icons.bookmark_border),
-selectedIcon: Icon(Icons.book),
-label: Text('Second'),
-),
-NavigationRailDestination(
-icon: Icon(Icons.star_border),
-selectedIcon: Icon(Icons.star),
-label: Text('Third'),
-),
-],
-),
-VerticalDivider(thickness: 1, width: 1),
-// This is the main content.
-Expanded(
-child: Center(
-child: Text('selectedIndex: $_selectedIndex'),
-),
-)
-],
-),
-);
-}
+ @override
+ Widget build(BuildContext context) {
+   return Scaffold(
+     body: Row(
+       children: <Widget>[
+         NavigationRail(
+           selectedIndex: _selectedIndex,
+           onDestinationSelected: (int index) {
+             setState(() {
+               _selectedIndex = index;
+             });
+           },
+           labelType: NavigationRailLabelType.selected,
+           destinations: [
+             NavigationRailDestination(
+               icon: Icon(Icons.favorite_border),
+               selectedIcon: Icon(Icons.favorite),
+               label: Text('First'),
+             ),
+             NavigationRailDestination(
+               icon: Icon(Icons.bookmark_border),
+               selectedIcon: Icon(Icons.book),
+               label: Text('Second'),
+             ),
+             NavigationRailDestination(
+               icon: Icon(Icons.star_border),
+               selectedIcon: Icon(Icons.star),
+               label: Text('Third'),
+             ),
+           ],
+         ),
+         VerticalDivider(thickness: 1, width: 1),
+         // This is the main content.
+         Expanded(
+           child: Center(
+             child: Text('selectedIndex: $_selectedIndex'),
+           ),
+         )
+       ],
+     ),
+   );
+ }
 ```
 {@end-tool}
 
 See also:
 
-* [Scaffold], which can display the navigation rail within a [Row] of the
-[Scaffold.body] slot.
-* [NavigationRailDestination], which is used as a model to create tappable
-destinations in the navigation rail.
-* [BottomNavigationBar], which is a similar navigation widget that's laid
-out horizontally.
-* [https://material.io/components/navigation-rail/]
-''';
+ * [Scaffold], which can display the navigation rail within a [Row] of the
+   [Scaffold.body] slot.
+ * [NavigationRailDestination], which is used as a model to create tappable
+   destinations in the navigation rail.
+ * [BottomNavigationBar], which is a similar navigation widget that's laid
+    out horizontally.
+ * [https://material.io/components/navigation-rail/]
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -107,4 +107,3 @@ out horizontally.
         return Container();
     }
 }
-

@@ -8,10 +8,10 @@ class InputDateRangePickerBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 Provides a pair of text fields that allow the user to enter the start and
 end dates that represent a range of dates.
-''';
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -23,4 +23,3 @@ end dates that represent a range of dates.
         return Container();
     }
 }
-

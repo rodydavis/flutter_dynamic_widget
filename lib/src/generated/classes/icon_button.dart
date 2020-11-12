@@ -8,7 +8,7 @@ class IconButtonBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A material design icon button.
 
 An icon button is a picture printed on a [Material] widget that reacts to
@@ -41,21 +41,21 @@ double _volume = 0.0;
 
 ```dart
 Widget build(BuildContext context) {
-return Column(
-mainAxisSize: MainAxisSize.min,
-children: <Widget>[
-IconButton(
-icon: Icon(Icons.volume_up),
-tooltip: 'Increase volume by 10',
-onPressed: () {
-setState(() {
-_volume += 10;
-});
-},
-),
-Text('Volume : $_volume')
-],
-);
+  return Column(
+    mainAxisSize: MainAxisSize.min,
+    children: <Widget>[
+      IconButton(
+        icon: Icon(Icons.volume_up),
+        tooltip: 'Increase volume by 10',
+        onPressed: () {
+          setState(() {
+            _volume += 10;
+          });
+        },
+      ),
+      Text('Volume : $_volume')
+    ],
+  );
 }
 ```
 {@end-tool}
@@ -83,36 +83,36 @@ button is.
 
 ```dart
 Widget build(BuildContext context) {
-return Material(
-color: Colors.white,
-child: Center(
-child: Ink(
-decoration: const ShapeDecoration(
-color: Colors.lightBlue,
-shape: CircleBorder(),
-),
-child: IconButton(
-icon: Icon(Icons.android),
-color: Colors.white,
-onPressed: () {},
-),
-),
-),
-);
+  return Material(
+    color: Colors.white,
+    child: Center(
+      child: Ink(
+        decoration: const ShapeDecoration(
+          color: Colors.lightBlue,
+          shape: CircleBorder(),
+        ),
+        child: IconButton(
+          icon: Icon(Icons.android),
+          color: Colors.white,
+          onPressed: () {},
+        ),
+      ),
+    ),
+  );
 }
 ```
 {@end-tool}
 
 See also:
 
-* [Icons], a library of predefined icons.
-* [BackButton], an icon button for a "back" affordance which adapts to the
-current platform's conventions.
-* [CloseButton], an icon button for closing pages.
-* [AppBar], to show a toolbar at the top of an application.
-* [TextButton], [ElevatedButton], [OutlinedButton], for buttons with text labels and an optional icon.
-* [InkResponse] and [InkWell], for the ink splash effect itself.
-''';
+ * [Icons], a library of predefined icons.
+ * [BackButton], an icon button for a "back" affordance which adapts to the
+   current platform's conventions.
+ * [CloseButton], an icon button for closing pages.
+ * [AppBar], to show a toolbar at the top of an application.
+ * [TextButton], [ElevatedButton], [OutlinedButton], for buttons with text labels and an optional icon.
+ * [InkResponse] and [InkWell], for the ink splash effect itself.
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -124,4 +124,3 @@ current platform's conventions.
         return Container();
     }
 }
-

@@ -8,7 +8,7 @@ class CheckboxBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A material design checkbox.
 
 The checkbox itself does not maintain any state. Instead, when the state of
@@ -25,14 +25,14 @@ Requires one of its ancestors to be a [Material] widget.
 
 See also:
 
-* [CheckboxListTile], which combines this widget with a [ListTile] so that
-you can give the checkbox a label.
-* [Switch], a widget with semantics similar to [Checkbox].
-* [Radio], for selecting among a set of explicit values.
-* [Slider], for selecting a value in a range.
-* <https://material.io/design/components/selection-controls.html#checkboxes>
-* <https://material.io/design/components/lists.html#types>
-''';
+ * [CheckboxListTile], which combines this widget with a [ListTile] so that
+   you can give the checkbox a label.
+ * [Switch], a widget with semantics similar to [Checkbox].
+ * [Radio], for selecting among a set of explicit values.
+ * [Slider], for selecting a value in a range.
+ * <https://material.io/design/components/selection-controls.html#checkboxes>
+ * <https://material.io/design/components/lists.html#types>
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -44,4 +44,3 @@ you can give the checkbox a label.
         return Container();
     }
 }
-

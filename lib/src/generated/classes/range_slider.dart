@@ -8,7 +8,7 @@ class RangeSliderBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A Material Design range slider.
 
 Used to select a range from a range of values.
@@ -29,21 +29,21 @@ RangeValues _currentRangeValues = const RangeValues(40, 80);
 
 @override
 Widget build(BuildContext context) {
-return RangeSlider(
-values: _currentRangeValues,
-min: 0,
-max: 100,
-divisions: 5,
-labels: RangeLabels(
-_currentRangeValues.start.round().toString(),
-_currentRangeValues.end.round().toString(),
-),
-onChanged: (RangeValues values) {
-setState(() {
-_currentRangeValues = values;
-});
-},
-);
+  return RangeSlider(
+    values: _currentRangeValues,
+    min: 0,
+    max: 100,
+    divisions: 5,
+    labels: RangeLabels(
+      _currentRangeValues.start.round().toString(),
+      _currentRangeValues.end.round().toString(),
+    ),
+    onChanged: (RangeValues values) {
+      setState(() {
+        _currentRangeValues = values;
+      });
+    },
+  );
 }
 ```
 {@end-tool}
@@ -57,18 +57,18 @@ discrete values 0.0, 10.0, 20.0, 30.0, 40.0, and 50.0.
 
 The terms for the parts of a slider are:
 
-* The "thumbs", which are the shapes that slide horizontally when the user
-drags them to change the selected range.
-* The "track", which is the horizontal line that the thumbs can be dragged
-along.
-* The "tick marks", which mark the discrete values of a discrete slider.
-* The "overlay", which is a highlight that's drawn over a thumb in response
-to a user tap-down gesture.
-* The "value indicators", which are the shapes that pop up when the user
-is dragging a thumb to show the value being selected.
-* The "active" segment of the slider is the segment between the two thumbs.
-* The "inactive" slider segments are the two track intervals outside of the
-slider's thumbs.
+ * The "thumbs", which are the shapes that slide horizontally when the user
+   drags them to change the selected range.
+ * The "track", which is the horizontal line that the thumbs can be dragged
+   along.
+ * The "tick marks", which mark the discrete values of a discrete slider.
+ * The "overlay", which is a highlight that's drawn over a thumb in response
+   to a user tap-down gesture.
+ * The "value indicators", which are the shapes that pop up when the user
+   is dragging a thumb to show the value being selected.
+ * The "active" segment of the slider is the segment between the two thumbs.
+ * The "inactive" slider segments are the two track intervals outside of the
+   slider's thumbs.
 
 The range slider will be disabled if [onChanged] is null or if the range
 given by [min]..[max] is empty (i.e. if [min] is equal to [max]).
@@ -101,14 +101,14 @@ control of the colors, and other visual properties is achieved using a
 
 See also:
 
-* [SliderTheme] and [SliderThemeData] for information about controlling
-the visual appearance of the slider.
-* [Slider], for a single-valued slider.
-* [Radio], for selecting among a set of explicit values.
-* [Checkbox] and [Switch], for toggling a particular value on or off.
-* <https://material.io/design/components/sliders.html>
-* [MediaQuery], from which the text scale factor is obtained.
-''';
+ * [SliderTheme] and [SliderThemeData] for information about controlling
+   the visual appearance of the slider.
+ * [Slider], for a single-valued slider.
+ * [Radio], for selecting among a set of explicit values.
+ * [Checkbox] and [Switch], for toggling a particular value on or off.
+ * <https://material.io/design/components/sliders.html>
+ * [MediaQuery], from which the text scale factor is obtained.
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -120,4 +120,3 @@ the visual appearance of the slider.
         return Container();
     }
 }
-

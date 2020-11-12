@@ -1,2 +1,2 @@
 # flutter packages pub run build_runner build --delete-conflicting-outputs
-./third_party/flutter/bin/dart ./third_party/flutter_ast/lib/cli/generator.dart -p ./third_party/flutter/packages/flutter/lib/src/material -o ./lib/src/generated
+./third_party/flutter/bin/dart ./third_party/flutter_ast/lib/cli/generator.dart -p ./third_party/flutter/packages/flutter/lib/src -o ./lib/src/generated

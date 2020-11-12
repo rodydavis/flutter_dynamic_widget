@@ -8,16 +8,16 @@ class UserAccountsDrawerHeaderBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A material design [Drawer] header that identifies the app's user.
 
 Requires one of its ancestors to be a [Material] widget.
 
 See also:
 
-* [DrawerHeader], for a drawer header that doesn't show user accounts.
-* <https://material.io/design/components/navigation-drawer.html#anatomy>
-''';
+ * [DrawerHeader], for a drawer header that doesn't show user accounts.
+ * <https://material.io/design/components/navigation-drawer.html#anatomy>
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -29,4 +29,3 @@ See also:
         return Container();
     }
 }
-

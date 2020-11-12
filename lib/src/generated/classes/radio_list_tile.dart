@@ -8,7 +8,7 @@ class RadioListTileBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A [ListTile] with a [Radio]. In other words, a radio button with a label.
 
 The entire list tile is interactive: tapping anywhere in the tile selects
@@ -52,22 +52,22 @@ SingingCharacter _character = SingingCharacter.lafayette;
 
 @override
 Widget build(BuildContext context) {
-return Column(
-children: <Widget>[
-RadioListTile<SingingCharacter>(
-title: const Text('Lafayette'),
-value: SingingCharacter.lafayette,
-groupValue: _character,
-onChanged: (SingingCharacter value) { setState(() { _character = value; }); },
-),
-RadioListTile<SingingCharacter>(
-title: const Text('Thomas Jefferson'),
-value: SingingCharacter.jefferson,
-groupValue: _character,
-onChanged: (SingingCharacter value) { setState(() { _character = value; }); },
-),
-],
-);
+  return Column(
+    children: <Widget>[
+      RadioListTile<SingingCharacter>(
+        title: const Text('Lafayette'),
+        value: SingingCharacter.lafayette,
+        groupValue: _character,
+        onChanged: (SingingCharacter value) { setState(() { _character = value; }); },
+      ),
+      RadioListTile<SingingCharacter>(
+        title: const Text('Thomas Jefferson'),
+        value: SingingCharacter.jefferson,
+        groupValue: _character,
+        onChanged: (SingingCharacter value) { setState(() { _character = value; }); },
+      ),
+    ],
+  );
 }
 ```
 {@end-tool}
@@ -102,50 +102,50 @@ import 'package:flutter/gestures.dart';
 ```
 ```dart preamble
 class LinkedLabelRadio extends StatelessWidget {
-const LinkedLabelRadio({
-this.label,
-this.padding,
-this.groupValue,
-this.value,
-this.onChanged,
-});
+  const LinkedLabelRadio({
+    this.label,
+    this.padding,
+    this.groupValue,
+    this.value,
+    this.onChanged,
+  });
 
-final String label;
-final EdgeInsets padding;
-final bool groupValue;
-final bool value;
-final Function onChanged;
+  final String label;
+  final EdgeInsets padding;
+  final bool groupValue;
+  final bool value;
+  final Function onChanged;
 
-@override
-Widget build(BuildContext context) {
-return Padding(
-padding: padding,
-child: Row(
-children: <Widget>[
-Radio<bool>(
-groupValue: groupValue,
-value: value,
-onChanged: (bool newValue) {
-onChanged(newValue);
-}
-),
-RichText(
-text: TextSpan(
-text: label,
-style: TextStyle(
-color: Colors.blueAccent,
-decoration: TextDecoration.underline,
-),
-recognizer: TapGestureRecognizer()
-..onTap = () {
-print('Label has been tapped.');
-},
-),
-),
-],
-),
-);
-}
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: padding,
+      child: Row(
+        children: <Widget>[
+          Radio<bool>(
+            groupValue: groupValue,
+            value: value,
+            onChanged: (bool newValue) {
+              onChanged(newValue);
+            }
+          ),
+          RichText(
+            text: TextSpan(
+              text: label,
+              style: TextStyle(
+                color: Colors.blueAccent,
+                decoration: TextDecoration.underline,
+              ),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () {
+                print('Label has been tapped.');
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }
 ```
 ```dart
@@ -153,35 +153,35 @@ bool _isRadioSelected = false;
 
 @override
 Widget build(BuildContext context) {
-return Scaffold(
-body: Column(
-mainAxisAlignment: MainAxisAlignment.center,
-children: <Widget>[
-LinkedLabelRadio(
-label: 'First tappable label text',
-padding: EdgeInsets.symmetric(horizontal: 5.0),
-value: true,
-groupValue: _isRadioSelected,
-onChanged: (bool newValue) {
-setState(() {
-_isRadioSelected = newValue;
-});
-},
-),
-LinkedLabelRadio(
-label: 'Second tappable label text',
-padding: EdgeInsets.symmetric(horizontal: 5.0),
-value: false,
-groupValue: _isRadioSelected,
-onChanged: (bool newValue) {
-setState(() {
-_isRadioSelected = newValue;
-});
-},
-),
-],
-),
-);
+  return Scaffold(
+    body: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        LinkedLabelRadio(
+          label: 'First tappable label text',
+          padding: EdgeInsets.symmetric(horizontal: 5.0),
+          value: true,
+          groupValue: _isRadioSelected,
+          onChanged: (bool newValue) {
+            setState(() {
+              _isRadioSelected = newValue;
+            });
+          },
+        ),
+        LinkedLabelRadio(
+          label: 'Second tappable label text',
+          padding: EdgeInsets.symmetric(horizontal: 5.0),
+          value: false,
+          groupValue: _isRadioSelected,
+          onChanged: (bool newValue) {
+            setState(() {
+              _isRadioSelected = newValue;
+            });
+          },
+        ),
+      ],
+    ),
+  );
 }
 ```
 {@end-tool}
@@ -202,44 +202,44 @@ make your own configurable widget.
 
 ```dart preamble
 class LabeledRadio extends StatelessWidget {
-const LabeledRadio({
-this.label,
-this.padding,
-this.groupValue,
-this.value,
-this.onChanged,
-});
+  const LabeledRadio({
+    this.label,
+    this.padding,
+    this.groupValue,
+    this.value,
+    this.onChanged,
+  });
 
-final String label;
-final EdgeInsets padding;
-final bool groupValue;
-final bool value;
-final Function onChanged;
+  final String label;
+  final EdgeInsets padding;
+  final bool groupValue;
+  final bool value;
+  final Function onChanged;
 
-@override
-Widget build(BuildContext context) {
-return InkWell(
-onTap: () {
-if (value != groupValue)
-onChanged(value);
-},
-child: Padding(
-padding: padding,
-child: Row(
-children: <Widget>[
-Radio<bool>(
-groupValue: groupValue,
-value: value,
-onChanged: (bool newValue) {
-onChanged(newValue);
-},
-),
-Text(label),
-],
-),
-),
-);
-}
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        if (value != groupValue)
+          onChanged(value);
+      },
+      child: Padding(
+        padding: padding,
+        child: Row(
+          children: <Widget>[
+            Radio<bool>(
+              groupValue: groupValue,
+              value: value,
+              onChanged: (bool newValue) {
+                onChanged(newValue);
+              },
+            ),
+            Text(label),
+          ],
+        ),
+      ),
+    );
+  }
 }
 ```
 ```dart
@@ -247,47 +247,47 @@ bool _isRadioSelected = false;
 
 @override
 Widget build(BuildContext context) {
-return Scaffold(
-body: Column(
-mainAxisAlignment: MainAxisAlignment.center,
-children: <LabeledRadio>[
-LabeledRadio(
-label: 'This is the first label text',
-padding: const EdgeInsets.symmetric(horizontal: 5.0),
-value: true,
-groupValue: _isRadioSelected,
-onChanged: (bool newValue) {
-setState(() {
-_isRadioSelected = newValue;
-});
-},
-),
-LabeledRadio(
-label: 'This is the second label text',
-padding: const EdgeInsets.symmetric(horizontal: 5.0),
-value: false,
-groupValue: _isRadioSelected,
-onChanged: (bool newValue) {
-setState(() {
-_isRadioSelected = newValue;
-});
-},
-),
-],
-),
-);
+  return Scaffold(
+    body: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <LabeledRadio>[
+        LabeledRadio(
+          label: 'This is the first label text',
+          padding: const EdgeInsets.symmetric(horizontal: 5.0),
+          value: true,
+          groupValue: _isRadioSelected,
+          onChanged: (bool newValue) {
+            setState(() {
+              _isRadioSelected = newValue;
+            });
+          },
+        ),
+        LabeledRadio(
+          label: 'This is the second label text',
+          padding: const EdgeInsets.symmetric(horizontal: 5.0),
+          value: false,
+          groupValue: _isRadioSelected,
+          onChanged: (bool newValue) {
+            setState(() {
+              _isRadioSelected = newValue;
+            });
+          },
+        ),
+      ],
+    ),
+  );
 }
 ```
 {@end-tool}
 
 See also:
 
-* [ListTileTheme], which can be used to affect the style of list tiles,
-including radio list tiles.
-* [CheckboxListTile], a similar widget for checkboxes.
-* [SwitchListTile], a similar widget for switches.
-* [ListTile] and [Radio], the widgets from which this widget is made.
-''';
+ * [ListTileTheme], which can be used to affect the style of list tiles,
+   including radio list tiles.
+ * [CheckboxListTile], a similar widget for checkboxes.
+ * [SwitchListTile], a similar widget for switches.
+ * [ListTile] and [Radio], the widgets from which this widget is made.
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -299,4 +299,3 @@ including radio list tiles.
         return Container();
     }
 }
-

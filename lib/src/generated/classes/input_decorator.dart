@@ -8,7 +8,7 @@ class InputDecoratorBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 Defines the appearance of a Material Design text field.
 
 [InputDecorator] displays the visual elements of a Material Design text
@@ -25,11 +25,11 @@ Requires one of its ancestors to be a [Material] widget.
 
 See also:
 
-* [TextField], which uses an [InputDecorator] to display a border,
-labels, and icons, around its [EditableText] child.
-* [Decoration] and [DecoratedBox], for drawing arbitrary decorations
-around other widgets.
-''';
+ * [TextField], which uses an [InputDecorator] to display a border,
+   labels, and icons, around its [EditableText] child.
+ * [Decoration] and [DecoratedBox], for drawing arbitrary decorations
+   around other widgets.
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -41,4 +41,3 @@ around other widgets.
         return Container();
     }
 }
-

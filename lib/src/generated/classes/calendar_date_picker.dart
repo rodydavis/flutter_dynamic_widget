@@ -8,7 +8,7 @@ class CalendarDatePickerBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 Displays a grid of days for a given month and allows the user to select a date.
 
 Days are arranged in a rectangular grid with one column for each day of the
@@ -21,13 +21,13 @@ a text entry option.
 
 See also:
 
-* [showDatePicker], which creates a Dialog that contains a [CalendarDatePicker]
-and provides an optional compact view where the user can enter a date as
-a line of text.
-* [showTimePicker], which shows a dialog that contains a material design
-time picker.
+ * [showDatePicker], which creates a Dialog that contains a [CalendarDatePicker]
+   and provides an optional compact view where the user can enter a date as
+   a line of text.
+ * [showTimePicker], which shows a dialog that contains a material design
+   time picker.
 
-''';
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -39,4 +39,3 @@ time picker.
         return Container();
     }
 }
-

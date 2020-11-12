@@ -8,7 +8,7 @@ class FloatingActionButtonBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A material design floating action button.
 
 A floating action button is a circular icon button that hovers over content
@@ -37,21 +37,21 @@ This example shows how to display a [FloatingActionButton] in a
 
 ```dart
 Widget build(BuildContext context) {
-return Scaffold(
-appBar: AppBar(
-title: const Text('Floating Action Button'),
-),
-body: Center(
-child: const Text('Press the button below!')
-),
-floatingActionButton: FloatingActionButton(
-onPressed: () {
-// Add your onPressed code here!
-},
-child: Icon(Icons.navigation),
-backgroundColor: Colors.green,
-),
-);
+  return Scaffold(
+    appBar: AppBar(
+      title: const Text('Floating Action Button'),
+    ),
+    body: Center(
+      child: const Text('Press the button below!')
+    ),
+    floatingActionButton: FloatingActionButton(
+      onPressed: () {
+        // Add your onPressed code here!
+      },
+      child: Icon(Icons.navigation),
+      backgroundColor: Colors.green,
+    ),
+  );
 }
 ```
 {@end-tool}
@@ -65,32 +65,32 @@ This example shows how to make an extended [FloatingActionButton] in a
 
 ```dart
 Widget build(BuildContext context) {
-return Scaffold(
-appBar: AppBar(
-title: const Text('Floating Action Button Label'),
-),
-body: Center(
-child: const Text('Press the button with a label below!'),
-),
-floatingActionButton: FloatingActionButton.extended(
-onPressed: () {
-// Add your onPressed code here!
-},
-label: Text('Approve'),
-icon: Icon(Icons.thumb_up),
-backgroundColor: Colors.pink,
-),
-);
+  return Scaffold(
+    appBar: AppBar(
+      title: const Text('Floating Action Button Label'),
+    ),
+    body: Center(
+      child: const Text('Press the button with a label below!'),
+    ),
+    floatingActionButton: FloatingActionButton.extended(
+      onPressed: () {
+        // Add your onPressed code here!
+      },
+      label: Text('Approve'),
+      icon: Icon(Icons.thumb_up),
+      backgroundColor: Colors.pink,
+    ),
+  );
 }
 ```
 {@end-tool}
 
 See also:
 
-* [Scaffold], in which floating action buttons typically live.
-* [ElevatedButton], a filled button whose material elevates when pressed.
-* <https://material.io/design/components/buttons-floating-action-button.html>
-''';
+ * [Scaffold], in which floating action buttons typically live.
+ * [ElevatedButton], a filled button whose material elevates when pressed.
+ * <https://material.io/design/components/buttons-floating-action-button.html>
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -102,4 +102,3 @@ See also:
         return Container();
     }
 }
-

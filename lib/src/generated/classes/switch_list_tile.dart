@@ -8,7 +8,7 @@ class SwitchListTileBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A [ListTile] with a [Switch]. In other words, a switch with a label.
 
 The entire list tile is interactive: tapping anywhere in the tile toggles
@@ -51,12 +51,12 @@ bool _lights = false;
 
 @override
 Widget build(BuildContext context) {
-return SwitchListTile(
-title: const Text('Lights'),
-value: _lights,
-onChanged: (bool value) { setState(() { _lights = value; }); },
-secondary: const Icon(Icons.lightbulb_outline),
-);
+  return SwitchListTile(
+    title: const Text('Lights'),
+    value: _lights,
+    onChanged: (bool value) { setState(() { _lights = value; }); },
+    secondary: const Icon(Icons.lightbulb_outline),
+  );
 }
 ```
 {@end-tool}
@@ -91,49 +91,49 @@ import 'package:flutter/gestures.dart';
 ```
 ```dart preamble
 class LinkedLabelSwitch extends StatelessWidget {
-const LinkedLabelSwitch({
-this.label,
-this.padding,
-this.value,
-this.onChanged,
-});
+  const LinkedLabelSwitch({
+    this.label,
+    this.padding,
+    this.value,
+    this.onChanged,
+  });
 
-final String label;
-final EdgeInsets padding;
-final bool value;
-final Function onChanged;
+  final String label;
+  final EdgeInsets padding;
+  final bool value;
+  final Function onChanged;
 
-@override
-Widget build(BuildContext context) {
-return Padding(
-padding: padding,
-child: Row(
-children: <Widget>[
-Expanded(
-child: RichText(
-text: TextSpan(
-text: label,
-style: TextStyle(
-color: Colors.blueAccent,
-decoration: TextDecoration.underline,
-),
-recognizer: TapGestureRecognizer()
-..onTap = () {
-print('Label has been tapped.');
-},
-),
-),
-),
-Switch(
-value: value,
-onChanged: (bool newValue) {
-onChanged(newValue);
-},
-),
-],
-),
-);
-}
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: padding,
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: RichText(
+              text: TextSpan(
+                text: label,
+                style: TextStyle(
+                  color: Colors.blueAccent,
+                  decoration: TextDecoration.underline,
+                ),
+                recognizer: TapGestureRecognizer()
+                  ..onTap = () {
+                  print('Label has been tapped.');
+                },
+              ),
+            ),
+          ),
+          Switch(
+            value: value,
+            onChanged: (bool newValue) {
+              onChanged(newValue);
+            },
+          ),
+        ],
+      ),
+    );
+  }
 }
 ```
 ```dart
@@ -141,16 +141,16 @@ bool _isSelected = false;
 
 @override
 Widget build(BuildContext context) {
-return LinkedLabelSwitch(
-label: 'Linked, tappable label text',
-padding: const EdgeInsets.symmetric(horizontal: 20.0),
-value: _isSelected,
-onChanged: (bool newValue) {
-setState(() {
-_isSelected = newValue;
-});
-},
-);
+  return LinkedLabelSwitch(
+    label: 'Linked, tappable label text',
+    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+    value: _isSelected,
+    onChanged: (bool newValue) {
+      setState(() {
+        _isSelected = newValue;
+      });
+    },
+  );
 }
 ```
 {@end-tool}
@@ -171,42 +171,42 @@ make your own configurable widget.
 
 ```dart preamble
 class LabeledSwitch extends StatelessWidget {
-const LabeledSwitch({
-this.label,
-this.padding,
-this.groupValue,
-this.value,
-this.onChanged,
-});
+  const LabeledSwitch({
+    this.label,
+    this.padding,
+    this.groupValue,
+    this.value,
+    this.onChanged,
+  });
 
-final String label;
-final EdgeInsets padding;
-final bool groupValue;
-final bool value;
-final Function onChanged;
+  final String label;
+  final EdgeInsets padding;
+  final bool groupValue;
+  final bool value;
+  final Function onChanged;
 
-@override
-Widget build(BuildContext context) {
-return InkWell(
-onTap: () {
-onChanged(!value);
-},
-child: Padding(
-padding: padding,
-child: Row(
-children: <Widget>[
-Expanded(child: Text(label)),
-Switch(
-value: value,
-onChanged: (bool newValue) {
-onChanged(newValue);
-},
-),
-],
-),
-),
-);
-}
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        onChanged(!value);
+      },
+      child: Padding(
+        padding: padding,
+        child: Row(
+          children: <Widget>[
+            Expanded(child: Text(label)),
+            Switch(
+              value: value,
+              onChanged: (bool newValue) {
+                onChanged(newValue);
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
 ```
 ```dart
@@ -214,28 +214,28 @@ bool _isSelected = false;
 
 @override
 Widget build(BuildContext context) {
-return LabeledSwitch(
-label: 'This is the label text',
-padding: const EdgeInsets.symmetric(horizontal: 20.0),
-value: _isSelected,
-onChanged: (bool newValue) {
-setState(() {
-_isSelected = newValue;
-});
-},
-);
+  return LabeledSwitch(
+    label: 'This is the label text',
+    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+    value: _isSelected,
+    onChanged: (bool newValue) {
+      setState(() {
+        _isSelected = newValue;
+      });
+    },
+  );
 }
 ```
 {@end-tool}
 
 See also:
 
-* [ListTileTheme], which can be used to affect the style of list tiles,
-including switch list tiles.
-* [CheckboxListTile], a similar widget for checkboxes.
-* [RadioListTile], a similar widget for radio buttons.
-* [ListTile] and [Switch], the widgets from which this widget is made.
-''';
+ * [ListTileTheme], which can be used to affect the style of list tiles,
+   including switch list tiles.
+ * [CheckboxListTile], a similar widget for checkboxes.
+ * [RadioListTile], a similar widget for radio buttons.
+ * [ListTile] and [Switch], the widgets from which this widget is made.
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -247,4 +247,3 @@ including switch list tiles.
         return Container();
     }
 }
-

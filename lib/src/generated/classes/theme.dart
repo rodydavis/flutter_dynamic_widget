@@ -8,7 +8,7 @@ class ThemeBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 Applies a theme to descendant widgets.
 
 A theme describes the colors and typographic choices of an application.
@@ -22,12 +22,12 @@ The [Theme] widget implies an [IconTheme] widget, set to the value of the
 
 See also:
 
-* [ThemeData], which describes the actual configuration of a theme.
-* [AnimatedTheme], which animates the [ThemeData] when it changes rather
-than changing the theme all at once.
-* [MaterialApp], which includes an [AnimatedTheme] widget configured via
-the [MaterialApp.theme] argument.
-''';
+ * [ThemeData], which describes the actual configuration of a theme.
+ * [AnimatedTheme], which animates the [ThemeData] when it changes rather
+   than changing the theme all at once.
+ * [MaterialApp], which includes an [AnimatedTheme] widget configured via
+   the [MaterialApp.theme] argument.
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -39,4 +39,3 @@ the [MaterialApp.theme] argument.
         return Container();
     }
 }
-

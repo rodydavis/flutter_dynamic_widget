@@ -8,18 +8,18 @@ class MaterialBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A piece of material.
 
 The Material widget is responsible for:
 
 1. Clipping: If [clipBehavior] is not [Clip.none], Material clips its widget
-sub-tree to the shape specified by [shape], [type], and [borderRadius].
-By default, [clipBehavior] is [Clip.none] for performance considerations.
+   sub-tree to the shape specified by [shape], [type], and [borderRadius].
+   By default, [clipBehavior] is [Clip.none] for performance considerations.
 2. Elevation: Material elevates its widget sub-tree on the Z axis by
-[elevation] pixels, and draws the appropriate shadow.
+   [elevation] pixels, and draws the appropriate shadow.
 3. Ink effects: Material shows ink effects implemented by [InkFeature]s
-like [InkSplash] and [InkHighlight] below its children.
+   like [InkSplash] and [InkHighlight] below its children.
 
 ## The Material Metaphor
 
@@ -44,18 +44,18 @@ supported. Shape changes are also animated for [animationDuration].
 
 The shape for material is determined by [shape], [type], and [borderRadius].
 
-- If [shape] is non null, it determines the shape.
-- If [shape] is null and [borderRadius] is non null, the shape is a
-rounded rectangle, with corners specified by [borderRadius].
-- If [shape] and [borderRadius] are null, [type] determines the
-shape as follows:
-- [MaterialType.canvas]: the default material shape is a rectangle.
-- [MaterialType.card]: the default material shape is a rectangle with
-rounded edges. The edge radii is specified by [kMaterialEdges].
-- [MaterialType.circle]: the default material shape is a circle.
-- [MaterialType.button]: the default material shape is a rectangle with
-rounded edges. The edge radii is specified by [kMaterialEdges].
-- [MaterialType.transparency]: the default material shape is a rectangle.
+ - If [shape] is non null, it determines the shape.
+ - If [shape] is null and [borderRadius] is non null, the shape is a
+   rounded rectangle, with corners specified by [borderRadius].
+ - If [shape] and [borderRadius] are null, [type] determines the
+   shape as follows:
+   - [MaterialType.canvas]: the default material shape is a rectangle.
+   - [MaterialType.card]: the default material shape is a rectangle with
+     rounded edges. The edge radii is specified by [kMaterialEdges].
+   - [MaterialType.circle]: the default material shape is a circle.
+   - [MaterialType.button]: the default material shape is a rectangle with
+     rounded edges. The edge radii is specified by [kMaterialEdges].
+   - [MaterialType.transparency]: the default material shape is a rectangle.
 
 ## Border
 
@@ -84,10 +84,10 @@ the material itself.
 
 See also:
 
-* [MergeableMaterial], a piece of material that can split and re-merge.
-* [Card], a wrapper for a [Material] of [type] [MaterialType.card].
-* <https://material.io/design/>
-''';
+ * [MergeableMaterial], a piece of material that can split and re-merge.
+ * [Card], a wrapper for a [Material] of [type] [MaterialType.card].
+ * <https://material.io/design/>
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -99,4 +99,3 @@ See also:
         return Container();
     }
 }
-

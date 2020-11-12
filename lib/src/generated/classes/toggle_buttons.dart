@@ -8,7 +8,7 @@ class ToggleButtonsBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A horizontal set of toggle buttons.
 
 The list of [children] are laid out in a row. The state of each button
@@ -30,17 +30,17 @@ simultaneously selected, while requiring none of the buttons to be
 selected.
 ```dart
 ToggleButtons(
-children: <Widget>[
-Icon(Icons.ac_unit),
-Icon(Icons.call),
-Icon(Icons.cake),
-],
-onPressed: (int index) {
-setState(() {
-isSelected[index] = !isSelected[index];
-});
-},
-isSelected: isSelected,
+  children: <Widget>[
+    Icon(Icons.ac_unit),
+    Icon(Icons.call),
+    Icon(Icons.cake),
+  ],
+  onPressed: (int index) {
+    setState(() {
+      isSelected[index] = !isSelected[index];
+    });
+  },
+  isSelected: isSelected,
 ),
 ```
 
@@ -51,23 +51,23 @@ while requiring at least one selection. Note that this assumes that
 [isSelected] was properly initialized with one selection.
 ```dart
 ToggleButtons(
-children: <Widget>[
-Icon(Icons.ac_unit),
-Icon(Icons.call),
-Icon(Icons.cake),
-],
-onPressed: (int index) {
-setState(() {
-for (int buttonIndex = 0; buttonIndex < isSelected.length; buttonIndex++) {
-if (buttonIndex == index) {
-isSelected[buttonIndex] = true;
-} else {
-isSelected[buttonIndex] = false;
-}
-}
-});
-},
-isSelected: isSelected,
+  children: <Widget>[
+    Icon(Icons.ac_unit),
+    Icon(Icons.call),
+    Icon(Icons.cake),
+  ],
+  onPressed: (int index) {
+    setState(() {
+      for (int buttonIndex = 0; buttonIndex < isSelected.length; buttonIndex++) {
+        if (buttonIndex == index) {
+          isSelected[buttonIndex] = true;
+        } else {
+          isSelected[buttonIndex] = false;
+        }
+      }
+    });
+  },
+  isSelected: isSelected,
 ),
 ```
 
@@ -77,23 +77,23 @@ Here is an implementation that requires mutually exclusive selection,
 but allows for none of the buttons to be selected.
 ```dart
 ToggleButtons(
-children: <Widget>[
-Icon(Icons.ac_unit),
-Icon(Icons.call),
-Icon(Icons.cake),
-],
-onPressed: (int index) {
-setState(() {
-for (int buttonIndex = 0; buttonIndex < isSelected.length; buttonIndex++) {
-if (buttonIndex == index) {
-isSelected[buttonIndex] = !isSelected[buttonIndex];
-} else {
-isSelected[buttonIndex] = false;
-}
-}
-});
-},
-isSelected: isSelected,
+  children: <Widget>[
+    Icon(Icons.ac_unit),
+    Icon(Icons.call),
+    Icon(Icons.cake),
+  ],
+  onPressed: (int index) {
+    setState(() {
+      for (int buttonIndex = 0; buttonIndex < isSelected.length; buttonIndex++) {
+        if (buttonIndex == index) {
+          isSelected[buttonIndex] = !isSelected[buttonIndex];
+        } else {
+          isSelected[buttonIndex] = false;
+        }
+      }
+    });
+  },
+  isSelected: isSelected,
 ),
 ```
 
@@ -105,25 +105,25 @@ that this assumes that [isSelected] was properly initialized with one
 selection.
 ```dart
 ToggleButtons(
-children: <Widget>[
-Icon(Icons.ac_unit),
-Icon(Icons.call),
-Icon(Icons.cake),
-],
-onPressed: (int index) {
-int count = 0;
-isSelected.forEach((bool val) {
-if (val) count++;
-});
+  children: <Widget>[
+    Icon(Icons.ac_unit),
+    Icon(Icons.call),
+    Icon(Icons.cake),
+  ],
+  onPressed: (int index) {
+    int count = 0;
+    isSelected.forEach((bool val) {
+      if (val) count++;
+    });
 
-if (isSelected[index] && count < 2)
-return;
+    if (isSelected[index] && count < 2)
+      return;
 
-setState(() {
-isSelected[index] = !isSelected[index];
-});
-},
-isSelected: isSelected,
+    setState(() {
+      isSelected[index] = !isSelected[index];
+    });
+  },
+  isSelected: isSelected,
 ),
 ```
 
@@ -142,8 +142,8 @@ see [BorderSide.width].
 
 See also:
 
-* <https://material.io/design/components/buttons.html#toggle-button>
-''';
+ * <https://material.io/design/components/buttons.html#toggle-button>
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -155,4 +155,3 @@ See also:
         return Container();
     }
 }
-

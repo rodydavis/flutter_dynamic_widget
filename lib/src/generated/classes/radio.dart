@@ -8,7 +8,7 @@ class RadioBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A material design radio button.
 
 Used to select between a number of mutually exclusive values. When one radio
@@ -47,42 +47,42 @@ enum SingingCharacter { lafayette, jefferson }
 SingingCharacter _character = SingingCharacter.lafayette;
 
 Widget build(BuildContext context) {
-return Column(
-children: <Widget>[
-ListTile(
-title: const Text('Lafayette'),
-leading: Radio(
-value: SingingCharacter.lafayette,
-groupValue: _character,
-onChanged: (SingingCharacter value) {
-setState(() { _character = value; });
-},
-),
-),
-ListTile(
-title: const Text('Thomas Jefferson'),
-leading: Radio(
-value: SingingCharacter.jefferson,
-groupValue: _character,
-onChanged: (SingingCharacter value) {
-setState(() { _character = value; });
-},
-),
-),
-],
-);
+  return Column(
+    children: <Widget>[
+      ListTile(
+        title: const Text('Lafayette'),
+        leading: Radio(
+          value: SingingCharacter.lafayette,
+          groupValue: _character,
+          onChanged: (SingingCharacter value) {
+            setState(() { _character = value; });
+          },
+        ),
+      ),
+      ListTile(
+        title: const Text('Thomas Jefferson'),
+        leading: Radio(
+          value: SingingCharacter.jefferson,
+          groupValue: _character,
+          onChanged: (SingingCharacter value) {
+            setState(() { _character = value; });
+          },
+        ),
+      ),
+    ],
+  );
 }
 ```
 {@end-tool}
 
 See also:
 
-* [RadioListTile], which combines this widget with a [ListTile] so that
-you can give the radio button a label.
-* [Slider], for selecting a value in a range.
-* [Checkbox] and [Switch], for toggling a particular value on or off.
-* <https://material.io/design/components/selection-controls.html#radio-buttons>
-''';
+ * [RadioListTile], which combines this widget with a [ListTile] so that
+   you can give the radio button a label.
+ * [Slider], for selecting a value in a range.
+ * [Checkbox] and [Switch], for toggling a particular value on or off.
+ * <https://material.io/design/components/selection-controls.html#radio-buttons>
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -94,4 +94,3 @@ you can give the radio button a label.
         return Container();
     }
 }
-

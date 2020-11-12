@@ -8,7 +8,7 @@ class MergeableMaterialBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 Displays a list of [MergeableMaterialItem] children. The list contains
 [MaterialSlice] items whose boundaries are either "merged" with adjacent
 items or separated by a [MaterialGap]. The [children] are distributed along
@@ -28,9 +28,9 @@ the transition of the slices, while the gaps will be animated automatically.
 
 See also:
 
-* [Card], a piece of material that does not support splitting and merging
-but otherwise looks the same.
-''';
+ * [Card], a piece of material that does not support splitting and merging
+   but otherwise looks the same.
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -42,4 +42,3 @@ but otherwise looks the same.
         return Container();
     }
 }
-

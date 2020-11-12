@@ -8,7 +8,7 @@ class ExpansionTileBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A single-line [ListTile] with a trailing button that expands or collapses
 the tile to reveal or hide the [children].
 
@@ -20,11 +20,11 @@ in and out of view.
 
 See also:
 
-* [ListTile], useful for creating expansion tile [children] when the
-expansion tile represents a sublist.
-* The "Expand/collapse" section of
-<https://material.io/guidelines/components/lists-controls.html>.
-''';
+ * [ListTile], useful for creating expansion tile [children] when the
+   expansion tile represents a sublist.
+ * The "Expand/collapse" section of
+   <https://material.io/guidelines/components/lists-controls.html>.
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -36,4 +36,3 @@ expansion tile represents a sublist.
         return Container();
     }
 }
-

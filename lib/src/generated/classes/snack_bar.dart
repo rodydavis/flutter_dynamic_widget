@@ -1,38 +1,5 @@
 import '../base.dart';
 
-class SnackBarActionBase extends BaseWidget {
-    SnackBarActionBase();
-
-    factory SnackBarActionBase.fromJson(Map<String, dynamic> data) {
-        return SnackBarActionBase();
-    }
-
-    @override
-    String get description => r'''
-A button for a [SnackBar], known as an "action".
-
-Snack bar actions are always enabled. If you want to disable a snack bar
-action, simply don't include it in the snack bar.
-
-Snack bar actions can only be pressed once. Subsequent presses are ignored.
-
-See also:
-
-* [SnackBar]
-* <https://material.io/design/components/snackbars.html>
-''';
-
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
-
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
-}
-
 class SnackBarBase extends BaseWidget {
     SnackBarBase();
 
@@ -41,7 +8,7 @@ class SnackBarBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A lightweight message with an optional action which briefly displays at the
 bottom of the screen.
 
@@ -57,17 +24,17 @@ enabled. This is controlled by [AccessibilityFeatures.accessibleNavigation].
 
 See also:
 
-* [Scaffold.of], to obtain the current [ScaffoldState], which manages the
-display and animation of snack bars.
-* [ScaffoldState.showSnackBar], which displays a [SnackBar].
-* [ScaffoldState.removeCurrentSnackBar], which abruptly hides the currently
-displayed snack bar, if any, and allows the next to be displayed.
-* [SnackBarAction], which is used to specify an [action] button to show
-on the snack bar.
-* [SnackBarThemeData], to configure the default property values for
-[SnackBar] widgets.
-* <https://material.io/design/components/snackbars.html>
-''';
+ * [Scaffold.of], to obtain the current [ScaffoldState], which manages the
+   display and animation of snack bars.
+ * [ScaffoldState.showSnackBar], which displays a [SnackBar].
+ * [ScaffoldState.removeCurrentSnackBar], which abruptly hides the currently
+   displayed snack bar, if any, and allows the next to be displayed.
+ * [SnackBarAction], which is used to specify an [action] button to show
+   on the snack bar.
+ * [SnackBarThemeData], to configure the default property values for
+   [SnackBar] widgets.
+ * <https://material.io/design/components/snackbars.html>
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -79,4 +46,3 @@ on the snack bar.
         return Container();
     }
 }
-

@@ -8,7 +8,7 @@ class ScaffoldBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 Implements the basic material design visual layout structure.
 
 This class provides APIs for showing drawers, snack bars, and bottom sheets.
@@ -29,19 +29,19 @@ callback that increments a counter.
 int _count = 0;
 
 Widget build(BuildContext context) {
-return Scaffold(
-appBar: AppBar(
-title: const Text('Sample Code'),
-),
-body: Center(
-child: Text('You have pressed the button $_count times.')
-),
-floatingActionButton: FloatingActionButton(
-onPressed: () => setState(() => _count++),
-tooltip: 'Increment Counter',
-child: const Icon(Icons.add),
-),
-);
+  return Scaffold(
+    appBar: AppBar(
+      title: const Text('Sample Code'),
+    ),
+    body: Center(
+      child: Text('You have pressed the button $_count times.')
+    ),
+    floatingActionButton: FloatingActionButton(
+      onPressed: () => setState(() => _count++),
+      tooltip: 'Increment Counter',
+      child: const Icon(Icons.add),
+    ),
+  );
 }
 ```
 {@end-tool}
@@ -58,20 +58,20 @@ is connected to a callback that increments a counter.
 int _count = 0;
 
 Widget build(BuildContext context) {
-return Scaffold(
-appBar: AppBar(
-title: const Text('Sample Code'),
-),
-body: Center(
-child: Text('You have pressed the button $_count times.')
-),
-backgroundColor: Colors.blueGrey.shade200,
-floatingActionButton: FloatingActionButton(
-onPressed: () => setState(() => _count++),
-tooltip: 'Increment Counter',
-child: const Icon(Icons.add),
-),
-);
+  return Scaffold(
+    appBar: AppBar(
+      title: const Text('Sample Code'),
+    ),
+    body: Center(
+      child: Text('You have pressed the button $_count times.')
+    ),
+    backgroundColor: Colors.blueGrey.shade200,
+    floatingActionButton: FloatingActionButton(
+      onPressed: () => setState(() => _count++),
+      tooltip: 'Increment Counter',
+      child: const Icon(Icons.add),
+    ),
+  );
 }
 ```
 {@end-tool}
@@ -90,26 +90,26 @@ connected to a callback that increments a counter.
 int _count = 0;
 
 Widget build(BuildContext context) {
-return Scaffold(
-appBar: AppBar(
-title: Text('Sample Code'),
-),
-body: Center(
-child: Text('You have pressed the button $_count times.'),
-),
-bottomNavigationBar: BottomAppBar(
-shape: const CircularNotchedRectangle(),
-child: Container(height: 50.0,),
-),
-floatingActionButton: FloatingActionButton(
-onPressed: () => setState(() {
-_count++;
-}),
-tooltip: 'Increment Counter',
-child: Icon(Icons.add),
-),
-floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-);
+  return Scaffold(
+    appBar: AppBar(
+      title: Text('Sample Code'),
+    ),
+    body: Center(
+      child: Text('You have pressed the button $_count times.'),
+    ),
+    bottomNavigationBar: BottomAppBar(
+      shape: const CircularNotchedRectangle(),
+      child: Container(height: 50.0,),
+    ),
+    floatingActionButton: FloatingActionButton(
+      onPressed: () => setState(() {
+        _count++;
+      }),
+      tooltip: 'Increment Counter',
+      child: Icon(Icons.add),
+    ),
+    floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+  );
 }
 ```
 {@end-tool}
@@ -152,12 +152,12 @@ app's one and only scaffold is reset each time a new tab is selected.
 
 ```dart
 TabController(vsync: tickerProvider, length: tabCount)..addListener(() {
-if (!tabController.indexIsChanging) {
-setState(() {
-// Rebuild the enclosing scaffold with a new AppBar title
-appBarTitle = 'Tab ${tabController.index}';
-});
-}
+  if (!tabController.indexIsChanging) {
+    setState(() {
+      // Rebuild the enclosing scaffold with a new AppBar title
+      appBarTitle = 'Tab ${tabController.index}';
+    });
+  }
 })
 ```
 {@end-tool}
@@ -168,31 +168,31 @@ appropriate, it's best to avoid nesting scaffolds.
 
 See also:
 
-* [AppBar], which is a horizontal bar typically shown at the top of an app
-using the [appBar] property.
-* [BottomAppBar], which is a horizontal bar typically shown at the bottom
-of an app using the [bottomNavigationBar] property.
-* [FloatingActionButton], which is a circular button typically shown in the
-bottom right corner of the app using the [floatingActionButton] property.
-* [Drawer], which is a vertical panel that is typically displayed to the
-left of the body (and often hidden on phones) using the [drawer]
-property.
-* [BottomNavigationBar], which is a horizontal array of buttons typically
-shown along the bottom of the app using the [bottomNavigationBar]
-property.
-* [SnackBar], which is a temporary notification typically shown near the
-bottom of the app using the [ScaffoldState.showSnackBar] method.
-* [BottomSheet], which is an overlay typically shown near the bottom of the
-app. A bottom sheet can either be persistent, in which case it is shown
-using the [ScaffoldState.showBottomSheet] method, or modal, in which case
-it is shown using the [showModalBottomSheet] function.
-* [ScaffoldState], which is the state associated with this widget.
-* <https://material.io/design/layout/responsive-layout-grid.html>
-* Cookbook: [Add a Drawer to a screen](https://flutter.dev/docs/cookbook/design/drawer)
-* Cookbook: [Display a snackbar](https://flutter.dev/docs/cookbook/design/snackbars)
-* See our
-[Scaffold Sample Apps](https://flutter.dev/docs/catalog/samples/Scaffold).
-''';
+ * [AppBar], which is a horizontal bar typically shown at the top of an app
+   using the [appBar] property.
+ * [BottomAppBar], which is a horizontal bar typically shown at the bottom
+   of an app using the [bottomNavigationBar] property.
+ * [FloatingActionButton], which is a circular button typically shown in the
+   bottom right corner of the app using the [floatingActionButton] property.
+ * [Drawer], which is a vertical panel that is typically displayed to the
+   left of the body (and often hidden on phones) using the [drawer]
+   property.
+ * [BottomNavigationBar], which is a horizontal array of buttons typically
+   shown along the bottom of the app using the [bottomNavigationBar]
+   property.
+ * [SnackBar], which is a temporary notification typically shown near the
+   bottom of the app using the [ScaffoldState.showSnackBar] method.
+ * [BottomSheet], which is an overlay typically shown near the bottom of the
+   app. A bottom sheet can either be persistent, in which case it is shown
+   using the [ScaffoldState.showBottomSheet] method, or modal, in which case
+   it is shown using the [showModalBottomSheet] function.
+ * [ScaffoldState], which is the state associated with this widget.
+ * <https://material.io/design/layout/responsive-layout-grid.html>
+ * Cookbook: [Add a Drawer to a screen](https://flutter.dev/docs/cookbook/design/drawer)
+ * Cookbook: [Display a snackbar](https://flutter.dev/docs/cookbook/design/snackbars)
+ * See our
+   [Scaffold Sample Apps](https://flutter.dev/docs/catalog/samples/Scaffold).
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -204,4 +204,3 @@ it is shown using the [showModalBottomSheet] function.
         return Container();
     }
 }
-

@@ -8,7 +8,7 @@ class CircleAvatarBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 A circle that represents a user.
 
 Typically used with a user's profile image, or, in the absence of
@@ -25,7 +25,7 @@ If the avatar is to have an image, the image should be specified in the
 
 ```dart
 CircleAvatar(
-backgroundImage: NetworkImage(userAvatarUrl),
+  backgroundImage: NetworkImage(userAvatarUrl),
 )
 ```
 {@end-tool}
@@ -39,19 +39,19 @@ provided using a [Text] widget as the [child] and a [backgroundColor]:
 
 ```dart
 CircleAvatar(
-backgroundColor: Colors.brown.shade800,
-child: Text('AH'),
+  backgroundColor: Colors.brown.shade800,
+  child: Text('AH'),
 )
 ```
 {@end-tool}
 
 See also:
 
-* [Chip], for representing users or concepts in long form.
-* [ListTile], which can combine an icon (such as a [CircleAvatar]) with
-some text for a fixed height list entry.
-* <https://material.io/design/components/chips.html#input-chips>
-''';
+ * [Chip], for representing users or concepts in long form.
+ * [ListTile], which can combine an icon (such as a [CircleAvatar]) with
+   some text for a fixed height list entry.
+ * <https://material.io/design/components/chips.html#input-chips>
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -63,4 +63,3 @@ some text for a fixed height list entry.
         return Container();
     }
 }
-

@@ -8,7 +8,7 @@ class ButtonBarBase extends BaseWidget {
     }
 
     @override
-    String get description => r'''
+    String get description => r"""
 An end-aligned row of buttons, laying out into a column if there is not
 enough horizontal space.
 
@@ -42,13 +42,13 @@ Used by [Dialog] to arrange the actions at the bottom of the dialog.
 
 See also:
 
-* [TextButton], a simple flat button without a shadow.
-* [ElevatedButton], a filled button whose material elevates when pressed.
-* [OutlinedButton], a [TextButton] with a border outline.
-* [Card], at the bottom of which it is common to place a [ButtonBar].
-* [Dialog], which uses a [ButtonBar] for its actions.
-* [ButtonBarTheme], which configures the [ButtonBar].
-''';
+ * [TextButton], a simple flat button without a shadow.
+ * [ElevatedButton], a filled button whose material elevates when pressed.
+ * [OutlinedButton], a [TextButton] with a border outline.
+ * [Card], at the bottom of which it is common to place a [ButtonBar].
+ * [Dialog], which uses a [ButtonBar] for its actions.
+ * [ButtonBarTheme], which configures the [ButtonBar].
+""";
 
     @override
     Map<String, dynamic> toJson() {
@@ -60,4 +60,3 @@ See also:
         return Container();
     }
 }
-
